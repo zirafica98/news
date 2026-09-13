@@ -1,11 +1,23 @@
-<main class="mx-auto flex min-h-dvh max-w-2xl flex-col justify-center px-6 py-16">
-  <p class="text-5xl">☕</p>
-  <h1 class="mt-4 text-3xl font-semibold tracking-tight">AI Jutro</h1>
-  <p class="mt-3 text-slate-400">
-    Svako jutro u 7:00 ovde te čeka pregled AI vesti na srpskom: šta se desilo, šta je novo izašlo i
-    top 5 ideja za nove app-ove.
-  </p>
-  <p class="mt-8 text-sm text-slate-500">Prvo izdanje stiže uskoro.</p>
-</main>
+<header class="sticky top-0 z-20 border-b border-slate-900 bg-slate-950/90 backdrop-blur">
+  <div class="mx-auto flex h-14 max-w-2xl items-center justify-between px-4">
+    <a routerLink="/" class="flex items-center gap-2 font-semibold text-white">
+      <span aria-hidden="true">☕</span> AI Jutro
+    </a>
+    <nav aria-label="Glavna navigacija" class="flex gap-1 text-sm">
+      @for (l of linkovi; track l.putanja) {
+        <a
+          [routerLink]="l.putanja"
+          routerLinkActive="bg-slate-800 text-white"
+          [routerLinkActiveOptions]="{ exact: l.tacno }"
+          ariaCurrentWhenActive="page"
+          class="rounded-full px-3 py-1.5 text-slate-400 hover:text-white"
+          >{{ l.naziv }}</a
+        >
+      }
+    </nav>
+  </div>
+</header>
 
-<router-outlet />
+<main class="mx-auto max-w-2xl px-4 pb-16">
+  <router-outlet />
+</main>
