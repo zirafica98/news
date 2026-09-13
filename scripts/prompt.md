@@ -27,7 +27,7 @@ Dnevni pregledi (AINews, The Rundown, TLDR, Ben's Bites) sadrže po desetak vest
 
 **Srpski i regionalni izvori** (`grupa: srbija`) često samo prepričavaju svetske vesti. Tada ih ne pravi kao posebnu vest, već ih, ako hoćeš, dodaj kao još jedan izvor iste vesti. Prava domaća AI vest (državni projekti, domaći startapi i kompanije, srpski jezički model, regulativa u Srbiji i regionu, događaji i konkursi) ima prednost: ako postoji bar jedna takva, uvrsti je među vesti i postavi `izSrbije: true`. Za sve ostale vesti `izSrbije` je `false`.
 
-**Reddit i GitHub Trending** su signal šta zajednica trenutno isprobava. Reddit objave nisu provereni izvori: koristi ih da primetiš temu, a činjenice proveri u pravim izvorima ili jasno reci da je reč o glasini. Zanimljive GitHub projekte možeš staviti u „novo“.
+**Reddit i GitHub Trending** su signal šta zajednica trenutno isprobava. Reddit objave nisu provereni izvori: koristi ih da primetiš temu, a činjenice proveri u pravim izvorima ili jasno reci da je reč o glasini. Zanimljive GitHub projekte možeš staviti u „novo“, ali ne procurele sisteme i podatke, alate za zaobilaženje zaštite ni sumnjive repoe.
 
 Po potrebi otvori najviše 8 linkova sa WebFetch da proveriš detalje, najčešće za „kako probati“.
 
