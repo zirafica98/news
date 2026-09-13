@@ -1,6 +1,8 @@
 # AI Jutro ☕
 
-Lični sajt koji svako jutro ima pregled AI vesti na srpskom: vesti, novo izašle stvari sa „kako probati“, istraživanje dana i top 5 ideja za app.
+Lični sajt koji svako jutro ima pregled AI vesti na srpskom: vesti, novo izašle stvari sa „kako probati“, istraživanje dana, top 5 ideja za app i cene tokena.
+
+Live: https://news-one-teal.vercel.app
 
 Detaljan plan i spisak izvora: [PLAN.md](PLAN.md).
 
@@ -10,6 +12,7 @@ Detaljan plan i spisak izvora: [PLAN.md](PLAN.md).
 06:30  launchd na Mac-u → scripts/jutro.sh (iz kopije repoa u ~/.ai-jutro/repo)
          1. git pull
          2. fetch-news.mjs   skupi vesti iz scripts/sources.json
+            fetch-prices.mjs cene tokena sa OpenRouter-a (modeli u scripts/cene-modeli.json)
          3. write-digest.mjs Claude Code (claude -p, pretplata) napiše izdanje
          4. finalize.mjs     provera → public/data/YYYY-MM-DD.json + index.json
          5. git push         → Vercel build
@@ -22,6 +25,7 @@ Detaljan plan i spisak izvora: [PLAN.md](PLAN.md).
 |---|---|
 | `npm start` | sajt lokalno |
 | `npm run fetch` | skupi današnje vesti (`-- --hours=72` za duži period) |
+| `npm run prices` | osveži cene tokena |
 | `npm run digest` | Claude napiše nacrt izdanja |
 | `npm run finalize` | proveri i objavi nacrt (`-- --provera` samo proverava) |
 | `bash scripts/instaliraj.sh` | podesi ili osveži jutarnju automatiku (`--ukloni` je gasi) |
