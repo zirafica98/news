@@ -11,7 +11,7 @@ const JEZIK_KEY = 'ai-jutro:jezik';
 @Injectable({ providedIn: 'root' })
 export class PodesavanjaService {
   private readonly document = inject(DOCUMENT);
-  private readonly sistemSvetla = this.document.defaultView?.matchMedia('(prefers-color-scheme: light)');
+  private readonly sistemSvetla = this.document.defaultView?.matchMedia?.('(prefers-color-scheme: light)');
 
   readonly tema = signal<Tema>(procitaj(TEMA_KEY, ['sistem', 'svetla', 'tamna'], 'sistem'));
   readonly jezik = signal<Jezik>(procitaj(JEZIK_KEY, ['sr', 'en'], 'sr'));
