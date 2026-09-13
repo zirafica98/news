@@ -25,6 +25,9 @@ import { SacuvanoService } from '../sacuvano.service';
                   @if (v.vaznost === 3) {
                     <span class="rounded-full bg-amber-400/15 px-2 py-0.5 font-medium text-amber-300">{{ t('vesti.velikaVest') }}</span>
                   }
+                  @if (v.izSrbije) {
+                    <span class="rounded-full bg-sky-400/15 px-2 py-0.5 font-medium text-sky-300">🇷🇸 {{ t('vesti.srbija') }}</span>
+                  }
                   <span class="text-slate-500">{{ tIli('kategorija.' + v.kategorija, v.kategorija) }}</span>
                 </div>
                 <app-sacuvaj-dugme

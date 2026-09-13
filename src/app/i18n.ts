@@ -32,6 +32,7 @@ const SR = {
 
   'vesti.najbitnije': 'Najbitnije danas',
   'vesti.velikaVest': 'Velika vest',
+  'vesti.srbija': 'Srbija i region',
   'vesti.zastoJeBitno': 'Zašto je bitno:',
   'vesti.novoNaslov': 'Novo izašlo · kako probati',
   'vesti.cena': 'Cena:',
@@ -170,6 +171,7 @@ const EN: Record<Kljuc, string> = {
 
   'vesti.najbitnije': 'Top stories today',
   'vesti.velikaVest': 'Big news',
+  'vesti.srbija': 'Serbia & region',
   'vesti.zastoJeBitno': 'Why it matters:',
   'vesti.novoNaslov': 'Just released · how to try it',
   'vesti.cena': 'Price:',

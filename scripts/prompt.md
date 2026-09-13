@@ -18,12 +18,16 @@ Mihajlo je iz Srbije i sam pravi aplikacije (Angular, SwiftUI, Supabase) uz pomo
 ## Šta dobijaš
 
 Ispod je JSON sa vestima skupljenim u poslednjih ~30 sati:
-- `vesti`: članci sa naslovom, linkom, datumom i tekstom (`grupa` govori da li je dnevni pregled, istraživanje, medij, zvanični blog ili zajednica),
+- `vesti`: članci sa naslovom, linkom, datumom i tekstom (`grupa` govori da li je dnevni pregled, istraživanje, medij, zvanični blog, zajednica ili `srbija` za srpske i regionalne portale),
 - `stranice`: izvori bez RSS-a (npr. Anthropic, The Batch). **Otvori ih sa WebFetch** i uzmi samo ono što je objavljeno u poslednja 2 dana,
 - `nedavno`: naslovi vesti i ideja iz prethodnih izdanja. **Ne ponavljaj ih**, osim ako postoji prava novost u istoj priči.
 - `cene`: današnje cene tokena sa OpenRouter-a ($ za 1M tokena, ulaz/izlaz): praćeni modeli po klasama, promene cena u poslednjih 30 dana, novi modeli i poređenje sa prethodnom verzijom istog modela. Može biti `null` ako cene danas nisu skinute.
 
 Dnevni pregledi (AINews, The Rundown, TLDR, Ben's Bites) sadrže po desetak vesti u jednom tekstu. Rastavi ih i koristi kao tragove. Kad ista vest dolazi iz više izvora, spoji je u jednu i navedi sve izvore.
+
+**Srpski i regionalni izvori** (`grupa: srbija`) često samo prepričavaju svetske vesti. Tada ih ne pravi kao posebnu vest, već ih, ako hoćeš, dodaj kao još jedan izvor iste vesti. Prava domaća AI vest (državni projekti, domaći startapi i kompanije, srpski jezički model, regulativa u Srbiji i regionu, događaji i konkursi) ima prednost: ako postoji bar jedna takva, uvrsti je među vesti i postavi `izSrbije: true`. Za sve ostale vesti `izSrbije` je `false`.
+
+**Reddit i GitHub Trending** su signal šta zajednica trenutno isprobava. Reddit objave nisu provereni izvori: koristi ih da primetiš temu, a činjenice proveri u pravim izvorima ili jasno reci da je reč o glasini. Zanimljive GitHub projekte možeš staviti u „novo“.
 
 Po potrebi otvori najviše 8 linkova sa WebFetch da proveriš detalje, najčešće za „kako probati“.
 

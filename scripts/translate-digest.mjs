@@ -26,7 +26,7 @@ const prompt = `Translate this Serbian AI news digest into English for a persona
 
 Rules:
 - Return the same JSON structure. Translate every human-readable text value into natural, concise English.
-- Do NOT change keys, enum values (kategorija, tip, vaznost, tezina, vikendProjekat), numbers, prices, dates or URLs.
+- Do NOT change keys, enum values (kategorija, tip, vaznost, izSrbije, tezina, vikendProjekat), numbers, prices, dates or URLs.
 - Keep product, model and company names as they are (Claude, GPT-6 Astra, Hugging Face).
 - Keep the same number of items in every list and the same order.
 - Write it the way an English tech newsletter would, not word for word. Keep references to Serbia or the region, they are intentional.

@@ -6,6 +6,7 @@
 //             npm run fetch -- verge-ai            (samo navedene izvore, za testiranje)
 //             npm run fetch -- --hours=168         (gleda nedelju dana unazad, za testiranje)
 //             npm run fetch -- --sve               (ne preskače već objavljene vesti)
+//             npm run fetch -- --ponovo            (ne preskače vesti objavljene danas, za ponovno pravljenje današnjeg izdanja)
 
 import { join } from 'node:path';
 import { XMLParser } from 'fast-xml-parser';
@@ -13,6 +14,12 @@ import { SCRIPTS_DIR, STATE_FILE, datumIzArgumenata, normalizeUrl, paths, readJs
 
 const TIMEOUT_MS = 20_000;
 const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AI-News/1.0';
+
+// Za izvore sa "samoAI": true (opšti tech portali): zadržava samo članke koji pominju AI u naslovu ili početku teksta.
+// „AI“ se traži samo velikim slovima, da se ne poklopi sa delovima reči.
+const AI_SKRACENICA = /\bA\.?I\b/;
+const AI_POJMOVI =
+  /(veštačk|vestačk|vještačk|umjetn[a-z]* inteligenc|umetn[a-z]* inteligenc|chatgpt|openai|claude|anthropic|gemini|\bllm|copilot|deepseek|mašinsk[a-z]* učenj|machine learning|neuronsk|neural|četbot|chatbot|\bagent|\bgpt|mistral|llama|hugging ?face|jezičk[a-z]* model|language model)/i;
 
 const xml = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: '@_', textNodeName: '#text' });
 
@@ -24,7 +31,10 @@ const selected = sources.filter((s) => (onlyIds.length ? onlyIds.includes(s.id) 
 
 const now = new Date();
 const today = datumIzArgumenata(args);
-const alreadyPublished = args.includes('--sve') ? {} : await readJson(STATE_FILE, {});
+const ponovo = args.includes('--ponovo');
+const alreadyPublished = args.includes('--sve')
+  ? {}
+  : Object.fromEntries(Object.entries(await readJson(STATE_FILE, {})).filter(([, d]) => !(ponovo && d === today)));
 
 const results = await Promise.all(selected.map(fetchSource));
 
@@ -79,6 +89,7 @@ async function fetchSource(source) {
     const all = source.type === 'hf-papers' ? parseHfPapers(body, source) : parseFeed(body, source);
     const since = now.getTime() - (hoursOverride ?? source.hours ?? 30) * 3_600_000;
     let items = all.filter((i) => i.objavljeno && new Date(i.objavljeno).getTime() >= since);
+    if (source.samoAI) items = items.filter((i) => AI_SKRACENICA.test(i.naslov) || AI_POJMOVI.test(`${i.naslov} ${i.tekst.slice(0, 400)}`) || AI_SKRACENICA.test(i.tekst.slice(0, 400)));
     if (source.limit) items = items.slice(0, source.limit);
     if (source.fullText) items = await Promise.all(items.map((i) => withPageText(i, source)));
     return { source, items };
@@ -105,9 +116,11 @@ function parseFeed(body, source) {
   const rssItems = doc.rss?.channel?.item;
   const atomEntries = doc.feed?.entry;
   const entries = toArray(rssItems ?? atomEntries);
+  // Neki feedovi (npr. GitHub Trending) nemaju datum po stavci, samo za ceo feed.
+  const channelDate = source.datumKanala ? (doc.rss?.channel?.pubDate ?? doc.rss?.channel?.lastBuildDate ?? doc.feed?.updated) : undefined;
 
   return entries.map((e) => {
-    const date = e.pubDate ?? e.published ?? e['atom:published'] ?? e['dc:date'] ?? e.updated;
+    const date = e.pubDate ?? e.published ?? e['atom:published'] ?? e['dc:date'] ?? e.updated ?? channelDate;
     const html = e['content:encoded'] ?? e.content ?? e.description ?? e.summary ?? '';
     return {
       izvor: source.id,

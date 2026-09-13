@@ -7,6 +7,7 @@
 #
 # Ručno:  bash scripts/jutro.sh             (pravo pokretanje)
 #         bash scripts/jutro.sh --provera   (proveri internet, git, pakete i Claude prijavu, bez objavljivanja)
+#         bash scripts/jutro.sh --ponovo    (napravi današnje izdanje ponovo, i ako već postoji)
 
 set -euo pipefail
 
@@ -19,7 +20,9 @@ DATUM="$(TZ=Europe/Belgrade date +%F)"
 LOG_FILE="$LOG_DIR/$DATUM.log"
 LOCK_DIR="${TMPDIR:-/tmp}/ai-jutro.lock"
 PROVERA=false
+PONOVO=false
 [[ "${1:-}" == "--provera" ]] && PROVERA=true
+[[ "${1:-}" == "--ponovo" ]] && PONOVO=true
 
 mkdir -p "$LOG_DIR"
 exec >>"$LOG_FILE" 2>&1
@@ -39,11 +42,33 @@ on_error() {
 }
 trap 'on_error $LINENO' ERR
 
+cd "$REPO_DIR"
+
+if [[ -z "${AI_NEWS_OSVEZENO:-}" ]]; then
+  echo
+  log "===== AI News $DATUM $($PROVERA && echo '(provera)')$($PONOVO && echo '(ponovo)') ====="
+
+  # 1. Internet (posle buđenja Wi-Fi-ju treba koji trenutak).
+  for i in $(seq 1 60); do
+    curl -s --max-time 5 -o /dev/null https://github.com && break
+    [[ $i -eq 60 ]] && { log "Nema interneta ni posle 10 minuta."; false; }
+    sleep 10
+  done
+  log "Internet radi."
+
+  # 2. Najnovija verzija repoa, pa ponovo pokreni ovu skriptu da važe i izmene u njoj samoj.
+  git pull --ff-only --quiet
+  log "git pull: $(git log -1 --format='%h %s')"
+  export AI_NEWS_OSVEZENO=1
+  exec bash "$REPO_DIR/scripts/jutro.sh" "$@"
+fi
+
 # Samo jedno pokretanje u isto vreme.
 if ! mkdir "$LOCK_DIR" 2>/dev/null; then
   if [[ -n "$(find "$LOCK_DIR" -maxdepth 0 -mmin +60 2>/dev/null)" ]]; then
     rm -rf "$LOCK_DIR" && mkdir "$LOCK_DIR"
   else
+    log "Već radi drugo pokretanje. Kraj."
     exit 0
   fi
 fi
@@ -52,23 +77,7 @@ trap 'rm -rf "$LOCK_DIR"' EXIT
 # Ne daj Mac-u da zaspi dok skripta radi.
 caffeinate -i -w $$ &
 
-echo
-log "===== AI News $DATUM $($PROVERA && echo '(provera)') ====="
-cd "$REPO_DIR"
-
-# 1. Internet (posle buđenja Wi-Fi-ju treba koji trenutak).
-for i in $(seq 1 60); do
-  curl -s --max-time 5 -o /dev/null https://github.com && break
-  [[ $i -eq 60 ]] && { log "Nema interneta ni posle 10 minuta."; false; }
-  sleep 10
-done
-log "Internet radi."
-
-# 2. Najnovija verzija repoa.
-git pull --ff-only --quiet
-log "git pull: $(git log -1 --format='%h %s')"
-
-if [[ -f "public/data/$DATUM.json" ]] && ! $PROVERA; then
+if [[ -f "public/data/$DATUM.json" ]] && ! $PROVERA && ! $PONOVO; then
   log "Izdanje za $DATUM je već objavljeno. Kraj."
   exit 0
 fi
@@ -95,8 +104,8 @@ if $PROVERA; then
   exit 0
 fi
 
-# 5. Skupljanje vesti.
-node scripts/fetch-news.mjs --datum="$DATUM"
+# 5. Skupljanje vesti. Kod ponovnog pravljenja ne preskačemo vesti koje su već ušle u današnje izdanje.
+node scripts/fetch-news.mjs --datum="$DATUM" $($PONOVO && echo --ponovo)
 
 # 5b. Cene tokena. Ako OpenRouter ne radi, izdanje ide i bez njih.
 node scripts/fetch-prices.mjs --datum="$DATUM" || log "Cene tokena nisu osvežene, nastavljam bez njih."
@@ -116,7 +125,7 @@ node scripts/translate-digest.mjs --datum="$DATUM" || log "Engleski prevod nije 
 
 # 8. Slanje na GitHub → Vercel pravi novi build.
 git add public/data scripts/state
-git commit --quiet -m "Izdanje $DATUM"
+git commit --quiet -m "Izdanje $DATUM$($PONOVO && echo ' (ponovo)')"
 if ! git push --quiet; then
   log "Push odbijen, povlačim izmene i pokušavam ponovo…"
   git pull --rebase --quiet

@@ -17,13 +17,14 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["naslov", "staSeDesilo", "zastoJeBitno", "kategorija", "vaznost", "izvori"],
+        "required": ["naslov", "staSeDesilo", "zastoJeBitno", "kategorija", "vaznost", "izSrbije", "izvori"],
         "properties": {
           "naslov": { "type": "string" },
           "staSeDesilo": { "type": "string" },
           "zastoJeBitno": { "type": "string" },
           "kategorija": { "type": "string", "enum": ["modeli", "alati", "kompanije", "istrazivanje", "bezbednost", "regulativa", "ostalo"] },
           "vaznost": { "type": "integer", "enum": [1, 2, 3], "description": "3 = velika vest, 2 = bitno, 1 = zanimljivo" },
+          "izSrbije": { "type": "boolean", "description": "true samo kad je vest o Srbiji ili regionu, ne kad domaći portal prenosi svetsku vest." },
           "izvori": {
             "type": "array",
             "items": {

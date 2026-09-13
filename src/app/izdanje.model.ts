@@ -13,6 +13,8 @@ export interface Vest {
   zastoJeBitno: string;
   kategorija: Kategorija;
   vaznost: 1 | 2 | 3;
+  /** Domaća ili regionalna vest. Nema ga u izdanjima pre 14.09.2026. */
+  izSrbije?: boolean;
   izvori: Izvor[];
 }
 

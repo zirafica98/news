@@ -1,27 +1,50 @@
 {
-  "_napomena": "type: rss (RSS/Atom), hf-papers (Hugging Face Daily Papers API), page (nema RSS, Claude čita stranicu). hours: koliko sati unazad gledamo. maxChars: koliko teksta po vesti čuvamo. fullText: true skida tekst sa stranice kad feed ima samo naslov. enabled: false isključuje izvor.",
+  "_napomena": "type: rss (RSS/Atom), hf-papers (Hugging Face Daily Papers API), page (nema RSS, Claude čita stranicu). hours: koliko sati unazad gledamo. maxChars: koliko teksta po vesti čuvamo. fullText: true skida tekst sa stranice kad feed ima samo naslov. samoAI: true zadržava samo članke o AI-ju (za opšte tech portale). datumKanala: true koristi datum feeda kad stavke nemaju svoj. enabled: false isključuje izvor.",
   "sources": [
     { "id": "ainews", "name": "AINews (smol.ai)", "group": "pregled", "type": "rss", "url": "https://news.smol.ai/rss.xml", "hours": 30, "maxChars": 12000, "enabled": true },
     { "id": "rundown", "name": "The Rundown AI", "group": "pregled", "type": "rss", "url": "https://rss.beehiiv.com/feeds/2R3C6Bt5wj.xml", "hours": 30, "maxChars": 10000, "enabled": true },
     { "id": "tldr-ai", "name": "TLDR AI", "group": "pregled", "type": "rss", "url": "https://tldr.tech/api/rss/ai", "hours": 30, "maxChars": 8000, "fullText": true, "enabled": true },
     { "id": "bensbites", "name": "Ben's Bites", "group": "pregled", "type": "rss", "url": "https://www.bensbites.com/feed", "hours": 30, "maxChars": 8000, "enabled": true },
+    { "id": "the-decoder", "name": "The Decoder", "group": "pregled", "type": "rss", "url": "https://the-decoder.com/feed/", "hours": 30, "maxChars": 1500, "enabled": true },
 
     { "id": "hf-papers", "name": "Hugging Face Daily Papers", "group": "istrazivanje", "type": "hf-papers", "url": "https://huggingface.co/api/daily_papers?limit=100", "hours": 72, "limit": 15, "maxChars": 1200, "enabled": true },
     { "id": "import-ai", "name": "Import AI", "group": "istrazivanje", "type": "rss", "url": "https://importai.substack.com/feed", "hours": 30, "maxChars": 10000, "enabled": true },
     { "id": "the-batch", "name": "The Batch (DeepLearning.AI)", "group": "istrazivanje", "type": "page", "url": "https://www.deeplearning.ai/the-batch/", "enabled": true },
     { "id": "latent-space", "name": "Latent Space", "group": "istrazivanje", "type": "rss", "url": "https://www.latent.space/feed", "hours": 30, "maxChars": 6000, "enabled": true },
     { "id": "simonw", "name": "Simon Willison", "group": "istrazivanje", "type": "rss", "url": "https://simonwillison.net/atom/everything/", "hours": 30, "maxChars": 2000, "enabled": true },
+    { "id": "interconnects", "name": "Interconnects (Nathan Lambert)", "group": "istrazivanje", "type": "rss", "url": "https://www.interconnects.ai/feed", "hours": 30, "maxChars": 5000, "enabled": true },
+    { "id": "one-useful-thing", "name": "One Useful Thing (Ethan Mollick)", "group": "istrazivanje", "type": "rss", "url": "https://www.oneusefulthing.org/feed", "hours": 30, "maxChars": 5000, "enabled": true },
+    { "id": "marktechpost", "name": "MarkTechPost", "group": "istrazivanje", "type": "rss", "url": "https://www.marktechpost.com/feed/", "hours": 30, "maxChars": 1200, "enabled": true },
 
     { "id": "verge-ai", "name": "The Verge AI", "group": "mediji", "type": "rss", "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml", "hours": 30, "maxChars": 1500, "enabled": true },
     { "id": "mit-tr-ai", "name": "MIT Technology Review AI", "group": "mediji", "type": "rss", "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed", "hours": 30, "maxChars": 1500, "enabled": true },
     { "id": "techcrunch-ai", "name": "TechCrunch AI", "group": "mediji", "type": "rss", "url": "https://techcrunch.com/category/artificial-intelligence/feed/", "hours": 30, "maxChars": 1500, "enabled": true },
     { "id": "last-week-ai", "name": "Last Week in AI", "group": "mediji", "type": "rss", "url": "https://lastweekin.ai/feed", "hours": 30, "maxChars": 8000, "enabled": true },
+    { "id": "ars-ai", "name": "Ars Technica AI", "group": "mediji", "type": "rss", "url": "https://arstechnica.com/ai/feed/", "hours": 30, "maxChars": 1500, "enabled": true },
+    { "id": "wired-ai", "name": "Wired AI", "group": "mediji", "type": "rss", "url": "https://www.wired.com/feed/tag/ai/latest/rss", "hours": 30, "maxChars": 1500, "enabled": true },
 
     { "id": "openai", "name": "OpenAI", "group": "zvanicno", "type": "rss", "url": "https://openai.com/news/rss.xml", "hours": 30, "maxChars": 1500, "enabled": true },
     { "id": "deepmind", "name": "Google DeepMind", "group": "zvanicno", "type": "rss", "url": "https://deepmind.google/blog/rss.xml", "hours": 30, "maxChars": 1500, "enabled": true },
     { "id": "hf-blog", "name": "Hugging Face blog", "group": "zvanicno", "type": "rss", "url": "https://huggingface.co/blog/feed.xml", "hours": 30, "maxChars": 1500, "enabled": true },
     { "id": "anthropic", "name": "Anthropic", "group": "zvanicno", "type": "page", "url": "https://www.anthropic.com/news", "enabled": true },
+    { "id": "google-ai", "name": "Google AI blog", "group": "zvanicno", "type": "rss", "url": "https://blog.google/technology/ai/rss/", "hours": 30, "maxChars": 1500, "enabled": true },
+    { "id": "github-ai", "name": "GitHub blog (AI)", "group": "zvanicno", "type": "rss", "url": "https://github.blog/ai-and-ml/feed/", "hours": 30, "maxChars": 1500, "enabled": true },
+    { "id": "meta-ai", "name": "Meta Engineering (AI)", "group": "zvanicno", "type": "rss", "url": "https://engineering.fb.com/category/ai-research/feed/", "hours": 30, "maxChars": 1500, "enabled": true },
 
-    { "id": "hn-ai", "name": "Hacker News (AI, 100+ poena)", "group": "zajednica", "type": "rss", "url": "https://hnrss.org/newest?q=AI+OR+LLM&points=100", "hours": 30, "maxChars": 800, "enabled": true }
+    { "id": "hn-ai", "name": "Hacker News (AI, 100+ poena)", "group": "zajednica", "type": "rss", "url": "https://hnrss.org/newest?q=AI+OR+LLM&points=100", "hours": 30, "maxChars": 800, "enabled": true },
+    { "id": "reddit-ai", "name": "Reddit (LocalLLaMA, ClaudeAI, OpenAI, singularity)", "group": "zajednica", "type": "rss", "url": "https://www.reddit.com/r/LocalLLaMA+ClaudeAI+OpenAI+singularity/top/.rss?t=day", "hours": 30, "maxChars": 1000, "enabled": true },
+    { "id": "github-trending", "name": "GitHub Trending (AI projekti)", "group": "zajednica", "type": "rss", "url": "https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml", "hours": 30, "maxChars": 600, "datumKanala": true, "samoAI": true, "enabled": true },
+    { "id": "producthunt-ai", "name": "Product Hunt (AI)", "group": "zajednica", "type": "rss", "url": "https://www.producthunt.com/feed?category=artificial-intelligence", "hours": 30, "maxChars": 600, "enabled": true },
+
+    { "id": "startit", "name": "Startit", "group": "srbija", "type": "rss", "url": "https://startit.rs/feed/", "hours": 30, "maxChars": 3000, "samoAI": true, "enabled": true },
+    { "id": "pcpress-ai", "name": "PC Press (AI)", "group": "srbija", "type": "rss", "url": "https://pcpress.rs/tag/ai/feed/", "hours": 30, "maxChars": 1500, "enabled": true },
+    { "id": "danas-vi", "name": "Danas (veštačka inteligencija)", "group": "srbija", "type": "rss", "url": "https://www.danas.rs/tag/vestacka-inteligencija/feed/", "hours": 30, "maxChars": 1500, "enabled": true },
+    { "id": "b92-tehnopolis", "name": "B92 Tehnopolis", "group": "srbija", "type": "rss", "url": "https://www.b92.net/info/rss/tehnopolis.xml", "hours": 30, "maxChars": 1500, "samoAI": true, "enabled": true },
+    { "id": "nedeljnik", "name": "Nedeljnik", "group": "srbija", "type": "rss", "url": "https://www.nedeljnik.rs/feed/", "hours": 30, "maxChars": 1500, "samoAI": true, "enabled": true },
+    { "id": "netokracija-ai", "name": "Netokracija (AI)", "group": "srbija", "type": "rss", "url": "https://www.netokracija.rs/tag/ai/feed", "hours": 30, "maxChars": 2000, "enabled": true },
+    { "id": "srb-ai", "name": "SRB AI asocijacija", "group": "srbija", "type": "rss", "url": "https://ai.org.rs/feed/", "hours": 30, "maxChars": 2000, "enabled": true },
+    { "id": "share", "name": "SHARE fondacija", "group": "srbija", "type": "rss", "url": "https://sharefoundation.info/feed/", "hours": 30, "maxChars": 2000, "samoAI": true, "enabled": true },
+    { "id": "bug-ai", "name": "Bug.hr (umjetna inteligencija)", "group": "srbija", "type": "rss", "url": "https://www.bug.hr/rss/umjetna-inteligencija", "hours": 30, "maxChars": 1500, "enabled": true },
+    { "id": "ictbusiness", "name": "ICTbusiness", "group": "srbija", "type": "rss", "url": "https://www.ictbusiness.info/rss.xml", "hours": 30, "maxChars": 1500, "samoAI": true, "enabled": true }
   ]
 }
