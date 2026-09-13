@@ -1,8 +1,20 @@
-import { Component, computed, inject } from '@angular/core';
-import { PROVAJDERI, Promena, formatCena } from '../cene.model';
+import { Component, computed, inject, signal } from '@angular/core';
+import { CeneKalkulator } from '../components/cene-kalkulator';
+import { PROVAJDERI, Promena, formatCena, formatIznos } from '../cene.model';
 import { IzdanjaService } from '../izdanja.service';
 import { PodesavanjaService } from '../podesavanja.service';
 import { formatDatum } from '../izdanje.model';
+
+const OBJASNJENJE_KEY = 'ai-jutro:cene-objasnjenje';
+
+/** Objašnjenje je otvoreno dok ga korisnik jednom ne zatvori. */
+function procitajObjasnjenje(): boolean {
+  try {
+    return localStorage.getItem(OBJASNJENJE_KEY) !== '0';
+  } catch {
+    return true;
+  }
+}
 
 /** Mešovita cena: tipična aplikacija pošalje ~3 puta više tokena nego što dobije nazad. */
 function mesovita(ulaz: number, izlaz: number): number {
@@ -11,11 +23,50 @@ function mesovita(ulaz: number, izlaz: number): number {
 
 @Component({
   selector: 'app-cene-page',
+  imports: [CeneKalkulator],
   template: `
     <h1 class="pt-6 text-2xl font-semibold text-white">{{ t('naslov.cene') }}</h1>
-    <p class="mt-1 text-sm leading-relaxed text-slate-500">
-      {{ t('cene.jedinica') }} {{ t('cene.ulazIzlaz') }}
-    </p>
+    <p class="mt-1 text-sm leading-relaxed text-slate-500">{{ t('cene.podnaslov') }}</p>
+
+    <details
+      class="group mt-5 rounded-2xl border border-sky-900/50 bg-sky-950/20"
+      [open]="objasnjenjeOtvoreno()"
+      (toggle)="zapamtiObjasnjenje($event)"
+    >
+      <summary class="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 font-medium text-sky-300">
+        {{ t('cene.obj.naslov') }}
+        <span class="text-slate-500 transition-transform group-open:rotate-90" aria-hidden="true">›</span>
+      </summary>
+      <div class="px-4 pb-4">
+        <div class="flex items-stretch gap-1.5 text-center text-xs" aria-hidden="true">
+          <div class="flex-1 rounded-xl bg-slate-800/60 px-2 py-2">
+            <p class="text-base">📝</p>
+            <p class="mt-0.5 text-slate-300">{{ t('cene.obj.tokUlaz') }}</p>
+            <p class="font-semibold text-sky-300">{{ t('cene.obj.ulaz') }}</p>
+          </div>
+          <span class="self-center text-slate-500">→</span>
+          <div class="flex-1 rounded-xl bg-slate-800/60 px-2 py-2">
+            <p class="text-base">🤖</p>
+            <p class="mt-0.5 text-slate-300">{{ t('cene.obj.tokModel') }}</p>
+          </div>
+          <span class="self-center text-slate-500">→</span>
+          <div class="flex-1 rounded-xl bg-slate-800/60 px-2 py-2">
+            <p class="text-base">💬</p>
+            <p class="mt-0.5 text-slate-300">{{ t('cene.obj.tokIzlaz') }}</p>
+            <p class="font-semibold text-amber-300">{{ t('cene.obj.izlaz') }}</p>
+          </div>
+        </div>
+        <dl class="mt-4 space-y-3 text-sm leading-relaxed">
+          <div><dt class="font-semibold text-white">{{ t('cene.obj.token') }}</dt><dd class="text-slate-300">{{ t('cene.obj.tokenOpis') }}</dd></div>
+          <div><dt class="font-semibold text-sky-300">{{ t('cene.obj.ulaz') }}</dt><dd class="text-slate-300">{{ t('cene.obj.ulazOpis') }}</dd></div>
+          <div><dt class="font-semibold text-amber-300">{{ t('cene.obj.izlaz') }}</dt><dd class="text-slate-300">{{ t('cene.obj.izlazOpis') }}</dd></div>
+          <div><dt class="font-semibold text-white">{{ t('cene.obj.cena') }}</dt><dd class="text-slate-300">{{ t('cene.obj.cenaOpis') }}</dd></div>
+        </dl>
+        @if (primer(); as p) {
+          <p class="mt-4 rounded-xl bg-slate-800/50 px-4 py-3 text-sm leading-relaxed text-slate-200">{{ p }}</p>
+        }
+      </div>
+    </details>
 
     @if (izdanja.cene.isLoading()) {
       <p class="py-24 text-center text-slate-500">{{ t('stanje.ucitavam') }}</p>
@@ -27,6 +78,12 @@ function mesovita(ulaz: number, izlaz: number): number {
           <span class="font-medium text-amber-300">{{ t('cene.ukratko') }}</span> {{ k }}
         </p>
       }
+
+      <!-- Kalkulator -->
+      <section aria-labelledby="naslov-kalkulator" class="mt-8">
+        <h2 id="naslov-kalkulator" class="text-xs font-semibold uppercase tracking-widest text-slate-500">{{ t('kalk.naslov') }}</h2>
+        <app-cene-kalkulator class="mt-3 block" [modeli]="sviModeli()" />
+      </section>
 
       <!-- Promene -->
       <section aria-labelledby="naslov-promene" class="mt-8">
@@ -132,6 +189,41 @@ export class CenePage {
     const ref = d ? this.izdanja.izdanjeNaJeziku(d).ref : undefined;
     return ref?.hasValue() ? ref.value()?.cene : undefined;
   });
+
+  protected readonly sviModeli = computed(() => this.izdanja.cene.value()?.grupe.flatMap((g) => g.modeli) ?? []);
+
+  protected readonly objasnjenjeOtvoreno = signal(procitajObjasnjenje());
+
+  /** Primer računa sa pravim, današnjim cenama (Claude Opus 5, ili prvi praćeni model ako njega nema). */
+  protected readonly primer = computed(() => {
+    const modeli = this.sviModeli();
+    const m = modeli.find((x) => x.id === 'anthropic/claude-opus-5') ?? modeli[0];
+    if (!m) return null;
+    const ulazIznos = (2_000 * m.ulaz) / 1_000_000;
+    const izlazIznos = (500 * m.izlaz) / 1_000_000;
+    const ukupno = ulazIznos + izlazIznos;
+    const lokal = this.podesavanja.lokal();
+    const iznos = (n: number) => formatIznos(n, lokal);
+    return this.t('cene.obj.primer', {
+      model: m.naziv,
+      ulazCena: this.cena(m.ulaz),
+      izlazCena: this.cena(m.izlaz),
+      ulazIznos: iznos(ulazIznos),
+      izlazIznos: iznos(izlazIznos),
+      ukupno: iznos(ukupno),
+      hiljadu: iznos(ukupno * 1_000),
+    });
+  });
+
+  protected zapamtiObjasnjenje(event: Event): void {
+    const otvoreno = (event.target as HTMLDetailsElement).open;
+    this.objasnjenjeOtvoreno.set(otvoreno);
+    try {
+      localStorage.setItem(OBJASNJENJE_KEY, otvoreno ? '1' : '0');
+    } catch {
+      // Privatni režim: pamti se dok je stranica otvorena.
+    }
+  }
 
   private readonly opseg = computed(() => {
     const c = this.izdanja.cene.value();

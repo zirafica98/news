@@ -50,6 +50,14 @@ export const PROVAJDERI: Record<string, string> = {
   cohere: 'Cohere',
 };
 
+/** Iznos troška: $1.234 za velike, $22,50 za obične, a za sitne dovoljno decimala da se vidi razlika ($0,00041). */
+export function formatIznos(iznos: number, lokal: string): string {
+  if (iznos === 0) return '$0';
+  if (iznos >= 100) return `$${iznos.toLocaleString(lokal, { maximumFractionDigits: 0 })}`;
+  if (iznos >= 0.1) return `$${iznos.toLocaleString(lokal, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  return `$${iznos.toLocaleString(lokal, { maximumSignificantDigits: 3 })}`;
+}
+
 /** $12.5 → „$12,50“ (sr) ili „$12.50“ (en) */
 export function formatCena(n: number, lokal: string): string {
   return `$${n.toLocaleString(lokal, { minimumFractionDigits: 2, maximumFractionDigits: n < 0.1 ? 3 : 2 })}`;
