@@ -98,6 +98,9 @@ fi
 # 5. Skupljanje vesti.
 node scripts/fetch-news.mjs --datum="$DATUM"
 
+# 5b. Cene tokena. Ako OpenRouter ne radi, izdanje ide i bez njih.
+node scripts/fetch-prices.mjs --datum="$DATUM" || log "Cene tokena nisu osvežene, nastavljam bez njih."
+
 # 6. Claude piše izdanje (jedan ponovni pokušaj ako padne).
 if ! node scripts/write-digest.mjs --datum="$DATUM"; then
   log "Prvi pokušaj nije uspeo, pokušavam ponovo za minut…"

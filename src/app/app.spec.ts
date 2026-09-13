@@ -17,11 +17,11 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render navigation', async () => {
+  it('should render tabs', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    const links = [...compiled.querySelectorAll('nav a')].map((a) => a.textContent?.trim());
-    expect(links).toEqual(['Danas', 'Arhiva', 'Sačuvano']);
+    const tabs = [...compiled.querySelectorAll('nav[aria-label="Delovi izdanja"] a')].map((a) => a.textContent?.trim());
+    expect(tabs).toEqual(['Vesti', 'Istraživanje', 'Ideje', 'Cene']);
   });
 });

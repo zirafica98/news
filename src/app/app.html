@@ -3,21 +3,37 @@
     <a routerLink="/" class="flex items-center gap-2 font-semibold text-white">
       <span aria-hidden="true">☕</span> AI Jutro
     </a>
-    <nav aria-label="Glavna navigacija" class="flex gap-1 text-sm">
-      @for (l of linkovi; track l.putanja) {
-        <a
-          [routerLink]="l.putanja"
-          routerLinkActive="bg-slate-800 text-white"
-          [routerLinkActiveOptions]="{ exact: l.tacno }"
-          ariaCurrentWhenActive="page"
-          class="rounded-full px-3 py-1.5 text-slate-400 hover:text-white"
-          >{{ l.naziv }}</a
-        >
-      }
+    <nav aria-label="Arhiva i sačuvano" class="flex gap-1 text-sm">
+      <a routerLink="/arhiva" routerLinkActive="bg-slate-800 text-white" ariaCurrentWhenActive="page" class="rounded-full px-3 py-1.5 text-slate-400 hover:text-white">Arhiva</a>
+      <a routerLink="/sacuvano" routerLinkActive="bg-slate-800 text-white" ariaCurrentWhenActive="page" class="rounded-full px-3 py-1.5 text-slate-400 hover:text-white">Sačuvano</a>
     </nav>
   </div>
 </header>
 
-<main class="mx-auto max-w-2xl px-4 pb-16">
+<main class="mx-auto max-w-2xl px-4 pb-[calc(6rem+env(safe-area-inset-bottom))]">
   <router-outlet />
 </main>
+
+<nav
+  aria-label="Delovi izdanja"
+  class="fixed inset-x-0 bottom-0 z-20 border-t border-slate-800 bg-slate-950/95 pb-[env(safe-area-inset-bottom)] backdrop-blur"
+>
+  <ul class="mx-auto grid max-w-2xl grid-cols-4">
+    @for (k of kartice(); track k.id) {
+      <li>
+        <a
+          [routerLink]="k.link"
+          [attr.aria-current]="aktivna() === k.id ? 'page' : null"
+          class="flex flex-col items-center gap-1 pb-2 pt-2.5 text-[11px] font-medium transition-colors"
+          [class.text-amber-400]="aktivna() === k.id"
+          [class.text-slate-500]="aktivna() !== k.id"
+        >
+          <svg viewBox="0 0 24 24" class="size-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path [attr.d]="k.ikona" />
+          </svg>
+          {{ k.naziv }}
+        </a>
+      </li>
+    }
+  </ul>
+</nav>

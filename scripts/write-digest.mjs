@@ -9,7 +9,7 @@ import { spawn } from 'node:child_process';
 import { mkdtemp, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { SCRIPTS_DIR, datumIzArgumenata, paths, readJson, writeJson } from './lib.mjs';
+import { DATA_DIR, SCRIPTS_DIR, datumIzArgumenata, paths, readJson, writeJson } from './lib.mjs';
 
 const TIMEOUT_MS = 25 * 60_000;
 const RECENT_DAYS = 7;
@@ -28,6 +28,7 @@ const material = {
   datum,
   stranice: skupljeno.stranice,
   nedavno: await recentHeadlines(),
+  cene: await priceSummary(),
   vesti: skupljeno.vesti,
 };
 const prompt = `${await readFile(join(SCRIPTS_DIR, 'prompt.md'), 'utf8')}\n\n## Materijal za ${datum}\n\n\`\`\`json\n${JSON.stringify(material)}\n\`\`\`\n`;
@@ -99,6 +100,38 @@ function runClaude(input, jsonSchema, cwd) {
     });
     child.stdin.end(input);
   });
+}
+
+/** Sažetak public/data/cene.json, samo ako je osvežen danas. */
+async function priceSummary() {
+  const cene = await readJson(join(DATA_DIR, 'cene.json'), null);
+  if (!cene || cene.datum !== datum) return null;
+  // Najjeftinije računamo ovde, da Claude ne bi pogrešio poredeći brojeve.
+  const najjeftiniji = (modeli, polje) => {
+    const min = Math.min(...modeli.map((m) => m[polje]));
+    return { cena: min, modeli: modeli.filter((m) => m[polje] === min).map((m) => m.naziv) };
+  };
+  return {
+    pratimoOd: cene.pratimoOd,
+    najjeftinijiPoKlasi: cene.grupe.map((g) => ({
+      klasa: g.naziv,
+      ulaz: najjeftiniji(g.modeli, 'ulaz'),
+      izlaz: najjeftiniji(g.modeli, 'izlaz'),
+    })),
+    promene: cene.promene.map(({ naziv, datum: d, ulazPre, izlazPre, ulaz, izlaz }) => ({ naziv, datum: d, ulazPre, izlazPre, ulaz, izlaz })),
+    modeli: cene.grupe.flatMap((g) =>
+      g.modeli.map((m) => ({
+        klasa: g.naziv,
+        naziv: m.naziv,
+        ulaz: m.ulaz,
+        izlaz: m.izlaz,
+        promena7: m.promena7,
+        promena30: m.promena30,
+        prethodnik: m.prethodnik && { naziv: m.prethodnik.naziv, ulaz: m.prethodnik.ulaz, izlaz: m.prethodnik.izlaz },
+      })),
+    ),
+    noviModeli: cene.noviModeli.map(({ naziv, provajder, ulaz, izlaz, objavljen }) => ({ naziv, provajder, ulaz, izlaz, objavljen })),
+  };
 }
 
 async function recentHeadlines() {

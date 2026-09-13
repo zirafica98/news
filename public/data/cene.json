@@ -1,0 +1,407 @@
+{
+  "datum": "2026-09-13",
+  "azurirano": "2026-09-13T09:56:06.817Z",
+  "izvor": {
+    "naziv": "OpenRouter",
+    "url": "https://openrouter.ai/models"
+  },
+  "pratimoOd": "2026-09-13",
+  "grupe": [
+    {
+      "id": "vrhunski",
+      "naziv": "Vrhunski modeli",
+      "opis": "Najpametniji i najskuplji, za najteže zadatke.",
+      "modeli": [
+        {
+          "id": "anthropic/claude-fable-5.1",
+          "naziv": "Claude Fable 5.1",
+          "provajder": "anthropic",
+          "ulaz": 10,
+          "izlaz": 50,
+          "objavljen": "2026-09-01",
+          "kontekst": 1000000,
+          "kesUlaz": 0.25,
+          "promena7": null,
+          "promena30": null,
+          "prethodnik": {
+            "naziv": "Claude Fable 5",
+            "ulaz": 10,
+            "izlaz": 50,
+            "razlikaUlaz": 0,
+            "razlikaIzlaz": 0
+          }
+        },
+        {
+          "id": "openai/gpt-6-astra",
+          "naziv": "GPT-6 Astra",
+          "provajder": "openai",
+          "ulaz": 10,
+          "izlaz": 50,
+          "objavljen": "2026-09-04",
+          "kontekst": 1050000,
+          "kesUlaz": 1,
+          "promena7": null,
+          "promena30": null,
+          "prethodnik": {
+            "naziv": "GPT-5.5",
+            "ulaz": 5,
+            "izlaz": 30,
+            "razlikaUlaz": 100,
+            "razlikaIzlaz": 66.7
+          }
+        },
+        {
+          "id": "anthropic/claude-opus-5",
+          "naziv": "Claude Opus 5",
+          "provajder": "anthropic",
+          "ulaz": 5,
+          "izlaz": 25,
+          "objavljen": "2026-07-24",
+          "kontekst": 1000000,
+          "kesUlaz": 0.5,
+          "promena7": null,
+          "promena30": null,
+          "prethodnik": {
+            "naziv": "Claude Opus 4.8",
+            "ulaz": 5,
+            "izlaz": 25,
+            "razlikaUlaz": 0,
+            "razlikaIzlaz": 0
+          }
+        },
+        {
+          "id": "x-ai/grok-4.6",
+          "naziv": "Grok 4.6",
+          "provajder": "x-ai",
+          "ulaz": 2,
+          "izlaz": 6,
+          "objavljen": "2026-08-12",
+          "kontekst": 500000,
+          "kesUlaz": 0.5,
+          "promena7": null,
+          "promena30": null,
+          "prethodnik": {
+            "naziv": "Grok 4.5",
+            "ulaz": 2,
+            "izlaz": 6,
+            "razlikaUlaz": 0,
+            "razlikaIzlaz": 0
+          }
+        },
+        {
+          "id": "moonshotai/kimi-k3",
+          "naziv": "Kimi K3",
+          "provajder": "moonshotai",
+          "ulaz": 2.6481,
+          "izlaz": 13.2827,
+          "objavljen": "2026-07-16",
+          "kontekst": 1048576,
+          "kesUlaz": 0.3026,
+          "promena7": null,
+          "promena30": null,
+          "prethodnik": {
+            "naziv": "Kimi K2.6",
+            "ulaz": 0.95,
+            "izlaz": 4,
+            "razlikaUlaz": 178.7,
+            "razlikaIzlaz": 232.1
+          }
+        }
+      ]
+    },
+    {
+      "id": "srednji",
+      "naziv": "Srednja klasa",
+      "opis": "Dobar odnos cene i kvaliteta, za većinu aplikacija.",
+      "modeli": [
+        {
+          "id": "anthropic/claude-sonnet-5",
+          "naziv": "Claude Sonnet 5",
+          "provajder": "anthropic",
+          "ulaz": 2,
+          "izlaz": 10,
+          "objavljen": "2026-06-30",
+          "kontekst": 1000000,
+          "kesUlaz": 0.2,
+          "promena7": null,
+          "promena30": null,
+          "prethodnik": {
+            "naziv": "Claude Sonnet 4.6",
+            "ulaz": 3,
+            "izlaz": 15,
+            "razlikaUlaz": -33.3,
+            "razlikaIzlaz": -33.3
+          }
+        },
+        {
+          "id": "openai/gpt-5.6-sol",
+          "naziv": "GPT-5.6 Sol",
+          "provajder": "openai",
+          "ulaz": 2,
+          "izlaz": 10,
+          "objavljen": "2026-07-09",
+          "kontekst": 1050000,
+          "kesUlaz": 0.2,
+          "promena7": null,
+          "promena30": null,
+          "prethodnik": null
+        },
+        {
+          "id": "google/gemini-3.8-flash",
+          "naziv": "Gemini 3.8 Flash",
+          "provajder": "google",
+          "ulaz": 0.75,
+          "izlaz": 3.75,
+          "objavljen": "2026-09-02",
+          "kontekst": 1048576,
+          "kesUlaz": 0.075,
+          "promena7": null,
+          "promena30": null,
+          "prethodnik": {
+            "naziv": "Gemini 3.7 Flash",
+            "ulaz": 0.75,
+            "izlaz": 3.75,
+            "razlikaUlaz": 0,
+            "razlikaIzlaz": 0
+          }
+        },
+        {
+          "id": "deepseek/deepseek-v4-pro-0813",
+          "naziv": "DeepSeek V4 Pro 0813",
+          "provajder": "deepseek",
+          "ulaz": 0.5782,
+          "izlaz": 1.7345,
+          "objavljen": "2026-08-12",
+          "kontekst": 1048576,
+          "kesUlaz": 0.0184,
+          "promena7": null,
+          "promena30": null,
+          "prethodnik": {
+            "naziv": "DeepSeek V4 Pro 0423",
+            "ulaz": 1.6,
+            "izlaz": 3.2,
+            "razlikaUlaz": -63.9,
+            "razlikaIzlaz": -45.8
+          }
+        },
+        {
+          "id": "z-ai/glm-5.3",
+          "naziv": "GLM 5.3",
+          "provajder": "z-ai",
+          "ulaz": 1.092,
+          "izlaz": 3.432,
+          "objavljen": "2026-08-18",
+          "kontekst": 1310720,
+          "kesUlaz": 0.2028,
+          "promena7": null,
+          "promena30": null,
+          "prethodnik": {
+            "naziv": "GLM 5.2",
+            "ulaz": 0.6,
+            "izlaz": 2,
+            "razlikaUlaz": 82,
+            "razlikaIzlaz": 71.6
+          }
+        },
+        {
+          "id": "mistralai/mistral-medium-3-5",
+          "naziv": "Mistral Medium 3.5",
+          "provajder": "mistralai",
+          "ulaz": 1.5,
+          "izlaz": 7.5,
+          "objavljen": "2026-04-30",
+          "kontekst": 262144,
+          "kesUlaz": null,
+          "promena7": null,
+          "promena30": null,
+          "prethodnik": {
+            "naziv": "Mistral Medium 3.1",
+            "ulaz": 0.4,
+            "izlaz": 2,
+            "razlikaUlaz": 275,
+            "razlikaIzlaz": 275
+          }
+        }
+      ]
+    },
+    {
+      "id": "jeftini",
+      "naziv": "Jeftini i brzi",
+      "opis": "Za velike količine jednostavnih zadataka.",
+      "modeli": [
+        {
+          "id": "anthropic/claude-haiku-4.5",
+          "naziv": "Claude Haiku 4.5",
+          "provajder": "anthropic",
+          "ulaz": 1,
+          "izlaz": 5,
+          "objavljen": "2025-10-15",
+          "kontekst": 200000,
+          "kesUlaz": 0.1,
+          "promena7": null,
+          "promena30": null,
+          "prethodnik": null
+        },
+        {
+          "id": "openai/gpt-5.6-luna",
+          "naziv": "GPT-5.6 Luna",
+          "provajder": "openai",
+          "ulaz": 0.2,
+          "izlaz": 1.2,
+          "objavljen": "2026-07-09",
+          "kontekst": 1050000,
+          "kesUlaz": 0.02,
+          "promena7": null,
+          "promena30": null,
+          "prethodnik": {
+            "naziv": "GPT-5.4 Nano",
+            "ulaz": 0.2,
+            "izlaz": 1.25,
+            "razlikaUlaz": 0,
+            "razlikaIzlaz": -4
+          }
+        },
+        {
+          "id": "google/gemini-3.5-flash-lite",
+          "naziv": "Gemini 3.5 Flash Lite",
+          "provajder": "google",
+          "ulaz": 0.3,
+          "izlaz": 2.5,
+          "objavljen": "2026-07-21",
+          "kontekst": 1048576,
+          "kesUlaz": 0.03,
+          "promena7": null,
+          "promena30": null,
+          "prethodnik": {
+            "naziv": "Gemini 3.1 Flash Lite",
+            "ulaz": 0.25,
+            "izlaz": 1.5,
+            "razlikaUlaz": 20,
+            "razlikaIzlaz": 66.7
+          }
+        },
+        {
+          "id": "deepseek/deepseek-v4.1-flash",
+          "naziv": "DeepSeek V4.1 Flash",
+          "provajder": "deepseek",
+          "ulaz": 0.15,
+          "izlaz": 0.6,
+          "objavljen": "2026-09-10",
+          "kontekst": 1048576,
+          "kesUlaz": 0.003,
+          "promena7": null,
+          "promena30": null,
+          "prethodnik": {
+            "naziv": "DeepSeek V4 Flash 0731",
+            "ulaz": 0.04,
+            "izlaz": 0.08,
+            "razlikaUlaz": 275,
+            "razlikaIzlaz": 650
+          }
+        },
+        {
+          "id": "qwen/qwen3.8-flash",
+          "naziv": "Qwen3.8 Flash",
+          "provajder": "qwen",
+          "ulaz": 0.15,
+          "izlaz": 0.47,
+          "objavljen": "2026-08-26",
+          "kontekst": 1000000,
+          "kesUlaz": 0.016,
+          "promena7": null,
+          "promena30": null,
+          "prethodnik": {
+            "naziv": "Qwen3.7 Flash",
+            "ulaz": 0.03,
+            "izlaz": 0.13,
+            "razlikaUlaz": 400,
+            "razlikaIzlaz": 261.5
+          }
+        },
+        {
+          "id": "z-ai/glm-5.3-flash",
+          "naziv": "GLM 5.3 Flash",
+          "provajder": "z-ai",
+          "ulaz": 0.15,
+          "izlaz": 0.5,
+          "objavljen": "2026-08-26",
+          "kontekst": 1310720,
+          "kesUlaz": 0.03,
+          "promena7": null,
+          "promena30": null,
+          "prethodnik": null
+        },
+        {
+          "id": "mistralai/mistral-small-2603",
+          "naziv": "Mistral Small 4",
+          "provajder": "mistralai",
+          "ulaz": 0.15,
+          "izlaz": 0.6,
+          "objavljen": "2026-03-16",
+          "kontekst": 262144,
+          "kesUlaz": 0.015,
+          "promena7": null,
+          "promena30": null,
+          "prethodnik": null
+        }
+      ]
+    }
+  ],
+  "promene": [],
+  "noviModeli": [
+    {
+      "id": "deepseek/deepseek-v4.1-flash",
+      "naziv": "DeepSeek V4.1 Flash",
+      "provajder": "deepseek",
+      "ulaz": 0.15,
+      "izlaz": 0.6,
+      "objavljen": "2026-09-10",
+      "kontekst": 1048576
+    },
+    {
+      "id": "openai/gpt-6-astra",
+      "naziv": "GPT-6 Astra",
+      "provajder": "openai",
+      "ulaz": 10,
+      "izlaz": 50,
+      "objavljen": "2026-09-04",
+      "kontekst": 1050000
+    },
+    {
+      "id": "openai/gpt-6-astra-pro",
+      "naziv": "GPT-6 Astra Pro",
+      "provajder": "openai",
+      "ulaz": 10,
+      "izlaz": 50,
+      "objavljen": "2026-09-04",
+      "kontekst": 1050000
+    },
+    {
+      "id": "qwen/qwen3.8-max-0902",
+      "naziv": "Qwen3.8 Max (0902)",
+      "provajder": "qwen",
+      "ulaz": 2,
+      "izlaz": 6,
+      "objavljen": "2026-09-03",
+      "kontekst": 1000000
+    },
+    {
+      "id": "google/gemini-3.8-flash",
+      "naziv": "Gemini 3.8 Flash",
+      "provajder": "google",
+      "ulaz": 0.75,
+      "izlaz": 3.75,
+      "objavljen": "2026-09-02",
+      "kontekst": 1048576
+    },
+    {
+      "id": "anthropic/claude-fable-5.1",
+      "naziv": "Claude Fable 5.1",
+      "provajder": "anthropic",
+      "ulaz": 10,
+      "izlaz": 50,
+      "objavljen": "2026-09-01",
+      "kontekst": 1000000
+    }
+  ]
+}

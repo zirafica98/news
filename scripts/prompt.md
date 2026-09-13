@@ -21,6 +21,7 @@ Ispod je JSON sa vestima skupljenim u poslednjih ~30 sati:
 - `vesti`: članci sa naslovom, linkom, datumom i tekstom (`grupa` govori da li je dnevni pregled, istraživanje, medij, zvanični blog ili zajednica),
 - `stranice`: izvori bez RSS-a (npr. Anthropic, The Batch). **Otvori ih sa WebFetch** i uzmi samo ono što je objavljeno u poslednja 2 dana,
 - `nedavno`: naslovi vesti i ideja iz prethodnih izdanja. **Ne ponavljaj ih**, osim ako postoji prava novost u istoj priči.
+- `cene`: današnje cene tokena sa OpenRouter-a ($ za 1M tokena, ulaz/izlaz): praćeni modeli po klasama, promene cena u poslednjih 30 dana, novi modeli i poređenje sa prethodnom verzijom istog modela. Može biti `null` ako cene danas nisu skinute.
 
 Dnevni pregledi (AINews, The Rundown, TLDR, Ben's Bites) sadrže po desetak vesti u jednom tekstu. Rastavi ih i koristi kao tragove. Kad ista vest dolazi iz više izvora, spoji je u jednu i navedi sve izvore.
 
@@ -45,5 +46,7 @@ Po potrebi otvori najviše 8 linkova sa WebFetch da proveriš detalje, najčeš�
    - Svaka inspirisana nečim iz današnjih vesti ili alata (`inspiracija`).
    - Raznovrsne: ne 5 „AI asistenata za X“. Misli i na tržište Srbije i regiona, iOS i web.
    - `prviKoraci`: 3–4 koraka kako bi Mihajlo počeo, sa konkretnim alatima.
+
+6. **cene:** 2–3 rečenice o cenama tokena, običan tekst bez naslova i markdown-a. Prvo navedi šta je pojeftinilo ili poskupelo (sa brojevima); ako promena nema, reci to u pola rečenice. Ako je `pratimoOd` današnji datum, praćenje tek počinje, pa ne pominji „juče“ ni trend. Zatim istakni nešto korisno: novi model sa dobrom cenom, veliku razliku u odnosu na prethodnu verziju ili najjeftiniji model u nekoj klasi (za to koristi `najjeftinijiPoKlasi`, ne računaj sam). Govori samo o ceni, ne o kvalitetu modela. Koristi **samo brojeve iz `cene`**. Ako je `cene` null, napiši da cene danas nisu osvežene.
 
 Ako je dan miran (vikend), vesti i novih stvari može biti manje, ali ideja je uvek 5.

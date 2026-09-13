@@ -1,8 +1,12 @@
 {
   "type": "object",
   "additionalProperties": false,
-  "required": ["ukratko", "vesti", "novo", "istrazivanje", "ideje"],
+  "required": ["ukratko", "vesti", "novo", "istrazivanje", "ideje", "cene"],
   "properties": {
+    "cene": {
+      "type": "string",
+      "description": "2-3 rečenice o cenama tokena na osnovu podataka iz materijala."
+    },
     "ukratko": {
       "type": "string",
       "description": "Dan u 2-3 rečenice."

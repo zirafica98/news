@@ -53,6 +53,8 @@ export interface Izdanje {
   novo: Novo[];
   istrazivanje: Rad[];
   ideje: Ideja[];
+  /** Claude-ov komentar o cenama tokena. Nema ga u izdanjima pre 14.09.2026. */
+  cene?: string;
 }
 
 export interface IndexStavka {

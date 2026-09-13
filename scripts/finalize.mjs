@@ -74,6 +74,7 @@ function validate(d) {
 
   check(d.datum === datum, `datum je "${d.datum}", a treba "${datum}"`);
   check(text(d.ukratko), 'nema „ukratko“');
+  check(text(d.cene), 'nema komentara o cenama');
 
   check(list(d.vesti).length >= 1 && list(d.vesti).length <= 12, `vesti: ${list(d.vesti).length} (treba 1–12)`);
   list(d.vesti).forEach((v, i) => {

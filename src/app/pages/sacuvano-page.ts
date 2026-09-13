@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { formatDatum } from '../izdanje.model';
+import { putanjaSekcije } from '../izdanje-ruta';
 import { SacuvanoService, SacuvanoTip } from '../sacuvano.service';
 
 const TIPOVI: Record<SacuvanoTip, string> = {
@@ -29,7 +30,7 @@ const TIPOVI: Record<SacuvanoTip, string> = {
             <div class="flex items-start justify-between gap-3">
               <p class="text-xs text-slate-500">
                 {{ tipovi[s.tip] }} ·
-                <a [routerLink]="['/izdanje', s.datum]" class="hover:text-slate-300 hover:underline">{{ datum(s.datum) }}</a>
+                <a [routerLink]="putanja(s.tip, s.datum)" class="hover:text-slate-300 hover:underline">{{ datum(s.datum) }}</a>
               </p>
               <button
                 type="button"
@@ -53,5 +54,7 @@ const TIPOVI: Record<SacuvanoTip, string> = {
 export class SacuvanoPage {
   protected readonly sacuvano = inject(SacuvanoService);
   protected readonly tipovi = TIPOVI;
+  protected readonly putanja = (tip: SacuvanoTip, datum: string) =>
+    putanjaSekcije(tip === 'istrazivanje' ? 'istrazivanje' : tip === 'ideja' ? 'ideje' : 'vesti', datum);
   protected readonly datum = (d: string) => formatDatum(d, { day: 'numeric', month: 'long', year: 'numeric' });
 }
