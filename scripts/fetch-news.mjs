@@ -12,7 +12,7 @@ import { XMLParser } from 'fast-xml-parser';
 import { SCRIPTS_DIR, STATE_FILE, datumIzArgumenata, normalizeUrl, paths, readJson, writeJson } from './lib.mjs';
 
 const TIMEOUT_MS = 20_000;
-const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AI-Jutro/1.0';
+const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AI-News/1.0';
 
 const xml = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: '@_', textNodeName: '#text' });
 
@@ -190,7 +190,7 @@ function truncate(s, max) {
 }
 
 function printSummary({ izvori, stranice, vesti }, file) {
-  console.log(`\nAI Jutro — skupljanje vesti za ${today}\n`);
+  console.log(`\nAI News — skupljanje vesti za ${today}\n`);
   for (const i of izvori) {
     const status = i.greska ? `✗ ${i.greska}` : i.tip === 'page' ? '→ čita Claude' : `${i.broj}`;
     console.log(`  ${i.naziv.padEnd(34)} ${status}`);

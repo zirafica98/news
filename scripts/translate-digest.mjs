@@ -38,7 +38,7 @@ ${JSON.stringify(sadrzaj)}
 `;
 const schema = await readFile(join(SCRIPTS_DIR, 'digest-schema.json'), 'utf8');
 
-console.log(`AI Jutro — prevod izdanja ${datum} na engleski (model: ${model})…`);
+console.log(`AI News — prevod izdanja ${datum} na engleski (model: ${model})…`);
 const started = Date.now();
 const result = await pitajClaude(prompt, { schema, model });
 

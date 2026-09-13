@@ -31,7 +31,7 @@ const material = {
 const prompt = `${await readFile(join(SCRIPTS_DIR, 'prompt.md'), 'utf8')}\n\n## Materijal za ${datum}\n\n\`\`\`json\n${JSON.stringify(material)}\n\`\`\`\n`;
 const schema = await readFile(join(SCRIPTS_DIR, 'digest-schema.json'), 'utf8');
 
-console.log(`AI Jutro — Claude piše izdanje za ${datum} (${skupljeno.vesti.length} vesti, model: ${model})…`);
+console.log(`AI News — Claude piše izdanje za ${datum} (${skupljeno.vesti.length} vesti, model: ${model})…`);
 const started = Date.now();
 
 const result = await pitajClaude(prompt, { schema, model, webFetch: true });

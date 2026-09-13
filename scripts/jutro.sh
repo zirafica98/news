@@ -1,5 +1,5 @@
 #!/bin/bash
-# AI Jutro — jutarnja skripta. Radi redom:
+# AI News — jutarnja skripta. Radi redom:
 #   git pull → skupljanje vesti → Claude piše izdanje → provera → git push → notifikacija
 #
 # Pokreće je launchd u 06:30 (i u 09:00 i 12:00 kao rezervu ako je Mac bio ugašen ili nešto puklo).
@@ -28,7 +28,7 @@ log() { echo "[$(date +%H:%M:%S)] $*"; }
 
 notify() {
   local poruka="${1//\"/\\\"}"
-  osascript -e "display notification \"$poruka\" with title \"AI Jutro\" sound name \"${2:-Glass}\"" >/dev/null 2>&1 || true
+  osascript -e "display notification \"$poruka\" with title \"AI News\" sound name \"${2:-Glass}\"" >/dev/null 2>&1 || true
 }
 
 on_error() {
@@ -53,7 +53,7 @@ trap 'rm -rf "$LOCK_DIR"' EXIT
 caffeinate -i -w $$ &
 
 echo
-log "===== AI Jutro $DATUM $($PROVERA && echo '(provera)') ====="
+log "===== AI News $DATUM $($PROVERA && echo '(provera)') ====="
 cd "$REPO_DIR"
 
 # 1. Internet (posle buđenja Wi-Fi-ju treba koji trenutak).

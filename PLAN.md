@@ -1,4 +1,4 @@
-# AI Jutro — plan
+# AI News — plan
 
 Lični sajt koji svako jutro u 7:00 ima pregled AI vesti na srpskom: šta se desilo, šta je novo izašlo i kako da probam, i top 5 ideja za nove app-ove.
 
@@ -16,7 +16,7 @@ Sve se dešava lokalno na Mac-u. Nema plaćenih API poziva jer Claude Code koris
   3. claude -p       → Claude Code pročita vesti i napiše public/data/YYYY-MM-DD.json na srpskom
   4. node finalize.mjs  → proveri JSON; ako je pokvaren, NE šalje na git
   5. git commit + push
-  6. macOS notifikacija „AI Jutro je spreman ☕“
+  6. macOS notifikacija „AI News je spreman ☕“
 ~06:45  Vercel uradi build i sajt je ažuriran
 ```
 

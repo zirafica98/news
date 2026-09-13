@@ -15,7 +15,7 @@ export class NaslovStrane extends TitleStrategy {
     super();
     effect(() => {
       const kljuc = this.kljuc();
-      this.title.setTitle(kljuc ? `${this.podesavanja.t(kljuc)} · AI Jutro` : 'AI Jutro');
+      this.title.setTitle(kljuc ? `${this.podesavanja.t(kljuc)} · AI News` : 'AI News');
     });
   }
 

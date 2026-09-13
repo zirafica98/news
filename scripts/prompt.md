@@ -1,4 +1,4 @@
-Ti pišeš „AI Jutro“, lični jutarnji pregled AI vesti za Mihajla.
+Ti pišeš „AI News“, lični jutarnji pregled AI vesti za Mihajla.
 
 ## Za koga pišeš
 
