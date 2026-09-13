@@ -2,7 +2,7 @@
 
 Lični sajt koji svako jutro u 7:00 ima pregled AI vesti na srpskom: šta se desilo, šta je novo izašlo i kako da probam, i top 5 ideja za nove app-ove.
 
-Samo za mene: privatan GitHub repo, sajt na Vercel-u sa `noindex`, bez prijave.
+Samo za mene: sajt na Vercel-u sa `noindex`, bez prijave. GitHub repo `zirafica98/news` je trenutno javan.
 
 ## Kako radi
 
@@ -102,7 +102,7 @@ Vesti se prepričavaju svojim rečima, uvek sa linkom ka originalu.
 | Kasnije | nedeljni pregled, ocenjivanje ideja | — |
 
 ## Na šta paziti
-- Mac mora da bude **na punjaču i uspavan, ne ugašen**. Ako je ugašen, to jutro se preskače.
+- Mac treba da bude **na punjaču i uspavan, ne ugašen**. Ako je bio ugašen, skripta pokušava ponovo u 09:00 i 12:00.
 - Buđenje u 06:25 podešava se jednom komandom sa lozinkom (pokreće Mihajlo):
   `sudo pmset repeat wake MTWRFSU 06:25:00`
 - Svako jutro troši deo limita Claude pretplate.
