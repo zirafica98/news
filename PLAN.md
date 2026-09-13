@@ -14,7 +14,7 @@ Sve se dešava lokalno na Mac-u. Nema plaćenih API poziva jer Claude Code koris
   1. git pull
   2. npm run fetch   → fetch-news.mjs skupi vesti iz poslednjih 24h (RSS/JSON, bez AI-ja)
   3. claude -p       → Claude Code pročita vesti i napiše public/data/YYYY-MM-DD.json na srpskom
-  4. npm run check   → check-digest.mjs proveri JSON; ako je pokvaren, NE šalje na git
+  4. node finalize.mjs  → proveri JSON; ako je pokvaren, NE šalje na git
   5. git commit + push
   6. macOS notifikacija „AI Jutro je spreman ☕“
 ~06:45  Vercel uradi build i sajt je ažuriran
@@ -33,7 +33,7 @@ ai-jutro/
     ├── fetch-news.mjs
     ├── sources.json
     ├── prompt.md             uputstvo za Claude-a
-    ├── check-digest.mjs
+    ├── finalize.mjs
     └── logs/
 ```
 
@@ -91,14 +91,15 @@ Vesti se prepričavaju svojim rečima, uvek sa linkom ka originalu.
 
 ## Faze
 
-| Faza | Šta | Gotovo kad |
+| Faza | Šta | Stanje (13.09.2026) |
 |---|---|---|
-| 0. Postavka | Angular projekat, privatan GitHub repo, Vercel, noindex | prazan sajt je live |
-| 1. Skupljanje | fetch-news.mjs + sources.json | `npm run fetch` prikaže današnje vesti |
-| 2. Izdanje | prompt.md + `claude -p` + check-digest.mjs | ručno pokretanje da dobro izdanje |
-| 3. Ekrani | Danas, Arhiva, Sačuvano (localStorage) | lepo izgleda na iPhone-u |
-| 4. Automatika | jutro.sh, launchd u 06:30, buđenje u 06:25, notifikacija | 3 jutra zaredom stigne samo |
-| 5. Dodaci | ikonica na iPhone početnom ekranu, nedeljni pregled | — |
+| 0. Postavka | Angular projekat, GitHub repo `zirafica98/news`, noindex | ✅ (Vercel povezuje Mihajlo) |
+| 1. Skupljanje | fetch-news.mjs + sources.json | ✅ |
+| 2. Izdanje | prompt.md + `claude -p` + finalize.mjs, pamćenje objavljenih linkova | ✅ prvo izdanje 13.09. |
+| 3. Ekrani | Danas, Arhiva, Sačuvano (localStorage) | ✅ |
+| 4. Automatika | jutro.sh + launchd 06:30 (rezerva 09:00, 12:00), notifikacija | ✅ instalirano; buđenje u 06:25 podešava Mihajlo |
+| 5. Dodaci | ikonica na iPhone početnom ekranu | ✅ |
+| Kasnije | nedeljni pregled, ocenjivanje ideja | — |
 
 ## Na šta paziti
 - Mac mora da bude **na punjaču i uspavan, ne ugašen**. Ako je ugašen, to jutro se preskače.

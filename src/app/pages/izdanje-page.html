@@ -36,7 +36,7 @@
       <p class="text-lg leading-relaxed text-slate-100 sm:text-xl sm:leading-relaxed">{{ iz.ukratko }}</p>
     </section>
 
-    <nav aria-label="Delovi izdanja" class="sticky top-14 z-10 -mx-4 mt-6 flex gap-2 overflow-x-auto bg-slate-950/90 px-4 py-3 backdrop-blur [scrollbar-width:none]">
+    <nav aria-label="Delovi izdanja" class="sticky top-[calc(3.5rem+env(safe-area-inset-top))] z-10 -mx-4 mt-6 flex gap-2 overflow-x-auto bg-slate-950/90 px-4 py-3 backdrop-blur [scrollbar-width:none]">
       @for (deo of [
         { id: 'vesti', naziv: 'Vesti', broj: iz.vesti.length },
         { id: 'novo', naziv: 'Novo izašlo', broj: iz.novo.length },

@@ -1,59 +1,35 @@
-# AiJutro
+# AI Jutro ☕
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.8.
+Lični sajt koji svako jutro ima pregled AI vesti na srpskom: vesti, novo izašle stvari sa „kako probati“, istraživanje dana i top 5 ideja za app.
 
-## Development server
+Detaljan plan i spisak izvora: [PLAN.md](PLAN.md).
 
-To start a local development server, run:
+## Kako radi
 
-```bash
-ng serve
+```
+06:30  launchd na Mac-u → scripts/jutro.sh (iz kopije repoa u ~/.ai-jutro/repo)
+         1. git pull
+         2. fetch-news.mjs   skupi vesti iz scripts/sources.json
+         3. write-digest.mjs Claude Code (claude -p, pretplata) napiše izdanje
+         4. finalize.mjs     provera → public/data/YYYY-MM-DD.json + index.json
+         5. git push         → Vercel build
+       rezerva u 09:00 i 12:00 ako je Mac bio ugašen ili nešto puklo
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Komande
 
-## Code scaffolding
+| Komanda | Šta radi |
+|---|---|
+| `npm start` | sajt lokalno |
+| `npm run fetch` | skupi današnje vesti (`-- --hours=72` za duži period) |
+| `npm run digest` | Claude napiše nacrt izdanja |
+| `npm run finalize` | proveri i objavi nacrt (`-- --provera` samo proverava) |
+| `bash scripts/instaliraj.sh` | podesi ili osveži jutarnju automatiku (`--ukloni` je gasi) |
+| `bash ~/.ai-jutro/repo/scripts/jutro.sh --provera` | test automatike bez objavljivanja |
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Kad nešto ne radi
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- **Log jutra:** `~/.ai-jutro/repo/scripts/logs/YYYY-MM-DD.log`
+- **Izvor ne radi:** u `scripts/sources.json` postavi `"enabled": false`
+- **Promena izgleda izdanja:** `scripts/prompt.md` (šta Claude piše) i `scripts/digest-schema.json` (oblik podataka, prati ga `src/app/izdanje.model.ts`)
+- **Posle promene skripti:** push na GitHub je dovoljan, jutarnja skripta sama povuče najnoviju verziju
