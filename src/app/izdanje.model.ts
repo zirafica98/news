@@ -64,17 +64,11 @@ export interface IndexStavka {
   broj: { vesti: number; novo: number; istrazivanje: number; ideje: number };
 }
 
-export const KATEGORIJE: Record<Kategorija, string> = {
-  modeli: 'Modeli',
-  alati: 'Alati',
-  kompanije: 'Kompanije',
-  istrazivanje: 'Istraživanje',
-  bezbednost: 'Bezbednost',
-  regulativa: 'Regulativa',
-  ostalo: 'Ostalo',
-};
-
-/** „nedelja, 13. septembar 2026.“ */
-export function formatDatum(datum: string, opcije: Intl.DateTimeFormatOptions = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }): string {
-  return new Intl.DateTimeFormat('sr-Latn-RS', opcije).format(new Date(`${datum}T12:00:00`));
+/** „nedelja, 13. septembar 2026.“ / „Sunday 13 September 2026“ */
+export function formatDatum(
+  datum: string,
+  lokal: string,
+  opcije: Intl.DateTimeFormatOptions = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' },
+): string {
+  return new Intl.DateTimeFormat(lokal, opcije).format(new Date(`${datum}T12:00:00`));
 }

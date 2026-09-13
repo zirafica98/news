@@ -1,7 +1,7 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { DatumTraka } from '../components/datum-traka';
-import { KATEGORIJE } from '../izdanje.model';
 import { izdanjeZaRutu } from '../izdanje-ruta';
+import { PodesavanjaService } from '../podesavanja.service';
 import { SacuvajDugme } from '../sacuvaj-dugme';
 import { SacuvanoService } from '../sacuvano.service';
 
@@ -9,23 +9,23 @@ import { SacuvanoService } from '../sacuvano.service';
   selector: 'app-vesti-page',
   imports: [DatumTraka, SacuvajDugme],
   template: `
-    <app-datum-traka [datum]="ruta.aktivniDatum()" sekcija="vesti" [stanje]="ruta.stanje()" />
+    <app-datum-traka [datum]="ruta.aktivniDatum()" sekcija="vesti" [stanje]="ruta.stanje()" [prevodNedostaje]="ruta.prevodNedostaje()" />
 
     @if (ruta.izdanje(); as iz) {
-      <h1 class="sr-only">Vesti</h1>
+      <h1 class="sr-only">{{ t('nav.vesti') }}</h1>
       <p class="mt-4 text-lg leading-relaxed text-slate-100">{{ iz.ukratko }}</p>
 
       <section aria-labelledby="naslov-vesti" class="mt-8">
-        <h2 id="naslov-vesti" class="text-xs font-semibold uppercase tracking-widest text-slate-500">Najbitnije danas</h2>
+        <h2 id="naslov-vesti" class="text-xs font-semibold uppercase tracking-widest text-slate-500">{{ t('vesti.najbitnije') }}</h2>
         <ol class="mt-4 space-y-4">
           @for (v of iz.vesti; track $index) {
             <li class="rounded-2xl border border-slate-800/80 bg-slate-900/60 p-5">
               <div class="flex items-start justify-between gap-3">
                 <div class="flex flex-wrap items-center gap-2 text-xs">
                   @if (v.vaznost === 3) {
-                    <span class="rounded-full bg-amber-400/15 px-2 py-0.5 font-medium text-amber-300">Velika vest</span>
+                    <span class="rounded-full bg-amber-400/15 px-2 py-0.5 font-medium text-amber-300">{{ t('vesti.velikaVest') }}</span>
                   }
-                  <span class="text-slate-500">{{ kategorije[v.kategorija] }}</span>
+                  <span class="text-slate-500">{{ tIli('kategorija.' + v.kategorija, v.kategorija) }}</span>
                 </div>
                 <app-sacuvaj-dugme
                   class="-mr-2 -mt-2"
@@ -35,7 +35,7 @@ import { SacuvanoService } from '../sacuvano.service';
               <h3 class="mt-1 text-lg font-semibold leading-snug text-white">{{ v.naslov }}</h3>
               <p class="mt-2 leading-relaxed text-slate-300">{{ v.staSeDesilo }}</p>
               <p class="mt-3 rounded-xl bg-slate-800/50 px-4 py-3 text-sm leading-relaxed text-slate-300">
-                <span class="font-medium text-amber-300">Zašto je bitno:</span> {{ v.zastoJeBitno }}
+                <span class="font-medium text-amber-300">{{ t('vesti.zastoJeBitno') }}</span> {{ v.zastoJeBitno }}
               </p>
               <p class="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-sm">
                 @for (izvor of v.izvori; track izvor.url) {
@@ -49,13 +49,13 @@ import { SacuvanoService } from '../sacuvano.service';
 
       @if (iz.novo.length) {
         <section aria-labelledby="naslov-novo" class="mt-12">
-          <h2 id="naslov-novo" class="text-xs font-semibold uppercase tracking-widest text-slate-500">Novo izašlo · kako probati</h2>
+          <h2 id="naslov-novo" class="text-xs font-semibold uppercase tracking-widest text-slate-500">{{ t('vesti.novoNaslov') }}</h2>
           <ul class="mt-4 space-y-4">
             @for (n of iz.novo; track $index) {
               <li class="rounded-2xl border border-emerald-900/50 bg-emerald-950/20 p-5">
                 <div class="flex items-start justify-between gap-3">
                   <div>
-                    <p class="text-xs uppercase tracking-wide text-emerald-400">{{ n.tip }}</p>
+                    <p class="text-xs uppercase tracking-wide text-emerald-400">{{ tIli('tip.' + n.tip, n.tip) }}</p>
                     <h3 class="mt-1 text-lg font-semibold text-white">{{ n.naziv }}</h3>
                   </div>
                   <app-sacuvaj-dugme
@@ -64,7 +64,7 @@ import { SacuvanoService } from '../sacuvano.service';
                   />
                 </div>
                 <p class="mt-2 leading-relaxed text-slate-300">{{ n.opis }}</p>
-                <p class="mt-3 text-sm text-slate-400"><span class="text-slate-500">Cena:</span> {{ n.cena }}</p>
+                <p class="mt-3 text-sm text-slate-400"><span class="text-slate-500">{{ t('vesti.cena') }}</span> {{ n.cena }}</p>
                 <ol class="mt-4 space-y-2">
                   @for (korak of n.kakoProbati; track $index) {
                     <li class="flex gap-3 text-sm leading-relaxed text-slate-300">
@@ -73,7 +73,7 @@ import { SacuvanoService } from '../sacuvano.service';
                     </li>
                   }
                 </ol>
-                <a [href]="n.link" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-emerald-400 hover:text-emerald-300">Otvori {{ domen(n.link) }} ↗</a>
+                <a [href]="n.link" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-emerald-400 hover:text-emerald-300">{{ t('vesti.otvori', { domen: domen(n.link) }) }} ↗</a>
               </li>
             }
           </ul>
@@ -81,7 +81,7 @@ import { SacuvanoService } from '../sacuvano.service';
       }
 
       <p class="mt-12 border-t border-slate-800 pt-6 text-center text-xs text-slate-600">
-        Napisao {{ iz.model }} · vesti su prepričane, originali su na linkovima
+        {{ t('vesti.potpis', { model: iz.model }) }}
       </p>
     }
   `,
@@ -91,7 +91,8 @@ export class VestiPage {
   readonly datum = input<string>();
 
   protected readonly ruta = izdanjeZaRutu(this.datum);
-  protected readonly kategorije = KATEGORIJE;
+  protected readonly t = inject(PodesavanjaService).t;
+  protected readonly tIli = inject(PodesavanjaService).tIli;
   protected readonly kljuc = SacuvanoService.kljuc;
   protected readonly domen = (url: string) => {
     try {

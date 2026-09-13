@@ -15,6 +15,7 @@ Detaljan plan i spisak izvora: [PLAN.md](PLAN.md).
             fetch-prices.mjs cene tokena sa OpenRouter-a (modeli u scripts/cene-modeli.json)
          3. write-digest.mjs Claude Code (claude -p, pretplata) napiše izdanje
          4. finalize.mjs     provera → public/data/YYYY-MM-DD.json + index.json
+            translate-digest.mjs engleski prevod → public/data/en/ (ako ne uspe, srpsko ide svejedno)
          5. git push         → Vercel build
        rezerva u 09:00 i 12:00 ako je Mac bio ugašen ili nešto puklo
 ```
@@ -27,6 +28,7 @@ Detaljan plan i spisak izvora: [PLAN.md](PLAN.md).
 | `npm run fetch` | skupi današnje vesti (`-- --hours=72` za duži period) |
 | `npm run prices` | osveži cene tokena |
 | `npm run digest` | Claude napiše nacrt izdanja |
+| `npm run translate` | engleski prevod objavljenog izdanja |
 | `npm run finalize` | proveri i objavi nacrt (`-- --provera` samo proverava) |
 | `bash scripts/instaliraj.sh` | podesi ili osveži jutarnju automatiku (`--ukloni` je gasi) |
 | `bash ~/.ai-jutro/repo/scripts/jutro.sh --provera` | test automatike bez objavljivanja |

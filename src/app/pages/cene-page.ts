@@ -1,6 +1,7 @@
 import { Component, computed, inject } from '@angular/core';
 import { PROVAJDERI, Promena, formatCena } from '../cene.model';
 import { IzdanjaService } from '../izdanja.service';
+import { PodesavanjaService } from '../podesavanja.service';
 import { formatDatum } from '../izdanje.model';
 
 /** Mešovita cena: tipična aplikacija pošalje ~3 puta više tokena nego što dobije nazad. */
@@ -11,30 +12,28 @@ function mesovita(ulaz: number, izlaz: number): number {
 @Component({
   selector: 'app-cene-page',
   template: `
-    <h1 class="pt-6 text-2xl font-semibold text-white">Cene tokena</h1>
+    <h1 class="pt-6 text-2xl font-semibold text-white">{{ t('naslov.cene') }}</h1>
     <p class="mt-1 text-sm leading-relaxed text-slate-500">
-      U dolarima za 1 milion tokena (oko 750.000 reči). <span class="text-slate-400">Ulaz</span> je tekst koji šalješ modelu,
-      <span class="text-slate-400">izlaz</span> je tekst koji model napiše.
+      {{ t('cene.jedinica') }} {{ t('cene.ulazIzlaz') }}
     </p>
 
     @if (izdanja.cene.isLoading()) {
-      <p class="py-24 text-center text-slate-500">Učitavam…</p>
+      <p class="py-24 text-center text-slate-500">{{ t('stanje.ucitavam') }}</p>
     } @else if (!izdanja.cene.hasValue()) {
-      <p class="py-24 text-center text-slate-400">Cene trenutno nisu dostupne.</p>
+      <p class="py-24 text-center text-slate-400">{{ t('cene.nedostupne') }}</p>
     } @else if (izdanja.cene.value(); as c) {
       @if (komentar(); as k) {
         <p class="mt-5 rounded-2xl border border-amber-900/40 bg-amber-950/20 p-4 text-sm leading-relaxed text-slate-200">
-          <span class="font-medium text-amber-300">Ukratko:</span> {{ k }}
+          <span class="font-medium text-amber-300">{{ t('cene.ukratko') }}</span> {{ k }}
         </p>
       }
 
       <!-- Promene -->
       <section aria-labelledby="naslov-promene" class="mt-8">
-        <h2 id="naslov-promene" class="text-xs font-semibold uppercase tracking-widest text-slate-500">Promene cena · 30 dana</h2>
+        <h2 id="naslov-promene" class="text-xs font-semibold uppercase tracking-widest text-slate-500">{{ t('cene.promene') }}</h2>
         @if (!c.promene.length) {
           <p class="mt-3 rounded-2xl border border-slate-800/80 bg-slate-900/60 p-4 text-sm leading-relaxed text-slate-400">
-            Nijedan praćeni model nije promenio cenu od {{ kratak(c.pratimoOd) }}, kad je praćenje počelo. Svaka promena će se pojaviti ovde,
-            a uz modele i koliko su pojeftinili ili poskupeli za 7 i 30 dana.
+            {{ t('cene.bezPromena', { datum: kratak(c.pratimoOd) }) }}
           </p>
         } @else {
           <ul class="mt-3 divide-y divide-slate-800/80 rounded-2xl border border-slate-800/80 bg-slate-900/60">
@@ -57,8 +56,8 @@ function mesovita(ulaz: number, izlaz: number): number {
       <!-- Grupe modela -->
       @for (g of c.grupe; track g.id) {
         <section [attr.aria-labelledby]="'grupa-' + g.id" class="mt-10">
-          <h2 [id]="'grupa-' + g.id" class="text-xs font-semibold uppercase tracking-widest text-slate-500">{{ g.naziv }}</h2>
-          <p class="mt-1 text-sm text-slate-500">{{ g.opis }}</p>
+          <h2 [id]="'grupa-' + g.id" class="text-xs font-semibold uppercase tracking-widest text-slate-500">{{ tIli('cene.grupa.' + g.id, g.naziv) }}</h2>
+          <p class="mt-1 text-sm text-slate-500">{{ tIli('cene.grupa.' + g.id + '.opis', g.opis) }}</p>
           <ul class="mt-3 space-y-2">
             @for (m of g.modeli; track m.id) {
               <li class="rounded-2xl border border-slate-800/80 bg-slate-900/60 px-4 py-3">
@@ -71,22 +70,22 @@ function mesovita(ulaz: number, izlaz: number): number {
                     <span class="text-slate-200">{{ cena(m.ulaz) }}</span>
                     <span class="text-slate-600"> / </span>
                     <span class="text-slate-200">{{ cena(m.izlaz) }}</span>
-                    <span class="block text-[11px] text-slate-600">ulaz / izlaz</span>
+                    <span class="block text-[11px] text-slate-600">{{ t('cene.ulazIzlazOznaka') }}</span>
                   </p>
                 </div>
                 <div class="mt-2 h-1.5 overflow-hidden rounded-full bg-slate-800" aria-hidden="true">
                   <div class="h-full rounded-full bg-amber-400/70" [style.width.%]="sirina(m.ulaz, m.izlaz)"></div>
                 </div>
                 <p class="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-xs">
-                  @if (trend(m.promena7); as t) {
-                    <span [class]="t.klasa">7 dana: {{ t.tekst }}</span>
+                  @if (trend(m.promena7); as tr) {
+                    <span [class]="tr.klasa">{{ t('cene.7dana') }}: {{ tr.tekst }}</span>
                   }
-                  @if (trend(m.promena30); as t) {
-                    <span [class]="t.klasa">30 dana: {{ t.tekst }}</span>
+                  @if (trend(m.promena30); as tr) {
+                    <span [class]="tr.klasa">{{ t('cene.30dana') }}: {{ tr.tekst }}</span>
                   }
                   @if (m.prethodnik; as p) {
                     <span [class]="poredjenje(p.ulaz, p.izlaz, m.ulaz, m.izlaz).klasa">
-                      u odnosu na {{ p.naziv }}: {{ poredjenje(p.ulaz, p.izlaz, m.ulaz, m.izlaz).tekst }}
+                      {{ t('cene.uOdnosuNa', { naziv: p.naziv }) }}: {{ poredjenje(p.ulaz, p.izlaz, m.ulaz, m.izlaz).tekst }}
                     </span>
                   }
                 </p>
@@ -99,13 +98,13 @@ function mesovita(ulaz: number, izlaz: number): number {
       <!-- Novi modeli -->
       @if (c.noviModeli.length) {
         <section aria-labelledby="naslov-novi" class="mt-10">
-          <h2 id="naslov-novi" class="text-xs font-semibold uppercase tracking-widest text-slate-500">Novi modeli · 14 dana</h2>
+          <h2 id="naslov-novi" class="text-xs font-semibold uppercase tracking-widest text-slate-500">{{ t('cene.noviModeli') }}</h2>
           <ul class="mt-3 divide-y divide-slate-800/80 rounded-2xl border border-slate-800/80 bg-slate-900/60">
             @for (m of c.noviModeli; track m.id) {
               <li class="flex items-center justify-between gap-3 px-4 py-3">
                 <div class="min-w-0">
                   <p class="truncate font-medium text-white">{{ m.naziv }}</p>
-                  <p class="text-xs text-slate-500">{{ provajder(m.provajder) }} · od {{ kratak(m.objavljen) }}</p>
+                  <p class="text-xs text-slate-500">{{ provajder(m.provajder) }} · {{ t('cene.od', { datum: kratak(m.objavljen) }) }}</p>
                 </div>
                 <p class="shrink-0 text-sm tabular-nums text-slate-300">{{ cena(m.ulaz) }} / {{ cena(m.izlaz) }}</p>
               </li>
@@ -115,19 +114,22 @@ function mesovita(ulaz: number, izlaz: number): number {
       }
 
       <p class="mt-10 text-center text-xs leading-relaxed text-slate-600">
-        Izvor: <a [href]="c.izvor.url" target="_blank" rel="noopener" class="underline hover:text-slate-400">{{ c.izvor.naziv }}</a>
-        (najniža cena među provajderima, može biti niža od zvanične) · ažurirano {{ vreme(c.azurirano) }}
+        {{ t('cene.izvor') }} <a [href]="c.izvor.url" target="_blank" rel="noopener" class="underline hover:text-slate-400">{{ c.izvor.naziv }}</a>
+        {{ t('cene.izvorNapomena', { vreme: vreme(c.azurirano) }) }}
       </p>
     }
   `,
 })
 export class CenePage {
   protected readonly izdanja = inject(IzdanjaService);
+  private readonly podesavanja = inject(PodesavanjaService);
+  protected readonly t = this.podesavanja.t;
+  protected readonly tIli = this.podesavanja.tIli;
 
-  /** Komentar o cenama iz najnovijeg izdanja, ako ga ima. */
+  /** Komentar o cenama iz najnovijeg izdanja (na izabranom jeziku), ako ga ima. */
   protected readonly komentar = computed(() => {
     const d = this.izdanja.najnovije();
-    const ref = d ? this.izdanja.izdanje(d) : undefined;
+    const ref = d ? this.izdanja.izdanjeNaJeziku(d).ref : undefined;
     return ref?.hasValue() ? ref.value()?.cene : undefined;
   });
 
@@ -137,11 +139,11 @@ export class CenePage {
     return { min: Math.log(Math.min(...cene)), max: Math.log(Math.max(...cene)) };
   });
 
-  protected readonly cena = formatCena;
+  protected readonly cena = (n: number) => formatCena(n, this.podesavanja.lokal());
   protected readonly provajder = (id: string) => PROVAJDERI[id] ?? id;
-  protected readonly kratak = (d: string) => formatDatum(d, { day: 'numeric', month: 'long' });
+  protected readonly kratak = (d: string) => formatDatum(d, this.podesavanja.lokal(), { day: 'numeric', month: 'long' });
   protected readonly vreme = (iso: string) =>
-    new Intl.DateTimeFormat('sr-Latn-RS', { day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' }).format(new Date(iso));
+    new Intl.DateTimeFormat(this.podesavanja.lokal(), { day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' }).format(new Date(iso));
 
   /** Širina trake na logaritamskoj skali, da se i modeli od $0,10 i od $50 vide. */
   protected sirina(ulaz: number, izlaz: number): number {
@@ -153,13 +155,13 @@ export class CenePage {
   protected trend(p: Promena | null): { tekst: string; klasa: string } | null {
     if (!p) return null;
     const vrednost = Math.abs(p.ulaz ?? 0) >= Math.abs(p.izlaz ?? 0) ? (p.ulaz ?? 0) : (p.izlaz ?? 0);
-    return this.opis(vrednost, 'pojeftinio', 'poskupeo', 'bez promene');
+    return this.opis(vrednost, this.t('cene.pojeftinio'), this.t('cene.poskupeo'), this.t('cene.bezPromene'));
   }
 
   protected poredjenje(ulazPre: number, izlazPre: number, ulaz: number, izlaz: number): { tekst: string; klasa: string } {
     const pre = mesovita(ulazPre, izlazPre);
     const razlika = pre > 0 ? ((mesovita(ulaz, izlaz) - pre) / pre) * 100 : 0;
-    return this.opis(razlika, 'jeftiniji', 'skuplji', 'ista cena');
+    return this.opis(razlika, this.t('cene.jeftiniji'), this.t('cene.skuplji'), this.t('cene.istaCena'));
   }
 
   protected boja(pre: number, sad: number): string {

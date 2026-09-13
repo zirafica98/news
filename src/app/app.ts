@@ -2,17 +2,20 @@ import { Component, computed, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { filter, map } from 'rxjs';
+import { PodesavanjaMeni } from './components/podesavanja-meni';
 import { Sekcija, putanjaSekcije } from './izdanje-ruta';
+import { PodesavanjaService } from './podesavanja.service';
 
 type Kartica = Sekcija | 'cene';
 
 @Component({
-  imports: [RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, PodesavanjaMeni],
   selector: 'app-root',
   templateUrl: './app.html',
 })
 export class App {
   private readonly router = inject(Router);
+  protected readonly t = inject(PodesavanjaService).t;
 
   private readonly url = toSignal(
     this.router.events.pipe(
@@ -37,10 +40,10 @@ export class App {
   protected readonly kartice = computed(() => {
     const d = this.datum();
     return [
-      { id: 'vesti' as const, naziv: 'Vesti', link: putanjaSekcije('vesti', d), ikona: 'M4 5h16M4 10h16M4 15h10M4 20h7' },
-      { id: 'istrazivanje' as const, naziv: 'Istraživanje', link: putanjaSekcije('istrazivanje', d), ikona: 'M10 3v6L4.5 19a1.5 1.5 0 0 0 1.3 2h12.4a1.5 1.5 0 0 0 1.3-2L14 9V3M8.5 3h7M7 15h10' },
-      { id: 'ideje' as const, naziv: 'Ideje', link: putanjaSekcije('ideje', d), ikona: 'M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z' },
-      { id: 'cene' as const, naziv: 'Cene', link: ['/cene'], ikona: 'M3 17l6-6 4 4 8-8M15 7h6v6' },
+      { id: 'vesti' as const, naziv: 'nav.vesti' as const, link: putanjaSekcije('vesti', d), ikona: 'M4 5h16M4 10h16M4 15h10M4 20h7' },
+      { id: 'istrazivanje' as const, naziv: 'nav.istrazivanje' as const, link: putanjaSekcije('istrazivanje', d), ikona: 'M10 3v6L4.5 19a1.5 1.5 0 0 0 1.3 2h12.4a1.5 1.5 0 0 0 1.3-2L14 9V3M8.5 3h7M7 15h10' },
+      { id: 'ideje' as const, naziv: 'nav.ideje' as const, link: putanjaSekcije('ideje', d), ikona: 'M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z' },
+      { id: 'cene' as const, naziv: 'nav.cene' as const, link: ['/cene'], ikona: 'M3 17l6-6 4 4 8-8M15 7h6v6' },
     ];
   });
 }

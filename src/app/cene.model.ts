@@ -50,7 +50,7 @@ export const PROVAJDERI: Record<string, string> = {
   cohere: 'Cohere',
 };
 
-/** $12.5 → „$12,50“, $0.0400 → „$0,04“ */
-export function formatCena(n: number): string {
-  return `$${n.toLocaleString('sr-Latn-RS', { minimumFractionDigits: 2, maximumFractionDigits: n < 0.1 ? 3 : 2 })}`;
+/** $12.5 → „$12,50“ (sr) ili „$12.50“ (en) */
+export function formatCena(n: number, lokal: string): string {
+  return `$${n.toLocaleString(lokal, { minimumFractionDigits: 2, maximumFractionDigits: n < 0.1 ? 3 : 2 })}`;
 }

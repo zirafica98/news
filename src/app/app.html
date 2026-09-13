@@ -3,10 +3,11 @@
     <a routerLink="/" class="flex items-center gap-2 font-semibold text-white">
       <span aria-hidden="true">☕</span> AI Jutro
     </a>
-    <nav aria-label="Arhiva i sačuvano" class="flex gap-1 text-sm">
-      <a routerLink="/arhiva" routerLinkActive="bg-slate-800 text-white" ariaCurrentWhenActive="page" class="rounded-full px-3 py-1.5 text-slate-400 hover:text-white">Arhiva</a>
-      <a routerLink="/sacuvano" routerLinkActive="bg-slate-800 text-white" ariaCurrentWhenActive="page" class="rounded-full px-3 py-1.5 text-slate-400 hover:text-white">Sačuvano</a>
-    </nav>
+    <div class="flex items-center gap-1 text-sm">
+      <a routerLink="/arhiva" routerLinkActive="bg-slate-800 text-white" ariaCurrentWhenActive="page" class="rounded-full px-3 py-1.5 text-slate-400 hover:text-white">{{ t('nav.arhiva') }}</a>
+      <a routerLink="/sacuvano" routerLinkActive="bg-slate-800 text-white" ariaCurrentWhenActive="page" class="rounded-full px-3 py-1.5 text-slate-400 hover:text-white">{{ t('nav.sacuvano') }}</a>
+      <app-podesavanja-meni />
+    </div>
   </div>
 </header>
 
@@ -15,7 +16,7 @@
 </main>
 
 <nav
-  aria-label="Delovi izdanja"
+  [attr.aria-label]="t('app.deloviIzdanja')"
   class="fixed inset-x-0 bottom-0 z-20 border-t border-slate-800 bg-slate-950/95 pb-[env(safe-area-inset-bottom)] backdrop-blur"
 >
   <ul class="mx-auto grid max-w-2xl grid-cols-4">
@@ -31,7 +32,7 @@
           <svg viewBox="0 0 24 24" class="size-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path [attr.d]="k.ikona" />
           </svg>
-          {{ k.naziv }}
+          {{ t(k.naziv) }}
         </a>
       </li>
     }

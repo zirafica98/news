@@ -13,26 +13,31 @@ export function putanjaSekcije(sekcija: Sekcija, datum?: string): string[] {
 }
 
 /**
- * Za stranice Vesti, Istraživanje i Ideje: izdanje za datum iz rute, ili najnovije kad datuma nema.
+ * Za stranice Vesti, Istraživanje i Ideje: izdanje za datum iz rute (ili najnovije) na izabranom jeziku.
  * Mora se pozvati u inicijalizaciji polja komponente.
  */
 export function izdanjeZaRutu(datum: Signal<string | undefined>) {
   const izdanja = inject(IzdanjaService);
 
   const aktivniDatum = computed(() => datum() ?? izdanja.najnovije());
-  const ref = computed(() => {
+  const izbor = computed(() => {
     const d = aktivniDatum();
-    return d ? izdanja.izdanje(d) : undefined;
+    return d ? izdanja.izdanjeNaJeziku(d) : undefined;
   });
 
-  const izdanje = computed<Izdanje | undefined>(() => (ref()?.hasValue() ? ref()!.value() : undefined));
+  const izdanje = computed<Izdanje | undefined>(() => {
+    const ref = izbor()?.ref;
+    return ref?.hasValue() ? ref.value() : undefined;
+  });
+
+  const prevodNedostaje = computed(() => izbor()?.prevodNedostaje ?? false);
 
   const stanje = computed<StanjeIzdanja>(() => {
-    const r = ref();
-    if (!r) return izdanja.index.isLoading() ? 'ucitava' : 'nema-izdanja';
-    if (r.error()) return 'ne-postoji';
-    return r.hasValue() ? 'spremno' : 'ucitava';
+    const ref = izbor()?.ref;
+    if (!ref) return izdanja.index.isLoading() ? 'ucitava' : 'nema-izdanja';
+    if (ref.error()) return 'ne-postoji';
+    return ref.hasValue() ? 'spremno' : 'ucitava';
   });
 
-  return { aktivniDatum, izdanje, stanje };
+  return { aktivniDatum, izdanje, stanje, prevodNedostaje };
 }

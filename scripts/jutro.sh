@@ -111,6 +111,9 @@ fi
 # 7. Provera i objavljivanje.
 node scripts/finalize.mjs --datum="$DATUM"
 
+# 7b. Engleski prevod. Ako ne uspe, srpsko izdanje svejedno ide na sajt.
+node scripts/translate-digest.mjs --datum="$DATUM" || log "Engleski prevod nije uspeo, objavljujem samo srpsko izdanje."
+
 # 8. Slanje na GitHub → Vercel pravi novi build.
 git add public/data scripts/state
 git commit --quiet -m "Izdanje $DATUM"

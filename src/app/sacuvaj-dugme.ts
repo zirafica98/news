@@ -1,4 +1,5 @@
 import { Component, computed, inject, input } from '@angular/core';
+import { PodesavanjaService } from './podesavanja.service';
 import { SacuvanaStavka, SacuvanoService } from './sacuvano.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { SacuvanaStavka, SacuvanoService } from './sacuvano.service';
       type="button"
       (click)="sacuvano.prebaci(stavka())"
       [attr.aria-pressed]="jeSacuvano()"
-      [attr.aria-label]="jeSacuvano() ? 'Ukloni iz sačuvanog' : 'Sačuvaj'"
+      [attr.aria-label]="jeSacuvano() ? t('sacuvaj.ukloni') : t('sacuvaj.sacuvaj')"
       class="grid size-9 shrink-0 place-items-center rounded-full transition-colors hover:bg-slate-800 focus-visible:outline-2 focus-visible:outline-amber-400"
       [class.text-amber-400]="jeSacuvano()"
       [class.text-slate-500]="!jeSacuvano()"
@@ -21,6 +22,7 @@ import { SacuvanaStavka, SacuvanoService } from './sacuvano.service';
 })
 export class SacuvajDugme {
   protected readonly sacuvano = inject(SacuvanoService);
+  protected readonly t = inject(PodesavanjaService).t;
 
   readonly stavka = input.required<Omit<SacuvanaStavka, 'sacuvano'>>();
 

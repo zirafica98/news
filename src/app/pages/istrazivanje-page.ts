@@ -1,6 +1,7 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { DatumTraka } from '../components/datum-traka';
 import { izdanjeZaRutu } from '../izdanje-ruta';
+import { PodesavanjaService } from '../podesavanja.service';
 import { SacuvajDugme } from '../sacuvaj-dugme';
 import { SacuvanoService } from '../sacuvano.service';
 
@@ -8,14 +9,14 @@ import { SacuvanoService } from '../sacuvano.service';
   selector: 'app-istrazivanje-page',
   imports: [DatumTraka, SacuvajDugme],
   template: `
-    <app-datum-traka [datum]="ruta.aktivniDatum()" sekcija="istrazivanje" [stanje]="ruta.stanje()" />
+    <app-datum-traka [datum]="ruta.aktivniDatum()" sekcija="istrazivanje" [stanje]="ruta.stanje()" [prevodNedostaje]="ruta.prevodNedostaje()" />
 
     @if (ruta.izdanje(); as iz) {
-      <h1 class="mt-4 text-2xl font-semibold text-white">Istraživanje dana</h1>
-      <p class="mt-1 text-sm text-slate-500">Najzanimljiviji AI radovi, objašnjeni jednostavno.</p>
+      <h1 class="mt-4 text-2xl font-semibold text-white">{{ t('istrazivanje.naslov') }}</h1>
+      <p class="mt-1 text-sm text-slate-500">{{ t('istrazivanje.opis') }}</p>
 
       @if (!iz.istrazivanje.length) {
-        <p class="py-16 text-center text-slate-400">Za ovaj dan nema izdvojenih radova.</p>
+        <p class="py-16 text-center text-slate-400">{{ t('istrazivanje.prazno') }}</p>
       } @else {
         <ul class="mt-6 space-y-4">
           @for (r of iz.istrazivanje; track $index) {
@@ -29,12 +30,12 @@ import { SacuvanoService } from '../sacuvano.service';
               </div>
               <p class="mt-2 leading-relaxed text-slate-300">{{ r.objasnjenje }}</p>
               <p class="mt-3 rounded-xl bg-slate-800/40 px-4 py-3 text-sm leading-relaxed text-slate-300">
-                <span class="font-medium text-sky-300">Zašto je zanimljivo:</span> {{ r.zastoJeZanimljivo }}
+                <span class="font-medium text-sky-300">{{ t('istrazivanje.zasto') }}</span> {{ r.zastoJeZanimljivo }}
               </p>
               <p class="mt-4 flex gap-4 text-sm font-medium">
-                <a [href]="r.url" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300">Rad ↗</a>
+                <a [href]="r.url" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300">{{ t('istrazivanje.rad') }} ↗</a>
                 @if (r.github) {
-                  <a [href]="r.github" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300">GitHub kod ↗</a>
+                  <a [href]="r.github" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300">{{ t('istrazivanje.github') }} ↗</a>
                 }
               </p>
             </li>
@@ -49,4 +50,5 @@ export class IstrazivanjePage {
 
   protected readonly ruta = izdanjeZaRutu(this.datum);
   protected readonly kljuc = SacuvanoService.kljuc;
+  protected readonly t = inject(PodesavanjaService).t;
 }
