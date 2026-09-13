@@ -1,40 +1,45 @@
 // Skuplja sveže vesti iz scripts/sources.json i snima ih u scripts/out/vesti-YYYY-MM-DD.json.
 // Bez AI-ja: samo preuzimanje, čišćenje teksta i izbacivanje duplikata.
+// Preskače vesti koje su već bile u nekom ranijem izdanju (scripts/state/objavljeno.json).
 //
 // Pokretanje: npm run fetch                      (sve uključene izvore)
 //             npm run fetch -- verge-ai            (samo navedene izvore, za testiranje)
 //             npm run fetch -- --hours=168         (gleda nedelju dana unazad, za testiranje)
+//             npm run fetch -- --sve               (ne preskače već objavljene vesti)
 
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
-import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { join } from 'node:path';
 import { XMLParser } from 'fast-xml-parser';
+import { SCRIPTS_DIR, STATE_FILE, datumIzArgumenata, normalizeUrl, paths, readJson, writeJson } from './lib.mjs';
 
-const ROOT = dirname(fileURLToPath(import.meta.url));
-const OUT_DIR = join(ROOT, 'out');
 const TIMEOUT_MS = 20_000;
 const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AI-Jutro/1.0';
 
 const xml = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: '@_', textNodeName: '#text' });
 
-const { sources } = JSON.parse(await readFile(join(ROOT, 'sources.json'), 'utf8'));
+const { sources } = await readJson(join(SCRIPTS_DIR, 'sources.json'));
 const args = process.argv.slice(2);
 const hoursOverride = Number(args.find((a) => a.startsWith('--hours='))?.split('=')[1]) || null;
 const onlyIds = args.filter((a) => !a.startsWith('--'));
 const selected = sources.filter((s) => (onlyIds.length ? onlyIds.includes(s.id) : s.enabled));
 
 const now = new Date();
-const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Belgrade' }).format(now); // YYYY-MM-DD
+const today = datumIzArgumenata(args);
+const alreadyPublished = args.includes('--sve') ? {} : await readJson(STATE_FILE, {});
 
 const results = await Promise.all(selected.map(fetchSource));
 
 const seen = new Set();
 const vesti = [];
+let skipped = 0;
 for (const { items } of results) {
   for (const item of items) {
-    const key = normalizeUrl(item.url) || item.title.toLowerCase();
+    const key = normalizeUrl(item.url) || item.naslov.toLowerCase();
     if (seen.has(key)) continue;
     seen.add(key);
+    if (alreadyPublished[key]) {
+      skipped++;
+      continue;
+    }
     vesti.push(item);
   }
 }
@@ -55,9 +60,8 @@ const output = {
   vesti,
 };
 
-await mkdir(OUT_DIR, { recursive: true });
-const outFile = join(OUT_DIR, `vesti-${today}.json`);
-await writeFile(outFile, JSON.stringify(output, null, 2));
+const outFile = paths.vesti(today);
+await writeJson(outFile, output);
 
 printSummary(output, outFile);
 
@@ -185,16 +189,6 @@ function truncate(s, max) {
   return s.length > max ? `${s.slice(0, max).trimEnd()}…` : s;
 }
 
-function normalizeUrl(url) {
-  try {
-    const u = new URL(url);
-    for (const p of [...u.searchParams.keys()]) if (p.startsWith('utm_')) u.searchParams.delete(p);
-    return `${u.hostname.replace(/^www\./, '')}${u.pathname.replace(/\/$/, '')}${u.search}`;
-  } catch {
-    return '';
-  }
-}
-
 function printSummary({ izvori, stranice, vesti }, file) {
   console.log(`\nAI Jutro — skupljanje vesti za ${today}\n`);
   for (const i of izvori) {
@@ -202,6 +196,6 @@ function printSummary({ izvori, stranice, vesti }, file) {
     console.log(`  ${i.naziv.padEnd(34)} ${status}`);
   }
   const failed = izvori.filter((i) => i.greska).length;
-  console.log(`\nUkupno: ${vesti.length} vesti, ${stranice.length} stranice za Claude-a${failed ? `, ${failed} izvora sa greškom` : ''}`);
+  console.log(`\nUkupno: ${vesti.length} vesti, ${stranice.length} stranice za Claude-a${skipped ? `, ${skipped} već objavljeno ranije` : ''}${failed ? `, ${failed} izvora sa greškom` : ''}`);
   console.log(`Snimljeno: ${file}\n`);
 }

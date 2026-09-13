@@ -1,0 +1,87 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["ukratko", "vesti", "novo", "istrazivanje", "ideje"],
+  "properties": {
+    "ukratko": {
+      "type": "string",
+      "description": "Dan u 2-3 rečenice."
+    },
+    "vesti": {
+      "type": "array",
+      "description": "Najbitnije vesti, od najvažnije ka manje važnoj.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["naslov", "staSeDesilo", "zastoJeBitno", "kategorija", "vaznost", "izvori"],
+        "properties": {
+          "naslov": { "type": "string" },
+          "staSeDesilo": { "type": "string" },
+          "zastoJeBitno": { "type": "string" },
+          "kategorija": { "type": "string", "enum": ["modeli", "alati", "kompanije", "istrazivanje", "bezbednost", "regulativa", "ostalo"] },
+          "vaznost": { "type": "integer", "enum": [1, 2, 3], "description": "3 = velika vest, 2 = bitno, 1 = zanimljivo" },
+          "izvori": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["naziv", "url"],
+              "properties": { "naziv": { "type": "string" }, "url": { "type": "string" } }
+            }
+          }
+        }
+      }
+    },
+    "novo": {
+      "type": "array",
+      "description": "Novi modeli, alati i projekti koje čitalac može odmah da proba.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["naziv", "tip", "opis", "kakoProbati", "link", "cena"],
+        "properties": {
+          "naziv": { "type": "string" },
+          "tip": { "type": "string", "enum": ["model", "alat", "projekat", "funkcija"] },
+          "opis": { "type": "string" },
+          "kakoProbati": { "type": "array", "items": { "type": "string" } },
+          "link": { "type": "string" },
+          "cena": { "type": "string" }
+        }
+      }
+    },
+    "istrazivanje": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["naslov", "objasnjenje", "zastoJeZanimljivo", "url", "github"],
+        "properties": {
+          "naslov": { "type": "string" },
+          "objasnjenje": { "type": "string" },
+          "zastoJeZanimljivo": { "type": "string" },
+          "url": { "type": "string" },
+          "github": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "ideje": {
+      "type": "array",
+      "description": "Tačno 5 ideja za app.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["naziv", "problem", "zaKoga", "ulogaAi", "tezina", "vikendProjekat", "prviKoraci", "inspiracija"],
+        "properties": {
+          "naziv": { "type": "string" },
+          "problem": { "type": "string" },
+          "zaKoga": { "type": "string" },
+          "ulogaAi": { "type": "string" },
+          "tezina": { "type": "integer", "enum": [1, 2, 3, 4, 5] },
+          "vikendProjekat": { "type": "boolean" },
+          "prviKoraci": { "type": "array", "items": { "type": "string" } },
+          "inspiracija": { "type": "string", "description": "Koja današnja vest ili alat je inspirisao ideju." }
+        }
+      }
+    }
+  }
+}
