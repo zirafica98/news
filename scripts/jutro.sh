@@ -45,6 +45,11 @@ trap 'on_error $LINENO' ERR
 cd "$REPO_DIR"
 
 if [[ -z "${AI_NEWS_OSVEZENO:-}" ]]; then
+  # Ne daj Mac-u da zaspi dok skripta radi. -s drži Mac budnim i kad je poklopac zatvoren (samo na punjaču):
+  # posle buđenja u 06:25 macOS ga inače vrati na spavanje za par minuta, usred Claude-ovog pisanja.
+  # exec ispod zadržava isti PID, pa caffeinate prati i ponovo pokrenutu skriptu.
+  caffeinate -s -i -w $$ &
+
   echo
   log "===== AI News $DATUM $($PROVERA && echo '(provera)')$($PONOVO && echo '(ponovo)') ====="
 
@@ -63,19 +68,24 @@ if [[ -z "${AI_NEWS_OSVEZENO:-}" ]]; then
   exec bash "$REPO_DIR/scripts/jutro.sh" "$@"
 fi
 
-# Samo jedno pokretanje u isto vreme.
+# Samo jedno pokretanje u isto vreme. Staro pokretanje koje visi duže od sat vremena se gasi.
 if ! mkdir "$LOCK_DIR" 2>/dev/null; then
-  if [[ -n "$(find "$LOCK_DIR" -maxdepth 0 -mmin +60 2>/dev/null)" ]]; then
-    rm -rf "$LOCK_DIR" && mkdir "$LOCK_DIR"
-  else
-    log "Već radi drugo pokretanje. Kraj."
+  stari_pid="$(cat "$LOCK_DIR/pid" 2>/dev/null || true)"
+  if [[ -n "$stari_pid" ]] && kill -0 "$stari_pid" 2>/dev/null && [[ -z "$(find "$LOCK_DIR" -maxdepth 0 -mmin +60 2>/dev/null)" ]]; then
+    log "Već radi drugo pokretanje (PID $stari_pid). Kraj."
     exit 0
   fi
+  if [[ -n "$stari_pid" ]] && kill -0 "$stari_pid" 2>/dev/null; then
+    log "Prethodno pokretanje (PID $stari_pid) visi duže od sat vremena, gasim ga."
+    pkill -TERM -P "$stari_pid" 2>/dev/null || true
+    kill -TERM "$stari_pid" 2>/dev/null || true
+    sleep 5
+  fi
+  rm -rf "$LOCK_DIR"
+  mkdir "$LOCK_DIR"
 fi
+echo $$ >"$LOCK_DIR/pid"
 trap 'rm -rf "$LOCK_DIR"' EXIT
-
-# Ne daj Mac-u da zaspi dok skripta radi.
-caffeinate -i -w $$ &
 
 if [[ -f "public/data/$DATUM.json" ]] && ! $PROVERA && ! $PONOVO; then
   log "Izdanje za $DATUM je već objavljeno. Kraj."
