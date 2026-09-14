@@ -49,6 +49,7 @@ if [[ -z "${AI_NEWS_OSVEZENO:-}" ]]; then
   # posle buđenja u 06:25 macOS ga inače vrati na spavanje za par minuta, usred Claude-ovog pisanja.
   # exec ispod zadržava isti PID, pa caffeinate prati i ponovo pokrenutu skriptu.
   caffeinate -s -i -w $$ &
+  export AI_NEWS_BUDAN=1
 
   echo
   log "===== AI News $DATUM $($PROVERA && echo '(provera)')$($PONOVO && echo '(ponovo)') ====="
@@ -86,6 +87,9 @@ if ! mkdir "$LOCK_DIR" 2>/dev/null; then
 fi
 echo $$ >"$LOCK_DIR/pid"
 trap 'rm -rf "$LOCK_DIR"' EXIT
+
+# Ako je pre git pull-a radila starija verzija skripte bez caffeinate-a, uključi ga ovde.
+[[ -z "${AI_NEWS_BUDAN:-}" ]] && { caffeinate -s -i -w $$ & }
 
 if [[ -f "public/data/$DATUM.json" ]] && ! $PROVERA && ! $PONOVO; then
   log "Izdanje za $DATUM je već objavljeno. Kraj."
