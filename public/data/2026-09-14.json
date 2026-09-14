@@ -1,0 +1,291 @@
+{
+  "datum": "2026-09-14",
+  "generisano": "2026-09-14T05:33:52.048Z",
+  "model": "claude-haiku-4-5-20251001",
+  "ukratko": "Dan je obeležila politička reakcija na Amodeijev plan o usporavanju razvoja AI-ja: Tramp i Majk Džonson ga otvoreno odbacuju, dok je Microsoft uslovno „za“. Artificial Analysis je objavio novu verziju svog indeksa u kojoj su Fable 5.1 i GPT-6 Astra izjednačeni, ali sa duplo različitom cenom po zadatku. Na OpenRouter-u se danas pomerilo dosta cena, uglavnom naviše kod DeepSeek Pro i GLM modela.",
+  "vesti": [
+    {
+      "naslov": "Plan o usporavanju dobio konkretne korake — i politički otpor iz Bele kuće",
+      "staSeDesilo": "Amodeijev esej „We Must Pace the Frontier“ od 12. septembra sadrži tri koraka: stalni pristup nezavisnim evaluatorima na nivou zaposlenog, zajednički bezbednosni standardi među laboratorijama u demokratijama i pregovori sa autoritarnim državama. Anthropic se obavezao samo na prvi korak, OpenAI kaže da će uraditi isto (bez detalja), Musk je dao samo podršku, a Nadella pozdravlja „promišljen tempo“ uz uslov da mehanizam ne kontroliše šačica firmi. Dan kasnije su Donald Tramp i predsednik Predstavničkog doma Majk Džonson to odbacili uz argument da bi pauza pustila Kinu ispred SAD.",
+      "zastoJeBitno": "Ako „ugrađeni evaluatori“ i kontrolne tačke pred izlazak modela postanu praksa, to znači ređe i predvidljivije objave novih verzija — a to direktno utiče na to koliko često menjaš model u svojoj aplikaciji.",
+      "kategorija": "regulativa",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/09/13/anthropics-3-step-pace-the-frontier-plan-wins-openai-xai-and-microsoft-support-is-it-too-late-to-slow-ai-down/"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/994441/trump-mike-johnson-ai-industry-overreacting"
+        },
+        {
+          "naziv": "Danas",
+          "url": "https://www.danas.rs/svet/trampova-administracija-ai/"
+        }
+      ]
+    },
+    {
+      "naslov": "Artificial Analysis v4.3: Fable 5.1 i GPT-6 Astra izjednačeni, ali Astra je 57% jeftinija po zadatku",
+      "staSeDesilo": "Artificial Analysis je osvežio svoj Intelligence Index: Terminal-Bench je podignut na v4.0, a τ³-Banking je zamenjen novim testom AutomationBench-AA sa 657 poslovnih zadataka rađenim sa Zapier-om. Claude Fable 5.1 i GPT-6 Astra dele prvo mesto sa 53 poena, Claude Opus 5 je treći sa 51. Zanimljiviji je trošak: isti rezultat košta 3,26 dolara po zadatku kod Astre naspram 7,63 kod Fable 5.1, a GLM-5.3-Flash sa 42 poena košta svega 0,25 dolara po zadatku.",
+      "zastoJeBitno": "Za nekog ko sam plaća račun, „koliko poena po dolaru“ je korisniji kriterijum od same tabele — i pokazuje da za dosta agentskih zadataka srednja klasa radi posao za desetak puta manje para.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Artificial Analysis",
+          "url": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v4-3"
+        },
+        {
+          "naziv": "r/LocalLLaMA (diskusija)",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wfpwhj/deepseek_v41_flash_beats_astra_on_aas_new/"
+        }
+      ]
+    },
+    {
+      "naslov": "Garry Tan: pustite američke laboratorije da destiluju vrhunske modele",
+      "staSeDesilo": "Šef Y Combinator-a Garry Tan traži da regulatori ne ograničavaju destilaciju, to jest treniranje manjih otvorenih modela na izlazima velikih zatvorenih modela. Njegov argument je da inteligencija istrenirana na javnim podacima treba da bude javno dobro i da ni velike laboratorije nisu tražile dozvolu kad su trenirale na tuđim tekstovima. To je direktno suprotno od Anthropic-ovog stava, koji je nedavno optužio kineske laboratorije za „nedozvoljene destilacione napade“ preko ukradenih naloga.",
+      "zastoJeBitno": "Ishod ove rasprave određuje koliko će jeftinih otvorenih modela biti dostupno — a upravo ti modeli drže cenu inferencije nisko za male developere.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/11/y-combinators-garry-tan-wants-u-s-open-weight-ai-labs-to-distill-frontier-models-too/"
+        },
+        {
+          "naziv": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49685253"
+        }
+      ]
+    },
+    {
+      "naslov": "Cene na OpenRouter-u pomerene: DeepSeek V4 Pro i GLM Flash skuplji, Qwen3 14B jeftiniji",
+      "staSeDesilo": "Danas je zabeležena serija promena cena. DeepSeek V4 Pro 0813 je skočio sa 0,58/1,74 na 0,98/2,95 dolara za milion tokena (ulaz/izlaz), GLM 5.3 Flash se udvostručio sa 0,075/0,25 na 0,15/0,50, a GLM 5.3 sa 1,09/3,43 na 1,40/4,40. U drugom smeru, Qwen3 14B je pao sa 0,23/0,91 na 0,12/0,24, a Nemotron 3 Ultra sa 0,63/3,13 na 0,60/2,40.",
+      "zastoJeBitno": "Ako ti aplikacija zove model preko OpenRouter-a, mesečni račun ti se danas promenio bez ikakve promene u kodu — vredi proveriti koji model ti je podrazumevani.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "OpenRouter (cenovnik modela)",
+          "url": "https://openrouter.ai/models"
+        }
+      ]
+    },
+    {
+      "naslov": "DeepSeek V4.1 Flash pritiska cenu inferencije odozdo",
+      "staSeDesilo": "DeepSeek-ov novi V4.1 Flash je na OpenRouter-u od 10. septembra po 0,15 dolara za milion ulaznih i 0,60 za milion izlaznih tokena. U zajednici se priča da model donosi jaku kompresiju KV keša, to jest memorije koju model drži dok čita dugačak kontekst, što bi značilo jeftinije opsluživanje dugih konteksta — ovo je za sada tvrdnja sa Reddita, nije potvrđena zvaničnim tehničkim izveštajem, pa proveri na linku. Na Redditu kruži i tvrdnja da je model prvi na novom Artificial Analysis testu, ali na zvaničnoj AA stranici V4.1 Flash se uopšte ne pominje u vrhu tabele.",
+      "zastoJeBitno": "Za pozadinske poslove u aplikaciji (sažimanje, klasifikacija, obrada dokumenata) ovo je klasa u kojoj cena sada pada brže nego kod vrhunskih modela.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "r/OpenAI (diskusija)",
+          "url": "https://www.reddit.com/r/OpenAI/comments/1wf9imw/deepseek_is_ruthless/"
+        },
+        {
+          "naziv": "r/LocalLLaMA (diskusija)",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wfpwhj/deepseek_v41_flash_beats_astra_on_aas_new/"
+        }
+      ]
+    },
+    {
+      "naslov": "Obama: AI mora da bude jedna od centralnih tema demokrata",
+      "staSeDesilo": "Barack Obama je pozvao demokrate da naprave „vrlo jasan plan“ za veštačku inteligenciju, pre svega oko uticaja na zapošljavanje i bezbednosti. To se poklapa sa pozicioniranjem obe stranke pred novembarske izbore za Kongres, gde je AI postao tema kampanje.",
+      "zastoJeBitno": "Teme kampanje često postanu zakoni godinu-dve kasnije, pa je ovo rani signal kuda ide regulativa u SAD.",
+      "kategorija": "regulativa",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/13/obama-urges-democrats-to-have-a-clear-plan-for-ai-safeguards/"
+        }
+      ]
+    },
+    {
+      "naslov": "Predlog sa Prinstona: transformer koji pamti stanje između tokena",
+      "staSeDesilo": "Istraživač Yifan Zhang je objavio tehnički izveštaj o arhitekturi Recurrent Looped Transformer (RLT), gde se poslednje skriveno stanje dekodera i njegov keš pažnje prenose u sledeći token, umesto da svaki token kreće iznova. Autor sam naglašava da je ovo samo specifikacija dizajna — nema izmerenih rezultata o brzini, kvalitetu rezonovanja ni skaliranju.",
+      "zastoJeBitno": "Zanimljiv pravac za dublje „razmišljanje“ bez dužih odgovora, ali bez merenja je to za sada ideja na papiru, ne nešto što menja tvoj izbor modela.",
+      "kategorija": "istrazivanje",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/09/13/a-princeton-researcher-proposes-recurrent-looped-transformer-rlt/"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "commit-rewriter 0.1",
+      "tip": "alat",
+      "opis": "Mali veb alat Simona Willisona za sređivanje commit poruka u repou. Napravljen je da izbaci tragove kodirajućih agenata i reference na privatne issue-e pre nego što kod postane javan. Pre prepisivanja sam kreira granu sa vremenskom oznakom da možeš da se vratiš nazad.",
+      "kakoProbati": [
+        "Instaliraj uv ako ga nemaš, pa pokreni `uvx commit-rewriter putanja/do/repoa` (putanju izostavi ako si već u folderu repoa).",
+        "Otvori adresu koju alat ispiše i izmeni poruke koje ti smetaju.",
+        "Pošalji izmene — alat prepisuje sve commit-e od prvog izmenjenog do najnovijeg, a rezervna grana ostaje kao osiguranje.",
+        "Probaj prvo na kopiji repoa, pošto je reč o prepisivanju istorije."
+      ],
+      "link": "https://simonwillison.net/2026/Sep/14/commit-rewriter/",
+      "cena": "besplatno"
+    },
+    {
+      "naziv": "shot-scraper 1.12 (WebP snimci ekrana)",
+      "tip": "alat",
+      "opis": "Alat za automatsko slikanje veb stranica iz komandne linije sada podržava WebP. Fajlovi su po pravilu osetno manji nego JPEG ili PNG, a bez opcije za kvalitet snimak je bez gubitaka.",
+      "kakoProbati": [
+        "`uvx shot-scraper https://tvoj-sajt.rs -o snimak.webp --quality 80`",
+        "Bez `--quality` dobijaš lossless WebP, koristi to za poređenje veličine fajlova.",
+        "Ubaci komandu u cron ili GitHub Action da svakog dana slika landing stranu tvoje aplikacije."
+      ],
+      "link": "https://simonwillison.net/2026/Sep/13/shot-scraper/",
+      "cena": "besplatno"
+    },
+    {
+      "naziv": "Benchmark Radar",
+      "tip": "projekat",
+      "opis": "Pretraživa baza AI benchmark-ova sa istorijom rezultata, prikazom zasićenosti (kad test prestane da razdvaja modele) i trendovima po oblastima. Ceo skup podataka može da se skine kao JSON, bez skrejpovanja.",
+      "kakoProbati": [
+        "Otvori benchmark-radar.org i pogledaj „Saturation“ prikaz za test koji te zanima.",
+        "Filtriraj po kategoriji ili organizaciji da vidiš koji testovi se zaista koriste.",
+        "Skini JSON i ubaci ga u svoj projekat ako praviš poređenje modela.",
+        "Kod je na GitHub-u ako hoćeš da dodaš izvor."
+      ],
+      "link": "https://benchmark-radar.org",
+      "cena": "besplatno"
+    },
+    {
+      "naziv": "DeepSeek V4.1 Flash",
+      "tip": "model",
+      "opis": "Novi jeftini model iz DeepSeek-a, dostupan preko OpenRouter-a od 10. septembra. Cenovno je u istoj grupi sa Qwen3.8 Flash, GLM 5.3 Flash i Mistral Small 4 po ulaznom tokenu.",
+      "kakoProbati": [
+        "Na OpenRouter-u ga dodaj kao model u postojeći OpenAI-kompatibilan poziv (samo menjaš `model` string).",
+        "Pusti mu tipičan pozadinski zadatak iz svoje aplikacije — sažimanje ili klasifikaciju — i uporedi izlaz sa onim što sad koristiš.",
+        "Izmeri trošak na 100 stvarnih zahteva pre nego što ga postaviš kao podrazumevani."
+      ],
+      "link": "https://openrouter.ai/models",
+      "cena": "$0,15 ulaz / $0,60 izlaz za 1M tokena"
+    },
+    {
+      "naziv": "Hijerarhijski NeRF sa JAX3D (tutorijal)",
+      "tip": "projekat",
+      "opis": "Ceo primer koda za pravljenje NeRF-a — modela koji od nekoliko fotografija scene uči da je prikaže iz novog ugla — u JAX-u, Flax-u i Optax-u, sa grubom i finom mrežom, hijerarhijskim uzorkovanjem i izvlačenjem geometrije.",
+      "kakoProbati": [
+        "Otvori tutorijal i prekopiraj kod u Google Colab sa GPU runtime-om.",
+        "Pusti generisanje sintetičkog skupa iz više uglova, pa treniranje sa JIT kompilacijom.",
+        "Pogledaj rezultat kroz 360-stepeni render i PSNR meru."
+      ],
+      "link": "https://www.marktechpost.com/2026/09/13/hierarchical-nerf-with-jax3d-for-volumetric-rendering-novel-view-synthesis-and-3d-reconstruction/",
+      "cena": "besplatno (plus trošak GPU-a ako ne koristiš besplatni Colab)"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "COBRA-Skills: evolucija skilova za agente vođena kontekstualnim banditima",
+      "objasnjenje": "Kad agentu pišeš skil fajlove, svaka izmena mora nekako da se testira, a testiranje je skupo. COBRA-Skills koristi pristup „kontekstualnog bandita“ — statistički način da se bira šta sledeće isprobati — da prioritetno evaluira samo one varijante skilova koje verovatno nešto donose, i menja ih na osnovu prikupljenih dokaza umesto nasumično. Rezultat je znatno manji trošak evaluacije uz zadržan kvalitet.",
+      "zastoJeZanimljivo": "Direktno primenljivo na tvoj rad sa Claude Code-om: isti princip možeš da primeniš na svoje skil i AGENTS.md fajlove, umesto da ih prepravljaš po osećaju.",
+      "url": "https://huggingface.co/papers/2609.11682",
+      "github": "https://github.com/Jerry-LuP/COBRA-Skills"
+    },
+    {
+      "naslov": "SAS: jednostavno proređivanje pažnje kroz učenje šta je bitno u kontekstu",
+      "objasnjenje": "Modeli troše najviše resursa na to što svaki token „gleda“ sve prethodne. SAS (iz Tencent Hunyuan tima) trenira mali selektor koji bira koji delovi konteksta zaslužuju pažnju, i to ne odvojeno, već zajedno sa samim modelom, kroz meko propuštanje unutar softmax-a. Kad je budžet pažnje mali, ovako izabrani delovi konteksta su bolji nego kod ranijih metoda.",
+      "zastoJeZanimljivo": "Ovo je jedan od pravaca koji drži cenu dugog konteksta niskom — ista logika koja stoji iza jeftinih „Flash“ modela koje danas koristiš u pozadinskim poslovima.",
+      "url": "https://huggingface.co/papers/2609.13141",
+      "github": "https://github.com/Tencent-Hunyuan/Simple-Attention-Sparsification"
+    },
+    {
+      "naslov": "SNAP3D: fizički ispravni 3D delovi za sklapanje iz jedne slike",
+      "objasnjenje": "Generatori 3D modela često naprave delove koji prolaze jedni kroz druge ili ne mogu da se sklope. SNAP3D dodaje simulaciju u petlju: rešava preklapanja delova, rekonstruiše ko se sa kim dodiruje i doteruje spojnice dok sklop ne bude stabilan i fizički moguć.",
+      "zastoJeZanimljivo": "Praktično za svaku aplikaciju koja iz fotografije pravi nešto što se stvarno štampa ili sklapa — 3D štampa, nameštaj, delovi za popravku.",
+      "url": "https://huggingface.co/papers/2609.13146",
+      "github": "https://github.com/LucyTuan/SNAP3D"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Token Račun",
+      "problem": "Kad biraš model za aplikaciju, cena po milionu tokena ti ne govori mnogo — zanima te koliko košta jedan tvoj tipičan zadatak. To danas računaš ručno, a cene se menjaju bez najave.",
+      "zaKoga": "Solo developeri i male agencije u regionu koje plaćaju AI iz svog džepa.",
+      "ulogaAi": "AI se ovde koristi samo za merenje: aplikacija pušta isti zadatak kroz više modela preko OpenRouter-a i beleži potrošene tokene i cenu.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Napravi Angular stranicu gde zalepiš prompt i izabereš 3-5 modela sa OpenRouter liste.",
+        "Pozovi ih preko OpenRouter API-ja i sačuvaj u Supabase broj tokena, cenu i trajanje za svaki poziv.",
+        "Dodaj dnevni posao (Supabase Edge Function + cron) koji skida aktuelni cenovnik i beleži promene, tako da vidiš kad ti model poskupi.",
+        "Prikaži prostu tabelu „cena po zadatku“ i pošalji mejl kad neka cena skoči preko praga."
+      ],
+      "inspiracija": "Artificial Analysis v4.3 (3,26 vs 7,63 dolara po zadatku za isti rezultat) i današnje promene cena na OpenRouter-u."
+    },
+    {
+      "naziv": "Pixel Straža",
+      "problem": "Kad AI agent menja kod tvoje aplikacije, CSS i raspored znaju tiho da se raspadnu na nekoj stranici koju nisi otvorio danima.",
+      "zaKoga": "Svako ko pušta agente da menjaju frontend i nema vremena za pravi vizuelni QA.",
+      "ulogaAi": "Model gleda dve slike ekrana (juče i danas) i piše u jednoj rečenici šta se promenilo i da li je promena verovatno greška.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Napravi listu URL-ova i GitHub Action koji svaki dan pušta `shot-scraper ... -o strana.webp --quality 80`.",
+        "Čuvaj snimke u Supabase Storage sa datumom u imenu fajla.",
+        "Pošalji jučerašnji i današnji snimak jeftinom multimodalnom modelu preko OpenRouter-a i traži kratak opis razlike.",
+        "Ako model javi sumnjivu promenu, otvori GitHub issue sa oba snimka."
+      ],
+      "inspiracija": "shot-scraper 1.12 i podrška za WebP."
+    },
+    {
+      "naziv": "SrBench — mali test modela na srpskom",
+      "problem": "Nijedna velika tabela ne meri kako se modeli snalaze sa srpskim: padeži, ćirilica i latinica, domaća administrativna dokumenta, mere i datumi u našem formatu.",
+      "zaKoga": "Developeri i firme u Srbiji i regionu koji biraju model za korisnike koji pišu na srpskom.",
+      "ulogaAi": "Modeli su predmet testiranja; jedan jači model služi kao ocenjivač odgovora po unapred napisanim kriterijumima.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Sastavi 60-80 zadataka u JSON-u: prevod, sažimanje ugovora, ispravljanje padeža, izvlačenje podataka iz računa, transliteracija.",
+        "Napiši skriptu koja svaki zadatak pušta kroz 6 modela preko OpenRouter-a i čuva odgovore u Supabase.",
+        "Ocenjivanje uradi u dva prolaza: automatske provere gde može tačno/netačno, pa model-ocenjivač za ostalo, sa ručnom kontrolom uzorka.",
+        "Objavi rezultate kao javnu Angular stranicu i JSON za skidanje, po uzoru na Benchmark Radar."
+      ],
+      "inspiracija": "Benchmark Radar i nova verzija Artificial Analysis indeksa."
+    },
+    {
+      "naziv": "AI Rečnik (iOS)",
+      "problem": "Pojmovi iz AI vesti — alignment, agent, destilacija, evaluator, KV keš — kod nas se ili ne prevode ili se prevode različito, pa ljudi čitaju vesti a ne razumeju o čemu se radi.",
+      "zaKoga": "Novinari, studenti, menadžeri i svi koji prate AI vesti na srpskom bez tehničke pozadine.",
+      "ulogaAi": "AI generiše nacrt objašnjenja i svakodnevnu analogiju za svaki pojam, ali ti ručno odobravaš tekst pre objave — rečnik mora da bude tačan.",
+      "tezina": 1,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Napravi SwiftUI listu sa 40-50 pojmova, objašnjenjem u dve rečenice i primerom iz stvarne vesti.",
+        "Sadržaj drži u Supabase tabeli da možeš da ga dopunjuješ bez novog build-a, uz lokalni keš za offline.",
+        "Dodaj „pojam dana“ kroz lokalnu notifikaciju i widget na početnom ekranu.",
+        "Kasnije dodaj pretragu i deljenje kartice pojma kao slike."
+      ],
+      "inspiracija": "Nedeljnikov tekst o 7 AI pojmova koje treba razumeti."
+    },
+    {
+      "naziv": "Evaluator u CI-ju",
+      "problem": "Kad promeniš prompt ili model u aplikaciji, ne znaš da li si nešto pokvario dok se korisnik ne požali. Testovi za kod postoje, za promptove obično ne.",
+      "zaKoga": "Developeri koji imaju AI funkciju u produkciji i menjaju je češće nego što je testiraju.",
+      "ulogaAi": "Model se testira nad fiksnim skupom ulaza, a drugi model ocenjuje odgovore po tvojim pravilima pre nego što pull request može da se spoji.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Izvuci 30-ak stvarnih ulaza iz svoje aplikacije i napiši šta je za svaki prihvatljiv odgovor.",
+        "Napravi GitHub Action koji na svaki PR pušta te ulaze kroz trenutni prompt i beleži rezultat.",
+        "Dodaj ocenjivanje: deterministicke provere (format, JSON shema, obavezna polja) plus model-ocenjivač za ton i tačnost.",
+        "Po uzoru na COBRA-Skills, ne puštaj ceo skup svaki put — prioritetno testiraj slučajeve koji su ranije padali, da ti CI ne pojede budžet."
+      ],
+      "inspiracija": "COBRA-Skills rad i Amodeijev predlog o „ugrađenim evaluatorima“."
+    }
+  ],
+  "cene": "Danas je zabeleženo više poskupljenja nego pojeftinjenja: DeepSeek V4 Pro 0813 je sa 0,58/1,74 otišao na 0,98/2,95 dolara po milionu tokena (ulaz/izlaz), GLM 5.3 Flash se udvostručio sa 0,075/0,25 na 0,15/0,50, a GLM 5.3 sa 1,09/3,43 na 1,40/4,40; u suprotnom smeru Qwen3 14B je pao sa 0,23/0,91 na 0,12/0,24, a Nemotron 3 Ultra sa 0,63/3,13 na 0,60/2,40. U jeftinoj klasi najniži ulaz je 0,15 dolara i dele ga četiri modela (DeepSeek V4.1 Flash, Qwen3.8 Flash, GLM 5.3 Flash i Mistral Small 4), a najjeftiniji izlaz ima Qwen3.8 Flash sa 0,47. Među vrhunskim modelima cenovno je daleko najpovoljniji Grok 4.6 sa 2 dolara ulaz i 6 izlaz, dok Kimi K3 stoji na 2,65/13,28 — osetno iznad prethodnika Kimi K2.6 koji je bio 0,95/4."
+}

@@ -1,0 +1,292 @@
+{
+  "datum": "2026-09-14",
+  "generisano": "2026-09-14T05:33:52.048Z",
+  "model": "claude-haiku-4-5-20251001",
+  "prevod": "claude-haiku-4-5-20251001",
+  "ukratko": "The day was dominated by political pushback on Amodei's AI slowdown plan: Trump and Mike Johnson openly rejected it, while Microsoft gave conditional support. Artificial Analysis released a new version of its index showing Fable 5.1 and GPT-6 Astra tied for first place, but at wildly different per-task cost. Meanwhile, OpenRouter saw a wave of price changes today, mostly upward for DeepSeek Pro and GLM models.",
+  "vesti": [
+    {
+      "naslov": "Slowdown plan gets concrete steps — and political pushback from the White House",
+      "staSeDesilo": "Amodei's September 12 essay \"We Must Pace the Frontier\" lays out three steps: standing access for independent evaluators embedded at the company level, shared safety standards among labs in democracies, and negotiations with authoritarian states. Anthropic has only committed to the first step, OpenAI says it will do the same (without details), Musk offered mere support, and Nadella welcomed the \"thoughtful pace\" on condition that the mechanism isn't controlled by a handful of firms. A day later, Donald Trump and House Speaker Mike Johnson rejected the plan, arguing a pause would let China get ahead of the US.",
+      "zastoJeBitno": "If \"embedded evaluators\" and pre-launch checkpoints become standard practice, model releases become rarer and more predictable — which directly affects how often you'll be swapping models in your app.",
+      "kategorija": "regulativa",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/09/13/anthropics-3-step-pace-the-frontier-plan-wins-openai-xai-and-microsoft-support-is-it-too-late-to-slow-ai-down/"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/994441/trump-mike-johnson-ai-industry-overreacting"
+        },
+        {
+          "naziv": "Danas",
+          "url": "https://www.danas.rs/svet/trampova-administracija-ai/"
+        }
+      ]
+    },
+    {
+      "naslov": "Artificial Analysis v4.3: Fable 5.1 and GPT-6 Astra tied, but Astra is 57% cheaper per task",
+      "staSeDesilo": "Artificial Analysis refreshed its Intelligence Index: Terminal-Bench was bumped to v4.0, and τ³-Banking was replaced with a new benchmark, AutomationBench-AA, featuring 657 business tasks built with Zapier. Claude Fable 5.1 and GPT-6 Astra share first place with 53 points each, with Claude Opus 5 third at 51. The more interesting story is cost: the same score costs $3.26 per task with Astra versus $7.63 with Fable 5.1, while GLM-5.3-Flash scores 42 points at just $0.25 per task.",
+      "zastoJeBitno": "If you're footing the bill yourself, \"points per dollar\" is a more useful metric than the leaderboard itself — and it shows that for a lot of agentic tasks, mid-tier models get the job done for a tenth of the cost.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Artificial Analysis",
+          "url": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v4-3"
+        },
+        {
+          "naziv": "r/LocalLLaMA (discussion)",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wfpwhj/deepseek_v41_flash_beats_astra_on_aas_new/"
+        }
+      ]
+    },
+    {
+      "naslov": "Garry Tan: let US labs distill frontier models too",
+      "staSeDesilo": "Y Combinator CEO Garry Tan is calling on regulators not to restrict distillation — training smaller open models on the outputs of large closed models. His argument: intelligence trained on public data should be a public good, and big labs never asked permission when they trained on other people's text either. This directly contradicts Anthropic's stance, which recently accused Chinese labs of \"unauthorized distillation attacks\" via stolen accounts.",
+      "zastoJeBitno": "The outcome of this debate determines how many cheap open models will be available — and those models are exactly what keeps inference costs low for small developers.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/11/y-combinators-garry-tan-wants-u-s-open-weight-ai-labs-to-distill-frontier-models-too/"
+        },
+        {
+          "naziv": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49685253"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenRouter prices shift: DeepSeek V4 Pro and GLM Flash get pricier, Qwen3 14B gets cheaper",
+      "staSeDesilo": "A wave of price changes hit today. DeepSeek V4 Pro 0813 jumped from $0.58/$1.74 to $0.98/$2.95 per million tokens (input/output), GLM 5.3 Flash doubled from $0.075/$0.25 to $0.15/$0.50, and GLM 5.3 went from $1.09/$3.43 to $1.40/$4.40. In the other direction, Qwen3 14B dropped from $0.23/$0.91 to $0.12/$0.24, and Nemotron 3 Ultra fell from $0.63/$3.13 to $0.60/$2.40.",
+      "zastoJeBitno": "If your app calls a model through OpenRouter, your monthly bill just changed today without a single code change — worth checking which model is set as your default.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "OpenRouter (model pricing)",
+          "url": "https://openrouter.ai/models"
+        }
+      ]
+    },
+    {
+      "naslov": "DeepSeek V4.1 Flash pushes inference prices down from below",
+      "staSeDesilo": "DeepSeek's new V4.1 Flash has been on OpenRouter since September 10 at $0.15 per million input tokens and $0.60 per million output tokens. The community is buzzing about strong KV-cache compression — the memory the model holds onto while reading long context — which would mean cheaper handling of long contexts. For now this is just a Reddit claim, not confirmed by an official technical report, so check the link yourself. There's also a Reddit claim that the model tops the new Artificial Analysis benchmark, but the official AA page doesn't show V4.1 Flash anywhere near the top of the leaderboard.",
+      "zastoJeBitno": "For background tasks in your app (summarization, classification, document processing), this is a tier where prices are now falling faster than at the frontier.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "r/OpenAI (discussion)",
+          "url": "https://www.reddit.com/r/OpenAI/comments/1wf9imw/deepseek_is_ruthless/"
+        },
+        {
+          "naziv": "r/LocalLLaMA (discussion)",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wfpwhj/deepseek_v41_flash_beats_astra_on_aas_new/"
+        }
+      ]
+    },
+    {
+      "naslov": "Obama: AI must be a core issue for Democrats",
+      "staSeDesilo": "Barack Obama has urged Democrats to build a \"very clear plan\" for AI, especially around its impact on jobs and safety. This lines up with both parties positioning themselves ahead of November's congressional elections, where AI has become a campaign issue.",
+      "zastoJeBitno": "Campaign talking points often turn into legislation a year or two later, so this is an early signal of where US AI regulation is headed.",
+      "kategorija": "regulativa",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/13/obama-urges-democrats-to-have-a-clear-plan-for-ai-safeguards/"
+        }
+      ]
+    },
+    {
+      "naslov": "Princeton proposal: a transformer that carries state between tokens",
+      "staSeDesilo": "Researcher Yifan Zhang published a technical report on the Recurrent Looped Transformer (RLT) architecture, where the decoder's last hidden state and its attention cache are passed on to the next token instead of each token starting from scratch. The author himself stresses this is just a design specification — there are no measured results yet on speed, reasoning quality, or scaling.",
+      "zastoJeBitno": "An interesting direction for deeper \"thinking\" without longer answers, but without benchmarks it's still an idea on paper, not something that should change your model choice today.",
+      "kategorija": "istrazivanje",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/09/13/a-princeton-researcher-proposes-recurrent-looped-transformer-rlt/"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "commit-rewriter 0.1",
+      "tip": "alat",
+      "opis": "A small web tool from Simon Willison for cleaning up commit messages in a repo. It's built to strip out traces of coding agents and references to private issues before code goes public. Before rewriting, it creates a timestamped branch so you can roll back.",
+      "kakoProbati": [
+        "Install uv if you don't have it, then run `uvx commit-rewriter path/to/repo` (skip the path if you're already in the repo folder).",
+        "Open the URL the tool prints and edit the messages you want to change.",
+        "Submit the changes — the tool rewrites every commit from the first edited one to the latest, with the backup branch as a safety net.",
+        "Try it on a copy of the repo first, since this rewrites history."
+      ],
+      "link": "https://simonwillison.net/2026/Sep/14/commit-rewriter/",
+      "cena": "free"
+    },
+    {
+      "naziv": "shot-scraper 1.12 (WebP screenshots)",
+      "tip": "alat",
+      "opis": "This command-line tool for automatically screenshotting web pages now supports WebP. Files are typically noticeably smaller than JPEG or PNG, and without a quality flag you get a lossless capture.",
+      "kakoProbati": [
+        "`uvx shot-scraper https://your-site.rs -o screenshot.webp --quality 80`",
+        "Skip `--quality` for lossless WebP, useful for comparing file sizes.",
+        "Drop the command into a cron job or GitHub Action to screenshot your app's landing page daily."
+      ],
+      "link": "https://simonwillison.net/2026/Sep/13/shot-scraper/",
+      "cena": "free"
+    },
+    {
+      "naziv": "Benchmark Radar",
+      "tip": "projekat",
+      "opis": "A searchable database of AI benchmarks with score history, saturation tracking (when a test stops distinguishing between models), and trends by domain. The entire dataset can be downloaded as JSON, no scraping required.",
+      "kakoProbati": [
+        "Open benchmark-radar.org and check the \"Saturation\" view for a benchmark you care about.",
+        "Filter by category or organization to see which tests are actually still in use.",
+        "Download the JSON and drop it into your project if you're comparing models.",
+        "Code is on GitHub if you want to contribute a source."
+      ],
+      "link": "https://benchmark-radar.org",
+      "cena": "free"
+    },
+    {
+      "naziv": "DeepSeek V4.1 Flash",
+      "tip": "model",
+      "opis": "A new low-cost model from DeepSeek, available via OpenRouter since September 10. Pricing-wise it sits in the same bracket as Qwen3.8 Flash, GLM 5.3 Flash, and Mistral Small 4 on input tokens.",
+      "kakoProbati": [
+        "Add it as a model in your existing OpenAI-compatible call via OpenRouter — just swap the `model` string.",
+        "Feed it a typical background task from your app, like summarization or classification, and compare the output to what you're using now.",
+        "Measure the cost across 100 real requests before making it your default."
+      ],
+      "link": "https://openrouter.ai/models",
+      "cena": "$0.15 input / $0.60 output per 1M tokens"
+    },
+    {
+      "naziv": "Hierarchical NeRF with JAX3D (tutorial)",
+      "tip": "projekat",
+      "opis": "A full code walkthrough for building a NeRF — a model that learns to render a scene from a new angle using just a few photos — in JAX, Flax, and Optax, with coarse and fine networks, hierarchical sampling, and geometry extraction.",
+      "kakoProbati": [
+        "Open the tutorial and copy the code into a Google Colab with GPU runtime.",
+        "Run the synthetic multi-view dataset generation, then train with JIT compilation.",
+        "Check the results with a 360-degree render and PSNR metric."
+      ],
+      "link": "https://www.marktechpost.com/2026/09/13/hierarchical-nerf-with-jax3d-for-volumetric-rendering-novel-view-synthesis-and-3d-reconstruction/",
+      "cena": "free (plus GPU cost if you're not using free Colab)"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "COBRA-Skills: bandit-driven evolution of agent skills",
+      "objasnjenje": "When you write skill files for an agent, every change needs to be tested somehow, and testing is expensive. COBRA-Skills uses a \"contextual bandit\" approach — a statistical method for deciding what to try next — to prioritize evaluating only the skill variants likely to pay off, updating them based on collected evidence instead of trial and error. The result is a much lower evaluation cost while maintaining quality.",
+      "zastoJeZanimljivo": "Directly applicable to your work with Claude Code: you could apply the same principle to your own skill and AGENTS.md files instead of tweaking them by gut feel.",
+      "url": "https://huggingface.co/papers/2609.11682",
+      "github": "https://github.com/Jerry-LuP/COBRA-Skills"
+    },
+    {
+      "naslov": "SAS: simple attention sparsification by learning what matters in context",
+      "objasnjenje": "Models spend most of their compute on having every token \"look at\" every prior token. SAS (from the Tencent Hunyuan team) trains a small selector that picks which parts of the context deserve attention — not separately, but jointly with the model itself, through soft gating inside the softmax. When the attention budget is small, the parts chosen this way outperform earlier methods.",
+      "zastoJeZanimljivo": "This is one of the directions keeping long-context prices low — the same logic behind the cheap \"Flash\" models you're already using for background tasks.",
+      "url": "https://huggingface.co/papers/2609.13141",
+      "github": "https://github.com/Tencent-Hunyuan/Simple-Attention-Sparsification"
+    },
+    {
+      "naslov": "SNAP3D: physically valid 3D parts for assembly from a single image",
+      "objasnjenje": "3D generators often produce parts that clip through each other or simply can't be assembled. SNAP3D adds simulation into the loop: it resolves part overlaps, reconstructs which pieces touch which, and refines joints until the assembly is stable and physically feasible.",
+      "zastoJeZanimljivo": "Useful for any app that turns a photo into something you can actually 3D print or assemble — 3D printing, furniture, replacement parts.",
+      "url": "https://huggingface.co/papers/2609.13146",
+      "github": "https://github.com/LucyTuan/SNAP3D"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Token Ledger",
+      "problem": "When picking a model for your app, the price per million tokens doesn't tell you much — what you actually care about is how much your typical task costs. Today you calculate that by hand, and prices change without warning.",
+      "zaKoga": "Solo developers and small agencies in the region paying for AI out of pocket.",
+      "ulogaAi": "AI is used purely for measurement here: the app runs the same task through several models via OpenRouter and logs tokens used, cost, and duration.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Build an Angular page where you paste a prompt and pick 3-5 models from the OpenRouter list.",
+        "Call them via the OpenRouter API and save token count, cost, and duration for each call in Supabase.",
+        "Add a daily job (Supabase Edge Function + cron) that pulls the current price list and logs changes, so you can see when a model gets more expensive.",
+        "Show a simple \"cost per task\" table and send an email alert when a price jumps past a threshold."
+      ],
+      "inspiracija": "Artificial Analysis v4.3 ($3.26 vs $7.63 per task for the same score) and today's OpenRouter price changes."
+    },
+    {
+      "naziv": "Pixel Watch",
+      "problem": "When an AI agent edits your app's code, CSS and layout can quietly break on some page you haven't opened in days.",
+      "zaKoga": "Anyone who lets agents touch the frontend and doesn't have time for proper visual QA.",
+      "ulogaAi": "A model looks at two screenshots (yesterday vs. today) and writes a one-sentence summary of what changed and whether it's likely a bug.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Build a list of URLs and a GitHub Action that runs `shot-scraper ... -o page.webp --quality 80` daily.",
+        "Store screenshots in Supabase Storage with the date in the filename.",
+        "Send yesterday's and today's screenshot to a cheap multimodal model via OpenRouter and ask for a short diff description.",
+        "If the model flags a suspicious change, open a GitHub issue with both screenshots attached."
+      ],
+      "inspiracija": "shot-scraper 1.12 and its new WebP support."
+    },
+    {
+      "naziv": "SrBench — a small benchmark for Serbian-language models",
+      "problem": "No major leaderboard measures how models handle Serbian: cases, Cyrillic vs. Latin script, local administrative documents, and our date and measurement formats.",
+      "zaKoga": "Developers and companies in Serbia and the region choosing a model for Serbian-speaking users.",
+      "ulogaAi": "The models being tested are the subject; a stronger model acts as the judge, scoring responses against pre-written criteria.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Put together 60-80 tasks in JSON: translation, contract summarization, case correction, invoice data extraction, transliteration.",
+        "Write a script that runs each task through 6 models via OpenRouter and stores the responses in Supabase.",
+        "Score in two passes: automated checks where a right/wrong answer exists, then a judge model for the rest, with manual spot-checking.",
+        "Publish the results as a public Angular page plus a downloadable JSON, in the style of Benchmark Radar."
+      ],
+      "inspiracija": "Benchmark Radar and the new Artificial Analysis index."
+    },
+    {
+      "naziv": "AI Glossary (iOS)",
+      "problem": "Terms from AI news — alignment, agent, distillation, evaluator, KV cache — either go untranslated or get translated inconsistently, so people read the news without understanding what's actually being said.",
+      "zaKoga": "Journalists, students, managers, and anyone following AI news in Serbian without a technical background.",
+      "ulogaAi": "AI drafts an explanation and an everyday analogy for each term, but you manually approve the text before publishing — the glossary needs to be accurate.",
+      "tezina": 1,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Build a SwiftUI list with 40-50 terms, a two-sentence explanation, and a real news example for each.",
+        "Keep content in a Supabase table so you can update it without a new build, with a local cache for offline use.",
+        "Add a \"term of the day\" via local notification and a home screen widget.",
+        "Later, add search and the ability to share a term card as an image."
+      ],
+      "inspiracija": "A weekly article covering 7 AI terms worth understanding."
+    },
+    {
+      "naziv": "Evaluator in CI",
+      "problem": "When you change a prompt or swap a model in your app, you don't know if you broke something until a user complains. Tests exist for code, but rarely for prompts.",
+      "zaKoga": "Developers running an AI feature in production and changing it more often than they test it.",
+      "ulogaAi": "The model is tested against a fixed set of inputs, and a second model judges the responses against your rules before a pull request can be merged.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Pull about 30 real inputs from your app and write down what counts as an acceptable answer for each.",
+        "Build a GitHub Action that runs those inputs through the current prompt on every PR and logs the results.",
+        "Add scoring: deterministic checks (format, JSON schema, required fields) plus a judge model for tone and accuracy.",
+        "Following COBRA-Skills' approach, don't run the whole set every time — prioritize testing cases that have failed before, so CI doesn't burn through your budget."
+      ],
+      "inspiracija": "The COBRA-Skills paper and Amodei's proposal for \"embedded evaluators.\""
+    }
+  ],
+  "cene": "Today saw more price hikes than cuts: DeepSeek V4 Pro 0813 went from $0.58/$1.74 to $0.98/$2.95 per million tokens (input/output), GLM 5.3 Flash doubled from $0.075/$0.25 to $0.15/$0.50, and GLM 5.3 went from $1.09/$3.43 to $1.40/$4.40; on the flip side, Qwen3 14B dropped from $0.23/$0.91 to $0.12/$0.24, and Nemotron 3 Ultra fell from $0.63/$3.13 to $0.60/$2.40. In the budget tier, the lowest input price is $0.15, shared by four models (DeepSeek V4.1 Flash, Qwen3.8 Flash, GLM 5.3 Flash, and Mistral Small 4), while Qwen3.8 Flash has the cheapest output at $0.47. Among frontier models, Grok 4.6 is by far the best value at $2 input / $6 output, while Kimi K3 sits at $2.65/$13.28 — notably above its predecessor Kimi K2.6, which was $0.95/$4."
+}
