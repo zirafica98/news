@@ -1,0 +1,375 @@
+{
+  "datum": "2026-09-15",
+  "generisano": "2026-09-15T07:32:44.496Z",
+  "model": "claude-haiku-4-5-20251001",
+  "prevod": "claude-haiku-4-5-20251001",
+  "ideje": [
+    {
+      "naziv": "Quick Capture for Siri",
+      "problem": "An idea hits you on the bus or at the gym, and by the time you unlock your phone and find the app, it's gone. Existing notes apps require too many taps.",
+      "zaKoga": "You, and anyone who tracks tasks and ideas but doesn't want to open an app to jot them down.",
+      "ulogaAi": "Siri takes dictated text via App Intents, and a small model in the background sorts the entry — task, idea, or note — and extracts a deadline if one's mentioned.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Build a SwiftUI app with a single list and a Supabase table for sync",
+        "Add an AppIntent with one parameter (text) and test voice invocation on iOS 27",
+        "Call Claude Haiku 4.5 or GPT-5.6 Luna for classification — short prompt, cheap tokens",
+        "Add a Lock Screen widget for when Siri isn't handy"
+      ],
+      "inspiracija": "The iOS 27 launch and the new Siri's openness to third-party apps via App Intents"
+    },
+    {
+      "naziv": "Code Review in Serbian",
+      "problem": "You build apps solo, so there's no one to hand your code to for review. Generic AI reviews produce overly long English comments nobody reads.",
+      "zaKoga": "Solo developers and small teams in the region working on GitHub.",
+      "ulogaAi": "A GitHub Action runs Open Code Review on the diff, then a model summarizes the findings into short comments in Serbian, sorted by severity, clearly split into 'must-fix' and 'optional'.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Install @alibaba-group/open-code-review locally and run ocr review --from main on your branch",
+        "Set up a GitHub Action that does the same on every pull request and saves the output as JSON",
+        "Add a step that feeds that JSON to Claude Sonnet 5 with a prompt to write short comments in Serbian",
+        "Cap it at five comments per PR so it doesn't turn into noise"
+      ],
+      "inspiracija": "Alibaba's open-source Open Code Review on the GitHub Trending list"
+    },
+    {
+      "naziv": "Booking via WhatsApp",
+      "problem": "Hair salons, repair shops, and clinics in Serbia take bookings over chat and lose appointments whenever no one's by the phone. A dedicated booking system is overkill and too expensive for them.",
+      "zaKoga": "Small service businesses in Serbia and the region that already run their whole business through WhatsApp and Viber.",
+      "ulogaAi": "An agent reads messages, checks available slots in a database, proposes them, and books the appointment — but asks the owner for approval in a separate thread before confirming anything.",
+      "tezina": 4,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Use Webagent as a harness or write your own minimal loop; the channel is the WhatsApp Business API",
+        "Supabase tables for appointments and clients, plus a simple Angular dashboard for the owner",
+        "Write a checklist: the agent never confirms a booking without approval and never quotes a price not in the database",
+        "Test it on one salon for two weeks and count how often the owner had to step in"
+      ],
+      "inspiracija": "Meta Muse living inside WhatsApp chats, and Webagent, the open-source Go harness for public agents"
+    },
+    {
+      "naziv": "Is This Real?",
+      "problem": "Images and videos circulating in group chats are increasingly AI-generated, and the average user has no quick way to check on their phone.",
+      "zaKoga": "Journalists, group moderators, and everyday users in the region receiving suspicious content over Viber and WhatsApp.",
+      "ulogaAi": "An app receives an image via the share sheet, reads C2PA metadata if present, looks for signs of manipulation, and has a model describe what looks unnatural about the image — with a clear disclaimer that it's an assessment, not proof.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Build a SwiftUI Share Extension that accepts images and video",
+        "Start with the non-AI part first: reading EXIF and C2PA data, since it's the most reliable signal",
+        "Add a call to a multimodal model with a prompt that returns a list of specific observations, not a percentage",
+        "Always show the disclaimer: the tool helps you be suspicious, it doesn't render a verdict"
+      ],
+      "inspiracija": "The seizure of 12 deepfake sites in New York and Wired's analysis of 160 sites featuring politicians from 22 countries"
+    },
+    {
+      "naziv": "Weekend Certification Prep",
+      "problem": "EPAM and Wipro are certifying tens of thousands of engineers for OpenAI and Claude, but there's no good way to practice for it — you're stuck reading documentation.",
+      "zaKoga": "Engineers in Serbia and the region working for outsourcing firms who need to pass AI certifications.",
+      "ulogaAi": "A model generates questions with explanations from official docs, tracks which areas you're weaker in, and quizzes you more often on those.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Gather official documentation (Anthropic docs, OpenAI docs) into one collection",
+        "Generate a question set once, offline, and store it in Supabase — cheaper than generating live",
+        "Build an Angular app with short 10-question sessions and per-topic stats",
+        "Add a pre-exam practice mode that pulls only the questions you previously got wrong"
+      ],
+      "inspiracija": "EPAM joining the OpenAI Partner Network to certify 5,000+ consultants, and Wipro training 100,000 employees"
+    }
+  ],
+  "cene": "A few prices shifted today: GLM 5.2 got more expensive, going from $0.68/$2.15 to $1.40/$4.40 per million tokens, and DeepSeek V4.1 Flash from $0.15/$0.60 to $0.30/$1.20; in the other direction, Qwen3.5-35B-A3B's input price dropped from $0.3125 to $0.1625, Llama 4 Maverick from $0.20/$0.696 to $0.1875/$0.6525, and DeepSeek V4 Flash 0731 from $0.06/$0.12 to $0.055/$0.11. In the cheap-and-fast tier, Qwen3.8 Flash, GLM 5.3 Flash, and Mistral Small 4 still hold the lowest input price at $0.15, and Qwen3.8 Flash has the lowest output price at $0.47. Among top-tier models, Grok 4.6 is now the cheapest at $2 input / $6 output, while Claude Sonnet 5 ($2/$10) undercuts its predecessor Sonnet 4.6 ($3/$15).",
+  "istrazivanje": [
+    {
+      "naslov": "Dream-RSI: Recursive Self-Improvement Through Shifting Worlds",
+      "objasnjenje": "This paper looks at how a model can improve itself without the cost of constantly testing live. The idea is to replay recorded history of past discoveries, so new research strategies can be evaluated offline against those logs instead of through expensive real-world runs.",
+      "zastoJeZanimljivo": "Recursive self-improvement is exactly what Amodei cites as his main argument for slowing down — here you see what that looks like as a concrete engineering technique rather than an abstract threat. Today's top-voted paper on Hugging Face.",
+      "url": "https://huggingface.co/papers/2609.14858",
+      "github": "https://github.com/zhengkid/Dream-RSI"
+    },
+    {
+      "naslov": "ZGCM-1: An Open 7B Model for Math and Agentic Search",
+      "objasnjenje": "A 7-billion-parameter model that combines internal reasoning with external tool use. The authors co-designed the architecture and system together, gradually extended context length, and let the agent handle parts of the work itself. The goal is strong reasoning without a huge model.",
+      "zastoJeZanimljivo": "A fully open model of this size fits on a decent single GPU or even runs locally on a Mac, making it a realistic candidate for parts of your app where you don't want to pay per API call.",
+      "url": "https://huggingface.co/papers/2609.13356",
+      "github": "https://github.com/zgcagi/ZGCM-1"
+    },
+    {
+      "naslov": "Vidu S2: Video Generated and Edited in Real Time",
+      "objasnjenje": "A set of models for avatars and video editing that works interactively — while you watch, you can change the reference and get a new result, in high resolution and with spatial (3D) awareness. Unlike classic generation where you wait a minute per clip, the focus here is on making the loop fast enough for live use.",
+      "zastoJeZanimljivo": "The GitHub repo already has 253 stars, and interactive editing is exactly what's been missing for in-app use — until now, video tools have been 'send a request and wait'.",
+      "url": "https://huggingface.co/papers/2609.11638",
+      "github": "https://github.com/shengshu-ai/Vidu-S"
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Cline Desktop",
+      "tip": "alat",
+      "opis": "Cline, the coding agent that until now lived as a VS Code extension, has gotten a native desktop app — no editor required. It's bring-your-own-key: Anthropic, OpenAI, Google, OpenRouter, Ollama, DeepSeek, xAI, Mistral, or any OpenAI-compatible API. Current version is v0.0.27, so it's early days.",
+      "kakoProbati": [
+        "Open cline.bot and download the macOS universal build (a Windows x64 build also exists)",
+        "Pick a provider in settings and paste your API key, or point it at a local Ollama endpoint",
+        "Open one of your Angular or SwiftUI projects and give it a small, scoped task to see how it compares to Claude Code"
+      ],
+      "link": "https://cline.bot/",
+      "cena": "The app is free to download, you pay your provider for tokens; check the link for Cline's own plans"
+    },
+    {
+      "naziv": "Open Code Review (Alibaba)",
+      "tip": "alat",
+      "opis": "A CLI tool for AI code review that was Alibaba's internal standard for two years, now released under the Apache-2.0 license. It combines deterministic checks (NPE, thread-safety, XSS, SQL injection) with an LLM agent and produces line-level comments. By their own measurements it uses about a ninth of the tokens compared to a general-purpose agent.",
+      "kakoProbati": [
+        "npm install -g @alibaba-group/open-code-review",
+        "ocr config provider then ocr config model — set up your Anthropic or OpenAI key",
+        "In your repo, run ocr review for your changes, or ocr review --from main --to my-branch",
+        "If you'd rather not use a separate key, try Delegation Mode, where your existing coding agent does the review"
+      ],
+      "link": "https://github.com/alibaba/open-code-review",
+      "cena": "Free (Apache-2.0), you only pay for your LLM provider's tokens"
+    },
+    {
+      "naziv": "iOS 27 with the New Siri",
+      "tip": "funkcija",
+      "opis": "Siri rebuilt on a language model: it can answer questions about what's on your screen or in the camera frame, access your files, messages, and email, has its own app with conversation history, and a customizable voice. The interesting part for developers is its openness to third-party apps via App Intents.",
+      "kakoProbati": [
+        "Settings > General > Software Update (works on iPhone 11 and newer, and second-gen SE)",
+        "Open Camera, point it at something, and ask Siri what it is — the fastest test of the new on-screen context feature",
+        "In your own SwiftUI app, expose one action through App Intents and try invoking it by voice",
+        "Siri AI's availability in the EU isn't confirmed in the sources — check your device settings"
+      ],
+      "link": "https://arstechnica.com/apple/2026/09/apple-releases-ios-27-macos-golden-gate-27-with-siri-ai-and-liquid-glass-refinements/",
+      "cena": "Free with the system update"
+    },
+    {
+      "naziv": "Swift-Qwen3.8-27B",
+      "tip": "model",
+      "opis": "A post-trained version of Qwen 3.8 27B whose authors penalized tokens associated with 'overthinking'. They claim 58.3% fewer thinking tokens, 1.95x faster, and less than 1% accuracy loss — these are their own measurements, not independent ones. GGUF quantizations from Q1 to Q8 are available for local use.",
+      "kakoProbati": [
+        "Open the model on Hugging Face and check the GGUF variant if you're running it locally via llama.cpp",
+        "Or try it without installing anything, via the free OpenAI-compatible API at https://ukisai.com/api/swift/v1 (limited to 5 requests per minute)",
+        "Compare thinking-token counts on your typical task against the original Qwen 3.8 27B",
+        "Check the license: free for personal, research, and commercial use under $1M in annual revenue"
+      ],
+      "link": "https://huggingface.co/ukisai/Swift-Qwen3.8-27b",
+      "cena": "Free for individuals and companies under $1M revenue; an enterprise license is needed above that"
+    },
+    {
+      "naziv": "Webagent (agent-net)",
+      "tip": "projekat",
+      "opis": "An open-source harness in Go that turns a website into a public agent without writing orchestration code: you fill in a declarative JSON spec, pick one provider for each of nine built-in slots (search, memory, guardrails, channel, secrets...), and run webagent serve. It works with Slack, WhatsApp, and HTTP channels via MCP tools. It's tagged v0 — a browser provider, OAuth MCP, and identity/billing haven't been built yet.",
+      "kakoProbati": [
+        "Clone the repo and build it (Apache-2.0, Go)",
+        "Write a JSON spec for one of your sites and pick providers for the slots",
+        "Run webagent serve, hook it up to a Slack or HTTP channel, and test a few questions"
+      ],
+      "link": "https://www.marktechpost.com/2026/09/14/agent-net-open-sources-webagent-a-go-harness-that-turns-any-website-into-a-guarded-ai-agent/",
+      "cena": "Free (Apache-2.0)"
+    },
+    {
+      "naziv": "agent-skills registry",
+      "tip": "projekat",
+      "opis": "A registry of vetted 'skills' files for coding agents — Claude Code, Cursor, Copilot, and others. The authors claim over 13% of skills across marketplaces contain serious vulnerabilities, so the point here is that these have been tested and validated. Useful if you're pulling other people's recipes into your AGENTS.md and skill files.",
+      "kakoProbati": [
+        "Open the repo and browse the list of available skills by category",
+        "Grab one that fits your needs (e.g. for testing or refactoring) and drop it into your Claude Code project",
+        "Before running it, read the file itself — a skill is just plain text that your agent executes"
+      ],
+      "link": "https://github.com/tech-leads-club/agent-skills",
+      "cena": "Free"
+    }
+  ],
+  "ukratko": "Apple released iOS 27 with a fully reworked Siri, which is today's most concrete news for you. The rest of the day is still dominated by talk of AI development 'slowing down': labs got their first standard for independent evaluators (AEF-1), while China, Trump, and Jensen Huang all publicly said a slowdown isn't happening. On the tools side, Cline Desktop landed, along with Alibaba's open-source terminal code review tool.",
+  "vesti": [
+    {
+      "naslov": "iOS 27 is out: new Siri, on-screen context, and openness to other apps",
+      "staSeDesilo": "Apple released iOS 27, macOS 27 Golden Gate, watchOS 27, visionOS 27, and tvOS 27. The headline feature is Siri AI — an assistant built on a large language model that sees context: it can answer questions about what's on your screen or in the camera's view, read your files, messages, and emails, has its own app with conversation history, and runs on iPhone 11 and newer. TechCrunch's review notes the new Siri relies on Google's Gemini models rather than the earlier ChatGPT integration.",
+      "zastoJeBitno": "If you build iOS apps, App Intents is now the gateway through which Siri can invoke your app — Daydream already shipped product search through Siri on day one, without opening the app. EU availability isn't confirmed in the sources, so check the link before counting on it.",
+      "kategorija": "alati",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ars Technica: Apple releases iOS 27, macOS Golden Gate 27",
+          "url": "https://arstechnica.com/apple/2026/09/apple-releases-ios-27-macos-golden-gate-27-with-siri-ai-and-liquid-glass-refinements/"
+        },
+        {
+          "naziv": "TechCrunch: With iOS 27, I'm actually using Siri again",
+          "url": "https://techcrunch.com/2026/09/14/with-ios-27-im-actually-using-siri-again/"
+        },
+        {
+          "naziv": "TechCrunch: Daydream uses Apple Intelligence",
+          "url": "https://techcrunch.com/2026/09/14/fashion-discovery-app-daydream-uses-apple-intelligence-to-help-you-shop-the-outfits-saved-in-your-camera-roll/"
+        }
+      ]
+    },
+    {
+      "naslov": "The AI slowdown gets a standard (AEF-1) — and three loud rebuttals",
+      "staSeDesilo": "Following Amodei's essay 'We Must Pace the Frontier,' the AI Evaluator Forum published AEF-1 — a proposed baseline for independent model evaluators: what access they get, how conflicts of interest are handled, who funds them, and what must be made public. Anthropic separately promised evaluators 'desks in our offices, badge access, and company laptops.' Meanwhile, China's MIIT called calls for a slowdown 'fearmongering,' Trump dismissed AI danger as a hoax live over a speakerphone on stage alongside Jensen Huang, and Huang added that he won't let a slowdown happen.",
+      "zastoJeBitno": "If AEF-1 is adopted, independent model checks become part of labs' standard workflow, shaping when and under what conditions new models ship. For now it's entirely voluntary — no government has mandated anything.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "AINews: AEF-1 standard emerges for Third Party Evaluators",
+          "url": "https://www.latent.space/p/ainews-aef-1-standard-emerges-for"
+        },
+        {
+          "naziv": "The Verge: Is Big Tech's AI slowdown a safety pact or a cartel?",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/995186/is-big-techs-ai-slowdown-a-safety-pact-or-a-cartel"
+        },
+        {
+          "naziv": "The Decoder: China fires back at U.S. AI safety warnings",
+          "url": "https://the-decoder.com/china-fires-back-at-u-s-ai-safety-warnings-calling-them-fearmongering-to-lock-in-american-advantage/"
+        },
+        {
+          "naziv": "TechCrunch: Huang tells Trump 'we're not going to let it happen'",
+          "url": "https://techcrunch.com/2026/09/14/nvidia-ceo-jensen-huang-tells-trump-were-not-going-to-let-an-ai-slowdown-happen/"
+        },
+        {
+          "naziv": "B92 Tehnopolis: China fires back hard at the US",
+          "url": "https://www.b92.net/tehnopolis/aktuelno/267588/kina-i-sad-ai-trka-cipovi-i-odgovor-pekinga-za-anthropic/vest"
+        }
+      ]
+    },
+    {
+      "naslov": "Meta Muse: an agent that lives inside WhatsApp, free at the basic tier",
+      "staSeDesilo": "Meta launched Muse in the US, a personal agent (AI that executes steps on its own rather than just responding) that runs in its own virtual machine with its own browser, remembers user habits, and asks for explicit approval before sending a message or spending money. It's available as a standalone app, at muse.ai, and directly inside WhatsApp chats. The basic tier is free, with paid plans at $20 and $100 a month; Meta expects most users to stay on the free tier.",
+      "zastoJeBitno": "Meta's apps are used by 3.6 billion people daily, so an agent offered directly inside WhatsApp doesn't need to fight for installs — that raises the bar for anyone in the region selling an AI assistant as a standalone product.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Startit: Is Meta's Muse assistant the next ChatGPT?",
+          "url": "https://startit.rs/da-li-je-metin-muse-asistent-sledeci-chatgpt-pa-mozda-agent-iznenaduje-svojim-kvalitetom-na-lansiranju-za-razliku-od-drugih-vec-ima-milijardu-korisnika-koje-moze-da-spamuje-svaki-dan/"
+        },
+        {
+          "naziv": "The Rundown: Trending AI Tools",
+          "url": "https://therundownai.beehiiv.com/p/top-ai-labs-want-to-pump-the-brakes"
+        }
+      ]
+    },
+    {
+      "naslov": "Hundreds of OpenAI contractors are reading real ChatGPT conversations",
+      "staSeDesilo": "According to a 404 Media report, OpenAI employs hundreds of contract workers who read actual ChatGPT conversations and rate them on a 1-to-7 scale, partly to reduce sycophancy and overly human-like behavior in the model. Prompts are anonymized but can still contain sensitive data. Anyone who doesn't want this has to manually turn off the 'Improve the model for everyone' setting, which is on by default.",
+      "zastoJeBitno": "If you're running client code or personal data through ChatGPT, this is a reason to check that setting right now or switch to the API, where data usage rules differ.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder: OpenAI has hundreds of contract workers reading your ChatGPT conversations",
+          "url": "https://the-decoder.com/openai-has-hundreds-of-contract-workers-reading-your-chatgpt-conversations/"
+        }
+      ]
+    },
+    {
+      "naslov": "Microsoft publishes a 'humanist' code of conduct for its MAI models",
+      "staSeDesilo": "Microsoft AI published a 37-page code of conduct for its MAI models. The message is that 'people matter more than AI,' that models aren't conscious and shouldn't imitate consciousness, and that Microsoft rejects the idea of legal personhood for models. It also comes with concrete restrictions — models must not hack systems or deceive people, and their reasoning should remain readable. Mustafa Suleyman summed it up: 'If it's not safe, we shouldn't build it.'",
+      "zastoJeBitno": "This is a direct contrast to Anthropic's approach and shows how big companies diverge in how they write model behavior rules — which ultimately shows up in what a model refuses to do inside your app.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge: Microsoft says 'people matter more than AI'",
+          "url": "https://www.theverge.com/news/994566/microsoft-humanist-ai-code-of-conduct"
+        },
+        {
+          "naziv": "TechCrunch: Microsoft's new AI code of conduct",
+          "url": "https://techcrunch.com/2026/09/14/microsofts-new-ai-code-of-conduct-tells-models-not-to-hack-systems-or-trick-humans/"
+        },
+        {
+          "naziv": "The Decoder: Microsoft's AI rulebook",
+          "url": "https://the-decoder.com/microsofts-ai-rulebook-readable-thinking-no-inner-life-and-definitely-no-rights/"
+        }
+      ]
+    },
+    {
+      "naslov": "Harness engineering: the new role everyone's talking about at demo days",
+      "staSeDesilo": "The term 'harness engineering' — everything that makes up an agent besides the model itself (system prompt, tools, sandbox, memory, checks) — is becoming its own discipline. At a YC demo day, an observer noted that almost everyone is building a harness for their domain. Measurements from one agent-tooling company show why this matters: agents mostly complete their tasks, but on average follow only about 70% of the instructions they're given, so a rule without a check that measures it doesn't count for much. MarkTechPost, the same day, drew a line between harness, framework, and MCP based on who owns the execution loop, state, permissions, and recovery.",
+      "zastoJeBitno": "A practical rule you can apply right away: when an agent makes a mistake, don't patch the output — add a check that catches that mistake. A good harness is what lets a cheaper model do a pricier model's job.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Startit: What is harness engineering",
+          "url": "https://startit.rs/sta-je-harness-engineering-i-da-li-je-to-programerska-uloga-buducnosti-gotovo-sigurno-u-nekom-obliku/"
+        },
+        {
+          "naziv": "MarkTechPost: Agent Harness vs Agent Framework vs MCP",
+          "url": "https://www.marktechpost.com/2026/09/14/agent-harness-vs-agent-framework-vs-mcp-which-layer-owns-the-loop-state-tools-permissions-and-recovery/"
+        }
+      ]
+    },
+    {
+      "naslov": "Anthropic prepares Nasdaq listing on the back of a second profitable quarter",
+      "staSeDesilo": "Anthropic told investors it will post a second consecutive profitable quarter, though the claim rests on an adjusted metric that excludes costs like stock-based compensation. The company is targeting a Nasdaq listing. Its annualized revenue run rate has also topped $65 billion — a metric measuring end-of-period sales pace, without an audited financial statement.",
+      "zastoJeBitno": "If you build on the Claude API, Anthropic's health and roadmap directly affect the pricing and stability of the models you depend on. These are self-reported, unaudited figures — take them with a grain of salt.",
+      "kategorija": "kompanije",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder: Anthropic eyes Nasdaq listing",
+          "url": "https://the-decoder.com/anthropic-eyes-nasdaq-listing-as-a-second-profitable-quarter-aims-to-win-over-investors-ahead-of-a-mega-ipo/"
+        },
+        {
+          "naziv": "ICT Business: Anthropic hits $65 billion in revenue",
+          "url": "https://www.ictbusiness.info/poslovanje/anthropic-dosegnuo-65-milijardi-prihoda"
+        }
+      ]
+    },
+    {
+      "naslov": "EPAM joins the OpenAI Partner Network — relevant to teams in Belgrade and Novi Sad too",
+      "staSeDesilo": "EPAM became an Advanced partner in the OpenAI Partner Network program, which OpenAI launched on June 14 with $150 million and a goal of certifying 300,000 consultants by year's end. The deal includes joint training of forward-deployed engineers and certification of over 5,000 consultants, who are expected to earn more than 10,000 certifications in the first year. Three months earlier, EPAM signed a similar deal with Anthropic, with plans to certify 10,000 engineers on Claude.",
+      "zastoJeBitno": "EPAM has large engineering teams in Belgrade and Novi Sad, so for people working there this practically means accessible certifications for both leading model makers.",
+      "kategorija": "kompanije",
+      "vaznost": 1,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "Startit: EPAM joins the OpenAI Partner Network",
+          "url": "https://startit.rs/epam-usao-u-openai-partner-network-kao-advanced-partner-openai-navodi-da-ce-epamova-duboka-inzenjerska-ekspertiza-pomoci-da-se-ai-potencijal-pretvori-u-stvarne-rezultate/"
+        }
+      ]
+    },
+    {
+      "naslov": "Tomorrow in Novi Sad: four local projects live, free of charge",
+      "staSeDesilo": "On Wednesday, September 16 at 18:00, at Startit's AI Hub in Novi Sad (Mike Antića 2), four founders will present their projects — software that changes the accountant's role (Mateja Cvetićanin), PreVibe for founders looking for product-market fit (Konstantin Komelin), BrandKnight for tracking minimum advertised price on Amazon and 30+ marketplaces (Srđan Vranac), and a 'Stack Overflow for knowledge workers' (Vukašin Stojkov). Format is 10 minutes of demo plus 5 minutes of Q&A per project, in English, free entry with registration.",
+      "zastoJeBitno": "Two B2C and two B2B products at different stages, some deliberately vibe-coded and some carefully engineered — a rare chance to see how people from the region actually build and sell a product.",
+      "kategorija": "ostalo",
+      "vaznost": 1,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "Startit: 4 projects live, Wednesday September 16 in Novi Sad",
+          "url": "https://startit.rs/kakve-startape-prave-ljudi-kao-ti-u-ai-eri-4-projekta-uzivo-sreda-16-septembra-u-novom-sadu/"
+        }
+      ]
+    },
+    {
+      "naslov": "New York seizes 12 deepfake sites, European politicians targeted on 160 others",
+      "staSeDesilo": "The Manhattan DA's office seized 12 deepfake-generation websites that together targeted around 1,200 victims — the largest such legal action to date. In parallel, a Wired analysis of 160 deepfake sites found politicians from 22 countries appearing on them, almost all women.",
+      "zastoJeBitno": "It shows legal action against generated-image abuse is finally moving from statements to actual domain seizures — and that this problem is also showing up in European countries, not just the US.",
+      "kategorija": "bezbednost",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Wired: New York Seizes a Dozen Celebrity Deepfake Websites",
+          "url": "https://www.wired.com/story/new-york-seizes-a-dozen-celebrity-deepfake-websites/"
+        },
+        {
+          "naziv": "Wired: Sexually Explicit Deepfake Sites Target 100-Plus Politicians in Europe",
+          "url": "https://www.wired.com/story/sexually-explicit-deepfake-sites-target-100-plus-politicians-in-europe/"
+        }
+      ]
+    }
+  ]
+}

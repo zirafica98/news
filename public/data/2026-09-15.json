@@ -1,0 +1,374 @@
+{
+  "datum": "2026-09-15",
+  "generisano": "2026-09-15T07:32:44.496Z",
+  "model": "claude-haiku-4-5-20251001",
+  "cene": "Danas se pomerilo nekoliko cena: GLM 5.2 je poskupeo sa 0,68/2,15 na 1,40/4,40 dolara po milionu tokena, a DeepSeek V4.1 Flash sa 0,15/0,60 na 0,30/1,20; u suprotnom smeru, Qwen3.5-35B-A3B je na ulazu pao sa 0,3125 na 0,1625, Llama 4 Maverick sa 0,20/0,696 na 0,1875/0,6525, a DeepSeek V4 Flash 0731 sa 0,06/0,12 na 0,055/0,11. U klasi jeftinih i brzih najniži ulaz i dalje drže Qwen3.8 Flash, GLM 5.3 Flash i Mistral Small 4 po 0,15 dolara, a najniži izlaz Qwen3.8 Flash sa 0,47. Od vrhunskih modela najjeftiniji je Grok 4.6 sa 2 dolara na ulazu i 6 na izlazu, dok je Claude Sonnet 5 (2/10) jeftiniji od svog prethodnika Sonnet 4.6 (3/15).",
+  "ukratko": "Apple je pustio iOS 27 sa potpuno prerađenom Siri, što je za tebe najkonkretnija vest dana. Ostatak dana je i dalje priča o „usporavanju\" razvoja AI-ja: laboratorije su dobile prvi standard za nezavisne evaluatore (AEF-1), a Kina, Tramp i Jensen Huang su javno rekli da od usporavanja nema ništa. Od alata, stigao je Cline Desktop i Alibabin open-source code review u terminalu.",
+  "vesti": [
+    {
+      "naslov": "iOS 27 je izašao: nova Siri, kontekst sa ekrana i otvaranje ka drugim aplikacijama",
+      "staSeDesilo": "Apple je objavio iOS 27, macOS 27 Golden Gate, watchOS 27, visionOS 27 i tvOS 27. Glavna stvar je Siri AI — asistent zasnovan na velikom jezičkom modelu koji vidi kontekst: može da odgovara na pitanja o onome što je na ekranu ili u vidokrugu kamere, čita tvoje fajlove, poruke i mejlove, ima svoju aplikaciju sa istorijom razgovora i radi na iPhone 11 i novijim. TechCrunch u prikazu navodi da se novi Siri oslanja na Google-ove Gemini modele umesto na raniju ChatGPT integraciju.",
+      "zastoJeBitno": "Ako praviš iOS aplikacije, App Intents postaje ulaz kroz koji Siri može da pozove tvoju aplikaciju — Daydream je već prvog dana pustio pretragu proizvoda kroz Siri bez otvaranja aplikacije. Dostupnost u EU nije potvrđena u izvorima, proveri na linku pre nego što računaš na to.",
+      "kategorija": "alati",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ars Technica: Apple releases iOS 27, macOS Golden Gate 27",
+          "url": "https://arstechnica.com/apple/2026/09/apple-releases-ios-27-macos-golden-gate-27-with-siri-ai-and-liquid-glass-refinements/"
+        },
+        {
+          "naziv": "TechCrunch: With iOS 27, I'm actually using Siri again",
+          "url": "https://techcrunch.com/2026/09/14/with-ios-27-im-actually-using-siri-again/"
+        },
+        {
+          "naziv": "TechCrunch: Daydream koristi Apple Intelligence",
+          "url": "https://techcrunch.com/2026/09/14/fashion-discovery-app-daydream-uses-apple-intelligence-to-help-you-shop-the-outfits-saved-in-your-camera-roll/"
+        }
+      ]
+    },
+    {
+      "naslov": "Usporavanje razvoja dobilo standard (AEF-1), ali i tri glasna „ne\"",
+      "staSeDesilo": "Posle Amodeijevog eseja „We Must Pace the Frontier\", AI Evaluator Forum je objavio AEF-1 — predlog osnovnih pravila za nezavisne evaluatore modela: kakav pristup dobijaju, kako se rešava sukob interesa, ko ih finansira i šta mora da bude javno. Anthropic je jednostrano obećao evaluatorima „stolove u našim kancelarijama, kartice za ulaz i firmine laptopove\". Sa druge strane, kineski MIP je pozive na usporavanje nazvao „širenjem straha\", Tramp je opasnost od AI-ja nazvao prevarom uživo preko spikerfona na sceni sa Jensenom Huangom, a Huang je dodao da neće dozvoliti da do usporavanja dođe.",
+      "zastoJeBitno": "Ako se AEF-1 primi, nezavisne provere modela postaju deo posla laboratorija, što dugoročno utiče na to kada i pod kojim uslovima novi modeli izlaze. Za sada je sve dobrovoljno — nijedna vlada ništa nije propisala.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "AINews: AEF-1 standard emerges for Third Party Evaluators",
+          "url": "https://www.latent.space/p/ainews-aef-1-standard-emerges-for"
+        },
+        {
+          "naziv": "The Verge: Is Big Tech's AI slowdown a safety pact or a cartel?",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/995186/is-big-techs-ai-slowdown-a-safety-pact-or-a-cartel"
+        },
+        {
+          "naziv": "The Decoder: China fires back at U.S. AI safety warnings",
+          "url": "https://the-decoder.com/china-fires-back-at-u-s-ai-safety-warnings-calling-them-fearmongering-to-lock-in-american-advantage/"
+        },
+        {
+          "naziv": "TechCrunch: Huang tells Trump 'we're not going to let it happen'",
+          "url": "https://techcrunch.com/2026/09/14/nvidia-ceo-jensen-huang-tells-trump-were-not-going-to-let-an-ai-slowdown-happen/"
+        },
+        {
+          "naziv": "B92 Tehnopolis: Kina žestoko odgovorila Americi",
+          "url": "https://www.b92.net/tehnopolis/aktuelno/267588/kina-i-sad-ai-trka-cipovi-i-odgovor-pekinga-za-anthropic/vest"
+        }
+      ]
+    },
+    {
+      "naslov": "Meta Muse: agent koji živi u WhatsAppu, besplatan osnovni nivo",
+      "staSeDesilo": "Meta je u Americi pustila Muse, ličnog agenta (AI koji sam izvršava korake umesto da samo odgovara) koji radi u zasebnoj virtuelnoj mašini sa svojim browserom, pamti navike korisnika i traži izričito odobrenje pre slanja poruke ili trošenja novca. Dostupan je kao zasebna aplikacija, na muse.ai i direktno u WhatsApp prepisci. Osnovni nivo je besplatan, a pretplate su 20 i 100 dolara mesečno; Meta očekuje da će većina ostati na besplatnom.",
+      "zastoJeBitno": "Metine aplikacije dnevno koristi 3,6 milijardi ljudi, pa agent koji se nudi unutar WhatsAppa ne mora da se bori za instalaciju — to pomera lestvicu svakome ko u regionu prodaje AI asistenta kao zaseban proizvod.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Startit: Da li je Metin Muse asistent sledeći ChatGPT?",
+          "url": "https://startit.rs/da-li-je-metin-muse-asistent-sledeci-chatgpt-pa-mozda-agent-iznenaduje-svojim-kvalitetom-na-lansiranju-za-razliku-od-drugih-vec-ima-milijardu-korisnika-koje-moze-da-spamuje-svaki-dan/"
+        },
+        {
+          "naziv": "The Rundown: Trending AI Tools",
+          "url": "https://therundownai.beehiiv.com/p/top-ai-labs-want-to-pump-the-brakes"
+        }
+      ]
+    },
+    {
+      "naslov": "Stotine ugovornih radnika OpenAI-ja čita prave ChatGPT razgovore",
+      "staSeDesilo": "Prema izveštaju 404 Media, OpenAI angažuje stotine ugovornih radnika koji čitaju stvarne ChatGPT razgovore i ocenjuju ih ocenom od 1 do 7, delom da bi se smanjilo laskanje i previše ljudsko ponašanje modela. Promptovi su anonimizovani, ali i dalje mogu da sadrže osetljive podatke. Ko to ne želi, mora sam da isključi podešavanje „Improve the model for everyone\", koje je podrazumevano uključeno.",
+      "zastoJeBitno": "Ako kroz ChatGPT provlačiš kod klijenata ili lične podatke, ovo je razlog da odmah proveriš to podešavanje ili pređeš na API, gde su pravila o korišćenju podataka drugačija.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder: OpenAI has hundreds of contract workers reading your ChatGPT conversations",
+          "url": "https://the-decoder.com/openai-has-hundreds-of-contract-workers-reading-your-chatgpt-conversations/"
+        }
+      ]
+    },
+    {
+      "naslov": "Microsoft objavio „humanistički kodeks\" za svoje MAI modele",
+      "staSeDesilo": "Microsoft AI je objavio kodeks ponašanja na 37 strana za svoje MAI modele. Poruka je da „ljudi vrede više od AI-ja\", da modeli nisu svesni i ne treba da imitiraju svest, i da Microsoft odbacuje ideju pravnog subjektiviteta za modele. Uz to idu i konkretna ograničenja — modeli ne smeju da hakuju sisteme ni da obmanjuju ljude, a razmišljanje modela treba da bude čitljivo. Mustafa Suleyman je to sažeo rečenicom: „Ako nije bezbedno, ne bi trebalo da to gradimo.\"",
+      "zastoJeBitno": "Ovo je direktan kontrast Anthropicovom pristupu i pokazuje da velike kompanije razilaze u tome kako pišu pravila ponašanja modela — što se na kraju vidi u tome šta model odbija da uradi u tvojoj aplikaciji.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge: Microsoft says 'people matter more than AI'",
+          "url": "https://www.theverge.com/news/994566/microsoft-humanist-ai-code-of-conduct"
+        },
+        {
+          "naziv": "TechCrunch: Microsoft's new AI code of conduct",
+          "url": "https://techcrunch.com/2026/09/14/microsofts-new-ai-code-of-conduct-tells-models-not-to-hack-systems-or-trick-humans/"
+        },
+        {
+          "naziv": "The Decoder: Microsoft's AI rulebook",
+          "url": "https://the-decoder.com/microsofts-ai-rulebook-readable-thinking-no-inner-life-and-definitely-no-rights/"
+        }
+      ]
+    },
+    {
+      "naslov": "Harness engineering: nova uloga oko koje se svi vrte na demo danima",
+      "staSeDesilo": "Termin „harness engineering\" — sve što čini agenta osim samog modela (sistemski prompt, alati, sandbox, pamćenje, provere) — prerasta u zasebnu disciplinu. Na YC demo danu posmatrač je primetio da skoro svi prave harness za svoj domen. Merenje jedne firme koja pravi alate za agente pokazuje zašto je to posao: agenti zadatak uglavnom završe, ali u proseku poštuju oko 70% dobijenih instrukcija, pa pravilo bez provere koja ga meri ne znači mnogo. MarkTechPost je u istom danu razdvojio pojmove harness, framework i MCP po tome ko drži petlju izvršavanja, stanje, dozvole i oporavak.",
+      "zastoJeBitno": "Praktično pravilo koje odmah možeš da primeniš: kad agent pogreši, ne krpi ishod nego dodaj proveru koja tu grešku hvata — dobar harness je ono što jeftinijem modelu dozvoljava da odradi posao skupljeg.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Startit: Šta je harness engineering",
+          "url": "https://startit.rs/sta-je-harness-engineering-i-da-li-je-to-programerska-uloga-buducnosti-gotovo-sigurno-u-nekom-obliku/"
+        },
+        {
+          "naziv": "MarkTechPost: Agent Harness vs Agent Framework vs MCP",
+          "url": "https://www.marktechpost.com/2026/09/14/agent-harness-vs-agent-framework-vs-mcp-which-layer-owns-the-loop-state-tools-permissions-and-recovery/"
+        }
+      ]
+    },
+    {
+      "naslov": "Anthropic priprema izlazak na Nasdaq uz drugi profitabilan kvartal",
+      "staSeDesilo": "Anthropic je investitorima saopštio da će drugi kvartal zaredom biti profitabilan, ali se ta tvrdnja oslanja na prilagođeni pokazatelj koji izostavlja troškove poput plaćanja u akcijama. Kompanija cilja listiranje na Nasdaqu. Uz to, godišnji tempo prihoda je premašio 65 milijardi dolara — pokazatelj koji meri brzinu prodaje na kraju perioda, bez revidiranog finansijskog izveštaja.",
+      "zastoJeBitno": "Ako gradiš na Claude API-ju, zdravlje i planovi Anthropica direktno utiču na cene i stabilnost modela od kojih zavisiš. Brojke su sopstvene i neproverene — uzmi ih sa rezervom.",
+      "kategorija": "kompanije",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder: Anthropic eyes Nasdaq listing",
+          "url": "https://the-decoder.com/anthropic-eyes-nasdaq-listing-as-a-second-profitable-quarter-aims-to-win-over-investors-ahead-of-a-mega-ipo/"
+        },
+        {
+          "naziv": "ICT Business: Anthropic dosegnuo 65 milijardi prihoda",
+          "url": "https://www.ictbusiness.info/poslovanje/anthropic-dosegnuo-65-milijardi-prihoda"
+        }
+      ]
+    },
+    {
+      "naslov": "EPAM ušao u OpenAI Partner Network — tiče se i timova u Beogradu i Novom Sadu",
+      "staSeDesilo": "EPAM je postao Advanced partner u OpenAI Partner Network programu, koji je OpenAI pokrenuo 14. juna sa 150 miliona dolara i ciljem da do kraja godine sertifikuje 300.000 konsultanata. Dogovor uključuje zajedničku obuku forward-deployed inženjera i sertifikaciju preko 5.000 konsultanata, koji bi u prvoj godini trebalo da skupe više od 10.000 sertifikata. Tri meseca ranije EPAM je sličan aranžman potpisao sa Anthropicom, uz plan da 10.000 inženjera sertifikuje za Claude.",
+      "zastoJeBitno": "EPAM ima velike inženjerske timove u Beogradu i Novom Sadu, pa ljudima koji odavde rade za tu firmu ovo praktično znači dostupne sertifikate za oba vodeća proizvođača modela.",
+      "kategorija": "kompanije",
+      "vaznost": 1,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "Startit: EPAM ušao u OpenAI Partner Network",
+          "url": "https://startit.rs/epam-usao-u-openai-partner-network-kao-advanced-partner-openai-navodi-da-ce-epamova-duboka-inzenjerska-ekspertiza-pomoci-da-se-ai-potencijal-pretvori-u-stvarne-rezultate/"
+        }
+      ]
+    },
+    {
+      "naslov": "Sutra u Novom Sadu: četiri domaća projekta uživo, besplatno",
+      "staSeDesilo": "U sredu 16. septembra u 18:00, u Startitovom AI Hubu u Novom Sadu (Mike Antića 2), četiri autora predstavljaju svoje projekte — softver koji menja ulogu knjigovođe (Mateja Cvetićanin), PreVibe za osnivače koji traže proizvod koji tržište želi (Konstantin Komelin), BrandKnight za praćenje minimalne oglašene cene na Amazonu i 30+ tržišta (Srđan Vranac) i „Stack Overflow za knowledge workere\" (Vukašin Stojkov). Format je 10 minuta demo plus 5 minuta pitanja po projektu, jezik je engleski, ulaz besplatan uz prijavu.",
+      "zastoJeBitno": "Dva B2C i dva B2B proizvoda u različitim fazama, neki svesno vajb-kodirani a neki inženjerski pažljivo — retka prilika da vidiš kako ljudi iz regiona zaista prave i prodaju proizvod.",
+      "kategorija": "ostalo",
+      "vaznost": 1,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "Startit: 4 projekta uživo, sreda 16. septembra u Novom Sadu",
+          "url": "https://startit.rs/kakve-startape-prave-ljudi-kao-ti-u-ai-eri-4-projekta-uzivo-sreda-16-septembra-u-novom-sadu/"
+        }
+      ]
+    },
+    {
+      "naslov": "Njujork zaplenio 12 deepfake sajtova, evropski političari na 160 drugih",
+      "staSeDesilo": "Tužilaštvo Menhetna zaplenilo je 12 sajtova za pravljenje deepfake sadržaja, koji su zajedno ciljali oko 1.200 žrtava — najveća takva pravna akcija do sada. Paralelno, Wired-ova analiza 160 deepfake sajtova pokazuje da se na njima pojavljuju političari iz 22 zemlje, gotovo sve žene.",
+      "zastoJeBitno": "Pokazuje da se pravna praksa oko zloupotrebe generisanih slika konačno pomera sa deklaracija na zaplene domena — i da je ovo problem koji se pojavljuje i u evropskim zemljama, ne samo u SAD.",
+      "kategorija": "bezbednost",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Wired: New York Seizes a Dozen Celebrity Deepfake Websites",
+          "url": "https://www.wired.com/story/new-york-seizes-a-dozen-celebrity-deepfake-websites/"
+        },
+        {
+          "naziv": "Wired: Sexually Explicit Deepfake Sites Target 100-Plus Politicians in Europe",
+          "url": "https://www.wired.com/story/sexually-explicit-deepfake-sites-target-100-plus-politicians-in-europe/"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Cline Desktop",
+      "tip": "alat",
+      "opis": "Cline, agent za kodiranje koji je do sada živeo kao dodatak za VS Code, dobio je nativnu desktop aplikaciju — bez editora. Radi po principu „donesi svoj ključ\": Anthropic, OpenAI, Google, OpenRouter, Ollama, DeepSeek, xAI, Mistral ili bilo koji OpenAI-kompatibilan API. Trenutna verzija je v0.0.27, što znači da je rano.",
+      "kakoProbati": [
+        "Otvori cline.bot i skini macOS universal build (postoji i Windows x64)",
+        "U podešavanjima izaberi provajdera i nalepi svoj API ključ, ili uperi na lokalni Ollama endpoint",
+        "Otvori jedan svoj Angular ili SwiftUI projekat i pusti ga na mali, ograničen zadatak da vidiš kako se ponaša u odnosu na Claude Code"
+      ],
+      "link": "https://cline.bot/",
+      "cena": "Aplikacija je besplatna za skidanje, plaćaš tokene svom provajderu; za Cline-ove sopstvene planove proveri na linku"
+    },
+    {
+      "naziv": "Open Code Review (Alibaba)",
+      "tip": "alat",
+      "opis": "CLI alat za AI code review koji je dve godine bio Alibabin interni standard, sada pod Apache-2.0 licencom. Kombinuje determinističke provere (NPE, thread-safety, XSS, SQL injection) sa LLM agentom i daje komentare na nivou linije. Po njihovom merenju troši oko devetine tokena u odnosu na agenta opšte namene.",
+      "kakoProbati": [
+        "npm install -g @alibaba-group/open-code-review",
+        "ocr config provider pa ocr config model — podesi Anthropic ili OpenAI ključ",
+        "U repou pokreni ocr review za izmene, ili ocr review --from main --to moja-grana",
+        "Ako ne želiš zaseban ključ, probaj Delegation Mode gde review radi tvoj postojeći coding agent"
+      ],
+      "link": "https://github.com/alibaba/open-code-review",
+      "cena": "Besplatno (Apache-2.0), plaćaš samo tokene svog LLM provajdera"
+    },
+    {
+      "naziv": "iOS 27 sa novim Siri",
+      "tip": "funkcija",
+      "opis": "Siri prerađena na jezički model: pita se o onome što je na ekranu ili u kadru kamere, pristupa fajlovima, porukama i mejlu, ima svoju aplikaciju sa istorijom razgovora i podesivim glasom. Za programere je zanimljiv deo otvaranje ka aplikacijama trećih strana preko App Intents.",
+      "kakoProbati": [
+        "Settings > General > Software Update (radi na iPhone 11 i novijim, i na SE druge generacije)",
+        "Otvori Camera, uperi u nešto i pitaj Siri šta je to — to je najbrži test novog konteksta sa ekrana",
+        "U svojoj SwiftUI aplikaciji izloži jednu akciju kroz App Intents i probaj da je pozoveš glasom",
+        "Dostupnost Siri AI u EU nije potvrđena u izvorima — proveri u podešavanjima svog uređaja"
+      ],
+      "link": "https://arstechnica.com/apple/2026/09/apple-releases-ios-27-macos-golden-gate-27-with-siri-ai-and-liquid-glass-refinements/",
+      "cena": "Besplatno uz nadogradnju sistema"
+    },
+    {
+      "naziv": "Swift-Qwen3.8-27B",
+      "tip": "model",
+      "opis": "Post-trenirana verzija Qwen 3.8 27B kojoj su autori kaznili tokene vezane za „preterano razmišljanje\". Tvrde 58,3% manje tokena razmišljanja, 1,95x brže i manje od 1% gubitka tačnosti — to su njihova merenja, ne nezavisna. Postoje GGUF kvantizacije od Q1 do Q8 za lokalno pokretanje.",
+      "kakoProbati": [
+        "Otvori model na Hugging Face-u i pogledaj GGUF varijantu ako ga puštaš lokalno kroz llama.cpp",
+        "Ili ga probaj bez instalacije preko besplatnog OpenAI-kompatibilnog API-ja na https://ukisai.com/api/swift/v1 (ograničeno na 5 zahteva u minuti)",
+        "Uporedi broj tokena razmišljanja na svom tipičnom zadatku sa originalnim Qwen 3.8 27B",
+        "Proveri licencu: besplatno za lične, istraživačke i komercijalne potrebe ispod milion dolara prihoda godišnje"
+      ],
+      "link": "https://huggingface.co/ukisai/Swift-Qwen3.8-27b",
+      "cena": "Besplatno za pojedince i firme ispod 1M$ prihoda; preko toga treba enterprise licenca"
+    },
+    {
+      "naziv": "Webagent (agent-net)",
+      "tip": "projekat",
+      "opis": "Open-source harness u Go-u koji od sajta pravi javnog agenta bez pisanja orkestracije: popuniš deklarativni JSON spec, izabereš po jednog provajdera za devet ugradnih slotova (pretraga, memorija, guardrail, kanal, tajne...) i pokreneš webagent serve. Radi sa Slack, WhatsApp i HTTP kanalima preko MCP alata. Označen je kao v0 — browser provajder, OAuth MCP i identitet/naplata još nisu napravljeni.",
+      "kakoProbati": [
+        "Kloniraj repo i pokreni build (Apache-2.0, Go)",
+        "Napravi JSON spec za jedan svoj sajt i izaberi provajdere za slotove",
+        "webagent serve, pa ga zakači na Slack ili HTTP kanal i testiraj par pitanja"
+      ],
+      "link": "https://www.marktechpost.com/2026/09/14/agent-net-open-sources-webagent-a-go-harness-that-turns-any-website-into-a-guarded-ai-agent/",
+      "cena": "Besplatno (Apache-2.0)"
+    },
+    {
+      "naziv": "agent-skills registry",
+      "tip": "projekat",
+      "opis": "Registar proverenih „skills\" fajlova za coding agente — Claude Code, Cursor, Copilot i druge. Autori tvrde da preko 13% skilova po marketplace-ima sadrži ozbiljne ranjivosti, pa je poenta u tome što su ovi testirani i validirani. Korisno ako u AGENTS.md i skil fajlove ubacuješ tuđe recepte.",
+      "kakoProbati": [
+        "Otvori repo i pregledaj listu dostupnih skilova po kategorijama",
+        "Uzmi jedan koji ti odgovara (npr. za testiranje ili refaktorisanje) i ubaci ga u svoj Claude Code projekat",
+        "Pre nego što ga pustiš, pročitaj sam fajl — skil je običan tekst koji tvoj agent izvršava"
+      ],
+      "link": "https://github.com/tech-leads-club/agent-skills",
+      "cena": "Besplatno"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "Dream-RSI: rekurzivno samopoboljšanje kroz svetove koji se menjaju",
+      "objasnjenje": "Rad se bavi time kako model može da poboljšava sam sebe, a da to ne košta kao da sve stalno testiraš uživo. Ideja je da se snimljena istorija ranijih otkrića ponovo pušta unazad, pa se nove strategije istraživanja ocenjuju offline, na tim zapisima, umesto skupim pokretanjem u stvarnom okruženju.",
+      "zastoJeZanimljivo": "Upravo je rekurzivno samopoboljšanje razlog koji Amodei navodi kao glavni argument za usporavanje — ovde vidiš kako to izgleda kao konkretan inženjerski postupak, a ne kao apstraktna pretnja. Najviše glasova dana na Hugging Face-u.",
+      "url": "https://huggingface.co/papers/2609.14858",
+      "github": "https://github.com/zhengkid/Dream-RSI"
+    },
+    {
+      "naslov": "ZGCM-1: otvoreni 7B model za matematiku i agentsku pretragu",
+      "objasnjenje": "Model od 7 milijardi parametara koji spaja unutrašnje zaključivanje sa korišćenjem spoljnih alata. Autori su ga trenirali tako što su arhitekturu i sistem projektovali zajedno, postepeno širili dužinu konteksta i puštali agenta da sam radi delove posla. Cilj je dobra sposobnost zaključivanja bez velikog modela.",
+      "zastoJeZanimljivo": "Potpuno otvoren model ove veličine staje na jedan pristojan GPU ili čak lokalno na Mac, pa je realan kandidat za delove aplikacije gde ne želiš da plaćaš API po pozivu.",
+      "url": "https://huggingface.co/papers/2609.13356",
+      "github": "https://github.com/zgcagi/ZGCM-1"
+    },
+    {
+      "naslov": "Vidu S2: video koji se generiše i menja u realnom vremenu",
+      "objasnjenje": "Skup modela za avatare i izmenu videa koji radi interaktivno — dok gledaš, možeš da menjaš referencu i da dobiješ novi rezultat, u visokoj rezoluciji i sa prostornim (3D) osećajem. Za razliku od klasičnog generisanja gde čekaš minut po klipu, ovde je naglasak na tome da petlja bude dovoljno brza za rad uživo.",
+      "zastoJeZanimljivo": "GitHub repo već ima 253 zvezdice, a interaktivna izmena je tačno ono što fali za upotrebu u aplikaciji — do sada su alati za video bili „pošalji zahtev i čekaj\".",
+      "url": "https://huggingface.co/papers/2609.11638",
+      "github": "https://github.com/shengshu-ai/Vidu-S"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Brzi unos za Siri",
+      "problem": "Ideja ti padne na pamet u prevozu ili u teretani i dok otključaš telefon i nađeš aplikaciju, zaboraviš je. Postojeće beležnice traže previše dodira.",
+      "zaKoga": "Ti i svi koji vode zadatke i ideje, a ne žele da otvaraju aplikaciju da bi ih upisali.",
+      "ulogaAi": "Siri prihvata diktirani tekst kroz App Intents, a mali model u pozadini razvrstava unos — da li je zadatak, ideja ili beleška — i izvlači rok ako je pomenut.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Napravi SwiftUI aplikaciju sa jednom listom i Supabase tabelom za sinhronizaciju",
+        "Dodaj AppIntent sa jednim parametrom (tekst) i testiraj poziv glasom na iOS 27",
+        "Za razvrstavanje pozovi Claude Haiku 4.5 ili GPT-5.6 Luna — kratak prompt, jeftini tokeni",
+        "Dodaj widget na Lock Screen za slučaj kada Siri nije pri ruci"
+      ],
+      "inspiracija": "Izlazak iOS 27 i otvaranje nove Siri ka aplikacijama trećih strana preko App Intents"
+    },
+    {
+      "naziv": "Review na srpskom",
+      "problem": "Sam praviš aplikacije, pa nemaš kome da daš kod na pregled. Generički AI review daje predugačke engleske komentare koje niko ne čita.",
+      "zaKoga": "Solo programeri i mali timovi u regionu koji rade na GitHub-u.",
+      "ulogaAi": "GitHub Action pokreće Open Code Review nad diffom, a zatim model sažima nalaze u kratke komentare na srpskom, poređane po ozbiljnosti, uz jasnu podelu na „mora\" i „može\".",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Instaliraj @alibaba-group/open-code-review lokalno i pusti ocr review --from main na svoju granu",
+        "Napravi GitHub Action koji isto radi na svaki pull request i čuva izlaz kao JSON",
+        "Dodaj korak koji taj JSON provlači kroz Claude Sonnet 5 uz prompt da piše kratko i na srpskom",
+        "Ograniči broj komentara na pet po PR-u da se ne pretvori u šum"
+      ],
+      "inspiracija": "Alibabin open-source Open Code Review na GitHub Trending listi"
+    },
+    {
+      "naziv": "Zakazivanje kroz WhatsApp",
+      "problem": "Frizerski saloni, servisi i ordinacije u Srbiji zakazuju preko poruka i propuštaju termine kada niko nije za telefonom. Zaseban sistem za rezervacije im je previše i preskup.",
+      "zaKoga": "Male uslužne radnje u Srbiji i regionu koje već rade ceo posao preko WhatsAppa i Vibera.",
+      "ulogaAi": "Agent čita poruke, proverava slobodne termine u bazi, predlaže ih i upisuje rezervaciju — ali pre svake potvrde traži odobrenje vlasnika u zasebnoj prepisci.",
+      "tezina": 4,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Uzmi Webagent kao harness ili napiši svoj minimalni loop; kanal je WhatsApp Business API",
+        "Supabase tabele za termine i klijente, plus jednostavna Angular tabla za vlasnika",
+        "Napravi listu provera: agent nikad ne potvrđuje termin bez odobrenja i nikad ne šalje cene koje nisu u bazi",
+        "Testiraj na jednom salonu dve nedelje i broj koliko puta je vlasnik morao da interveniše"
+      ],
+      "inspiracija": "Meta Muse koji živi u WhatsApp prepisci i Webagent, open-source Go harness za javne agente"
+    },
+    {
+      "naziv": "Da li je ovo pravo?",
+      "problem": "Slike i snimci koji kruže grupama sve češće su generisani, a prosečan korisnik nema način da to brzo proveri na telefonu.",
+      "zaKoga": "Novinari, moderatori grupa i obični korisnici u regionu koji dobijaju sumnjiv sadržaj preko Vibera i WhatsAppa.",
+      "ulogaAi": "Aplikacija iz share sheet-a prima sliku, čita C2PA metapodatke ako postoje, traži tragove obrade i pušta model da opiše šta na slici deluje neprirodno — uz jasnu ogradu da je to procena, ne dokaz.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "SwiftUI Share Extension koji prihvata sliku i video",
+        "Prvo uradi deo bez AI-ja: čitanje EXIF i C2PA podataka, jer je najpouzdaniji signal",
+        "Dodaj poziv multimodalnom modelu sa promptom koji vraća listu konkretnih zapažanja, a ne procenat",
+        "Obavezno prikaži ogradu: alat pomaže u sumnji, ne daje presudu"
+      ],
+      "inspiracija": "Zaplena 12 deepfake sajtova u Njujorku i Wired-ova analiza 160 sajtova sa političarima iz 22 zemlje"
+    },
+    {
+      "naziv": "Sertifikat za vikend",
+      "problem": "EPAM i Wipro sertifikuju desetine hiljada inženjera za OpenAI i Claude, ali za pripremu ne postoji dobar način da vežbaš — ostaje ti čitanje dokumentacije.",
+      "zaKoga": "Inženjeri u Srbiji i regionu koji rade za outsourcing firme i moraju da polažu AI sertifikate.",
+      "ulogaAi": "Model iz zvanične dokumentacije generiše pitanja sa objašnjenjima, prati koje oblasti ti idu lošije i sledeći put te češće pita baš njih.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Skupi zvaničnu dokumentaciju (Anthropic docs, OpenAI docs) u jednu kolekciju",
+        "Generiši set pitanja jednokratno, offline, pa ih snimi u Supabase — jeftinije je nego da generišeš uživo",
+        "Napravi Angular aplikaciju sa kratkim sesijama od 10 pitanja i statistikom po oblastima",
+        "Dodaj režim vežbe pred ispit koji vuče samo pitanja koja si prethodno pogrešio"
+      ],
+      "inspiracija": "EPAM koji ulazi u OpenAI Partner Network i sertifikuje 5.000+ konsultanata, i Wipro koji obučava 100.000 zaposlenih"
+    }
+  ]
+}
