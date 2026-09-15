@@ -1,0 +1,79 @@
+# AI News — jutarnje izdanje na GitHub-u, bez zavisnosti od Mac-a.
+#
+# Claude Code radi preko Claude pretplate: tajna CLAUDE_CODE_OAUTH_TOKEN se pravi komandom `claude setup-token`
+# i čuva u Settings → Secrets and variables → Actions. Nema plaćanja po API pozivu.
+#
+# GitHub cron je u UTC, a Srbija menja sat. Zato posao kreće dva puta (04:30 i 05:30 UTC),
+# a radi samo ako je u Beogradu već 06:00 ili kasnije i ako današnje izdanje još ne postoji.
+# Kasniji termini su rezerva ako GitHub zakasni ili nešto pukne.
+
+name: Jutarnje izdanje
+
+on:
+  schedule:
+    - cron: '30 4 * * *'
+    - cron: '30 5 * * *'
+    - cron: '30 7 * * *'
+    - cron: '30 10 * * *'
+  workflow_dispatch:
+    inputs:
+      rezim:
+        description: 'normalno = samo ako danas nema izdanja · ponovo = napravi današnje iznova · provera = test bez objavljivanja'
+        type: choice
+        options: [normalno, ponovo, provera]
+        default: normalno
+
+permissions:
+  contents: write
+
+concurrency:
+  group: jutarnje-izdanje
+  cancel-in-progress: false
+
+jobs:
+  izdanje:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Da li je vreme za izdanje
+        id: vreme
+        run: |
+          sat=$(TZ=Europe/Belgrade date +%-H)
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$sat" -lt 6 ]; then
+            echo "U Beogradu je $sat h, prerano. Sledeći termin će uraditi posao."
+            echo "pokreni=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "pokreni=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.vreme.outputs.pokreni == 'true'
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        if: steps.vreme.outputs.pokreni == 'true'
+        with:
+          node-version: 22
+
+      - name: Claude Code
+        if: steps.vreme.outputs.pokreni == 'true'
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Git identitet
+        if: steps.vreme.outputs.pokreni == 'true'
+        run: |
+          git config user.name "Mihajlo"
+          git config user.email "zirafica.98@gmail.com"
+
+      - name: Izdanje
+        if: steps.vreme.outputs.pokreni == 'true'
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          REZIM: ${{ inputs.rezim || 'normalno' }}
+        run: |
+          case "$REZIM" in
+            ponovo) bash scripts/jutro.sh --ponovo ;;
+            provera) bash scripts/jutro.sh --provera ;;
+            *) bash scripts/jutro.sh ;;
+          esac

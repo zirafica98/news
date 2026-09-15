@@ -7,7 +7,7 @@
 //             npm run prices -- --datum=2026-09-13
 
 import { join } from 'node:path';
-import { DATA_DIR, SCRIPTS_DIR, datumIzArgumenata, readJson, writeJson } from './lib.mjs';
+import { DATA_DIR, SCRIPTS_DIR, datumIzArgumenata, preuzmi, readJson, writeJson } from './lib.mjs';
 
 const API_URL = 'https://openrouter.ai/api/v1/models';
 const HISTORY_FILE = join(SCRIPTS_DIR, 'state', 'cene-istorija.json');
@@ -18,9 +18,9 @@ const CHANGES_DAYS = 30;
 const datum = datumIzArgumenata();
 const config = await readJson(join(SCRIPTS_DIR, 'cene-modeli.json'));
 
-const res = await fetch(API_URL, { signal: AbortSignal.timeout(30_000) });
+const res = await preuzmi(API_URL, { timeoutMs: 30_000 });
 if (!res.ok) throw new Error(`OpenRouter je vratio HTTP ${res.status}`);
-const { data } = await res.json();
+const { data } = JSON.parse(res.tekst);
 
 // Pratimo sve obične (ne :batch, :free…) modele poznatih provajdera, da istorija postoji i za modele koje kasnije dodamo.
 const models = new Map(

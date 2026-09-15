@@ -1,8 +1,8 @@
 #!/bin/bash
 # AI News — jutarnja skripta. Radi redom:
-#   git pull → skupljanje vesti → Claude piše izdanje → provera → git push → notifikacija
+#   git pull → skupljanje vesti → cene → Claude piše izdanje → provera → prevod → git push
 #
-# Pokreće je launchd u 06:30 (i u 09:00 i 12:00 kao rezervu ako je Mac bio ugašen ili nešto puklo).
+# Svako jutro je pokreće GitHub Actions (.github/workflows/jutro.yml), a može i ručno na Mac-u.
 # Ako je današnje izdanje već objavljeno, odmah završava.
 #
 # Ručno:  bash scripts/jutro.sh             (pravo pokretanje)
@@ -25,7 +25,8 @@ PONOVO=false
 [[ "${1:-}" == "--ponovo" ]] && PONOVO=true
 
 mkdir -p "$LOG_DIR"
-exec >>"$LOG_FILE" 2>&1
+# Na Mac-u sve ide u log fajl; na GitHub-u (CI) ostaje u ispisu posla, gde se i čita.
+[[ -z "${CI:-}" ]] && exec >>"$LOG_FILE" 2>&1
 
 log() { echo "[$(date +%H:%M:%S)] $*"; }
 
@@ -48,7 +49,7 @@ if [[ -z "${AI_NEWS_OSVEZENO:-}" ]]; then
   # Ne daj Mac-u da zaspi dok skripta radi. -s drži Mac budnim i kad je poklopac zatvoren (samo na punjaču):
   # posle buđenja u 06:25 macOS ga inače vrati na spavanje za par minuta, usred Claude-ovog pisanja.
   # exec ispod zadržava isti PID, pa caffeinate prati i ponovo pokrenutu skriptu.
-  caffeinate -s -i -w $$ &
+  command -v caffeinate >/dev/null && { caffeinate -s -i -w $$ & }
   export AI_NEWS_BUDAN=1
 
   echo
@@ -89,7 +90,7 @@ echo $$ >"$LOCK_DIR/pid"
 trap 'rm -rf "$LOCK_DIR"' EXIT
 
 # Ako je pre git pull-a radila starija verzija skripte bez caffeinate-a, uključi ga ovde.
-[[ -z "${AI_NEWS_BUDAN:-}" ]] && { caffeinate -s -i -w $$ & }
+[[ -z "${AI_NEWS_BUDAN:-}" ]] && command -v caffeinate >/dev/null && { caffeinate -s -i -w $$ & }
 
 if [[ -f "public/data/$DATUM.json" ]] && ! $PROVERA && ! $PONOVO; then
   log "Izdanje za $DATUM je već objavljeno. Kraj."
@@ -104,8 +105,9 @@ if [[ ! -d scripts/node_modules ]] || [[ scripts/package-lock.json -nt scripts/n
 fi
 
 # 4. Da li je Claude prijavljen.
-if ! claude auth status 2>/dev/null | grep -q '"loggedIn": true'; then
-  log "Claude Code nije prijavljen. Pokreni 'claude' u Terminalu i prijavi se."
+# Na GitHub-u se prijavljuje tokenom iz tajne CLAUDE_CODE_OAUTH_TOKEN.
+if [[ -z "${CLAUDE_CODE_OAUTH_TOKEN:-}" ]] && ! claude auth status 2>/dev/null | grep -q '"loggedIn": true'; then
+  log "Claude Code nije prijavljen. Na Mac-u pokreni 'claude' i prijavi se; na GitHub-u dodaj tajnu CLAUDE_CODE_OAUTH_TOKEN (claude setup-token)."
   false
 fi
 

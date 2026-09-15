@@ -10,7 +10,7 @@
 
 import { join } from 'node:path';
 import { XMLParser } from 'fast-xml-parser';
-import { SCRIPTS_DIR, STATE_FILE, datumIzArgumenata, normalizeUrl, paths, readJson, writeJson } from './lib.mjs';
+import { SCRIPTS_DIR, STATE_FILE, datumIzArgumenata, normalizeUrl, paths, preuzmi, readJson, writeJson } from './lib.mjs';
 
 const TIMEOUT_MS = 20_000;
 const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AI-News/1.0';
@@ -80,12 +80,9 @@ printSummary(output, outFile);
 async function fetchSource(source) {
   if (source.type === 'page') return { source, items: [] };
   try {
-    const res = await fetch(source.url, {
-      headers: { 'User-Agent': USER_AGENT },
-      signal: AbortSignal.timeout(TIMEOUT_MS),
-    });
+    const res = await preuzmi(source.url, { headers: { 'User-Agent': USER_AGENT }, timeoutMs: TIMEOUT_MS });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const body = await res.text();
+    const body = res.tekst;
     const all = source.type === 'hf-papers' ? parseHfPapers(body, source) : parseFeed(body, source);
     const since = now.getTime() - (hoursOverride ?? source.hours ?? 30) * 3_600_000;
     let items = all.filter((i) => i.objavljeno && new Date(i.objavljeno).getTime() >= since);
@@ -102,9 +99,9 @@ async function fetchSource(source) {
 async function withPageText(item, source) {
   if (item.tekst || !item.url) return item;
   try {
-    const res = await fetch(item.url, { headers: { 'User-Agent': USER_AGENT }, signal: AbortSignal.timeout(TIMEOUT_MS) });
+    const res = await preuzmi(item.url, { headers: { 'User-Agent': USER_AGENT }, timeoutMs: TIMEOUT_MS });
     if (!res.ok) return item;
-    const pageText = htmlToText((await res.text()).replace(/<(head|nav|footer|header)[\s\S]*?<\/\1>/gi, ' '));
+    const pageText = htmlToText(res.tekst.replace(/<(head|nav|footer|header)[\s\S]*?<\/\1>/gi, ' '));
     return { ...item, tekst: truncate(pageText, source.maxChars ?? 1500) };
   } catch {
     return item;

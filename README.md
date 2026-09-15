@@ -9,16 +9,20 @@ Detaljan plan i spisak izvora: [PLAN.md](PLAN.md).
 ## Kako radi
 
 ```
-06:30  launchd na Mac-u → scripts/jutro.sh (iz kopije repoa u ~/.ai-jutro/repo)
-         1. git pull
-         2. fetch-news.mjs   skupi vesti iz scripts/sources.json
-            fetch-prices.mjs cene tokena sa OpenRouter-a (modeli u scripts/cene-modeli.json)
-         3. write-digest.mjs Claude Code (claude -p, pretplata) napiše izdanje
-         4. finalize.mjs     provera → public/data/YYYY-MM-DD.json + index.json
+06:30 (Beograd)  GitHub Actions → .github/workflows/jutro.yml → scripts/jutro.sh
+         1. fetch-news.mjs       skupi vesti iz scripts/sources.json
+            fetch-prices.mjs     cene tokena sa OpenRouter-a (modeli u scripts/cene-modeli.json)
+         2. write-digest.mjs     Claude Code (claude -p, preko Claude pretplate) napiše izdanje
+         3. finalize.mjs         provera → public/data/YYYY-MM-DD.json + index.json
             translate-digest.mjs engleski prevod → public/data/en/ (ako ne uspe, srpsko ide svejedno)
-         5. git push         → Vercel build
-       rezerva u 09:00 i 12:00 ako je Mac bio ugašen ili nešto puklo
+         4. git push             → Vercel build
+       rezerva u 09:30 i 12:30 ako GitHub zakasni ili nešto pukne
 ```
+
+Claude se prijavljuje tokenom iz tajne `CLAUDE_CODE_OAUTH_TOKEN` (pravi se komandom `claude setup-token`), pa nema plaćanja po API pozivu.
+Ručno pokretanje: GitHub → Actions → **Jutarnje izdanje** → Run workflow (normalno / ponovo / provera).
+
+Ranije je posao radio launchd na Mac-u, ali MacBook sa zatvorenim poklopcem macOS uspava posle par sekundi buđenja, pa izdanja nisu stizala na vreme.
 
 ## Komande
 
@@ -30,12 +34,12 @@ Detaljan plan i spisak izvora: [PLAN.md](PLAN.md).
 | `npm run digest` | Claude napiše nacrt izdanja |
 | `npm run translate` | engleski prevod objavljenog izdanja |
 | `npm run finalize` | proveri i objavi nacrt (`-- --provera` samo proverava) |
-| `bash scripts/instaliraj.sh` | podesi ili osveži jutarnju automatiku (`--ukloni` je gasi) |
-| `bash ~/.ai-jutro/repo/scripts/jutro.sh --provera` | test automatike bez objavljivanja |
+| `bash scripts/instaliraj.sh --ukloni` | ugasi stari jutarnji posao na Mac-u |
+| `bash scripts/jutro.sh --provera` | test automatike bez objavljivanja (lokalno) |
 
 ## Kad nešto ne radi
 
-- **Log jutra:** `~/.ai-jutro/repo/scripts/logs/YYYY-MM-DD.log`
+- **Log jutra:** GitHub → Actions → Jutarnje izdanje → poslednje pokretanje
 - **Izvor ne radi:** u `scripts/sources.json` postavi `"enabled": false`
 - **Promena izgleda izdanja:** `scripts/prompt.md` (šta Claude piše) i `scripts/digest-schema.json` (oblik podataka, prati ga `src/app/izdanje.model.ts`)
 - **Posle promene skripti:** push na GitHub je dovoljan, jutarnja skripta sama povuče najnoviju verziju
