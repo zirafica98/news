@@ -1,6 +1,6 @@
 {
-  "datum": "2026-09-15",
-  "azurirano": "2026-09-15T07:14:55.133Z",
+  "datum": "2026-09-16",
+  "azurirano": "2026-09-16T07:23:28.128Z",
   "izvor": {
     "naziv": "OpenRouter",
     "url": "https://openrouter.ai/models"
@@ -284,19 +284,19 @@
           "id": "deepseek/deepseek-v4.1-flash",
           "naziv": "DeepSeek V4.1 Flash",
           "provajder": "deepseek",
-          "ulaz": 0.3,
-          "izlaz": 1.2,
+          "ulaz": 0.15,
+          "izlaz": 0.6,
           "objavljen": "2026-09-10",
           "kontekst": 1048576,
-          "kesUlaz": 0.006,
+          "kesUlaz": 0.003,
           "promena7": null,
           "promena30": null,
           "prethodnik": {
             "naziv": "DeepSeek V4 Flash 0731",
-            "ulaz": 0.055,
-            "izlaz": 0.11,
-            "razlikaUlaz": 445.5,
-            "razlikaIzlaz": 990.9
+            "ulaz": 0.06,
+            "izlaz": 0.12,
+            "razlikaUlaz": 150,
+            "razlikaIzlaz": 400
           }
         },
         {
@@ -322,11 +322,11 @@
           "id": "z-ai/glm-5.3-flash",
           "naziv": "GLM 5.3 Flash",
           "provajder": "z-ai",
-          "ulaz": 0.15,
-          "izlaz": 0.5,
+          "ulaz": 0.1,
+          "izlaz": 0.3333,
           "objavljen": "2026-08-26",
           "kontekst": 1310720,
-          "kesUlaz": 0.03,
+          "kesUlaz": 0.02,
           "promena7": null,
           "promena30": null,
           "prethodnik": null
@@ -348,6 +348,76 @@
     }
   ],
   "promene": [
+    {
+      "id": "deepseek/deepseek-v4-flash-0731",
+      "datum": "2026-09-16",
+      "ulazPre": 0.055,
+      "izlazPre": 0.11,
+      "ulaz": 0.06,
+      "izlaz": 0.12,
+      "naziv": "DeepSeek V4 Flash 0731",
+      "provajder": "deepseek"
+    },
+    {
+      "id": "deepseek/deepseek-v4.1-flash",
+      "datum": "2026-09-16",
+      "ulazPre": 0.3,
+      "izlazPre": 1.2,
+      "ulaz": 0.15,
+      "izlaz": 0.6,
+      "naziv": "DeepSeek V4.1 Flash",
+      "provajder": "deepseek"
+    },
+    {
+      "id": "minimax/minimax-m1",
+      "datum": "2026-09-16",
+      "ulazPre": 0.55,
+      "izlazPre": 2.2,
+      "ulaz": 0.4,
+      "izlaz": 2.2,
+      "naziv": "MiniMax M1",
+      "provajder": "minimax"
+    },
+    {
+      "id": "mistralai/mistral-small-3.2-24b-instruct",
+      "datum": "2026-09-16",
+      "ulazPre": 0.075,
+      "izlazPre": 0.2,
+      "ulaz": 0.0938,
+      "izlaz": 0.25,
+      "naziv": "Mistral Small 3.2 24B",
+      "provajder": "mistralai"
+    },
+    {
+      "id": "moonshotai/kimi-k2.7-code",
+      "datum": "2026-09-16",
+      "ulazPre": 0.71,
+      "izlazPre": 3.5,
+      "ulaz": 0.7062,
+      "izlaz": 3.21,
+      "naziv": "Kimi K2.7 Code",
+      "provajder": "moonshotai"
+    },
+    {
+      "id": "nvidia/nemotron-3-ultra-550b-a55b",
+      "datum": "2026-09-16",
+      "ulazPre": 0.6,
+      "izlazPre": 2.4,
+      "ulaz": 0.625,
+      "izlaz": 3.125,
+      "naziv": "Nemotron 3 Ultra",
+      "provajder": "nvidia"
+    },
+    {
+      "id": "z-ai/glm-5.3-flash",
+      "datum": "2026-09-16",
+      "ulazPre": 0.15,
+      "izlazPre": 0.5,
+      "ulaz": 0.1,
+      "izlaz": 0.3333,
+      "naziv": "GLM 5.3 Flash",
+      "provajder": "z-ai"
+    },
     {
       "id": "deepseek/deepseek-v4-flash-0731",
       "datum": "2026-09-15",
@@ -477,16 +547,6 @@
       "izlaz": 4.4,
       "naziv": "GLM 5.3",
       "provajder": "z-ai"
-    },
-    {
-      "id": "z-ai/glm-5.3-flash",
-      "datum": "2026-09-14",
-      "ulazPre": 0.075,
-      "izlazPre": 0.25,
-      "ulaz": 0.15,
-      "izlaz": 0.5,
-      "naziv": "GLM 5.3 Flash",
-      "provajder": "z-ai"
     }
   ],
   "noviModeli": [
@@ -494,8 +554,8 @@
       "id": "deepseek/deepseek-v4.1-flash",
       "naziv": "DeepSeek V4.1 Flash",
       "provajder": "deepseek",
-      "ulaz": 0.3,
-      "izlaz": 1.2,
+      "ulaz": 0.15,
+      "izlaz": 0.6,
       "objavljen": "2026-09-10",
       "kontekst": 1048576
     },
@@ -534,15 +594,6 @@
       "izlaz": 3.75,
       "objavljen": "2026-09-02",
       "kontekst": 1048576
-    },
-    {
-      "id": "anthropic/claude-fable-5.1",
-      "naziv": "Claude Fable 5.1",
-      "provajder": "anthropic",
-      "ulaz": 10,
-      "izlaz": 50,
-      "objavljen": "2026-09-01",
-      "kontekst": 1000000
     }
   ]
 }

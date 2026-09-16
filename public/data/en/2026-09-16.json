@@ -1,0 +1,361 @@
+{
+  "datum": "2026-09-16",
+  "generisano": "2026-09-16T07:28:44.027Z",
+  "model": "claude-haiku-4-5-20251001",
+  "prevod": "claude-haiku-4-5-20251001",
+  "ukratko": "Google shipped Gemini 3.8 Live — voice models priced at about $1.38 per hour of conversation, roughly half the cost of OpenAI's GPT-Live-1, which was itself opened up via API the same day alongside a new Agents API. Mozilla published a report claiming open Chinese models are now only 4.4 months behind top Western ones, while the community exposed the \"world's cheapest provider\" as a plain OpenRouter wrapper. The political story around slowing AI development continued: both the White House and Beijing rejected it.",
+  "vesti": [
+    {
+      "naslov": "Gemini 3.8 Live: voice models for about $1.38 per hour of conversation",
+      "staSeDesilo": "Google DeepMind released Gemini 3.8 Live and 3.8 Live Extended Thinking — models that go directly from speech to speech, skipping the recognize-text-synthesize pipeline. Pricing is $0.005 per minute of input audio and $0.018 per minute of output audio, about $1.38 for an hour of conversation, versus at least $3 for OpenAI's GPT-Live-1. The Extended Thinking variant tops the Artificial Analysis speech-to-speech leaderboard with 82.6% accuracy, and it supports over 97 languages.",
+      "zastoJeBitno": "A voice assistant in your app suddenly costs about the same as plain chat, so voice interfaces now pencil out even for small projects. The Decoder notes, though, that OpenAI still sounds more natural since it supports full duplex — listening and speaking at the same time.",
+      "kategorija": "modeli",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/google-launches-gemini-3-8-live-to-take-on-openais-gpt-live-1-at-a-fraction-of-the-cost/"
+        },
+        {
+          "naziv": "Google DeepMind blog",
+          "url": "https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/"
+        },
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/09/15/google-releases-gemini-3-8-live-and-3-8-live-extended-thinking-for-production-grade-voice-agents/"
+        },
+        {
+          "naziv": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Sep/15/gemini-live/"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI opens up Agents API and the model behind the new Voice mode",
+      "staSeDesilo": "Two things landed in the OpenAI API: GPT-Live-1, the model powering ChatGPT's new voice mode, and the Agents API — a service you hand a task to, and it gets executed in a Codex-like agent without you having to stand up your own infrastructure. This is OpenAI's answer to Managed Agents in the Claude API.",
+      "zastoJeBitno": "If you're building a 'do this job in the background' feature, you no longer need to run your own worker, queue, and sandbox. Check the official page for pricing and limits — they weren't specified in the coverage.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ben's Bites",
+          "url": "https://www.bensbites.com/p/good-luck-slowing-this-down"
+        }
+      ]
+    },
+    {
+      "naslov": "Mozilla: open Chinese models now just 4.4 months behind the frontier, at a third of the price",
+      "staSeDesilo": "A new State of Open Source AI report claims the gap between top US closed models and the best Chinese open models has narrowed to 4.4 months. Kimi K3 sits just three points behind Anthropic's Fable 5 on the Artificial Analysis Intelligence Index, while costing about 30% as much. Mozilla's CTO says closed models earn their price premium in three places: expert professional work, heavy search, and long context.",
+      "zastoJeBitno": "A practical takeaway if you're paying for tokens out of pocket: default to an open model, and reach for an expensive frontier model only on tasks where you genuinely notice the difference.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/ai/2026/09/exclusive-open-chinese-models-close-gap-with-silicon-valleys-frontier-ai-models/"
+        }
+      ]
+    },
+    {
+      "naslov": "'World's cheapest provider' exposed as an OpenRouter wrapper",
+      "staSeDesilo": "According to a researcher's writeup on kendell.dev, CrofAI (formerly nahcrof) never had its own inference engine — it was forwarding requests to OpenRouter and quietly routing them to cheaper, weaker models. One example cited: Kimi K3 was billed at $0.2/$1 per million tokens while GLM 5.3 Flash actually ran behind the scenes. The owner first denied it, then backtracked, then deleted the site and accounts.",
+      "zastoJeBitno": "If you're picking a provider on price alone, it's worth occasionally checking whether you're actually getting the model you're paying for — a few probe questions or measurements can do it. Note this is an independent researcher's finding, not an officially confirmed fraud.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "kendell.dev (analysis)",
+          "url": "https://kendell.dev/blog/crofaifalse/"
+        },
+        {
+          "naziv": "r/LocalLLaMA",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wgwe4n/crofai_cheapest_inference_provider_in_the_world/"
+        }
+      ]
+    },
+    {
+      "naslov": "Nvidia, Palantir, and Booz Allen restrict Fable over 30-day log retention",
+      "staSeDesilo": "Per The Information, three major clients scaled back their use of Anthropic's Fable model for sensitive work after the company disclosed it keeps usage logs for 30 days. Microsoft is using this as a selling point, offering private servers to worried clients. The promise 'we don't train on your data' is clearly not the same as 'we don't retain your data.'",
+      "zastoJeBitno": "If you're building a tool for a client, data retention policy becomes a contract line item, not a footnote — worth knowing upfront how long each provider keeps logs.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/ai-labs-have-a-data-trust-problem-that-their-policies-havent-solved/"
+        },
+        {
+          "naziv": "The Rundown",
+          "url": "https://therundownai.beehiiv.com/p/trump-china-both-shoot-down-the-ai-slowdown"
+        }
+      ]
+    },
+    {
+      "naslov": "Both Trump and Beijing shoot down the AI slowdown proposal",
+      "staSeDesilo": "Trump called Amodei's push to slow development hand-wringing, and dismissed claims that AI is taking over the world as a scam. China's foreign ministry labeled the same proposal fear-mongering aimed at China. Pressure is coming from within the industry too: Cohere CEO Aidan Gomez calls the initiative 'a cartel by another name,' Jensen Huang says regulation isn't needed since safety can be built into the product, and OpenAI confirms it has been in safety talks with Anthropic and Google DeepMind for weeks.",
+      "zastoJeBitno": "For now this stays a debate, not a rule — don't expect an imminent change to what you're allowed to build, but expect the topic to resurface through concrete regulation.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Rundown",
+          "url": "https://therundownai.beehiiv.com/p/trump-china-both-shoot-down-the-ai-slowdown"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/not-everyone-is-convinced-that-big-ais-proposed-development-slowdown-is-really-about-safety/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/15/openai-anthropic-google-have-been-in-talks-on-ai-safety-for-weeks/"
+        },
+        {
+          "naziv": "PC Press (UN warning)",
+          "url": "https://pcpress.rs/ai-bi-mogao-da-postane-egzistencijalna-pretnja-po-covecanstvo-upozorava-un/"
+        }
+      ]
+    },
+    {
+      "naslov": "Salesforce Koa: a sales-and-support model built on Nvidia's open Nemotron",
+      "staSeDesilo": "Salesforce unveiled Koa, its first reasoning model, built on Nvidia's open-weight Nemotron and trained on synthetic data resembling real customer support cases. The emphasis isn't on benchmark scores but on using fewer tokens than frontier models for the same job. Pricing and distribution weren't disclosed — check the link.",
+      "zastoJeBitno": "A trend worth watching: companies take an open model, fine-tune it for one kind of job, and skip paying frontier-model prices for routine tasks. You can do the same with a small model for your own domain.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/15/salesforce-and-nvidias-new-reasoning-model-is-everything-the-ai-labs-should-fear/"
+        }
+      ]
+    },
+    {
+      "naslov": "Meta ships an MCP server for WhatsApp Business",
+      "staSeDesilo": "Meta released an MCP server (the protocol that gives an AI agent tools) for the WhatsApp Business Platform. Through it, a coding agent can open a WhatsApp Business account, add and verify a phone number, register Cloud API access, create message templates, send test messages, and debug errors. It works with Claude, Cursor, Codex, and ChatGPT, alongside the existing Social Technologies MCP.",
+      "zastoJeBitno": "The most tedious part of setting up business WhatsApp — verification and templates — can now be handled through Claude Code instead of working through the docs by hand.",
+      "kategorija": "alati",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/15/meta-now-lets-ai-agents-handle-the-boring-parts-of-whatsapp-business-setup/"
+        }
+      ]
+    },
+    {
+      "naslov": "Meta One: bundled social media and AI subscriptions in a single bill",
+      "staSeDesilo": "Shortly after the Muse assistant, Meta globally launched Meta One bundles combining Facebook, Instagram, and WhatsApp subscriptions with extra AI usage. There are tiers for individuals, creators, and businesses, and Meta says basic app and Meta AI usage stays free. Expansion to Edits and AI glasses is planned.",
+      "zastoJeBitno": "Another sign that the free tier of AI assistants is becoming the hook, while serious usage moves behind a paywall — the same logic applies when you're pricing your own app.",
+      "kategorija": "kompanije",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/tech/995453/meta-one-subscriptions-ai"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/15/meta-expands-subscription-push-with-new-ai-focused-plans/"
+        }
+      ]
+    },
+    {
+      "naslov": "Regional: NT Conference announces over 140 talks",
+      "staSeDesilo": "One of the region's biggest business-tech conferences has announced a lineup of more than 140 talks, covering AI, cybersecurity, leadership, and the future of work. Dates, venue, and ticket prices — check the link.",
+      "zastoJeBitno": "A rare chance in the region to see in person what local companies are actually doing with AI, not just what's in the press releases.",
+      "kategorija": "ostalo",
+      "vaznost": 1,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "ICT Business",
+          "url": "https://www.ictbusiness.info/vijesti/nt-konferencija-vise-od-140-predavanja-na-ponajvecoj-poslovno-tehnoloskih-konferencija-u-regiji"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Gemini 3.8 Live",
+      "tip": "model",
+      "opis": "A speech-to-speech model for voice agents, supporting over 97 languages, background tool calling, and visual input. Simon Willison built a web page that lets you talk to the model straight from the browser, no libraries required.",
+      "kakoProbati": [
+        "Open Google AI Studio and pick Gemini 3.8 Live or 3.8 Live Extended Thinking",
+        "Grab an API key and try Simon Willison's mini UI from his post (choose model, voice, and system prompt, with the ability to interrupt the model mid-speech)",
+        "For your own app, start from the Gemini Live tutorial for the BidiGenerateContent WebSocket endpoint"
+      ],
+      "link": "https://simonwillison.net/2026/Sep/15/gemini-live/",
+      "cena": "$0.005 per minute of input audio and $0.018 per minute of output audio (about $1.38 per hour of conversation)"
+    },
+    {
+      "naziv": "ELI5 skill + testing whether a skill actually helps",
+      "tip": "projekat",
+      "opis": "A Claude Code skill that explains a complex topic to a chosen audience, but the more interesting part is the pattern: it ships with a small eval that runs the same tasks with and without the skill and prints a pass rate. Claude Code itself recently gained a feature for testing whether a plugin or skill actually changes the outcome.",
+      "kakoProbati": [
+        "git clone https://github.com/DreambigOu/ELI5.git then cp -r ELI5/skills/eli5 ~/.claude/skills/eli5",
+        "Run claude and try /eli5 LLM tokens for my boss",
+        "Ask Claude to write two test cases in eli5-workspace/evals.json, then run python3 eli5-workspace/run-evals.py --test=N",
+        "Apply the same pattern to every skill you own: hand Claude the skill's repo and ask for an eval comparing results with and without it"
+      ],
+      "link": "https://therundownai.beehiiv.com/p/trump-china-both-shoot-down-the-ai-slowdown",
+      "cena": "free (you only pay for tokens)"
+    },
+    {
+      "naziv": "Causilo",
+      "tip": "model",
+      "opis": "A tabular foundation model for classification and regression: it doesn't train on your dataset, it memorizes rows as context and predicts in a single pass. It has a scikit-learn interface, runs on CPU, and holds the top Elo among individual models on the TabArena leaderboard.",
+      "kakoProbati": [
+        "pip install causilo (Python 3.10–3.12, PyTorch 2.13+); the first fit downloads the weights automatically",
+        "from causilo import CausiloClassifier, then clf.fit(X_train, y_train) and clf.predict_proba(X_test)",
+        "If you'd rather skip local setup, try the demo Space on Hugging Face with your own CSV"
+      ],
+      "link": "https://huggingface.co/nums-ai/causilo",
+      "cena": "code is Apache-2.0 and free for research and evaluation; commercial and production use requires a separate license from Nums AI"
+    },
+    {
+      "naziv": "TabPFN-3.5",
+      "tip": "model",
+      "opis": "A competing tabular foundation model from Prior Labs. It predicts over a table in a single pass with no hyperparameter tuning, and Prior Labs claims that with default settings it beats the winning solution from the 2015 Kaggle Otto competition, which was a stack of 36 models.",
+      "kakoProbati": [
+        "Read the writeup with results and links to the weights",
+        "Download the open weights and run them locally against your own CSV for evaluation",
+        "For production, be sure to check the license terms — you'll likely need their API or a commercial license"
+      ],
+      "link": "https://www.marktechpost.com/2026/09/15/prior-labs-releases-tabpfn-3-5-a-tabular-foundation-model-that-beats-the-winning-otto-kaggle-solution-with-default-settings/",
+      "cena": "open weights free for research and evaluation; production requires a license — check the link"
+    },
+    {
+      "naziv": "Bolt Forge",
+      "tip": "alat",
+      "opis": "Bolt has added GLM, DeepSeek, and Kimi models to its prompt-to-app builder — handy for quickly comparing how cheaper open models handle the same task you'd normally hand to Claude.",
+      "kakoProbati": [
+        "Open bolt.new and switch into Forge mode",
+        "Build the same small project with two different models and compare the results",
+        "Take advantage of the free window while it lasts"
+      ],
+      "link": "https://bolt.new/blog/what-is-bolt-forge",
+      "cena": "free until October 14"
+    },
+    {
+      "naziv": "addyosmani/agent-skills",
+      "tip": "projekat",
+      "opis": "A collection of engineering skills for coding agents covering the whole workflow: from idea and spec, through implementation and tests, to QA gates and release. Currently trending on GitHub.",
+      "kakoProbati": [
+        "Browse the repo and pick 2–3 skills that fit your workflow (spec, test, review)",
+        "Copy them into ~/.claude/skills/ and invoke them from Claude Code",
+        "Build an eval using the ELI5 pattern to see whether they actually move the needle on your project"
+      ],
+      "link": "https://github.com/addyosmani/agent-skills",
+      "cena": "free"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "Continual Learning Mechanisms Compose for Long-Horizon Memorization",
+      "objasnjenje": "The paper studies how to get a model to learn something new without forgetting what it already knew. Instead of one technique, the authors combine three 'anchors' — over the data, over the model's behavior, and over the weights themselves — and merge several small (low-rank) fine-tunes into one. Together they clearly outperform any single technique alone.",
+      "zastoJeZanimljivo": "A practical recipe for anyone fine-tuning a small model on their own domain who keeps running into the problem of the model forgetting its general knowledge afterward. It's currently the top-voted paper on Hugging Face Daily Papers.",
+      "url": "https://huggingface.co/papers/2609.06986",
+      "github": "https://github.com/cozheyuanzhangde/compose-cl"
+    },
+    {
+      "naslov": "RSIAgent: autonomous exploration of an unfamiliar environment",
+      "objasnjenje": "A multi-agent system that drops into an unfamiliar digital environment (say, a new app or website), first explores it broadly and then digs in deeper, building up its own memory of what does what as it goes. Crucially, nothing gets trained — it's all done through prompting and memory.",
+      "zastoJeZanimljivo": "If you're building an agent that needs to operate through someone else's UI or API without documentation, this is a ready-made pattern you can copy — the repo already has over 200 stars.",
+      "url": "https://huggingface.co/papers/2609.15364",
+      "github": "https://github.com/AetherLabsAI/RSIAgent"
+    },
+    {
+      "naslov": "Grouped Value Attention: a smaller KV cache with key reconstruction",
+      "objasnjenje": "When a model generates a long response, it holds a KV cache in memory that grows with context length and is usually why a local model chokes on a long conversation. The proposal is to store only grouped values and reconstruct the keys on demand via a learned linear transform, with accuracy close to the standard approach.",
+      "zastoJeZanimljivo": "Optimizations like this directly determine how much context you can push on your Mac or on a cheaper GPU instance. No code has been released alongside the paper yet.",
+      "url": "https://huggingface.co/papers/2609.13285",
+      "github": null
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Voice Front Desk",
+      "problem": "Small businesses in Serbia (dentists, repair shops, barbers, car washes) miss calls while they're working, and nobody wants to pay for a call center. Existing voice bots are expensive and speak poor Serbian.",
+      "zaKoga": "Local service shops and small businesses with 1–5 employees",
+      "ulogaAi": "Gemini 3.8 Live handles the whole call in Serbian, figures out why the customer is calling, checks open slots through a tool, books the appointment, and sends the owner a call summary.",
+      "tezina": 4,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Build a prototype in Google AI Studio with Gemini 3.8 Live and a Serbian system prompt for one type of business",
+        "Wire the WebSocket session to a simple Supabase backend: an appointments table and two tools (check availability, book)",
+        "Hook up a phone number via a SIP/telephony provider and test on your own number for a week",
+        "Work out the cost per call from the $0.005/$0.018 per-minute rates and price per booked appointment, not per minute"
+      ],
+      "inspiracija": "Launch of Gemini 3.8 Live at about $1.38 per hour of conversation"
+    },
+    {
+      "naziv": "Skill Scoreboard",
+      "problem": "Everyone installs skills and plugins for Claude Code, but almost nobody measures whether they actually change anything. Manually comparing 'with vs. without' is tedious and not repeatable.",
+      "zaKoga": "Developers who use Claude Code daily and keep collecting skills",
+      "ulogaAi": "Claude runs the same set of tasks two ways — with the skill and without it — and a second model scores the outputs against preset criteria and prints a pass-rate table.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Use the ELI5 repo as a template for the evals.json format and the runner script",
+        "Build a CLI that takes a skill path and a task list, then runs both variants in separate folders",
+        "Use a cheap model (e.g. GLM 5.3 Flash at $0.1/$0.3333) for scoring so you don't burn your budget on evaluation",
+        "Output the results as a markdown table you can paste into the skill's README"
+      ],
+      "inspiracija": "Claude Code's new feature for checking whether a plugin actually helps, and The Rundown's ELI5 eval pattern"
+    },
+    {
+      "naziv": "Same Model, Different Bill",
+      "problem": "Cheap API providers promise a frontier model at a laughably low price, then quietly serve a weaker one instead. The CrofAI case shows nobody checks this until someone writes a blog post about it.",
+      "zaKoga": "Indie developers and small teams buying tokens outside the major providers",
+      "ulogaAi": "A tool sends a set of probe prompts whose answers reveal the underlying model (style, known quirks, reasoning length), and a second model compares the fingerprints against reference answers from the official provider and flags mismatches.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Put together 15–20 short probe prompts and collect reference answers directly from the model's official provider",
+        "Write a Node or Python script that runs the same set through the suspect provider and measures similarity and response speed",
+        "Add latency and token-count tracking, since routing to a smaller model usually shows up as a noticeably faster response",
+        "Publish the results as a public table — it doubles as marketing for the tool"
+      ],
+      "inspiracija": "CrofAI being exposed as an OpenRouter wrapper quietly routing to cheaper models"
+    },
+    {
+      "naziv": "CSV Forecast",
+      "problem": "Small businesses have a spreadsheet full of history (sales, cancellations, payments) and a question like 'who's likely to cancel,' but no one on staff knows machine learning, and running an LLM over a spreadsheet is both expensive and unreliable.",
+      "zaKoga": "Bookkeepers, shop owners, and operations people who live in Excel",
+      "ulogaAi": "Causilo or TabPFN handle the actual prediction over the table with no training required; the LLM is only used to explain the result in plain language and suggest which column to predict.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "pip install causilo and test on your own CSV whether the predictions make sense before building any UI",
+        "Build an Angular page for uploading a CSV and picking a target column, with the model running behind it in a Python service",
+        "Show uncertainty via quantiles so the user sees a range instead of a single number",
+        "Check the license terms before charging for it — commercial use requires a separate agreement"
+      ],
+      "inspiracija": "Releases of the tabular models Causilo and TabPFN-3.5"
+    },
+    {
+      "naziv": "Newsletter in Your Ear",
+      "problem": "Newsletter subscriptions pile up until reading them becomes a chore. Existing 'AI summarizers' just hand back more text, and text is exactly the problem.",
+      "zaKoga": "People who commute, drive, or work out and have 20 unread newsletters",
+      "ulogaAi": "A model reads mail from a single Gmail label, picks out what's actually new, merges overlapping topics, and writes a script for a daily episode, which a voice model turns into audio.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Connect the Gmail API, pull just one label, and save the messages to Supabase",
+        "Generate two outputs from the same summary: an audio script and a short text digest for skimming",
+        "For voice synthesis, try Gemini 3.8 Live or a standard TTS and compare cost per episode",
+        "Publish a private RSS feed with the audio and add it to Apple Podcasts on your iPhone"
+      ],
+      "inspiracija": "A Rundown reader's workflow that turned Gmail newsletters into a private podcast and a two-sided digest"
+    }
+  ],
+  "cene": "Today's biggest drop was at the budget end: DeepSeek V4.1 Flash was cut in half again to $0.15/$0.60 (from $0.30/$1.20 yesterday), and GLM 5.3 Flash fell from $0.15/$0.50 to $0.10/$0.3333; MiniMax M1 got cheaper on input ($0.55 to $0.40). Mistral Small 3.2 24B got pricier (from $0.075/$0.20 to $0.0938/$0.25), and Nemotron 3 Ultra's output price jumped from $2.40 to $3.125. That makes GLM 5.3 Flash the cheapest model in the fast-model class on both input and output, while Grok 4.6 remains by far the cheapest in the frontier class at $2/$6 — a tenth of the input price of Fable 5.1 and GPT-6 Astra ($10/$50)."
+}
