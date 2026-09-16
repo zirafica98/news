@@ -3,18 +3,17 @@
 # Claude Code radi preko Claude pretplate: tajna CLAUDE_CODE_OAUTH_TOKEN se pravi komandom `claude setup-token`
 # i čuva u Settings → Secrets and variables → Actions. Nema plaćanja po API pozivu.
 #
-# GitHub cron je u UTC, a Srbija menja sat. Zato posao kreće dva puta (04:30 i 05:30 UTC),
-# a radi samo ako je u Beogradu već 06:00 ili kasnije i ako današnje izdanje još ne postoji.
-# Kasniji termini su rezerva ako GitHub zakasni ili nešto pukne.
+# GitHub cron je u UTC, a Srbija menja sat. GitHub zakazane poslove ume i da zakasni ili preskoči
+# (16.09. nijedan od termina 04:30/05:30 UTC nije pokrenut). Zato posao kreće na svakih 15 minuta
+# od 04:07 do 11:52 UTC, a stvarno radi samo ako je u Beogradu 06:00 ili kasnije i ako današnje
+# izdanje još ne postoji. Ostala pokretanja se završe za desetak sekundi.
+# Minute nisu okrugle jer GitHub najviše kasni na punom satu i pola sata.
 
 name: Jutarnje izdanje
 
 on:
   schedule:
-    - cron: '30 4 * * *'
-    - cron: '30 5 * * *'
-    - cron: '30 7 * * *'
-    - cron: '30 10 * * *'
+    - cron: '7,22,37,52 4-11 * * *'
   workflow_dispatch:
     inputs:
       rezim:
@@ -37,14 +36,22 @@ jobs:
     steps:
       - name: Da li je vreme za izdanje
         id: vreme
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           sat=$(TZ=Europe/Belgrade date +%-H)
-          if [ "${{ github.event_name }}" = "schedule" ] && [ "$sat" -lt 6 ]; then
-            echo "U Beogradu je $sat h, prerano. Sledeći termin će uraditi posao."
-            echo "pokreni=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "pokreni=true" >> "$GITHUB_OUTPUT"
+          datum=$(TZ=Europe/Belgrade date +%F)
+          pokreni=true
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            if [ "$sat" -lt 6 ]; then
+              echo "U Beogradu je $sat h, prerano."
+              pokreni=false
+            elif gh api "repos/${{ github.repository }}/contents/public/data/$datum.json" --silent 2>/dev/null; then
+              echo "Izdanje za $datum već postoji."
+              pokreni=false
+            fi
           fi
+          echo "pokreni=$pokreni" >> "$GITHUB_OUTPUT"
 
       - uses: actions/checkout@v4
         if: steps.vreme.outputs.pokreni == 'true'

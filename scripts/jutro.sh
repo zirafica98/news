@@ -11,7 +11,8 @@
 
 set -euo pipefail
 
-export PATH="$HOME/.local/bin:$HOME/.npm-global/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+# launchd na Mac-u daje skoro prazan PATH, a na GitHub-u postojeći PATH sadrži Node i Claude Code, pa se samo dopunjuje.
+export PATH="$HOME/.local/bin:$HOME/.npm-global/bin:/opt/homebrew/bin:/usr/local/bin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin"
 export GIT_TERMINAL_PROMPT=0
 
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -28,7 +29,7 @@ mkdir -p "$LOG_DIR"
 # Na Mac-u sve ide u log fajl; na GitHub-u (CI) ostaje u ispisu posla, gde se i čita.
 [[ -z "${CI:-}" ]] && exec >>"$LOG_FILE" 2>&1
 
-log() { echo "[$(date +%H:%M:%S)] $*"; }
+log() { echo "[$(TZ=Europe/Belgrade date +%H:%M:%S)] $*"; }
 
 notify() {
   local poruka="${1//\"/\\\"}"
