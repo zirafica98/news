@@ -3,17 +3,16 @@
 # Claude Code radi preko Claude pretplate: tajna CLAUDE_CODE_OAUTH_TOKEN se pravi komandom `claude setup-token`
 # i čuva u Settings → Secrets and variables → Actions. Nema plaćanja po API pozivu.
 #
-# GitHub cron je u UTC, a Srbija menja sat. GitHub zakazane poslove ume i da zakasni ili preskoči
-# (16.09. nijedan od termina 04:30/05:30 UTC nije pokrenut). Zato posao kreće na svakih 15 minuta
-# od 04:07 do 11:52 UTC, a stvarno radi samo ako je u Beogradu 06:00 ili kasnije i ako današnje
-# izdanje još ne postoji. Ostala pokretanja se završe za desetak sekundi.
-# Minute nisu okrugle jer GitHub najviše kasni na punom satu i pola sata.
+# Glavni okidač je Vercel Cron (api/pokreni-izdanje.mjs, vercel.json), jer GitHub zakazane poslove
+# za ovaj repo kasni satima ili ih ne pokrene (17.09. nijedan od 32 termina). Dva GitHub termina ispod
+# su samo rezerva: posao radi ako je u Beogradu 06:00 ili kasnije i ako današnje izdanje još ne postoji.
 
 name: Jutarnje izdanje
 
 on:
   schedule:
-    - cron: '7,22,37,52 4-11 * * *'
+    - cron: '17 5 * * *'
+    - cron: '47 7 * * *'
   workflow_dispatch:
     inputs:
       rezim:
