@@ -27,6 +27,12 @@ export interface Novo {
   cena: string;
 }
 
+export interface KratkaVest {
+  naslov: string;
+  izvor: string;
+  url: string;
+}
+
 export interface Rad {
   naslov: string;
   objasnjenje: string;
@@ -70,6 +76,8 @@ export interface Izdanje {
   ukratko: string;
   vesti: Vest[];
   novo: Novo[];
+  /** Kratke vesti. Nema ih u izdanjima pre 18.09.2026. */
+  kratkeVesti?: KratkaVest[];
   istrazivanje: Rad[];
   ideje: Ideja[];
   /** Claude-ov komentar o cenama tokena. Nema ga u izdanjima pre 14.09.2026. */

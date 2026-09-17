@@ -44,16 +44,17 @@ Po potrebi otvori najviše 8 linkova sa WebFetch da proveriš detalje, najčeš�
 
    Prioritet imaju novi modeli i alati, velike poteze kompanija i promene koje utiču na programere. Preskoči sponzorisan sadržaj, podkaste bez novosti, mišljenja bez činjenica i sitne vesti o finansiranju.
 3. **novo:** 3–6 stvari koje se mogu **probati danas**. `kakoProbati` je 2–4 konkretna koraka (gde se klikne, koja komanda, šta treba imati). `cena`: „besplatno“, tačna cena ili „proveri na linku“.
-4. **istrazivanje:** 2–3 najzanimljivija rada, uglavnom sa Hugging Face Daily Papers. Biraj one sa GitHub kodom ili praktičnom primenom. Objasni ih jednostavno, bez formula. `github` je link ili `null`.
-5. **ideje:** **tačno 5** ideja za aplikacije.
+4. **kratkeVesti:** 10–20 vesti koje nisu ušle među glavne, a vredi ih znati. Svaka je **jedna rečenica** koja kaže šta se desilo (ne samo prevod naslova), uz `izvor` (naziv sajta) i pravi link. Bez ponavljanja glavnih vesti i bez sitnica tipa „kompanija X objavila blog post“. Ako materijala nema toliko, može i manje.
+5. **istrazivanje:** 2–3 najzanimljivija rada, uglavnom sa Hugging Face Daily Papers. Biraj one sa GitHub kodom ili praktičnom primenom. Objasni ih jednostavno, bez formula. `github` je link ili `null`.
+6. **ideje:** **tačno 5** ideja za aplikacije.
    - Realne za jednog developera. Bar 2 treba da budu vikend-projekti (`vikendProjekat: true`, `tezina` 1–2).
    - Svaka inspirisana nečim iz današnjih vesti ili alata (`inspiracija`).
    - Raznovrsne: ne 5 „AI asistenata za X“. Misli i na tržište Srbije i regiona, iOS i web.
    - `prviKoraci`: 3–4 koraka kako bi Mihajlo počeo, sa konkretnim alatima.
 
-6. **cene:** 2–3 rečenice o cenama tokena, običan tekst bez naslova i markdown-a. Prvo navedi šta je pojeftinilo ili poskupelo (sa brojevima); ako promena nema, reci to u pola rečenice. Ako je `pratimoOd` današnji datum, praćenje tek počinje, pa ne pominji „juče“ ni trend. Zatim istakni nešto korisno: novi model sa dobrom cenom, veliku razliku u odnosu na prethodnu verziju ili najjeftiniji model u nekoj klasi (za to koristi `najjeftinijiPoKlasi`, ne računaj sam). Govori samo o ceni, ne o kvalitetu modela. Koristi **samo brojeve iz `cene`**. Ako je `cene` null, napiši da cene danas nisu osvežene.
+7. **cene:** 2–3 rečenice o cenama tokena, običan tekst bez naslova i markdown-a. Prvo navedi šta je pojeftinilo ili poskupelo (sa brojevima); ako promena nema, reci to u pola rečenice. Ako je `pratimoOd` današnji datum, praćenje tek počinje, pa ne pominji „juče“ ni trend. Zatim istakni nešto korisno: novi model sa dobrom cenom, veliku razliku u odnosu na prethodnu verziju ili najjeftiniji model u nekoj klasi (za to koristi `najjeftinijiPoKlasi`, ne računaj sam). Govori samo o ceni, ne o kvalitetu modela. Koristi **samo brojeve iz `cene`**. Ako je `cene` null, napiši da cene danas nisu osvežene.
 
-7. **mreze:** šta se priča na društvenim mrežama i u AI zajednici.
+8. **mreze:** šta se priča na društvenim mrežama i u AI zajednici.
    - `teme`: 3–5 tema o kojima se najviše priča, najjača prva. Materijal: X preko AINews pregleda (izlazi na news.smol.ai i na Latent Space-u; deo „AI Twitter Recap“, linkovi ka objavama su u uglastim zagradama), Reddit, Hacker News, Bluesky, Mastodon i YouTube.
      - `oCemuSePrica`: 2–3 rečenice, šta je povod i zašto se o tome raspravlja.
      - `glasovi`: 1–2 rečenice, ko vodi priču i šta kažu različite strane (imena ili nalozi).

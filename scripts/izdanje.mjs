@@ -49,6 +49,9 @@ export function proveriIzdanje(d, datum) {
     check(link(x.link), `${n}: neispravan link`);
   });
 
+  check(list(d.kratkeVesti).length <= 25, `kratke vesti: ${list(d.kratkeVesti).length} (najviše 25)`);
+  list(d.kratkeVesti).forEach((v, i) => check(text(v.naslov) && text(v.izvor) && link(v.url), `kratka vest ${i + 1}: nije ispravna`));
+
   check(list(d.istrazivanje).length <= 5, `istraživanje: ${list(d.istrazivanje).length} (najviše 5)`);
   list(d.istrazivanje).forEach((r, i) => {
     const n = `rad ${i + 1}`;

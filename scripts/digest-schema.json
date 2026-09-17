@@ -5,6 +5,7 @@
     "ukratko",
     "vesti",
     "novo",
+    "kratkeVesti",
     "istrazivanje",
     "ideje",
     "cene",
@@ -330,6 +331,31 @@
                 "type": "string"
               }
             }
+          }
+        }
+      }
+    },
+    "kratkeVesti": {
+      "type": "array",
+      "description": "10-20 kratkih vesti koje nisu ušle među glavne, svaka u jednoj rečenici.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "naslov",
+          "izvor",
+          "url"
+        ],
+        "properties": {
+          "naslov": {
+            "type": "string",
+            "description": "Jedna rečenica: šta se desilo."
+          },
+          "izvor": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
           }
         }
       }

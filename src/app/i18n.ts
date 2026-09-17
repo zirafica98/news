@@ -46,6 +46,7 @@ const SR = {
   'vesti.novoNaslov': 'Novo izašlo · kako probati',
   'vesti.cena': 'Cena:',
   'vesti.otvori': 'Otvori {domen}',
+  'vesti.kratkeNaslov': 'Ukratko još',
   'vesti.potpis': 'Napisao {model} · vesti su prepričane, originali su na linkovima',
 
   'kategorija.modeli': 'Modeli',
@@ -204,6 +205,7 @@ const EN: Record<Kljuc, string> = {
   'vesti.novoNaslov': 'Just released · how to try it',
   'vesti.cena': 'Price:',
   'vesti.otvori': 'Open {domen}',
+  'vesti.kratkeNaslov': 'Also worth knowing',
   'vesti.potpis': 'Written by {model} · stories are summarized, originals are linked',
 
   'kategorija.modeli': 'Models',

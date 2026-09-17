@@ -51,7 +51,7 @@ const prevod = { datum, generisano, model: autor, prevod: Object.keys(result.mod
 
 const greske = proveriIzdanje(prevod, datum);
 const broj = (izdanje, putanja) => putanja.split('.').reduce((o, k) => o?.[k], izdanje)?.length ?? 0;
-for (const deo of ['vesti', 'novo', 'istrazivanje', 'ideje', 'mreze.teme', 'mreze.snimci']) {
+for (const deo of ['vesti', 'novo', 'kratkeVesti', 'istrazivanje', 'ideje', 'mreze.teme', 'mreze.snimci']) {
   if (broj(prevod, deo) !== broj(sadrzaj, deo)) greske.push(`${deo}: ${broj(prevod, deo)} stavki, a u originalu ${broj(sadrzaj, deo)}`);
 }
 if (greske.length) {

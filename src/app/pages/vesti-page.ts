@@ -83,6 +83,22 @@ import { SacuvanoService } from '../sacuvano.service';
         </section>
       }
 
+      @if (iz.kratkeVesti?.length) {
+        <section aria-labelledby="naslov-kratke" class="mt-12">
+          <h2 id="naslov-kratke" class="text-xs font-semibold uppercase tracking-widest text-slate-500">{{ t('vesti.kratkeNaslov') }}</h2>
+          <ul class="mt-4 divide-y divide-slate-800/80 rounded-2xl border border-slate-800/80 bg-slate-900/60">
+            @for (k of iz.kratkeVesti; track $index) {
+              <li class="px-4 py-3">
+                <a [href]="k.url" target="_blank" rel="noopener" class="group block">
+                  <p class="leading-relaxed text-slate-300 group-hover:text-white">{{ k.naslov }}</p>
+                  <p class="mt-1 text-xs text-slate-500">{{ k.izvor }} ↗</p>
+                </a>
+              </li>
+            }
+          </ul>
+        </section>
+      }
+
       <p class="mt-12 border-t border-slate-800 pt-6 text-center text-xs text-slate-600">
         {{ t('vesti.potpis', { model: iz.model }) }}
       </p>
