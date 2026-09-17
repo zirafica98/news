@@ -36,6 +36,8 @@ const SR = {
   'stanje.sledeciDan': 'Sledeći dan',
   'stanje.prevodNedostaje': '',
 
+  'ocena.gore': 'Ovo mi je korisno',
+  'ocena.dole': 'Ovo me ne zanima',
   'sacuvaj.sacuvaj': 'Sačuvaj',
   'sacuvaj.ukloni': 'Ukloni iz sačuvanog',
 
@@ -46,6 +48,7 @@ const SR = {
   'vesti.novoNaslov': 'Novo izašlo · kako probati',
   'vesti.cena': 'Cena:',
   'vesti.otvori': 'Otvori {domen}',
+  'vesti.nedeljni': 'Nedeljni pregled',
   'vesti.kratkeNaslov': 'Ukratko još',
   'vesti.potpis': 'Napisao {model} · vesti su prepričane, originali su na linkovima',
 
@@ -205,6 +208,8 @@ const EN: Record<Kljuc, string> = {
   'stanje.sledeciDan': 'Next day',
   'stanje.prevodNedostaje': 'The English translation isn’t available for this day, so it’s shown in Serbian.',
 
+  'ocena.gore': 'Useful to me',
+  'ocena.dole': 'Not interesting',
   'sacuvaj.sacuvaj': 'Save',
   'sacuvaj.ukloni': 'Remove from saved',
 
@@ -215,6 +220,7 @@ const EN: Record<Kljuc, string> = {
   'vesti.novoNaslov': 'Just released · how to try it',
   'vesti.cena': 'Price:',
   'vesti.otvori': 'Open {domen}',
+  'vesti.nedeljni': 'The week in review',
   'vesti.kratkeNaslov': 'Also worth knowing',
   'vesti.potpis': 'Written by {model} · stories are summarized, originals are linked',
 

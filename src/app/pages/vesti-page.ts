@@ -1,5 +1,6 @@
 import { Component, inject, input } from '@angular/core';
 import { DatumTraka } from '../components/datum-traka';
+import { OcenaDugmad } from '../components/ocena-dugmad';
 import { izdanjeZaRutu } from '../izdanje-ruta';
 import { PodesavanjaService } from '../podesavanja.service';
 import { SacuvajDugme } from '../sacuvaj-dugme';
@@ -7,13 +8,25 @@ import { SacuvanoService } from '../sacuvano.service';
 
 @Component({
   selector: 'app-vesti-page',
-  imports: [DatumTraka, SacuvajDugme],
+  imports: [DatumTraka, SacuvajDugme, OcenaDugmad],
   template: `
     <app-datum-traka [datum]="ruta.aktivniDatum()" sekcija="vesti" [stanje]="ruta.stanje()" [prevodNedostaje]="ruta.prevodNedostaje()" />
 
     @if (ruta.izdanje(); as iz) {
       <h1 class="sr-only">{{ t('nav.vesti') }}</h1>
       <p class="mt-4 text-lg leading-relaxed text-slate-100">{{ iz.ukratko }}</p>
+
+      @if (iz.nedeljni; as n) {
+        <section aria-labelledby="naslov-nedelja" class="mt-6 rounded-2xl border border-amber-900/40 bg-amber-950/20 p-5">
+          <h2 id="naslov-nedelja" class="text-xs font-semibold uppercase tracking-widest text-amber-300">{{ t('vesti.nedeljni') }}</h2>
+          <p class="mt-2 leading-relaxed text-slate-200">{{ n.ukratko }}</p>
+          <ul class="mt-3 space-y-2">
+            @for (tacka of n.tacke; track $index) {
+              <li class="flex gap-2 text-sm leading-relaxed text-slate-300"><span class="text-amber-400">•</span><span>{{ tacka }}</span></li>
+            }
+          </ul>
+        </section>
+      }
 
       <section aria-labelledby="naslov-vesti" class="mt-8">
         <h2 id="naslov-vesti" class="text-xs font-semibold uppercase tracking-widest text-slate-500">{{ t('vesti.najbitnije') }}</h2>
@@ -30,10 +43,12 @@ import { SacuvanoService } from '../sacuvano.service';
                   }
                   <span class="text-slate-500">{{ tIli('kategorija.' + v.kategorija, v.kategorija) }}</span>
                 </div>
-                <app-sacuvaj-dugme
-                  class="-mr-2 -mt-2"
-                  [stavka]="{ kljuc: kljuc(iz.datum, 'vest', $index), tip: 'vest', datum: iz.datum, naslov: v.naslov, opis: v.staSeDesilo, url: v.izvori[0]?.url ?? null }"
-                />
+                <div class="-mr-2 -mt-2 flex items-center">
+                  <app-ocena-dugmad [kljuc]="kljuc(iz.datum, 'vest', $index)" [datum]="iz.datum" tip="vest" [naslov]="v.naslov" />
+                  <app-sacuvaj-dugme
+                    [stavka]="{ kljuc: kljuc(iz.datum, 'vest', $index), tip: 'vest', datum: iz.datum, naslov: v.naslov, opis: v.staSeDesilo, url: v.izvori[0]?.url ?? null }"
+                  />
+                </div>
               </div>
               <h3 class="mt-1 text-lg font-semibold leading-snug text-white">{{ v.naslov }}</h3>
               <p class="mt-2 leading-relaxed text-slate-300">{{ v.staSeDesilo }}</p>

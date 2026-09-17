@@ -81,5 +81,10 @@ export function proveriIzdanje(d, datum) {
     check(list(x.prviKoraci).length > 0 && list(x.prviKoraci).every(text), `${n}: nema prvih koraka`);
   });
 
+  if (d.nedeljni) {
+    check(text(d.nedeljni.ukratko), 'nedeljni pregled: prazan tekst');
+    check(list(d.nedeljni.tacke).length > 0 && list(d.nedeljni.tacke).every(text), 'nedeljni pregled: nema stavki');
+  }
+
   return errors;
 }

@@ -3,6 +3,7 @@
 //
 // Pokretanje: npm run digest
 //             npm run digest -- --datum=2026-09-13
+//             npm run digest -- --nedeljni     (i van subote traži nedeljni pregled, za testiranje)
 // Model se menja preko AI_JUTRO_MODEL (podrazumevano: opus).
 
 import { readFile } from 'node:fs/promises';
@@ -21,10 +22,15 @@ if (!skupljeno) {
   process.exit(1);
 }
 
+// Nedeljni pregled ide uz subotnje izdanje.
+const subota = new Date(`${datum}T12:00:00Z`).getUTCDay() === 6 || process.argv.includes('--nedeljni');
+
 const material = {
   datum,
   stranice: skupljeno.stranice,
   nedavno: await recentHeadlines(),
+  ocene: await ocene(),
+  ...(subota && { nedelja: await nedeljniMaterijal() }),
   cene: await priceSummary(),
   vesti: skupljeno.vesti,
 };
@@ -88,6 +94,37 @@ async function priceSummary() {
     ),
     noviModeli: cene.noviModeli.map(({ naziv, provajder, ulaz, izlaz, objavljen }) => ({ naziv, provajder, ulaz, izlaz, objavljen })),
   };
+}
+
+/** Palac gore/dole koje je čitalac dao na sajtu (poslednjih 60). */
+async function ocene() {
+  const sve = await readJson(join(SCRIPTS_DIR, 'state', 'ocene.json'), []);
+  if (!sve.length) return null;
+  const poslednje = sve.slice(-60);
+  return {
+    korisno: poslednje.filter((o) => o.ocena === 1).map((o) => `${o.tip}: ${o.naslov}`),
+    neZanima: poslednje.filter((o) => o.ocena === -1).map((o) => `${o.tip}: ${o.naslov}`),
+  };
+}
+
+/** Sažetak prethodnih 7 izdanja, za subotnji nedeljni pregled. */
+async function nedeljniMaterijal() {
+  const index = await readJson(paths.index, []);
+  const dani = index.filter((e) => e.datum < datum).slice(0, 7);
+  const izdanja = [];
+  for (const { datum: d } of dani) {
+    const iz = await readJson(paths.izdanje(d), null);
+    if (!iz) continue;
+    izdanja.push({
+      datum: d,
+      ukratko: iz.ukratko,
+      vesti: iz.vesti.map((v) => ({ naslov: v.naslov, vaznost: v.vaznost })),
+      novo: iz.novo.map((n) => n.naziv),
+      teme: iz.mreze?.teme?.map((t) => t.naslov) ?? [],
+      cene: iz.cene ?? null,
+    });
+  }
+  return izdanja;
 }
 
 async function recentHeadlines() {

@@ -1,5 +1,6 @@
 import { Component, inject, input } from '@angular/core';
 import { DatumTraka } from '../components/datum-traka';
+import { OcenaDugmad } from '../components/ocena-dugmad';
 import { izdanjeZaRutu } from '../izdanje-ruta';
 import { PodesavanjaService } from '../podesavanja.service';
 import { SacuvajDugme } from '../sacuvaj-dugme';
@@ -7,7 +8,7 @@ import { SacuvanoService } from '../sacuvano.service';
 
 @Component({
   selector: 'app-ideje-page',
-  imports: [DatumTraka, SacuvajDugme],
+  imports: [DatumTraka, SacuvajDugme, OcenaDugmad],
   template: `
     <app-datum-traka [datum]="ruta.aktivniDatum()" sekcija="ideje" [stanje]="ruta.stanje()" [prevodNedostaje]="ruta.prevodNedostaje()" />
 
@@ -23,10 +24,12 @@ import { SacuvanoService } from '../sacuvano.service';
                 <span class="text-3xl font-bold leading-none text-violet-500/70">{{ $index + 1 }}</span>
                 <h2 class="text-lg font-semibold leading-snug text-white">{{ ideja.naziv }}</h2>
               </div>
-              <app-sacuvaj-dugme
-                class="-mr-2 -mt-2"
-                [stavka]="{ kljuc: kljuc(iz.datum, 'ideja', $index), tip: 'ideja', datum: iz.datum, naslov: ideja.naziv, opis: ideja.problem, url: null }"
-              />
+              <div class="-mr-2 -mt-2 flex items-center">
+                <app-ocena-dugmad [kljuc]="kljuc(iz.datum, 'ideja', $index)" [datum]="iz.datum" tip="ideja" [naslov]="ideja.naziv" />
+                <app-sacuvaj-dugme
+                  [stavka]="{ kljuc: kljuc(iz.datum, 'ideja', $index), tip: 'ideja', datum: iz.datum, naslov: ideja.naziv, opis: ideja.problem, url: null }"
+                />
+              </div>
             </div>
             <div class="mt-3 flex flex-wrap items-center gap-2 text-xs">
               <span class="flex items-center gap-1 rounded-full bg-slate-800/80 px-2 py-1 text-slate-300" [attr.aria-label]="t('ideje.tezinaOd', { n: ideja.tezina })">

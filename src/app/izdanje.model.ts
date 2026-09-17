@@ -82,6 +82,8 @@ export interface Izdanje {
   ideje: Ideja[];
   /** Claude-ov komentar o cenama tokena. Nema ga u izdanjima pre 14.09.2026. */
   cene?: string;
+  /** Nedeljni pregled, samo uz subotnja izdanja. */
+  nedeljni?: { ukratko: string; tacke: string[] } | null;
   /** Društvene mreže. Nema ih u izdanjima pre 17.09.2026. */
   mreze?: { teme: Tema[]; snimci: Snimak[] };
 }
