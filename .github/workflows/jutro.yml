@@ -82,6 +82,6 @@ jobs:
           case "$REZIM" in
             ponovo) bash scripts/jutro.sh --ponovo ;;
             provera) bash scripts/jutro.sh --provera ;;
-            notifikacija) node scripts/posalji-push.mjs ;;
+            notifikacija) npm ci --prefix scripts --no-audit --no-fund --loglevel=error && node scripts/posalji-push.mjs ;;
             *) bash scripts/jutro.sh ;;
           esac
