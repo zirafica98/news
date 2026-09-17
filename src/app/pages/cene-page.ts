@@ -1,4 +1,5 @@
 import { Component, computed, inject, signal } from '@angular/core';
+import { CenaKriva } from '../components/cena-kriva';
 import { CeneKalkulator } from '../components/cene-kalkulator';
 import { PROVAJDERI, Promena, formatCena, formatIznos } from '../cene.model';
 import { IzdanjaService } from '../izdanja.service';
@@ -23,7 +24,7 @@ function mesovita(ulaz: number, izlaz: number): number {
 
 @Component({
   selector: 'app-cene-page',
-  imports: [CeneKalkulator],
+  imports: [CeneKalkulator, CenaKriva],
   template: `
     <h1 class="pt-6 text-2xl font-semibold text-white">{{ t('naslov.cene') }}</h1>
     <p class="mt-1 text-sm leading-relaxed text-slate-500">{{ t('cene.podnaslov') }}</p>
@@ -130,8 +131,13 @@ function mesovita(ulaz: number, izlaz: number): number {
                     <span class="block text-[11px] text-slate-600">{{ t('cene.ulazIzlazOznaka') }}</span>
                   </p>
                 </div>
-                <div class="mt-2 h-1.5 overflow-hidden rounded-full bg-slate-800" aria-hidden="true">
-                  <div class="h-full rounded-full bg-amber-400/70" [style.width.%]="sirina(m.ulaz, m.izlaz)"></div>
+                <div class="mt-2 flex items-center gap-3">
+                  <div class="h-1.5 flex-1 overflow-hidden rounded-full bg-slate-800" aria-hidden="true">
+                    <div class="h-full rounded-full bg-amber-400/70" [style.width.%]="sirina(m.ulaz, m.izlaz)"></div>
+                  </div>
+                  @if (istorija(m.id); as tacke) {
+                    <app-cena-kriva class="shrink-0 text-amber-400/80" [tacke]="tacke" />
+                  }
                 </div>
                 <p class="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-xs">
                   @if (trend(m.promena7); as tr) {
@@ -172,7 +178,8 @@ function mesovita(ulaz: number, izlaz: number): number {
 
       <p class="mt-10 text-center text-xs leading-relaxed text-slate-600">
         {{ t('cene.izvor') }} <a [href]="c.izvor.url" target="_blank" rel="noopener" class="underline hover:text-slate-400">{{ c.izvor.naziv }}</a>
-        {{ t('cene.izvorNapomena', { vreme: vreme(c.azurirano) }) }}
+        {{ t('cene.izvorNapomena', { vreme: vreme(c.azurirano) }) }}<br />
+        {{ t('cene.kriva', { datum: kratak(c.pratimoOd) }) }}
       </p>
     }
   `,
@@ -189,6 +196,12 @@ export class CenePage {
     const ref = d ? this.izdanja.izdanjeNaJeziku(d).ref : undefined;
     return ref?.hasValue() ? ref.value()?.cene : undefined;
   });
+
+  /** Krivulja se crta tek kad model ima bar dve zabeležene cene. */
+  protected readonly istorija = (id: string) => {
+    const tacke = this.izdanja.ceneIstorija.value()[id];
+    return tacke && tacke.length > 1 ? tacke : null;
+  };
 
   protected readonly sviModeli = computed(() => this.izdanja.cene.value()?.grupe.flatMap((g) => g.modeli) ?? []);
 

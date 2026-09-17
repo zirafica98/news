@@ -12,6 +12,8 @@ import { DATA_DIR, SCRIPTS_DIR, datumIzArgumenata, preuzmi, readJson, writeJson 
 const API_URL = 'https://openrouter.ai/api/v1/models';
 const HISTORY_FILE = join(SCRIPTS_DIR, 'state', 'cene-istorija.json');
 const OUTPUT_FILE = join(DATA_DIR, 'cene.json');
+const ISTORIJA_FILE = join(DATA_DIR, 'cene-istorija.json');
+const ISTORIJA_DANA = 90;
 const NEW_MODEL_DAYS = 14;
 const CHANGES_DAYS = 30;
 
@@ -96,6 +98,18 @@ await writeJson(OUTPUT_FILE, {
   promene,
   noviModeli,
 });
+
+// Istorija praćenih modela ide i na sajt, za grafikone (samo poslednja 3 meseca, da fajl ostane mali).
+const odKada = shiftDays(datum, -ISTORIJA_DANA);
+const pracenih = grupe.flatMap((g) => g.modeli.map((m) => m.id));
+await writeJson(
+  ISTORIJA_FILE,
+  Object.fromEntries(
+    pracenih
+      .map((id) => [id, (history[id] ?? []).filter((e, i, sve) => e[0] >= odKada || sve[i + 1]?.[0] >= odKada)])
+      .filter(([, tacke]) => tacke.length),
+  ),
+);
 
 console.log(`Cene za ${datum}: ${models.size} modela praćeno, ${promene.length} promena u ${CHANGES_DAYS} dana, ${noviModeli.length} novih modela.`);
 if (missing.length) console.warn(`Nema na OpenRouter-u (proveri scripts/cene-modeli.json): ${[...new Set(missing)].join(', ')}`);

@@ -22,6 +22,8 @@ export class IzdanjaService {
   readonly indexEn = httpResource<IndexStavka[]>(() => (this.podesavanja.jezik() === 'en' ? 'data/en/index.json' : undefined), { defaultValue: [] });
 
   readonly cene = httpResource<Cene>(() => 'data/cene.json');
+  /** Istorija cena praćenih modela za krivulje: { id modela: [[datum, ulaz, izlaz], …] }. */
+  readonly ceneIstorija = httpResource<Record<string, [string, number, number][]>>(() => 'data/cene-istorija.json', { defaultValue: {} });
 
   /** Jedno izdanje na jednom jeziku. Pamti se, pa prelazak između kartica istog dana ne učitava ponovo. */
   izdanje(datum: string, jezik: Jezik): HttpResourceRef<Izdanje | undefined> {
