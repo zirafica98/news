@@ -54,7 +54,7 @@ Po potrebi otvori najviše 8 linkova sa WebFetch da proveriš detalje, najčeš�
 6. **cene:** 2–3 rečenice o cenama tokena, običan tekst bez naslova i markdown-a. Prvo navedi šta je pojeftinilo ili poskupelo (sa brojevima); ako promena nema, reci to u pola rečenice. Ako je `pratimoOd` današnji datum, praćenje tek počinje, pa ne pominji „juče“ ni trend. Zatim istakni nešto korisno: novi model sa dobrom cenom, veliku razliku u odnosu na prethodnu verziju ili najjeftiniji model u nekoj klasi (za to koristi `najjeftinijiPoKlasi`, ne računaj sam). Govori samo o ceni, ne o kvalitetu modela. Koristi **samo brojeve iz `cene`**. Ako je `cene` null, napiši da cene danas nisu osvežene.
 
 7. **mreze:** šta se priča na društvenim mrežama i u AI zajednici.
-   - `teme`: 3–5 tema o kojima se najviše priča, najjača prva. Materijal: X preko AINews (deo „AI Twitter Recap“, linkovi ka objavama su u uglastim zagradama), Reddit, Hacker News, Bluesky, Mastodon i YouTube.
+   - `teme`: 3–5 tema o kojima se najviše priča, najjača prva. Materijal: X preko AINews pregleda (izlazi na news.smol.ai i na Latent Space-u; deo „AI Twitter Recap“, linkovi ka objavama su u uglastim zagradama), Reddit, Hacker News, Bluesky, Mastodon i YouTube.
      - `oCemuSePrica`: 2–3 rečenice, šta je povod i zašto se o tome raspravlja.
      - `glasovi`: 1–2 rečenice, ko vodi priču i šta kažu različite strane (imena ili nalozi).
      - `jacina`: 3 samo kad se o tome priča na više mreža i u velikim brojevima.
