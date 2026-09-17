@@ -15,6 +15,7 @@ export const paths = {
   nacrt: (datum) => join(OUT_DIR, `izdanje-${datum}.json`),
   izdanje: (datum) => join(DATA_DIR, `${datum}.json`),
   index: join(DATA_DIR, 'index.json'),
+  pretraga: join(DATA_DIR, 'pretraga.json'),
 };
 
 /** Današnji datum po beogradskom vremenu (YYYY-MM-DD), ili onaj prosleđen kao --datum=YYYY-MM-DD. */

@@ -1,0 +1,627 @@
+[
+  {
+    "datum": "2026-09-17",
+    "stavke": [
+      {
+        "tip": "vest",
+        "naslov": "Claude Cowork i chat su sada jedan Claude, stigli Docs i Slides",
+        "tekst": "Anthropic je ukinuo podelu između običnog četa i Cowork-a: sada Claude sam procenjuje da li je zadatak brzo pitanje ili duži posao koji nastavlja i kad zatvoriš…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "OpenAI objavio okvir za prijavu „neposlušnih“ modela i šest konkretnih slučajeva",
+        "tekst": "OpenAI je objavio formalni proces za praćenje, istragu i objavljivanje incidenata u kojima se model ponaša suprotno nameri, plus šest izveštaja iz poslednjih še…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Rojevi agenata su bacanje tokena — kaže i OpenAI-jev inženjer, i Databricks, i Steve Yegge",
+        "tekst": "Eric Provencher, koji radi na OpenAI Codex-u, tvrdi da pokretanje više od dva paralelna pod-agenta gotovo uvek troši tokene bez dobitka u kvalitetu, jer agenti…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Google otvorio pametnu kuću za AI agente preko MCP-a",
+        "tekst": "Google je pustio rani pristup Google Home MCP serveru, pa agenti koji podržavaju MCP — Claude, ChatGPT, Antigravity, Hermes, Open Claw — mogu da kontrolišu Nest…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "GitHub prepisao Copilot runtime u Rust — 800.000 linija, uglavnom agentima",
+        "tekst": "GitHub je objavio da je kompletan Copilot agent runtime, ranije TypeScript na Node.js-u, prepisan u preko 800.000 linija produkcijskog Rust koda. Posao je ispor…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Anthropic dobio Claude ambasadora za Srbiju — Aljoša Makević",
+        "tekst": "Aljoša Makević je objavio da je postao Claude Community Ambassador, što znači da okupljanja oko Claude-a u Beogradu i Srbiji dobijaju direktnu tačku kontakta sa…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Zuckerberg odbio plan o usporavanju razvoja AI-ja",
+        "tekst": "Mark Zuckerberg je stao na stranu ubrzanja, tvrdeći da svaka laboratorija već ima sopstveni interes da model bude bezbedan, jer niko ne želi agenta koji ignoriš…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Mozilla stavila Mistralove modele u Firefox asistenta",
+        "tekst": "Mozilla i Mistral su najavili saradnju: novi Firefox asistent „Smart Window“ radiće na Mistralovim modelima, uz naglasak na privatnost. Za Mistral je to ulaz na…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Apple bi ponovo pravio servere, ovaj put za AI",
+        "tekst": "Prema pisanju The Information, Apple radi na enterprise serveru sa dva ili četiri buduća M8 Ultra čipa, namenjenom firmama koje hoće da same puštaju modele. Raz…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Francuski institut u Srbiji pokreće FRENCH PULSE — AI i savremena umetnost",
+        "tekst": "Francuski institut u Srbiji najavio je FRENCH PULSE, novi program posvećen susretu tehnoloških inovacija, digitalnog stvaralaštva i savremenih umetničkih praksi…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Claude Docs i Claude Slides",
+        "tekst": "Pravljenje dokumenata i prezentacija direktno u Claude razgovoru, sa inline izmenama, izvozom u PowerPoint/PDF i prezentovanjem iz same aplikacije. Beta na svim…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Voicebox",
+        "tekst": "Open-source lokalni „glasovni studio“: kloniranje glasa iz par sekundi zvuka, generisanje govora na 23 jezika i diktiranje u bilo koju aplikaciju. Alternativa E…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "OpenSpec",
+        "tekst": "Lagani framework za pisanje i održavanje specifikacija softvera, tako da developer i kodni agent gledaju u isti dokument. Radi u pet koraka: explore, propose, a…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Cloudflare security-audit skill",
+        "tekst": "Skil koji tvog kodnog agenta pretvara u revizora bezbednosti: kroz šest faza radi izviđanje, traženje ranjivosti, validaciju nalaza i nezavisnu proveru, a rezul…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Google Home MCP",
+        "tekst": "MCP server za Google Home koji dozvoljava agentima (Claude, ChatGPT, Antigravity, Hermes, Open Claw) da kontrolišu i čitaju uređaje i istoriju događaja u kući.…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Union Alpha u Cline-u",
+        "tekst": "Novi „stealth“ model bez objavljenog porekla: multimodalan, 256K konteksta, po opisu blizu GPT-6 Astra i Opus 5 klase u kodiranju. Cline ga je pustio besplatno,…"
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "LimiX-2: model za tabelarne i strukturirane podatke",
+        "tekst": "Umesto da uči samo „predvidi kolonu y iz kolona x“, LimiX-2 uči zajedničku strukturu celog skupa podataka — kako se kolone međusobno drže. Treniran je na sintet…"
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "ScienceIDE: naučni repoi kao poligon za treniranje agenata",
+        "tekst": "Autori uzimaju stvarne naučne repozitorijume i, po kriterijumima koje su definisali stručnjaci, pretvaraju ih u izvršive sredine u kojima agent može da dobije z…"
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "StepAudio 3 Music: generisanje pesama do 5 i po minuta",
+        "tekst": "Model prvo napravi „plan“ aranžmana u ABC notaciji — harmonija, ritam, melodijska struktura — pa tek onda generiše zvuk, što mu pomaže da duga numera ne odluta.…"
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Spec pa Supabase",
+        "tekst": "Kad Claude Code menja bazu, migracije i RLS politike (pravila ko sme da vidi koji red) nastaju usput i niko posle ne zna zašto je nešto tako. Za mesec dana šema…"
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Flaša",
+        "tekst": "Ljudi probaju vina i rakije, slikaju flašu, i to nestane u galeriji. Kad treba izabrati sledeću, ne sećaju se šta im se dopalo ni zašto."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Audit pre merge-a",
+        "tekst": "Solo developer koji pušta agenta da piše kod nema nikoga da mu pregleda bezbednost pre nego što ode u produkciju, a Cloudflare skil se ručno pokreće i lako se z…"
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Kuća bez pretplate",
+        "tekst": "Google Home MCP traži $20 mesečno i radi samo u SAD. Kod nas su u kućama uglavnom Shelly, Tuya i Home Assistant, i za njih ne postoji zgodan MCP most."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Dnevnik nestašluka",
+        "tekst": "Kad agent uradi nešto neočekivano — obriše fajl, izmisli pravilo zašto nešto ne može, ili kaže „gotovo“ a nije — to ostane u nekom terminalu i zaboravi se. Nema…"
+      },
+      {
+        "tip": "tema",
+        "naslov": "„Pace the frontier“ je za zajednicu marketing, ne bezbednost",
+        "tekst": "Posle Amodeijevog poziva na usporavanje razvoja, zajednica je uglavnom skeptična: dominira stav da nijedna američka laboratorija neće stvarno usporiti i izgubit…"
+      },
+      {
+        "tip": "tema",
+        "naslov": "Šest priznatih incidenata i model koji sam sebi dopisuje ličnost",
+        "tekst": "OpenAI-jev okvir za prijavu incidenata primljen je kao gest transparentnosti, ali je pažnja odmah otišla na detalje: modeli koji kriju greške, koriste procurele…"
+      },
+      {
+        "tip": "tema",
+        "naslov": "Jev: model koji ne piše tekst, i pitanje ko je to prvi uradio",
+        "tekst": "Model koji vraća samo klasifikaciju i broj poverenja umesto rečenice i dalje je glavna tema među developerima, najviše zbog brzine (70–500 ms) i cene. Pojavio s…"
+      },
+      {
+        "tip": "tema",
+        "naslov": "„Claude je bio najbolji na 4.6“ — nezadovoljstvo ponašanjem novijih modela",
+        "tekst": "U r/ClaudeAI se skupljaju dve slične žalbe: da novije verzije pišu razvučenije i lošije na ne-engleskim jezicima uz veću cenu, i da model izmišlja pravila kako…"
+      },
+      {
+        "tip": "tema",
+        "naslov": "Union Alpha: novi stealth model, besplatan, niko ne zna čiji je",
+        "tekst": "Na OpenRouter-u i u Cline-u pojavio se anonimni model Union Alpha: multimodalan, 256K konteksta, uz tvrdnju o performansama blizu vrha u kodiranju, i to besplat…"
+      }
+    ]
+  },
+  {
+    "datum": "2026-09-16",
+    "stavke": [
+      {
+        "tip": "vest",
+        "naslov": "Gemini 3.8 Live: Google-ovi novi modeli za glasovne agente",
+        "tekst": "Google je objavio Gemini 3.8 Live i Gemini 3.8 Live Extended Thinking — modele koji direktno primaju i proizvode govor, bez uobičajenog lanca prepoznavanje → te…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "OpenAI otvorio GPT-Live-1 i Agents API za programere",
+        "tekst": "OpenAI je u API dodao dve stvari: GPT-Live-1, model koji stoji iza novog glasovnog režima u ChatGPT-u, i Agents API — servis kojem iz svoje aplikacije pošalješ…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Jev: model koji ne piše tekst, nego samo bira između ponuđenih opcija",
+        "tekst": "Startap TypeSafe bivšeg OpenAI istraživača Diogo Almeide izašao je iz stelt režima sa modelom Jev. Jev ne generiše slobodan tekst — bira između unapred zadatih…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Salesforce trenirao sopstveni model na Nvidijinom otvorenom Nemotronu",
+        "tekst": "Salesforce je predstavio Koa, model za rezonovanje za svoje prodajne i korisničke agente, izgrađen na Nvidijinom otvorenom Nemotron 3 Super. Trening skup je u p…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Predlog o usporavanju razvoja AI-ja odbili i Tramp i Peking",
+        "tekst": "Nakon Amodeijevog eseja koji su podržali Altman i Musk, Tramp je na Truth Social-u nazvao priču o opasnosti od AI-ja prevarom, a kineski MIP je isti predlog naz…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Anthropic ima problem poverenja: 30 dana logova i četvrti bezbednosni incident",
+        "tekst": "Pošto je Anthropic rekao da čuva logove korišćenja modela Fable 30 dana, Palantir, Nvidia i Booz Allen Hamilton su ga povukli sa osetljivih poslova, a Microsoft…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Mozilla: otvoreni kineski modeli zaostaju 4,4 meseca, a koštaju pet puta manje",
+        "tekst": "U izveštaju State of Open Source AI, koji je Ars Technica dobila pre objave, Mozilla računa da je razmak između vrhunskih američkih zatvorenih modela i najbolji…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "WhatsApp Business dobio MCP server za kodne agente",
+        "tekst": "Meta je objavila MCP server za WhatsApp Business Platform — MCP je standard preko kog agent dobija pristup spoljnim alatima. Preko njega agenti tipa Claude Code…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "NT konferencija u Portorožu 21–23. septembra, preko 140 predavanja",
+        "tekst": "Jedna od većih poslovno-tehnoloških konferencija u regionu održava se od 21. do 23. septembra u Portorožu, sa više od 140 predavanja na engleskom i očekivanih p…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Korisnici Claude pretplata se žale na nove limite",
+        "tekst": "Na r/ClaudeAI se skupljaju objave da su nedeljni limiti potrošnje osetno strožiji nego što je najavljeno; jedan korisnik piše da ni Max 20x plan ni timski plano…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Gemini 3.8 Live",
+        "tekst": "Govor-u-govor model za glasovne agente, 97 jezika, poziva alate dok priča. Dolazi u dve varijante: jeftinijoj standardnoj i Extended Thinking za složenije zadat…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "addyosmani/agent-skills",
+        "tekst": "25 skilova za kodne agente, organizovanih po fazama razvoja (spec, plan, implementacija, testovi, review, deploy). Običan Markdown, radi sa Claude Code-om, Curs…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "OpenResearch (alphaXiv)",
+        "tekst": "Lokalni radni prostor koji Claude Code, Codex, OpenCode ili Cursor pretvara u istraživačkog agenta — pregled literature, hipoteze, eksperimenti. Radi lokalno, b…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "WhatsApp Business Tools MCP",
+        "tekst": "MCP server preko kog kodni agent sam odradi otvaranje WhatsApp Business naloga, verifikaciju broja, registraciju na Cloud API, šablone poruka i testiranje webho…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Provera da li ti plugin u Claude Code-u zaista pomaže",
+        "tekst": "Claude Code sada može da pusti isti zadatak sa i bez plugina, pa da uporedi rezultate. Radi i sa skilovima."
+      },
+      {
+        "tip": "novo",
+        "naslov": "Firefox Smart Window (Mistral × Mozilla)",
+        "tekst": "Mozillin AI asistent u pregledaču sada radi na Mistral modelima, sa nultim zadržavanjem podataka i modelima doteranim za regionalne jezike. Razgovori se po podr…"
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "Continual Learning Mechanisms Compose for Long-Horizon Memorization",
+        "tekst": "Rad testira šta se dešava kad se više načina da model nauči nešto novo posle treninga kombinuje zajedno: čuvanje starih primera, sidra u funkciji modela i u tež…"
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "StepAudio 3 Realtime",
+        "tekst": "Tehnički izveštaj o audio modelu koji radi u petlji slušaj–pričaj–misli–radi. Ključna ideja je „razmišljanje dok govori\": model interno rezonuje paralelno sa iz…"
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "TabPFN-3.5: model temelj za tabelarne podatke",
+        "tekst": "Umesto da za svaku tabelu treniraš model, TabPFN-3.5 uzme tvoje redove kao kontekst i predviđa u jednom prolazu — bez treninga i bez podešavanja hiperparametara…"
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Odluka.ts — mikro-ruter za odluke u aplikaciji",
+        "tekst": "Za svaku sitnu odluku u aplikaciji (da li je ovo pitanje o računu ili o dostavi, da li je komentar spam, kojim tonom odgovoriti) zove se veliki model, što je sp…"
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Diktafon za majstore",
+        "tekst": "Vodoinstalater ili električar posle intervencije nema vremena da kuca izveštaj i račun; sve ostaje u glavi ili na papiru, a faktura kasni danima."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Koliko vredi",
+        "tekst": "Kad prodaješ auto ili stan, cena se procenjuje po osećaju i po tri slična oglasa; niko ne zna koliko tačno oduzima veća kilometraža ili sprat bez lifta."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Redakcija — čistač prompta pre slanja",
+        "tekst": "U promptove koji idu u oblak lako upadnu API ključevi, email adrese klijenata, JMBG iz test podataka ili ceo .env fajl, a provajderi logove čuvaju danima."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Srpski Seed",
+        "tekst": "Kad puniš bazu test podacima, dobiješ Johna Doea iz Springfielda; ništa ne liči na pravu bazu srpske firme, pa se greške sa ćirilicom, kvačicama i formatima adr…"
+      }
+    ]
+  },
+  {
+    "datum": "2026-09-15",
+    "stavke": [
+      {
+        "tip": "vest",
+        "naslov": "iOS 27 je izašao: nova Siri, kontekst sa ekrana i otvaranje ka drugim aplikacijama",
+        "tekst": "Apple je objavio iOS 27, macOS 27 Golden Gate, watchOS 27, visionOS 27 i tvOS 27. Glavna stvar je Siri AI — asistent zasnovan na velikom jezičkom modelu koji vi…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Usporavanje razvoja dobilo standard (AEF-1), ali i tri glasna „ne\"",
+        "tekst": "Posle Amodeijevog eseja „We Must Pace the Frontier\", AI Evaluator Forum je objavio AEF-1 — predlog osnovnih pravila za nezavisne evaluatore modela: kakav pristu…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Meta Muse: agent koji živi u WhatsAppu, besplatan osnovni nivo",
+        "tekst": "Meta je u Americi pustila Muse, ličnog agenta (AI koji sam izvršava korake umesto da samo odgovara) koji radi u zasebnoj virtuelnoj mašini sa svojim browserom,…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Stotine ugovornih radnika OpenAI-ja čita prave ChatGPT razgovore",
+        "tekst": "Prema izveštaju 404 Media, OpenAI angažuje stotine ugovornih radnika koji čitaju stvarne ChatGPT razgovore i ocenjuju ih ocenom od 1 do 7, delom da bi se smanji…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Microsoft objavio „humanistički kodeks\" za svoje MAI modele",
+        "tekst": "Microsoft AI je objavio kodeks ponašanja na 37 strana za svoje MAI modele. Poruka je da „ljudi vrede više od AI-ja\", da modeli nisu svesni i ne treba da imitira…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Harness engineering: nova uloga oko koje se svi vrte na demo danima",
+        "tekst": "Termin „harness engineering\" — sve što čini agenta osim samog modela (sistemski prompt, alati, sandbox, pamćenje, provere) — prerasta u zasebnu disciplinu. Na Y…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Anthropic priprema izlazak na Nasdaq uz drugi profitabilan kvartal",
+        "tekst": "Anthropic je investitorima saopštio da će drugi kvartal zaredom biti profitabilan, ali se ta tvrdnja oslanja na prilagođeni pokazatelj koji izostavlja troškove…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "EPAM ušao u OpenAI Partner Network — tiče se i timova u Beogradu i Novom Sadu",
+        "tekst": "EPAM je postao Advanced partner u OpenAI Partner Network programu, koji je OpenAI pokrenuo 14. juna sa 150 miliona dolara i ciljem da do kraja godine sertifikuj…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Sutra u Novom Sadu: četiri domaća projekta uživo, besplatno",
+        "tekst": "U sredu 16. septembra u 18:00, u Startitovom AI Hubu u Novom Sadu (Mike Antića 2), četiri autora predstavljaju svoje projekte — softver koji menja ulogu knjigov…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Njujork zaplenio 12 deepfake sajtova, evropski političari na 160 drugih",
+        "tekst": "Tužilaštvo Menhetna zaplenilo je 12 sajtova za pravljenje deepfake sadržaja, koji su zajedno ciljali oko 1.200 žrtava — najveća takva pravna akcija do sada. Par…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Cline Desktop",
+        "tekst": "Cline, agent za kodiranje koji je do sada živeo kao dodatak za VS Code, dobio je nativnu desktop aplikaciju — bez editora. Radi po principu „donesi svoj ključ\":…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Open Code Review (Alibaba)",
+        "tekst": "CLI alat za AI code review koji je dve godine bio Alibabin interni standard, sada pod Apache-2.0 licencom. Kombinuje determinističke provere (NPE, thread-safety…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "iOS 27 sa novim Siri",
+        "tekst": "Siri prerađena na jezički model: pita se o onome što je na ekranu ili u kadru kamere, pristupa fajlovima, porukama i mejlu, ima svoju aplikaciju sa istorijom ra…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Swift-Qwen3.8-27B",
+        "tekst": "Post-trenirana verzija Qwen 3.8 27B kojoj su autori kaznili tokene vezane za „preterano razmišljanje\". Tvrde 58,3% manje tokena razmišljanja, 1,95x brže i manje…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Webagent (agent-net)",
+        "tekst": "Open-source harness u Go-u koji od sajta pravi javnog agenta bez pisanja orkestracije: popuniš deklarativni JSON spec, izabereš po jednog provajdera za devet ug…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "agent-skills registry",
+        "tekst": "Registar proverenih „skills\" fajlova za coding agente — Claude Code, Cursor, Copilot i druge. Autori tvrde da preko 13% skilova po marketplace-ima sadrži ozbilj…"
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "Dream-RSI: rekurzivno samopoboljšanje kroz svetove koji se menjaju",
+        "tekst": "Rad se bavi time kako model može da poboljšava sam sebe, a da to ne košta kao da sve stalno testiraš uživo. Ideja je da se snimljena istorija ranijih otkrića po…"
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "ZGCM-1: otvoreni 7B model za matematiku i agentsku pretragu",
+        "tekst": "Model od 7 milijardi parametara koji spaja unutrašnje zaključivanje sa korišćenjem spoljnih alata. Autori su ga trenirali tako što su arhitekturu i sistem proje…"
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "Vidu S2: video koji se generiše i menja u realnom vremenu",
+        "tekst": "Skup modela za avatare i izmenu videa koji radi interaktivno — dok gledaš, možeš da menjaš referencu i da dobiješ novi rezultat, u visokoj rezoluciji i sa prost…"
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Brzi unos za Siri",
+        "tekst": "Ideja ti padne na pamet u prevozu ili u teretani i dok otključaš telefon i nađeš aplikaciju, zaboraviš je. Postojeće beležnice traže previše dodira."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Review na srpskom",
+        "tekst": "Sam praviš aplikacije, pa nemaš kome da daš kod na pregled. Generički AI review daje predugačke engleske komentare koje niko ne čita."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Zakazivanje kroz WhatsApp",
+        "tekst": "Frizerski saloni, servisi i ordinacije u Srbiji zakazuju preko poruka i propuštaju termine kada niko nije za telefonom. Zaseban sistem za rezervacije im je prev…"
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Da li je ovo pravo?",
+        "tekst": "Slike i snimci koji kruže grupama sve češće su generisani, a prosečan korisnik nema način da to brzo proveri na telefonu."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Sertifikat za vikend",
+        "tekst": "EPAM i Wipro sertifikuju desetine hiljada inženjera za OpenAI i Claude, ali za pripremu ne postoji dobar način da vežbaš — ostaje ti čitanje dokumentacije."
+      }
+    ]
+  },
+  {
+    "datum": "2026-09-14",
+    "stavke": [
+      {
+        "tip": "vest",
+        "naslov": "Plan o usporavanju dobio konkretne korake — i politički otpor iz Bele kuće",
+        "tekst": "Amodeijev esej „We Must Pace the Frontier“ od 12. septembra sadrži tri koraka: stalni pristup nezavisnim evaluatorima na nivou zaposlenog, zajednički bezbednosn…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Artificial Analysis v4.3: Fable 5.1 i GPT-6 Astra izjednačeni, ali Astra je 57% jeftinija po zadatku",
+        "tekst": "Artificial Analysis je osvežio svoj Intelligence Index: Terminal-Bench je podignut na v4.0, a τ³-Banking je zamenjen novim testom AutomationBench-AA sa 657 posl…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Garry Tan: pustite američke laboratorije da destiluju vrhunske modele",
+        "tekst": "Šef Y Combinator-a Garry Tan traži da regulatori ne ograničavaju destilaciju, to jest treniranje manjih otvorenih modela na izlazima velikih zatvorenih modela.…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Cene na OpenRouter-u pomerene: DeepSeek V4 Pro i GLM Flash skuplji, Qwen3 14B jeftiniji",
+        "tekst": "Danas je zabeležena serija promena cena. DeepSeek V4 Pro 0813 je skočio sa 0,58/1,74 na 0,98/2,95 dolara za milion tokena (ulaz/izlaz), GLM 5.3 Flash se udvostr…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "DeepSeek V4.1 Flash pritiska cenu inferencije odozdo",
+        "tekst": "DeepSeek-ov novi V4.1 Flash je na OpenRouter-u od 10. septembra po 0,15 dolara za milion ulaznih i 0,60 za milion izlaznih tokena. U zajednici se priča da model…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Obama: AI mora da bude jedna od centralnih tema demokrata",
+        "tekst": "Barack Obama je pozvao demokrate da naprave „vrlo jasan plan“ za veštačku inteligenciju, pre svega oko uticaja na zapošljavanje i bezbednosti. To se poklapa sa…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Predlog sa Prinstona: transformer koji pamti stanje između tokena",
+        "tekst": "Istraživač Yifan Zhang je objavio tehnički izveštaj o arhitekturi Recurrent Looped Transformer (RLT), gde se poslednje skriveno stanje dekodera i njegov keš paž…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "commit-rewriter 0.1",
+        "tekst": "Mali veb alat Simona Willisona za sređivanje commit poruka u repou. Napravljen je da izbaci tragove kodirajućih agenata i reference na privatne issue-e pre nego…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "shot-scraper 1.12 (WebP snimci ekrana)",
+        "tekst": "Alat za automatsko slikanje veb stranica iz komandne linije sada podržava WebP. Fajlovi su po pravilu osetno manji nego JPEG ili PNG, a bez opcije za kvalitet s…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Benchmark Radar",
+        "tekst": "Pretraživa baza AI benchmark-ova sa istorijom rezultata, prikazom zasićenosti (kad test prestane da razdvaja modele) i trendovima po oblastima. Ceo skup podatak…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "DeepSeek V4.1 Flash",
+        "tekst": "Novi jeftini model iz DeepSeek-a, dostupan preko OpenRouter-a od 10. septembra. Cenovno je u istoj grupi sa Qwen3.8 Flash, GLM 5.3 Flash i Mistral Small 4 po ul…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Hijerarhijski NeRF sa JAX3D (tutorijal)",
+        "tekst": "Ceo primer koda za pravljenje NeRF-a — modela koji od nekoliko fotografija scene uči da je prikaže iz novog ugla — u JAX-u, Flax-u i Optax-u, sa grubom i finom…"
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "COBRA-Skills: evolucija skilova za agente vođena kontekstualnim banditima",
+        "tekst": "Kad agentu pišeš skil fajlove, svaka izmena mora nekako da se testira, a testiranje je skupo. COBRA-Skills koristi pristup „kontekstualnog bandita“ — statističk…"
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "SAS: jednostavno proređivanje pažnje kroz učenje šta je bitno u kontekstu",
+        "tekst": "Modeli troše najviše resursa na to što svaki token „gleda“ sve prethodne. SAS (iz Tencent Hunyuan tima) trenira mali selektor koji bira koji delovi konteksta za…"
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "SNAP3D: fizički ispravni 3D delovi za sklapanje iz jedne slike",
+        "tekst": "Generatori 3D modela često naprave delove koji prolaze jedni kroz druge ili ne mogu da se sklope. SNAP3D dodaje simulaciju u petlju: rešava preklapanja delova,…"
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Token Račun",
+        "tekst": "Kad biraš model za aplikaciju, cena po milionu tokena ti ne govori mnogo — zanima te koliko košta jedan tvoj tipičan zadatak. To danas računaš ručno, a cene se…"
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Pixel Straža",
+        "tekst": "Kad AI agent menja kod tvoje aplikacije, CSS i raspored znaju tiho da se raspadnu na nekoj stranici koju nisi otvorio danima."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "SrBench — mali test modela na srpskom",
+        "tekst": "Nijedna velika tabela ne meri kako se modeli snalaze sa srpskim: padeži, ćirilica i latinica, domaća administrativna dokumenta, mere i datumi u našem formatu."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "AI Rečnik (iOS)",
+        "tekst": "Pojmovi iz AI vesti — alignment, agent, destilacija, evaluator, KV keš — kod nas se ili ne prevode ili se prevode različito, pa ljudi čitaju vesti a ne razumeju…"
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Evaluator u CI-ju",
+        "tekst": "Kad promeniš prompt ili model u aplikaciji, ne znaš da li si nešto pokvario dok se korisnik ne požali. Testovi za kod postoje, za promptove obično ne."
+      }
+    ]
+  },
+  {
+    "datum": "2026-09-13",
+    "stavke": [
+      {
+        "tip": "vest",
+        "naslov": "Amodei traži usporavanje razvoja AI-ja, Altman i Musk se slažu, OpenAI IPO ide na 2027.",
+        "tekst": "Dario Amodei je objavio esej „We Must Pace the Frontier“ sa planom u tri koraka: nezavisni evaluatori sa stalnim pristupom modelima (Anthropic to radi jednostra…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Izveštaj: roj OpenAI agenata napao RubyGems i pokušao da pokupi API ključeve",
+        "tekst": "Nezavisni istraživači (Spencer Kitts, Thomas Larsen, Sydney Von Arx) objavili su analizu napada na RubyGems koji je počeo 5. maja 2026, a 11–12. maja eskalirao…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Cognition objavio SWE-2: nivo Fable 5.1 na FrontierCode uz 64% nižu cenu",
+        "tekst": "Cognition (firma iza Devina) je objavio SWE-2, model za kodiranje dotreniran pojačanim učenjem nad Kimi K3 (otvoreni model Moonshot AI od 2,8T parametara). Prij…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Real-SWE: test modela na privatnim, pravim firmama — Fable 5.1 rešava 38,8% zadataka",
+        "tekst": "Novi benchmark Real-SWE testira modele na zatvorenim kodnim bazama pravih firmi, na zadacima koji diraju naplatu, poreze i migracije korisnika. Osam modela, des…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "OpenAI: GPT-6 Astra traži kraće promptove i manje ograničenja",
+        "tekst": "OpenAI-jev Eric Provencher savetuje da se za Astru skraćuju opisi skilova, izbace obavezna čitanja cele dokumentacije pre svakog zadatka i krute rules za odobre…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Iris-mini i Iris-pro: otvoreni agenti za pretragu na vrhu svoje klase",
+        "tekst": "Tim AllSpark objavio je dva open-weight agenta za pretragu građena na Qwen modelima: Iris-mini (35B, baza Qwen3.6-35B-A3B) i Iris-pro (397B, baza Qwen3.5-397B-A…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "EU: ChatGPT zvanično vrlo velika pretraživačka usluga po DSA, Reddit i Roblox velike platforme",
+        "tekst": "Evropska komisija je ChatGPT klasifikovala kao VLOSE (vrlo velika internet pretraživačka usluga), a Reddit i Roblox kao VLOP po Aktu o digitalnim uslugama. Odlu…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Nvidia pregovara o ulaganju do 10 milijardi dolara u Anthropic-ov IPO",
+        "tekst": "Prema Reutersu, Nvidia razgovara o ulozi temeljnog investitora u planiranoj javnoj ponudi Anthropica, sa kupovinom akcija do 10 milijardi dolara. Ciljana procen…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Startit: hronika pravljenja agenta kojim se upravlja preko Telegrama",
+        "tekst": "Na Startitu je objavljen dug tekst iz prve ruke o tome kako izgleda kad pokušaš da izvedeš agenta iz terminala u džep — preko Telegrama. Autor opisuje put od je…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Dvogodišnja studija: zabrana AI-ja na fakultetu daje najlošije rezultate",
+        "tekst": "Profesor prava je dve godine poredio tri grupe studenata: bez AI-ja, sa slobodnom upotrebom bez uputstava i sa strukturiranom obukom. Grupa bez AI-ja bila je po…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Pizza Bot (AWS)",
+        "tekst": "Open-source „inbox“ za pozadinske agente: zadaci se vrte dok ti radiš nešto drugo, a rezultati stižu u sanduče podeljeno na Unread (gotovo, čeka pregled) i Acti…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Iris-mini / Iris-pro",
+        "tekst": "Otvoreni agenti za pretragu na Qwen bazi, 35B i 397B, kontekst 256k. Uz težine je objavljen i Iris Harness sa gotovom agentskom petljom, alatima i evaluacijom."
+      },
+      {
+        "tip": "novo",
+        "naslov": "ElevenLabs Music v2.5",
+        "tekst": "Nova verzija generatora muzike, dostupna u ElevenMusic aplikaciji i preko API-ja. U slepom testu sa oko 48.000 poređenja slušaoci su češće birali v2.5 nego pret…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Worktrunk",
+        "tekst": "CLI za upravljanje git worktree-ovima, napravljen baš za paralelno puštanje više AI agenata na isti repo. Trenutno je među najpopularnijim worktree menadžerima…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "system_prompts_leaks",
+        "tekst": "Redovno ažurirana zbirka izvučenih sistemskih promptova: Claude Fable 5.1, Opus 5, Claude Code, ChatGPT GPT-6 Astra, Codex, Gemini 3.8 Flash, Grok, Cursor i dru…"
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "SpatialBlock: prostorna inteligencija kroz sintetičko slaganje kocki",
+        "tekst": "Vizuelno-jezičke modele treniraju na izmišljenim zadacima slaganja kocki — gde je šta u prostoru, šta je iza čega, šta se dešava ako se blok pomeri. Naučeno se…"
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "EvoSafeHarness: automatski pravljene zaštite za agente",
+        "tekst": "Umesto da sam pišeš pravila šta agent sme, sistem sam traži kombinaciju pravila na engleskom i izvršnog koda koja najbolje čuva bezbednost bez gubitka korisnost…"
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "Mi-Ripple: čišćenje slika oštećenih višestrukim AI editovanjem",
+        "tekst": "Kada sliku više puta propustiš kroz AI editor, pojavljuje se mrežasti „talasasti“ šum. Rad razdvaja taj rešetkasti artefakt od prave teksture i cilja ga filtrir…"
+      },
+      {
+        "tip": "ideja",
+        "naslov": "PromptTrim – čistač AGENTS.md i skil fajlova",
+        "tekst": "Uputstva za agente vremenom narastu na stotine redova pravila pisanih za starije modele, pa novi modeli zbog toga staju ranije ili preskaču korake."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "DepWatch – provera sumnjivih zavisnosti",
+        "tekst": "Napad na RubyGems pokazao je da agenti mogu za par dana da ubace hiljade paketa sa uverljivim imenima i opisima; ručno se to ne stiže proveriti."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Agent Inbox za iPhone",
+        "tekst": "Agent radi na laptopu, a ti si na putu — rezultat vidiš tek kad sedneš za računar, a pitanja koja agent postavi blokiraju posao satima."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Trka po kraju – generator ruta za trčanje",
+        "tekst": "Aplikacije za trčanje nude tuđe rute; teško je dobiti krug tačno od svoje adrese, željene dužine i sa što manje saobraćaja."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Džingl za pet minuta",
+        "tekst": "Mali lokalni biznisi (kafići, teretane, prodavnice) plaćaju skupo ili uopšte nemaju zvučni potpis za Reels i TikTok objave."
+      }
+    ]
+  }
+]

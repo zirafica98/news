@@ -32,6 +32,7 @@ if (samoProvera) process.exit(0);
 await writeJson(paths.izdanje(datum), izdanje);
 
 const brojIzdanja = await azurirajIndex(paths.index, izdanje);
+await napraviPretragu();
 
 // Pamtimo sve što je Claude video, ne samo ono što je izabrao, da sutra ne dobije iste vesti.
 const skupljeno = await readJson(paths.vesti(datum), { vesti: [] });
@@ -50,3 +51,29 @@ for (const url of urls) {
 await writeJson(STATE_FILE, Object.fromEntries(Object.entries(state).sort()));
 
 console.log(`Objavljeno: ${paths.izdanje(datum)} (u arhivi ukupno ${brojIzdanja} izdanja)`);
+
+/**
+ * Sitan spisak svega objavljenog, za pretragu na sajtu bez servera.
+ * Pravi se iznova od svih izdanja, da bi obuhvatio i ranije dane.
+ */
+async function napraviPretragu() {
+  const index = await readJson(paths.index, []);
+  const kratko = (t) => (t.length > 160 ? `${t.slice(0, 160).trimEnd()}…` : t);
+  const dani = [];
+  for (const { datum: d } of index) {
+    const iz = await readJson(paths.izdanje(d), null);
+    if (!iz) continue;
+    dani.push({
+      datum: d,
+      stavke: [
+        ...iz.vesti.map((v) => ({ tip: 'vest', naslov: v.naslov, tekst: kratko(v.staSeDesilo) })),
+        ...(iz.kratkeVesti ?? []).map((v) => ({ tip: 'kratka', naslov: v.naslov, url: v.url })),
+        ...iz.novo.map((n) => ({ tip: 'novo', naslov: n.naziv, tekst: kratko(n.opis) })),
+        ...iz.istrazivanje.map((r) => ({ tip: 'istrazivanje', naslov: r.naslov, tekst: kratko(r.objasnjenje) })),
+        ...iz.ideje.map((i) => ({ tip: 'ideja', naslov: i.naziv, tekst: kratko(i.problem) })),
+        ...(iz.mreze?.teme ?? []).map((t) => ({ tip: 'tema', naslov: t.naslov, tekst: kratko(t.oCemuSePrica) })),
+      ],
+    });
+  }
+  await writeJson(paths.pretraga, dani);
+}

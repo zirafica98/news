@@ -80,6 +80,15 @@ const SR = {
   'ideje.inspiracija': 'Inspiracija:',
 
   'arhiva.prazno': 'Još nema izdanja.',
+  'arhiva.pretraga': 'Pretraži sva izdanja…',
+  'arhiva.nemaRezultata': 'Nema rezultata za „{upit}“.',
+  'arhiva.rezultata': 'Pronađeno: {n}',
+  'pretraga.tip.vest': 'Vest',
+  'pretraga.tip.kratka': 'Kratka vest',
+  'pretraga.tip.novo': 'Novo izašlo',
+  'pretraga.tip.istrazivanje': 'Istraživanje',
+  'pretraga.tip.ideja': 'Ideja za app',
+  'pretraga.tip.tema': 'Tema sa mreža',
   'arhiva.broj': '{vesti} vesti · {novo} novih stvari · {istrazivanje} radova · {ideje} ideja',
 
   'sacuvano.opis': 'Čuva se samo u ovom browseru.',
@@ -239,6 +248,15 @@ const EN: Record<Kljuc, string> = {
   'ideje.inspiracija': 'Inspiration:',
 
   'arhiva.prazno': 'No editions yet.',
+  'arhiva.pretraga': 'Search all editions…',
+  'arhiva.nemaRezultata': 'No results for “{upit}”.',
+  'arhiva.rezultata': 'Found: {n}',
+  'pretraga.tip.vest': 'Story',
+  'pretraga.tip.kratka': 'Short story',
+  'pretraga.tip.novo': 'Just released',
+  'pretraga.tip.istrazivanje': 'Research',
+  'pretraga.tip.ideja': 'App idea',
+  'pretraga.tip.tema': 'Social topic',
   'arhiva.broj': '{vesti} stories · {novo} new releases · {istrazivanje} papers · {ideje} ideas',
 
   'sacuvano.opis': 'Stored only in this browser.',
