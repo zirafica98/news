@@ -16,9 +16,9 @@ on:
   workflow_dispatch:
     inputs:
       rezim:
-        description: 'normalno = samo ako danas nema izdanja · ponovo = napravi današnje iznova · provera = test bez objavljivanja'
+        description: 'normalno = samo ako danas nema izdanja · ponovo = napravi današnje iznova · provera = test bez objavljivanja · notifikacija = samo pošalji push'
         type: choice
-        options: [normalno, ponovo, provera]
+        options: [normalno, ponovo, provera, notifikacija]
         default: normalno
 
 permissions:
@@ -82,5 +82,6 @@ jobs:
           case "$REZIM" in
             ponovo) bash scripts/jutro.sh --ponovo ;;
             provera) bash scripts/jutro.sh --provera ;;
+            notifikacija) node scripts/posalji-push.mjs ;;
             *) bash scripts/jutro.sh ;;
           esac
