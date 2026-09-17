@@ -24,6 +24,19 @@ Ručno pokretanje: GitHub → Actions → **Jutarnje izdanje** → Run workflow 
 
 Ranije je posao radio launchd na Mac-u, ali MacBook sa zatvorenim poklopcem macOS uspava posle par sekundi buđenja, pa izdanja nisu stizala na vreme.
 
+## Šta je na sajtu
+
+| Kartica | Sadržaj |
+|---|---|
+| Vesti | „ukratko“, nedeljni pregled (subotom), glavne vesti, „Novo izašlo“ sa koracima, „Ukratko još“ |
+| Istraživanje | radovi dana (HF Daily Papers) |
+| Ideje | 5 ideja za app |
+| Mreže | teme sa X-a, Reddita, HN-a, Bluesky-ja, Mastodona i novi YouTube snimci |
+| Cene | cene tokena, krivulje kretanja, kalkulator troškova |
+
+Uz to: arhiva sa pretragom kroz sva izdanja, sačuvane stavke, palac gore/dole (utiče na sledeća izdanja),
+tema i jezik (sr/en) u ⚙ meniju, push notifikacija o novom izdanju, RSS na `/feed.xml`.
+
 ## Komande
 
 | Komanda | Šta radi |
@@ -33,7 +46,8 @@ Ranije je posao radio launchd na Mac-u, ali MacBook sa zatvorenim poklopcem macO
 | `npm run prices` | osveži cene tokena |
 | `npm run digest` | Claude napiše nacrt izdanja |
 | `npm run translate` | engleski prevod objavljenog izdanja |
-| `npm run finalize` | proveri i objavi nacrt (`-- --provera` samo proverava) |
+| `npm run finalize` | proveri i objavi nacrt, osveži pretragu, feed i sitemap (`-- --provera` samo proverava) |
+| `npm run obavesti` | pošalji push notifikaciju o izdanju |
 | `bash scripts/instaliraj.sh --ukloni` | ugasi stari jutarnji posao na Mac-u |
 | `bash scripts/jutro.sh --provera` | test automatike bez objavljivanja (lokalno) |
 
@@ -41,5 +55,7 @@ Ranije je posao radio launchd na Mac-u, ali MacBook sa zatvorenim poklopcem macO
 
 - **Log jutra:** GitHub → Actions → Jutarnje izdanje → poslednje pokretanje
 - **Izvor ne radi:** u `scripts/sources.json` postavi `"enabled": false`
+- **Tajne (GitHub → Settings → Secrets):** `CLAUDE_CODE_OAUTH_TOKEN`, `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`
+- **Vercel promenljive:** `CRON_SECRET`, `GITHUB_DISPATCH_TOKEN` (Actions + Contents: RW), `VAPID_PUBLIC_KEY`
 - **Promena izgleda izdanja:** `scripts/prompt.md` (šta Claude piše) i `scripts/digest-schema.json` (oblik podataka, prati ga `src/app/izdanje.model.ts`)
 - **Posle promene skripti:** push na GitHub je dovoljan, jutarnja skripta sama povuče najnoviju verziju
