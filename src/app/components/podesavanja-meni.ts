@@ -1,5 +1,6 @@
 import { Component, ElementRef, inject, signal } from '@angular/core';
 import { Jezik } from '../i18n';
+import { NotifikacijeService } from '../notifikacije.service';
 import { PodesavanjaService, Tema } from '../podesavanja.service';
 
 /** Dugme ⚙ u zaglavlju sa izborom teme i jezika. */
@@ -13,7 +14,7 @@ import { PodesavanjaService, Tema } from '../podesavanja.service';
   template: `
     <button
       type="button"
-      (click)="otvoren.set(!otvoren())"
+      (click)="prebaci()"
       [attr.aria-expanded]="otvoren()"
       aria-controls="podesavanja-panel"
       [attr.aria-label]="t('app.podesavanja')"
@@ -51,6 +52,33 @@ import { PodesavanjaService, Tema } from '../podesavanja.service';
           }
         </div>
 
+        <p class="mt-4 text-xs font-semibold uppercase tracking-widest text-slate-500">{{ t('app.notifikacije') }}</p>
+        @switch (notifikacije.stanje()) {
+          @case ('ukljucene') {
+            <button type="button" (click)="notifikacije.iskljuci()" class="mt-2 w-full rounded-xl bg-slate-800/60 px-3 py-2 text-sm text-slate-300 hover:text-white">
+              {{ t('app.notifikacijeIskljuci') }}
+            </button>
+            <p class="mt-1 text-xs text-emerald-400">{{ t('app.notifikacijeRade') }}</p>
+          }
+          @case ('iskljucene') {
+            <button type="button" (click)="notifikacije.ukljuci()" class="mt-2 w-full rounded-xl bg-amber-400/15 px-3 py-2 text-sm font-medium text-amber-300 hover:bg-amber-400/25">
+              {{ t('app.notifikacijeUkljuci') }}
+            </button>
+          }
+          @case ('trebaPocetniEkran') {
+            <p class="mt-2 text-xs leading-relaxed text-slate-400">{{ t('app.notifikacijePocetniEkran') }}</p>
+          }
+          @case ('odbijene') {
+            <p class="mt-2 text-xs leading-relaxed text-slate-400">{{ t('app.notifikacijeOdbijene') }}</p>
+          }
+          @case ('greska') {
+            <p class="mt-2 text-xs leading-relaxed text-rose-400">{{ t('app.notifikacijeGreska') }} {{ notifikacije.poruka() }}</p>
+          }
+          @case ('nepodrzano') {
+            <p class="mt-2 text-xs leading-relaxed text-slate-400">{{ t('app.notifikacijeNepodrzano') }}</p>
+          }
+        }
+
         <p id="naslov-jezik" class="mt-4 text-xs font-semibold uppercase tracking-widest text-slate-500">{{ t('app.jezik') }}</p>
         <div role="radiogroup" aria-labelledby="naslov-jezik" class="mt-2 grid grid-cols-2 gap-1 rounded-xl bg-slate-800/60 p-1">
           @for (o of jezici; track o.id) {
@@ -77,6 +105,7 @@ export class PodesavanjaMeni {
   protected readonly podesavanja = inject(PodesavanjaService);
   private readonly element = inject(ElementRef<HTMLElement>);
 
+  protected readonly notifikacije = inject(NotifikacijeService);
   protected readonly otvoren = signal(false);
   protected readonly t = this.podesavanja.t;
 
@@ -91,6 +120,11 @@ export class PodesavanjaMeni {
     { id: 'sr', naziv: 'Srpski' },
     { id: 'en', naziv: 'English' },
   ] as const satisfies readonly { id: Jezik; naziv: string }[];
+
+  protected prebaci(): void {
+    this.otvoren.update((o) => !o);
+    if (this.otvoren()) void this.notifikacije.proveri();
+  }
 
   protected zatvoriAkoJeVan(event: MouseEvent): void {
     if (this.otvoren() && !this.element.nativeElement.contains(event.target as Node)) this.otvoren.set(false);

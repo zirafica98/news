@@ -43,11 +43,11 @@ export async function writeJson(file, data) {
  * Ne koristi AbortSignal.timeout: njegov tajmer ne drži Node živim, pa kad veza zastane
  * (npr. posle spavanja računara) Node izađe sa kodom 13 umesto da prijavi isteklo vreme.
  */
-export async function preuzmi(url, { timeoutMs = 20_000, headers } = {}) {
+export async function preuzmi(url, { timeoutMs = 20_000, headers, metoda, telo } = {}) {
   const kontroler = new AbortController();
   const tajmer = setTimeout(() => kontroler.abort(new DOMException('isteklo vreme', 'TimeoutError')), timeoutMs);
   try {
-    const res = await fetch(url, { headers, signal: kontroler.signal });
+    const res = await fetch(url, { method: metoda, body: telo, headers, signal: kontroler.signal });
     return { ok: res.ok, status: res.status, tekst: await res.text() };
   } finally {
     clearTimeout(tajmer);
