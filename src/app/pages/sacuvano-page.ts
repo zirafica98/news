@@ -51,6 +51,6 @@ export class SacuvanoPage {
   protected readonly t = this.podesavanja.t;
   protected readonly tIli = this.podesavanja.tIli;
   protected readonly putanja = (tip: SacuvanoTip, datum: string) =>
-    putanjaSekcije(tip === 'istrazivanje' ? 'istrazivanje' : tip === 'ideja' ? 'ideje' : 'vesti', datum);
+    putanjaSekcije(tip === 'istrazivanje' ? 'istrazivanje' : tip === 'ideja' ? 'ideje' : tip === 'tema' ? 'mreze' : 'vesti', datum);
   protected readonly datum = (d: string) => formatDatum(d, this.podesavanja.lokal(), { day: 'numeric', month: 'long', year: 'numeric' });
 }

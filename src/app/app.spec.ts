@@ -22,6 +22,6 @@ describe('App', () => {
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
     const tabs = [...compiled.querySelectorAll('nav[aria-label="Delovi izdanja"] a')].map((a) => a.textContent?.trim());
-    expect(tabs).toEqual(['Vesti', 'Istraživanje', 'Ideje', 'Cene']);
+    expect(tabs).toEqual(['Vesti', 'Istraživanje', 'Ideje', 'Mreže', 'Cene']);
   });
 });

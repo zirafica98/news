@@ -1,6 +1,6 @@
 import { Injectable, computed, signal } from '@angular/core';
 
-export type SacuvanoTip = 'vest' | 'novo' | 'istrazivanje' | 'ideja';
+export type SacuvanoTip = 'vest' | 'novo' | 'istrazivanje' | 'ideja' | 'tema';
 
 export interface SacuvanaStavka {
   kljuc: string;

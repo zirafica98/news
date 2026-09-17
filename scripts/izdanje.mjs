@@ -57,6 +57,18 @@ export function proveriIzdanje(d, datum) {
     check(r.github === null || link(r.github), `${n}: neispravan GitHub link`);
   });
 
+  const platforme = ['x', 'bluesky', 'reddit', 'hackernews', 'youtube', 'mastodon', 'github', 'producthunt', 'ostalo'];
+  const mreze = d.mreze ?? { teme: [], snimci: [] };
+  check(list(mreze.teme).length <= 6, `mreže: ${list(mreze.teme).length} tema (najviše 6)`);
+  list(mreze.teme).forEach((t, i) => {
+    const n = `tema ${i + 1}`;
+    check(text(t.naslov) && text(t.oCemuSePrica) && text(t.glasovi), `${n}: prazan tekst`);
+    check([1, 2, 3].includes(t.jacina), `${n}: jačina mora biti 1–3`);
+    check(list(t.izvori).length > 0 && list(t.izvori).every((s) => platforme.includes(s.platforma) && text(s.naziv) && link(s.url)), `${n}: izvori nisu ispravni`);
+  });
+  check(list(mreze.snimci).length <= 6, `snimci: ${list(mreze.snimci).length} (najviše 6)`);
+  list(mreze.snimci).forEach((v, i) => check(text(v.naslov) && text(v.kanal) && text(v.opis) && link(v.url), `snimak ${i + 1}: nije ispravan`));
+
   check(list(d.ideje).length === 5, `ideje: ${list(d.ideje).length} (treba tačno 5)`);
   list(d.ideje).forEach((x, i) => {
     const n = `ideja ${i + 1}`;

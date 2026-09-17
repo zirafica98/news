@@ -2,7 +2,7 @@ import { Signal, computed, inject } from '@angular/core';
 import { IzdanjaService } from './izdanja.service';
 import { Izdanje } from './izdanje.model';
 
-export type Sekcija = 'vesti' | 'istrazivanje' | 'ideje';
+export type Sekcija = 'vesti' | 'istrazivanje' | 'ideje' | 'mreze';
 
 export type StanjeIzdanja = 'nema-izdanja' | 'ucitava' | 'ne-postoji' | 'spremno';
 

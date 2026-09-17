@@ -1,7 +1,15 @@
 {
   "type": "object",
   "additionalProperties": false,
-  "required": ["ukratko", "vesti", "novo", "istrazivanje", "ideje", "cene"],
+  "required": [
+    "ukratko",
+    "vesti",
+    "novo",
+    "istrazivanje",
+    "ideje",
+    "cene",
+    "mreze"
+  ],
   "properties": {
     "cene": {
       "type": "string",
@@ -17,21 +25,67 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["naslov", "staSeDesilo", "zastoJeBitno", "kategorija", "vaznost", "izSrbije", "izvori"],
+        "required": [
+          "naslov",
+          "staSeDesilo",
+          "zastoJeBitno",
+          "kategorija",
+          "vaznost",
+          "izSrbije",
+          "izvori"
+        ],
         "properties": {
-          "naslov": { "type": "string" },
-          "staSeDesilo": { "type": "string" },
-          "zastoJeBitno": { "type": "string" },
-          "kategorija": { "type": "string", "enum": ["modeli", "alati", "kompanije", "istrazivanje", "bezbednost", "regulativa", "ostalo"] },
-          "vaznost": { "type": "integer", "enum": [1, 2, 3], "description": "3 = velika vest, 2 = bitno, 1 = zanimljivo" },
-          "izSrbije": { "type": "boolean", "description": "true samo kad je vest o Srbiji ili regionu, ne kad domaći portal prenosi svetsku vest." },
+          "naslov": {
+            "type": "string"
+          },
+          "staSeDesilo": {
+            "type": "string"
+          },
+          "zastoJeBitno": {
+            "type": "string"
+          },
+          "kategorija": {
+            "type": "string",
+            "enum": [
+              "modeli",
+              "alati",
+              "kompanije",
+              "istrazivanje",
+              "bezbednost",
+              "regulativa",
+              "ostalo"
+            ]
+          },
+          "vaznost": {
+            "type": "integer",
+            "enum": [
+              1,
+              2,
+              3
+            ],
+            "description": "3 = velika vest, 2 = bitno, 1 = zanimljivo"
+          },
+          "izSrbije": {
+            "type": "boolean",
+            "description": "true samo kad je vest o Srbiji ili regionu, ne kad domaći portal prenosi svetsku vest."
+          },
           "izvori": {
             "type": "array",
             "items": {
               "type": "object",
               "additionalProperties": false,
-              "required": ["naziv", "url"],
-              "properties": { "naziv": { "type": "string" }, "url": { "type": "string" } }
+              "required": [
+                "naziv",
+                "url"
+              ],
+              "properties": {
+                "naziv": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              }
             }
           }
         }
@@ -43,14 +97,42 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["naziv", "tip", "opis", "kakoProbati", "link", "cena"],
+        "required": [
+          "naziv",
+          "tip",
+          "opis",
+          "kakoProbati",
+          "link",
+          "cena"
+        ],
         "properties": {
-          "naziv": { "type": "string" },
-          "tip": { "type": "string", "enum": ["model", "alat", "projekat", "funkcija"] },
-          "opis": { "type": "string" },
-          "kakoProbati": { "type": "array", "items": { "type": "string" } },
-          "link": { "type": "string" },
-          "cena": { "type": "string" }
+          "naziv": {
+            "type": "string"
+          },
+          "tip": {
+            "type": "string",
+            "enum": [
+              "model",
+              "alat",
+              "projekat",
+              "funkcija"
+            ]
+          },
+          "opis": {
+            "type": "string"
+          },
+          "kakoProbati": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "link": {
+            "type": "string"
+          },
+          "cena": {
+            "type": "string"
+          }
         }
       }
     },
@@ -59,13 +141,32 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["naslov", "objasnjenje", "zastoJeZanimljivo", "url", "github"],
+        "required": [
+          "naslov",
+          "objasnjenje",
+          "zastoJeZanimljivo",
+          "url",
+          "github"
+        ],
         "properties": {
-          "naslov": { "type": "string" },
-          "objasnjenje": { "type": "string" },
-          "zastoJeZanimljivo": { "type": "string" },
-          "url": { "type": "string" },
-          "github": { "type": ["string", "null"] }
+          "naslov": {
+            "type": "string"
+          },
+          "objasnjenje": {
+            "type": "string"
+          },
+          "zastoJeZanimljivo": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "github": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
         }
       }
     },
@@ -75,16 +176,161 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["naziv", "problem", "zaKoga", "ulogaAi", "tezina", "vikendProjekat", "prviKoraci", "inspiracija"],
+        "required": [
+          "naziv",
+          "problem",
+          "zaKoga",
+          "ulogaAi",
+          "tezina",
+          "vikendProjekat",
+          "prviKoraci",
+          "inspiracija"
+        ],
         "properties": {
-          "naziv": { "type": "string" },
-          "problem": { "type": "string" },
-          "zaKoga": { "type": "string" },
-          "ulogaAi": { "type": "string" },
-          "tezina": { "type": "integer", "enum": [1, 2, 3, 4, 5] },
-          "vikendProjekat": { "type": "boolean" },
-          "prviKoraci": { "type": "array", "items": { "type": "string" } },
-          "inspiracija": { "type": "string", "description": "Koja današnja vest ili alat je inspirisao ideju." }
+          "naziv": {
+            "type": "string"
+          },
+          "problem": {
+            "type": "string"
+          },
+          "zaKoga": {
+            "type": "string"
+          },
+          "ulogaAi": {
+            "type": "string"
+          },
+          "tezina": {
+            "type": "integer",
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          },
+          "vikendProjekat": {
+            "type": "boolean"
+          },
+          "prviKoraci": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "inspiracija": {
+            "type": "string",
+            "description": "Koja današnja vest ili alat je inspirisao ideju."
+          }
+        }
+      }
+    },
+    "mreze": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "teme",
+        "snimci"
+      ],
+      "properties": {
+        "teme": {
+          "type": "array",
+          "description": "3-5 tema o kojima se danas najviše priča na društvenim mrežama i u AI zajednici.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "naslov",
+              "oCemuSePrica",
+              "glasovi",
+              "jacina",
+              "izvori"
+            ],
+            "properties": {
+              "naslov": {
+                "type": "string"
+              },
+              "oCemuSePrica": {
+                "type": "string"
+              },
+              "glasovi": {
+                "type": "string",
+                "description": "Ko pokreće priču i šta kažu različite strane."
+              },
+              "jacina": {
+                "type": "integer",
+                "enum": [
+                  1,
+                  2,
+                  3
+                ],
+                "description": "3 = svi pričaju o tome, 2 = velika tema, 1 = zanimljivo"
+              },
+              "izvori": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "platforma",
+                    "naziv",
+                    "url"
+                  ],
+                  "properties": {
+                    "platforma": {
+                      "type": "string",
+                      "enum": [
+                        "x",
+                        "bluesky",
+                        "reddit",
+                        "hackernews",
+                        "youtube",
+                        "mastodon",
+                        "github",
+                        "producthunt",
+                        "ostalo"
+                      ]
+                    },
+                    "naziv": {
+                      "type": "string",
+                      "description": "Ko je objavio, npr. @AnthropicAI ili r/LocalLLaMA."
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "snimci": {
+          "type": "array",
+          "description": "0-4 najzanimljivija nova AI snimka sa YouTube-a.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "naslov",
+              "kanal",
+              "opis",
+              "url"
+            ],
+            "properties": {
+              "naslov": {
+                "type": "string"
+              },
+              "kanal": {
+                "type": "string"
+              },
+              "opis": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              }
+            }
+          }
         }
       }
     }

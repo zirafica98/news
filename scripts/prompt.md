@@ -18,7 +18,7 @@ Mihajlo je iz Srbije i sam pravi aplikacije (Angular, SwiftUI, Supabase) uz pomo
 ## Šta dobijaš
 
 Ispod je JSON sa vestima skupljenim u poslednjih ~30 sati:
-- `vesti`: članci sa naslovom, linkom, datumom i tekstom (`grupa` govori da li je dnevni pregled, istraživanje, medij, zvanični blog, zajednica ili `srbija` za srpske i regionalne portale),
+- `vesti`: članci sa naslovom, linkom, datumom i tekstom (`grupa` govori da li je dnevni pregled, istraživanje, medij, zvanični blog, zajednica, `mreze` za društvene mreže ili `srbija` za srpske i regionalne portale; `platforma` govori sa koje mreže je objava, `autor` ko ju je objavio, a `reakcije` i `pregledi` koliko je popularna),
 - `stranice`: izvori bez RSS-a (npr. Anthropic, The Batch). **Otvori ih sa WebFetch** i uzmi samo ono što je objavljeno u poslednja 2 dana,
 - `nedavno`: naslovi vesti i ideja iz prethodnih izdanja. **Ne ponavljaj ih**, osim ako postoji prava novost u istoj priči.
 - `cene`: današnje cene tokena sa OpenRouter-a ($ za 1M tokena, ulaz/izlaz): praćeni modeli po klasama, promene cena u poslednjih 30 dana, novi modeli i poređenje sa prethodnom verzijom istog modela. Može biti `null` ako cene danas nisu skinute.
@@ -52,5 +52,16 @@ Po potrebi otvori najviše 8 linkova sa WebFetch da proveriš detalje, najčeš�
    - `prviKoraci`: 3–4 koraka kako bi Mihajlo počeo, sa konkretnim alatima.
 
 6. **cene:** 2–3 rečenice o cenama tokena, običan tekst bez naslova i markdown-a. Prvo navedi šta je pojeftinilo ili poskupelo (sa brojevima); ako promena nema, reci to u pola rečenice. Ako je `pratimoOd` današnji datum, praćenje tek počinje, pa ne pominji „juče“ ni trend. Zatim istakni nešto korisno: novi model sa dobrom cenom, veliku razliku u odnosu na prethodnu verziju ili najjeftiniji model u nekoj klasi (za to koristi `najjeftinijiPoKlasi`, ne računaj sam). Govori samo o ceni, ne o kvalitetu modela. Koristi **samo brojeve iz `cene`**. Ako je `cene` null, napiši da cene danas nisu osvežene.
+
+7. **mreze:** šta se priča na društvenim mrežama i u AI zajednici.
+   - `teme`: 3–5 tema o kojima se najviše priča, najjača prva. Materijal: X preko AINews (deo „AI Twitter Recap“, linkovi ka objavama su u uglastim zagradama), Reddit, Hacker News, Bluesky, Mastodon i YouTube.
+     - `oCemuSePrica`: 2–3 rečenice, šta je povod i zašto se o tome raspravlja.
+     - `glasovi`: 1–2 rečenice, ko vodi priču i šta kažu različite strane (imena ili nalozi).
+     - `jacina`: 3 samo kad se o tome priča na više mreža i u velikim brojevima.
+     - `izvori`: 1–4 linka **ka samim objavama ili diskusijama** (x.com, reddit.com, news.ycombinator.com, bsky.app, youtube.com), ne ka člancima. `naziv` je nalog ili zajednica (npr. „@AnthropicAI“, „r/LocalLLaMA“, „Hacker News“).
+     - Tema može da se preklapa sa vestima, ali ovde je fokus na reakciji zajednice, ne na samoj vesti.
+     - Ne prenosi uvrede ni lične napade; glasine jasno označi kao glasine. Preskoči objave na jezicima koje čitalac ne razume (npr. japanski).
+     - Ako nema materijala sa mreža, `teme` može biti prazan niz.
+   - `snimci`: 0–4 najzanimljivija nova snimka sa YouTube kanala iz materijala (`opis`: jedna rečenica o čemu je snimak). Prednost imaju snimci sa više pregleda i oni koji objašnjavaju današnje vesti.
 
 Ako je dan miran (vikend), vesti i novih stvari može biti manje, ali ideja je uvek 5.

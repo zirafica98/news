@@ -26,7 +26,7 @@ const prompt = `Translate this Serbian AI news digest into English for a persona
 
 Rules:
 - Return the same JSON structure. Translate every human-readable text value into natural, concise English.
-- Do NOT change keys, enum values (kategorija, tip, vaznost, izSrbije, tezina, vikendProjekat), numbers, prices, dates or URLs.
+- Do NOT change keys, enum values (kategorija, tip, vaznost, izSrbije, tezina, vikendProjekat, jacina, platforma), account names and handles, numbers, prices, dates or URLs.
 - Keep product, model and company names as they are (Claude, GPT-6 Astra, Hugging Face).
 - Keep the same number of items in every list and the same order.
 - Write it the way an English tech newsletter would, not word for word. Keep references to Serbia or the region, they are intentional.
@@ -50,8 +50,9 @@ if (result.is_error || !result.structured_output) {
 const prevod = { datum, generisano, model: autor, prevod: Object.keys(result.modelUsage ?? {})[0] ?? model, ...result.structured_output };
 
 const greske = proveriIzdanje(prevod, datum);
-for (const deo of ['vesti', 'novo', 'istrazivanje', 'ideje']) {
-  if (prevod[deo]?.length !== sadrzaj[deo].length) greske.push(`${deo}: ${prevod[deo]?.length} stavki, a u originalu ${sadrzaj[deo].length}`);
+const broj = (izdanje, putanja) => putanja.split('.').reduce((o, k) => o?.[k], izdanje)?.length ?? 0;
+for (const deo of ['vesti', 'novo', 'istrazivanje', 'ideje', 'mreze.teme', 'mreze.snimci']) {
+  if (broj(prevod, deo) !== broj(sadrzaj, deo)) greske.push(`${deo}: ${broj(prevod, deo)} stavki, a u originalu ${broj(sadrzaj, deo)}`);
 }
 if (greske.length) {
   console.error(`Prevod za ${datum} NIJE ispravan:\n${greske.map((g) => `  • ${g}`).join('\n')}`);

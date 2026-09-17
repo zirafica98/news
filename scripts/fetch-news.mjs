@@ -80,19 +80,75 @@ printSummary(output, outFile);
 async function fetchSource(source) {
   if (source.type === 'page') return { source, items: [] };
   try {
-    const res = await preuzmi(source.url, { headers: { 'User-Agent': USER_AGENT }, timeoutMs: TIMEOUT_MS });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const body = res.tekst;
-    const all = source.type === 'hf-papers' ? parseHfPapers(body, source) : parseFeed(body, source);
+    const all =
+      source.type === 'bluesky' ? await fetchBluesky(source) : source.type === 'youtube' ? await fetchYoutube(source) : await fetchFeed(source);
     const since = now.getTime() - (hoursOverride ?? source.hours ?? 30) * 3_600_000;
     let items = all.filter((i) => i.objavljeno && new Date(i.objavljeno).getTime() >= since);
-    if (source.samoAI) items = items.filter((i) => AI_SKRACENICA.test(i.naslov) || AI_POJMOVI.test(`${i.naslov} ${i.tekst.slice(0, 400)}`) || AI_SKRACENICA.test(i.tekst.slice(0, 400)));
+    if (source.samoAI) items = items.filter(jeAI);
     if (source.limit) items = items.slice(0, source.limit);
     if (source.fullText) items = await Promise.all(items.map((i) => withPageText(i, source)));
     return { source, items };
   } catch (err) {
     return { source, items: [], error: err.name === 'TimeoutError' ? 'isteklo vreme' : err.message };
   }
+}
+
+function jeAI(i) {
+  const pocetak = `${i.naslov} ${i.tekst.slice(0, 400)}`;
+  return AI_SKRACENICA.test(pocetak) || AI_POJMOVI.test(pocetak);
+}
+
+async function fetchFeed(source) {
+  const res = await preuzmi(source.url, { headers: { 'User-Agent': USER_AGENT }, timeoutMs: TIMEOUT_MS });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return source.type === 'hf-papers' ? parseHfPapers(res.tekst, source) : parseFeed(res.tekst, source);
+}
+
+/** Za izvore sa više naloga/kanala: greška kod jednog ne ruši ostale, a izvor pada samo ako padnu svi. */
+async function saSvihNaloga(lista, preuzmiJedan) {
+  const rezultati = await Promise.allSettled(lista.map(preuzmiJedan));
+  const uspesni = rezultati.filter((r) => r.status === 'fulfilled');
+  if (!uspesni.length && rezultati.length) throw new Error(rezultati[0].reason?.message ?? 'nijedan nalog nije dostupan');
+  return uspesni.flatMap((r) => r.value);
+}
+
+/** Bluesky: javne objave odabranih naloga (bez odgovora i deljenja tuđih objava). Ne treba nalog ni ključ. */
+async function fetchBluesky(source) {
+  return saSvihNaloga(source.nalozi, async (nalog) => {
+    const { handle, samoAI } = typeof nalog === 'string' ? { handle: nalog } : nalog;
+    const url = `https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=${encodeURIComponent(handle)}&limit=30&filter=posts_no_replies`;
+    const res = await preuzmi(url, { headers: { 'User-Agent': USER_AGENT }, timeoutMs: TIMEOUT_MS });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const objave = JSON.parse(res.tekst)
+      .feed.filter((f) => !f.reason)
+      .map(({ post }) => {
+        const link = post.embed?.external ?? post.embed?.media?.external;
+        const tekst = cleanText([post.record?.text ?? '', link && `Link: ${link.title} (${link.uri})`].filter(Boolean).join('\n'));
+        return {
+          izvor: source.id,
+          grupa: source.group,
+          platforma: 'bluesky',
+          autor: post.author.displayName || post.author.handle,
+          naslov: truncate(tekst.split('\n')[0], 120),
+          url: `https://bsky.app/profile/${post.author.handle}/post/${post.uri.split('/').pop()}`,
+          objavljeno: toIso(post.record?.createdAt),
+          tekst: truncate(tekst, source.maxChars ?? 800),
+          reakcije: (post.likeCount ?? 0) + (post.repostCount ?? 0) + (post.quoteCount ?? 0),
+        };
+      });
+    return samoAI ? objave.filter(jeAI) : objave;
+  });
+}
+
+/** YouTube: novi snimci sa odabranih kanala (javni RSS svakog kanala). */
+async function fetchYoutube(source) {
+  return saSvihNaloga(source.kanali, async ({ id, samoAI }) => {
+    const res = await preuzmi(`https://www.youtube.com/feeds/videos.xml?channel_id=${id}`, { headers: { 'User-Agent': USER_AGENT }, timeoutMs: TIMEOUT_MS });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    // Shorts (snimci od par desetina sekundi) preskačemo.
+    const snimci = parseFeed(res.tekst, source).filter((s) => !s.url.includes('/shorts/'));
+    return samoAI ? snimci.filter(jeAI) : snimci;
+  });
 }
 
 // Neki feedovi (npr. TLDR) imaju samo naslov, pa tekst uzimamo sa same stranice.
@@ -118,14 +174,22 @@ function parseFeed(body, source) {
 
   return entries.map((e) => {
     const date = e.pubDate ?? e.published ?? e['atom:published'] ?? e['dc:date'] ?? e.updated ?? channelDate;
-    const html = e['content:encoded'] ?? e.content ?? e.description ?? e.summary ?? '';
+    const media = e['media:group'];
+    const html = e['content:encoded'] ?? e.content ?? e.description ?? e.summary ?? media?.['media:description'] ?? '';
+    const tekst = truncate(htmlToText(source.zadrziLinkove ? zadrziDrustveneLinkove(text(html)) : text(html)), source.maxChars ?? 1500);
+    const autor = text(e.author?.name ?? e['dc:creator']);
+    const pregledi = Number(media?.['media:community']?.['media:statistics']?.['@_views']);
     return {
       izvor: source.id,
       grupa: source.group,
-      naslov: cleanText(text(e.title)),
+      ...(source.platforma && { platforma: source.platforma }),
+      ...(autor && { autor: cleanText(autor) }),
+      // Mastodon objave nemaju naslov, pa je naslov početak teksta.
+      naslov: cleanText(text(e.title)) || truncate(tekst.split('\n')[0], 120),
       url: feedLink(e),
       objavljeno: toIso(text(date)),
-      tekst: truncate(htmlToText(text(html)), source.maxChars ?? 1500),
+      tekst,
+      ...(pregledi > 0 && { pregledi }),
       ...(e.comments && { komentari: text(e.comments) }),
     };
   });
@@ -167,6 +231,14 @@ function toArray(value) {
 function toIso(value) {
   const d = new Date(value);
   return Number.isNaN(d.getTime()) ? null : d.toISOString();
+}
+
+/** Linkove ka objavama na društvenim mrežama zadržava u tekstu kao „tekst [url]“, da Claude može da ih navede. */
+function zadrziDrustveneLinkove(html) {
+  return html.replace(
+    /<a[^>]*href="(https?:\/\/(?:www\.)?(?:x\.com|twitter\.com|reddit\.com|bsky\.app|threads\.(?:net|com))\/[^"]+)"[^>]*>([\s\S]*?)<\/a>/gi,
+    (_, url, naziv) => `${naziv} [${url}]`,
+  );
 }
 
 function htmlToText(html) {
