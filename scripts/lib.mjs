@@ -9,6 +9,7 @@ export const REPO_DIR = join(SCRIPTS_DIR, '..');
 export const OUT_DIR = join(SCRIPTS_DIR, 'out');
 export const STATE_FILE = join(SCRIPTS_DIR, 'state', 'objavljeno.json');
 export const DATA_DIR = join(REPO_DIR, 'public', 'data');
+export const PUBLIC_DIR = join(REPO_DIR, 'public');
 
 export const paths = {
   vesti: (datum) => join(OUT_DIR, `vesti-${datum}.json`),
