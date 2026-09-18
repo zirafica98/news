@@ -4,6 +4,7 @@
 //
 // Pokretanje: npm run obavesti
 //             npm run obavesti -- --datum=2026-09-17
+//             npm run obavesti -- --sacekaj-do=07:00   (jutarnji posao: pošalji tek u 7 po Beogradu)
 
 import { join } from 'node:path';
 import webpush from 'web-push';
@@ -36,6 +37,8 @@ if (!izdanje) {
   process.exit(1);
 }
 
+await sacekajDo(process.argv.find((a) => a.startsWith('--sacekaj-do='))?.split('=')[1]);
+
 webpush.setVapidDetails('mailto:zirafica.98@gmail.com', javni, privatni);
 
 const poruka = JSON.stringify({
@@ -65,3 +68,17 @@ if (istekle.length) {
 const greske = rezultati.filter((r) => !r.ok && !r.istekla);
 console.log(`Notifikacija poslata na ${poslato}/${pretplate.length} uređaja${istekle.length ? `, uklonjeno isteklih: ${istekle.length}` : ''}.`);
 for (const g of greske) console.warn(`  Neuspelo slanje: ${g.poruka}`);
+
+/** Čeka do zadatog vremena po Beogradu (npr. „07:00“), ako je ono danas još ispred nas i nije dalje od 4 sata. */
+async function sacekajDo(vreme) {
+  if (!vreme) return;
+  const [sat, minut] = vreme.split(':').map(Number);
+  const sada = new Date();
+  const beograd = new Date(sada.toLocaleString('en-US', { timeZone: 'Europe/Belgrade' }));
+  const cilj = new Date(beograd);
+  cilj.setHours(sat, minut, 0, 0);
+  const ms = cilj - beograd;
+  if (ms <= 0 || ms > 4 * 3600_000) return;
+  console.log(`Notifikacija čeka ${vreme} po Beogradu (još ${Math.round(ms / 60_000)} min)…`);
+  await new Promise((r) => setTimeout(r, ms));
+}

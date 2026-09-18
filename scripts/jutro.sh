@@ -156,7 +156,8 @@ prvi_naslov="$(node -e "console.log(require('./public/data/$DATUM.json').vesti[0
 notify "Izdanje je spremno ☕ $prvi_naslov"
 
 # 9. Push notifikacija na telefon (radi samo ako su podešene VAPID tajne i ako ima pretplata).
-node scripts/posalji-push.mjs --datum="$DATUM" || log "Push notifikacija nije poslata." 
+# Pri ručnom ponovnom pravljenju šalje odmah; u redovnom jutarnjem radu čeka 07:00.
+node scripts/posalji-push.mjs --datum="$DATUM" $($PONOVO || echo "--sacekaj-do=07:00") || log "Push notifikacija nije poslata." 
 
 # Stari logovi se brišu posle 30 dana.
 find "$LOG_DIR" -name '*.log' -mtime +30 -delete

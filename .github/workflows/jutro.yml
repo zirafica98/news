@@ -5,14 +5,15 @@
 #
 # Glavni okidač je Vercel Cron (api/pokreni-izdanje.mjs, vercel.json), jer GitHub zakazane poslove
 # za ovaj repo kasni satima ili ih ne pokrene (17.09. nijedan od 32 termina). Dva GitHub termina ispod
-# su samo rezerva: posao radi ako je u Beogradu 06:00 ili kasnije i ako današnje izdanje još ne postoji.
+# su samo rezerva: posao radi ako je u Beogradu 05:00 ili kasnije i ako današnje izdanje još ne postoji.
+# Izdanje je gotovo pre 7h, a notifikacija se šalje tačno u 07:00 (posao sačeka).
 
 name: Jutarnje izdanje
 
 on:
   schedule:
-    - cron: '17 5 * * *'
-    - cron: '47 7 * * *'
+    - cron: '17 3 * * *'
+    - cron: '47 4 * * *'
   workflow_dispatch:
     inputs:
       rezim:
@@ -31,7 +32,8 @@ concurrency:
 jobs:
   izdanje:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    # Pravljenje traje ~15 min, a posao zatim čeka 07:00 za notifikaciju.
+    timeout-minutes: 240
     steps:
       - name: Da li je vreme za izdanje
         id: vreme
@@ -42,7 +44,7 @@ jobs:
           datum=$(TZ=Europe/Belgrade date +%F)
           pokreni=true
           if [ "${{ github.event_name }}" = "schedule" ]; then
-            if [ "$sat" -lt 6 ]; then
+            if [ "$sat" -lt 5 ]; then
               echo "U Beogradu je $sat h, prerano."
               pokreni=false
             elif gh api "repos/${{ github.repository }}/contents/public/data/$datum.json" --silent 2>/dev/null; then
