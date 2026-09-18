@@ -30,6 +30,13 @@ export async function GET() {
     });
     rezultat.tokenMozeDaPokrene = pokretanje.status === 422;
     rezultat.pokretanjeHttp = pokretanje.status;
+    // GitHub-ova poruka i dozvola koju traži (bez tajni), da se vidi zašto je odbijeno.
+    rezultat.githubPoruka = (await pokretanje.json().catch(() => ({})))?.message ?? null;
+    rezultat.potrebnaDozvola = pokretanje.headers.get('x-accepted-github-permissions');
+
+    const korisnik = await fetch('https://api.github.com/user', { headers: zaglavlja });
+    rezultat.tokenPripada = korisnik.ok ? (await korisnik.json()).login : `HTTP ${korisnik.status}`;
+    rezultat.tokenIstice = korisnik.headers.get('github-authentication-token-expiration');
 
     const citanje = await fetch(`https://api.github.com/repos/${REPO}/contents/scripts/state/pretplate.json`, { headers: zaglavlja });
     rezultat.tokenMozeDaUpisuje = citanje.ok ? 'citanje radi (upis se proverava pretplatom)' : false;
