@@ -25,7 +25,11 @@ if (!pretplate.length) {
   process.exit(0);
 }
 
-const datum = datumIzArgumenata();
+// Ako današnje izdanje još ne postoji (ručni test pre jutra), šalje se najnovije objavljeno.
+let datum = datumIzArgumenata();
+if (!(await readJson(paths.izdanje(datum), null)) && !process.argv.some((a) => a.startsWith('--datum='))) {
+  datum = (await readJson(paths.index, []))[0]?.datum ?? datum;
+}
 const izdanje = await readJson(paths.izdanje(datum), null);
 if (!izdanje) {
   console.error(`Nema objavljenog izdanja za ${datum}.`);

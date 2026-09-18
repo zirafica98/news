@@ -141,11 +141,13 @@ node scripts/finalize.mjs --datum="$DATUM"
 node scripts/translate-digest.mjs --datum="$DATUM" || log "Engleski prevod nije uspeo, objavljujem samo srpsko izdanje."
 
 # 8. Slanje na GitHub → Vercel pravi novi build.
-git add public/data scripts/state
+# Ceo public/ jer finalize pravi i feed.xml i sitemap.xml, a ne samo public/data.
+git add public scripts/state
 git commit --quiet -m "Izdanje $DATUM$($PONOVO && echo ' (ponovo)')"
 if ! git push --quiet; then
   log "Push odbijen, povlačim izmene i pokušavam ponovo…"
-  git pull --rebase --quiet
+  # U međuvremenu je sajt mogao da upiše pretplatu ili ocenu u repo.
+  git pull --rebase --autostash --quiet
   git push --quiet
 fi
 log "Poslato na GitHub: $(git log -1 --format='%h')"
