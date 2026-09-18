@@ -76,6 +76,7 @@ jobs:
         if: steps.vreme.outputs.pokreni == 'true'
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          VAPID_PUBLIC_KEY: ${{ secrets.VAPID_PUBLIC_KEY }}
           VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
           REZIM: ${{ inputs.rezim || 'normalno' }}
         run: |
