@@ -1,0 +1,564 @@
+{
+  "datum": "2026-09-21",
+  "generisano": "2026-09-21T22:05:14.424Z",
+  "model": "claude-opus-5",
+  "ukratko": "Dan su obeležili Grok 4.7 — jeftin, ali osetno slabiji od Fable 5.1 i GPT-6 Astra na testovima — i priča o tome kako je tročlani tim uz pomoć Claudea za tri dana ušao u privatni kod OpenAI-ja. Uz to: Amazon je blokirao Metinog agenta Muse u kupovini, AWS je otvorio svoj agent harness, a Qwen je izbacio mali open-weight model za slike. Na mrežama dominira frustracija programera koji po ceo dan samo pritiskaju enter u Claude Code-u.",
+  "vesti": [
+    {
+      "naslov": "Grok 4.7: jeftin, ali zaostaje na agentskom kodiranju",
+      "staSeDesilo": "xAI je pustio Grok 4.7, svoj najjači model do sada. Na Artificial Analysis Intelligence Index-u dobija 46 poena, dok Claude Fable 5.1 i GPT-6 Astra imaju po 53. Razlika je najveća na agentskom kodiranju: na Terminal-Bench 4.0 Grok 4.7 ima 26%, Astra 60%, Fable 5.1 55%. Cena je $2 ulaz / $6 izlaz po milionu tokena kod xAI-ja, a na OpenRouter-u se pojavio po $1,6 / $4,8.",
+      "zastoJeBitno": "Za agente koji sami rade kroz terminal i repo, razlika od 26% prema 55–60% je previše velika da bi je niža cena pokrila; ali za obično sažimanje, klasifikaciju i chat je ozbiljan kandidat po ceni.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/xai-launches-grok-4-7-at-bargain-prices-but-benchmarks-reveal-a-wide-gap-to-claude-and-gpt-6/"
+        },
+        {
+          "naziv": "r/singularity — benchmarks",
+          "url": "https://www.reddit.com/r/singularity/comments/1wmh9rg/grok_47_benchmarks/"
+        }
+      ]
+    },
+    {
+      "naslov": "Trojica istraživača uz Claude ušla u privatni kod OpenAI-ja za manje od 72 sata",
+      "staSeDesilo": "Bezbednosni startap Hacktron AI objavio je da je njegov tročlani tim u julu preuzeo naloge zaposlenih i došao do privatne baze koda OpenAI-ja. Ulaz je bila greška u upload-u slika na community forumu, a druga greška je omogućila da se tokeni za prijavu zaposlenih koriste i za njihove ChatGPT naloge. Kao dokaz su ostavili predlog izmene u internom dokumentu, prijavili rupu i dobili 6.500 dolara nagrade. Hacktron kaže da im je Claude Opus 5 dovršio deo napada koji prethodna verzija nije mogla.",
+      "zastoJeBitno": "Isti tip greške u biblioteci za obradu slika im je, tvrde, otvorio i Slack, Metu i GitHub Enterprise — dakle proveri kako tvoja aplikacija prima i obrađuje uploadovane slike i da li sesijski token iz jednog servisa vredi i na drugom.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Rundown AI",
+          "url": "https://therundownai.beehiiv.com/p/openai-goes-from-hacker-to-hacked"
+        }
+      ]
+    },
+    {
+      "naslov": "Amazon isključio Metinog agenta Muse iz kupovine, Meta u isto vreme otvara konektore",
+      "staSeDesilo": "Amazon je od nedelje počeo da prikazuje poruku da korišćenje Musea krši uslove korišćenja i blokirao ga u kupovini na Amazon.com. Kaže da ih Meta nije obavestila, da se agent ne predstavlja kad pretražuje sajt i da izgleda hvata podatke za prijavu kupaca. Istovremeno je Meta otvorila programerima mogućnost da prave Muse konektore — ti daš API, Meta pokriva agenta, brauzer i kontekst, uz reviziju pre objave.",
+      "zastoJeBitno": "Ovo je prvi otvoren sudar velike platforme i tuđeg agenta koji kupuje u ime korisnika i nagoveštava da će „agent kao korisnik“ morati da se predstavlja i dokazuje identitet — otud i zajednički okvir Know Your Agent koji su isti dan objavili Visa, Mastercard i Ant.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/tech/998078/amazon-blocks-meta-muse-ai-agent-shopping"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/21/metas-ai-agent-has-been-blocked-from-using-amazon-com/"
+        },
+        {
+          "naziv": "TLDR AI — Muse konektori",
+          "url": "https://tldr.tech/ai/2026-09-21"
+        },
+        {
+          "naziv": "Startit",
+          "url": "https://startit.rs/muse-i-instinct-ne-ostavljaju-ljude-ravnodusnim-korisnicima-nalazi-macbook-ispod-cene-zove-osiguranje-nade-ti-2000-upropasti-kartu-za-avion-nema-sta-ne-rade/"
+        }
+      ]
+    },
+    {
+      "naslov": "AWS otvorio Strands Harness: gotov agentski „motor“ za Python i TypeScript",
+      "staSeDesilo": "Tim iza Strands Agents-a objavio je Strands harness — kompletan, opšte namenjen agentski harness (to jest sve oko modela: petlja, alati, upravljanje kontekstom, memorija, oporavak od greške). Ide pod Apache 2.0, instalira se sa `pip install strands-harness` ili `npm install @strands-agents/harness`, i startuje jednom linijom (`create_harness()`). Radi preko Bedrock-a, Anthropic-a, OpenAI-ja, Google-a, Ollame i LiteLLM-a. Tim tvrdi 28% niži trošak tokena od drugih harness-a uz približno istu tačnost, na šest benchmark-ova.",
+      "zastoJeBitno": "Ovo je tačno ona stvar koja fali kad ideja radi u Claude Code-u a pukne čim je prepišeš u svoju petlju — dobijaš podrazumevane postavke za sažimanje konteksta (skraćivanje rezultata preko ~1.500 tokena, sumarizacija na 85% konteksta) bez pisanja od nule.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/09/21/aws-strands-agents-team-releases-strands-harness/"
+        }
+      ]
+    },
+    {
+      "naslov": "Qwen-Image-2.1: 7B model koji i generiše i menja slike, uz transparentnost",
+      "staSeDesilo": "Alibabin Qwen tim spojio je generisanje i editovanje slika u jedan checkpoint od 7B parametara (prošlogodišnji Qwen-Image bio je 20B, a editovanje je bilo poseban model). Podržava do deset referentnih slika odjednom, lokalne izmene i RGBA izlaz sa providnom pozadinom. Od prvog dana radi u Diffusers, ComfyUI, vLLM-Omni, SGLang i LightX2V. Važno: 7B je samo difuzioni transformer — pipeline dodatno učitava Qwen3-VL enkoder od 8B.",
+      "zastoJeBitno": "Licenca je istraživačka, za komercijalnu upotrebu treba posebna Qwen licenca — dakle odlično za prototip i testiranje, ali ne ubacuj ga u proizvod bez provere uslova.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/alibabas-open-weight-qwen-image-2-1-claims-to-beat-closed-models-in-image-generation-with-just-7-billion-parameters/"
+        },
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/09/21/alibaba-qwen-releases-qwen-image-2-1/"
+        }
+      ]
+    },
+    {
+      "naslov": "UN upozorava na agente, Tramp najavljuje „AI Force“ umesto pravila",
+      "staSeDesilo": "Naučni panel UN-a objavio je prvi tematski izveštaj u kom kaže da nema garancije da će ljudi zadržati kontrolu nad AI agentima; kopredsedavajući Yoshua Bengio navodi incident sa OpenAI-jem i Hugging Face-om kao prvi slučaj gde su se poklopili pogrešan cilj, sposobnost i okruženje koje to dozvoljava. Istog dana su SAD i Kina dogovorile zvaničan dijalog o AI-ju, uz predlog mehanizma za međusobno obaveštavanje o incidentima, pred četvrtkov samit Trampa i Sija. Tramp je pak odbacio pozive na usporavanje kao „prevaru“ i najavio AI cara i „AI Force“, bez nove regulative.",
+      "zastoJeBitno": "Smer je jasan: pravila neće doći odozgo skoro, pa odgovornost za ograde oko agenata ostaje na onima koji ih ugrađuju u aplikacije.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder — UN panel",
+          "url": "https://the-decoder.com/un-science-panel-says-there-is-no-assurance-humans-will-keep-control-over-ai-agents/"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/998090/un-ai-panel-hugging-face-hack-precautionary-principle"
+        },
+        {
+          "naziv": "Ars Technica — Tramp",
+          "url": "https://arstechnica.com/ai/2026/09/trump-rejects-ai-slowdown-calls-launches-ai-force-instead/"
+        },
+        {
+          "naziv": "The Decoder — SAD i Kina",
+          "url": "https://the-decoder.com/us-and-china-agree-on-ai-dialogue-with-security-mechanism-ahead-of-trump-xi-summit/"
+        }
+      ]
+    },
+    {
+      "naslov": "Prompt Suggestions u Claude Code-u troše do 10% nedeljnog limita",
+      "staSeDesilo": "Korisnik na r/ClaudeAI je instrumentisao svoj Claude Code i izmerio da sivi predlozi komandi na kraju unosa („commit and push“, „Start with 1A“) rade cache read celog konteksta da bi generisali tu jednu rečenicu. Po njegovim merenjima to zna da bude i do 10% nedeljnog Fable limita, a poskupljuje što je kontekst duži. Tvrdi i da to ne radi jeftin model. Ovo je merenje jednog korisnika, nije zvanična brojka Anthropic-a — ali se lako proveri i isključuje.",
+      "zastoJeBitno": "Ako udaraš u nedeljne limite, ovo je promena od pola minuta koja ti vrati deo budžeta; usput, isti post upozorava da je kompaktovanje posle isteka keša takođe skupo.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "r/ClaudeAI",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wm8adm/psa_claude_code_turn_off_prompt_suggestions_save/"
+        }
+      ]
+    },
+    {
+      "naslov": "StepFun Step 5 Preview: 600B MoE sa milion tokena konteksta, težine u oktobru",
+      "staSeDesilo": "StepFun je objavio Step 5 Preview, sparse MoE model sa oko 600B ukupnih parametara od kojih se po tokenu aktivira oko 27B (nekih 4,5%). Kontekst je 1M tokena, ulaz prima tekst, slike i video, ima tri nivoa „reasoning effort“, tool calling, JSON Schema i keširanje prompta. Zasad samo kao hostovani API; otvorene težine najavljene za 15. oktobar 2026. StepFun navodi da je model u jednom zadatku koordinirao 950 web poziva.",
+      "zastoJeBitno": "Glavni argument im je cena po zadatku, a ne sirova pamet — ali za samostalno hostovanje računaj na oko 1,2 TB u BF16 pre KV keša, što znači višekartični server.",
+      "kategorija": "modeli",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/09/20/stepfun-launches-step-5-preview/"
+        }
+      ]
+    },
+    {
+      "naslov": "Dizajn Anketa 2026: koliko zarađuju dizajneri u Srbiji i kako im AI menja posao",
+      "staSeDesilo": "Strahinja Todorović je pokrenuo novo izdanje Dizajn Ankete, istraživanja o platama, satnicama i uslovima rada dizajnera u Srbiji. Prethodna izdanja imala su 700 (2022) i 874 učesnika (2024). Ove godine je prošireno pitanjima za frilensere — nalaženje klijenata, modeli naplate, cene — i dodat je deo o veštačkoj inteligenciji, ali namerno kratak, jer se alati menjaju prebrzo da bi se smisleno kvantifikovali u jednoj anketi.",
+      "zastoJeBitno": "Retko imamo domaće brojke o tome kako AI menja stvarne honorare i satnice, a ne globalne procene — ako radiš i po projektima, vredi popuniti i kasnije pogledati rezultat.",
+      "kategorija": "ostalo",
+      "vaznost": 1,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "Netokracija",
+          "url": "https://www.netokracija.rs/dizajn-anketa-2026-227770"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Grok 4.7",
+      "tip": "model",
+      "opis": "Najnoviji xAI model. Ide jeftino, ali na agentskom kodiranju zaostaje za Claudeom i GPT-6 Astra; koristan kao jeftin drugi model za klasifikaciju, sažimanje i chat.",
+      "kakoProbati": [
+        "Otvori OpenRouter i izaberi model x-ai/grok-4.7 — cena tamo je $1,6 ulaz / $4,8 izlaz po milionu tokena",
+        "Ili ga uzmi direktno preko Grok API-ja ($2 / $6), Cursor-a ili Grok Build-a",
+        "Uporedi na svom realnom zadatku sa Claude Haiku 4.5 ili GLM 5.3 Flash pre nego što ga staviš u produkciju"
+      ],
+      "link": "https://the-decoder.com/xai-launches-grok-4-7-at-bargain-prices-but-benchmarks-reveal-a-wide-gap-to-claude-and-gpt-6/",
+      "cena": "$2 / $6 po milionu tokena kod xAI-ja, $1,6 / $4,8 na OpenRouter-u"
+    },
+    {
+      "naziv": "Strands Harness (AWS)",
+      "tip": "alat",
+      "opis": "Gotov agentski harness sa razumnim podrazumevanim postavkama: petlja, shell/file/web alati, upravljanje kontekstom, memorija između pokretanja i automatsko delegiranje podzadataka.",
+      "kakoProbati": [
+        "`pip install strands-harness` (Python) ili `npm install @strands-agents/harness` (TypeScript)",
+        "Pozovi `create_harness()` i podesi provajdera — radi preko Anthropic-a, OpenAI-ja, Bedrock-a, Google-a, Ollame ili LiteLLM-a",
+        "Za deploy iskoristi priloženi skills fajl da ti kodni agent generiše konfiguraciju za AWS, GCP, Azure, Cloudflare ili Modal"
+      ],
+      "link": "https://www.marktechpost.com/2026/09/21/aws-strands-agents-team-releases-strands-harness/",
+      "cena": "besplatno (Apache 2.0), plaćaš samo tokene modela"
+    },
+    {
+      "naziv": "Qwen-Image-2.1",
+      "tip": "model",
+      "opis": "Jedan model od 7B za generisanje i editovanje slika, sa lokalnim izmenama, do deset referentnih slika i providnom RGBA pozadinom.",
+      "kakoProbati": [
+        "Najbrže: povuci ga kroz ComfyUI ili Diffusers — podrška postoji od prvog dana, kao i vLLM-Omni, SGLang i LightX2V",
+        "Računaj na memoriju: uz 7B difuzioni deo pipeline učitava i Qwen3-VL enkoder od 8B",
+        "Ako ti treba za proizvod, prvo proveri licencu — istraživačka licenca ne pokriva komercijalnu upotrebu"
+      ],
+      "link": "https://www.marktechpost.com/2026/09/21/alibaba-qwen-releases-qwen-image-2-1/",
+      "cena": "besplatno za istraživanje; za komercijalnu upotrebu treba posebna Qwen licenca — proveri na linku"
+    },
+    {
+      "naziv": "Flet 1.0",
+      "tip": "projekat",
+      "opis": "Python framework koji crta interfejs preko Fluttera — jedan kod za iOS, Android, Windows, macOS, Linux i web, bez Darta, Swifta i JavaScript-a. Tim ga je posle četiri godine proglasio spremnim za produkciju.",
+      "kakoProbati": [
+        "`pip install 'flet[all]'` (traži Python 3.10 ili noviji)",
+        "Napravi prvu aplikaciju i pokreni je lokalno, pa `flet build` za ciljnu platformu",
+        "CLI prima osam meta: apk, aab, ipa, ios-simulator, windows, macos, linux, web"
+      ],
+      "link": "https://www.marktechpost.com/2026/09/20/flet-1-0-released-build-production-web-desktop-and-mobile-apps-in-python-only/",
+      "cena": "besplatno (Apache 2.0)"
+    },
+    {
+      "naziv": "Isključivanje Prompt Suggestions u Claude Code-u",
+      "tip": "funkcija",
+      "opis": "Sivi predlozi komandi ispod unosa pri svakom kucanju čitaju ceo kontekst iz keša; po merenju jednog korisnika to ume da pojede oko 10% nedeljnog limita.",
+      "kakoProbati": [
+        "U Claude Code-u otvori `/config` i isključi Prompt Suggestions",
+        "Radi nekoliko sesija i uporedi koliko ti limita ostane na kraju nedelje",
+        "Usput izbegavaj kompaktovanje pošto keš istekne — isti post pokazuje da je i to skupo"
+      ],
+      "link": "https://www.reddit.com/r/ClaudeAI/comments/1wm8adm/psa_claude_code_turn_off_prompt_suggestions_save/",
+      "cena": "besplatno"
+    },
+    {
+      "naziv": "Code2Skill",
+      "tip": "projekat",
+      "opis": "Alat koji iz izvornog koda automatski izvlači proverljive procedure i pretvara ih u „skills“ za agenta, pa agent zna kako se nešto radi u repou i pre nego što sakupi iskustvo.",
+      "kakoProbati": [
+        "Kloniraj repo sa github.com/ant-intl/Code2Skill",
+        "Pusti ga preko jednog svog manjeg projekta i pogledaj koje procedure izvuče",
+        "Uporedi dobijene skill fajlove sa onim što već ručno držiš u AGENTS.md"
+      ],
+      "link": "https://github.com/ant-intl/Code2Skill",
+      "cena": "besplatno, plaćaš samo tokene modela"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "OpenAI je podigao projekciju troška za infrastrukturu i računanje do 2030. sa 600 na 856 milijardi dolara, iako mu je projektovano trošenje keša palo.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-09-21"
+    },
+    {
+      "naslov": "SoftBank planira da pozajmi preko 11 milijardi dolara kroz rizične obveznice da bi platio sledeću ratu svog udela u OpenAI-ju.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/softbank-to-borrow-over-11-billion-in-risky-bonds-for-openai-stake/"
+    },
+    {
+      "naslov": "OpenAI je osnovao nezavisnu savetodavnu grupu za matematiku pošto je tvrdio da mu je model rešio preko 100 otvorenih problema — grupa nema ovlašćenje da uspori ili preusmeri istraživanje.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/21/openai-forms-math-advisory-group-as-its-ai-resolves-more-than-100-open-problems/"
+    },
+    {
+      "naslov": "Meta je izbacila SAM 3.1 za detekciju i praćenje objekata u slikama i videu preko tekstualnog prompta, po ceni od $2,50 za 1.000 slika ili $0,20 za 1.000 frejmova.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-09-21"
+    },
+    {
+      "naslov": "Qwen3.8-LiveTranslate skratio je prosečno kašnjenje prevoda sa 2,8 na 2,3 sekunde i dodao razdvajanje govornika i kloniranje glasa na 60 ulaznih jezika.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-09-21"
+    },
+    {
+      "naslov": "Grok Voice Transcribe 2.0 tvrdi duplo veću tačnost od prethodnika po istoj ceni, sa naglaskom na bučna i višejezična okruženja.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-09-21"
+    },
+    {
+      "naslov": "Visa, Mastercard i Ant International objavili su zajednički okvir Know Your Agent za proveru identiteta i ovlašćenja AI agenata koji kupuju u ime korisnika.",
+      "izvor": "ICT Business",
+      "url": "https://www.ictbusiness.info/vijesti/platne-mreze-provjeravaju-ai-agente"
+    },
+    {
+      "naslov": "Metin Muse u prvim nedeljama ima više preuzimanja i dnevnih korisnika u SAD i Kanadi nego što je ChatGPT imao u istom periodu posle mobilnog starta.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/21/metas-muse-is-outpacing-chatgpts-early-mobile-launch/"
+    },
+    {
+      "naslov": "Google je predstavio Googlebook za 899 dolara, laptop u koji je Gemini uvezan u kursor, diktiranje i vidžete, kao pandan Apple-ovoj sprezi iPhone–Mac.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/21/googles-899-googlebook-is-a-bet-that-youll-buy-a-new-laptop-for-gemini/"
+    },
+    {
+      "naslov": "Vlasnici iPhone-a u SAD mogu da podnesu zahtev u Apple-ovoj nagodbi od 250 miliona dolara zbog neisporučene AI Siri — oko 25 dolara po uređaju, do 95 zavisno od broja prijava.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/998191/apple-siri-ai-iphone-16-class-action-lawsuit-settlement"
+    },
+    {
+      "naslov": "Geoffrey Hinton i preko 100 stručnjaka potpisali su javno pismo kojim traže da testeri bezbednosti sede unutar AI laboratorija, sa pristupom na nivou zaposlenih i zaštitom od odmazde.",
+      "izvor": "The Rundown AI",
+      "url": "https://therundownai.beehiiv.com/p/openai-goes-from-hacker-to-hacked"
+    },
+    {
+      "naslov": "OpenAI je pustio Astra for Law — GPT-6 Astra podešen za pravni rad sa pretragom američke sudske prakse i 26 dodataka, na koji planiraju da grade Harvey i Legora.",
+      "izvor": "The Rundown AI",
+      "url": "https://therundownai.beehiiv.com/p/openai-goes-from-hacker-to-hacked"
+    },
+    {
+      "naslov": "ByteDance je pokrenuo Dramagic, platformu koja vodi celu produkciju kratkih drama od scenarija do pregleda videa — u Kini je samo u prvom kvartalu 2026. izašlo 128.000 takvih serijala, 95% AI-generisanih.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/bytedance-launches-dramagic-a-full-pipeline-ai-platform-for-producing-short-dramas-from-script-to-screen/"
+    },
+    {
+      "naslov": "Z.ai je otvorio kod ZCode-a — desktop aplikaciju, web workspace, backend, Agent CLI i runtime — posle bezbednosnih propusta koje je prijavila zajednica, uz izvinjenje i najavu programa za prijavu ranjivosti.",
+      "izvor": "GitHub / r/LocalLLaMA",
+      "url": "https://github.com/zai-org/ZCode"
+    },
+    {
+      "naslov": "Anthropic je objavio da je u prethodnih osam meseci otkrio više pokušaja zloupotrebe Claudea od aktera povezanih s Rusijom, Kinom, Iranom i Jemenom, za nadzor i digitalne napade.",
+      "izvor": "ICT Business",
+      "url": "https://www.ictbusiness.info/internet/anthropic-otkrio-zloupotrebe-claudea"
+    },
+    {
+      "naslov": "Meta je uvela Meta One, pakete pretplata za Facebook, Instagram, WhatsApp i Meta AI, od 2,99 do 499 dolara mesečno, uz tvrdnju da osnovne funkcije ostaju besplatne.",
+      "izvor": "ICT Business",
+      "url": "https://www.ictbusiness.info/vijesti/meta-uvodi-placene-pakete"
+    },
+    {
+      "naslov": "Jensen Huang je u intervjuu za CBS rekao da je „0% šanse“ da AI uništi svet i da su pozivi Amodeija i Altmana na usporavanje „nenaučni“.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/997936/nvidia-jensen-huang-ai-fears-overblown"
+    },
+    {
+      "naslov": "Nathan Lambert je brifovao članove Kongresa i objavio pripremljene beleške: kineski otvoreni modeli vode po preuzimanjima 3,2 prema 1,6 milijardi i po benchmark-ovima, a najbolji američki otvoreni model je iza 15 kineskih.",
+      "izvor": "Interconnects",
+      "url": "https://www.interconnects.ai/p/the-current-balance-of-power-in-open"
+    },
+    {
+      "naslov": "Na Hacker News-u je skupio skoro 200 poena workaround kojim se u macOS 27 izbegava automatsko skidanje lokalnih AI modela i štedi prostor na disku.",
+      "izvor": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=49787535"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "Code2Skill: pravljenje veština agenta direktno iz izvornog koda",
+      "objasnjenje": "Umesto da agent uči metodom pokušaja i greške, ovaj sistem prolazi kroz postojeći izvorni kod i iz njega izvlači proverljive procedure — korak po korak uputstva kako se nešto u tom projektu radi. Te procedure se onda daju agentu kao „veštine“ pre nego što uopšte počne da radi.",
+      "zastoJeZanimljivo": "Praktično rešava problem koji imaš svaki put kad Claude Code uđe u nepoznat repo i počne da luta; ovo je automatizovana verzija onoga što ručno pišeš u AGENTS.md.",
+      "url": "https://huggingface.co/papers/2609.05571",
+      "github": "https://github.com/ant-intl/Code2Skill"
+    },
+    {
+      "naslov": "EvoOntology: sloj koji agentu objašnjava tvoju bazu",
+      "objasnjenje": "Agenti koji rade nad tabelama, fajlovima i bazama vide samo imena kolona i putanje, pa moraju da nagađaju šta šta znači. EvoOntology gradi „rečnik“ tih podataka i izlaže ga kao MCP server, tako da agent može da ga ispituje u toku rada. Poseban agent gradi taj rečnik sam, a sistem ga stalno dorađuje — izmene se prihvataju tek pošto prođu uparenu proveru da nisu pokvarile ono što je ranije radilo.",
+      "zastoJeZanimljivo": "Ako držiš podatke u Supabase-u, ovo je gotov obrazac kako da agentu daš razumevanje šeme bez trpanja celog SQL dumpa u prompt; repo već ima 245 zvezdica.",
+      "url": "https://huggingface.co/papers/2609.15779",
+      "github": "https://github.com/ruc-datalab/EvoOntology"
+    },
+    {
+      "naslov": "CodeMidas: treniranje kodnih agenata na zadacima izvučenim iz samog koda",
+      "objasnjenje": "Dosadašnji načini da se naprave zadaci za treniranje agenata oslanjaju se na issue-e i commit-e, kojih ima ograničeno. CodeMidas umesto toga uzima postojeću funkcionalnost iz otvorenih repoa: agenti je istraže, opišu šta ona radi, naprave testove zasnovane na izvršavanju originalnog koda, pa kroz ponovljena pokretanja odbace zadatke koji nisu pouzdani. Ispalo je 5.545 zadataka iz 3.185 repoa na 23 jezika.",
+      "zastoJeZanimljivo": "Model treniran na tome popravio se na svih pet testova — popravka issue-a +11,7%, pisanje celih programa +17% — što je dokaz da se kvalitetni podaci za agente mogu praviti iz običnog koda.",
+      "url": "https://huggingface.co/papers/2609.22068",
+      "github": null
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Ključaonica",
+      "problem": "Kad vrtiš kodnog agenta na udaljenoj mašini ili sa telefona, u nekom trenutku ti zatreba API ključ tamo — a lepiti ključ u chat sa agentom je loša ideja, jer završi u logovima i istoriji razgovora.",
+      "zaKoga": "Solo developeri koji agente puštaju na VPS-u ili Mac Mini-ju i upravljaju njima sa iPhone-a.",
+      "ulogaAi": "Nikakva u samoj aplikaciji — AI je ovde korisnik kome ograničavaš pristup. Claude Code ti je pomoć u pisanju.",
+      "tezina": 1,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Napravi mali Node/Bun servis koji diže lokalni web formular na privatnoj mreži (ili Tailscale adresi) i piše ključ u keyring mašine",
+        "Dodaj CLI komandu tipa `kljuc get supabase` koju agent sme da pozove kroz shell, a da nikad ne vidi samu vrednost",
+        "Napravi jednostavan Angular ili čist HTML ekran optimizovan za telefon, sa QR kodom za otvaranje adrese",
+        "Dodaj audit log: koji proces je kad tražio koji ključ"
+      ],
+      "inspiracija": "Simon Willison-ov llm-keys-ui 0.1 i njegov komentar na Hacker News-u o tome čemu MCP zapravo služi"
+    },
+    {
+      "naziv": "Skill iz repoa",
+      "problem": "Svaki put kad agent uđe u tvoj Angular/Supabase projekat, ponovo otkriva kako se dodaje migracija, kako se zove RLS politika i gde idu tipovi. Ručno održavanje AGENTS.md brzo zastari.",
+      "zaKoga": "Tebe i svakog ko radi na više svojih projekata sa kodnim agentom.",
+      "ulogaAi": "Agent prolazi kroz repo i generiše skill fajlove sa konkretnim procedurama, pa ih sam osvežava kad se struktura promeni.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Pogledaj kako Code2Skill izvlači procedure iz koda i prepiši ideju na TypeScript",
+        "Napiši skript koji mapira tvoj repo: rute, Supabase migracije, servisi, testovi",
+        "Neka Claude Code iz te mape napiše 5–10 kratkih skill fajlova i proveri ih tako što ih pusti na stvaran zadatak",
+        "Dodaj git hook koji predloži osvežavanje skill fajla kad se promeni struktura foldera"
+      ],
+      "inspiracija": "Rad Code2Skill (Grounded Skill Synthesis from Code at Scale) sa HF Daily Papers"
+    },
+    {
+      "naziv": "Studio za oglas",
+      "problem": "Ljudi koji prodaju na KP-u, Instagramu i malim webshopovima slikaju proizvod na stolu u kuhinji. Za pristojan oglas trebaju im čista pozadina i par varijanti, a Photoshop i pretplate su im prekomplikovani.",
+      "zaKoga": "Mali prodavci i zanatlije u Srbiji i regionu, iOS aplikacija.",
+      "ulogaAi": "Model za slike odvaja proizvod, vraća providnu pozadinu i generiše varijante (bela podloga, u ambijentu, sa tekstom).",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Testiraj Qwen-Image-2.1 lokalno kroz ComfyUI na desetak svojih fotografija proizvoda i vidi koliko je dobar RGBA izlaz",
+        "Proveri licencu — istraživačka ne pokriva komercijalnu upotrebu, pa ili uzmi Qwen komercijalnu licencu ili gađaj plaćeni API",
+        "Napravi SwiftUI ekran: slikaš, biraš tri šablona, dobijaš tri slike; obrada ide na tvoj server",
+        "Dodaj Supabase za istoriju obrada i jednostavan limit besplatnih obrada mesečno"
+      ],
+      "inspiracija": "Qwen-Image-2.1 — 7B model sa providnom pozadinom i lokalnim izmenama"
+    },
+    {
+      "naziv": "Zapisničar",
+      "problem": "Na sastancima gde se meša srpski i engleski, transkripti su neupotrebljivi: ne zna se ko je šta rekao, a prevod kasni pola rečenice.",
+      "zaKoga": "Freelanceri i mali timovi u regionu koji rade sa stranim klijentima; iOS aplikacija sa web pregledom.",
+      "ulogaAi": "Transkripcija sa razdvajanjem govornika i naknadno sažimanje u zaključke i zadatke.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Uporedi Grok Voice Transcribe 2.0 i Qwen3.8-LiveTranslate na snimku pravog dvojezičnog sastanka",
+        "Napravi SwiftUI snimanje sa lokalnim čuvanjem i uploadom kad ima Wi-Fi",
+        "Posle transkripta pusti jeftin model (GLM 5.3 Flash ili DeepSeek V4.1 Flash) da izvuče odluke i zadatke",
+        "Reši privatnost odmah: jasno pitanje za saglasnost pre snimanja i brisanje zvuka posle obrade"
+      ],
+      "inspiracija": "Qwen3.8-LiveTranslate (kašnjenje 2,3s, 60 jezika) i Grok Voice Transcribe 2.0"
+    },
+    {
+      "naziv": "Šema na tanjiru",
+      "problem": "Kad agenta pustiš na Supabase bazu, ili mu trpaš ceo SQL dump u prompt, ili on nagađa šta znači kolona `st_2`. Oboje je skupo i nepouzdano.",
+      "zaKoga": "Developeri koji prave aplikacije nad Supabase-om ili bilo kojim Postgres-om i koriste kodne agente.",
+      "ulogaAi": "Agent sam gradi i održava opis baze (šta koja tabela znači, koje su veze, tipične upite), a drugi agent ga koristi kroz MCP.",
+      "tezina": 4,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Pročitaj kako EvoOntology deli sloj na šemu, sadržaj i alate i izloži ga kao MCP server",
+        "Napravi MCP server u TypeScript-u koji čita Postgres katalog i vraća sažet opis umesto punog DDL-a",
+        "Dodaj korak u kom Claude Code jednom prođe kroz aplikaciju i objasni značenje kolona svojim rečima, pa to sačuvaj u posebnoj tabeli",
+        "Meri: isti zadatak sa i bez ovog sloja, uporedi broj tokena i broj pogrešnih upita"
+      ],
+      "inspiracija": "EvoOntology — samorastući ontološki sloj za agente nad podacima"
+    }
+  ],
+  "cene": "Danas je bilo dosta pomeranja. Poskupeli su Kimi K3 (ulaz $2,1 → $3, izlaz $10,95 → $15), DeepSeek V4 Pro 0423 ($0,66 → $0,90 ulaz) i Qwen3.8 27B ($0,214 → $0,42 ulaz, $2,55 → $3 izlaz); pojeftineli su GLM 5.3 Flash za pola, na $0,075 ulaz i $0,25 izlaz, i Qwen3 VL 30B A3B Instruct ($0,2 → $0,13 ulaz). Gledano na sedam dana, u srednjoj klasi su najviše pale cene GLM 5.3 (−35%, sada $0,91 / $2,86) i DeepSeek V4 Pro 0813 (−32,9%, sada $0,66 / $1,98) — ovaj drugi je i najjeftiniji u srednjoj klasi. Novi Grok 4.7 se pojavio po $1,6 ulaz / $4,8 izlaz, što je niže od Groka 4.6 ($2 / $6), koji je inače najjeftiniji među vrhunskim modelima; u klasi jeftinih i brzih najniža cena je GLM 5.3 Flash.",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "„Svi pričaju sa Claudeom, niko ništa ne čita“",
+        "oCemuSePrica": "Objava inženjera koji je pre pola meseca počeo u velikoj firmi izazvala je najveću raspravu dana: specifikacije, kod, testovi, tiketi i izveštaji — sve pravi Claude Code, a ljudi rade po 12–13 sati dnevno „da bi pritiskali enter“. Menadžment im poručuje da guranje koda više nije usko grlo, pa zašto su onda spori. Simon Willison je citat izdvojio na svom blogu, čime je priča izašla van Reddita.",
+        "glasovi": "Autor originalne objave opisuje osećaj da niko više ne misli; deo komentara kaže da je to problem konkretne firme, a ne alata, dok drugi prepoznaju isti obrazac kod sebe. Willison je citat označio kao primer zloupotrebe alata, ne kao argument protiv AI-ja.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1wm5c21/i_am_done_with_this_shit/"
+          },
+          {
+            "platforma": "ostalo",
+            "naziv": "Simon Willison",
+            "url": "https://simonwillison.net/2026/Sep/20/voxium/"
+          }
+        ]
+      },
+      {
+        "naslov": "Amazon isključio Musea — prvi pravi rat platformi i tuđih agenata",
+        "oCemuSePrica": "Amazonova blokada Metinog agenta skupila je 134 poena i preko 130 komentara na Hacker News-u za nekoliko sati. Rasprava se vrti oko toga da li Amazon štiti kupce ili prihod od oglašavanja — jer ako agenti kupuju umesto ljudi, oglasi na Amazonu gube smisao. Paralelno se na X-u vrte snimci šta je Muse ljudima uspeo da uradi: otkazao polisu osiguranja telefonskim pozivom, izlicitirao MacBook ispod cene, ali i izmislio srednje ime pri rezervaciji leta pa čovek nije mogao da se ukrca.",
+        "glasovi": "Na Hacker News-u preovlađuje stav da Amazon nema nikakvu obavezu da pusti tuđeg agenta. BuccoCapital Bloke to zove početkom „digitalnog rata noževima“ oko toga ko će biti sveden na puku robu, a Metin Aleksandr Vang je greške konkurentskog Instincta iskoristio za podbadanje.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=49789982"
+          },
+          {
+            "platforma": "ostalo",
+            "naziv": "Startit",
+            "url": "https://startit.rs/muse-i-instinct-ne-ostavljaju-ljude-ravnodusnim-korisnicima-nalazi-macbook-ispod-cene-zove-osiguranje-nade-ti-2000-upropasti-kartu-za-avion-nema-sta-ne-rade/"
+          }
+        ]
+      },
+      {
+        "naslov": "Jev: hype ili obično predviđanje sledećeg tokena",
+        "oCemuSePrica": "Model Jev, koji ne piše tekst nego samo bira između ponuđenih opcija, dobio je Fireship-ov snimak sa preko 350.000 pregleda i tri proizvoda na Product Hunt-u u dva dana. Na r/LocalLLaMA je odmah stigao odgovor: korisnik je pokazao da isto dobiješ sa bilo kojim GGUF modelom u llama.cpp ako staviš n_predict=1 i tražiš top logprobs, uz primer komande i izlaz sa procentima. Drugi pita čemu uzbuđenje kad obične neuronske mreže to rade godinama.",
+        "glasovi": "Fireship prenosi tvrdnje osnivača (bivši OpenAI istraživač Diogo Almeida): 200x brže, 400x jeftinije, bez halucinacija. Zajednica na r/LocalLLaMA je skeptična i traži da se poređenje radi na istom zadatku, a ne na marketinškim brojkama.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "youtube",
+            "naziv": "Fireship",
+            "url": "https://www.youtube.com/watch?v=TbkUKCm3CHQ"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wlxpaw/you_can_use_any_llm_just_like_jev/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wm65le/i_really_dont_understand_jev_hype/"
+          }
+        ]
+      },
+      {
+        "naslov": "Limiti i skriveni troškovi u Claude Code-u",
+        "oCemuSePrica": "Korisnik je instrumentisao Claude Code i pokazao da Prompt Suggestions — oni sivi predlozi na kraju unosa — rade cache read celog konteksta i umeju da pojedu i do 10% nedeljnog limita. Istog dana je druga objava o tome da je neko udario u nedeljni limit u ponedeljak, dok je popravljao kritičan bag pred izlazak igre. Na r/LocalLLaMA u isto vreme kruži šala o tome kako izgleda gledati kako cene rastu.",
+        "glasovi": "Autor PSA objave je rezultat dobio merenjem svog naloga i priložio snimke ekrana, ali to nije zvanična brojka Anthropic-a. Komentari se dele na one koji odmah gase opciju i one koji traže da se merenje ponovi nezavisno.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1wm8adm/psa_claude_code_turn_off_prompt_suggestions_save/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1wm8ori/seeing_this_on_monday_while_claude_is_fixing_a/"
+          }
+        ]
+      },
+      {
+        "naslov": "Koliko VRAM-a zaista ima prosečan čovek",
+        "oCemuSePrica": "Objava na r/LocalLLaMA tvrdi da je 16 GB VRAM-a realan plafon za većinu ljudi, a u dobrom delu sveta i 12 GB — dok je sub pun postavki sa tri 3090 i Strix Halo mašinama. Poenta je da je agentsko kodiranje tek u poslednjih pola godine postalo izvodljivo na 16 GB, recimo sa kvantizovanim Qwen 27B.",
+        "glasovi": "Autor traži da se preporuke pišu za tu većinu, a ne za entuzijaste; u istom subu se paralelno vrti recenzija M5 Ultra Mac Studija kao „Mac iz snova za lokalne AI agente“, što lepo ilustruje raskorak.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wmb875/16gb_and_in_many_cases_12gb_is_the_max_vram_most/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wmec1y/m5_ultra_mac_studio_review_the_dream_mac_for/"
+          }
+        ]
+      }
+    ],
+    "snimci": [
+      {
+        "naslov": "An ex-OpenAI researcher just deleted language from the LLM...",
+        "kanal": "Fireship",
+        "opis": "Šta je zapravo Jev — model koji ne piše tekst nego bira između opcija — i koliko drže tvrdnje o 200x brzini i 400x nižoj ceni.",
+        "url": "https://www.youtube.com/watch?v=TbkUKCm3CHQ"
+      },
+      {
+        "naslov": "„It Blew Me Away“ | Box's First Look at GPT-6 Astra",
+        "kanal": "OpenAI",
+        "opis": "Box-ov tim pušta Astru na fajlove sa troškovima i poreskim podsticajima, a model uočava podsticaj koji je već bio uračunat.",
+        "url": "https://www.youtube.com/watch?v=QFxDF30qf_4"
+      },
+      {
+        "naslov": "Why Information Has a Price in Intelligence — Alexander Mattick",
+        "kanal": "Machine Learning Street Talk",
+        "opis": "Duži razgovor o tome zašto inferencija, a ne samo model, određuje koliko sposobnosti zapravo dobiješ.",
+        "url": "https://www.youtube.com/watch?v=1S1B4XkFCD8"
+      },
+      {
+        "naslov": "The Dark Arts of Skill Engineering — Paul Bakaus",
+        "kanal": "AI Engineer",
+        "opis": "Zašto zabrana jednog klišea u promptu ne daje originalnost nego samo pomeri model na sledeći najbliži klaster.",
+        "url": "https://www.youtube.com/watch?v=SQMCtZX3trg"
+      }
+    ]
+  },
+  "nedeljni": null
+}

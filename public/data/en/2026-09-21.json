@@ -1,0 +1,565 @@
+{
+  "datum": "2026-09-21",
+  "generisano": "2026-09-21T22:05:14.424Z",
+  "model": "claude-opus-5",
+  "prevod": "claude-sonnet-5",
+  "ukratko": "Today was dominated by Grok 4.7 — cheap but noticeably weaker than Fable 5.1 and GPT-6 Astra on benchmarks — and the story of a three-person team using Claude to break into OpenAI's private codebase in three days. Also: Amazon blocked Meta's Muse agent from shopping, AWS open-sourced its agent harness, and Qwen released a small open-weight image model. Social media is dominated by developer frustration over spending all day just pressing enter in Claude Code.",
+  "vesti": [
+    {
+      "naslov": "Grok 4.7: cheap, but lagging on agentic coding",
+      "staSeDesilo": "xAI released Grok 4.7, its strongest model yet. It scores 46 on the Artificial Analysis Intelligence Index, while Claude Fable 5.1 and GPT-6 Astra each score 53. The gap is widest on agentic coding: on Terminal-Bench 4.0, Grok 4.7 gets 26%, Astra 60%, Fable 5.1 55%. Pricing is $2 input / $6 output per million tokens at xAI, while it appeared on OpenRouter at $1.6 / $4.8.",
+      "zastoJeBitno": "For agents that operate autonomously through a terminal and repo, a gap of 26% vs 55–60% is too large for the lower price to make up for — but for plain summarization, classification, and chat, it's a serious contender on price.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/xai-launches-grok-4-7-at-bargain-prices-but-benchmarks-reveal-a-wide-gap-to-claude-and-gpt-6/"
+        },
+        {
+          "naziv": "r/singularity — benchmarks",
+          "url": "https://www.reddit.com/r/singularity/comments/1wmh9rg/grok_47_benchmarks/"
+        }
+      ]
+    },
+    {
+      "naslov": "Three researchers with Claude breached OpenAI's private codebase in under 72 hours",
+      "staSeDesilo": "Security startup Hacktron AI reported that its three-person team took over employee accounts in July and reached OpenAI's private codebase. The entry point was a bug in image uploads on the community forum, and a second bug let employee login tokens double as their ChatGPT session tokens. As proof they left a proposed edit in an internal document, reported the hole, and received a $6,500 bounty. Hacktron says Claude Opus 5 finished part of the attack that the previous version couldn't.",
+      "zastoJeBitno": "They claim the same class of bug in an image-processing library also opened up Slack, Meta, and GitHub Enterprise — so check how your app receives and processes uploaded images, and whether a session token from one service is valid on another.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Rundown AI",
+          "url": "https://therundownai.beehiiv.com/p/openai-goes-from-hacker-to-hacked"
+        }
+      ]
+    },
+    {
+      "naslov": "Amazon cuts off Meta's Muse agent from shopping, while Meta opens up connectors",
+      "staSeDesilo": "Since Sunday, Amazon has been showing a message that using Muse violates its terms of service and has blocked it from shopping on Amazon.com. Amazon says Meta didn't notify it, that the agent doesn't identify itself while browsing the site, and that it appears to capture customer login credentials. At the same time, Meta opened up Muse connectors to developers — you provide the API, Meta handles the agent, browser, and context, with a review before publishing.",
+      "zastoJeBitno": "This is the first open clash between a major platform and someone else's shopping agent acting on a user's behalf, and it hints that 'agent as customer' will need to identify and prove itself — hence the joint Know Your Agent framework Visa, Mastercard, and Ant announced the same day.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/tech/998078/amazon-blocks-meta-muse-ai-agent-shopping"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/21/metas-ai-agent-has-been-blocked-from-using-amazon-com/"
+        },
+        {
+          "naziv": "TLDR AI — Muse connectors",
+          "url": "https://tldr.tech/ai/2026-09-21"
+        },
+        {
+          "naziv": "Startit",
+          "url": "https://startit.rs/muse-i-instinct-ne-ostavljaju-ljude-ravnodusnim-korisnicima-nalazi-macbook-ispod-cene-zove-osiguranje-nade-ti-2000-upropasti-kartu-za-avion-nema-sta-ne-rade/"
+        }
+      ]
+    },
+    {
+      "naslov": "AWS open-sources Strands Harness: a ready-made agent 'engine' for Python and TypeScript",
+      "staSeDesilo": "The team behind Strands Agents released Strands Harness — a complete, general-purpose agent harness (i.e., everything around the model: the loop, tools, context management, memory, error recovery). It's under Apache 2.0, installs with `pip install strands-harness` or `npm install @strands-agents/harness`, and starts with one line (`create_harness()`). It works over Bedrock, Anthropic, OpenAI, Google, Ollama, and LiteLLM. The team claims 28% lower token costs than other harnesses at roughly the same accuracy, across six benchmarks.",
+      "zastoJeBitno": "This is exactly what's missing when an idea works in Claude Code but breaks the moment you rewrite it into your own loop — you get sensible defaults for context summarization (truncating results over ~1,500 tokens, summarizing at 85% context) without building it from scratch.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/09/21/aws-strands-agents-team-releases-strands-harness/"
+        }
+      ]
+    },
+    {
+      "naslov": "Qwen-Image-2.1: a 7B model that both generates and edits images, with transparency",
+      "staSeDesilo": "Alibaba's Qwen team merged image generation and editing into a single 7B-parameter checkpoint (last year's Qwen-Image was 20B, with editing as a separate model). It supports up to ten reference images at once, local edits, and RGBA output with a transparent background. It works day one in Diffusers, ComfyUI, vLLM-Omni, SGLang, and LightX2V. Note: the 7B figure is just the diffusion transformer — the pipeline additionally loads an 8B Qwen3-VL encoder.",
+      "zastoJeBitno": "The license is for research; commercial use requires a separate Qwen license — great for prototyping and testing, but don't ship it in a product without checking the terms.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/alibabas-open-weight-qwen-image-2-1-claims-to-beat-closed-models-in-image-generation-with-just-7-billion-parameters/"
+        },
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/09/21/alibaba-qwen-releases-qwen-image-2-1/"
+        }
+      ]
+    },
+    {
+      "naslov": "UN warns about agents, Trump announces an 'AI Force' instead of rules",
+      "staSeDesilo": "A UN scientific panel published its first thematic report stating there's no guarantee humans will retain control over AI agents; co-chair Yoshua Bengio cites the OpenAI/Hugging Face incident as the first case where a wrong goal, capability, and an enabling environment all lined up. The same day, the US and China agreed on a formal AI dialogue, including a proposed mechanism for mutual incident notification, ahead of Thursday's Trump-Xi summit. Trump, meanwhile, dismissed calls for a slowdown as a 'scam' and announced an AI czar and an 'AI Force,' with no new regulation.",
+      "zastoJeBitno": "The direction is clear: rules won't come from the top anytime soon, so responsibility for guardrails around agents stays with whoever builds them into applications.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder — UN panel",
+          "url": "https://the-decoder.com/un-science-panel-says-there-is-no-assurance-humans-will-keep-control-over-ai-agents/"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/998090/un-ai-panel-hugging-face-hack-precautionary-principle"
+        },
+        {
+          "naziv": "Ars Technica — Trump",
+          "url": "https://arstechnica.com/ai/2026/09/trump-rejects-ai-slowdown-calls-launches-ai-force-instead/"
+        },
+        {
+          "naziv": "The Decoder — US and China",
+          "url": "https://the-decoder.com/us-and-china-agree-on-ai-dialogue-with-security-mechanism-ahead-of-trump-xi-summit/"
+        }
+      ]
+    },
+    {
+      "naslov": "Prompt Suggestions in Claude Code eats up to 10% of the weekly limit",
+      "staSeDesilo": "A user on r/ClaudeAI instrumented their Claude Code and measured that the gray command suggestions below the input field ('commit and push', 'Start with 1A') run a cache read of the entire context just to generate that one sentence. By their measurements this can consume up to 10% of the weekly Fable limit, and it gets pricier as the context grows. They also claim a cheaper model doesn't handle it. This is one user's measurement, not an official Anthropic figure — but it's easy to check and disable.",
+      "zastoJeBitno": "If you're hitting weekly limits, this is a 30-second change that gives you back some budget; the same post also warns that compacting after the cache expires is likewise expensive.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "r/ClaudeAI",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wm8adm/psa_claude_code_turn_off_prompt_suggestions_save/"
+        }
+      ]
+    },
+    {
+      "naslov": "StepFun Step 5 Preview: a 600B MoE model with a million-token context, weights in October",
+      "staSeDesilo": "StepFun released Step 5 Preview, a sparse MoE model with about 600B total parameters, of which roughly 27B (about 4.5%) activate per token. Context is 1M tokens, input handles text, images, and video, with three reasoning-effort levels, tool calling, JSON Schema support, and prompt caching. For now it's API-only; open weights are slated for October 15, 2026. StepFun says the model coordinated 950 web calls in one task.",
+      "zastoJeBitno": "Their main pitch is cost per task, not raw intelligence — but for self-hosting, budget around 1.2 TB in BF16 before the KV cache, meaning a multi-GPU server.",
+      "kategorija": "modeli",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/09/20/stepfun-launches-step-5-preview/"
+        }
+      ]
+    },
+    {
+      "naslov": "Design Survey 2026: what designers in Serbia earn and how AI is changing their work",
+      "staSeDesilo": "Strahinja Todorović has launched a new edition of the Design Survey, a study of designer salaries, hourly rates, and working conditions in Serbia. Previous editions had 700 (2022) and 874 (2024) participants. This year it's expanded with questions for freelancers — finding clients, billing models, pricing — and adds a section on AI, deliberately kept short since tools change too fast to quantify meaningfully in a single survey.",
+      "zastoJeBitno": "Local numbers on how AI is affecting real rates and fees are rare compared to global estimates — if you also do project-based work, it's worth filling out and checking the results later.",
+      "kategorija": "ostalo",
+      "vaznost": 1,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "Netokracija",
+          "url": "https://www.netokracija.rs/dizajn-anketa-2026-227770"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Grok 4.7",
+      "tip": "model",
+      "opis": "xAI's newest model. It's cheap but lags behind Claude and GPT-6 Astra on agentic coding; useful as an inexpensive secondary model for classification, summarization, and chat.",
+      "kakoProbati": [
+        "Open OpenRouter and pick x-ai/grok-4.7 — priced there at $1.6 input / $4.8 output per million tokens",
+        "Or grab it directly via the Grok API ($2 / $6), Cursor, or Grok Build",
+        "Compare it on your actual task against Claude Haiku 4.5 or GLM 5.3 Flash before putting it into production"
+      ],
+      "link": "https://the-decoder.com/xai-launches-grok-4-7-at-bargain-prices-but-benchmarks-reveal-a-wide-gap-to-claude-and-gpt-6/",
+      "cena": "$2 / $6 per million tokens at xAI, $1.6 / $4.8 on OpenRouter"
+    },
+    {
+      "naziv": "Strands Harness (AWS)",
+      "tip": "alat",
+      "opis": "A ready-made agent harness with sensible defaults: loop, shell/file/web tools, context management, memory across runs, and automatic subtask delegation.",
+      "kakoProbati": [
+        "`pip install strands-harness` (Python) or `npm install @strands-agents/harness` (TypeScript)",
+        "Call `create_harness()` and pick a provider — works over Anthropic, OpenAI, Bedrock, Google, Ollama, or LiteLLM",
+        "For deployment, use the included skills file to have your coding agent generate config for AWS, GCP, Azure, Cloudflare, or Modal"
+      ],
+      "link": "https://www.marktechpost.com/2026/09/21/aws-strands-agents-team-releases-strands-harness/",
+      "cena": "free (Apache 2.0), you only pay for model tokens"
+    },
+    {
+      "naziv": "Qwen-Image-2.1",
+      "tip": "model",
+      "opis": "A single 7B model for image generation and editing, with local edits, up to ten reference images, and a transparent RGBA background.",
+      "kakoProbati": [
+        "Fastest way: run it through ComfyUI or Diffusers — supported day one, along with vLLM-Omni, SGLang, and LightX2V",
+        "Watch your memory: alongside the 7B diffusion part, the pipeline also loads an 8B Qwen3-VL encoder",
+        "If you need it for a product, check the license first — the research license doesn't cover commercial use"
+      ],
+      "link": "https://www.marktechpost.com/2026/09/21/alibaba-qwen-releases-qwen-image-2-1/",
+      "cena": "free for research; commercial use requires a separate Qwen license — check the link"
+    },
+    {
+      "naziv": "Flet 1.0",
+      "tip": "projekat",
+      "opis": "A Python framework that renders UI through Flutter — one codebase for iOS, Android, Windows, macOS, Linux, and web, without Dart, Swift, or JavaScript. After four years the team has declared it production-ready.",
+      "kakoProbati": [
+        "`pip install 'flet[all]'` (requires Python 3.10 or newer)",
+        "Build your first app and run it locally, then `flet build` for your target platform",
+        "The CLI accepts eight targets: apk, aab, ipa, ios-simulator, windows, macos, linux, web"
+      ],
+      "link": "https://www.marktechpost.com/2026/09/20/flet-1-0-released-build-production-web-desktop-and-mobile-apps-in-python-only/",
+      "cena": "free (Apache 2.0)"
+    },
+    {
+      "naziv": "Turning off Prompt Suggestions in Claude Code",
+      "tip": "funkcija",
+      "opis": "The gray command suggestions below the input field that appear as you type read the entire context from cache each time; by one user's measurement this can eat up to about 10% of the weekly limit.",
+      "kakoProbati": [
+        "In Claude Code, open `/config` and turn off Prompt Suggestions",
+        "Run a few sessions and compare how much limit you have left by week's end",
+        "While you're at it, avoid compacting after the cache expires — the same post shows that's expensive too"
+      ],
+      "link": "https://www.reddit.com/r/ClaudeAI/comments/1wm8adm/psa_claude_code_turn_off_prompt_suggestions_save/",
+      "cena": "free"
+    },
+    {
+      "naziv": "Code2Skill",
+      "tip": "projekat",
+      "opis": "A tool that automatically extracts verifiable procedures from source code and turns them into agent 'skills,' so the agent knows how things are done in a repo before it ever gains experience there.",
+      "kakoProbati": [
+        "Clone the repo from github.com/ant-intl/Code2Skill",
+        "Run it against one of your smaller projects and see what procedures it extracts",
+        "Compare the resulting skill files against what you already keep manually in AGENTS.md"
+      ],
+      "link": "https://github.com/ant-intl/Code2Skill",
+      "cena": "free, you only pay for model tokens"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "OpenAI raised its projected infrastructure and compute spend through 2030 from $600B to $856B, even as its projected cash burn fell.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-09-21"
+    },
+    {
+      "naslov": "SoftBank plans to borrow over $11B through risky bonds to pay its next installment on its OpenAI stake.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/softbank-to-borrow-over-11-billion-in-risky-bonds-for-openai-stake/"
+    },
+    {
+      "naslov": "OpenAI formed an independent math advisory group after claiming its model solved over 100 open problems — the group has no authority to slow or redirect the research.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/21/openai-forms-math-advisory-group-as-its-ai-resolves-more-than-100-open-problems/"
+    },
+    {
+      "naslov": "Meta released SAM 3.1 for detecting and tracking objects in images and video via text prompts, priced at $2.50 per 1,000 images or $0.20 per 1,000 frames.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-09-21"
+    },
+    {
+      "naslov": "Qwen3.8-LiveTranslate cut average translation latency from 2.8 to 2.3 seconds and added speaker diarization and voice cloning across 60 input languages.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-09-21"
+    },
+    {
+      "naslov": "Grok Voice Transcribe 2.0 claims double the accuracy of its predecessor at the same price, with an emphasis on noisy and multilingual environments.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-09-21"
+    },
+    {
+      "naslov": "Visa, Mastercard, and Ant International announced a joint Know Your Agent framework for verifying the identity and authorization of AI agents shopping on a user's behalf.",
+      "izvor": "ICT Business",
+      "url": "https://www.ictbusiness.info/vijesti/platne-mreze-provjeravaju-ai-agente"
+    },
+    {
+      "naslov": "Meta's Muse has more downloads and daily users in the US and Canada in its first weeks than ChatGPT had in the same period after its mobile launch.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/21/metas-muse-is-outpacing-chatgpts-early-mobile-launch/"
+    },
+    {
+      "naslov": "Google unveiled the $899 Googlebook, a laptop with Gemini woven into the cursor, dictation, and widgets, positioned as its answer to Apple's iPhone–Mac pairing.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/21/googles-899-googlebook-is-a-bet-that-youll-buy-a-new-laptop-for-gemini/"
+    },
+    {
+      "naslov": "US iPhone owners can file a claim in Apple's $250M settlement over the undelivered AI Siri — about $25 per device, up to $95 depending on the number of claims.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/998191/apple-siri-ai-iphone-16-class-action-lawsuit-settlement"
+    },
+    {
+      "naslov": "Geoffrey Hinton and over 100 experts signed an open letter demanding that safety testers be embedded inside AI labs, with employee-level access and protection from retaliation.",
+      "izvor": "The Rundown AI",
+      "url": "https://therundownai.beehiiv.com/p/openai-goes-from-hacker-to-hacked"
+    },
+    {
+      "naslov": "OpenAI released Astra for Law — GPT-6 Astra fine-tuned for legal work with US case law search and 26 add-ons, which Harvey and Legora plan to build on.",
+      "izvor": "The Rundown AI",
+      "url": "https://therundownai.beehiiv.com/p/openai-goes-from-hacker-to-hacked"
+    },
+    {
+      "naslov": "ByteDance launched Dramagic, a platform that runs the entire short-drama production pipeline from script to video review — in China alone, 128,000 such series came out in Q1 2026, 95% AI-generated.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/bytedance-launches-dramagic-a-full-pipeline-ai-platform-for-producing-short-dramas-from-script-to-screen/"
+    },
+    {
+      "naslov": "Z.ai open-sourced ZCode — desktop app, web workspace, backend, Agent CLI, and runtime — after security flaws reported by the community, with an apology and a promised bug bounty program.",
+      "izvor": "GitHub / r/LocalLLaMA",
+      "url": "https://github.com/zai-org/ZCode"
+    },
+    {
+      "naslov": "Anthropic reported that over the past eight months it detected multiple attempts to misuse Claude by actors linked to Russia, China, Iran, and Yemen, for surveillance and digital attacks.",
+      "izvor": "ICT Business",
+      "url": "https://www.ictbusiness.info/internet/anthropic-otkrio-zloupotrebe-claudea"
+    },
+    {
+      "naslov": "Meta introduced Meta One, subscription bundles for Facebook, Instagram, WhatsApp, and Meta AI ranging from $2.99 to $499 a month, claiming core features stay free.",
+      "izvor": "ICT Business",
+      "url": "https://www.ictbusiness.info/vijesti/meta-uvodi-placene-pakete"
+    },
+    {
+      "naslov": "Jensen Huang told CBS there's a '0% chance' AI destroys the world and called Amodei's and Altman's calls for a slowdown 'unscientific.'",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/997936/nvidia-jensen-huang-ai-fears-overblown"
+    },
+    {
+      "naslov": "Nathan Lambert briefed members of Congress and published his prepared notes: Chinese open models lead in downloads, 3.2B vs 1.6B, and in benchmarks, with the best US open model trailing 15 Chinese ones.",
+      "izvor": "Interconnects",
+      "url": "https://www.interconnects.ai/p/the-current-balance-of-power-in-open"
+    },
+    {
+      "naslov": "A Hacker News post detailing a workaround to stop macOS 27 from auto-deleting local AI models and save disk space gathered nearly 200 points.",
+      "izvor": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=49787535"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "Code2Skill: building agent skills directly from source code",
+      "objasnjenje": "Instead of an agent learning by trial and error, this system scans existing source code and extracts verifiable procedures from it — step-by-step instructions for how things are done in that project. Those procedures are then handed to the agent as 'skills' before it even starts working.",
+      "zastoJeZanimljivo": "This effectively solves the problem you hit every time Claude Code enters an unfamiliar repo and starts wandering; it's an automated version of what you'd otherwise write by hand in AGENTS.md.",
+      "url": "https://huggingface.co/papers/2609.05571",
+      "github": "https://github.com/ant-intl/Code2Skill"
+    },
+    {
+      "naslov": "EvoOntology: a layer that explains your database to the agent",
+      "objasnjenje": "Agents working over tables, files, and databases only see column names and paths, so they have to guess what things mean. EvoOntology builds a 'dictionary' of that data and exposes it as an MCP server, so the agent can query it while working. A dedicated agent builds this dictionary itself, and the system keeps refining it — changes are only accepted after passing a paired check confirming they didn't break what previously worked.",
+      "zastoJeZanimljivo": "If you store data in Supabase, this is a ready-made pattern for giving an agent schema understanding without dumping an entire SQL dump into the prompt; the repo already has 245 stars.",
+      "url": "https://huggingface.co/papers/2609.15779",
+      "github": "https://github.com/ruc-datalab/EvoOntology"
+    },
+    {
+      "naslov": "CodeMidas: training coding agents on tasks extracted from code itself",
+      "objasnjenje": "Existing ways of generating training tasks for agents rely on issues and commits, which are limited in supply. CodeMidas instead takes existing functionality from open repos: agents explore it, describe what it does, build tests based on running the original code, and through repeated runs discard tasks that aren't reliable. The result was 5,545 tasks from 3,185 repos across 23 languages.",
+      "zastoJeZanimljivo": "A model trained on this improved across all five benchmarks — issue-fixing +11.7%, full-program writing +17% — evidence that high-quality agent training data can be generated from ordinary code.",
+      "url": "https://huggingface.co/papers/2609.22068",
+      "github": null
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Keyhole",
+      "problem": "When you run a coding agent on a remote machine or from your phone, you eventually need an API key there — and pasting the key into chat with the agent is a bad idea, since it ends up in logs and conversation history.",
+      "zaKoga": "Solo developers running agents on a VPS or Mac Mini and managing them from an iPhone.",
+      "ulogaAi": "None inside the app itself — the AI here is the user whose access you're restricting. Claude Code is just your coding assistant.",
+      "tezina": 1,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Build a small Node/Bun service that spins up a local web form on your private network (or a Tailscale address) and writes the key into the machine's keyring",
+        "Add a CLI command like `key get supabase` the agent is allowed to call via shell, without ever seeing the value itself",
+        "Build a simple Angular or plain HTML screen optimized for mobile, with a QR code to open the address",
+        "Add an audit log: which process requested which key and when"
+      ],
+      "inspiracija": "Simon Willison's llm-keys-ui 0.1 and his Hacker News comment about what MCP is actually for"
+    },
+    {
+      "naziv": "Skill from the repo",
+      "problem": "Every time an agent enters your Angular/Supabase project, it rediscovers from scratch how to add a migration, what the RLS policy is called, and where types live. Manually maintaining AGENTS.md quickly goes stale.",
+      "zaKoga": "You, and anyone working across multiple of their own projects with a coding agent.",
+      "ulogaAi": "The agent scans the repo and generates skill files with concrete procedures, then refreshes them itself when the structure changes.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Look at how Code2Skill extracts procedures from code and port the idea to TypeScript",
+        "Write a script that maps your repo: routes, Supabase migrations, services, tests",
+        "Have Claude Code write 5–10 short skill files from that map and validate them by running a real task",
+        "Add a git hook that suggests refreshing the skill file when the folder structure changes"
+      ],
+      "inspiracija": "The Code2Skill paper (Grounded Skill Synthesis from Code at Scale) from HF Daily Papers"
+    },
+    {
+      "naziv": "Listing Studio",
+      "problem": "People selling on classifieds sites, Instagram, and small webshops photograph products on their kitchen table. A decent listing needs a clean background and a few variants, but Photoshop and subscriptions are overkill for them.",
+      "zaKoga": "Small sellers and tradespeople in Serbia and the region, iOS app.",
+      "ulogaAi": "An image model separates the product, returns a transparent background, and generates variants (white backdrop, in-context, with text).",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Test Qwen-Image-2.1 locally through ComfyUI on a dozen of your own product photos and check the quality of the RGBA output",
+        "Check the license — the research license doesn't cover commercial use, so either get a Qwen commercial license or target a paid API",
+        "Build a SwiftUI screen: take a photo, pick three templates, get three images back; processing runs on your server",
+        "Add Supabase for processing history and a simple monthly limit on free edits"
+      ],
+      "inspiracija": "Qwen-Image-2.1 — a 7B model with transparent backgrounds and local edits"
+    },
+    {
+      "naziv": "Minute Taker",
+      "problem": "In meetings where Serbian and English mix, transcripts are useless: you can't tell who said what, and the translation lags half a sentence behind.",
+      "zaKoga": "Freelancers and small teams in the region working with foreign clients; iOS app with a web view.",
+      "ulogaAi": "Transcription with speaker diarization, followed by summarization into decisions and action items.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Compare Grok Voice Transcribe 2.0 and Qwen3.8-LiveTranslate on a recording of a real bilingual meeting",
+        "Build SwiftUI recording with local storage and upload when Wi-Fi is available",
+        "After transcription, have a cheap model (GLM 5.3 Flash or DeepSeek V4.1 Flash) extract decisions and action items",
+        "Handle privacy from the start: a clear consent prompt before recording and deleting the audio after processing"
+      ],
+      "inspiracija": "Qwen3.8-LiveTranslate (2.3s latency, 60 languages) and Grok Voice Transcribe 2.0"
+    },
+    {
+      "naziv": "Schema on a Plate",
+      "problem": "When you point an agent at a Supabase database, you either dump the entire SQL schema into the prompt or let it guess what a column named `st_2` means. Both are expensive and unreliable.",
+      "zaKoga": "Developers building apps on Supabase or any Postgres database who use coding agents.",
+      "ulogaAi": "An agent builds and maintains a description of the database (what each table means, relationships, typical queries), and another agent consumes it through MCP.",
+      "tezina": 4,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Read how EvoOntology splits the layer into schema, content, and tools, and exposes it as an MCP server",
+        "Build a TypeScript MCP server that reads the Postgres catalog and returns a condensed description instead of the full DDL",
+        "Add a step where Claude Code walks through the app once and explains what each column means in its own words, then save that to a dedicated table",
+        "Measure: run the same task with and without this layer, and compare token count and wrong-query count"
+      ],
+      "inspiracija": "EvoOntology — a self-growing ontology layer for agents working over data"
+    }
+  ],
+  "cene": "There was a lot of movement in pricing today. Kimi K3 got pricier (input $2.1 → $3, output $10.95 → $15), as did DeepSeek V4 Pro 0423 ($0.66 → $0.90 input) and Qwen3.8 27B ($0.214 → $0.42 input, $2.55 → $3 output); GLM 5.3 Flash got cheaper by half, now $0.075 input and $0.25 output, and Qwen3 VL 30B A3B Instruct dropped ($0.2 → $0.13 input). Over the past seven days, mid-tier prices dropped most for GLM 5.3 (−35%, now $0.91 / $2.86) and DeepSeek V4 Pro 0813 (−32.9%, now $0.66 / $1.98) — the latter is also the cheapest in the mid tier. The new Grok 4.7 appeared at $1.6 input / $4.8 output, undercutting Grok 4.6 ($2 / $6), which remains the cheapest among top-tier models; in the cheap-and-fast tier, GLM 5.3 Flash is still the lowest price.",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "\"Everyone's talking to Claude, nobody's reading anything\"",
+        "oCemuSePrica": "A post from an engineer who started at a large company two weeks ago sparked the biggest debate of the day: specs, code, tests, tickets, and reports are all produced by Claude Code, and people work 12–13 hour days 'just to press enter.' Management's message is that shipping code is no longer the bottleneck, so why are people still slow. Simon Willison highlighted the quote on his blog, which pushed the story beyond Reddit.",
+        "glasovi": "The original poster describes a feeling that nobody thinks anymore; some commenters say it's an issue with that specific company rather than the tools, while others recognize the same pattern in their own work. Willison flagged the quote as an example of tool misuse, not an argument against AI.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1wm5c21/i_am_done_with_this_shit/"
+          },
+          {
+            "platforma": "ostalo",
+            "naziv": "Simon Willison",
+            "url": "https://simonwillison.net/2026/Sep/20/voxium/"
+          }
+        ]
+      },
+      {
+        "naslov": "Amazon blocks Muse — the first real war between platforms and third-party agents",
+        "oCemuSePrica": "Amazon's block on Meta's agent gathered 134 points and over 130 comments on Hacker News within hours. The debate centers on whether Amazon is protecting customers or ad revenue — since if agents shop instead of people, ads on Amazon lose their point. In parallel, X is full of clips of what Muse has managed to do for people: cancel an insurance policy over the phone, win a MacBook auction under market price, but also invent a middle name during a flight booking that left someone unable to board.",
+        "glasovi": "Hacker News opinion mostly holds that Amazon has no obligation to let a third-party agent in. BuccoCapital Bloke calls it the start of a 'digital knife fight' over who gets reduced to a mere commodity, while Meta's Alexandr Wang used rival Instinct's mistakes to needle the competition.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=49789982"
+          },
+          {
+            "platforma": "ostalo",
+            "naziv": "Startit",
+            "url": "https://startit.rs/muse-i-instinct-ne-ostavljaju-ljude-ravnodusnim-korisnicima-nalazi-macbook-ispod-cene-zove-osiguranje-nade-ti-2000-upropasti-kartu-za-avion-nema-sta-ne-rade/"
+          }
+        ]
+      },
+      {
+        "naslov": "Jev: hype or just plain next-token prediction",
+        "oCemuSePrica": "Jev, a model that doesn't write text but instead just picks from offered options, got a Fireship video with over 350,000 views and three Product Hunt launches in two days. r/LocalLLaMA quickly pushed back: a user showed you get the same result with any GGUF model in llama.cpp by setting n_predict=1 and requesting top logprobs, with an example command and output showing the percentages. Another commenter asks why anyone's excited when plain neural nets have done this for years.",
+        "glasovi": "Fireship relays the founder's claims (ex-OpenAI researcher Diogo Almeida): 200x faster, 400x cheaper, no hallucinations. The r/LocalLLaMA community is skeptical and wants comparisons done on the same task rather than marketing numbers.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "youtube",
+            "naziv": "Fireship",
+            "url": "https://www.youtube.com/watch?v=TbkUKCm3CHQ"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wlxpaw/you_can_use_any_llm_just_like_jev/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wm65le/i_really_dont_understand_jev_hype/"
+          }
+        ]
+      },
+      {
+        "naslov": "Limits and hidden costs in Claude Code",
+        "oCemuSePrica": "A user instrumented Claude Code and showed that Prompt Suggestions — those gray suggestions at the end of the input — run a full-context cache read and can eat up to 10% of the weekly limit. The same day, another post described someone hitting their weekly limit on a Monday while fixing a critical bug before a game launch. Meanwhile r/LocalLLaMA has a running joke about what it feels like watching prices climb.",
+        "glasovi": "The author of the PSA post based the finding on measurements from their own account and included screenshots, but it's not an official Anthropic figure. Comments split between people who immediately disable the option and those asking for independent verification.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1wm8adm/psa_claude_code_turn_off_prompt_suggestions_save/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1wm8ori/seeing_this_on_monday_while_claude_is_fixing_a/"
+          }
+        ]
+      },
+      {
+        "naslov": "How much VRAM does the average person actually have",
+        "oCemuSePrica": "A post on r/LocalLLaMA argues that 16 GB of VRAM is a realistic ceiling for most people, and 12 GB in a good chunk of the world — while the sub is full of setups with three 3090s and Strix Halo boxes. The point is that agentic coding has only become feasible on 16 GB in the last half-year or so, e.g. with a quantized Qwen 27B.",
+        "glasovi": "The author wants recommendations written for that majority rather than enthusiasts; the same sub simultaneously has a review of the M5 Ultra Mac Studio as the 'dream Mac for local AI agents,' which nicely illustrates the gap.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wmb875/16gb_and_in_many_cases_12gb_is_the_max_vram_most/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wmec1y/m5_ultra_mac_studio_review_the_dream_mac_for/"
+          }
+        ]
+      }
+    ],
+    "snimci": [
+      {
+        "naslov": "An ex-OpenAI researcher just deleted language from the LLM...",
+        "kanal": "Fireship",
+        "opis": "What Jev actually is — a model that doesn't write text but picks among options — and how well the claims of 200x speed and 400x lower cost hold up.",
+        "url": "https://www.youtube.com/watch?v=TbkUKCm3CHQ"
+      },
+      {
+        "naslov": "\"It Blew Me Away\" | Box's First Look at GPT-6 Astra",
+        "kanal": "OpenAI",
+        "opis": "Box's team runs Astra on cost files and tax incentives, and the model spots an incentive that was already accounted for.",
+        "url": "https://www.youtube.com/watch?v=QFxDF30qf_4"
+      },
+      {
+        "naslov": "Why Information Has a Price in Intelligence — Alexander Mattick",
+        "kanal": "Machine Learning Street Talk",
+        "opis": "A longer conversation about why inference, not just the model, determines how much capability you actually get.",
+        "url": "https://www.youtube.com/watch?v=1S1B4XkFCD8"
+      },
+      {
+        "naslov": "The Dark Arts of Skill Engineering — Paul Bakaus",
+        "kanal": "AI Engineer",
+        "opis": "Why banning one cliché in a prompt doesn't produce originality — it just pushes the model to the next-closest cluster.",
+        "url": "https://www.youtube.com/watch?v=SQMCtZX3trg"
+      }
+    ]
+  },
+  "nedeljni": null
+}
