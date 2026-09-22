@@ -1,0 +1,448 @@
+{
+  "datum": "2026-09-22",
+  "generisano": "2026-09-22T03:10:21.700Z",
+  "model": "claude-opus-5",
+  "prevod": "claude-sonnet-5",
+  "ukratko": "Today belongs to Jev: Simon Willison broke down exactly how this new type of model works — one that returns numbers instead of text — while TypeSafe's CEO explained why they built it at all in a two-hour interview, at a price of four cents per million input tokens. Meanwhile, Meta's agent Muse got hit with a serious 0-day, Cloudflare pulled Python Workers out of preview, and Xiaomi released an MIT-licensed MoE model with a million-token context.",
+  "vesti": [
+    {
+      "naslov": "Jev: now we know exactly how it works and what it costs",
+      "staSeDesilo": "Simon Willison published a detailed breakdown of Jev. The model takes text or semi-structured data (a \"state\" object) as input and returns numbers: a probability for yes/no questions (they call this \"Noul,\" short for Bernoulli), a choice among offered options with a probability distribution, or a score on a scale you define yourself. Only input is billed, output is free, at $0.042 per million input tokens. The same day, Latent Space dropped a two-hour interview with Diogo Almeida (co-author of the InstructGPT paper), who explains RLCD — training that targets honestly calibrated probabilities instead of human ratings, since he believes RLHF leads to hallucination and sycophancy.",
+      "zastoJeBitno": "If your app is full of small decisions — is this comment spam, which category does this entry belong to, how urgent is this ticket — you've probably been calling an LLM and parsing JSON for that. This is an order of magnitude cheaper and returns a number you can plug straight into an `if`.",
+      "kategorija": "modeli",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Sep/21/jev/"
+        },
+        {
+          "naziv": "Latent Space — interview with Diogo Almeida",
+          "url": "https://www.latent.space/p/jev"
+        },
+        {
+          "naziv": "TypeSafe AI",
+          "url": "https://typesafe.ai/"
+        }
+      ]
+    },
+    {
+      "naslov": "Meta's Muse agent has a 0-day that local apps can hijack",
+      "staSeDesilo": "Ars Technica reports that Muse, Meta's macOS assistant that Zuckerberg touts as \"built from the ground up for privacy and security,\" has a vulnerability that lets locally running apps and terminal commands seize full control of the agent. The problem is compounded by the fact that Muse requests access to WhatsApp, email, calendar and social networks, plus macOS permissions for disk, microphone, camera and location. Amazon started blocking Muse on its site on Sunday.",
+      "zastoJeBitno": "This is a practical reminder of what it means to hand an agent every permission in one place: one hole and an attacker gets all your accounts at once. If you're building something that requests broad permissions, it's worth looking at how this one got breached.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/security/2026/09/muse-metas-extraordinarily-privileged-ai-assistant-has-a-serious-0-day/"
+        }
+      ]
+    },
+    {
+      "naslov": "Xiaomi releases MiMo-V2.6-Flash-RL: a 309B MoE model under the MIT license",
+      "staSeDesilo": "MiMo-V2.6-Flash-RL landed on Hugging Face — a mixture-of-experts model (an architecture where only part of the network activates per query) with 309 billion total parameters and 15 billion active. It supports a million-token context, has a 681M vision encoder plus an audio component, and ships under the MIT license. Xiaomi says the RL training was done in a single pass across coding, agentic, vision and cybersecurity tasks rather than separately per domain.",
+      "zastoJeBitno": "The MIT license and million-token context mean someone can serve this through OpenRouter, or you can self-host it if you've got 4-8 GPUs. The most interesting signal here is that open models are now targeting agentic tasks, not just benchmark scores.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Hugging Face",
+          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL"
+        },
+        {
+          "naziv": "r/LocalLLaMA",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wmnw89/xiaomimimomimov26flashrl_hugging_face/"
+        }
+      ]
+    },
+    {
+      "naslov": "Cloudflare Python Workers exits preview after two years",
+      "staSeDesilo": "Python is now a first-class language on the Cloudflare Developer Platform. FastAPI, Django and Flask run via built-in ASGI/WSGI connectors, you get Postgres and MySQL access through Hyperdrive with standard drivers (`asyncpg`, `aiomysql`), and packages like `openai`, `langchain` and `mcp` work with no JavaScript wrapper needed. Under the hood, Python compiles to WebAssembly via Pyodide and runs in their workerd runtime, which means multiprocessing and threading don't work.",
+      "zastoJeBitno": "For Supabase projects, this is now a real option for pushing AI processing and webhooks to the edge in Python without a separate server. The catch is that packages with C/C++/Rust extensions need a WebAssembly build.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Cloudflare blog",
+          "url": "https://blog.cloudflare.com/python-workers-ga/"
+        },
+        {
+          "naziv": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Sep/21/cloudflare-python-worker/"
+        }
+      ]
+    },
+    {
+      "naslov": "California signs seven laws on power and water for AI data centers",
+      "staSeDesilo": "Governor Newsom signed a package of seven laws meant to stop data centers from passing utility costs on to residents. The regulator (CPUC) is tasked with creating a dedicated rate category for data centers, and the centers themselves must pay for upgrades to local grid and water infrastructure. New projects must submit advance disclosures to local government covering water use projections, energy efficiency data, and a drought contingency plan.",
+      "zastoJeBitno": "This is the first time the cost of AI infrastructure has been legally locked onto the builder rather than the ratepayer. Long term, this could spill over into inference prices from providers hosting in California.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/998453/california-ai-data-center-bills"
+        }
+      ]
+    },
+    {
+      "naslov": "Linear: AI agents turned CI into a bottleneck, so they rebuilt it",
+      "staSeDesilo": "Linear published a detailed writeup on how CI became a drag once agents started writing code — test suites nearly quadrupled. They switched to third-party runners (34% faster execution), replaced tsc with the native `tsgo` compiler (73% faster type checking), cut change detection from 26 to 8 seconds, merged seven independent checks into two batch jobs (saving roughly 87,000 runner-minutes a month), and bumped test shards from 4 to 8. Result: PR wait time dropped from over 6 minutes to just above 5.",
+      "zastoJeBitno": "If Claude Code is opening more PRs a day than you can review, CI becomes your main time sink. The specific tricks in the piece (selective checkout, batch jobs, tsgo) translate fine to a small project too.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Linear",
+          "url": "https://linear.app/now/ci-bottleneck-reworked"
+        },
+        {
+          "naziv": "Hacker News discussion",
+          "url": "https://news.ycombinator.com/item?id=49792067"
+        }
+      ]
+    },
+    {
+      "naslov": "Tim Dettmers announces an \"open source week\": big models on a single card",
+      "staSeDesilo": "Tim Dettmers (author of bitsandbytes and QLoRA) announced a week of releases from his lab: two open-source projects and four papers on quantized inference and agentic systems. Numbers he cites: 450 tokens per second for Qwen 3.6 35B at 1.5 bits per weight on Mac/Metal, Qwen 3.8 Flash Next (125B) on a single 24GB card, and DeepSeek V4.1 (550B) running on AMD/NVIDIA/Mac systems. The code isn't out yet — the post explicitly says he's not revealing everything before the week starts, which is running a day late.",
+      "zastoJeBitno": "If the numbers hold up, the bar for running a serious model at home drops to a single consumer card or a Mac. Until the code ships, though, these are just the author's claims, not independent benchmarks.",
+      "kategorija": "istrazivanje",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "timdettmers.com",
+          "url": "https://timdettmers.com/2026/09/21/dlab-open-source-week/"
+        },
+        {
+          "naziv": "Hacker News discussion",
+          "url": "https://news.ycombinator.com/item?id=49791647"
+        }
+      ]
+    },
+    {
+      "naslov": "Huawei delays global AI chip rollout as Chinese demand absorbs all production",
+      "staSeDesilo": "According to reports widely shared in the community today, Huawei has delayed the global launch of its AI chips because domestic Chinese demand exceeds what it can manufacture. In practice this means Nvidia and AMD currently have no competition outside China.",
+      "zastoJeBitno": "Less competition in chips means less downward pressure on GPU prices and, indirectly, on the inference prices everyone pays.",
+      "kategorija": "kompanije",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "r/LocalLLaMA",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wmm89l/huawei_shelves_global_ai_chip_rollout_as_chinas/"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Jev API (TypeSafe AI)",
+      "tip": "model",
+      "opis": "A model that takes a \"state\" object as input (text, a list of strings, or key-value pairs) and returns typed decisions with probabilities: yes/no, a choice from a list, or a score on a scale. One document, as many questions as fit in the context.",
+      "kakoProbati": [
+        "Open console.typesafe.ai and create an account",
+        "Read docs.typesafe.ai for the \"state\" object format and the three question types (Noul, Choice, Score)",
+        "Take an existing classification task from your app, port it to Jev, and compare the results against what your current LLM returns"
+      ],
+      "link": "https://typesafe.ai/",
+      "cena": "$0.042 per million input tokens, output is free; check the console for any free credits"
+    },
+    {
+      "naziv": "Cloudflare Python Workers (GA)",
+      "tip": "alat",
+      "opis": "Python is now fully supported on Cloudflare Workers: FastAPI/Django/Flask via ASGI/WSGI connectors, Postgres through Hyperdrive, and packages like openai, langchain and mcp work directly. Local development runs through pywrangler, which simulates their full stack.",
+      "kakoProbati": [
+        "Install the tool from PyPI: the package is called `workers-py`, the command is `pywrangler`",
+        "Expose a FastAPI app in your code with `from workers import asgi` and `Default = asgi.entrypoint(app)`",
+        "Connect Hyperdrive to your Supabase Postgres and try a query via `asyncpg`",
+        "Keep in mind threading and multiprocessing don't work in the WebAssembly environment"
+      ],
+      "link": "https://blog.cloudflare.com/python-workers-ga/",
+      "cena": "Pricing isn't listed in the announcement — check the link"
+    },
+    {
+      "naziv": "MiMo-V2.6-Flash-RL",
+      "tip": "model",
+      "opis": "Xiaomi's MoE model: 309B total / 15B active parameters, a million-token context, vision and audio encoders, MIT license. Trained in a single RL pass across coding, agentic, vision and security tasks.",
+      "kakoProbati": [
+        "Open the model card on Hugging Face and check the requirements",
+        "For API access, wait for a provider to list it on OpenRouter",
+        "For local use: vLLM with tensor parallelism across 4-8 GPUs, and `--enable-auto-tool-choice` if you want tool use"
+      ],
+      "link": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "cena": "Weights are free (MIT), hardware is on you"
+    },
+    {
+      "naziv": "Logics-SWE-Qwen3.6-27B",
+      "tip": "projekat",
+      "opis": "A model from today's paper on training software engineering agents: instead of one training pass across all task types, they train separate \"experts\" per task category and then merge them into a single model. Released alongside the paper.",
+      "kakoProbati": [
+        "Open the project page on Hugging Face and check which task categories it covers",
+        "Read the paper at huggingface.co/papers/2609.23377 for a description of the SWE Labeler task-tagging system",
+        "If your repo has a lot of open tickets, the idea of categorizing tasks before handing them to an agent is worth trying even without this model"
+      ],
+      "link": "https://huggingface.co/Logics-MLLM/Logics-SWE-Qwen3.6-27B",
+      "cena": "free"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Ron Johnson, the man who designed the Apple Store, says he doesn't buy Silicon Valley's big bet on AI shopping, since Apple's secret has always been people.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/21/the-man-who-built-apples-stores-doesnt-buy-silicon-valleys-bet-on-ai-shopping/"
+    },
+    {
+      "naslov": "Apple has closed off the ability to roll back from iOS 27 to iOS 26, so anyone who installed the new Siri is stuck with it.",
+      "izvor": "MacRumors",
+      "url": "https://www.macrumors.com/2026/09/21/ios-27-downgrading-impossible/"
+    },
+    {
+      "naslov": "New Apple CEO John Ternus gave his first major interview, discussing the design of the iPhone Duo and where Siri is headed with AI.",
+      "izvor": "MacRumors",
+      "url": "https://www.macrumors.com/2026/09/21/john-ternus-interview-iphone-duo/"
+    },
+    {
+      "naslov": "Engadget's review of the M6 Mac mini says it's still the best compact desktop, but nowhere near as good a value as earlier models.",
+      "izvor": "Engadget",
+      "url": "https://www.engadget.com/2263471/apple-mac-mini-m6-review/"
+    },
+    {
+      "naslov": "Measurements show the M6 Mac mini draws 4W idle and 70W under full load, while the M5 Pro version goes up to 145W — useful to know if you're planning to leave it running a local model.",
+      "izvor": "AAPL Ch.",
+      "url": "https://applech2.com/archives/20260922-apple-m6-and-m5pro-mac-mini-2026-power-consumption.html"
+    },
+    {
+      "naslov": "GhostBSD has added an AI assistant called Casper to the system, sparking debate in the BSD community over FreeBSD's lack of a clear policy on LLM-generated contributions, while NetBSD bans them outright.",
+      "izvor": "OSTechNix",
+      "url": "https://ostechnix.com/ghostbsd-casper-ai-assistant/"
+    },
+    {
+      "naslov": "Cheapest GPU rentals today: an 80GB A800 for $0.468/hr and a 96GB RTX PRO 6000 Max-Q for $1.15/hr on Vast.ai, and a 192GB MI300X for $2.39/hr on RunPod.",
+      "izvor": "Overfeed",
+      "url": "https://overfeed.news/gpus"
+    },
+    {
+      "naslov": "Anthropic has struck a partnership with Accenture around embedding model evaluations at client sites.",
+      "izvor": "Anthropic",
+      "url": "https://www.anthropic.com/news"
+    },
+    {
+      "naslov": "Jev's Discord passed 100,000 members within a week, and the launch video hit about 40 million views — for comparison, Fable 5's launch got 15 million and GPT-6 Astra's got 137 million.",
+      "izvor": "Latent Space",
+      "url": "https://www.latent.space/p/jev"
+    },
+    {
+      "naslov": "Diogo Almeida says TypeSafe has more models \"in the tank\" and published an essay called \"The Bitterest Lesson,\" arguing that task and data selection matter more than raw compute.",
+      "izvor": "Latent Space",
+      "url": "https://www.latent.space/p/jev"
+    },
+    {
+      "naslov": "Alongside the software engineering agents paper came SWE Labeler, a system that sorts repository tasks into categories before training, since progress in one category often comes at the cost of regression in another.",
+      "izvor": "Hugging Face Papers",
+      "url": "https://huggingface.co/papers/2609.23377"
+    },
+    {
+      "naslov": "Cloudflare hired the two lead maintainers of the Pyodide project for Python Workers — arguably a bigger investment in the Python-WebAssembly ecosystem than the product itself.",
+      "izvor": "Simon Willison",
+      "url": "https://simonwillison.net/2026/Sep/21/cloudflare-python-worker/"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "RoboDawn: a vision-language model that controls a robot with no task-specific training",
+      "objasnjenje": "Instead of training a dedicated policy for the robot, the authors gave a model that \"sees and talks\" a small set of discrete commands — move, rotate, open/close gripper. In a loop, the model looks at an image of the current state, decides the next move, executes it, then adapts based on the result. They also added few-shot learning directly in the prompt, so the model learns both how to use the interface and how to solve the task. On the RoboTwin 2.0 C2R and RoboDojo benchmarks, it outperforms several policies that were specifically trained for those tasks.",
+      "zastoJeZanimljivo": "The same logic works outside robotics: when a model has a small, clear set of actions and sees the result of each step, it doesn't need retraining for every new task. That's exactly the pattern for \"an agent that clicks through your app.\"",
+      "url": "https://huggingface.co/papers/2609.22966",
+      "github": null
+    },
+    {
+      "naslov": "One to More, More to One: training software agents by task category",
+      "objasnjenje": "The authors noticed a seesaw effect: when you train an agent on all types of repository tasks at once, progress in one category comes with a drop in another, and the average hides it. So they first sort tasks using the SWE Labeler system, then train separate \"experts\" per category, and finally merge them via distillation into a single deployable model. The model has been released on Hugging Face.",
+      "zastoJeZanimljivo": "If you're tracking how agents perform on your code, the takeaway is practical: one average success rate tells you nothing. Split task types (bug fixes, refactors, new features) and measure them separately.",
+      "url": "https://huggingface.co/papers/2609.23377",
+      "github": "https://huggingface.co/Logics-MLLM/Logics-SWE-Qwen3.6-27B"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Sieve",
+      "problem": "Small businesses getting hundreds of Instagram and Facebook messages and comments a day can't keep up with separating a real customer question from spam, insults, or a simple \"thanks.\"",
+      "zaKoga": "Small shop owners and agencies in Serbia running social media accounts",
+      "ulogaAi": "Jev takes the message text and returns probabilities for a few questions: is this a pricing question, is it a complaint, does it need a human reply. Anything above a threshold goes to a human queue, the rest closes automatically.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Create a Supabase table `messages` with fields for text, source, and all the probabilities Jev returns",
+        "Wire up one source to start — an Instagram webhook or just manual CSV import",
+        "Build an Angular screen with two columns, \"needs a reply\" and \"can auto-close,\" with a slider for the probability threshold",
+        "Log where you and the model disagreed for a week, then tune the threshold accordingly"
+      ],
+      "inspiracija": "Simon Willison's breakdown of Jev and the $0.042 per million input tokens price"
+    },
+    {
+      "naziv": "Permissions",
+      "problem": "AI assistants on the Mac ask for access to disk, mic, camera and calendar, and after a few months the user has no idea what they've granted to whom.",
+      "zaKoga": "Anyone running multiple AI agents and tools on a Mac",
+      "ulogaAi": "The model reads the list of permissions and explains, per app, in one sentence, what that combination actually enables and what the worst-case outcome would be if the app were compromised.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Build a SwiftUI app that reads the TCC permissions database and displays it grouped by app",
+        "Add a button per app that opens the exact panel in System Settings",
+        "Call Claude Haiku 4.5 to write a short risk explanation for each permission combination",
+        "Add a diff against the previous snapshot: what got new permissions since last time"
+      ],
+      "inspiracija": "The 0-day in Meta's Muse assistant, which has full access to macOS resources"
+    },
+    {
+      "naziv": "Pre-flight",
+      "problem": "When Claude Code makes a change, you don't know which tests to run, so you either run everything (slow) or nothing (risky), and CI fills up with unnecessary jobs.",
+      "zaKoga": "Solo developers and small teams running agents against their repo",
+      "ulogaAi": "The model looks at the git diff and project structure and suggests which tests and lint checks are relevant to that specific change, and a tool runs them locally before anything hits CI.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Build a Node CLI that extracts changed files from `git diff --name-only`",
+        "Build a dependency map between files and test files (for Angular: an import graph)",
+        "For edge cases, ask the model to suggest additional tests, and log how often it was right",
+        "Add a git pre-push hook that runs just that subset"
+      ],
+      "inspiracija": "Linear's report on how CI became a bottleneck because of AI agents"
+    },
+    {
+      "naziv": "Edge for Supabase",
+      "problem": "When your Supabase app needs AI processing — summarizing, OCR, classification — Edge Functions in Deno don't give you the Python ecosystem, and a full server is overkill.",
+      "zaKoga": "You, and anyone building on Supabase who wants the Python ecosystem",
+      "ulogaAi": "The AI does the actual work (summarizing a document, extracting fields), and a Cloudflare Python Worker is the layer that processes it at the edge and writes to Postgres.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Build a FastAPI app and expose it with `from workers import asgi`",
+        "Connect Hyperdrive to Supabase Postgres and test one `asyncpg` query",
+        "Add a webhook route that Supabase calls when a new row is inserted",
+        "Check whether all your packages are available as WebAssembly wheels before relying on them"
+      ],
+      "inspiracija": "Cloudflare Python Workers exiting preview"
+    },
+    {
+      "naziv": "Live instructions",
+      "problem": "When assembling furniture, changing an AC filter, or setting up a router, a paper manual can't tell you whether the step you just did was done correctly.",
+      "zaKoga": "The domestic market — furniture buyers, repair shops, equipment retailers who want fewer support calls",
+      "ulogaAi": "A vision-language model watches the phone camera feed, compares it against the current step in the instructions, and says whether you can move on or something's off.",
+      "tezina": 4,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Take one specific manual and break it into steps with a description of \"what it should look like when done\"",
+        "Build a SwiftUI app that sends a frame to a multimodal model every few seconds along with the text of that step",
+        "Restrict the response to three options — done, not done, assembled wrong — to keep it from rambling",
+        "Test on five people who haven't seen the manual and measure which step the model gets wrong most"
+      ],
+      "inspiracija": "The RoboDawn paper — a VLM that loops through observing state, deciding a step, and adapting to the result"
+    }
+  ],
+  "cene": "There was a lot of price movement today: GLM 5.3 got about 23% cheaper (input $0.91 → $0.70, output $2.86 → $2.20), while DeepSeek V4 Pro 0813 ($0.66 → $1.32 and $1.98 → $3.96), DeepSeek V4.1 Flash ($0.15 → $0.30 and $0.60 → $1.20) and GLM 5.3 Flash ($0.075 → $0.15 and $0.25 → $0.50) all doubled; Llama 4 Maverick got slightly cheaper ($0.20 → $0.1875 input). On a weekly basis GLM 5.3 dropped 50% and is now the cheapest in the mid tier at $0.70 input / $2.20 output, while DeepSeek V4 Pro 0813 got 34% more expensive in the same tier. In the budget tier, Qwen3.8 Flash, GLM 5.3 Flash and Mistral Small 4 all share the lowest input price at $0.15, and Qwen3.8 Flash has the lowest output at $0.47; among flagship models, Grok 4.6 remains the cheapest at $2 / $6.",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Jev is still the only topic anyone's talking about",
+        "oCemuSePrica": "A week after launch, Jev still dominates the timeline: Simon Willison published his notes and proposes calling this model class \"decision models\" instead of \"System One,\" and Latent Space dropped a two-hour interview with the CEO. The community keeps listing use cases — from linting code and summarizing tool calls to voice-controlled browsers and using it as a judge in LangChain chains.",
+        "glasovi": "Simon Willison and Maggie Appleton are arguing over naming; Theo is publicly pushing back on using it in coding agents, to which Diogo Almeida responded with a note on the \"tyranny of the KV cache.\" Almeida himself rejects the idea of a generic \"JevBench\" benchmark and wants people to build new things instead of the fiftieth copy of his API.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "bluesky",
+            "naziv": "Simon Willison",
+            "url": "https://bsky.app/profile/simonwillison.net/post/3mw2tsop42c2u"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@theo",
+            "url": "https://x.com/theo/status/2100762304862384257"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@langchain",
+            "url": "https://x.com/langchain/status/2101454284927959080"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@CompleteSkeptic (Diogo Almeida)",
+            "url": "https://x.com/CompleteSkeptic/status/2098097767512179135"
+          }
+        ]
+      },
+      {
+        "naslov": "Rumor: an internal OpenAI model solved 100+ open math problems",
+        "oCemuSePrica": "A claim spreading on r/OpenAI says OpenAI started training an internal model on August 28 that solved over a hundred long-standing open math problems in 24 days, and that an advisory group of mathematicians (Witten, Gowers, and Hairer are mentioned) was formed to evaluate the results and coordinate a release. This remains an unconfirmed forum rumor — there's no official OpenAI announcement.",
+        "glasovi": "The post originated from /u/BilelKort, and discussion quickly shifted from \"is this true\" to \"what if AI produces more math than humans can review.\" Skeptics want at least one peer-reviewed paper before believing it.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/OpenAI",
+            "url": "https://www.reddit.com/r/OpenAI/comments/1wmq961/ai_may_be_entering_a_completely_different_phase/"
+          }
+        ]
+      },
+      {
+        "naslov": "CI has become where the time goes, not the code writing",
+        "oCemuSePrica": "Linear's piece on rebuilding CI racked up 155 points and over 160 comments on Hacker News. The trigger is concrete: as agents write more code, PR and test counts grow faster than infrastructure can keep up, making the wait for green the main bottleneck.",
+        "glasovi": "Some commenters praise the concrete numbers (tsgo, batch jobs, selective checkout), while others argue the real problem is agents generating too many tests of questionable value — treating the symptom instead of the cause.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=49792067"
+          }
+        ]
+      },
+      {
+        "naslov": "How much can you really run at home",
+        "oCemuSePrica": "Tim Dettmers's announcement of 1.5-bit quantization and running a 125B model on a single 24GB card racked up 110 points on HN, while r/LocalLLaMA is simultaneously unpacking Xiaomi's MIT-licensed MiMo-V2.6-Flash-RL. The community is already comparing MiMo to GLM 5.3 on real coding work.",
+        "glasovi": "Dettmers has credibility from QLoRA and bitsandbytes, but commenters note the code isn't out yet, so for now people are taking it on faith. On Mastodon, users testing MiMo say it's \"solid, but doesn't beat GLM 5.3.\"",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=49791647"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wmnw89/xiaomimimomimov26flashrl_hugging_face/"
+          },
+          {
+            "platforma": "mastodon",
+            "naziv": "@darkghosthunter",
+            "url": "https://mastodon.social/@darkghosthunter/117311980595352449"
+          }
+        ]
+      },
+      {
+        "naslov": "Huawei and the question of who'll make chips for the rest of the world",
+        "oCemuSePrica": "News that Huawei is delaying its global AI chip rollout because domestic demand is soaking up all its production sparked debate on r/LocalLLaMA. Most people's takeaway: Nvidia and AMD have no one to push their prices down for now.",
+        "glasovi": "Part of the community sees this as bad news for card prices; others point out Huawei already had software ecosystem problems anyway, so the competition wouldn't have been realistic regardless.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wmm89l/huawei_shelves_global_ai_chip_rollout_as_chinas/"
+          }
+        ]
+      }
+    ],
+    "snimci": []
+  },
+  "nedeljni": null
+}

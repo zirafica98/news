@@ -1,5 +1,190 @@
 [
   {
+    "datum": "2026-09-22",
+    "stavke": [
+      {
+        "tip": "vest",
+        "naslov": "Jev: sad znamo tačno kako radi i koliko košta",
+        "tekst": "Simon Willison je objavio detaljan razbor Jev-a. Model prima tekst ili polustrukturisane podatke (\"state\" objekat), a vraća brojeve: verovatnoću za da/ne pitanj…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Metin agent Muse ima 0-day koji mu lokalne aplikacije mogu preoteti",
+        "tekst": "Ars Technica piše da Muse, Metin macOS asistent koji Zuckerberg reklamira kao „napravljen od nule za privatnost i bezbednost“, ima ranjivost preko koje lokalno…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Xiaomi objavio MiMo-V2.6-Flash-RL: 309B MoE pod MIT licencom",
+        "tekst": "Na Hugging Face je stigao MiMo-V2.6-Flash-RL — mixture-of-experts model (arhitektura gde se po upitu aktivira samo deo mreže) sa 309 milijardi parametara ukupno…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Cloudflare Python Workers izašli iz preview-a posle dve godine",
+        "tekst": "Python je sada prvorazredni jezik na Cloudflare Developer Platform-u. Rade FastAPI, Django i Flask preko ugrađenih ASGI/WSGI konektora, pristup Postgres-u i MyS…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Kalifornija potpisala sedam zakona o struji i vodi za AI data centre",
+        "tekst": "Guverner Newsom je potpisao paket od sedam zakona koji treba da spreče da data centri prebacuju troškove komunalija na stanovništvo. Regulator (CPUC) dobija zad…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Linear: AI agenti su pretvorili CI u usko grlo, pa su ga prepravili",
+        "tekst": "Linear je objavio detaljan izveštaj kako im je CI postao kočnica otkad agenti pišu kod — test svite su se skoro učetvorostručile. Prešli su na runner-e trećih s…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Tim Dettmers najavio „open source nedelju“: veliki modeli na jednoj kartici",
+        "tekst": "Tim Dettmers (autor bitsandbytes i QLoRA) najavio je nedelju objavljivanja iz svoje laboratorije: dva open-source projekta i četiri rada oko kvantizovane infere…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Huawei odlaže globalni plasman AI čipova jer kineska tražnja guta celu proizvodnju",
+        "tekst": "Huawei je, prema izveštajima koje je zajednica danas naveliko delila, odložio izlazak svojih AI čipova na svetsko tržište jer domaća kineska tražnja premašuje o…"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Čovek koji je osmislio Apple Store, Ron Johnson, kaže da ne veruje u kladioničarsku opkladu Silicijumske doline na AI kupovinu jer je Appleova tajna oduvek bila u ljudima.",
+        "url": "https://techcrunch.com/2026/09/21/the-man-who-built-apples-stores-doesnt-buy-silicon-valleys-bet-on-ai-shopping/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Apple je zatvorio mogućnost vraćanja sa iOS 27 na iOS 26, pa ko je instalirao novu Siri — ostaje na njoj.",
+        "url": "https://www.macrumors.com/2026/09/21/ios-27-downgrading-impossible/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Novi Apple CEO John Ternus dao je prvi veliki intervju u kom priča o dizajnu iPhone Duo uređaja i o tome kuda ide Siri sa AI-jem.",
+        "url": "https://www.macrumors.com/2026/09/21/john-ternus-interview-iphone-duo/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Mac mini sa M6 čipom po Engadgetovoj recenziji ostaje najbolji kompaktni desktop, ali više nije ni približno tako povoljan kao ranije modeli.",
+        "url": "https://www.engadget.com/2263471/apple-mac-mini-m6-review/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Merenja pokazuju da M6 Mac mini troši 4 W u mirovanju i 70 W pod punim opterećenjem, dok M5 Pro verzija ide do 145 W — korisno ako planiraš da ga ostaviš da vrti lokalni model.",
+        "url": "https://applech2.com/archives/20260922-apple-m6-and-m5pro-mac-mini-2026-power-consumption.html"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "GhostBSD je ubacio AI asistenta Casper u sistem, što je pokrenulo raspravu u BSD zajednici o tome što FreeBSD nema jasnu politiku o doprinosima generisanim LLM-om, a NetBSD ih zabranjuje.",
+        "url": "https://ostechnix.com/ghostbsd-casper-ai-assistant/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Najjeftinija iznajmljivanja GPU-ova danas: 80 GB A800 za 0,468 $/h i 96 GB RTX PRO 6000 Max-Q za 1,15 $/h na Vast.ai, a 192 GB MI300X za 2,39 $/h na RunPod-u.",
+        "url": "https://overfeed.news/gpus"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Anthropic je sklopio partnerstvo sa Accenture-om oko ugrađene evaluacije modela kod klijenata.",
+        "url": "https://www.anthropic.com/news"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Jev-ov Discord je za nedelju dana prešao 100.000 ljudi, a lansirni snimak oko 40 miliona pregleda — za poređenje, Fable 5 je imao 15, a GPT-6 Astra 137 miliona.",
+        "url": "https://www.latent.space/p/jev"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Diogo Almeida najavljuje da TypeSafe ima još modela „u rezervoaru“ i objavio esej „The Bitterest Lesson“, u kom tvrdi da izbor zadatka i podataka nosi više od sirove računarske snage.",
+        "url": "https://www.latent.space/p/jev"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Uz rad o agentima za softversko inženjerstvo objavljen je i SWE Labeler — sistem koji zadatke iz repozitorijuma razvrstava po kategorijama pre treninga, jer napredak u jednoj kategoriji često znači nazadovanje u drugoj.",
+        "url": "https://huggingface.co/papers/2609.23377"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Cloudflare je za Python Workers angažovao dva glavna održavaoca Pyodide projekta, što je za Python-WebAssembly ekosistem konkretnija investicija od samog proizvoda.",
+        "url": "https://simonwillison.net/2026/Sep/21/cloudflare-python-worker/"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Jev API (TypeSafe AI)",
+        "tekst": "Model koji na ulaz prima „state“ objekat (tekst, lista stringova ili parovi ključ-vrednost), a na izlaz vraća tipizovane odluke sa verovatnoćama: da/ne, izbor i…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Cloudflare Python Workers (GA)",
+        "tekst": "Python je sada stabilno podržan na Cloudflare Workers-u: FastAPI/Django/Flask preko ASGI/WSGI konektora, Postgres preko Hyperdrive-a, i paketi openai, langchain…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "MiMo-V2.6-Flash-RL",
+        "tekst": "Xiaomijev MoE model, 309B ukupno / 15B aktivno, milion tokena konteksta, vizuelni i audio enkoder, MIT licenca. Trenirano jednim RL prolazom preko kodiranja, ag…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Logics-SWE-Qwen3.6-27B",
+        "tekst": "Model iz današnjeg rada o treniranju agenata za softversko inženjerstvo: umesto jednog treninga preko svih zadataka, treniraju se „eksperti“ po kategoriji zadat…"
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "RoboDawn: vision-language model koji upravlja robotom bez posebnog treninga",
+        "tekst": "Umesto da treniraju posebnu politiku za robota, autori su modelu koji „vidi i priča“ dali mali skup diskretnih komandi — pomeri se, rotiraj, otvori/zatvori hvat…"
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "One to More, More to One: treniranje agenata za softver po kategorijama zadataka",
+        "tekst": "Autori su primetili efekat klackalice: kad agenta treniraš na svim vrstama zadataka iz repozitorijuma odjednom, napredak u jednoj kategoriji ide uz pad u drugoj…"
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Sito",
+        "tekst": "Male firme koje na Instagramu i Facebooku dobijaju stotine poruka i komentara dnevno ne stižu da odvoje pravo pitanje kupca od spama, uvrede ili poruke koja je…"
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Dozvole",
+        "tekst": "AI asistenti na Macu traže pristup disku, mikrofonu, kameri i kalendaru, a korisnik posle par meseci nema pojma šta je sve odobrio kome."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Pre-let",
+        "tekst": "Kad Claude Code napravi izmenu, ne znaš koje testove treba pustiti, pa ili pustiš sve (sporo) ili nijedan (rizično), a CI ti se puni nepotrebnim poslovima."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Rub za Supabase",
+        "tekst": "Kad ti aplikacija na Supabase-u treba AI obradu — sažimanje, OCR, klasifikacija — Edge Functions u Deno-u ti ne daju Python biblioteke, a ceo server za to je pr…"
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Uputstvo uživo",
+        "tekst": "Kad sklapaš nameštaj, menjaš filter na klimi ili povezuješ ruter, papirno uputstvo ti ne govori da li si dobro uradio korak koji si upravo uradio."
+      },
+      {
+        "tip": "tema",
+        "naslov": "Jev je i dalje jedina tema",
+        "tekst": "Nedelju dana posle lansiranja, Jev drži tajmlajn: Simon Willison je objavio svoje beleške i predlaže da se ta klasa modela zove „decision models“ umesto „System…"
+      },
+      {
+        "tip": "tema",
+        "naslov": "Glasina: OpenAI-jev interni model rešio 100+ otvorenih matematičkih problema",
+        "tekst": "Na r/OpenAI se širi tvrdnja da je OpenAI 28. avgusta počeo da trenira interni model koji je za 24 dana rešio preko sto dugo otvorenih matematičkih problema, i d…"
+      },
+      {
+        "tip": "tema",
+        "naslov": "CI je postao mesto gde se troši vreme, ne pisanje koda",
+        "tekst": "Linearov tekst o prepravci CI-ja skupio je 155 poena i preko 160 komentara na Hacker News-u. Povod je konkretan: kad agenti pišu kod, broj PR-ova i testova rast…"
+      },
+      {
+        "tip": "tema",
+        "naslov": "Koliko se stvarno može pokrenuti kod kuće",
+        "tekst": "Najava Tima Dettmersa o kvantizaciji na 1,5 bita i pokretanju modela od 125B na jednoj kartici od 24 GB skupila je 110 poena na HN-u, dok se na r/LocalLLaMA par…"
+      },
+      {
+        "tip": "tema",
+        "naslov": "Huawei i pitanje ko će praviti čipove za ostatak sveta",
+        "tekst": "Vest da Huawei odlaže globalni plasman AI čipova jer domaća tražnja guta proizvodnju pokrenula je raspravu na r/LocalLLaMA. Zaključak većine: Nvidia i AMD za sa…"
+      }
+    ]
+  },
+  {
     "datum": "2026-09-21",
     "stavke": [
       {

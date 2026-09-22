@@ -1,0 +1,447 @@
+{
+  "datum": "2026-09-22",
+  "generisano": "2026-09-22T03:10:21.700Z",
+  "model": "claude-opus-5",
+  "ukratko": "Dan pripada Jev-u: Simon Willison je razložio kako tačno radi ta nova vrsta modela koja vraća brojeve umesto teksta, a CEO TypeSafe-a je u dvočasovnom intervjuu objasnio zašto su ga uopšte pravili — uz cenu od četiri centa po milionu ulaznih tokena. Uz to, Metin agent Muse je dobio ozbiljan 0-day, Cloudflare je izbacio Python Workers iz preview-a, a Xiaomi je pod MIT licencom objavio MoE model sa milion tokena konteksta.",
+  "vesti": [
+    {
+      "naslov": "Jev: sad znamo tačno kako radi i koliko košta",
+      "staSeDesilo": "Simon Willison je objavio detaljan razbor Jev-a. Model prima tekst ili polustrukturisane podatke (\"state\" objekat), a vraća brojeve: verovatnoću za da/ne pitanja (zovu ih \"Noul\", skraćeno od Bernoulli), izbor jedne od ponuđenih opcija sa raspodelom verovatnoća, i ocenu na skali koju sam definišeš. Naplaćuje se samo ulaz, izlaz je besplatan, po ceni od 0,042 dolara za milion ulaznih tokena. Istog dana izašao je i dvočasovni Latent Space intervju sa Diogom Almeidom (koautor InstructGPT rada), gde objašnjava RLCD — trening koji cilja na iskreno kalibrisane verovatnoće umesto na ljudske ocene, jer po njemu RLHF vodi u halucinacije i ulizivanje.",
+      "zastoJeBitno": "Ako u aplikaciji imaš gomilu malih odluka — je li ovaj komentar spam, u koju kategoriju ide unos, koliko je hitan tiket — do sad si za to zvao LLM i parsirao JSON. Ovo je red veličine jeftinije i vraća broj koji ide pravo u `if`.",
+      "kategorija": "modeli",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Sep/21/jev/"
+        },
+        {
+          "naziv": "Latent Space — intervju sa Diogom Almeidom",
+          "url": "https://www.latent.space/p/jev"
+        },
+        {
+          "naziv": "TypeSafe AI",
+          "url": "https://typesafe.ai/"
+        }
+      ]
+    },
+    {
+      "naslov": "Metin agent Muse ima 0-day koji mu lokalne aplikacije mogu preoteti",
+      "staSeDesilo": "Ars Technica piše da Muse, Metin macOS asistent koji Zuckerberg reklamira kao „napravljen od nule za privatnost i bezbednost“, ima ranjivost preko koje lokalno pokrenute aplikacije i komande iz terminala dobijaju punu kontrolu nad agentom. Problem je utoliko veći što Muse traži pristup WhatsAppu, mejlu, kalendaru i društvenim mrežama, plus macOS dozvole za disk, mikrofon, kameru i lokaciju. Amazon je u nedelju počeo da blokira Muse na svom sajtu.",
+      "zastoJeBitno": "Ovo je praktičan podsetnik šta znači dati agentu sve dozvole na jednom mestu: jedna rupa i napadač dobija sve naloge odjednom. Ako praviš nešto što traži široke dozvole, vredi pogledati kako je ovde probijeno.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/security/2026/09/muse-metas-extraordinarily-privileged-ai-assistant-has-a-serious-0-day/"
+        }
+      ]
+    },
+    {
+      "naslov": "Xiaomi objavio MiMo-V2.6-Flash-RL: 309B MoE pod MIT licencom",
+      "staSeDesilo": "Na Hugging Face je stigao MiMo-V2.6-Flash-RL — mixture-of-experts model (arhitektura gde se po upitu aktivira samo deo mreže) sa 309 milijardi parametara ukupno i 15 milijardi aktivnih. Podržava milion tokena konteksta, ima vizuelni enkoder od 681M i audio deo, a licenca je MIT. Xiaomi ističe da je RL trening rađen u jednom prolazu preko kodiranja, agenata, vizuelnih i sajber-bezbednosnih zadataka, umesto odvojeno po domenima.",
+      "zastoJeBitno": "MIT licenca i milion tokena konteksta znače da ovo neko može da servira preko OpenRouter-a ili da ga pustiš sam ako imaš 4–8 GPU-ova. Za tebe je najzanimljiviji signal da otvoreni modeli sad idu na agentske zadatke, ne samo na benchmark testove.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Hugging Face",
+          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL"
+        },
+        {
+          "naziv": "r/LocalLLaMA",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wmnw89/xiaomimimomimov26flashrl_hugging_face/"
+        }
+      ]
+    },
+    {
+      "naslov": "Cloudflare Python Workers izašli iz preview-a posle dve godine",
+      "staSeDesilo": "Python je sada prvorazredni jezik na Cloudflare Developer Platform-u. Rade FastAPI, Django i Flask preko ugrađenih ASGI/WSGI konektora, pristup Postgres-u i MySQL-u preko Hyperdrive-a sa standardnim drajverima (`asyncpg`, `aiomysql`), i paketi `openai`, `langchain` i `mcp` bez omotača u JavaScriptu. Ispod haube Python se kompajlira u WebAssembly preko Pyodide-a i vrti u njihovom workerd runtime-u, pa multiprocessing i threading ne rade.",
+      "zastoJeBitno": "Za Supabase projekte ovo je realna opcija da AI obradu i webhook-ove staviš na rub mreže u Pythonu, bez zasebnog servera. Ograničenje je što paketi sa C/C++/Rust ekstenzijama traže WebAssembly build.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Cloudflare blog",
+          "url": "https://blog.cloudflare.com/python-workers-ga/"
+        },
+        {
+          "naziv": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Sep/21/cloudflare-python-worker/"
+        }
+      ]
+    },
+    {
+      "naslov": "Kalifornija potpisala sedam zakona o struji i vodi za AI data centre",
+      "staSeDesilo": "Guverner Newsom je potpisao paket od sedam zakona koji treba da spreče da data centri prebacuju troškove komunalija na stanovništvo. Regulator (CPUC) dobija zadatak da uvede posebnu tarifnu kategoriju za data centre, a sami centri moraju da plate nadogradnju lokalne mreže i vodovoda. Novi projekti moraju unapred da prijave lokalnoj vlasti procenu potrošnje vode, podatke o energetskoj efikasnosti i plan za sušne periode.",
+      "zastoJeBitno": "Ovo je prvi put da se trošak AI infrastrukture zakonski zaključava na onoga ko je gradi, a ne na račune građana. Dugoročno može da se prelije na cene inferencije kod provajdera koji hostuju u Kaliforniji.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/998453/california-ai-data-center-bills"
+        }
+      ]
+    },
+    {
+      "naslov": "Linear: AI agenti su pretvorili CI u usko grlo, pa su ga prepravili",
+      "staSeDesilo": "Linear je objavio detaljan izveštaj kako im je CI postao kočnica otkad agenti pišu kod — test svite su se skoro učetvorostručile. Prešli su na runner-e trećih strana (34% brže izvršavanje), zamenili tsc sa `tsgo` native kompajlerom (73% brže provere tipova), skratili detekciju promena sa 26 na 8 sekundi, spojili sedam nezavisnih provera u dva batch posla (ušteda oko 87.000 runner-minuta mesečno) i podigli broj test shard-ova sa 4 na 8. Rezultat: čekanje na PR palo sa preko 6 na nešto više od 5 minuta.",
+      "zastoJeBitno": "Ako Claude Code otvara više PR-ova dnevno nego što ih ti stižeš da pregledaš, CI ti postaje glavni trošak vremena. Konkretni trikovi iz teksta (selektivni checkout, batch poslovi, tsgo) se prenose i na mali projekat.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Linear",
+          "url": "https://linear.app/now/ci-bottleneck-reworked"
+        },
+        {
+          "naziv": "Hacker News diskusija",
+          "url": "https://news.ycombinator.com/item?id=49792067"
+        }
+      ]
+    },
+    {
+      "naslov": "Tim Dettmers najavio „open source nedelju“: veliki modeli na jednoj kartici",
+      "staSeDesilo": "Tim Dettmers (autor bitsandbytes i QLoRA) najavio je nedelju objavljivanja iz svoje laboratorije: dva open-source projekta i četiri rada oko kvantizovane inferencije i agentskih sistema. Brojke koje pominje: 450 tokena u sekundi za Qwen 3.6 35B na 1,5 bita po težini na Mac/Metal-u, Qwen 3.8 Flash Next (125B) na jednoj kartici od 24 GB, i DeepSeek V4.1 (550B) na AMD/NVIDIA/Mac sistemima. Kod još nije objavljen — u tekstu izričito kaže da ne otkriva sve pre početka nedelje, koja kasni dan.",
+      "zastoJeBitno": "Ako se brojke potvrde, granica za pokretanje ozbiljnog modela kod kuće pada na jednu potrošačku karticu ili Mac. Do objave koda ovo su ipak samo najave autora, ne merenja nezavisnih ljudi.",
+      "kategorija": "istrazivanje",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "timdettmers.com",
+          "url": "https://timdettmers.com/2026/09/21/dlab-open-source-week/"
+        },
+        {
+          "naziv": "Hacker News diskusija",
+          "url": "https://news.ycombinator.com/item?id=49791647"
+        }
+      ]
+    },
+    {
+      "naslov": "Huawei odlaže globalni plasman AI čipova jer kineska tražnja guta celu proizvodnju",
+      "staSeDesilo": "Huawei je, prema izveštajima koje je zajednica danas naveliko delila, odložio izlazak svojih AI čipova na svetsko tržište jer domaća kineska tražnja premašuje ono što stignu da naprave. Praktično znači da Nvidia i AMD za sada nemaju konkurenta van Kine.",
+      "zastoJeBitno": "Manje konkurencije u čipovima znači manji pritisak na pad cena GPU-a i, posredno, na cene inferencije koje svi plaćamo.",
+      "kategorija": "kompanije",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "r/LocalLLaMA",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wmm89l/huawei_shelves_global_ai_chip_rollout_as_chinas/"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Jev API (TypeSafe AI)",
+      "tip": "model",
+      "opis": "Model koji na ulaz prima „state“ objekat (tekst, lista stringova ili parovi ključ-vrednost), a na izlaz vraća tipizovane odluke sa verovatnoćama: da/ne, izbor iz liste, ili ocena na skali. Jedan dokument, koliko god pitanja stane u kontekst.",
+      "kakoProbati": [
+        "Otvori console.typesafe.ai i napravi nalog",
+        "Pročitaj docs.typesafe.ai za format „state“ objekta i tri tipa pitanja (Noul, Choice, Score)",
+        "Uzmi jednu postojeću klasifikaciju iz svoje aplikacije i prebaci je na Jev, pa uporedi sa onim što ti sad vraća LLM"
+      ],
+      "link": "https://typesafe.ai/",
+      "cena": "0,042 $ za milion ulaznih tokena, izlaz se ne naplaćuje; ima li besplatnih kredita — proveri u konzoli"
+    },
+    {
+      "naziv": "Cloudflare Python Workers (GA)",
+      "tip": "alat",
+      "opis": "Python je sada stabilno podržan na Cloudflare Workers-u: FastAPI/Django/Flask preko ASGI/WSGI konektora, Postgres preko Hyperdrive-a, i paketi openai, langchain i mcp direktno. Lokalni razvoj ide kroz pywrangler, koji vrti punu simulaciju njihovog stack-a.",
+      "kakoProbati": [
+        "Instaliraj alat sa PyPI-ja: paket se zove `workers-py`, a komanda `pywrangler`",
+        "U kodu izloži FastAPI aplikaciju sa `from workers import asgi` i `Default = asgi.entrypoint(app)`",
+        "Poveži Hyperdrive na svoj Supabase Postgres i probaj jedan upit preko `asyncpg`",
+        "Imaj na umu da threading i multiprocessing ne rade u WebAssembly okruženju"
+      ],
+      "link": "https://blog.cloudflare.com/python-workers-ga/",
+      "cena": "Cena nije navedena u najavi — proveri na linku"
+    },
+    {
+      "naziv": "MiMo-V2.6-Flash-RL",
+      "tip": "model",
+      "opis": "Xiaomijev MoE model, 309B ukupno / 15B aktivno, milion tokena konteksta, vizuelni i audio enkoder, MIT licenca. Trenirano jednim RL prolazom preko kodiranja, agenata, vizuelnih i bezbednosnih zadataka.",
+      "kakoProbati": [
+        "Otvori model karticu na Hugging Face i proveri zahteve",
+        "Za probu preko API-ja sačekaj da se pojavi kod provajdera na OpenRouter-u",
+        "Za lokalno: vLLM sa tensor parallelism-om na 4–8 GPU-ova i `--enable-auto-tool-choice` ako hoćeš alate"
+      ],
+      "link": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "cena": "Težine besplatne (MIT), hardver je tvoj trošak"
+    },
+    {
+      "naziv": "Logics-SWE-Qwen3.6-27B",
+      "tip": "projekat",
+      "opis": "Model iz današnjeg rada o treniranju agenata za softversko inženjerstvo: umesto jednog treninga preko svih zadataka, treniraju se „eksperti“ po kategoriji zadatka pa se spajaju u jedan model. Objavljen je zajedno sa radom.",
+      "kakoProbati": [
+        "Otvori stranicu projekta na Hugging Face i pogledaj koje kategorije zadataka pokriva",
+        "Pročitaj rad na huggingface.co/papers/2609.23377 za opis SWE Labeler sistema za obeležavanje zadataka",
+        "Ako imaš repo sa dosta otvorenih tiketa, ideja o kategorizaciji zadataka pre nego što ih pustiš agentu vredi i bez modela"
+      ],
+      "link": "https://huggingface.co/Logics-MLLM/Logics-SWE-Qwen3.6-27B",
+      "cena": "besplatno"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Čovek koji je osmislio Apple Store, Ron Johnson, kaže da ne veruje u kladioničarsku opkladu Silicijumske doline na AI kupovinu jer je Appleova tajna oduvek bila u ljudima.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/21/the-man-who-built-apples-stores-doesnt-buy-silicon-valleys-bet-on-ai-shopping/"
+    },
+    {
+      "naslov": "Apple je zatvorio mogućnost vraćanja sa iOS 27 na iOS 26, pa ko je instalirao novu Siri — ostaje na njoj.",
+      "izvor": "MacRumors",
+      "url": "https://www.macrumors.com/2026/09/21/ios-27-downgrading-impossible/"
+    },
+    {
+      "naslov": "Novi Apple CEO John Ternus dao je prvi veliki intervju u kom priča o dizajnu iPhone Duo uređaja i o tome kuda ide Siri sa AI-jem.",
+      "izvor": "MacRumors",
+      "url": "https://www.macrumors.com/2026/09/21/john-ternus-interview-iphone-duo/"
+    },
+    {
+      "naslov": "Mac mini sa M6 čipom po Engadgetovoj recenziji ostaje najbolji kompaktni desktop, ali više nije ni približno tako povoljan kao ranije modeli.",
+      "izvor": "Engadget",
+      "url": "https://www.engadget.com/2263471/apple-mac-mini-m6-review/"
+    },
+    {
+      "naslov": "Merenja pokazuju da M6 Mac mini troši 4 W u mirovanju i 70 W pod punim opterećenjem, dok M5 Pro verzija ide do 145 W — korisno ako planiraš da ga ostaviš da vrti lokalni model.",
+      "izvor": "AAPL Ch.",
+      "url": "https://applech2.com/archives/20260922-apple-m6-and-m5pro-mac-mini-2026-power-consumption.html"
+    },
+    {
+      "naslov": "GhostBSD je ubacio AI asistenta Casper u sistem, što je pokrenulo raspravu u BSD zajednici o tome što FreeBSD nema jasnu politiku o doprinosima generisanim LLM-om, a NetBSD ih zabranjuje.",
+      "izvor": "OSTechNix",
+      "url": "https://ostechnix.com/ghostbsd-casper-ai-assistant/"
+    },
+    {
+      "naslov": "Najjeftinija iznajmljivanja GPU-ova danas: 80 GB A800 za 0,468 $/h i 96 GB RTX PRO 6000 Max-Q za 1,15 $/h na Vast.ai, a 192 GB MI300X za 2,39 $/h na RunPod-u.",
+      "izvor": "Overfeed",
+      "url": "https://overfeed.news/gpus"
+    },
+    {
+      "naslov": "Anthropic je sklopio partnerstvo sa Accenture-om oko ugrađene evaluacije modela kod klijenata.",
+      "izvor": "Anthropic",
+      "url": "https://www.anthropic.com/news"
+    },
+    {
+      "naslov": "Jev-ov Discord je za nedelju dana prešao 100.000 ljudi, a lansirni snimak oko 40 miliona pregleda — za poređenje, Fable 5 je imao 15, a GPT-6 Astra 137 miliona.",
+      "izvor": "Latent Space",
+      "url": "https://www.latent.space/p/jev"
+    },
+    {
+      "naslov": "Diogo Almeida najavljuje da TypeSafe ima još modela „u rezervoaru“ i objavio esej „The Bitterest Lesson“, u kom tvrdi da izbor zadatka i podataka nosi više od sirove računarske snage.",
+      "izvor": "Latent Space",
+      "url": "https://www.latent.space/p/jev"
+    },
+    {
+      "naslov": "Uz rad o agentima za softversko inženjerstvo objavljen je i SWE Labeler — sistem koji zadatke iz repozitorijuma razvrstava po kategorijama pre treninga, jer napredak u jednoj kategoriji često znači nazadovanje u drugoj.",
+      "izvor": "Hugging Face Papers",
+      "url": "https://huggingface.co/papers/2609.23377"
+    },
+    {
+      "naslov": "Cloudflare je za Python Workers angažovao dva glavna održavaoca Pyodide projekta, što je za Python-WebAssembly ekosistem konkretnija investicija od samog proizvoda.",
+      "izvor": "Simon Willison",
+      "url": "https://simonwillison.net/2026/Sep/21/cloudflare-python-worker/"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "RoboDawn: vision-language model koji upravlja robotom bez posebnog treninga",
+      "objasnjenje": "Umesto da treniraju posebnu politiku za robota, autori su modelu koji „vidi i priča“ dali mali skup diskretnih komandi — pomeri se, rotiraj, otvori/zatvori hvataljku. Model u petlji gleda sliku trenutnog stanja, odluči sledeći potez, izvrši ga i onda se prilagodi rezultatu. Dodali su i učenje iz par primera u samom promptu, da model shvati i kako se koristi interfejs i kako se rešava zadatak. Na testovima RoboTwin 2.0 C2R i RoboDojo nadmašuje nekoliko politika koje su posebno trenirane za te benchmarke.",
+      "zastoJeZanimljivo": "Ista logika radi i van robotike: kad model ima mali, jasan skup akcija i vidi rezultat svakog koraka, ne mora da se dotrenira za svaki novi zadatak. To je tačno šablon za „agent koji klikće po tvojoj aplikaciji“.",
+      "url": "https://huggingface.co/papers/2609.22966",
+      "github": null
+    },
+    {
+      "naslov": "One to More, More to One: treniranje agenata za softver po kategorijama zadataka",
+      "objasnjenje": "Autori su primetili efekat klackalice: kad agenta treniraš na svim vrstama zadataka iz repozitorijuma odjednom, napredak u jednoj kategoriji ide uz pad u drugoj, a prosek to sakrije. Zato prvo razvrstaju zadatke sistemom SWE Labeler, pa treniraju posebne „eksperte“ po kategoriji, a onda ih destilacijom spoje u jedan model koji se može isporučiti. Model je objavljen na Hugging Face-u.",
+      "zastoJeZanimljivo": "Ako pratiš kako se agenti ponašaju na tvom kodu, poruka je praktična: jedan prosečan broj uspešnosti ti ne govori ništa. Razdvoj tipove zadataka (bug fix, refaktor, novi feature) i meri ih zasebno.",
+      "url": "https://huggingface.co/papers/2609.23377",
+      "github": "https://huggingface.co/Logics-MLLM/Logics-SWE-Qwen3.6-27B"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Sito",
+      "problem": "Male firme koje na Instagramu i Facebooku dobijaju stotine poruka i komentara dnevno ne stižu da odvoje pravo pitanje kupca od spama, uvrede ili poruke koja je samo „hvala“.",
+      "zaKoga": "Vlasnici malih prodavnica i agencija u Srbiji koji vode naloge na mrežama",
+      "ulogaAi": "Jev prima tekst poruke i vraća verovatnoću za nekoliko pitanja: je li ovo pitanje o ceni, je li žalba, treba li ljudski odgovor. Sve iznad praga ide u red za čoveka, ostalo se automatski zatvara.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Napravi Supabase tabelu `poruke` sa poljima za tekst, izvor i sve verovatnoće koje Jev vrati",
+        "Poveži jedan izvor za početak — Instagram webhook ili samo ručni unos iz CSV-a",
+        "Angular ekran sa dve kolone: „traži odgovor“ i „može automatski“, sa klizačem za prag verovatnoće",
+        "Nedelju dana beleži gde si se ti i model razišli, pa podesi prag po tome"
+      ],
+      "inspiracija": "Simon Willisonov razbor Jev-a i cena od 0,042 $ po milionu ulaznih tokena"
+    },
+    {
+      "naziv": "Dozvole",
+      "problem": "AI asistenti na Macu traže pristup disku, mikrofonu, kameri i kalendaru, a korisnik posle par meseci nema pojma šta je sve odobrio kome.",
+      "zaKoga": "Svako ko na Macu drži više AI agenata i alata",
+      "ulogaAi": "Model čita spisak dozvola i za svaku aplikaciju u jednoj rečenici objasni šta ta kombinacija praktično omogućava i šta bi bila najgora posledica ako aplikacija bude kompromitovana.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "SwiftUI aplikacija koja čita TCC bazu dozvola i prikazuje ih grupisano po aplikaciji",
+        "Za svaku aplikaciju dodaj dugme koje otvara tačan panel u System Settings",
+        "Pozovi Claude Haiku 4.5 da za kombinaciju dozvola napiše kratko objašnjenje rizika",
+        "Dodaj poređenje sa prethodnim snimkom: šta je dobilo nove dozvole od prošlog puta"
+      ],
+      "inspiracija": "0-day u Metinom asistentu Muse, koji ima pun pristup macOS resursima"
+    },
+    {
+      "naziv": "Pre-let",
+      "problem": "Kad Claude Code napravi izmenu, ne znaš koje testove treba pustiti, pa ili pustiš sve (sporo) ili nijedan (rizično), a CI ti se puni nepotrebnim poslovima.",
+      "zaKoga": "Solo developeri i mali timovi koji puštaju agente na svoj repo",
+      "ulogaAi": "Model iz git diff-a i strukture projekta predloži koji testovi i lint provere su relevantni za baš tu izmenu, a alat ih pusti lokalno pre nego što išta ode na CI.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Napravi CLI u Node-u koji iz `git diff --name-only` izvuče izmenjene fajlove",
+        "Napravi mapu zavisnosti između fajlova i test fajlova (za Angular: import graf)",
+        "Za granične slučajeve pitaj model da predloži dodatne testove, i loguj koliko puta je bio u pravu",
+        "Dodaj git pre-push hook koji pušta samo taj podskup"
+      ],
+      "inspiracija": "Linearov izveštaj o tome kako im je CI postao usko grlo zbog AI agenata"
+    },
+    {
+      "naziv": "Rub za Supabase",
+      "problem": "Kad ti aplikacija na Supabase-u treba AI obradu — sažimanje, OCR, klasifikacija — Edge Functions u Deno-u ti ne daju Python biblioteke, a ceo server za to je previše.",
+      "zaKoga": "Tebe i svakog ko gradi na Supabase-u a hoće Python ekosistem",
+      "ulogaAi": "AI radi sam posao (sažimanje dokumenta, izvlačenje polja), a Cloudflare Python Worker je sloj koji to obrađuje na rubu i upisuje u Postgres.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Napravi FastAPI aplikaciju i izloži je sa `from workers import asgi`",
+        "Poveži Hyperdrive na Supabase Postgres i proveri jedan `asyncpg` upit",
+        "Dodaj webhook rutu koju Supabase zove kad se ubaci novi red u tabelu",
+        "Proveri da li su ti svi paketi dostupni kao WebAssembly wheel-ovi pre nego što se oslaniš na njih"
+      ],
+      "inspiracija": "Cloudflare Python Workers izašli iz preview-a"
+    },
+    {
+      "naziv": "Uputstvo uživo",
+      "problem": "Kad sklapaš nameštaj, menjaš filter na klimi ili povezuješ ruter, papirno uputstvo ti ne govori da li si dobro uradio korak koji si upravo uradio.",
+      "zaKoga": "Domaće tržište — kupci nameštaja, servisi, prodavci opreme koji hoće manje poziva podršci",
+      "ulogaAi": "Vision-language model gleda kadar sa kamere telefona, uporedi ga sa trenutnim korakom iz uputstva i kaže da li može dalje ili nešto nije na mestu.",
+      "tezina": 4,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Uzmi jedno konkretno uputstvo i razbij ga na korake sa opisom „kako treba da izgleda kad je gotovo“",
+        "SwiftUI aplikacija koja svakih par sekundi šalje kadar multimodalnom modelu sa tekstom tog koraka",
+        "Ograniči odgovor na tri opcije — gotovo, nije gotovo, pogrešno sklopljeno — da izbegneš priču",
+        "Testiraj na pet ljudi koji nisu videli uputstvo i meri na kom koraku model najviše greši"
+      ],
+      "inspiracija": "RoboDawn rad — VLM koji u petlji gleda stanje, odluči korak i prilagodi se rezultatu"
+    }
+  ],
+  "cene": "Danas je bilo dosta pomeranja: GLM 5.3 je pojeftinio oko 23 odsto (ulaz 0,91 → 0,70, izlaz 2,86 → 2,20), dok su se DeepSeek V4 Pro 0813 (0,66 → 1,32 i 1,98 → 3,96), DeepSeek V4.1 Flash (0,15 → 0,30 i 0,60 → 1,20) i GLM 5.3 Flash (0,075 → 0,15 i 0,25 → 0,50) udvostručili; Llama 4 Maverick je malo jeftinija (0,20 → 0,1875 ulaz). Na nedeljnom nivou GLM 5.3 je pao 50 odsto i sada je najjeftiniji u srednjoj klasi sa 0,70 za ulaz i 2,20 za izlaz, dok je DeepSeek V4 Pro 0813 u istoj klasi poskupeo 34 odsto. U jeftinoj klasi ulaz od 0,15 dele Qwen3.8 Flash, GLM 5.3 Flash i Mistral Small 4, a najniži izlaz ima Qwen3.8 Flash sa 0,47; među vrhunskim modelima i dalje je najjeftiniji Grok 4.6 (2 / 6).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Jev je i dalje jedina tema",
+        "oCemuSePrica": "Nedelju dana posle lansiranja, Jev drži tajmlajn: Simon Willison je objavio svoje beleške i predlaže da se ta klasa modela zove „decision models“ umesto „System One“, a Latent Space je izbacio dvočasovni intervju sa CEO-om. Zajednica ređa primere upotrebe — od lintovanja koda i sažimanja tool poziva, do kontrole brauzera glasom i modela kao sudije u LangChain lancima.",
+        "glasovi": "Simon Willison i Maggie Appleton se spore oko imena; Theo javno gura pushback oko upotrebe u coding agentima, na šta je Diogo Almeida odgovorio beleškom o „tiraniji KV keša“. Sam Almeida odbija ideju generičkog „JevBench“ benchmarka i traži da ljudi prave nove stvari umesto pedeset pete kopije njegovog API-ja.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "bluesky",
+            "naziv": "Simon Willison",
+            "url": "https://bsky.app/profile/simonwillison.net/post/3mw2tsop42c2u"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@theo",
+            "url": "https://x.com/theo/status/2100762304862384257"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@langchain",
+            "url": "https://x.com/langchain/status/2101454284927959080"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@CompleteSkeptic (Diogo Almeida)",
+            "url": "https://x.com/CompleteSkeptic/status/2098097767512179135"
+          }
+        ]
+      },
+      {
+        "naslov": "Glasina: OpenAI-jev interni model rešio 100+ otvorenih matematičkih problema",
+        "oCemuSePrica": "Na r/OpenAI se širi tvrdnja da je OpenAI 28. avgusta počeo da trenira interni model koji je za 24 dana rešio preko sto dugo otvorenih matematičkih problema, i da je formirana savetodavna grupa matematičara (pominju se Witten, Gowers, Hairer) da proceni rezultate i koordinira objavu. Ovo je i dalje nepotvrđena glasina sa foruma — nema zvanične objave OpenAI-ja.",
+        "glasovi": "Postovanje je pokrenuo /u/BilelKort, a diskusija se brzo pomerila sa „da li je istina“ na „šta ako AI proizvede više matematike nego što ljudi stignu da provere“. Skeptici traže da se sačeka bar jedan recenziran rad.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/OpenAI",
+            "url": "https://www.reddit.com/r/OpenAI/comments/1wmq961/ai_may_be_entering_a_completely_different_phase/"
+          }
+        ]
+      },
+      {
+        "naslov": "CI je postao mesto gde se troši vreme, ne pisanje koda",
+        "oCemuSePrica": "Linearov tekst o prepravci CI-ja skupio je 155 poena i preko 160 komentara na Hacker News-u. Povod je konkretan: kad agenti pišu kod, broj PR-ova i testova raste brže nego što infrastruktura stiže, pa čekanje na zeleno postaje glavno usko grlo.",
+        "glasovi": "Deo komentara hvali konkretne brojke (tsgo, batch poslovi, selektivni checkout), dok drugi deo tvrdi da je pravi problem u tome što agenti generišu previše testova sumnjive vrednosti, pa se leči simptom umesto uzroka.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=49792067"
+          }
+        ]
+      },
+      {
+        "naslov": "Koliko se stvarno može pokrenuti kod kuće",
+        "oCemuSePrica": "Najava Tima Dettmersa o kvantizaciji na 1,5 bita i pokretanju modela od 125B na jednoj kartici od 24 GB skupila je 110 poena na HN-u, dok se na r/LocalLLaMA paralelno raspakuje Xiaomijev MiMo-V2.6-Flash-RL pod MIT licencom. Zajednica odmah poredi MiMo sa GLM-om 5.3 u stvarnom radu sa kodom.",
+        "glasovi": "Dettmers ima kredibilitet zbog QLoRA i bitsandbytes, ali komentatori primećuju da kod još nije objavljen, pa za sada veruju na reč. Na Mastodonu korisnici koji testiraju MiMo kažu da je „solidan, ali ne tuče GLM 5.3“.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=49791647"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wmnw89/xiaomimimomimov26flashrl_hugging_face/"
+          },
+          {
+            "platforma": "mastodon",
+            "naziv": "@darkghosthunter",
+            "url": "https://mastodon.social/@darkghosthunter/117311980595352449"
+          }
+        ]
+      },
+      {
+        "naslov": "Huawei i pitanje ko će praviti čipove za ostatak sveta",
+        "oCemuSePrica": "Vest da Huawei odlaže globalni plasman AI čipova jer domaća tražnja guta proizvodnju pokrenula je raspravu na r/LocalLLaMA. Zaključak većine: Nvidia i AMD za sada nemaju ko da im pritisne cene.",
+        "glasovi": "Deo zajednice to vidi kao loše vesti za cene kartica, drugi ističu da je Huawei ionako imao problem sa softverskim ekosistemom pa konkurencija ni ne bi bila realna.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wmm89l/huawei_shelves_global_ai_chip_rollout_as_chinas/"
+          }
+        ]
+      }
+    ],
+    "snimci": []
+  },
+  "nedeljni": null
+}
