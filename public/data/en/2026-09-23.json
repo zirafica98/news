@@ -1,0 +1,588 @@
+{
+  "datum": "2026-09-23",
+  "generisano": "2026-09-23T03:06:19.294Z",
+  "model": "claude-opus-5-5",
+  "prevod": "claude-sonnet-5",
+  "ukratko": "Same day, two major releases: Anthropic dropped Claude Opus 5.5, and an hour later OpenAI shipped GPT-6 Sol and Luna. Both models offer a bit more for a lot less money, kicking off a real price war. Meanwhile, Xiaomi's MiMo-V2.6-Pro took the top spot among open models, and ahead of elections here, AI-generated propaganda profiles are spreading on Facebook.",
+  "vesti": [
+    {
+      "naslov": "Claude Opus 5.5: Fable 5.1-level performance, 40% cheaper than Opus 5",
+      "staSeDesilo": "Anthropic released Opus 5.5, the first model in the 5.5 family. They claim it matches Fable 5.1 on most tasks and particularly shines at agentic coding (an agent being an AI that executes steps on its own). Pricing is $4/$20 per million input/output tokens instead of $5/$25, cached input is 60% cheaper ($0.20), and output arrives about 30% faster. It's available immediately on claude.ai, Claude Code, via API (`claude-opus-5-5`), and on AWS, Google Cloud, and Azure. Sonnet 5.5 and Haiku 5.5 are announced for the coming weeks.",
+      "zastoJeBitno": "If you work in Claude Code, you get a stronger, faster model, and the five-hour limits on Pro, Max, and Team plans have also been raised, with one extra limit reset. Watch out though: the \"max\" thinking level is very expensive, burning through a lot of tokens — Simon Willison reports it sometimes used up all his output tokens before finishing a response.",
+      "kategorija": "modeli",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Anthropic",
+          "url": "https://www.anthropic.com/news/claude-opus-5-5"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/claude-opus-5-5-matches-fable-5-1-at-40-percent-lower-cost-as-anthropic-promises-to-fix-claudish-writing/"
+        },
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/09/22/anthropic-claude-opus-5-5-release/"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/998868/anthropic-claude-opus-5-5-cybersecurity"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/22/anthropic-releases-opus-5-5-with-lower-prices-and-fable-level-performance/"
+        }
+      ]
+    },
+    {
+      "naslov": "GPT-6 Sol and Luna: half the price, but not much smarter",
+      "staSeDesilo": "OpenAI released two new models from the GPT-6 generation. Sol costs $2/$10, and Luna $0.10/$0.50 per million tokens — roughly half the price of the GPT-5.6 models they replace. Independent analysis suggests the intelligence gains are small, with Sol scoring about 100 Elo points below GPT-5.6 Sol on GDPval (an office-work benchmark). The same day, OpenAI also announced improved prompt caching (reusing the repeated part of a prompt): more cache hits, diagnostics, and explicit cache breakpoints.",
+      "zastoJeBitno": "For apps making lots of calls, Luna is now one of the cheapest serious models you can build into a product. Also worth knowing: GPT-5.6 prices rise 25% in November, so it's worth switching to the new version.",
+      "kategorija": "modeli",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "OpenAI",
+          "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna"
+        },
+        {
+          "naziv": "OpenAI – prompt caching",
+          "url": "https://openai.com/index/better-prompt-caching-for-gpt-6"
+        },
+        {
+          "naziv": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/openais-gpt-6-sol-and-luna-cut-prices-in-half-but-barely-move-the-needle-on-performance/"
+        },
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/ai/2026/09/new-anthropic-openai-models-make-same-promise-a-little-more-for-a-lot-less-money/"
+        }
+      ]
+    },
+    {
+      "naslov": "MiMo-V2.6-Pro is the new best open model, and Anthropic accuses Xiaomi of \"vacuuming up\" Claude",
+      "staSeDesilo": "Xiaomi released MiMo-V2.6-Pro: 1.02T parameters, 42B of them active, under an MIT license. It scores 46 on the Artificial Analysis index, putting it in first place among open models, with API pricing at $0.435/$0.87. RL training (reinforcement learning) cost about $2.6 million, and Xiaomi is also open-sourcing the training environments and code. Anthropic claims Xiaomi pulled some of its training data from Claude.",
+      "zastoJeBitno": "An open model at this level and price is available via OpenRouter, so you can benchmark it against closed models for your own tasks. The distillation accusation (training on another model's outputs) explains why Anthropic is rolling out \"preserved thinking\" protection for new API accounts.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/xiaomis-affordable-flagship-ai-leads-the-open-models-and-anthropic-says-claude-helped-get-it-there/"
+        },
+        {
+          "naziv": "Latent Space / AINews",
+          "url": "https://www.latent.space/p/ainews-xiaomi-mimo-v26-pro-1t-a42b"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-09-22"
+        }
+      ]
+    },
+    {
+      "naslov": "AI propaganda against the Student List: dozens of fake profiles posting identical content",
+      "staSeDesilo": "Ahead of the October 25 parliamentary elections, Nedeljnik found at least ten Facebook profiles posting identical content against the \"Student List\" party. The faces and voices in the videos are AI-generated. Each video was boosted with paid promotion to reach as many people as possible, and the profiles carry no information about who's behind them.",
+      "zastoJeBitno": "This is the first serious domestic example of mass AI-generated propaganda. The goal wasn't to be convincing, but to flood the space. For anyone building content-verification tools, this is a real problem on the local market.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "Nedeljnik",
+          "url": "https://www.nedeljnik.rs/ai-propaganda-protiv-studentske-liste-fantomski-profili-se-sire-fejsbukom/"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI claims internal model solved over 100 open math problems",
+      "staSeDesilo": "OpenAI says a new internal model, after just a month of training, solved more than 100 long-standing math problems — TLDR notes the Navier-Stokes millennium problem is reportedly among them. After criticism from mathematicians, OpenAI set up an independent advisory group at the Institute for Advanced Study. That group, however, has no say in how fast OpenAI pursues its research.",
+      "zastoJeBitno": "For now this is just a company claim that no one outside has verified. Treat it as an announcement until mathematicians check the proofs.",
+      "kategorija": "istrazivanje",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/openai-says-its-internal-model-solved-over-100-long-standing-math-problems-after-just-a-month-of-training/"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-09-22"
+        }
+      ]
+    },
+    {
+      "naslov": "JetBrains Junie Local: a coding agent that runs entirely on your Mac",
+      "staSeDesilo": "JetBrains added a local mode to its Junie agent: a quantized 27B Qwen model (3.6 by default, 3.8 optional) runs on your machine, with no cloud and no credits burned. It's activated with the /local command and downloads about 15 GB. It's currently only in nightly builds and requires Apple Silicon M5 or newer with at least 64 GB of RAM.",
+      "zastoJeBitno": "Code never leaves the machine, which matters for clients with strict confidentiality agreements. The docs themselves warn that small models can lose the thread during agentic work.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Startit",
+          "url": "https://startit.rs/ovaj-asistent-za-ai-programiranje-ti-nudi-da-prestanes-da-ga-placas-dolazi-sa-ugradenim-optimizovanim-open-weights-modelom/"
+        }
+      ]
+    },
+    {
+      "naslov": "Senate weighs power to halt release of dangerous models, OpenAI calls for self-improvement standards",
+      "staSeDesilo": "Per Reuters, US senators are negotiating a bill that would require developers of the most powerful models to mitigate known catastrophic risks before release. One version would give the federal government authority to block the release of a model it deems unsafe. The same day, OpenAI called for international standards on recursive self-improvement — AI building the next generation of AI — and 20 countries adopted a declaration stating AI must remain under human control.",
+      "zastoJeBitno": "For now these are negotiations and declarations, not laws. Still, if passed, the ability to block a model's release would directly affect when and which models reach developers.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "ICT Business",
+          "url": "https://www.ictbusiness.info/vijesti/senat-razmatra-blokadu-ai-modela"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/openai-calls-for-international-standards-on-ai-that-could-improve-itself/"
+        },
+        {
+          "naziv": "Danas",
+          "url": "https://www.danas.rs/svet/usvojena-deklaracija-sta-20-zemlja-predlaze-kako-bi-vestacka-inteligencija-ostala-pod-kontrolom-ljudi/"
+        }
+      ]
+    },
+    {
+      "naslov": "Microsoft takes down EvilTokens, a scam platform powered by an AI chatbot",
+      "staSeDesilo": "Microsoft, along with other industry partners, shut down EvilTokens. The platform sold access via Telegram for a $1,500 signup fee plus $500 a month, and it had breached 12,000 Microsoft accounts. Its chatbot analyzed victims' inboxes, picked the most profitable targets, and wrote fake emails impersonating coworkers to get employees to wire money to the attackers.",
+      "zastoJeBitno": "AI has cut the cost of targeted fraud down to subscription-service prices. If you're building an app with email-based login, it's worth tightening up 2FA and adding warnings for suspicious payment requests.",
+      "kategorija": "bezbednost",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/security/2026/09/microsoft-disrupts-ai-assisted-platform-that-compromised-12000/"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Claude Opus 5.5 in Claude Code",
+      "tip": "model",
+      "opis": "Anthropic's new model, faster and cheaper than Opus 5, and the strongest on agentic coding. Early Reddit impressions say it's especially quick at spotting UI bugs.",
+      "kakoProbati": [
+        "Update Claude Code (`claude update`) and run `claude` in your project",
+        "Use `/model` to select Opus 5.5",
+        "For everyday work, stick to medium or high effort — \"max\" reportedly burns through up to 6x more of your limit",
+        "Via API, use the model `claude-opus-5-5`"
+      ],
+      "link": "https://www.anthropic.com/news/claude-opus-5-5",
+      "cena": "Included in subscription (Pro/Max/Team); API $4 / $20 per 1M tokens"
+    },
+    {
+      "naziv": "GPT-6 Luna via API",
+      "tip": "model",
+      "opis": "OpenAI's cheapest new model, good for in-app calls like classification, summaries, and answering user questions.",
+      "kakoProbati": [
+        "In the OpenAI API console or via OpenRouter, select GPT-6 Luna (check the exact ID at the link)",
+        "From the terminal: `pip install -U llm`, then `llm -m gpt-6-luna \"your prompt\"`",
+        "Keep your system prompt at the start of the request to take advantage of caching (cached input $0.01/1M)"
+      ],
+      "link": "https://openai.com/index/introducing-gpt-6-sol-and-luna",
+      "cena": "$0.10 input / $0.50 output per 1M tokens"
+    },
+    {
+      "naziv": "llm 0.36 and llm-anthropic 0.29",
+      "tip": "alat",
+      "opis": "Simon Willison's CLI tool for quickly comparing models from the terminal. Now supports GPT-6 Sol, Luna, and Opus 5.5.",
+      "kakoProbati": [
+        "`pip install -U llm` then `llm install -U llm-anthropic`",
+        "Add keys: `llm keys set openai` and `llm keys set anthropic`",
+        "Compare the same prompt: `llm -m claude-opus-5.5 \"...\"` and `llm -m gpt-6-sol \"...\"`",
+        "Review history with `llm logs`"
+      ],
+      "link": "https://simonwillison.net/2026/Sep/22/llm/",
+      "cena": "free (you only pay for API calls)"
+    },
+    {
+      "naziv": "Devin Cloud from the terminal",
+      "tip": "funkcija",
+      "opis": "The Devin CLI now offloads tasks to Devin's cloud VM, and you monitor and steer it from your terminal. There's also `devin ssh` for direct machine access.",
+      "kakoProbati": [
+        "Install the Devin CLI following the instructions on Cognition's site (check the link)",
+        "Start a session from the terminal and push it to the cloud",
+        "SWE-2 sessions are free until October 8"
+      ],
+      "link": "https://tldr.tech/ai/2026-09-22",
+      "cena": "Free SWE-2 sessions until October 8, check the link afterward"
+    },
+    {
+      "naziv": "ai-memory",
+      "tip": "projekat",
+      "opis": "Open-source long-term memory for coding agents. Pause work in Claude Code, open Codex in the same folder, and pick up right where you left off without re-explaining the architecture or past failed attempts.",
+      "kakoProbati": [
+        "Open the repo and follow the README for setup",
+        "Hook it up to Claude Code in one project",
+        "Try switching agents: pause a task in one and resume it in another"
+      ],
+      "link": "https://github.com/akitaonrails/ai-memory",
+      "cena": "free"
+    },
+    {
+      "naziv": "Junie Local (JetBrains)",
+      "tip": "funkcija",
+      "opis": "A coding agent that runs entirely locally using a 27B Qwen model, with no cloud and no credits.",
+      "kakoProbati": [
+        "You'll need a Mac with an M5 chip or newer, 64 GB of RAM, and about 21 GB of free storage",
+        "Install the Junie nightly build",
+        "Type `/local` in a session (downloads about 15 GB), and switch models with `/model`"
+      ],
+      "link": "https://startit.rs/ovaj-asistent-za-ai-programiranje-ti-nudi-da-prestanes-da-ga-placas-dolazi-sa-ugradenim-optimizovanim-open-weights-modelom/",
+      "cena": "free, runs locally"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "In a UN speech, Trump said the US is \"officially\" renaming AI to \"super intelligence,\" because the word \"artificial\" sounds fake to him.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/998816/donald-trump-ai-super-intelligence"
+    },
+    {
+      "naslov": "Meta patched a hole in its Muse app for macOS that let local code redirect transcription to a third-party server and hijack the account.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/998679/meta-muse-patch-zero-day-exploit-ai-agent"
+    },
+    {
+      "naslov": "Meta admitted Muse is \"heavily inspired\" by OpenClaw, down to the name and content of some workspace files.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/22/meta-admits-muses-likeness-to-openclaw-isnt-a-coincidence/"
+    },
+    {
+      "naslov": "Rabbit launched OS3, a cloud agent that runs on Windows, Mac, and Linux, also accessible via Telegram and iMessage — no R1 device needed.",
+      "izvor": "Wired",
+      "url": "https://www.wired.com/story/rabbit-r1-os3-jesse-lyu/"
+    },
+    {
+      "naslov": "Qualcomm unveiled two new phone chips, with the higher-end one able to run a 30B-parameter MoE model locally.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/22/qualcomm-launches-two-new-smartphone-chips-with-emphasis-on-ai/"
+    },
+    {
+      "naslov": "The Pentagon admitted overreliance on AI contributed to a missile strike on a school in Iran; the story hit 468 points on Hacker News.",
+      "izvor": "Bloomberg",
+      "url": "https://www.bloomberg.com/graphics/2026-iran-school-attack/"
+    },
+    {
+      "naslov": "British Columbia is suing OpenAI, demanding it pay for a new school in Tumbler Ridge after a shooter reportedly used ChatGPT to plan an attack.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/tech-policy/2026/09/lawsuit-demands-openai-pay-for-new-school-after-chatgpt-used-in-shooting/"
+    },
+    {
+      "naslov": "Cisco Talos built a tool for detecting chatbot-powered malware and uncovered an autonomous, AI-run attack system with no humans in the loop.",
+      "izvor": "Wired",
+      "url": "https://www.wired.com/story/a-tool-for-tracking-ai-integrated-malware-uncovered-an-autonomous-command-system/"
+    },
+    {
+      "naslov": "Sam Altman says OpenAI won't IPO in 2026, calling it bad timing given current AI safety concerns.",
+      "izvor": "ICT Business",
+      "url": "https://www.ictbusiness.info/poslovanje/openai-odgada-izlazak-na-burzu"
+    },
+    {
+      "naslov": "Anthropic signed its first Australian data center lease, on a 2.16 GW campus expected to bring initial capacity online in 2027.",
+      "izvor": "ICT Business",
+      "url": "https://www.ictbusiness.info/vijesti/anthropic-zakupio-australski-podatkovni-centar"
+    },
+    {
+      "naslov": "Hugging Face Transformers can now load llama.cpp quantized models directly.",
+      "izvor": "Hugging Face",
+      "url": "https://huggingface.co/blog/transformers-llama-cpp-quants"
+    },
+    {
+      "naslov": "Accenture evaluators will work inside Anthropic reviewing model safety, with employee-like access.",
+      "izvor": "Ben's Bites",
+      "url": "https://www.bensbites.com/p/what-can-you-build-with-jev"
+    },
+    {
+      "naslov": "Toyota plans 400,000 factory robots and $6.42 billion a year starting 2028, while workers are already training humanoid ELEY robots.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/ai/2026/09/toyota-claims-plan-for-400000-factory-robots-wont-replace-human-workers/"
+    },
+    {
+      "naslov": "Biological Computing Co. is offering a text-to-video model via AWS that's reportedly 5x faster and 80% cheaper thanks to a layer derived from real neurons — the base model is undisclosed.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/a-tiny-software-layer-from-lab-grown-neurons-promises-faster-cheaper-ai-video/"
+    },
+    {
+      "naslov": "Shopify CEO Tobi Lütke criticized employees for sending coworkers unread AI-written emails and code, a year after mandating AI use company-wide.",
+      "izvor": "Startit",
+      "url": "https://startit.rs/ne-bacajte-kasikare-ai-dubreta-na-svoje-kolege-ceo-shopifyja-kritikuje-zaposlene-zbog-neodgovornog-koriscenja-ai-nakon-naredbe-da-se-ai-koristi-kao-da-nema-sutra/"
+    },
+    {
+      "naslov": "Zagreb hosted its second \"Claude Code Saturday,\" where 16 attendees built first prototypes of their business ideas.",
+      "izvor": "Bug.hr",
+      "url": "https://www.bug.hr/dogadjaji/u-zagrebu-odrzano-drugo-izdanje-radionice-posvecene-vibe-codingu-63058"
+    },
+    {
+      "naslov": "Apple is distributing $250 million in Siri settlement payouts, up to $95 per iPhone; claims are due by December 21 (US customers only).",
+      "izvor": "Wired",
+      "url": "https://www.wired.com/story/how-to-claim-your-cut-of-apple-250-million-siri-settlement/"
+    },
+    {
+      "naslov": "a16z is launching the \"Horowitz Andreessen Academy\" with $42 million and partners like OpenAI, Anthropic, and Google; it won't grant degrees but will offer internships at partner firms.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/998813/andreessen-horowitz-ai-academy"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "RRSI: an agent that fixes its own \"harness\" without overfitting to tests",
+      "objasnjenje": "The harness is everything surrounding a model: prompts, tools, memory, and context management. Existing methods that automatically tweak these parts often end up \"memorizing\" the test tasks. RRSI limits how many changes can be proposed at once, uses a critic to reject changes tailored specifically to the test, and a \"pruner\" that strips out tiny, costly, or useless changes.",
+      "zastoJeZanimljivo": "If you're building your own agent, this is a practical recipe for making automated prompt-and-tool tuning generalize to new tasks instead of just gaming the benchmark. The code comes from Google Research.",
+      "url": "https://huggingface.co/papers/2609.24972",
+      "github": "https://github.com/google-research/rrsi"
+    },
+    {
+      "naslov": "D-RAC: feeding any document into RAG without losing the tables",
+      "objasnjenje": "Every document (Word, slides, scans) is first converted to PDF. A single pass through a multimodal model then turns it into search-friendly Markdown, where tables get rewritten as standalone sentences while the heading hierarchy is preserved. Chunking afterward is handled via IDs, so the model never has to retype the original text.",
+      "zastoJeZanimljivo": "This is a simple, cheap pattern for anyone building an \"ask your documents\" app on Supabase + pgvector.",
+      "url": "https://huggingface.co/papers/2609.24220",
+      "github": null
+    },
+    {
+      "naslov": "OmniEdu: open models for education and teaching",
+      "objasnjenje": "A family of models at 4B, 9B, and 27B, fine-tuned on school curriculum material. Beyond solving problems, they're trained to spot exactly where a student went wrong and guide them step by step, rather than just handing over the answer. Training relies on roughly 70,000 carefully curated examples.",
+      "zastoJeZanimljivo": "It shows how a relatively small dataset can be organized by skill area — a solid template for building a tutor tailored to the Serbian curriculum.",
+      "url": "https://huggingface.co/papers/2609.23088",
+      "github": "https://github.com/haolpku/Omni-Edu"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "My Bench",
+      "problem": "After a day like this, nobody knows which model actually pays off for their specific app. General benchmarks don't measure your prompts, and Opus 5.5 burns through far more tokens per task than GPT-6 Sol.",
+      "zaKoga": "Indie developers and small teams paying for API usage out of pocket",
+      "ulogaAi": "The same set of your own prompts gets run against multiple models via OpenRouter. A cheap model (e.g. GPT-6 Luna) grades the responses, and the app computes the real cost per task.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "An Angular page where you paste 10–20 of your real prompts and expected answers",
+        "A Supabase Edge Function that sends them to 3–4 models via the OpenRouter API and logs tokens and latency",
+        "A table showing accuracy, output token count, and cost per task for each model",
+        "An \"export as JSON\" button to share results with your team"
+      ],
+      "inspiracija": "The simultaneous launch of Opus 5.5 and GPT-6 Sol/Luna, plus a Reddit comparison of token usage (119K vs. 31K per task)"
+    },
+    {
+      "naziv": "No More Slop",
+      "problem": "AI-written emails and messages that nobody actually reads waste the recipient's time: \"it's not X, it's Y\" phrasing, three-bullet lists, lots of words and no point.",
+      "zaKoga": "IT professionals in Serbia who write emails and Slack messages daily",
+      "ulogaAi": "Before sending, a cheap model scores the text (how \"AI-template-y\" it is, whether the point comes first) and suggests a shorter version with the same meaning, in Serbian or English.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "A Chrome extension (Manifest V3) with a button inside Gmail",
+        "A call to GPT-6 Luna via a small Supabase Edge Function so the API key never sits in the extension",
+        "A prompt listing common AI clichés and requiring the point to be moved to the top",
+        "Display a 1–10 score plus a \"shorten to 3 sentences\" suggestion"
+      ],
+      "inspiracija": "Startit's piece on Shopify's \"AI slop\" and Opus 5.5's promise of less \"Claude-ish\" writing"
+    },
+    {
+      "naziv": "Ad Radar",
+      "problem": "Ahead of the October 25 election, paid AI videos from fake profiles are flooding Facebook, and it's hard to see how many profiles are sharing the same content.",
+      "zaKoga": "Journalists, fact-checking teams, and researchers in Serbia",
+      "ulogaAi": "Pulls from Meta's public Ad Library, clusters near-identical ads by text and transcript, and flags networks of profiles posting the same content.",
+      "tezina": 4,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Check the terms of the Meta Ad Library API for political ads in Serbia",
+        "A script that scrapes ads and stores them in a Supabase table",
+        "Text embeddings in pgvector, clustering similar ads",
+        "A simple Angular dashboard showing profile clusters and a timeline"
+      ],
+      "inspiracija": "Nedeljnik's investigation into AI propaganda against the Student List"
+    },
+    {
+      "naziv": "Middle School Exam Tutor",
+      "problem": "Eighth-graders practice for their final exams, but when they get stuck, there's no one to show them where they went wrong, apart from expensive private tutoring.",
+      "zaKoga": "Eighth-grade students and parents in Serbia",
+      "ulogaAi": "The student photographs their worked solution. The model spots the first mistake and gives a hint instead of the answer, following OmniEdu's \"diagnose then support\" approach.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "A SwiftUI app with camera and VisionKit paper scanning",
+        "A Supabase database of problems from publicly released exam tests, with correct solutions",
+        "An Edge Function that sends the image and correct answer to GPT-6 Luna with a \"find the first mistake, don't reveal the answer\" prompt",
+        "Track mistake types by topic and send parents a weekly report"
+      ],
+      "inspiracija": "The OmniEdu paper on Hugging Face and GPT-6 Luna's very low price"
+    },
+    {
+      "naziv": "Clip It",
+      "problem": "Local podcasters and speakers have hours of recordings but no time to manually cut short clips for Instagram and TikTok.",
+      "zaKoga": "Podcasters, YouTubers, and meetup organizers in the region",
+      "ulogaAi": "The Serbian transcript is sent to a model, which picks out the 5–10 strongest moments with timestamps and suggested titles, then ffmpeg cuts the clips automatically.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Check out the open-source AutoClip project to see what you can reuse for the pipeline",
+        "Timestamped transcription via a Whisper model",
+        "A prompt that returns JSON with start, end, and title for each clip",
+        "Supabase Storage for uploads plus an ffmpeg worker that cuts clips and adds captions"
+      ],
+      "inspiracija": "The GitHub Trending project zhouxiaoka/autoclip"
+    }
+  ],
+  "cene": "The biggest price drop today was DeepSeek V4.1 Flash, falling from $0.30/$1.20 to $0.10/$0.50, making it the cheapest entry point in the budget-model tier. gpt-oss-20b also got cheaper ($0.03/$0.13 → $0.018/$0.09), while GLM 5.3 ($0.70/$2.20 → $0.84/$2.64) and Qwen3.6 27B ($0.30/$2 → $0.32/$2.70) went up. Among new models, Claude Opus 5.5 costs $4/$20, cheaper than Opus 5 ($5/$25), GPT-6 Sol is at $2/$10, and GPT-6 Luna at $0.10/$0.50 — matching the cheapest model in its tier on input price, though Qwen3.8 Flash still has the cheapest output at $0.47.",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Opus 5.5 vs. GPT-6 Sol: who won on the day of dueling launches",
+        "oCemuSePrica": "Two major models launched an hour apart, and Reddit and Bluesky are full of benchmark and price comparisons. Opus leads on almost every test, but Sol uses far fewer tokens per task, making its real-world cost noticeably lower.",
+        "glasovi": "On r/ClaudeAI, the mood is largely excitement about the speed and more natural tone (\"Claude is BACK!\"), though some users suspect Anthropic is publishing results at \"max\" effort, which they say burns 6x more of the usage limit than what subscribers use day to day. Simon Willison is calling this \"the new price war.\"",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/OpenAI",
+            "url": "https://www.reddit.com/r/OpenAI/comments/1wnk30g/opus_55_and_gpt6_sol_dropped_on_the_same_day_so_i/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1wnejyx/did_anthropic_just_find_a_new_way_to_benchmax/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1wnpit2/claude_is_back/"
+          },
+          {
+            "platforma": "bluesky",
+            "naziv": "Simon Willison",
+            "url": "https://bsky.app/profile/simonwillison.net/post/3mw5g6izoms2n"
+          }
+        ]
+      },
+      {
+        "naslov": "Jev and the return of specialized decision models",
+        "oCemuSePrica": "Jev doesn't write text — it returns a yes/no, a choice, or a score with a probability attached. The community is already wiring it into everything from Chrome extensions to LangSmith. The debate is whether this counts as a genuinely new category or is just a well-packaged classifier.",
+        "glasovi": "Karpathy sees it as a point on the Pareto frontier for \"fast intelligence without reasoning,\" while Clement Delangue calls it proof there's demand for specialized models. On Mastodon, skeptics argue it's just a fine-tuned frozen LLM with a logit-reading layer on top — interesting, but not revolutionary.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@karpathy",
+            "url": "https://x.com/karpathy/status/2102124533729955960"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@ClementDelangue",
+            "url": "https://x.com/ClementDelangue/status/2102071917926613310"
+          },
+          {
+            "platforma": "mastodon",
+            "naziv": "@abesamma",
+            "url": "https://hachyderm.io/@abesamma/117317701868632842"
+          },
+          {
+            "platforma": "youtube",
+            "naziv": "Two Minute Papers",
+            "url": "https://www.youtube.com/watch?v=qBBRRsH0rQc"
+          }
+        ]
+      },
+      {
+        "naslov": "MiMo-V2.6: open RL environments as the new \"gold reserve\"",
+        "oCemuSePrica": "Xiaomi didn't just release the best open model — it's also promising around 7,000 RL training environments, along with the code. The community is especially struck by the fact that RL training reportedly cost only about $2.6 million.",
+        "glasovi": "Thom Wolf and others argue that quality open RL environments are now as strategically important as pretraining datasets used to be. Some in the community caution that the full task sets haven't actually been released yet.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@XiaomiMiMo",
+            "url": "https://x.com/XiaomiMiMo/status/2102138559952290106"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@ArtificialAnlys",
+            "url": "https://x.com/ArtificialAnlys/status/2102128560962187701"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@Thom_Wolf",
+            "url": "https://x.com/Thom_Wolf/status/2102137611011674173"
+          }
+        ]
+      },
+      {
+        "naslov": "OpenAI's \"100 solved problems\": biggest claim, least verified",
+        "oCemuSePrica": "The claim that an internal model solved over 100 open math problems spread fast. At the same time, people are asking who actually verified it independently, since the proofs haven't been made public.",
+        "glasovi": "@AndrewCurran_ and other accounts amplified the story, and AINews itself flagged it as one of the most important yet least independently verified items of the day. Timnit Gebru and Emily Bender, writing in MIT Technology Review, warn of a summer of AI hype where company claims get repeated without scrutiny.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@OpenAI",
+            "url": "https://x.com/OpenAI/status/2102093145051943229"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@AndrewCurran_",
+            "url": "https://x.com/AndrewCurran_/status/2102121553211412975"
+          }
+        ]
+      },
+      {
+        "naslov": "Hacker News: AI, the military, and the erosion of judgment",
+        "oCemuSePrica": "Bloomberg's report that overreliance on AI contributed to the strike on a school in Iran sparked a major debate about accountability. The same day, an essay titled \"AI has no wisdom, and neither will you\" drew over 500 comments on whether constant reliance on AI is dulling human judgment.",
+        "glasovi": "Some commenters blame the procedures and the people who failed to double-check what the system suggested, others blame the tools themselves and the pressure to use them. Around the essay, developers who say AI makes them more productive are clashing with those who say they're losing skills.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=49806430"
+          },
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=49799965"
+          }
+        ]
+      }
+    ],
+    "snimci": [
+      {
+        "naslov": "Yes, Jev Is Insane, But There's A Catch",
+        "kanal": "Two Minute Papers",
+        "opis": "Explains how Jev, a model that returns decisions instead of text, works and where its limits are.",
+        "url": "https://www.youtube.com/watch?v=qBBRRsH0rQc"
+      },
+      {
+        "naslov": "Opus 5.5 Is Crazy Good and GPT-6-Sol Launched Too",
+        "kanal": "Matt Wolfe",
+        "opis": "A rundown of both of today's major launches, Opus 5.5 and GPT-6 Sol, with examples.",
+        "url": "https://www.youtube.com/watch?v=0t-eWrGFZyA"
+      },
+      {
+        "naslov": "GPT-6 SOL AND LUNA ARE OUT!!!",
+        "kanal": "Matthew Berman",
+        "opis": "First impressions and tests of OpenAI's new Sol and Luna models.",
+        "url": "https://www.youtube.com/watch?v=5MFORiebZks"
+      },
+      {
+        "naslov": "Did Elon catch up? (Grok 4.7 is here)",
+        "kanal": "Matthew Berman",
+        "opis": "Checks whether Grok 4.7 is really catching up to the competition on coding.",
+        "url": "https://www.youtube.com/watch?v=MJllZbpvrAc"
+      }
+    ]
+  },
+  "nedeljni": null
+}
