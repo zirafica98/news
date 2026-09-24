@@ -1,6 +1,6 @@
 {
-  "datum": "2026-09-23",
-  "azurirano": "2026-09-23T03:02:55.794Z",
+  "datum": "2026-09-24",
+  "azurirano": "2026-09-24T03:02:52.192Z",
   "izvor": {
     "naziv": "OpenRouter",
     "url": "https://openrouter.ai/models"
@@ -110,8 +110,8 @@
           "kontekst": 1048576,
           "kesUlaz": 0.3,
           "promena7": {
-            "ulaz": 13.3,
-            "izlaz": 12.9
+            "ulaz": 0,
+            "izlaz": 0
           },
           "promena30": null,
           "prethodnik": {
@@ -193,22 +193,22 @@
           "id": "deepseek/deepseek-v4-pro-0813",
           "naziv": "DeepSeek V4 Pro 0813",
           "provajder": "deepseek",
-          "ulaz": 1.32,
-          "izlaz": 3.96,
+          "ulaz": 0.462,
+          "izlaz": 1.386,
           "objavljen": "2026-08-12",
           "kontekst": 1048576,
-          "kesUlaz": 0.044,
+          "kesUlaz": 0.0154,
           "promena7": {
-            "ulaz": 34.2,
-            "izlaz": 34.2
+            "ulaz": -20.3,
+            "izlaz": -20.3
           },
           "promena30": null,
           "prethodnik": {
             "naziv": "DeepSeek V4 Pro 0423",
-            "ulaz": 0.9553,
-            "izlaz": 1.9105,
-            "razlikaUlaz": 38.2,
-            "razlikaIzlaz": 107.3
+            "ulaz": 0.9396,
+            "izlaz": 1.8792,
+            "razlikaUlaz": -50.8,
+            "razlikaIzlaz": -26.2
           }
         },
         {
@@ -326,22 +326,22 @@
           "id": "deepseek/deepseek-v4.1-flash",
           "naziv": "DeepSeek V4.1 Flash",
           "provajder": "deepseek",
-          "ulaz": 0.1,
-          "izlaz": 0.5,
+          "ulaz": 0.14,
+          "izlaz": 0.42,
           "objavljen": "2026-09-10",
           "kontekst": 1048576,
-          "kesUlaz": 0.01,
+          "kesUlaz": 0.0042,
           "promena7": {
-            "ulaz": -33.3,
-            "izlaz": -16.7
+            "ulaz": -6.7,
+            "izlaz": -30
           },
           "promena30": null,
           "prethodnik": {
             "naziv": "DeepSeek V4 Flash 0731",
             "ulaz": 0.04,
             "izlaz": 0.64,
-            "razlikaUlaz": 150,
-            "razlikaIzlaz": -21.9
+            "razlikaUlaz": 250,
+            "razlikaIzlaz": -34.4
           }
         },
         {
@@ -402,6 +402,66 @@
     }
   ],
   "promene": [
+    {
+      "id": "deepseek/deepseek-v4-pro",
+      "datum": "2026-09-24",
+      "ulazPre": 0.9553,
+      "izlazPre": 1.9105,
+      "ulaz": 0.9396,
+      "izlaz": 1.8792,
+      "naziv": "DeepSeek V4 Pro 0423",
+      "provajder": "deepseek"
+    },
+    {
+      "id": "deepseek/deepseek-v4-pro-0813",
+      "datum": "2026-09-24",
+      "ulazPre": 1.32,
+      "izlazPre": 3.96,
+      "ulaz": 0.462,
+      "izlaz": 1.386,
+      "naziv": "DeepSeek V4 Pro 0813",
+      "provajder": "deepseek"
+    },
+    {
+      "id": "deepseek/deepseek-v4.1-flash",
+      "datum": "2026-09-24",
+      "ulazPre": 0.1,
+      "izlazPre": 0.5,
+      "ulaz": 0.14,
+      "izlaz": 0.42,
+      "naziv": "DeepSeek V4.1 Flash",
+      "provajder": "deepseek"
+    },
+    {
+      "id": "minimax/minimax-m2",
+      "datum": "2026-09-24",
+      "ulazPre": 0.255,
+      "izlazPre": 1.02,
+      "ulaz": 0.3,
+      "izlaz": 1.2,
+      "naziv": "MiniMax M2",
+      "provajder": "minimax"
+    },
+    {
+      "id": "nvidia/nemotron-3.5-lightning",
+      "datum": "2026-09-24",
+      "ulazPre": 0.07,
+      "izlazPre": 0.2,
+      "ulaz": 0.08,
+      "izlaz": 0.2,
+      "naziv": "Nemotron 3.5 Lightning",
+      "provajder": "nvidia"
+    },
+    {
+      "id": "qwen/qwen3-next-80b-a3b-instruct",
+      "datum": "2026-09-24",
+      "ulazPre": 0.09,
+      "izlazPre": 1.1,
+      "ulaz": 0.1,
+      "izlaz": 1.1,
+      "naziv": "Qwen3 Next 80B A3B Instruct",
+      "provajder": "qwen"
+    },
     {
       "id": "deepseek/deepseek-v4.1-flash",
       "datum": "2026-09-23",
@@ -541,69 +601,27 @@
       "izlaz": 0.64,
       "naziv": "DeepSeek V4 Flash 0731",
       "provajder": "deepseek"
-    },
-    {
-      "id": "deepseek/deepseek-v4-flash-vision-exp",
-      "datum": "2026-09-21",
-      "ulazPre": 0.2156,
-      "izlazPre": 0.6468,
-      "ulaz": 0.22,
-      "izlaz": 0.66,
-      "naziv": "DeepSeek V4 Flash Vision Exp",
-      "provajder": "deepseek"
-    },
-    {
-      "id": "deepseek/deepseek-v4-pro",
-      "datum": "2026-09-21",
-      "ulazPre": 0.6555,
-      "izlazPre": 1.3109,
-      "ulaz": 0.8956,
-      "izlaz": 1.7912,
-      "naziv": "DeepSeek V4 Pro 0423",
-      "provajder": "deepseek"
-    },
-    {
-      "id": "deepseek/deepseek-v4-pro-0813",
-      "datum": "2026-09-21",
-      "ulazPre": 0.5782,
-      "izlazPre": 1.7345,
-      "ulaz": 0.66,
-      "izlaz": 1.98,
-      "naziv": "DeepSeek V4 Pro 0813",
-      "provajder": "deepseek"
-    },
-    {
-      "id": "meta-llama/llama-4-maverick",
-      "datum": "2026-09-21",
-      "ulazPre": 0.1875,
-      "izlazPre": 0.6525,
-      "ulaz": 0.2,
-      "izlaz": 0.8,
-      "naziv": "Llama 4 Maverick",
-      "provajder": "meta-llama"
-    },
-    {
-      "id": "moonshotai/kimi-k3",
-      "datum": "2026-09-21",
-      "ulazPre": 2.1,
-      "izlazPre": 10.95,
-      "ulaz": 3,
-      "izlaz": 15,
-      "naziv": "Kimi K3",
-      "provajder": "moonshotai"
-    },
-    {
-      "id": "nvidia/nemotron-3-nano-30b-a3b",
-      "datum": "2026-09-21",
-      "ulazPre": 0.06,
-      "izlazPre": 0.24,
-      "ulaz": 0.05,
-      "izlaz": 0.2,
-      "naziv": "Nemotron 3 Nano 30B A3B",
-      "provajder": "nvidia"
     }
   ],
   "noviModeli": [
+    {
+      "id": "z-ai/glm-5.3-prime",
+      "naziv": "GLM 5.3 Prime",
+      "provajder": "z-ai",
+      "ulaz": 2.8,
+      "izlaz": 8.8,
+      "objavljen": "2026-09-23",
+      "kontekst": 1000000
+    },
+    {
+      "id": "qwen/qwen3.8-max-prime",
+      "naziv": "Qwen3.8 Max Prime",
+      "provajder": "qwen",
+      "ulaz": 4,
+      "izlaz": 12,
+      "objavljen": "2026-09-23",
+      "kontekst": 1000000
+    },
     {
       "id": "cohere/command-a-plus",
       "naziv": "Command A+",
@@ -689,8 +707,8 @@
       "id": "deepseek/deepseek-v4.1-flash",
       "naziv": "DeepSeek V4.1 Flash",
       "provajder": "deepseek",
-      "ulaz": 0.1,
-      "izlaz": 0.5,
+      "ulaz": 0.14,
+      "izlaz": 0.42,
       "objavljen": "2026-09-10",
       "kontekst": 1048576
     }
