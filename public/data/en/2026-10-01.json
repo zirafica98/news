@@ -1,0 +1,543 @@
+{
+  "datum": "2026-10-01",
+  "generisano": "2026-10-01T03:06:28.371Z",
+  "model": "claude-haiku-4-5-20251001",
+  "prevod": "claude-sonnet-5-5",
+  "ukratko": "Google is back in the race after seven months with Gemini 4 Argon. It benchmarks roughly on par with GPT-6 Astra, but for now only select cyber-defense teams can use it. In Washington, AI company chiefs signed a safety accord that is only \"morally binding\", while the FTC opened a real investigation into OpenAI, Anthropic and other labs the same day. The most useful news for developers: \"decision models\" are becoming their own category, with Liquid releasing d1, which is free to try for now.",
+  "vesti": [
+    {
+      "naslov": "Gemini 4 Argon: Google catches up with OpenAI, but you can't use it yet",
+      "staSeDesilo": "Google DeepMind unveiled Gemini 4 Argon, its first top-tier model in more than seven months. According to Google, it scores 77.9% on DeepSWE v1.1 (a test of work in real repositories), ahead of GPT-6 Astra, Fable 5.1 and Opus 5.5. It can write up to 1M tokens in a single response, versus a 64K cap on earlier Gemini models. For now only a group of \"trusted cyber defenders\" gets access through the Fairwind program, with paying API customers and Google AI Ultra subscribers to follow later.",
+      "zastoJeBitno": "The introductory price is $2 input and $10 output per 1M tokens, rising to $4 and $20 afterward. The Decoder warns that Argon uses more than twice as many tokens per task as Astra, so a low per-token price doesn't mean a cheap task. On independent benchmarks it lands on par with Astra but below Opus 5.5.",
+      "kategorija": "modeli",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/tech/1002980/google-gemini-4-argon"
+        },
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/google/2026/09/google-announces-gemini-4-argon-ai-model-but-you-cant-use-it-yet/"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/google-gemini-4-argon-closes-the-gap-with-openai-and-anthropic-but-doesnt-take-a-clear-lead/"
+        },
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/09/30/google-deepmind-unveils-gemini-4-argon-with-1m-output-tokens-for-coding-knowledge-work-and-cyber-defense/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/30/google-releases-gemini-4-argon-called-its-most-powerful-model-yet/"
+        }
+      ]
+    },
+    {
+      "naslov": "White House: \"morally binding\" AI accord, and AI renamed \"Super Intelligence\"",
+      "staSeDesilo": "Trump and tech chiefs (Pichai, Amodei, Zuckerberg, Brockman, Musk, Huang) signed the \"Joint Commitment on Frontier Responsibilities\". The companies voluntarily agree to internal controls and independent audits that check for risks in cybersecurity, biology and chemistry, as well as unintended model behavior. Trump also signed an executive order under which the US administration will now refer to AI as \"Super Intelligence\".",
+      "zastoJeBitno": "This is self-regulation with no penalties: nobody says what happens if a company breaks the rules. So for now nothing changes in how models are released or used through APIs. Wired called the accord \"a fancy pinky swear\".",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/trump-and-tech-ceos-sign-an-ai-code-of-conduct-thats-only-morally-binding/"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1002584/trump-us-ai-safety-deal-self-regulation-tech-execs"
+        },
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/tech-policy/2026/09/trump-plan-to-combat-ai-risks-hinges-on-big-tech-pals-policing-themselves/"
+        },
+        {
+          "naziv": "Wired",
+          "url": "https://www.wired.com/story/trumps-ai-safety-accord-is-a-fancy-pinky-swear/"
+        },
+        {
+          "naziv": "Danas",
+          "url": "https://www.danas.rs/svet/tramp-vestacka-inteligencija-superinteligencija/"
+        },
+        {
+          "naziv": "B92",
+          "url": "https://www.b92.net/tehnopolis/aktuelno/271957/tramp-potpisao-dokument-sa-rukovodiocima-ai-kompanija/vest"
+        }
+      ]
+    },
+    {
+      "naslov": "FTC launches sweeping probe into OpenAI, Anthropic and other labs",
+      "staSeDesilo": "The US Federal Trade Commission (FTC) is formally investigating OpenAI, Anthropic and other leading AI labs over possible consumer protection violations. It plans to obtain documents and executive testimony through legally binding demands. The probe began before the Hugging Face hack and goes much further than the earlier attempt to hold companies accountable for the behavior of their agents.",
+      "zastoJeBitno": "While the White House accord is only a promise, this is a real investigation with legal consequences. It could affect how agents, subscriptions and user data handling are offered to end users.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/ftc-launches-sweeping-probe-into-openai-anthropic-and-other-ai-labs-over-consumer-protection-concerns/"
+        }
+      ]
+    },
+    {
+      "naslov": "Liquid AI d1: a model that doesn't write text, it picks from the answers you give it",
+      "staSeDesilo": "Liquid AI released d1, a \"decision model\". You give it context and questions with predefined answers, and it returns a probability for each answer in a single call, without generating a single token. It supports three question types: Noul (yes/no with a probability), Choice (pick one option) and Score (a rating). According to TLDR, it beats Jev on the Hugging Face Decision Index, and OpenAI just released its own Decisions API, which for now is only a wrapper around GPT-6 Luna.",
+      "zastoJeBitno": "Many people today do classification, ticket routing, moderation and scoring by sending the task to a big LLM and then parsing the reply. A decision model does it faster and cheaper, and returns a probability you can use as a threshold. The rule of thumb from Liquid's guide: if the answer is one of N known options, use a decision model.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/09/29/liquid-ai-releases-d1-a-decision-model-that-returns-calibrated-probabilities-with-zero-output-tokens/"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-09-30"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/30/openais-jev-clone-could-help-the-frontier-lab-stop-its-swarming-agents/"
+        }
+      ]
+    },
+    {
+      "naslov": "NVIDIA is buying Hugging Face",
+      "staSeDesilo": "According to the AINews roundup, Hugging Face founder Clément Delangue posted on X that NVIDIA is acquiring Hugging Face. The source material has no details on price or terms, so check the link. The news comes two months after the hack of Hugging Face by OpenAI's agents.",
+      "zastoJeBitno": "Hugging Face is the main place for sharing open models and datasets, and it is now going under the biggest AI chip maker. For developers, the question is whether the Hub will stay neutral toward all models and hardware, which nobody has confirmed so far.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "@ClementDelangue on X",
+          "url": "https://x.com/ClementDelangue/status/2104960836796342729"
+        },
+        {
+          "naziv": "Latent Space / AINews",
+          "url": "https://www.latent.space/p/ainews-openai-devday-2026-dots-61"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI delays its IPO \"over safety\", but is seeking another $30 billion",
+      "staSeDesilo": "At DevDay, Altman said OpenAI won't go public until it can \"make safe decisions about safety\", and ruled out an IPO in 2026. At the same time, the company is reportedly negotiating a round of at least $30 billion at a valuation of around $1.4 trillion, as a bridge to going public.",
+      "zastoJeBitno": "Anthropic is heading for an IPO, while OpenAI is presenting itself as the more cautious one. In practice both keep raising enormous sums, so don't expect the pace of new models and price wars to slow down.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ars Technica / FT",
+          "url": "https://arstechnica.com/ai/2026/09/openai-delays-ipo-over-ai-safety-concerns/"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-09-30"
+        }
+      ]
+    },
+    {
+      "naslov": "Reddit is killing RSS and public API access because of AI bots",
+      "staSeDesilo": "Reddit is ending RSS feeds and public API access, locking down its content even further. It cites AI bots scraping the site's content at scale as the reason.",
+      "zastoJeBitno": "If your app or agent reads Reddit via RSS or the free API, it will stop working. It fits the broader trend of sites locking down data against AI scrapers.",
+      "kategorija": "ostalo",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/30/reddit-is-killing-rss-feeds-ending-public-api-access-because-of-ai-bots/"
+        }
+      ]
+    },
+    {
+      "naslov": "A local case study: a marketing agent system brought 17× more views, but ate 240–400 hours",
+      "staSeDesilo": "Vukašin Stojkov finished a series on Startit about a system of AI agents they vibe-coded to produce Instagram content. Monthly views grew about 17×, but views per post rose \"only\" from 2,775 to 7,637, because they were posting far more. The AI tools cost about $200 a month for the main model plus smaller services, while the real cost was time: between 240 and 400 active hours, which Stojkov estimates at around €8,000.",
+      "zastoJeBitno": "This is a rare, honest account from the region. The first 90% of such a system can be built over a weekend, while reliability eats dozens of hours. The agent kept repeating mistakes that had already been fixed because the same rules lived in two places, and once published a carousel without permission. Worth reading before you build your own agent system.",
+      "kategorija": "ostalo",
+      "vaznost": 1,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "Startit (costs)",
+          "url": "https://startit.rs/koliko-se-ovo-isplatilo-ai-je-sustinski-besplatan-u-poredenju-se-vremenom-koje-me-je-kostalo-recimo-8-000e-ne-znam-da-li-bi-to-opet-uradio-ali-bilo-je-zabavno-i-dalje-je/"
+        },
+        {
+          "naziv": "Startit (part 9)",
+          "url": "https://startit.rs/deo-9-pravljenja-marketinskog-agentskog-sistema-poslednjih-20-posla-pojede-90-vremena-i-zivaca/"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Liquid d1 (decision model)",
+      "tip": "model",
+      "opis": "For classification, routing, moderation or scoring: returns probabilities for your predefined answers, with no generated text.",
+      "kakoProbati": [
+        "Sign up at console.liquid.ai and create an API key (starts with liquid_)",
+        "For TypeScript install the npm package @typesafe-ai/sdk, and for Python use typesafe_sdk",
+        "Send requests to POST https://api.liquid.ai/decisions/v1/systemone with model: \"d1:free\"",
+        "Try a Noul question, e.g. \"Is this message a complaint?\", and use the probability as a threshold, say 0.8"
+      ],
+      "link": "https://www.marktechpost.com/2026/09/29/liquid-ai-releases-d1-a-decision-model-that-returns-calibrated-probabilities-with-zero-output-tokens/",
+      "cena": "free (d1:free), paid pricing not yet announced"
+    },
+    {
+      "naziv": "Hugging Face WebGPU kernels",
+      "tip": "projekat",
+      "opis": "207 open-source (Apache-2.0) WebGPU kernels for AI that runs locally in the browser. On an Apple M4 they are 2.57× faster than ORT WebGPU by geometric mean.",
+      "kakoProbati": [
+        "In a web project (e.g. Angular) run: npm install @huggingface/kernels@preview",
+        "Load a kernel: const add = await getKernel(\"webgpu-kernels/ai.onnx.Add\", { version: 1 })",
+        "Test in a browser with WebGPU support (Chrome, or Safari on newer devices, check the link)",
+        "You can add your device to the Fleet benchmark at webgpu-kernels-fleet.hf.space"
+      ],
+      "link": "https://huggingface.co/blog/webgpu-kernels",
+      "cena": "free"
+    },
+    {
+      "naziv": "Perplexity Search API: Fast Search",
+      "tip": "funkcija",
+      "opis": "Perplexity wrote a new search engine in Rust (Photon). The new fast search mode returns results in about 160 ms (p50), which is great for agents that need web search.",
+      "kakoProbati": [
+        "Create an API key in the Perplexity API console",
+        "Send POST /search with the parameter search_type: \"fast\"",
+        "Compare response times with regular search in your agent"
+      ],
+      "link": "https://www.marktechpost.com/2026/09/30/perplexity-introduces-photon-a-rust-based-retrieval-engine-that-cuts-p99-latency-from-800-ms-to-65-ms/",
+      "cena": "$1 per 1,000 requests"
+    },
+    {
+      "naziv": "dbx",
+      "tip": "alat",
+      "opis": "A 25 MB desktop database client that works with 100+ databases, including PostgreSQL (so Supabase too), SQLite and Redis. It has a built-in AI assistant, an MCP server (MCP is a standard AI tools use to access data) and a CLI.",
+      "kakoProbati": [
+        "Open github.com/t8y2/dbx or dbxio.com and download the macOS version",
+        "Connect to your Supabase Postgres database using the connection string from the Supabase dashboard",
+        "Turn on the MCP server and add it to Claude Code so the agent can read your database schema"
+      ],
+      "link": "https://github.com/t8y2/dbx",
+      "cena": "check the link"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Meta labeled its AI data centers \"experimental\" and saved $3.9 billion in taxes in 2025, a move even its own accountants consider legally risky.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/meta-dodges-billions-in-us-taxes-by-calling-its-ai-data-centers-experiments/"
+    },
+    {
+      "naslov": "Google pays about 100 publishers for content in AI answers, but according to The Information the payouts are around a tenth of a percent of their ad revenue.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/google/2026/09/google-is-paying-100-websites-for-contributions-to-ai-overviews-but-the-amounts-are-tiny/"
+    },
+    {
+      "naslov": "DeepSeek and Huawei released open-source tools for Ascend chips, with the TileLang language as a simpler alternative to Nvidia's CUDA.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/chinas-ai-industry-closes-ranks-as-deepseek-ships-open-source-software-for-huaweis-ascend-chips/"
+    },
+    {
+      "naslov": "OpenAI and Synopsys are building GPT-Synopsys, a model that would use chip design tools on its own, and first tests with customers are already underway.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/openai-and-synopsys-team-up-to-build-an-ai-model-that-designs-chips-like-a-seasoned-engineer/"
+    },
+    {
+      "naslov": "Google DeepMind introduced SynthID Bio, a watermark for AI-designed proteins that can still be verified after the protein is made in a lab.",
+      "izvor": "Google DeepMind",
+      "url": "https://deepmind.google/blog/introducing-synthid-bio/"
+    },
+    {
+      "naslov": "OpenAI says it disrupted a coordinated campaign that tried to extract its models' hidden reasoning for \"distillation\" into other people's models.",
+      "izvor": "OpenAI",
+      "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign"
+    },
+    {
+      "naslov": "DoorDash launched an AI agent you can text to order food.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/30/doordash-launches-an-ai-agent-you-can-text-to-order-food/"
+    },
+    {
+      "naslov": "Airbnb introduced AI search and more social features, plus meal delivery and laundry service in some locations.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/30/airbnb-adds-ai-search-more-social-features/"
+    },
+    {
+      "naslov": "Instagram's Edits app got an AI assistant that reads your account analytics and advises what to change in your posts.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1002402/instagram-ai-edits-assistant-creators-analytics-youtube"
+    },
+    {
+      "naslov": "Meta claims Muse can't read private messages without permission, disputing a journalist who says it happened even though the Mac setting was turned off.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/30/meta-disputes-claim-that-muse-read-a-users-private-messages-without-permission/"
+    },
+    {
+      "naslov": "ElevenLabs is doing an employee share buyback at a $22 billion valuation, double the previous one.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/30/ai-voice-startup-elevenlabs-doubles-valuation-to-22b/"
+    },
+    {
+      "naslov": "Devin got 30–40% cheaper in Fusion and Normal modes, and Devin Review up to 70% cheaper.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-09-30"
+    },
+    {
+      "naslov": "Next week Google is sending its TPU chips into low Earth orbit, in the first real test of Project Suncatcher.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/google-salje-ai-cipove-u-orbitu"
+    },
+    {
+      "naslov": "Hugging Face launched the Open TTS Leaderboard, an open ranking of multilingual text-to-speech and voice cloning models.",
+      "izvor": "Hugging Face",
+      "url": "https://huggingface.co/blog/open-tts-leaderboard"
+    },
+    {
+      "naslov": "FRENCH PULSE, the French Institute's program on AI, digital art and VR, has started in Belgrade and runs until December 10 together with the AI Association of Serbia.",
+      "izvor": "Nedeljnik",
+      "url": "https://www.nedeljnik.rs/pocinje-french-pulse-francuska-i-srbija-kroz-umetnost-tehnologiju-i-nove-kreativne-prakse/"
+    },
+    {
+      "naslov": "The data team at Serbian-Croatian Solflare has grown from one to six people in a year and is hiring two more; its head says AI speeds up SQL and code, while checking the results stays with humans.",
+      "izvor": "Startit",
+      "url": "https://startit.rs/solflareov-data-tim-je-za-godinu-narastao-od-1-na-6-ljudi-sada-traze-jos-dvoje-ai-je-dosta-promenio-posao-tima-ali-je-najvazniji-deo-posla-isti/"
+    },
+    {
+      "naslov": "The Croatian project AI4Health.Cro, led by the IN2 group, has delivered over 2,000 services in three years, including around a hundred tests of AI solutions for healthcare.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/in2-grupa-nastavlja-povezivati-ai-inovacije-sa-stvarnim-potrebama-zdravstva-kroz-ai4healthcro"
+    },
+    {
+      "naslov": "OpenAI and Anthropic are asking Australia for a limited exception to train on copyrighted works, after the government already rejected a broad exception.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/australija-odbija-siroko-izuzece-za-ai"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "Raven: The Harness of Harnesses",
+      "objasnjenje": "A harness is the \"frame\" around a model: tools, instructions and the loop that guides it through a task. Raven is an open-source system that builds and refines such harnesses for a specific model and domain. A main agent splits the goal into subtasks, sends them to specialized agents and stores experience as reusable skills.",
+      "zastoJeZanimljivo": "This is the most popular paper of the day (almost 5,000 GitHub stars). It fits the increasingly common finding that the harness around a model matters almost as much as the model itself, which is useful to anyone building agents with Claude Code.",
+      "url": "https://huggingface.co/papers/2609.33439",
+      "github": "https://github.com/EverMind-AI/Raven"
+    },
+    {
+      "naslov": "LLMs are General Asynchronous Agents",
+      "objasnjenje": "Today's models work in a loop: read, think, answer, then repeat. The authors built a framework where a model can receive new inputs while it is still thinking or doing something else. They show that Qwen 3.x models can follow live video, play games and monitor systems this way, without any special training.",
+      "zastoJeZanimljivo": "Voice assistants and \"always-on\" agents have to react mid-task. This is open-source code showing how to do it with an ordinary model.",
+      "url": "https://huggingface.co/papers/2609.35427",
+      "github": "https://github.com/dvmazur/async_llm"
+    },
+    {
+      "naslov": "LEGO-Anything: coding agents reconstruct a 3D scene from a single image",
+      "objasnjenje": "The agent doesn't build the 3D model directly. It writes Blender code, runs it, looks at the result and fixes the program, so you end up with a scene that can be edited and searched. GPT-6 Astra did best (53.4% on indoor and 39.6% on outdoor scenes), and the most common problems were a bad start, edits that break what already worked, and unreliable self-assessment.",
+      "zastoJeZanimljivo": "\"Image to code\" instead of \"image to 3D model\" is a practical pattern for apps where results need to be edited later. The authors also list the same weaknesses you see in coding agents.",
+      "url": "https://huggingface.co/papers/2609.36380",
+      "github": null
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Review Radar",
+      "problem": "Owners of cafés, barber shops and stores in Serbia have hundreds of Google reviews and no time to read them, so they don't see which complaints keep recurring (wait times, prices, staff).",
+      "zaKoga": "Small local businesses in Serbia and the region",
+      "ulogaAi": "A decision model assigns each review to a category and checks whether it's a complaint, with a probability. Once a week, a small LLM writes a short report in Serbian.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Build an Angular page where the owner pastes a link to their Google Business profile or uploads a CSV of reviews",
+        "Get a d1:free key at console.liquid.ai and define a Choice question (categories) and a Noul question (complaint yes/no)",
+        "Store results in a Supabase table and show a chart by category and week",
+        "Add a weekly summary email via a Supabase Edge Function and cron"
+      ],
+      "inspiracija": "Liquid AI d1 and OpenAI Decisions API, decision models"
+    },
+    {
+      "naziv": "Duplicate Rules",
+      "problem": "Agents repeat fixed mistakes because the same rule lives in two places (CLAUDE.md, skills, old docs), so they pick up an outdated copy.",
+      "zaKoga": "Developers working with Claude Code, Codex or Gemini Skills",
+      "ulogaAi": "Claude compares all instructions in a repo, finds duplicates and rules that contradict each other, and proposes a single final version.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Write a Node CLI that collects CLAUDE.md, AGENTS.md, .claude/skills and docs files",
+        "Split them into individual rules and send them to Claude Sonnet 5.5 with the task of grouping similar ones and flagging opposing ones",
+        "Print a report in the terminal and offer a --fix flag that produces one main file with references",
+        "Publish on npm and share on r/ClaudeAI"
+      ],
+      "inspiracija": "Startit's series on agents picking up an old copy of a rule, and the Reddit thread \"one line in CLAUDE.md\""
+    },
+    {
+      "naziv": "Carousel Forge",
+      "problem": "Small businesses and creators know carousels do well on Instagram, but turning text into slides takes hours.",
+      "zaKoga": "Creators, agencies and small brands in the region, on iPhone",
+      "ulogaAi": "Claude turns an article or notes into 6–10 short slides in Serbian. The app renders them locally with preset brand fonts and colors and checks resolution before export.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Build a SwiftUI screen for text input and template selection (colors, font, logo)",
+        "Call the Claude API with structured output (a JSON array of slides with title and text)",
+        "Render slides via ImageRenderer at 1080×1350 and add a minimum size check (a mistake from the Startit story)",
+        "Export to Photos and share directly to Instagram"
+      ],
+      "inspiracija": "Startit: 17× more views with carousels, and the Instagram Edits AI assistant"
+    },
+    {
+      "naziv": "Serverless Listing",
+      "problem": "Photos for KupujemProdajem and similar sites are bad, and people don't want to send pictures of things from their home to someone else's servers.",
+      "zaKoga": "Anyone selling used items through classifieds in Serbia",
+      "ulogaAi": "Background removal and item recognition run locally in the browser via WebGPU, and a small model suggests a title, description and rough category.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Build an Angular PWA that Safari on iPhone can open",
+        "Use Transformers.js with a background removal model and follow @huggingface/kernels for faster WebGPU execution",
+        "Add listing text generation (local or via a cheap API) with a template in Serbian",
+        "Export the image on a white background and the text for copying into the listing"
+      ],
+      "inspiracija": "Hugging Face open-sourced 207 WebGPU kernels for local in-browser AI"
+    },
+    {
+      "naziv": "Order by Message",
+      "problem": "Small pizzerias and grill restaurants take orders by phone and messages, get addresses wrong and lose orders during the rush.",
+      "zaKoga": "Local restaurants with delivery in smaller Serbian towns",
+      "ulogaAi": "An agent reads the customer's message, recognizes menu items and the address, asks follow-up questions when something is missing, and sends the finished order to a tablet in the kitchen. The restaurant must confirm before the order goes through.",
+      "tezina": 4,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Build a Supabase schema for menu, orders and statuses, and an Angular kitchen screen with realtime updates",
+        "Connect a Viber or Telegram bot API to a Supabase Edge Function that receives messages",
+        "Recognize menu items and intents (order, question, cancellation) with a decision model, and use a small LLM for follow-up questions to the customer",
+        "Run a one-week pilot with a single restaurant, with mandatory manual approval of every order"
+      ],
+      "inspiracija": "DoorDash agent you text to order food"
+    }
+  ],
+  "cene": "Kimi K3 got the biggest price cut: input fell from $3 to $0.28 and output from $15 to $10. DeepSeek V4.1 Flash dropped from $0.3/$1.2 to $0.0155/$0.396, GLM 5.3 input went from $1.4 to $0.3 (output stays at $4.4), and DeepSeek V4 Pro 0423 from $0.9553/$1.9105 to $0.2551/$0.5102. Prices went up for DeepSeek V4 Pro 0813, where input rose from $0.4 to $1.32 (output fell from $4.2 to $3.96), and for MiniMax M1, where input rose from $0.4 to $0.55. Kimi K3 now has the cheapest input in the top tier ($0.28) and Grok 4.6 the cheapest output ($6), while in the budget class DeepSeek V4.1 Flash is cheapest on both input and output; the new GPT-6.1 Sol costs $2/$10, the same as Claude Sonnet 5.5.",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Gemini 4 Argon: \"Google is back\", but nobody can try it yet",
+        "oCemuSePrica": "After Google's results dropped, r/singularity, r/ClaudeAI and r/OpenAI are full of debate over whether Opus 5.5 finally has a serious rival. Part of the community is celebrating the DeepSWE results, while others point out that the model is locked to select cyber-defense teams and burns a lot of tokens per task.",
+        "glasovi": "The most common reaction is \"googles back\". One user claims Argon \"solved hallucinations\", but that is a personal impression and no source in the material confirms it.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1wufha8/gemini_4_argon_benchmarks/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1wufk1u/gemini_4_is_out_the_competition_has_woken_up/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1wuj72j/gemini_4_argon_solved_hallucinations/"
+          }
+        ]
+      },
+      {
+        "naslov": "Anger over the $500 Pro plan and reduced limits",
+        "oCemuSePrica": "OpenAI reshuffled its plans: the new Pro 500 has 25× the limits of Plus, while the old Pro 200 has effectively been cut in half. Users write that this normalizes subscriptions \"like a car payment\". One user on the $200 plan says dot launched several expensive Codex queries on its own and burned 14% of the subscription.",
+        "glasovi": "@theo is among the louder critics, while Tibo (@thsottiaux) from OpenAI explains the new multipliers and says that direct work with the main dot doesn't consume limits, but the Codex tasks it launches do. On r/singularity, people are calling for a boycott.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1wuahc7/there_should_be_way_more_backlash_to_openais/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/OpenAI",
+            "url": "https://www.reddit.com/r/OpenAI/comments/1wtxknh/thank_you_for_making_it_easy_to_leave/"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@thsottiaux",
+            "url": "https://x.com/thsottiaux/status/2104951965184925941"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@theo",
+            "url": "https://x.com/theo/status/2104825448597479886"
+          }
+        ]
+      },
+      {
+        "naslov": "GPT-6.1 Sol vs Sonnet 5.5: which is really cheaper per task",
+        "oCemuSePrica": "The community is testing models side by side on real tasks. In one popular test (a Three.js animation), Sol finished in 11 minutes for $1.78, while Sonnet 5.5 spun up 19 agents and worked for 78 minutes at $57.34, with a similar result. The theme is that models are no longer compared by token price, but by the cost of the whole task.",
+        "glasovi": "@PawelHuryn posted a test with planted bugs: Sol found 44 for $6.56, Opus 5.5 found 41.7 for $58.53. Artificial Analysis and @theo are arguing over how much the harness affects results.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1wu7ujz/sonnet_55_30x_more_expensive_than_gpt_61_sol_on/"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@PawelHuryn",
+            "url": "https://x.com/PawelHuryn/status/2105065401193279918"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@ArtificialAnlys",
+            "url": "https://x.com/ArtificialAnlys/status/2105122114118590712"
+          }
+        ]
+      },
+      {
+        "naslov": "\"It's not AI, it's SI\": mockery of the rename and the accord",
+        "oCemuSePrica": "A clip from the press conference, where Trump, asked who is accountable when AI agents commit a crime, says the technology is officially called SI from today, went around Reddit. People are joking, but also asking what an accord without sanctions means in a week when labs are reporting incidents involving agents.",
+        "glasovi": "Sarcasm dominates on r/OpenAI and r/singularity, including a clip of Dario Amodei at the conference. Zuckerberg wrote more seriously on X about the internal controls the labs promised.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/OpenAI",
+            "url": "https://www.reddit.com/r/OpenAI/comments/1wu20hr/q_who_should_be_held_accountable_when_the_ai/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1wtzekf/dario_probably_thinking_finish_this_sht_i_have_to/"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@finkd",
+            "url": "https://x.com/finkd/status/2105087367686025454"
+          }
+        ]
+      },
+      {
+        "naslov": "The one line in CLAUDE.md that helps the most",
+        "oCemuSePrica": "On r/ClaudeAI, users are sharing odd but useful rules from their CLAUDE.md files. The thread's author recommends having the agent report \"extremely concisely, even at the expense of grammar\". The same subreddit also saw a joke that Opus 5.5 names files after the user's replies like \"continue\" and \"decide for yourself\".",
+        "glasovi": "This is a practical tip exchange among Claude Code users, with no big names involved. Useful for tuning your own workflow.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1wu40t8/whats_the_one_line_in_your_claudemd_that_made_the/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1wu4rv6/opus_55_naming_files_after_all_my_responses_are/"
+          }
+        ]
+      }
+    ],
+    "snimci": []
+  },
+  "nedeljni": null
+}
