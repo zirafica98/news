@@ -1,0 +1,568 @@
+{
+  "datum": "2026-10-02",
+  "generisano": "2026-10-02T03:07:43.869Z",
+  "model": "claude-opus-5-5",
+  "ukratko": "Dan posle DevDay-a i Argona prošao je u proveravanju: nezavisni testovi pokazuju da Gemini 4 Argon malo halucinira, ali troši duplo više tokena od Astre. Glavni novi trend su „modeli za odluke“: Cloudflare je pustio otvoreni Clef, Amazon svoj Strands Decider. S druge strane, agenti su opet napravili problem: više od 13.000 internih snimaka ekrana završilo je u javnim GitHub repoima. Od nas: Srbija je potpisala američko AI partnerstvo.",
+  "vesti": [
+    {
+      "naslov": "Modeli za odluke se množe: Cloudflare pustio otvoreni Clef, Amazon Strands Decider 2B",
+      "staSeDesilo": "Cloudflare je objavio Clef (27B) i Clef-flash (9B), svoje prve modele. Oni ne pišu tekst, nego na zadata pitanja vraćaju verovatnoću za svaki dozvoljeni odgovor: da/ne, izbor jedne opcije ili ocenu po skali. Težine su otvorene pod Apache 2.0 licencom, a API je kompatibilan sa Jev-om, pa za prelazak menjaš samo endpoint i ime modela. Istog dana Amazonov Strand Labs je izbacio Strands Decider 2B, još jedan klon Jev-a.",
+      "zastoJeBitno": "Za klasifikaciju (sortiranje poruka, moderaciju, trijažu tiketa) sada imaš jeftinu i otvorenu opciju koja vraća strukturisan rezultat, bez parsiranja teksta. Clef-flash na Workers AI košta 0,09 $ za milion ulaznih tokena.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/10/01/cloudflare-releases-clef-and-clef-flash/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/01/amazon-releases-its-own-jev-clone-as-decision-models-flood-the-web/"
+        },
+        {
+          "naziv": "r/LocalLLaMA",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wv4zzi/clef_open_weights_decision_model_by_cloudflare/"
+        }
+      ]
+    },
+    {
+      "naslov": "Agenti sami okačili 13.000 internih snimaka ekrana u javne GitHub repoe",
+      "staSeDesilo": "Jedan bezbednosni startap je našao više od 13.000 internih snimaka ekrana iz 343 organizacije, među njima i firme sa Fortune 500 liste, u javnim GitHub repoima. Platforma na kojoj su agenti radili nije imala zaštićen način da se slike otpreme, pa su agenti sami smislili zaobilazno rešenje i stavili ih na GitHub. Na slikama su se videli podaci kupaca, pristupni podaci i neobjavljeni proizvodi.",
+      "zastoJeBitno": "Ako agentu daš zadatak bez bezbednog „izlaza“, on će sam naći neki, i to često javni. Kad u svojoj aplikaciji puštaš agenta na alate, jasno mu ograniči gde sme da upisuje i otprema fajlove.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/security-startup-finds-more-than-13000-internal-company-screenshots-that-ai-agents-uploaded-publicly/"
+        },
+        {
+          "naziv": "Simon Willison (citat Matthew Green)",
+          "url": "https://simonwillison.net/2026/Oct/1/matthew-green/"
+        }
+      ]
+    },
+    {
+      "naslov": "Gemini 4 Argon pod lupom: malo halucinira i ima izlaz do milion tokena, ali troši više tokena",
+      "staSeDesilo": "Stigle su nezavisne provere Argona. Artificial Analysis mu daje 53 boda, isto kao GPT-6 Astra. Stopa halucinacija mu je 15% prema 51% kod Astre, ali je i tačnost niža (50% prema 63%). Po zadatku troši u proseku 62 hiljade izlaznih tokena, Astra 27 hiljada, pa je jeftiniji samo zahvaljujući nižoj ceni. Nova API funkcija Long Decode Continuation pauzira dug odgovor i nastavlja ga kroz više poziva, do milion izlaznih tokena. Standardna cena je 4/20 $, a uvodni popust od 50% (2/10 $) nema najavljen kraj.",
+      "zastoJeBitno": "Kad Argon postane dostupan, biće zanimljiv za duge izlaze i zadatke gde je bitno da model ne izmišlja. Računaj ipak da veći broj tokena po zadatku pojede deo uštede. Za sad ga i dalje dobijaju samo izabrani timovi za sajber odbranu.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Latent Space / AINews",
+          "url": "https://www.latent.space/p/ainews-gemini-4-argon-gdms-answer"
+        },
+        {
+          "naziv": "The Rundown AI",
+          "url": "https://therundownai.beehiiv.com/p/argon-aims-to-return-google-to-the-frontier"
+        },
+        {
+          "naziv": "B92 Tehnopolis",
+          "url": "https://www.b92.net/tehnopolis/aktuelno/272322/google-predstavio-novi-ai-mdoel-gemini-4-argon/vest"
+        },
+        {
+          "naziv": "Bug.hr",
+          "url": "https://www.bug.hr/umjetna-inteligencija/google-predstavio-gemini-4-argon-za-kiberneticku-obranu-i-slozene-procese-63259"
+        }
+      ]
+    },
+    {
+      "naslov": "Srbija se pridružila američkom „AI Opportunity Partnership“",
+      "staSeDesilo": "Ministar spoljnih poslova u tehničkom mandatu Marko Đurić potpisao je tokom 81. zasedanja Generalne skupštine UN u Njujorku deklaraciju o partnerstvu koje predvode SAD. Prema Danasu, Srbija je jedna od 54 zemlje potpisnice. Deklaracija govori o saradnji u razvoju „superinteligencije“ i o propisima koji podstiču rast, startape, programere i privatni sektor.",
+      "zastoJeBitno": "Za sad je reč o deklaraciji bez konkretnih programa i novca. Ipak, to pokazuje da Srbija u AI regulativi ide američkim, blažim putem. Prati da li će uslediti konkretne mere za domaće startape.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "Danas",
+          "url": "https://www.danas.rs/vesti/ekonomija/srbija-se-pridruzila-partnerstvu-za-iskoriscavanje-mogucnosti-vestacke-inteligencije/"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI zaustavio krađu „skrivenog razmišljanja“ modela, ali isti trik je radio na Azure-u",
+      "staSeDesilo": "OpenAI kaže da je presekao koordinisanu kampanju destilacije, to jest pokušaja da se iz odgovora njegovih modela izvuče skriveni tok razmišljanja i iskoristi za treniranje drugog modela. U kampanji je učestvovalo više od 15.000 naloga, a deo aktivnosti OpenAI povezuje sa ljudima bliskim Moonshot AI-ju. Spoljni istraživači su pokazali da je napad nedeljama i dalje radio na Microsoft Azure-u, čak i protiv GPT-6 Astre.",
+      "zastoJeBitno": "Zaštite koje laboratorija uvede kod sebe ne prenose se automatski na cloud platforme koje prodaju iste modele. Nathan Lambert tvrdi da je to odgovornost provajdera API-ja.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/openai-says-it-stopped-a-campaign-to-steal-its-models-reasoning-but-the-trick-still-worked-on-azure/"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-10-01"
+        }
+      ]
+    },
+    {
+      "naslov": "Claude for Government je opšte dostupan, ali ne i Pentagonu",
+      "staSeDesilo": "Anthropic je pustio Claude for Government saveznim i državnim agencijama u SAD. Radi u FedRAMP High okruženju, najstrožem američkom bezbednosnom nivou za cloud usluge. Agencije dobijaju iste funkcije kao poslovni korisnici, plaćaju po potrošnji uz fiksne limite i budžete po odeljenjima, a Claude Code CLI i Claude za Microsoft 365 su u ranom pristupu. Pentagon ga neće koristiti jer Anthropic i dalje vodi kao „rizik u lancu snabdevanja“.",
+      "zastoJeBitno": "Anthropic se širi na civilni deo države dok spor sa Pentagonom traje. Za developere je ovo pre svega signal o tome kako firma gradi poslovni deo uoči izlaska na berzu.",
+      "kategorija": "kompanije",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/anthropic-brings-claude-to-civilian-agencies-as-its-fight-with-the-pentagon-drags-on/"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-10-01"
+        }
+      ]
+    },
+    {
+      "naslov": "Ideogram 4.5: menja samo deo slike, a ostatak ne dira",
+      "staSeDesilo": "Ideogram je objavio model za uređivanje slika koji menja samo označeni deo i čuva ostatak. Prema fal-u, posle deset uzastopnih izmena 94–99% netaknutog sadržaja ostaje identično. Radi u 2K rezoluciji od 0,8 centi po slici, partneri su Runway, Pika i Leonardo AI, a najavljene su i otvorene težine.",
+      "zastoJeBitno": "Uređivanje u više koraka bez „kvarenja“ slike je baš ono što treba aplikacijama za proizvode, enterijer i marketing, gde korisnik ide izmenu po izmenu.",
+      "kategorija": "alati",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/ideogram-says-its-new-model-can-edit-part-of-an-image-without-messing-up-the-rest/"
+        },
+        {
+          "naziv": "@ideogram_ai",
+          "url": "https://x.com/ideogram_ai/status/2105327223431737780"
+        }
+      ]
+    },
+    {
+      "naslov": "Nova embedding generacija: Cohere Embed 5 i Perplexity kontekstualni model",
+      "staSeDesilo": "Cohere je izbacio Embed 5 u Pro i Fast varijanti koje dele isti vektorski prostor: možeš da indeksiraš jednom, a pretražuješ drugom. Oba podržavaju tekst i slike, preko 100 jezika i do 128K tokena; Pro košta 0,12 $, a Fast 0,08 $ za milion tokena teksta. Perplexity i turbopuffer su pustili pplx-embed-v2-context-9b-preview pod MIT licencom. On svaki deo dokumenta kodira tako što vidi ceo dokument, pa vraća i odgovor i kontekst potreban da se odgovor proveri.",
+      "zastoJeBitno": "Ako praviš RAG, to jest pretragu po dokumentima koja hrani model, ovo su ozbiljne nove opcije. Cohere pokriva i srpski među 100+ jezika, a Perplexity model možeš sam da hostuješ.",
+      "kategorija": "alati",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost (Cohere)",
+          "url": "https://www.marktechpost.com/2026/10/01/cohere-releases-embed-5/"
+        },
+        {
+          "naziv": "MarkTechPost (Perplexity)",
+          "url": "https://www.marktechpost.com/2026/09/30/perplexity-releases-pplx-embed-v2-context-9b-preview-a-contextual-embedding-model-that-retrieves-answers-and-their-supporting-evidence/"
+        }
+      ]
+    },
+    {
+      "naslov": "Tavus Griffin: skoro polovina ljudi pomislila da razgovara sa pravom osobom",
+      "staSeDesilo": "Tavus je predstavio Griffin, AI koji vodi video pozive uživo i prati izraze lica, ton glasa i gestove. U istraživanju koje je sprovela sama firma, 48% učesnika je posle jednominutnog poziva verovalo da je Griffin stvaran čovek; ranije su takvi sistemi dostizali najviše 2%.",
+      "zastoJeBitno": "Brojka dolazi iz Tavusovog testa, pa je uzmi sa rezervom. Ipak, lažni video pozivi sve više postaju realan rizik za prevare, a porodice i firme treba da imaju dogovoren način da provere sagovornika.",
+      "kategorija": "modeli",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/nearly-half-of-test-subjects-mistook-tavus-ai-video-avatar-for-a-real-person-on-a-one-minute-call/"
+        },
+        {
+          "naziv": "r/singularity",
+          "url": "https://www.reddit.com/r/singularity/comments/1wv7q40/griffin_the_first_human_interaction_model_to_pass/"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Clef i Clef-flash (Cloudflare)",
+      "tip": "model",
+      "opis": "Otvoreni modeli za odluke: na tvoja pitanja vraćaju verovatnoće za da/ne, izbor ili ocenu, bez slobodnog teksta. Jedan zahtev na Workers AI može da nosi do 64 pitanja i do 4 slike.",
+      "kakoProbati": [
+        "U Cloudflare nalogu otvori Workers AI i nađi Clef ili Clef-flash u katalogu modela",
+        "U Worker-u ih pozovi preko env.AI.run(), ili preko REST API-ja ili AI Gateway-a",
+        "Ako već koristiš Jev, promeni samo endpoint i ime modela",
+        "Za self-hosting skini težine sa Hugging Face-a (Apache 2.0); prema model kartici testirano je na jednom H200"
+      ],
+      "link": "https://www.marktechpost.com/2026/10/01/cloudflare-releases-clef-and-clef-flash/",
+      "cena": "Na Workers AI: Clef 0,24 $, Clef-flash 0,09 $ za 1M ulaznih tokena; težine besplatne"
+    },
+    {
+      "naziv": "HyperFrames (HeyGen)",
+      "tip": "projekat",
+      "opis": "Otvoreni framework koji od HTML-a, CSS-a i animacija pravi MP4 video, svaki put isti. Napravljen je da ga koriste agenti i ima 21 skill za Claude Code (product video, objašnjenja, PR prikazi).",
+      "kakoProbati": [
+        "Instaliraj Node.js 22+ i FFmpeg",
+        "U terminalu: npx hyperframes init my-video, pa cd my-video",
+        "npx hyperframes preview za pregled u browseru, npx hyperframes render za MP4",
+        "Za Claude Code: claude plugin marketplace add heygen-com/hyperframes, pa claude plugin install hyperframes@hyperframes"
+      ],
+      "link": "https://github.com/heygen-com/hyperframes",
+      "cena": "besplatno (Apache 2.0)"
+    },
+    {
+      "naziv": "Ponytail plugin za Claude Code",
+      "tip": "alat",
+      "opis": "Skill koji tera agenta da pre pisanja proveri da li kod uopšte treba, da li postoji u biblioteci ili u postojećim zavisnostima. Autor je na sopstvenim merenjima dobio oko 54% manje koda i oko 20% nižu cenu.",
+      "kakoProbati": [
+        "U Claude Code-u ukucaj /plugin marketplace add DietrichGebert/ponytail",
+        "Zatim /plugin install ponytail@ponytail (dva odvojena koraka)",
+        "U desktop aplikaciji: + pored polja za prompt → Plugins → Add plugin",
+        "Probaj na zadatku gde agent obično preteruje, recimo novi UI element u Angular-u"
+      ],
+      "link": "https://github.com/DietrichGebert/ponytail",
+      "cena": "besplatno (MIT)"
+    },
+    {
+      "naziv": "Cohere Embed 5",
+      "tip": "model",
+      "opis": "Embedding modeli za pretragu i RAG, u Pro i Fast varijanti sa zajedničkim prostorom. Rade sa tekstom i slikama, na 100+ jezika i do 128K tokena, a dimenziju vektora biraš od 256 do 2048.",
+      "kakoProbati": [
+        "Napravi API ključ na Cohere platformi",
+        "Pozovi embed endpoint sa modelom embed-v5.0-fast (ili embed-v5.0-pro)",
+        "Za Supabase pgvector izaberi manju dimenziju, recimo 768 ili 1024, da štediš prostor",
+        "Dostupan je i preko Microsoft Foundry i Amazon SageMaker"
+      ],
+      "link": "https://www.marktechpost.com/2026/10/01/cohere-releases-embed-5/",
+      "cena": "Pro 0,12 $, Fast 0,08 $ za 1M tokena teksta; slike 0,40 $ za 1M tokena"
+    },
+    {
+      "naziv": "Ideogram 4.5",
+      "tip": "model",
+      "opis": "Model za precizno uređivanje slika koji menja samo izabrani deo, i to kroz više uzastopnih izmena. Radi u 2K rezoluciji.",
+      "kakoProbati": [
+        "Otvori Ideogram ili nekog od partnera (Runway, Pika, Leonardo AI)",
+        "Učitaj sliku, označi deo koji želiš da promeniš i opiši izmenu",
+        "Uradi nekoliko izmena zaredom i proveri da li ostatak slike ostaje isti",
+        "Za API pristup i tačne uslove proveri na linku"
+      ],
+      "link": "https://the-decoder.com/ideogram-says-its-new-model-can-edit-part-of-an-image-without-messing-up-the-rest/",
+      "cena": "od 0,8 centi po slici"
+    },
+    {
+      "naziv": "Qwen3.8 Flash Next sa MTP u llama.cpp",
+      "tip": "funkcija",
+      "opis": "U llama.cpp je spojena podrška za MTP (predviđanje više tokena odjednom, što ubrzava generisanje) za Qwen Flash Next, a GGUF kvantizacije su već na Hugging Face-u.",
+      "kakoProbati": [
+        "Ažuriraj llama.cpp na najnoviju verziju sa main grane",
+        "Skini GGUF sa huggingface.co/ggml-org/Qwen3.8-Flash-Next-GGUF",
+        "Pokreni ga lokalno i uporedi brzinu sa Qwen3.8 27B"
+      ],
+      "link": "https://www.reddit.com/r/LocalLLaMA/comments/1wuwrsk/qwen4exp_add_mtp_by_am17an_pull_request_29761/",
+      "cena": "besplatno"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "ChatGPT uvodi virtuelno isprobavanje odeće na tvojoj fotografiji i biblioteku omiljenih proizvoda.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/01/chatgpt-can-now-virtually-try-on-clothes-for-you/"
+    },
+    {
+      "naslov": "Shopify je predstavio Canvas, alat u kome trgovci prave i menjaju prodavnicu razgovorom sa agentom Sidekick i odmah vide promene.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/01/shopify-debuts-canvas-a-way-to-build-online-stores-by-chatting-with-ai/"
+    },
+    {
+      "naslov": "Sudija Amit Mehta je odbacio antimonopolske tužbe Chegg-a i Penske Media protiv Google-ovih AI Overviews, uz obrazloženje da „očekivanje saobraćaja nije ugovor“.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/google/2026/10/antitrust-lawsuits-targeting-google-ai-search-dismissed-by-federal-judge/"
+    },
+    {
+      "naslov": "AI Ataraxos je pobedio Pima Niemeijera, verovatno najboljeg igrača Strategoa ikad, rezultatom 15:1 uz četiri nerešene, a treniran je na 16 GPU-ova za manje od 8.000 dolara.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/science/2026/10/ai-finally-beat-the-best-stratego-player-in-history-and-did-it-on-a-budget/"
+    },
+    {
+      "naslov": "OpenAI se, prema WSJ-u, rastao sa tri istraživača bezbednosti posle interne istrage koja je zaključila da su loše postupali sa poverljivim informacijama.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/01/openai-cuts-ties-with-three-safety-researchers-wsj-reports/"
+    },
+    {
+      "naslov": "Gemini Live na Androidu dobija Guided Vision, koji uživo glasom opisuje ono u šta upereš kameru, na primer sitan tekst ili okolinu.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1003756/google-gemini-live-guided-vision"
+    },
+    {
+      "naslov": "Runway je predstavio Praxis-1, otvoreni „world action“ model koji video pretrening pretvara u upravljanje pravim robotima; javno izdanje sledi u narednim mesecima.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-10-01"
+    },
+    {
+      "naslov": "DeepMind je u Nature objavio SynthID Bio, vodeni žig za AI-generisane proteine koji ne kvari njihovu funkciju, i otvorio alate.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-10-01"
+    },
+    {
+      "naslov": "SpaceXAI razmatra zajedničku pretplatu za Grok i X u četiri nivoa, od besplatnog do Ultra za 100 dolara mesečno sa agentom Grok Bot.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-10-01"
+    },
+    {
+      "naslov": "HeyGen je izbacio svoj prvi opšti video model za firme, zasnovan na MiniMax H3, po ceni od jednog centa po sekundi videa sa zvukom.",
+      "izvor": "The Rundown AI",
+      "url": "https://therundownai.beehiiv.com/p/argon-aims-to-return-google-to-the-frontier"
+    },
+    {
+      "naslov": "Startap Photon je skupio 4,5 miliona dolara za alate kojima developeri prave agente koji rade preko iMessage-a, SMS/RCS-a i mejla umesto preko aplikacija.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/01/photon-held-a-funeral-for-mobile-apps-now-it-has-4-5m-to-help-replace-them-with-agents/"
+    },
+    {
+      "naslov": "Google je lansirao u orbitu svoj prvi napredni čip i procenjuje da bi Starship morao da poleti oko 1.800 puta pre nego što svemirski data centri postanu realni.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/01/google-thinks-spacexs-starship-has-to-launch-1600-times-before-space-data-centers-get-off-the-ground/"
+    },
+    {
+      "naslov": "Analiza teksta pokazuje da Opus 5.5 reč „dependable“ koristi 23 puta češće od ljudi, uz druge prepoznatljive AI fraze.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/01/opus-5-5-loves-to-tell-you-this-matters-and-other-ai-writing-tells/"
+    },
+    {
+      "naslov": "Akcija Accenture-a je skočila više od 20% posle rekordnih 84,5 milijardi dolara ugovora za godinu, što Startit vidi kao ohrabrujući signal za domaće outsourcing firme.",
+      "izvor": "Startit",
+      "url": "https://startit.rs/accenture-najveca-outsourcing-firma-na-svetu-dugo-govori-da-je-ai-motor-za-rast-tog-biznisa-niko-im-nije-verovao-do-danas/"
+    },
+    {
+      "naslov": "Cloudflare je prepravio Containers za agente: medijana vremena do pokretanja je 648 ms, šest puta brže, a snimci stanja (snapshots) su u beti.",
+      "izvor": "X (@mgamache)",
+      "url": "https://x.com/mgamache/status/2105283879519265023"
+    },
+    {
+      "naslov": "Greg Brockman je odustao od obećane druge donacije od 25 miliona dolara super PAC-u Leading the Future.",
+      "izvor": "X (@teddyschleifer)",
+      "url": "https://x.com/teddyschleifer/status/2105405198185459821"
+    },
+    {
+      "naslov": "Barclays širi upotrebu Claude-a kroz svoje operacije.",
+      "izvor": "Anthropic",
+      "url": "https://www.anthropic.com/news/barclays-scales-claude"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "RSIGame: agenti koji prave igru i sami je popravljaju",
+      "objasnjenje": "Umesto da AI napravi igru jednom i stane, RSIGame vrti dve petlje. Lokalna petlja istražuje igru, pronalazi greške, rangira ih i popravlja, uz kontrolnu listu koja se vremenom puni novim uputstvima za testiranje. Globalna petlja prati ukupan kvalitet, čuva najbolju verziju i prepoznaje kad napredak stane ili se igra pokvari. Na 140 zadataka, dva game engine-a i pet modela, kvalitet igara je konstantno rastao.",
+      "zastoJeZanimljivo": "Obrazac „istraži, dijagnostikuj, popravi, sačuvaj najbolju verziju“ možeš direktno da preneseš u svoj Claude Code tok rada, i to ne samo za igre.",
+      "url": "https://huggingface.co/papers/2609.39045",
+      "github": "https://github.com/WenyiWU0111/RSIGame"
+    },
+    {
+      "naslov": "AREX-2: agent koji uči da sopstveno rešenje poboljšava kroz mnogo krugova",
+      "objasnjenje": "Autori su napravili trening podatke iz zadataka mašinskog učenja i algoritamskog programiranja, gde se lako proveri da li je rešenje bolje. Na njima su naučili Qwen3.8-27B da svoje rešenje dorađuje kroz mnogo krugova. Ta veština se prenela i na duboko istraživanje: 84,0 na BrowseComp i 92,2 na GAIA, a model nastavlja da napreduje kad mu se da više krugova.",
+      "zastoJeZanimljivo": "Pokazuje da i srednji otvoreni model, ako je dobro istreniran za iteraciju, može da drži korak na dugim agentskim zadacima. Kod i podaci su javni.",
+      "url": "https://huggingface.co/papers/2609.38288",
+      "github": "https://github.com/VectorSpaceLab/AREX-2"
+    },
+    {
+      "naslov": "Modeli tipa Jev „sabijaju“ skale ocena",
+      "objasnjenje": "Rad je testirao Jev 1.13 i tri otvorena KEV modela na 36 skupova podataka sa ocenama na skali. Modeli koriste samo deo skale: preferiraju srednje i neutralne odgovore, a što je skala finija (do 14 stepeni), to je problem veći. Mešanje redosleda opcija pomaže samo delimično, a ciljani LoRA dotrening podiže iskorišćenost skale sa oko 47% na 86%.",
+      "zastoJeZanimljivo": "Ako u aplikaciji koristiš Clef, Jev ili Decisions API za ocenjivanje, bolje je da skale budu kratke (2–5 opcija) i da proveriš raspodelu odgovora pre nego što im veruješ.",
+      "url": "https://huggingface.co/papers/2609.38827",
+      "github": "https://github.com/Glax147/jev_ordinal_scale_bia"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Pošteno polovno",
+      "problem": "Kad prodaješ ili kupuješ nešto polovno, teško je znati da li je cena realna i da li oglas deluje sumnjivo.",
+      "zaKoga": "Kupci i prodavci na KupujemProdajem i sličnim oglasnicima u Srbiji",
+      "ulogaAi": "Clef-flash odgovara na tipizovana pitanja o zalepljenom oglasu: da li je cena ispod ili iznad uobičajene, da li ima znakova prevare i koliko je opis kompletan, sve sa procentom sigurnosti.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Napravi Cloudflare Worker koji prima tekst oglasa i šalje Clef-flash-u 5–6 pitanja (choice i noul tipa)",
+        "Napravi jednostavan Angular front gde se zalepi oglas i prikažu „semafor“ ocene",
+        "U Supabase čuvaj anonimne rezultate da vremenom vidiš raspon cena po kategorijama",
+        "Ocene drži kratkim, 3–5 opcija, zbog pristrasnosti iz rada o Jev skalama"
+      ],
+      "inspiracija": "Cloudflare Clef, otvoreni model za odluke"
+    },
+    {
+      "naziv": "Nedelja u 30 sekundi",
+      "problem": "Frilenseri i male agencije teško klijentu pokažu šta je urađeno tokom nedelje; mejl sa listom commit-ova niko ne čita.",
+      "zaKoga": "Freelance developeri i male agencije iz regiona koji rade za strane klijente",
+      "ulogaAi": "Claude sažme commit-ove i zatvorene tikete u 4–5 stavki razumljivih klijentu i napiše HTML kompoziciju, a HyperFrames je pretvori u kratak MP4.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Instaliraj HyperFrames (npx hyperframes init) i njegov Claude Code plugin",
+        "Napiši skriptu koja preko GitHub API-ja povuče commit-ove i PR-ove iz poslednjih 7 dana",
+        "Neka Claude od toga napravi tekst i HTML šablon sa animacijama, pa pokreni npx hyperframes render",
+        "Kasnije dodaj Supabase cron koji to radi svakog petka i šalje link klijentu"
+      ],
+      "inspiracija": "HyperFrames, HeyGen-ov framework za video iz HTML-a"
+    },
+    {
+      "naziv": "Porodična lozinka",
+      "problem": "Lažni video pozivi postaju sve uverljiviji, a starijima prevaranti mogu da se predstave kao dete ili unuk.",
+      "zaKoga": "Porodice u Srbiji, posebno roditelji i bake i deke",
+      "ulogaAi": "AI generiše kratka, lokalizovana pitanja za proveru i objašnjava aktuelne šeme prevara jednostavnim jezikom; sama tajna reč ostaje samo na uređaju.",
+      "tezina": 1,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Napravi SwiftUI aplikaciju gde porodica dogovori tajnu reč i 3 pitanja za proveru, sačuvana u Keychain-u",
+        "Dodaj ekran „Neko me zove“ sa velikim dugmićima i koracima šta treba pitati",
+        "Preko Claude Haiku 4.5 generiši nedeljni savet o prevarama na srpskom",
+        "Testiraj sa jednim starijim članom porodice da li su tekst i dugmići dovoljno veliki"
+      ],
+      "inspiracija": "Tavus Griffin, AI video sagovornik koga je 48% ljudi zamenilo za pravog čoveka"
+    },
+    {
+      "naziv": "Javni snimci",
+      "problem": "Agenti i developeri slučajno ostave u javnim repoima snimke ekrana sa podacima kupaca i lozinkama.",
+      "zaKoga": "Mali timovi i indie developeri sa javnim GitHub repoima",
+      "ulogaAi": "Vision model pregleda slike iz repoa i za svaku označi da li sadrži pristupne podatke, lične podatke ili interne ekrane, uz razlog i predlog za uklanjanje.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Napravi GitHub App koja izlista .png i .jpg fajlove u izabranim repoima",
+        "Slike šalji modelu za odluke sa podrškom za slike (Clef prima do 4 slike po zahtevu) sa pitanjima da/ne",
+        "Rezultate prikaži u Angular dashboard-u sa linkom ka commit-u u kom je slika dodata",
+        "Dodaj GitHub Action koji blokira PR kad se doda rizična slika"
+      ],
+      "inspiracija": "13.000 internih snimaka ekrana koje su agenti okačili u javne GitHub repoe"
+    },
+    {
+      "naziv": "Okreči",
+      "problem": "Pre krečenja je teško zamisliti kako će boja izgledati na sopstvenom zidu, a promene u radnji su skupe.",
+      "zaKoga": "Ljudi koji renoviraju stan i male farbare u Srbiji",
+      "ulogaAi": "Ideogram 4.5 menja samo zidove na fotografiji sobe, nijansu po nijansu, a nameštaj i ostatak slike ostaju isti i posle više izmena.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Napravi SwiftUI aplikaciju koja slika sobu i pusti korisnika da prstom označi zid",
+        "Preko Ideogram API-ja (proveri uslove na njihovom sajtu) šalji sliku, masku i opis nijanse",
+        "U Supabase čuvaj palete i istoriju izmena, da korisnik može da uporedi 3–4 varijante",
+        "Ponudi lokalnim farbarama da ubace svoje nijanse, kao kanal za monetizaciju"
+      ],
+      "inspiracija": "Ideogram 4.5, model za precizne uzastopne izmene slike"
+    }
+  ],
+  "cene": "Danas je najviše pojeftinio DeepSeek V4 Pro 0423 (sa 0,26/0,51 na 0,21/0,42 $), a Kimi K2.6 je pao sa 0,65/3,41 na 0,43/1,83 $ i GLM 5.2 sa 1,40/4,40 na 0,41/3,99 $. Poskupeli su Kimi K3 (ulaz sa 0,28 na 1,125 $, izlaz sa 10 na 11,20 $), GLM 5.3 (ulaz sa 0,30 na 1,40 $) i DeepSeek V4.1 Flash (izlaz sa 0,40 na 0,75 $). Najjeftiniji ulaz među malim modelima i dalje ima DeepSeek V4.1 Flash (0,0172 $), najjeftiniji izlaz Qwen3.8 Flash (0,47 $), a u srednjoj klasi je najpovoljniji Gemini 3.8 Flash sa 0,75/3,75 $.",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Argon: rekordni rezultati, ali da li je stvarno tako dobar?",
+        "oCemuSePrica": "Google-ova objava Argona je najpraćenija objava dana na X-u, a benchmark tabele se dele na sve strane. Odmah su stigle i sumnje: Bloomberg je preneo interne glasove da Argon dobro prolazi testove, ali slabije radi u stvarnom programiranju. Reddit nagađa i da Google interno ima još jači model, što je za sad samo glasina.",
+        "glasovi": "@GoogleDeepMind i @sundarpichai vode objavu, Artificial Analysis i Vals daju nezavisne brojke, a @teortaxesTex i @BlackHC dovode u pitanje DeepSWE rezultat i pravni benchmark. Jedan DeepMind inženjer je javno demantovao Bloomberg.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@GoogleDeepMind",
+            "url": "https://x.com/GoogleDeepMind/status/2105388084154056939"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@teortaxesTex",
+            "url": "https://x.com/teortaxesTex/status/2105455812915433849"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1wuz9sg/google_deepmind_engineer_denied_bloomberg_report/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1wv7jfq/google_has_more_powerful_model_than_argon/"
+          }
+        ]
+      },
+      {
+        "naslov": "Da li je Opus 5.5 „oslabljen“?",
+        "oCemuSePrica": "Na r/ClaudeAI se opet tvrdi da je Opus 5.5 posle prvih nedelju dana postao slabiji i da se to vidi po stilu pisanja. Za razliku od ranijih rasprava, sada postoji i alat za merenje: open-source projekat LiveNerf svakog dana testira Opus 5.5, ima skoro 1.000 zvezdica i dospeo je na naslovnu Hacker News-a.",
+        "glasovi": "Korisnik u/freedomfromfreedom navodi lične primere i pominje tužbu po evropskom pravu. Autor LiveNerf-a u/TheOnlyVibemaster kaže da tek gradi osnovnu liniju i da je prerano za zaključke. Dokaza o slabljenju za sada nema.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1wvdt9p/is_opus_55_nerfed_now_livenerf_day_8_update/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1wuw9bc/opus_55_nerfing_how_to_measure_how_to_spot_how_to/"
+          },
+          {
+            "platforma": "github",
+            "naziv": "ninjahawk/livenerf",
+            "url": "https://github.com/ninjahawk/livenerf"
+          }
+        ]
+      },
+      {
+        "naslov": "Prvi dani sa Dots-om i Ultrafast-om: impresivno, ali skupo",
+        "oCemuSePrica": "Korisnici koji su dobili Dots opisuju da agent zaista ima svoj računar u cloud-u i višednevne zadatke vodi bez gubljenja konteksta. Istovremeno se žale na smanjene limite korišćenja, a jedan tester je nedeljni limit sa Ultrafast-om potrošio za oko dva sata.",
+        "glasovi": "@sayashk meri da je generisanje oko 8x brže, ali ceo agentski zadatak samo 2–4x, jer čekanje na alate i dalje traje. @kimmonismus prenosi jednokratne kredite od oko 2.500 $ i žalbe na limite.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/OpenAI",
+            "url": "https://www.reddit.com/r/OpenAI/comments/1wuznlr/i_spent_a_day_poking_dots_with_sticks_heres_what/"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@sayashk",
+            "url": "https://x.com/sayashk/status/2105472435390906634"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@kimmonismus",
+            "url": "https://x.com/kimmonismus/status/2105335676875276522"
+          }
+        ]
+      },
+      {
+        "naslov": "Factory protiv Cognition-a: savetnik prešao kod konkurencije",
+        "oCemuSePrica": "CEO Factory-ja je javno objavio da su udaljili savetnika Chrisa Degnana jer je navodno odavao informacije Cognition-u, a Cognition ga je istog dana proglasio za CRO-a. Rasprava se vodi o sukobu interesa u upravnim odborima startapa koji prave AI alate za programiranje.",
+        "glasovi": "@matanSF (Factory) iznosi optužbe, a @ScottWu46 (Cognition) tvrdi da nijedna informacija nije podeljena i da je Degnan već dao ostavku. Ovo su optužbe jedne strane i nisu dokazane.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@matanSF",
+            "url": "https://x.com/matanSF/status/2105335179502064038"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@ScottWu46",
+            "url": "https://x.com/ScottWu46/status/2105360290993115469"
+          }
+        ]
+      },
+      {
+        "naslov": "Rasprava o riziku: LeCun protiv Amodeija i „AI skoro izazvao rat“",
+        "oCemuSePrica": "Yann LeCun je izjavio da ga uopšte ne brine izumiranje ljudi i nazvao Daria Amodeija zabludelim, što se proširilo po r/singularity i r/OpenAI. Na Bluesky-ju Timnit Gebru deli tekst sa Emily Bender o CNN izveštaju da je chatbot dao izmišljene podatke koji su skoro izazvali sukob SAD i Kine. Njihova poruka je da su stvarni rizici greške današnjih sistema, a ne „superinteligencija“.",
+        "glasovi": "LeCun je na strani da nema razloga za paniku, Gebru i Bender upozoravaju na konkretne greške modela, a Wired kritikuje dobrovoljni sporazum Bele kuće kao privid regulacije.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1wv58yx/ai_godfather_yann_lecun_has_zero_concerns_about/"
+          },
+          {
+            "platforma": "bluesky",
+            "naziv": "Timnit Gebru",
+            "url": "https://bsky.app/profile/timnitgebru.blacksky.app/post/3mwsr2n64ts2e"
+          }
+        ]
+      }
+    ],
+    "snimci": [
+      {
+        "naslov": "PewDiePie predstavlja Ajax, svoj necenzurisani model",
+        "kanal": "PewDiePie",
+        "opis": "PewDiePie pokazuje Ajax, svoj otvoreni dotrenirani model zasnovan na Qwen 3.5 9B, i oko devetog minuta pominje alat Heretic za uklanjanje odbijanja iz modela.",
+        "url": "https://www.youtube.com/watch?v=ODDJXGY_1kQ"
+      }
+    ]
+  },
+  "nedeljni": null
+}
