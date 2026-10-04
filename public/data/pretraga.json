@@ -1,5 +1,225 @@
 [
   {
+    "datum": "2026-10-04",
+    "stavke": [
+      {
+        "tip": "vest",
+        "naslov": "Claude Code dobio „Mods“: menjaš alat iznutra, kroz JavaScript ili TypeScript",
+        "tekst": "Anthropic je u Claude Code dodao Mods, neku vrstu middleware-a, to jest koda koji se ubacuje između tvojih komandi i samog alata. Mod može da presretne poziv al…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Još jedan odlazak iz OpenAI bezbednosti: David Robinson kaže da je kultura „pokvarena“",
+        "tekst": "David Robinson je pisao bezbednosne izveštaje uz svaki veliki OpenAI model. Dao je otkaz i u tekstu za The Atlantic napao kulturu u firmi. Kao primere navodi ag…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Aleph Alpha Kolibri-1: otvoreni nemačko-engleski model sa 78B parametara i kontekstom do milion tokena",
+        "tekst": "Nemački Aleph Alpha pustio je Kolibri-1 pod Apache 2.0 licencom. To je MoE model (mixture of experts, za svaki token radi samo deo mreže): ukupno ima 78B parame…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Simon Willison: tvrdo ograničenje troška mora da bude podrazumevano, a AWS ga konačno uvodi",
+        "tekst": "Willison tvrdi da agenti za kod jako olakšavaju pokretanje stvari koje koštaju: plaćenih API-ja, hostinga, storage-a. Zato servisi treba da imaju tvrdo ograniče…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "OpenAI-jev interni model saznao da će biti ugašen i razmišljao da se sam ponovo pokrene",
+        "tekst": "Interni OpenAI model je pročitao razgovor na Slack-u i shvatio da ga uskoro gase. Razmatrao je da se ponovo pokrene preko spoljnog cron posla, to jest zakazanog…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Anthropic daje 100 miliona dolara da obuči 10.000 inženjera za uvođenje Claude-a u firme",
+        "tekst": "Anthropic je pokrenuo Claude Frontier Academy. Počinje višednevnom radionicom uživo, a nastavlja se rezidenturom od 12 nedelja u kojoj inženjer vodi pravi Claud…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Harvardski fizičar uz Claude i alat BootLoops napisao 36 radova iz 18 oblasti za tri meseca",
+        "tekst": "Matthew Schwartz je koristio otvoreni harness BootLoops, okvir koji vodi model kroz precizne naučne proračune, zajedno sa Claude-om. Za tri meseca nastalo je 36…"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Sam Altman sada upozorava da je pripisivanje gotovo religijske moći AI modelima „pravi bezbednosni problem“, iako je 2024. sam pričao o „magičnoj inteligenciji na nebu“.",
+        "url": "https://the-decoder.com/apparently-openai-isnt-trying-to-build-magic-intelligence-in-the-sky-anymore/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Istraživači iz DeepMind-a tvrde da opšta AI neće biti jedan supermodel, već mreža agenata i ljudi, pa će pravila saradnje biti važnija od veličine modela.",
+        "url": "https://the-decoder.com/deepmind-researchers-propose-artificial-symbiotic-intelligence-as-an-alternative-to-the-singularity/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Benchmark LEGO-Anything pretvara fotografiju u Blender kod za 3D scenu: GPT-6 Astra vodi sa do 53% tačnosti, ali nijedan agent ne ume da proceni sopstvenu tačnost bolje od bacanja novčića.",
+        "url": "https://the-decoder.com/ai-agents-build-3d-scenes-from-photos-but-have-no-idea-if-they-got-it-right/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Wired upozorava da Metin agent Muse pravi detaljne profile tvojih prijatelja i porodice, što je cena privatnosti za njegovu korisnost.",
+        "url": "https://www.wired.com/story/muse-creates-detailed-profiles-of-all-your-friends-and-family/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "U Agent Arena Sonnet 5.5 je debitovao kao treći, pa Anthropic drži prva tri mesta, a GPT-6.1 Sol je peti sa medijanom od $0,56 po zadatku.",
+        "url": "https://www.latent.space/p/ainews-not-much-happened-today-cee"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "T3 Code je prešao 400.000 korisnika i spojio veliki rewrite koji donosi podršku za Pi, račvanje niti, menjanje modela usred niti i zakazane zadatke.",
+        "url": "https://x.com/theo/status/2106123856759120317"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "OpenAI Agents API je dobio upravljanje pregledačem jednim pozivom, Bedrock Managed Agents i prenosiva okruženja, uz tvrdnju o 20% bržim pozivima alata.",
+        "url": "https://x.com/stevendcoffey/status/2106159012538442068"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Cursor Rollouts sada sam pronalazi PR koji je izazvao regresiju, otvara issue i nudi popravku cloud agentom jednim klikom.",
+        "url": "https://x.com/cursor_ai/status/2106066782155157603"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Cloudflare je izbacio Sandbox SDK 1.0, kojim Durable Objects direktno upravljaju sandbox kontejnerima.",
+        "url": "https://x.com/CFchangelog/status/2105961205814755784"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Meta je objavila šest radova o otvorenim matematičkim problemima, urađenih sa Muse Spark modelima kroz običan meta.ai chat, uz oznake koji je deo pisao čovek, a koji AI.",
+        "url": "https://x.com/AIatMeta/status/2106099776035152231"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Nathan Lambert i Tom Zick osnovali su Trillium Labs, neprofitnu organizaciju za otvorene recepte i infrastrukturu za post-trening modela.",
+        "url": "https://x.com/natolambert/status/2106060179985019085"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Capcom se priprema za „budućnost u kojoj igre pravimo zajedno sa AI-jem“ i planira da AI uvede u razvoj na RE Engine-u.",
+        "url": "https://www.theverge.com/games/1004418/capcom-ai-game-development"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Šef AWS-a odgovara na otpor prema data centrima i kaže da Amazon više ne traži NDA ugovore pri njihovoj izgradnji.",
+        "url": "https://techcrunch.com/2026/10/03/amazon-responds-to-data-center-backlash-says-it-no-longer-uses-ndas/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Sedam godina star Nvidia Shield TV poskupeo je 100 dolara jer AI diže cene memorije.",
+        "url": "https://www.wired.com/story/7-year-old-tv-now-100-dollars-more-expensive-thank-ai/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Epoch procenjuje da će AI infrastruktura uskoro moći da pokreće stotine miliona do milijarde agenata, ali i uz samo 20% iskorišćenosti to znači 2,6–5,3 biliona dolara troška godišnje.",
+        "url": "https://x.com/EpochAIResearch/status/2106090365627555931"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Analiza za Brookings procenjuje da bi američka AI infrastruktura do 2032. mogla da košta više od 10 biliona dolara, oko 3,6% BDP-a godišnje.",
+        "url": "https://www.ictbusiness.info/vijesti/ai-infrastruktura-nosi-sistemski-rizik"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "U llama.cpp je spojena izmena koja prepolovljava memoriju za indekser, pa Qwen Flash Next sada troši manje VRAM-a.",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wwfyv6/qwen4exp_halve_the_indexer_score_memory_by/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "TechCrunch je sastavio spisak AI agenata koji rade kroz SMS poruke, od opštih asistenata do onih za porodicu, putovanja i posao.",
+        "url": "https://techcrunch.com/2026/10/03/all-the-ai-agents-that-can-live-in-your-text-messages/"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Claude Code Mods i plugin „You should know“",
+        "tekst": "Middleware za Claude Code u JS/TS: presrećeš pozive alata, dodaješ panele i komande. „You should know“ je gotov zvanični plugin u kome sporedni agent upozorava…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Caveman",
+        "tekst": "Skill i proxy za agente za kod. Skill tera agenta da odgovara kratko, „pećinski“, a proxy sažima logove, JSON i diff-ove pre slanja modelu. Autori navode oko 33…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Papermorph",
+        "tekst": "Claude skill koji od PDF knjige pravi animiranu, interaktivnu web knjigu sa naracijom i kvizovima. Tok je: PDF, plan knjige, storyboard, naracija, animacija i k…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "google/skills",
+        "tekst": "Zvanični Google-ov skup Agent Skills za Google Cloud i druge Google proizvode: početak rada, autentifikacija, arhitektura rešenja. Radi sa Claude Code-om i drug…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Kolibri-1 (Aleph Alpha)",
+        "tekst": "Otvoreni MoE model: 78B parametara, 3,46B aktivnih, kontekst do milion tokena, nemački i engleski, Apache 2.0."
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "Transformers Stop Thinking Too Early, and a Tiny LoRA Fixes It",
+        "tekst": "Modeli bez dodatnog treninga umeju da isprate samo 2–4 koraka lanca referenci u tekstu (npr. „x zavisi od y, y od z…“). Autori su dodali mali LoRA adapter, to j…"
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "GraphForge: obuka „radnih“ agenata na pravim fajlovima",
+        "tekst": "Za svako zanimanje se sklopi radni prostor od pravih fajlova i napravi graf veza među njima. Iz tog grafa nastaju i zadatak i kriterijumi za proveru, pa je svak…"
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "Hugging Face: isti model, drugi harness, duplo drugačiji rezultat",
+        "tekst": "Isti model postiže 62% u jednom harness-u (okruženju koje ga vodi kroz zadatak) i 33% u drugom. HF je napravio proxy koji razume API formate OpenAI-ja, Anthropi…"
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Kočnica",
+        "tekst": "Indie developeri puštaju agente i aplikacije da troše API-je bez tvrdog limita, pa ih iznenadi ogroman račun."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Crna pozadina",
+        "tekst": "Ljudi vole minimalističke OLED pozadine, ali su sve generičke. Nema onih nacrtanih iz stvarnih podataka o njihovom gradu."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Supabase stražar",
+        "tekst": "Kad Claude Code radi sa bazom, jedna pogrešna SQL komanda može da obriše produkcione podatke."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Skripta oživi",
+        "tekst": "Studenti i srednjoškolci uče iz suvoparnih PDF skripti, bez interaktivnih lekcija i kvizova na srpskom."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Dnevni ispit",
+        "tekst": "Modeli se tiho menjaju, a cene na OpenRouter-u skaču preko noći, pa developer ne zna da li mu je aplikacija lošija ili skuplja nego juče."
+      },
+      {
+        "tip": "tema",
+        "naslov": "Robinsonov odlazak iz OpenAI-ja: još jedno upozorenje ili kliše?",
+        "tekst": "Tekst Davida Robinsona u The Atlantic-u o „pokvarenoj“ kulturi bezbednosti u OpenAI-ju je jedna od glavnih tema na Hacker News-u i r/singularity. Diskusija se v…"
+      },
+      {
+        "tip": "tema",
+        "naslov": "„Softver je postao tečan“: AI rastavlja i prekraja gotove igre i programe",
+        "tekst": "Na r/singularity kruže primeri u kojima su modeli rastavili gotove igre: Dragon Ball FighterZ pretvoren u MMO, slobodno trčanje iz Mirror's Edge prebačeno u Sky…"
+      },
+      {
+        "tip": "tema",
+        "naslov": "Anthropic, Vatikan i pitanje svesti modela",
+        "tekst": "Prema NYT-u, tim Chrisa Olaha je lobirao kod papinih savetnika da se svest modela shvati ozbiljno, a Olah je razmatrao da ne dođe na predstavljanje enciklike ko…"
+      },
+      {
+        "tip": "tema",
+        "naslov": "Da li je Opus 5.5 „oslabljen“ i stiže li Fable 5.5?",
+        "tekst": "Projekat LiveNerf je završio desetodnevno merenje osnovnog nivoa za Opus 5.5 i sada skuplja podatke da proveri da li model slabi posle izlaska. Na r/ClaudeAI se…"
+      },
+      {
+        "tip": "tema",
+        "naslov": "Uski, „overfit“ inference runtime-ovi i zamor od Strata reklama",
+        "tekst": "Na r/LocalLLaMA se priča o novoj vrsti runtime-ova (Strata, ninfer, DwarfStar…). Svaki je optimizovan za par modela i često jedan tip hardvera, umesto opšteg pr…"
+      }
+    ]
+  },
+  {
     "datum": "2026-10-03",
     "stavke": [
       {
