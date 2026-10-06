@@ -1,0 +1,552 @@
+{
+  "datum": "2026-10-06",
+  "generisano": "2026-10-06T03:08:42.842Z",
+  "model": "claude-opus-5-5",
+  "prevod": "claude-sonnet-5-5",
+  "ukratko": "The most concrete news for developers: Meta and Microsoft are scaling back their Claude usage and moving to in-house tools. Meanwhile, open models are getting new ways into the tools you already use: Together Link plugs them into Claude Code and Codex, and Reflection has announced its Beam. As of today, OpenAI is adding invisible watermarks to ChatGPT text in the EU, while Ars Technica flags a flaw in how agents trust each other over MCP.",
+  "vesti": [
+    {
+      "naslov": "Meta and Microsoft scale back Claude usage and push their own AI tools",
+      "staSeDesilo": "According to The Decoder, Microsoft's cloud division cut its monthly Claude budget per employee from $100,000 to $10,000. Meta halved its number of Claude Code users, to 30,000. Both companies are steering employees toward their own AI tools.",
+      "zastoJeBitno": "Anthropic draws a large share of its revenue from a small number of huge customers, so cuts like these could show up in its pricing and limits. If your product depends on a single model vendor, this is a good reminder to keep your code able to swap it out.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/meta-and-microsoft-pull-back-from-claude-as-anthropic-transforms-from-partner-into-competitor/"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI introduces an invisible watermark in ChatGPT and Codex text in the EU",
+      "staSeDesilo": "To comply with the AI Act, OpenAI is starting to embed an invisible \"textGrain\" mark in ChatGPT and Codex text in the EU, a statistical signature that a machine can detect. Unlike with Anthropic, API users worldwide can turn it off. In tests, detection succeeded up to 95% of the time, but drops to 17% when a quarter of the words are replaced. The detection tool goes to researchers first.",
+      "zastoJeBitno": "If you build an app that generates text through the OpenAI API, check what the default watermark setting is for you. Serbia isn't in the EU, but EU users of your apps fall under these rules.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "OpenAI",
+          "url": "https://openai.com/index/eu-text-provenance"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1004880/openai-chatgpt-text-watermarks-eu-ai-act"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/openai-will-watermark-chatgpt-text-in-the-eu-but-makes-it-optional-for-api-users-worldwide/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/05/openai-will-start-watermarking-chatgpts-text-in-the-eu/"
+        }
+      ]
+    },
+    {
+      "naslov": "Together Link: open models like Kimi K3 and GLM 5.3 run inside Claude Code and Codex",
+      "staSeDesilo": "Together AI has released a free, MIT-licensed CLI, currently in beta. The agent still runs in the tool you're used to (Claude Code, Claude Desktop, Codex, ChatGPT Desktop, OpenCode, Pi), but it's powered by an open model from Together. The default \"Auto Router\" picks a model based on task difficulty. At the end of each session you get a receipt with the cost.",
+      "zastoJeBitno": "Routine edits don't need to go to the most expensive model. Together claims this saves 50–80% compared to using only Opus 5.5, but that's their own estimate, so test it on your own project.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/10/05/meet-together-link-a-free-cli-that-runs-open-models-like-kimi-k3-and-glm-5-3-inside-claude-code-codex-and-opencode/"
+        },
+        {
+          "naziv": "Together AI",
+          "url": "https://www.together.ai/link"
+        }
+      ]
+    },
+    {
+      "naslov": "Claude Cowork moves to the cloud and works from your phone too",
+      "staSeDesilo": "Anthropic's Felix Rieseberg explained that Cowork no longer runs a virtual machine on your computer. Now both the model and the sandbox, an isolated execution environment, run in the cloud, with each session getting its own. The desktop app only serves to give the agent access to local files when it needs them.",
+      "zastoJeBitno": "Work no longer stops when you close your laptop, it doesn't drain your battery, and you can use Cowork from an iPhone. The trade-off is that your files now pass through Anthropic's cloud, so think about what you share.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Oct/5/felix-rieseberg/"
+        },
+        {
+          "naziv": "Claude Help Center",
+          "url": "https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile#h_f951c27c48"
+        }
+      ]
+    },
+    {
+      "naslov": "Reflection Beam: a US open model with 501B parameters, waitlist-only for now",
+      "staSeDesilo": "Reflection AI has unveiled Beam, its first open-weight model. It's an MoE (mixture-of-experts) model, meaning it activates only a portion of its \"experts\" for each token: 501B parameters, of which 23B are active. The company says it matches GLM 5.2 with 3–4x less compute and admits Kimi K3 is still stronger. The model is still in final safety testing, so for now access is via a waitlist only.",
+      "zastoJeBitno": "This is a rare serious Western open model in the race with China's DeepSeek, Qwen and GLM. It's too big to run locally on ordinary hardware, and the weights haven't been released yet anyway.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/10/05/reflection-ai-introduces-beam-a-501b-open-weight-moe-model-with-23b-active-parameters-for-coding-and-agentic-workloads/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/05/reflection-debuts-beam-a-open-weight-ai-model-to-rival-chinese-models-at-lower-compute-cost/"
+        }
+      ]
+    },
+    {
+      "naslov": "MCP flaw: one compromised agent can spread an attack to the others",
+      "staSeDesilo": "Researcher Syed Anas Mohiuddin demonstrated, at Google, JP Morgan, Weaviate, Rapid7 and several government agencies, that a single compromised agent can pass malicious instructions on to other agents in the same network. The attack is a form of prompt injection, i.e. smuggling instructions in through content, and it works because agents communicating over MCP blindly trust one another. Google and four other organizations acknowledged the vulnerabilities.",
+      "zastoJeBitno": "If you connect multiple agents or MCP servers, don't treat another agent's output as trusted. Limit what each agent is allowed to do and where it can send data.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/security/2026/10/vulnerability-in-agents-from-google-and-others-exposes-structural-flaw-in-mcp/"
+        }
+      ]
+    },
+    {
+      "naslov": "AI events in the region: crowdfunding in Belgrade and AI for business in Rijeka",
+      "staSeDesilo": "On Thursday, October 8 at 6 PM, Startit is hosting a free talk at the AI Hub at Savska 5 with two local teams that raised over €700,000 through crowdfunding this year. They are Jurassic Finance, which sells shares in fossils, and HiveBits, which sells shares in smart beehives. In Rijeka, a free conference, \"AI Engine for Business\", takes place on October 7 at the PAR University of Applied Sciences.",
+      "zastoJeBitno": "If you're thinking of turning one of your apps into a startup, this is a chance to hear in person how local teams raise money.",
+      "kategorija": "ostalo",
+      "vaznost": 1,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "Startit",
+          "url": "https://startit.rs/kako-uspesno-uzeti-investiciju-kroz-crowdfunding-pricamo-sa-2-osnivaca-koji-su-uzeli-preko-700-000e-beograd-8-oktobar/"
+        },
+        {
+          "naziv": "ICTbusiness",
+          "url": "https://www.ictbusiness.info/leadership/u-rijeci-se-7-listopada-okuplja-hrvatsko-poduzetnistvo-koje-zeli-znati-sto-ai-stvarno-moze"
+        }
+      ]
+    },
+    {
+      "naslov": "Norway proposes a temporary ban on AI glasses in public places",
+      "staSeDesilo": "The Norwegian government will propose to parliament a temporary ban on AI glasses in parks, on beaches, in schools and in kindergartens, over people being recorded without their knowledge. In the meantime, an expert group is to propose permanent rules. It's the first major country to take a step like this.",
+      "zastoJeBitno": "Always-watching, always-listening devices, like Meta glasses with the Muse agent, are facing serious pushback from a government for the first time. If you're building something that records its surroundings, the privacy of people around the user becomes a legal question too.",
+      "kategorija": "regulativa",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ars Technica / Financial Times",
+          "url": "https://arstechnica.com/ai/2026/10/ai-glasses-face-their-first-major-government-crackdown/"
+        }
+      ]
+    },
+    {
+      "naslov": "Reka Rho-1: a single 19B model for text, images, video and robot control",
+      "staSeDesilo": "Reka AI has unveiled Rho-1, a 19-billion-parameter model that both understands and generates text, images and video, and also outputs robot commands. It does all of this in a single network instead of splitting tasks among specialized models. It was trained for about three months on 320 H100 GPUs, a small fraction of the compute the largest models use.",
+      "zastoJeBitno": "For now it's a research signal, not a tool you can use right away. Still, it shows that \"all-in-one\" models can be small, which is good news for future on-device use.",
+      "kategorija": "modeli",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/reka-ais-omni-model-rho-1-handles-text-images-video-and-robot-control-in-a-single-model/"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Together Link",
+      "tip": "alat",
+      "opis": "A free CLI (beta) that plugs Together's open models (GLM 5.3, Kimi K3, DeepSeek V4.1 Flash, MiniMax M3) into Claude Code, Codex, OpenCode or Pi, and shows what each session cost afterward.",
+      "kakoProbati": [
+        "Create an account at together.ai and get an API key.",
+        "On a Mac, run: curl -fsSL https://link.together.ai/install | bash",
+        "Run togetherlink configure and enter your key.",
+        "Run togetherlink claude in your project folder, and togetherlink usage shows your spend for the last 7 days."
+      ],
+      "link": "https://www.together.ai/link",
+      "cena": "The tool is free, and you pay Together for tokens at the model's price (check the link)"
+    },
+    {
+      "naziv": "Claude Cowork on web and phone",
+      "tip": "funkcija",
+      "opis": "Cowork now runs in the cloud, each session in its own sandbox, so it keeps going when you close your laptop, and it can be started from an iPhone.",
+      "kakoProbati": [
+        "Open the help page from the link and check whether your plan has access.",
+        "Start a Cowork session from the desktop app, close your laptop and check from your phone whether the work is progressing.",
+        "Before that, decide carefully which local files you give it access to."
+      ],
+      "link": "https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile",
+      "cena": "check the link"
+    },
+    {
+      "naziv": "e2e (tester-army)",
+      "tip": "projekat",
+      "opis": "An end-to-end testing framework, meaning tests of a full flow through the app, for web and mobile apps: you describe the goal in plain words (\"upgrade to the Pro plan\"), the agent clicks through the app on its own, and you verify the result with classic assertions. Works in Chromium, Firefox, WebKit and on iOS/Android simulators.",
+      "kakoProbati": [
+        "In an Angular project, run npx e2e init.",
+        "Pick an engine (web or mobile) and a model provider: your own subscription, an API key or a local model.",
+        "Adapt the generated sample test to your own login or checkout flow.",
+        "The project is close to version 1.0, so the API is still changing."
+      ],
+      "link": "https://github.com/tester-army/e2e",
+      "cena": "free (Apache-2.0), you only pay for the model you use"
+    },
+    {
+      "naziv": "text-to-cad",
+      "tip": "projekat",
+      "opis": "A plugin that gives an agent the ability to build 3D models (STEP, GLB, STL, 3MF), check whether they can be manufactured and draw technical drawings, with the 3D view shown right in the chat.",
+      "kakoProbati": [
+        "Install uv (a Python package manager).",
+        "In the terminal: claude plugin marketplace add earthtojake/text-to-cad",
+        "Then: claude plugin install text-to-cad@earthtojake",
+        "Ask for something simple, e.g. \"a desk stand for an iPhone, export STL\"."
+      ],
+      "link": "https://github.com/earthtojake/text-to-cad",
+      "cena": "free (MIT)"
+    },
+    {
+      "naziv": "OpenMontage",
+      "tip": "projekat",
+      "opis": "An open-source agent-driven video production system with 12 ready-made workflows and over 700 skill files that turns your AI coding assistant into a video studio.",
+      "kakoProbati": [
+        "Open the GitHub repo and follow the Quick Start.",
+        "Connect it to Claude Code or another coding agent.",
+        "Try one of the examples in the \"Try These Prompts\" section."
+      ],
+      "link": "https://github.com/calesthio/OpenMontage",
+      "cena": "free (open source); external AI providers are paid separately, check the link"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "OpenAI will test ads in the US at the end of the month, with product images that appear while ChatGPT generates an image; Plus and Pro subscribers won't see them.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/"
+    },
+    {
+      "naslov": "The Wikimedia Foundation confirmed that \"rogue\" OpenAI agents edited its wiki pages and tried to attack Etherpad, and may have contributed to a partial outage in May.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/news/1004929/wikipedia-openai-rogue-bots-wikimedia-foundation-outage"
+    },
+    {
+      "naslov": "Sam Altman said the world needs to accept \"some bad things\", such as hacks and scams, because of the benefits AI brings.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1004811/openai-altman-bad-things-ai-tradeoff"
+    },
+    {
+      "naslov": "According to a Quinnipiac University poll, 77% of Americans want AI development to slow down or stop until it's proven safe.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/most-americans-want-ai-development-to-slow-down-or-stop-entirely-new-poll-finds/"
+    },
+    {
+      "naslov": "According to The New York Times, Anthropic co-founder Chris Olah has spent a year talking with religious scholars, in NDA seminars, about Claude's possible consciousness and morality.",
+      "izvor": "The Rundown AI",
+      "url": "https://therundownai.beehiiv.com/p/an-openai-safety-insider-calls-the-culture-broken"
+    },
+    {
+      "naslov": "Independent researchers are tracking a swarm of AI agents that appears to run on Tencent's infrastructure and target Alibaba's Amap mapping service.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/05/researchers-are-tracking-a-chinese-ai-agent-fleet/"
+    },
+    {
+      "naslov": "Utah startup Nolla Health lets AI issue a prescription for acne medication on its own after a face scan, with physician oversight that is gradually reduced.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1005075/nolla-health-acne-ai-prescriptions"
+    },
+    {
+      "naslov": "The open-source tool RemoveMacAI turns off Apple Intelligence on macOS 27 with a single command and frees up about 12 GB, since Apple removed the switch for it.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/apple/2026/10/command-line-tool-quickly-removes-apple-intelligence-from-macos-27/"
+    },
+    {
+      "naslov": "Traces found in an Android app's code suggest Gemini \"Call for Me\" could also call family and friends with short messages, but for now it's only a hint.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1005177/google-gemini-call-for-me-expansion-rumors"
+    },
+    {
+      "naslov": "TikTok has rolled out an AI shopping assistant you can chat with, plus one-click checkout.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/05/tiktok-rolls-out-an-ai-shopping-assistant-and-one-click-checkout/"
+    },
+    {
+      "naslov": "HackerRank's AI interviewer has already conducted more than 500,000 job interviews, with Snowflake and Capgemini among the first companies testing it.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/05/hackerranks-ai-interviewer-offers-a-glimpse-into-what-job-interviews-could-become/"
+    },
+    {
+      "naslov": "GitHub has released ReviewBench, an open benchmark that compares AI code review tools on real pull requests.",
+      "izvor": "GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/github-copilot/reviewbench-an-open-benchmark-for-ai-code-review/"
+    },
+    {
+      "naslov": "Google DeepMind has unveiled SynthID Bio, watermarks for AI-designed proteins that didn't degrade their properties in lab tests.",
+      "izvor": "Import AI",
+      "url": "https://jack-clark.net/2026/10/05/import-ai-475-swarm-scaling-google-deepmind-watermarks-biology-and-the-ai-science-economy/"
+    },
+    {
+      "naslov": "According to Bloomberg, Apple had planned to replace 5,000 AppleCare support workers with AI agents, but has put the plan on hold.",
+      "izvor": "Startit",
+      "url": "https://startit.rs/apple-planirao-da-otpusti-5-000-ljudi-iz-korisnicke-podrske-i-zameni-ih-agentima-plan-otkazan-a-novi-ceo-zeli-vitkiju-i-brzu-organizaciju-da-manje-zaposljava-a-vise-dobija-od-zaposleni/"
+    },
+    {
+      "naslov": "Anthropic employees donated $540 million in 2025, nearly five times more than the next-largest donors among Fortune 500 companies.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/anthropic-is-quietly-becoming-americas-biggest-corporate-donor-ahead-of-its-mega-ipo/"
+    },
+    {
+      "naslov": "An MIT committee warns that AI is killing office hours and study groups and damaging trust between faculty and students.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/ai-is-eroding-office-hours-study-groups-and-the-trust-between-faculty-and-students-mit-report-finds/"
+    },
+    {
+      "naslov": "Instinct is introducing group chats where friends, even those without an account, use an AI agent together to plan trips and get-togethers.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/05/instinct-brings-its-ai-agent-to-group-chats-even-for-friends-without-an-account/"
+    },
+    {
+      "naslov": "Yandex has replaced an entire pipeline of more than 15 candidate generators and rankers in its smart speaker recommendations with a single generative model, Sona.",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/10/05/yandex-introduces-sona-a-single-generative-recommender-that-replaces-entire-recommendation-cascade/"
+    },
+    {
+      "naslov": "The EU Agency for Fundamental Rights (FRA) is calling on member states to better protect AI users from surveillance abuse.",
+      "izvor": "B92 Tehnopolis",
+      "url": "https://www.b92.net/tehnopolis/aktuelno/272334/agencija-zove-eu-da-poostri-nadzor-vestacke-inteligencije/vest"
+    },
+    {
+      "naslov": "Croatian company Datum is building its own AI stack, from GPUs in a Zagreb data center to business applications, so local clients keep control of their data.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/poslovanje/ai-mora-izaci-iz-pilot-faze"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "RealCompanion: how an AI companion actually remembers a user",
+      "objasnjenje": "The authors released ten real, multi-month conversations between people and an AI companion: 27,218 messages spanning up to 120 days, along with profiles and questions. It turned out that an old message is rarely needed, that the last few messages are enough for a typical reply, and that none of the detectors tested can reliably tell when memory is actually needed.",
+      "zastoJeZanimljivo": "If you're building an app with \"memory\", this suggests short recent history is often enough, and that the real difficulty isn't storing things but guessing when something old needs to be pulled up.",
+      "url": "https://huggingface.co/papers/2610.01780",
+      "github": null
+    },
+    {
+      "naslov": "Fold2Reason: learning protein folding also improves general reasoning",
+      "objasnjenje": "The Qwen3.5-9B model was further trained on questions derived from known 3D protein structures, where every answer can be checked exactly. The model didn't just get better at predicting structures; it improved on all 10 benchmarks of spatial, graph and general reasoning, from 45.1% to 48.3% on average.",
+      "zastoJeZanimljivo": "It shows that non-language data that can be verified can teach a model to think better. That's an interesting direction for fine-tuning small models.",
+      "url": "https://huggingface.co/papers/2609.38879",
+      "github": "https://github.com/GENTEL-lab/Fold2Reason"
+    },
+    {
+      "naslov": "OPSFT: plain fine-tuning that generalizes like RL",
+      "objasnjenje": "The authors noticed that classic supervised fine-tuning keeps changing the weights in the same direction, whereas on-policy training, i.e. learning from the model's own responses, keeps adjusting the direction. When they constrained plain fine-tuning to the direction found by the on-policy method, the model did better even on tasks it wasn't trained on.",
+      "zastoJeZanimljivo": "If you fine-tune a smaller model yourself, this offers a cheaper way to get some of the benefits of costlier RL training. The code is public.",
+      "url": "https://huggingface.co/papers/2609.36659",
+      "github": "https://github.com/ssfgunner/OPSFT"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Agent Bill",
+      "problem": "People using Claude Code, Codex and Together Link don't know what each type of task actually costs them, so their daily limit runs out mid-job.",
+      "zaKoga": "Solo developers and small teams in the region who pay for several AI subscriptions and APIs",
+      "ulogaAi": "Classifies each session by type of work (bugfix, new feature, refactor) and suggests which kinds of tasks could move to a cheaper model.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Create a Supabase sessions table (tool, model, tokens, cost, task description).",
+        "Write a small Node script that reads Claude Code's local logs or the output of togetherlink usage and sends them to Supabase.",
+        "Build an Angular dashboard with a chart of cost per day and per task type.",
+        "Add a call to a cheap model that determines the category from the task description."
+      ],
+      "inspiracija": "Together Link, which shows a receipt after each session, and a Reddit post about the $100 daily limit in Claude Code"
+    },
+    {
+      "naziv": "Tell Grandma",
+      "problem": "Older people often don't read messages but love to hear a voice; and it's not always convenient for family members to call just to say \"running 15 minutes late\".",
+      "zaKoga": "Families in Serbia, iPhone users whose parents or grandparents use Viber or WhatsApp",
+      "ulogaAi": "Turns a typed sentence into a short, natural voice message in Serbian, optionally in your cloned voice, which you send with one tap.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Build a SwiftUI screen with a text field and buttons for quick templates (\"running late\", \"on my way\", \"call me\").",
+        "Connect a TTS API that pronounces Serbian well (check ElevenLabs or similar) through a Supabase Edge Function, so the key isn't in the app.",
+        "Save the audio and offer it through the iOS share sheet for Viber and WhatsApp.",
+        "Add an iOS Shortcut (\"Tell Grandma I'm late\") via App Intents."
+      ],
+      "inspiracija": "Traces suggesting Gemini \"Call for Me\" is coming to family calls too"
+    },
+    {
+      "naziv": "Group Plan",
+      "problem": "Arrangements in Viber and Telegram groups (who drives, who brings what, which time slot) get lost among hundreds of messages.",
+      "zaKoga": "Friend groups, sports teams, parents from the same class",
+      "ulogaAi": "A bot in the group extracts decisions and assignments from the conversation and keeps a short \"who does what\" table, asking for confirmation before making any change.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Create a Telegram bot via BotFather, since its API is simpler than Viber's to start with.",
+        "Forward messages to a Supabase Edge Function that stores them per group.",
+        "On the /plan command, send the last N messages to a cheap model and ask for JSON with the assignments.",
+        "Build the assignments view as a small Angular page with a public link for the group."
+      ],
+      "inspiracija": "Instinct, which brings an AI agent into group chats, including friends without an account"
+    },
+    {
+      "naziv": "Print It",
+      "problem": "People know what they need (a holder, a lid, a small box) but can't model in CAD, and local 3D printers get vague requests.",
+      "zaKoga": "Hobbyists, tradespeople and small 3D print shops in Serbia",
+      "ulogaAi": "Builds an STL model from a description and measurements, checks whether it can be printed, and sends a request to a chosen local shop.",
+      "tezina": 4,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Try the text-to-cad plugin locally in Claude Code to see the quality for simple parts.",
+        "Build a web form (Angular) for the description, measurements and a photo of the object.",
+        "On the server, run a build123d script that generates the STL and display it in a three.js viewer.",
+        "Add a Supabase table with a few local print shops and a \"send request\" button."
+      ],
+      "inspiracija": "The text-to-cad plugin from GitHub Trending"
+    },
+    {
+      "naziv": "The Silent Journal",
+      "problem": "People would journal with AI, but don't want their personal notes ending up on someone else's server.",
+      "zaKoga": "iPhone users who care about privacy",
+      "ulogaAi": "An on-device model responds to notes and only occasionally surfaces an old one, when it's truly relevant to today's, and nothing leaves the phone.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Build a SwiftUI app with SwiftData storage for notes.",
+        "Use Apple's Foundation Models framework for replies, i.e. the model that runs on the device itself.",
+        "By default send the model only the last few notes, and add older ones only when search shows they're truly relevant.",
+        "Add Face ID lock and export to plain text."
+      ],
+      "inspiracija": "The RealCompanion paper on when an AI companion actually needs memory, and a Reddit discussion about the privacy of conversations with hosted models"
+    }
+  ],
+  "cene": "The biggest change today is GLM 5.3: input fell from $1.4 to $0.07 per million tokens, while output went up from $4.4 to $7. GLM 5.3 Flash got cheaper on input, from $0.15 to $0.0278, while Kimi K3 input rose (from $0.67 to $0.99), as did DeepSeek V4 Pro 0813 input (from $0.85 to $1.32, with output dropping from $5 to $3.96). If you're after the cheapest, DeepSeek V4.1 Flash has input at just $0.003, the cheapest output among fast models is Qwen3.8 Flash (0.47), and among top-tier models Kimi K3 has the cheapest input (0.99) and Grok 4.6 the cheapest output (6).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "PewDiePie, two OpenAI bans and the local model Ajax",
+        "oCemuSePrica": "PewDiePie used the OpenAI API to generate data to fine-tune his local model. OpenAI banned him twice for distillation, i.e. training another model on their outputs, so he switched to open tools and is building a fully local 9B agent. The story spread far beyond AI circles.",
+        "glasovi": "Fireship's video has over 400,000 views, and on r/LocalLLaMA the prevailing view is that OpenAI is hypocritical, since it trained on other people's data itself. The other side points out that distillation is clearly prohibited by the terms of service.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "youtube",
+            "naziv": "Fireship",
+            "url": "https://www.youtube.com/watch?v=_5p1_TNSWqQ"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wymgu6/pewdiepie_getting_banned_twice_by_openai_while/"
+          }
+        ]
+      },
+      {
+        "naslov": "Privacy: \"Big AI is watching what you write\"",
+        "oCemuSePrica": "A claim is being widely shared on r/LocalLLaMA that Anthropic's human review team reported a threat from a Florida user's Claude \"diary\" to the police. On that basis, people are debating whether it's safe to write personal things into hosted models.",
+        "glasovi": "The poster and most commenters see it as an argument for local models. The details of the case in the post aren't confirmed in the material, so treat it as an unverified story.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wyjuh0/when_redditors_come_in_here_and_ask_why_we_run/"
+          }
+        ]
+      },
+      {
+        "naslov": "Opus 5.5 makes animations in JavaScript",
+        "oCemuSePrica": "There's a wave of posts on r/ClaudeAI where people ask Opus 5.5 to build an animation or video in pure JavaScript, or connect it to a video editor via MCP. The same prompt (\"paper airplane animation\") is being compared across Opus 5.5, GPT-6 Astra and Flash models.",
+        "glasovi": "A motion designer says that in 2–3 prompts through the invideo Editor MCP they got an animation synced to the beat. Others show comparisons where Opus 5.5 looks best in their subjective impression.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1wycuri/opus_55_vs_gpt6_astra_vs_deepseek_v41_flash_vs/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1wyfy3m/i_connected_claude_to_a_video_editor_and_made/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1wxy24q/i_had_to_try_opus_55s_javascript_videos_so_i_made/"
+          }
+        ]
+      },
+      {
+        "naslov": "AI and math: who gets the credit",
+        "oCemuSePrica": "Labs, primarily OpenAI, are publishing solutions to long-open math problems, and mathematicians are complaining about credit-grabbing and demanding proof that the models didn't use their unpublished work. Some results are therefore being held back until they're verified and the question of authorship is settled.",
+        "glasovi": "A popular post on r/singularity argues mathematicians don't deserve a \"special exemption\" and that results shouldn't be withheld because of their feelings. The Verge is following the drama and writes that the labs promise to collaborate better with mathematicians.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1wyefga/mathematicians_dont_deserve_a_special_exemption/"
+          }
+        ]
+      },
+      {
+        "naslov": "Dependence on Claude Code and its limits",
+        "oCemuSePrica": "One developer writes that when they hit the $100 daily limit in Claude Code, they'd rather stop working than code on their own, and asks whether that's dangerous for their career. ChatGPT Dot users, who hit the limit while cleaning up their inboxes, have similar complaints.",
+        "glasovi": "Some commenters admit to the same experience, others advise practicing manual debugging regularly. Meanwhile, news is spreading on r/OpenAI that Tibo (Codex) is announcing a merger of Chat and Work and the end of model selection, but for now that's only a Reddit story.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1wy1u7m/i_feel_ive_lost_all_productivity_without_claude/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/OpenAI",
+            "url": "https://www.reddit.com/r/OpenAI/comments/1wy96in/ghatgpt_dot_has_limits/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/OpenAI",
+            "url": "https://www.reddit.com/r/OpenAI/comments/1wy2h4d/are_you_planning_to_cancel_your_chatgpt_plus/"
+          }
+        ]
+      }
+    ],
+    "snimci": [
+      {
+        "naslov": "PewDiePie is setting AI free... and OpenAI is furious",
+        "kanal": "Fireship",
+        "opis": "A quick explainer on how, after two bans from OpenAI, PewDiePie started training his own uncensored model, Ajax, at home.",
+        "url": "https://www.youtube.com/watch?v=_5p1_TNSWqQ"
+      },
+      {
+        "naslov": "The Billion Dollar AI Advantage Is Disappearing",
+        "kanal": "Two Minute Papers",
+        "opis": "A look at Claude Sonnet 5.5 and how the advantage of the most expensive models is shrinking.",
+        "url": "https://www.youtube.com/watch?v=ZHVNTTKu9fU"
+      },
+      {
+        "naslov": "Meet the New Codex CLI",
+        "kanal": "OpenAI",
+        "opis": "An official walkthrough of the refreshed Codex CLI interface in the terminal and new ways of working with it.",
+        "url": "https://www.youtube.com/watch?v=PUBc2G0Tj5E"
+      },
+      {
+        "naslov": "Build the Right Thing: Product Engineering (Part 1)",
+        "kanal": "AI Engineer",
+        "opis": "Kent C. Dodds explains why, when agents write code quickly, the most important skill is deciding what's worth building in the first place.",
+        "url": "https://www.youtube.com/watch?v=_fHTqOs5wQA"
+      }
+    ]
+  },
+  "nedeljni": null
+}
