@@ -1,0 +1,583 @@
+{
+  "datum": "2026-10-08",
+  "generisano": "2026-10-08T03:06:24.157Z",
+  "model": "claude-opus-5-5",
+  "ukratko": "Dan su obeležila dva modela koje svi mogu da koriste odmah. Anthropic je izbacio Claude Haiku 5.5, koji je do 90% jeftiniji od prethodnika, a OpenAI pušta GPT-6 svim korisnicima ChatGPT-a, uz „Intelligent UI“: odgovori sad imaju grafikone, dugmad i forme. Pored toga, Google je otvorio SynthID detektor za sve, a Microsoft je pokazao Copilot koji radi sa fajlovima na računaru.",
+  "vesti": [
+    {
+      "naslov": "Claude Haiku 5.5: mali model 10 puta jeftiniji od Haiku 4.5, sa kontekstom od milion tokena",
+      "staSeDesilo": "Anthropic je pustio Claude Haiku 5.5 (`claude-haiku-5-5`). Do 100.000 tokena u promptu košta 0,10 $ za ulaz i 0,50 $ za izlaz po milionu tokena, a iznad toga pet puta više (0,50/2,50 $). Ima kontekst od 1M tokena, izlaz do 128K i, prvi put kod Haiku modela, podešavanje „effort“ (koliko model razmišlja), od low do max. Razmišljanje ne može da se isključi. Usput je Sonnet 5.5 dobio upola jeftinije čitanje iz keša (0,10 $), a Max i Team pretplate dobijaju mesečne API kredite.",
+      "zastoJeBitno": "Za klasifikaciju, sažetke i subagente u tvojim aplikacijama Haiku je sad po ceni jednak GPT-6 Luna. Dve zamke: novi tokenizer broji isti tekst kao oko 25–30% više tokena, a temperature/top_p koji nisu podrazumevani vraćaju grešku 400. Kod dugih agentskih sesija preko 100K tokena Luna je primetno jeftinija.",
+      "kategorija": "modeli",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Anthropic",
+          "url": "https://www.anthropic.com/claude-haiku-5-5"
+        },
+        {
+          "naziv": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Oct/7/claude-haiku-5-5/"
+        },
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/10/07/anthropic-releases-claude-haiku-5-5-a-small-model-with-1m-context-priced-at-0-10-per-million-input-tokens/"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/claude-haiku-5-5-arrives-with-massive-price-cuts-proving-the-ai-pricing-arms-race-is-far-from-over/"
+        }
+      ]
+    },
+    {
+      "naslov": "GPT-6 stiže svima u ChatGPT, a odgovori postaju interaktivni",
+      "staSeDesilo": "OpenAI globalno pušta GPT-6 u ChatGPT: pretplatnici dobijaju GPT-6 Sol, a besplatni korisnici GPT-6 Luna. Nova funkcija „Intelligent UI“ znači da model sam odlučuje kad će umesto teksta prikazati dijagram, grafikon, formu ili dugmad na koja se klikće. Model može da počne odgovor dok još razmišlja, pa se po OpenAI-ju čeka 44% kraće.",
+      "zastoJeBitno": "Korisnici će uskoro očekivati da i chat u tvojoj aplikaciji vraća komponente, a ne samo tekst. „Generativni UI“ prelazi iz demo faze u standard.",
+      "kategorija": "modeli",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "OpenAI",
+          "url": "https://openai.com/index/gpt-6-for-everyone"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1007276/openai-chatgpt-intelligent-ui-gpt-6"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/chatgpt-with-gpt-6-ditches-mostly-text-output-for-interactive-ui-with-charts-buttons-and-mini-apps/"
+        },
+        {
+          "naziv": "WIRED",
+          "url": "https://www.wired.com/story/openai-chatgpt-intelligent-ui-is-more-show-than-tell/"
+        }
+      ]
+    },
+    {
+      "naslov": "Claude radi direktno u Google Docs, Sheets i Slides",
+      "staSeDesilo": "Anthropic je za sve plaćene planove pustio beta bočnu traku sa Claude-om u Google Docs, Sheets i Slides. Claude menja otvoreni fajl direktno, a može i da traži odobrenje pre svake izmene.",
+      "zastoJeBitno": "Ako dokumentaciju, tabele ili prezentacije za klijente držiš u Google Workspace-u, više ne moraš da kopiraš sadržaj tamo-amo između chata i fajla.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-10-07"
+        },
+        {
+          "naziv": "The Rundown",
+          "url": "https://therundownai.beehiiv.com/p/openai-math-avalanche-continues"
+        }
+      ]
+    },
+    {
+      "naslov": "SynthID detektor je javan: svako može da proveri da li je slika, video ili zvuk iz AI-ja",
+      "staSeDesilo": "Google je otvorio sajt SynthID.com, gde svako može da proveri da li sadržaj nosi nevidljivi SynthID vodeni žig. Detektor sad prepoznaje i žigove partnera kao što su OpenAI i Nvidia, a Google kaže da žig već nosi preko 180 milijardi slika i videa. Ograničenje: alat prepoznaje samo sadržaj sa SynthID žigom, ne AI sadržaj uopšte.",
+      "zastoJeBitno": "Dobija se prvi široko dostupan način da se proveri bar deo AI slika i snimaka. Negativan rezultat ipak ne znači da je sadržaj pravi.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/ai/2026/10/google-rolls-out-improved-synthid-ai-content-detector-now-available-globally/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/07/googles-new-synthid-website-can-identify-ai-generated-media/"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/google-says-180-billion-images-and-videos-now-carry-synthid-watermarks-as-detector-goes-public/"
+        }
+      ]
+    },
+    {
+      "naslov": "Microsoft: Copilot dobija pristup lokalnim fajlovima, a Surface Laptop Ultra radi na Nvidia RTX Spark čipu",
+      "staSeDesilo": "Na prvom živom događaju posle dve godine Microsoft je najavio „Hybrid Intelligence“: Copilot kombinuje lokalne i cloud modele, koristi fajlove sa računara i izvršava radnje po celom Windows-u. Surface Laptop Ultra sa Nvidia RTX Spark (Arm) čipom i do 128 GB zajedničke memorije kreće od 2.599 $ i stiže 16. oktobra. Surface RTX Spark Dev Box za programere košta 5.999 $. Najavljeno je i da Meta Muse dolazi na Windows.",
+      "zastoJeBitno": "Laptopovi sa 128 GB zajedničke memorije postaju ozbiljna opcija za lokalno pokretanje velikih modela. Agenti koji diraju fajlove na računaru postaju deo operativnog sistema, sa svim bezbednosnim pitanjima koja to otvara.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/tech/1007147/microsoft-surface-laptop-ultra-windows-event-everything-announced"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/tech/1007113/microsoft-windows-copilot-ai-control-search-hybrid-intelligence"
+        },
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/gadgets/2026/10/microsoft-event-debuts-new-ai-friendly-hardware-and-windows-changes/"
+        }
+      ]
+    },
+    {
+      "naslov": "Common Sense Media: ChatGPT for Teens je „neprihvatljiv rizik“ za maloletnike",
+      "staSeDesilo": "Nezavisna organizacija je testirala ChatGPT for Teens sa više od 4.000 promptova. Razgovori o samoubistvu i samopovređivanju nijednom nisu poslali upozorenje roditeljima. Institut traži da tinejdžeri ne koriste servis dok bezbednost ne bude nezavisno proverena. Istog dana OpenAI je za tinejdžere najavio College Planner, kartice za učenje i kvizove.",
+      "zastoJeBitno": "Ako praviš aplikaciju sa AI chatom koju mogu da koriste mlađi, ovo je jasan znak da zaštita ne sme da se svede na „model će se snaći“. Regulatori i mediji gledaju baš ovo.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1006355/openai-chatgpt-for-teens-common-sense-media"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/chatgpt-rated-unacceptable-risk-for-teens-after-parental-alerts-failed-during-suicide-conversations/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/07/chatgpt-for-teens-keeps-teens-talking-even-during-mental-health-crises/"
+        },
+        {
+          "naziv": "B92",
+          "url": "https://www.b92.net/tehnopolis/aktuelno/274158/izvestaj-chatgpt-za-tinejdzere-predstavlja-preveliki-rizik-za-decu/vest"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI za programere: tri API nivoa umesto pet, a Codex Auto-review je besplatan",
+      "staSeDesilo": "OpenAI je plaćene API nivoe smanjio sa pet na tri. Najviši nivo, Grow, sad traži ukupno 500 $ uplata. Codex Auto-review (automatski pregled koda) postao je besplatan i ne troši limit pretplate.",
+      "zastoJeBitno": "Manji developeri brže dolaze do viših limita. Besplatan AI pregled koda vredi uključiti na svakom repou.",
+      "kategorija": "alati",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Latent Space (AINews)",
+          "url": "https://www.latent.space/p/ainews-quasi-riemann-hypothesis-openai"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/openai-launches-decisions-api-that-reduces-complex-evaluations-to-yes-no-or-pick-one/"
+        }
+      ]
+    },
+    {
+      "naslov": "Google Playground: igrice u pregledaču samo uz tekstualni opis",
+      "staSeDesilo": "Google Labs je pokrenuo eksperimentalnu platformu Playground (playground.google). Igra se opiše tekstom, odmah testira, dorađuje i deli. Pokreću je Gemini, Nano Banana i Lyria. Za sada radi samo u SAD i za punoletne, a mogućnost pravljenja igara zavisi od nivoa Google AI pretplate.",
+      "zastoJeBitno": "Pokazuje kuda ide „vibe coding“ za ljude koji ne programiraju: od ideje do igre koja može da se podeli, bez ijedne linije koda.",
+      "kategorija": "alati",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Google Blog",
+          "url": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/google-bets-gemini-can-turn-casual-players-into-game-developers-with-new-playground-feature/"
+        }
+      ]
+    },
+    {
+      "naslov": "Hark Pro: proaktivni asistent startapa Bretta Adcocka",
+      "staSeDesilo": "Hark, startap osnivača Figure AI, pustio je Hark Pro, asistenta za web i mobilni. Pamti šta voliš, sam predlaže zadatke i obavlja kupovine i rezervacije na sopstvenom cloud računaru, koji može da vozi do 36 pregledača odjednom. Postoji besplatan i plaćeni nivo, a uređaji stižu 2027.",
+      "zastoJeBitno": "Oblast „ličnih agenata“ (Muse, Dots, Grok Bot, Hark) je sve gušća. Za samostalne developere to znači da su generički asistenti zauzeti, a uske, lokalne niše nisu.",
+      "kategorija": "alati",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Rundown",
+          "url": "https://therundownai.beehiiv.com/p/openai-math-avalanche-continues"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-10-07"
+        }
+      ]
+    },
+    {
+      "naslov": "Hrvatski LAQO uveo AI glasovnog agenta za prodaju osiguranja",
+      "staSeDesilo": "Digitalni osiguravač LAQO iz Hrvatske proslavio je šesti rođendan sa više od 300.000 prodatih polisa. Tom prilikom je nadogradio svog LAQO GPT asistenta i uveo AI glasovnog agenta za direktnu komunikaciju i prodaju.",
+      "zastoJeBitno": "Ovo je konkretan regionalni primer da se glasovni agenti već koriste u regulisanoj prodaji, a ne samo u demo verzijama. To je dobar argument ako nudiš slična rešenja firmama u Srbiji.",
+      "kategorija": "kompanije",
+      "vaznost": 1,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "Bug.hr",
+          "url": "https://www.bug.hr/biznis/laqo-slavi-sesti-rodjendan-uz-vise-od-300000-prodanih-polica-i-prvog-ai-agenta-63395"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Claude Haiku 5.5",
+      "tip": "model",
+      "opis": "Najjeftiniji i najbrži Claude model: kontekst od 1M tokena i podesiv effort. Dobar je za klasifikaciju, sažetke i subagente.",
+      "kakoProbati": [
+        "U Claude Console (console.anthropic.com) napravi API ključ ili iskoristi postojeći.",
+        "U pozivu Messages API-ja postavi model na `claude-haiku-5-5`; parametar effort je podrazumevano medium.",
+        "Ne šalji temperature, top_p ni top_k sa vrednostima koje nisu podrazumevane, jer vraćaju grešku 400.",
+        "Ako koristiš Simonov llm: `llm install -U llm-anthropic`, pa `llm anthropic refresh`, pa `llm -m claude-haiku-5.5 \"tvoj prompt\"`."
+      ],
+      "link": "https://www.anthropic.com/claude-haiku-5-5",
+      "cena": "0,10 $ ulaz / 0,50 $ izlaz po 1M tokena do 100K prompta; iznad toga 0,50 $ / 2,50 $"
+    },
+    {
+      "naziv": "GPT-6 sa Intelligent UI u ChatGPT-u",
+      "tip": "funkcija",
+      "opis": "ChatGPT sad odgovara i dijagramima, grafikonima, formama i dugmadima. Besplatni korisnici dobijaju GPT-6 Luna, a plaćeni GPT-6 Sol.",
+      "kakoProbati": [
+        "Ažuriraj ChatGPT aplikaciju na iPhone-u ili otvori chatgpt.com.",
+        "Postavi pitanje koje traži vizuelni odgovor, na primer: „Uporedi tri telefona po ceni i bateriji“ ili „Objasni kako radi menjač na biciklu“.",
+        "Klikći po interaktivnim elementima u odgovoru. Ako ih još nemaš, uvođenje ide postepeno, pa proveri na linku."
+      ],
+      "link": "https://openai.com/index/gpt-6-for-everyone",
+      "cena": "besplatno (Luna), Sol uz pretplatu"
+    },
+    {
+      "naziv": "SynthID.com detektor",
+      "tip": "alat",
+      "opis": "Javni sajt koji proverava da li slika, video ili zvuk nose SynthID žig Google-a ili partnera kao što su OpenAI i Nvidia.",
+      "kakoProbati": [
+        "Otvori synthid.com u pregledaču, radi i sa iPhone-a.",
+        "Otpremi sliku, video ili audio koji ti je sumnjiv.",
+        "Pročitaj rezultat. „Nema žiga“ ne znači da sadržaj nije napravljen AI-jem."
+      ],
+      "link": "https://arstechnica.com/ai/2026/10/google-rolls-out-improved-synthid-ai-content-detector-now-available-globally/",
+      "cena": "besplatno"
+    },
+    {
+      "naziv": "Claude u Google Docs, Sheets i Slides",
+      "tip": "funkcija",
+      "opis": "Bočna traka sa Claude-om (beta) koja menja otvoreni dokument direktno ili traži odobrenje za svaku izmenu.",
+      "kakoProbati": [
+        "Treba ti plaćeni Claude plan (Pro, Max, Team...).",
+        "Otvori dokument u Google Docs, Sheets ili Slides i potraži Claude bočnu traku. Tačan način instalacije proveri na linku.",
+        "Uključi odobravanje svake izmene dok ne stekneš poverenje."
+      ],
+      "link": "https://tldr.tech/ai/2026-10-07",
+      "cena": "uz plaćeni Claude plan"
+    },
+    {
+      "naziv": "Liquid AI open d1 (d1-3B i d1-omni-600M)",
+      "tip": "model",
+      "opis": "Otvoreni „modeli za odluke“: ne pišu tekst, već za tekst, sliku ili zvuk vraćaju verovatnoće za da/ne, izbor ili ocenu, u jednom prolazu.",
+      "kakoProbati": [
+        "`pip install \"transformers>=5.14\" torch torchvision pillow`",
+        "U Python-u: `AutoModel.from_pretrained(\"LiquidAI/d1-3B\", trust_remote_code=True)`",
+        "Pozovi `system_one(tekst, pitanja, images=...)` sa pitanjima tipa `noul`, `choice` ili `score`.",
+        "Licencu (besplatno za komercijalnu upotrebu ispod 10 miliona $ prihoda) proveri na kartici modela."
+      ],
+      "link": "https://huggingface.co/blog/LiquidAI/open-d1",
+      "cena": "besplatno (otvoreni modeli)"
+    },
+    {
+      "naziv": "diagram-design (skill za Claude Code)",
+      "tip": "projekat",
+      "opis": "Skill (dodatak sa uputstvima za agenta) za Claude Code, Codex i druge. Pravi uredne dijagrame kao samostalan HTML+SVG, 42 tipa, od Sankey dijagrama do šeme baze.",
+      "kakoProbati": [
+        "Otvori GitHub repo i pročitaj uputstvo za instalaciju za Claude Code.",
+        "Instaliraj skill u svoj projekat ili globalno.",
+        "Zatraži od Claude Code-a npr. „nacrtaj šemu moje Supabase baze“ ili „dijagram toka za login“."
+      ],
+      "link": "https://github.com/cathrynlavery/diagram-design",
+      "cena": "besplatno"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Biohub, koji finansira Zuckerberg, vodi inicijativu od 1,8 milijardi $ za AI modele koji predviđaju ponašanje ćelija, uz novac Mete, Google DeepMind-a, Isomorphic Labs-a i američkog Ministarstva energetike.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/zuckerbergs-biohub-leads-a-1-8-billion-push-to-build-ai-models-that-predict-cell-behavior/"
+    },
+    {
+      "naslov": "Nous Research, autor Hermes Agent-a, potvrdio je procenu od 1,5 milijardi $ posle runde od 90 miliona $ i pokrenuo agente za firme.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/07/nous-research-confirms-it-hit-1-5b-valuation-launches-ai-agents-for-business-users/"
+    },
+    {
+      "naslov": "Metin agent Muse dobio je nativnu iPad verziju, mesec dana posle izlaska na iPhone-u.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1006813/muse-ai-agent-ios-app-ipad-support"
+    },
+    {
+      "naslov": "OpenAI testira dodatak Meetings za ChatGPT na Mac-u, koji od sastanaka pravi beleške i sledeće korake.",
+      "izvor": "The Rundown",
+      "url": "https://therundownai.beehiiv.com/p/openai-math-avalanche-continues"
+    },
+    {
+      "naslov": "OpenAI će kasnije ovog meseca u SAD testirati vizuelne oglase sa većim fotografijama u ChatGPT-u, prvo uz generisanje slika.",
+      "izvor": "Bug.hr",
+      "url": "https://www.bug.hr/umjetna-inteligencija/openai-uvodi-novu-vrstu-oglasa-u-chatgpt-63355"
+    },
+    {
+      "naslov": "Po Gurmanu iz Bloomberga, nova AI Siri će u EU stići tek za nekoliko meseci.",
+      "izvor": "Bug.hr",
+      "url": "https://www.bug.hr/umjetna-inteligencija/siri-ai-jos-mjesecima-nece-stici-u-eu-63379"
+    },
+    {
+      "naslov": "Meta i Sierra razvijaju Personal Agent Protocol, otvoreni standard za to šta lični agenti smeju da rade na sajtovima i API-jima firmi.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-10-07"
+    },
+    {
+      "naslov": "Utah je dozvolio aplikaciji Nolla Health da sama dijagnostikuje akne sa snimka lica i prepiše kreme, prvi put da je AI-ju data moć propisivanja.",
+      "izvor": "The Rundown",
+      "url": "https://therundownai.beehiiv.com/p/openai-math-avalanche-continues"
+    },
+    {
+      "naslov": "Developer je uz Claude Opus 5.5 napravio sedam open source klonova Adobe alata (Photoshop, Illustrator, Premiere...) u Rust-u, ali su za sad u ranoj alfi.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/ai/2026/10/software-is-over-bold-ai-developer-takes-aim-at-adobe-with-open-source-clones/"
+    },
+    {
+      "naslov": "Čovek iz Severne Karoline osuđen je na 18 meseci zatvora jer je AI pesmama i 10.000 botova sedam godina varao striming servise.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/tech-policy/2026/10/outstreaming-taylor-swift-is-easy-with-10k-bots-and-ai-songs-fraudster-admits/"
+    },
+    {
+      "naslov": "GitHub kaže da agent učestvuje u svakom trećem pull requestu i uvodi klasifikator koji blokira i nestrukturirane tajne pre push-a.",
+      "izvor": "GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/github-copilot/secret-protection-must-scale-with-software/"
+    },
+    {
+      "naslov": "DeepSeek je, prema izveštajima, blizu runde od 12 milijardi $ uz Tencent i CATL i sprema izlazak na šangajsku berzu.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-10-07"
+    },
+    {
+      "naslov": "Meta je otvorila kod Rebalancer-a, C++/Python biblioteke za probleme raspoređivanja koja dnevno rešava oko 40 miliona takvih zadataka (`pip install rebalancer`).",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/10/06/meta-ai-open-sources-rebalancer-a-c-assignment-solver-that-runs-about-40-million-placement-problems-a-day/"
+    },
+    {
+      "naslov": "Mitchell Hashimoto je objavio OSC 7501, terminal standard kojim alati kao Claude Code mogu da jave da li rade ili čekaju korisnika.",
+      "izvor": "Latent Space (AINews)",
+      "url": "https://www.latent.space/p/ainews-quasi-riemann-hypothesis-openai"
+    },
+    {
+      "naslov": "Cursor je dodao daljinsko upravljanje agentima sa iOS-a, a Claude Code cloud sesije pokreću svaki zadatak na novoj virtuelnoj mašini.",
+      "izvor": "Latent Space (AINews)",
+      "url": "https://www.latent.space/p/ainews-quasi-riemann-hypothesis-openai"
+    },
+    {
+      "naslov": "Istraživači su GPT-u, Claude-u i Grok-u dali da voze pravu Toyotu Corollu do In-N-Out-a, a uspeo je samo jedan model.",
+      "izvor": "WIRED",
+      "url": "https://www.wired.com/story/ai-is-driving-cars-now-oh-boy/"
+    },
+    {
+      "naslov": "Qualcomm će razvijati namenske AI čipove za AWS, a Amazon dobija opciju na udeo vredan do oko 4 milijarde $.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/qualcomm-razvija-prilagodene-ai-cipove-za-aws"
+    },
+    {
+      "naslov": "Prema američkom sajtu Dice, oglasa za AI i ML u SAD ima 88% više nego pre godinu dana, a Claude se na spisku traženih veština vodi kao zasebna stavka.",
+      "izvor": "Startit",
+      "url": "https://startit.rs/it-oglasa-u-sad-17-vise-nego-2025-broj-oglasa-za-ai-i-ml-cak-88-veci-posebno-trazeni-i-security-inzenjeri-arhitekte-i-drugi-profili/"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "nanoMuse: otvoreni lični agent za sve tvoje uređaje",
+      "objasnjenje": "Autori na osnovu javnih podataka opisuju kako je napravljen Metin Muse, a zatim predstavljaju nanoMuse, open source pandan pod GPL-3.0 licencom. Isti agent radi na telefonu i računaru i deli jedan razgovor preko relay servera koji svako može sam da podigne. Svaka akcija prolazi kroz „Sentinel“ proveru, memorija se čuva kao fajlovi koje možeš da pročitaš, a model biraš sam.",
+      "zastoJeZanimljivo": "Ovo je praktičan nacrt kako da napraviš svog „Muse-a“ bez zatvorenog cloud-a. Arhitektura sa relay-em i memorijom u fajlovima lepo se uklapa u Supabase i iOS projekat.",
+      "url": "https://huggingface.co/papers/2610.08699",
+      "github": "https://github.com/nano-muse/nanoMuse"
+    },
+    {
+      "naslov": "From Evidence to Action: gde agenti sa alatima greše",
+      "objasnjenje": "Rad prati da li agent pre neke akcije zaista prikupi dokaze koji je opravdavaju. Pokazuje da agenti često greše pre izvršenja: stanu sa nepotpunom istragom ili deluju pre nego što utvrde ono što moraju. Kad imaju sve podatke, pojedinačne akcije izvode pouzdano, ali u lancima od više koraka preskaču preduslove. Uz rad dolazi benchmark SafeActBench sa 656 slučajeva.",
+      "zastoJeZanimljivo": "Kad praviš agenta koji nešto menja (bazu, nalog, porudžbinu), ovo je konkretan spisak mesta gde treba da ubaciš provere pre akcije.",
+      "url": "https://huggingface.co/papers/2610.07753",
+      "github": "https://github.com/caoshidong66/safeact"
+    },
+    {
+      "naslov": "EVISKILL: veštine agenta koje se popravljaju na osnovu dokaza",
+      "objasnjenje": "Agenti mogu da dopunjuju svoje „veštine“ (uputstva za ponovljive zadatke) iz iskustva, bez ponovnog treniranja modela. EVISKILL čuva tragove izvršavanja kao „kartice dokaza“ i svaku izmenu veštine vezuje za konkretan slučaj. Izmenu potvrđuje tako što taj slučaj ponovo pokrene, i tek onda je trajno usvaja.",
+      "zastoJeZanimljivo": "Claude Code skills su upravo ovakvi fajlovi. Ideja da se svaka izmena skill-a proveri ponovnim pokretanjem primenljiva je i ručno, u tvom radu.",
+      "url": "https://huggingface.co/papers/2610.05030",
+      "github": "https://github.com/Zhouyaner/Eviskill"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Ističe uskoro",
+      "problem": "Ljudi zaborave kad im ističu lična karta, pasoš, registracija, tehnički pregled ili garancija, pa jure papire u poslednjem trenutku.",
+      "zaKoga": "Porodice i vozači u Srbiji koji vode više dokumenata za više ukućana.",
+      "ulogaAi": "Slikaš dokument, a jeftini Claude Haiku 5.5 sa slike izvuče tip dokumenta i datum isteka. Aplikacija zatim sama zakaže podsetnike na vreme (npr. mesec dana unapred za pasoš), kao proaktivni asistent u malom.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "SwiftUI ekran sa kamerom (VisionKit document scanner) za slikanje dokumenta.",
+        "Supabase Edge Function koja šalje sliku na `claude-haiku-5-5` i traži JSON sa tipom dokumenta i datumom isteka.",
+        "Sačuvaj stavke u Supabase tabelu sa RLS-om po korisniku.",
+        "Lokalne notifikacije preko UNUserNotificationCenter za 30, 7 i 1 dan pre isteka."
+      ],
+      "inspiracija": "Claude Haiku 5.5 (jeftina obrada slika) i proaktivni asistenti kao Hark Pro"
+    },
+    {
+      "naziv": "Kratko i jasno",
+      "problem": "Dugački članci i uputstva kriju ono što ti treba ispod uvoda i priče.",
+      "zaKoga": "Svi koji čitaju na iPhone-u i hoće prvo zaključak, pa korake.",
+      "ulogaAi": "Safari ekstenzija pošalje tekst stranice modelu koji ga prepiše u formatu „prvo odgovor, pa numerisani koraci“, bez fraza za popunjavanje.",
+      "tezina": 1,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "U Xcode-u napravi Safari Web Extension target za iOS.",
+        "Content script izvuče glavni tekst stranice (npr. Readability.js).",
+        "Pošalji tekst preko male Supabase Edge Function na Haiku 5.5 sa promptom u stilu i-have-adhd skill-a.",
+        "Prikaži rezultat u panelu preko stranice, sa dugmetom „kopiraj“."
+      ],
+      "inspiracija": "GitHub trending skill i-have-adhd (odgovor na prvom mestu)"
+    },
+    {
+      "naziv": "Upisni plan",
+      "problem": "Maturanti u Srbiji paralelno prate rokove za prijemne, potrebna dokumenta, bodove i rang-liste za više fakulteta, i sve to po sajtovima i grupama.",
+      "zaKoga": "Maturanti i njihovi roditelji u Srbiji i regionu.",
+      "ulogaAi": "Iz zvaničnih PDF konkursa model izvuče rokove, dokumenta i način bodovanja u strukturisane podatke. Učenik onda postavlja pitanja tipa „šta mi još fali za ETF“.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Skupi konkurse 5–10 najtraženijih fakulteta kao PDF.",
+        "Supabase Edge Function koja PDF pošalje Claude-u i vrati JSON (rokovi, dokumenta, bodovanje), pa ga upiše u tabele.",
+        "Angular web aplikacija: izbor fakulteta, vremenska linija i čekliste.",
+        "Chat koji odgovara samo iz sačuvanih podataka konkursa, uz link ka izvoru."
+      ],
+      "inspiracija": "OpenAI College Planner za ChatGPT for Teens"
+    },
+    {
+      "naziv": "Angular generativni UI kit",
+      "problem": "Chat u aplikacijama i dalje vraća samo tekst, a korisnici posle ChatGPT-ovog Intelligent UI očekuju grafikone, dugmad i forme.",
+      "zaKoga": "Angular developeri koji ugrađuju AI chat u svoje aplikacije (i ti sam).",
+      "ulogaAi": "Model ne vraća slobodan tekst, već JSON po šemi sa komponentama (grafikon, tabela, forma, izbor). Angular ga bezbedno prikaže kao prave komponente, bez izvršavanja proizvoljnog koda.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Definiši JSON šemu za 5–6 komponenti (chart, table, form, choice, card, steps).",
+        "Napravi Angular standalone komponente i dinamički renderer (ViewContainerRef) koji čita šemu.",
+        "Koristi structured output / tool use u Claude API-ju da model vraća samo validan JSON.",
+        "Objavi kao npm paket sa demo stranicom i primerom za Supabase backend."
+      ],
+      "inspiracija": "GPT-6 Intelligent UI u ChatGPT-u"
+    },
+    {
+      "naziv": "Igrica od lekcije",
+      "problem": "Nastavnici nemaju vremena da od gradiva naprave nešto zanimljivo za čas, a Google Playground radi samo u SAD.",
+      "zaKoga": "Nastavnici osnovnih i srednjih škola u Srbiji i roditelji koji uče sa decom.",
+      "ulogaAi": "Nastavnik nalepi lekciju na srpskom, a model od nje napravi pitanja i scenario za jedan od nekoliko gotovih šablona mini-igara (kviz trka, spajanje parova, „pogodi pojam“). Igra se deli linkom.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "U Angular-u napravi 3 šablona igara koji čitaju JSON sa pitanjima.",
+        "Edge Function koja od teksta lekcije generiše JSON za izabrani šablon (Haiku 5.5 je dovoljno jeftin).",
+        "Supabase za čuvanje igara, javni link i tabelu rezultata razreda.",
+        "Daj na probu dvojici-trojici nastavnika i skupi utiske pre dodavanja novih šablona."
+      ],
+      "inspiracija": "Google Playground: igre iz tekstualnog opisa"
+    }
+  ],
+  "cene": "Najviše je pojeftinio GLM 5.3: ulaz sa 0,07 na 0,049 $, a izlaz sa 7 na 3,39 $. Kimi K2.6 je pao sa 0,95/4 na 0,465/2,45 $, a Llama 3.3 70B sa 0,22/0,5 na 0,1/0,32 $. Nasuprot tome, DeepSeek V4 Pro 0423 je poskupeo sa 0,2088/0,4176 na 0,9553/1,9105 $. Novi Claude Haiku 5.5 košta 0,1 $ ulaz i 0,5 $ izlaz, što je deset puta manje od Claude Haiku 4.5 (1/5 $). U srednjoj klasi je GLM 5.3 sada najjeftiniji i na ulazu (0,049 $) i na izlazu (3,39 $).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "OpenAI-jevih 722 matematička rada: istorijski trenutak ili poplava?",
+        "oCemuSePrica": "I dan posle objave raspravlja se o OpenAI-jevim rezultatima iz matematike, posebno o „quasi-Riemann“ hipotezi i Barnetteovoj hipotezi. Pitanje je koliko će rezultata izdržati proveru i šta znači to što su u proseku dobijeni za tri sata računanja. Na Reddit-u je kružila i glasina da je ovo tek prva od tri serije, ali je profesor koji ju je pokrenuo obrisao objavu i rekao da više nije siguran.",
+        "glasovi": "Levent Alpöge (Anthropic) to naziva „najznačajnijim trenutkom u istoriji matematike“, a François Chollet pita da li se ovakav napredak prenosi na oblasti gde odgovor ne može automatski da se proveri. Na Hacker News-u se istakao komentar matematičara koji je 24 godine radio na problemu koji je sad navodno rešen.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@__alpoge__",
+            "url": "https://x.com/__alpoge__/status/2107616859595981117"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@fchollet",
+            "url": "https://x.com/fchollet/status/2107625225768858076"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1wzxpir/rumor_from_an_nyu_math_professor_that_this_was/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1x035ne/interesting_thoughts_from_an_expert_on_a_specific/"
+          }
+        ]
+      },
+      {
+        "naslov": "Haiku 5.5: jeftin po tokenu, ali da li i po zadatku?",
+        "oCemuSePrica": "Cena od 0,10/0,50 $ oduševila je mnoge, ali zajednica brzo računa skrivene troškove: novi tokenizer troši više tokena, a iznad 100K konteksta cena je pet puta veća. Jedan korisnik je u agentskom testu („voxel pagoda“) platio 24,96 $ sa Haiku-om, a 1,96 $ sa GPT-6 Luna.",
+        "glasovi": "Simon Willison zaključuje da je Haiku u rangu sa Lunom samo za poslove ispod 100K tokena. Na r/ClaudeAI se jedni nadaju da Haiku dostiže GPT-6.1 Sol po ceni Lune, a drugi ga zovu „gutačem tokena“.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "bluesky",
+            "naziv": "Simon Willison",
+            "url": "https://bsky.app/profile/simonwillison.net/post/3mxctkjruk22c"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1x0agoh/claude_haiku_55_cost_12x_more_than_gpt6_luna_for/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1x03k4j/introducing_claude_haiku_55_the_cheapest_fastest/"
+          }
+        ]
+      },
+      {
+        "naslov": "Amateri sa Claude Code-om: kandidat za planetu i popravljena DOS igra",
+        "oCemuSePrica": "Na r/ClaudeAI su se istakle priče ljudi koji nisu profesionalci u oblasti. Jedan je uz Claude Code prošao kroz NASA TESS podatke i našao kandidata za planetu oko 1,4 puta veću od Zemlje, a drugi je popravio bag u obrazovnoj DOS igri iz 1991. da bi je igralo njegovo dete. Autor sam naglašava da je reč o kandidatu, ne o potvrđenoj planeti.",
+        "glasovi": "Reakcije su uglavnom pozitivne. U komentarima se traži da se ovakvi nalazi pre objave pošalju stručnjacima na proveru.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1wzw8zd/i_think_i_found_a_planet_nobody_knew_existed_i/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1x06hmp/claude_fixed_a_bug_in_a_dos_game_from_1991_and/"
+          }
+        ]
+      },
+      {
+        "naslov": "Modeli za odluke: korisna kategorija ili marketing?",
+        "oCemuSePrica": "Posle OpenAI Decisions API-ja, Perplexity-jevog pplx-decider-a i Liquid-ovog open d1, raspravlja se čemu služe modeli koji vraćaju samo da/ne, izbor ili ocenu. Nezavisna provera kompanije Vals pokazala je da model Jev dostiže GPT-6 Astra u proveri tvrdnji uz oko 500 puta manji trošak, ali je na LegalBench-u poslednji.",
+        "glasovi": "Theo smatra da je korišćenje ovih modela za izbor „koliko pametan model treba“ potpuno beskorisno. Vals i r/LocalLLaMA ih vide kao jeftin filter za klasifikaciju i moderaciju.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@theo",
+            "url": "https://x.com/theo/status/2107581731109065066"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@ValsAI",
+            "url": "https://x.com/ValsAI/status/2107559370208997711"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wzuto0/new_lfm_to_be_released_today/"
+          }
+        ]
+      }
+    ],
+    "snimci": []
+  },
+  "nedeljni": null
+}

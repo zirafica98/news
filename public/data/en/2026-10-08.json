@@ -1,0 +1,584 @@
+{
+  "datum": "2026-10-08",
+  "generisano": "2026-10-08T03:06:24.157Z",
+  "model": "claude-opus-5-5",
+  "prevod": "claude-sonnet-5-5",
+  "ukratko": "Two models anyone can use right now defined the day. Anthropic shipped Claude Haiku 5.5, up to 90% cheaper than its predecessor, and OpenAI is rolling GPT-6 out to all ChatGPT users with \"Intelligent UI\": answers now come with charts, buttons and forms. Elsewhere, Google opened its SynthID detector to everyone, and Microsoft showed a Copilot that works with files on your computer.",
+  "vesti": [
+    {
+      "naslov": "Claude Haiku 5.5: a small model 10x cheaper than Haiku 4.5, with a 1M-token context",
+      "staSeDesilo": "Anthropic released Claude Haiku 5.5 (`claude-haiku-5-5`). For prompts up to 100,000 tokens it costs $0.10 per million input tokens and $0.50 per million output tokens; above that, the price is five times higher ($0.50/$2.50). It has a 1M-token context, output up to 128K and, for the first time on a Haiku model, an \"effort\" setting (how much the model thinks) from low to max. Thinking can't be turned off. Also: Sonnet 5.5 got cache reads at half the price ($0.10), and Max and Team subscriptions now get monthly API credits.",
+      "zastoJeBitno": "For classification, summaries and subagents in your apps, Haiku now costs the same as GPT-6 Luna. Two gotchas: the new tokenizer counts the same text as roughly 25–30% more tokens, and non-default temperature/top_p values return a 400 error. For long agentic sessions over 100K tokens, Luna is noticeably cheaper.",
+      "kategorija": "modeli",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Anthropic",
+          "url": "https://www.anthropic.com/claude-haiku-5-5"
+        },
+        {
+          "naziv": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Oct/7/claude-haiku-5-5/"
+        },
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/10/07/anthropic-releases-claude-haiku-5-5-a-small-model-with-1m-context-priced-at-0-10-per-million-input-tokens/"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/claude-haiku-5-5-arrives-with-massive-price-cuts-proving-the-ai-pricing-arms-race-is-far-from-over/"
+        }
+      ]
+    },
+    {
+      "naslov": "GPT-6 reaches everyone in ChatGPT, and answers become interactive",
+      "staSeDesilo": "OpenAI is rolling GPT-6 out globally in ChatGPT: subscribers get GPT-6 Sol, free users get GPT-6 Luna. The new \"Intelligent UI\" feature means the model decides on its own when to show a diagram, chart, form or clickable buttons instead of text. The model can start answering while it's still thinking, which OpenAI says cuts waiting time by 44%.",
+      "zastoJeBitno": "Users will soon expect the chat in your app to return components, not just text. \"Generative UI\" is moving from demo stage to standard.",
+      "kategorija": "modeli",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "OpenAI",
+          "url": "https://openai.com/index/gpt-6-for-everyone"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1007276/openai-chatgpt-intelligent-ui-gpt-6"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/chatgpt-with-gpt-6-ditches-mostly-text-output-for-interactive-ui-with-charts-buttons-and-mini-apps/"
+        },
+        {
+          "naziv": "WIRED",
+          "url": "https://www.wired.com/story/openai-chatgpt-intelligent-ui-is-more-show-than-tell/"
+        }
+      ]
+    },
+    {
+      "naslov": "Claude works directly inside Google Docs, Sheets and Slides",
+      "staSeDesilo": "Anthropic has released a beta sidebar with Claude in Google Docs, Sheets and Slides for all paid plans. Claude edits the open file directly, and can also ask for your approval before each change.",
+      "zastoJeBitno": "If you keep documentation, spreadsheets or client presentations in Google Workspace, you no longer have to copy content back and forth between the chat and the file.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-10-07"
+        },
+        {
+          "naziv": "The Rundown",
+          "url": "https://therundownai.beehiiv.com/p/openai-math-avalanche-continues"
+        }
+      ]
+    },
+    {
+      "naslov": "The SynthID detector is public: anyone can check whether an image, video or audio clip is AI-made",
+      "staSeDesilo": "Google has opened SynthID.com, where anyone can check whether content carries the invisible SynthID watermark. The detector now also recognizes partner watermarks, such as those from OpenAI and Nvidia, and Google says over 180 billion images and videos already carry the watermark. The limitation: the tool only detects content with a SynthID watermark, not AI content in general.",
+      "zastoJeBitno": "This is the first widely available way to verify at least some AI images and recordings. A negative result still doesn't mean the content is real.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/ai/2026/10/google-rolls-out-improved-synthid-ai-content-detector-now-available-globally/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/07/googles-new-synthid-website-can-identify-ai-generated-media/"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/google-says-180-billion-images-and-videos-now-carry-synthid-watermarks-as-detector-goes-public/"
+        }
+      ]
+    },
+    {
+      "naslov": "Microsoft: Copilot gets access to local files, and the Surface Laptop Ultra runs on an Nvidia RTX Spark chip",
+      "staSeDesilo": "At its first live event in two years, Microsoft announced \"Hybrid Intelligence\": Copilot combines local and cloud models, uses files on your computer and carries out actions across Windows. The Surface Laptop Ultra, with an Nvidia RTX Spark (Arm) chip and up to 128 GB of unified memory, starts at $2,599 and ships October 16. The Surface RTX Spark Dev Box for developers costs $5,999. Microsoft also announced that Meta Muse is coming to Windows.",
+      "zastoJeBitno": "Laptops with 128 GB of unified memory are becoming a serious option for running large models locally. Agents that touch files on your computer are becoming part of the operating system, with all the security questions that raises.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/tech/1007147/microsoft-surface-laptop-ultra-windows-event-everything-announced"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/tech/1007113/microsoft-windows-copilot-ai-control-search-hybrid-intelligence"
+        },
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/gadgets/2026/10/microsoft-event-debuts-new-ai-friendly-hardware-and-windows-changes/"
+        }
+      ]
+    },
+    {
+      "naslov": "Common Sense Media: ChatGPT for Teens is an \"unacceptable risk\" for minors",
+      "staSeDesilo": "The independent organization tested ChatGPT for Teens with more than 4,000 prompts. Conversations about suicide and self-harm never triggered an alert to parents. The institute is calling for teens to avoid the service until its safety is independently verified. The same day, OpenAI announced College Planner, study cards and quizzes for teens.",
+      "zastoJeBitno": "If you're building an app with an AI chat that younger users can access, this is a clear sign that safeguards can't boil down to \"the model will figure it out.\" Regulators and the media are watching exactly this.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1006355/openai-chatgpt-for-teens-common-sense-media"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/chatgpt-rated-unacceptable-risk-for-teens-after-parental-alerts-failed-during-suicide-conversations/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/07/chatgpt-for-teens-keeps-teens-talking-even-during-mental-health-crises/"
+        },
+        {
+          "naziv": "B92",
+          "url": "https://www.b92.net/tehnopolis/aktuelno/274158/izvestaj-chatgpt-za-tinejdzere-predstavlja-preveliki-rizik-za-decu/vest"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI for developers: three API tiers instead of five, and Codex Auto-review is free",
+      "staSeDesilo": "OpenAI cut its paid API tiers from five to three. The top tier, Grow, now requires $500 in total payments. Codex Auto-review (automatic code review) is now free and doesn't count against your subscription limit.",
+      "zastoJeBitno": "Smaller developers reach higher limits faster. Free AI code review is worth turning on in every repo.",
+      "kategorija": "alati",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Latent Space (AINews)",
+          "url": "https://www.latent.space/p/ainews-quasi-riemann-hypothesis-openai"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/openai-launches-decisions-api-that-reduces-complex-evaluations-to-yes-no-or-pick-one/"
+        }
+      ]
+    },
+    {
+      "naslov": "Google Playground: browser games from just a text description",
+      "staSeDesilo": "Google Labs has launched an experimental platform, Playground (playground.google). You describe a game in text, test it instantly, refine it and share it. It's powered by Gemini, Nano Banana and Lyria. For now it only works in the US and for adults, and the ability to create games depends on your Google AI subscription tier.",
+      "zastoJeBitno": "It shows where \"vibe coding\" is heading for non-programmers: from idea to a shareable game without a single line of code.",
+      "kategorija": "alati",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Google Blog",
+          "url": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/google-bets-gemini-can-turn-casual-players-into-game-developers-with-new-playground-feature/"
+        }
+      ]
+    },
+    {
+      "naslov": "Hark Pro: a proactive assistant from Brett Adcock's startup",
+      "staSeDesilo": "Hark, a startup from the founder of Figure AI, has released Hark Pro, an assistant for web and mobile. It remembers what you like, suggests tasks on its own, and handles purchases and bookings on its own cloud computer, which can run up to 36 browsers at once. There's a free and a paid tier, and devices arrive in 2027.",
+      "zastoJeBitno": "The \"personal agents\" space (Muse, Dots, Grok Bot, Hark) is getting crowded. For solo developers, that means generic assistants are taken, but narrow, local niches are not.",
+      "kategorija": "alati",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Rundown",
+          "url": "https://therundownai.beehiiv.com/p/openai-math-avalanche-continues"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-10-07"
+        }
+      ]
+    },
+    {
+      "naslov": "Croatia's LAQO launches an AI voice agent for selling insurance",
+      "staSeDesilo": "LAQO, a digital insurer from Croatia, celebrated its sixth birthday with more than 300,000 policies sold. To mark the occasion, it upgraded its LAQO GPT assistant and introduced an AI voice agent for direct communication and sales.",
+      "zastoJeBitno": "This is a concrete regional example of voice agents already being used in regulated sales, not just in demos. It's a good argument if you offer similar solutions to companies in Serbia.",
+      "kategorija": "kompanije",
+      "vaznost": 1,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "Bug.hr",
+          "url": "https://www.bug.hr/biznis/laqo-slavi-sesti-rodjendan-uz-vise-od-300000-prodanih-polica-i-prvog-ai-agenta-63395"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Claude Haiku 5.5",
+      "tip": "model",
+      "opis": "The cheapest and fastest Claude model: 1M-token context and adjustable effort. Good for classification, summaries and subagents.",
+      "kakoProbati": [
+        "Create an API key in the Claude Console (console.anthropic.com), or use an existing one.",
+        "In your Messages API call, set the model to `claude-haiku-5-5`; the effort parameter defaults to medium.",
+        "Don't send temperature, top_p or top_k with non-default values, as they return a 400 error.",
+        "If you use Simon's llm: `llm install -U llm-anthropic`, then `llm anthropic refresh`, then `llm -m claude-haiku-5.5 \"your prompt\"`."
+      ],
+      "link": "https://www.anthropic.com/claude-haiku-5-5",
+      "cena": "$0.10 input / $0.50 output per 1M tokens for prompts up to 100K; above that $0.50 / $2.50"
+    },
+    {
+      "naziv": "GPT-6 with Intelligent UI in ChatGPT",
+      "tip": "funkcija",
+      "opis": "ChatGPT now answers with diagrams, charts, forms and buttons too. Free users get GPT-6 Luna, paid users get GPT-6 Sol.",
+      "kakoProbati": [
+        "Update the ChatGPT app on your iPhone or open chatgpt.com.",
+        "Ask a question that calls for a visual answer, for example: \"Compare three phones by price and battery\" or \"Explain how a bicycle gear shifter works\".",
+        "Click through the interactive elements in the answer. If you don't have them yet, the rollout is gradual, so check the link."
+      ],
+      "link": "https://openai.com/index/gpt-6-for-everyone",
+      "cena": "free (Luna), Sol with a subscription"
+    },
+    {
+      "naziv": "SynthID.com detector",
+      "tip": "alat",
+      "opis": "A public site that checks whether an image, video or audio clip carries a SynthID watermark from Google or from partners such as OpenAI and Nvidia.",
+      "kakoProbati": [
+        "Open synthid.com in your browser; it works from an iPhone too.",
+        "Upload an image, video or audio clip you find suspicious.",
+        "Read the result. \"No watermark\" doesn't mean the content wasn't made by AI."
+      ],
+      "link": "https://arstechnica.com/ai/2026/10/google-rolls-out-improved-synthid-ai-content-detector-now-available-globally/",
+      "cena": "free"
+    },
+    {
+      "naziv": "Claude in Google Docs, Sheets and Slides",
+      "tip": "funkcija",
+      "opis": "A Claude sidebar (beta) that edits the open document directly or asks for approval on each change.",
+      "kakoProbati": [
+        "You need a paid Claude plan (Pro, Max, Team...).",
+        "Open a document in Google Docs, Sheets or Slides and look for the Claude sidebar. Check the link for the exact installation steps.",
+        "Turn on approval for every change until you've built up trust."
+      ],
+      "link": "https://tldr.tech/ai/2026-10-07",
+      "cena": "included with a paid Claude plan"
+    },
+    {
+      "naziv": "Liquid AI open d1 (d1-3B and d1-omni-600M)",
+      "tip": "model",
+      "opis": "Open \"decision models\": they don't write text, but instead return probabilities for yes/no, a choice or a score for text, images or audio, in a single pass.",
+      "kakoProbati": [
+        "`pip install \"transformers>=5.14\" torch torchvision pillow`",
+        "In Python: `AutoModel.from_pretrained(\"LiquidAI/d1-3B\", trust_remote_code=True)`",
+        "Call `system_one(text, questions, images=...)` with questions of type `noul`, `choice` or `score`.",
+        "Check the license (free for commercial use under $10 million in revenue) on the model card."
+      ],
+      "link": "https://huggingface.co/blog/LiquidAI/open-d1",
+      "cena": "free (open models)"
+    },
+    {
+      "naziv": "diagram-design (skill for Claude Code)",
+      "tip": "projekat",
+      "opis": "A skill (an add-on with instructions for the agent) for Claude Code, Codex and others. It produces clean diagrams as standalone HTML+SVG, 42 types, from Sankey diagrams to database schemas.",
+      "kakoProbati": [
+        "Open the GitHub repo and read the installation instructions for Claude Code.",
+        "Install the skill in your project or globally.",
+        "Ask Claude Code something like \"draw the schema of my Supabase database\" or \"a flow diagram for login\"."
+      ],
+      "link": "https://github.com/cathrynlavery/diagram-design",
+      "cena": "free"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Zuckerberg-funded Biohub is leading a $1.8 billion initiative for AI models that predict cell behavior, backed by money from Meta, Google DeepMind, Isomorphic Labs and the US Department of Energy.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/zuckerbergs-biohub-leads-a-1-8-billion-push-to-build-ai-models-that-predict-cell-behavior/"
+    },
+    {
+      "naslov": "Nous Research, the maker of Hermes Agent, confirmed a $1.5 billion valuation after a $90 million round and launched agents for businesses.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/07/nous-research-confirms-it-hit-1-5b-valuation-launches-ai-agents-for-business-users/"
+    },
+    {
+      "naslov": "Meta's Muse agent got a native iPad version, a month after its iPhone launch.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1006813/muse-ai-agent-ios-app-ipad-support"
+    },
+    {
+      "naslov": "OpenAI is testing a Meetings add-on for ChatGPT on Mac that turns meetings into notes and next steps.",
+      "izvor": "The Rundown",
+      "url": "https://therundownai.beehiiv.com/p/openai-math-avalanche-continues"
+    },
+    {
+      "naslov": "Later this month, OpenAI will test visual ads with larger photos in ChatGPT in the US, starting with image generation.",
+      "izvor": "Bug.hr",
+      "url": "https://www.bug.hr/umjetna-inteligencija/openai-uvodi-novu-vrstu-oglasa-u-chatgpt-63355"
+    },
+    {
+      "naslov": "According to Bloomberg's Gurman, the new AI Siri won't reach the EU for several more months.",
+      "izvor": "Bug.hr",
+      "url": "https://www.bug.hr/umjetna-inteligencija/siri-ai-jos-mjesecima-nece-stici-u-eu-63379"
+    },
+    {
+      "naslov": "Meta and Sierra are developing the Personal Agent Protocol, an open standard for what personal agents may do on company websites and APIs.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-10-07"
+    },
+    {
+      "naslov": "Utah has allowed the Nolla Health app to diagnose acne from a face video and prescribe creams on its own, the first time an AI has been given prescribing power.",
+      "izvor": "The Rundown",
+      "url": "https://therundownai.beehiiv.com/p/openai-math-avalanche-continues"
+    },
+    {
+      "naslov": "A developer used Claude Opus 5.5 to build seven open source clones of Adobe tools (Photoshop, Illustrator, Premiere...) in Rust, but they're in early alpha for now.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/ai/2026/10/software-is-over-bold-ai-developer-takes-aim-at-adobe-with-open-source-clones/"
+    },
+    {
+      "naslov": "A North Carolina man was sentenced to 18 months in prison for using AI songs and 10,000 bots to defraud streaming services for seven years.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/tech-policy/2026/10/outstreaming-taylor-swift-is-easy-with-10k-bots-and-ai-songs-fraudster-admits/"
+    },
+    {
+      "naslov": "GitHub says an agent takes part in every third pull request, and it's introducing a classifier that also blocks unstructured secrets before push.",
+      "izvor": "GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/github-copilot/secret-protection-must-scale-with-software/"
+    },
+    {
+      "naslov": "DeepSeek is reportedly close to a $12 billion round with Tencent and CATL, and is preparing to list on the Shanghai exchange.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-10-07"
+    },
+    {
+      "naslov": "Meta has open-sourced Rebalancer, a C++/Python library for scheduling problems that solves about 40 million such tasks a day (`pip install rebalancer`).",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/10/06/meta-ai-open-sources-rebalancer-a-c-assignment-solver-that-runs-about-40-million-placement-problems-a-day/"
+    },
+    {
+      "naslov": "Mitchell Hashimoto has published OSC 7501, a terminal standard that lets tools like Claude Code signal whether they're working or waiting for the user.",
+      "izvor": "Latent Space (AINews)",
+      "url": "https://www.latent.space/p/ainews-quasi-riemann-hypothesis-openai"
+    },
+    {
+      "naslov": "Cursor added remote agent control from iOS, and Claude Code cloud sessions run each task on a fresh virtual machine.",
+      "izvor": "Latent Space (AINews)",
+      "url": "https://www.latent.space/p/ainews-quasi-riemann-hypothesis-openai"
+    },
+    {
+      "naslov": "Researchers had GPT, Claude and Grok drive a real Toyota Corolla to In-N-Out, and only one model made it.",
+      "izvor": "WIRED",
+      "url": "https://www.wired.com/story/ai-is-driving-cars-now-oh-boy/"
+    },
+    {
+      "naslov": "Qualcomm will develop custom AI chips for AWS, and Amazon gets an option on a stake worth up to about $4 billion.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/qualcomm-razvija-prilagodene-ai-cipove-za-aws"
+    },
+    {
+      "naslov": "According to the US site Dice, AI and ML job postings in the US are up 88% from a year ago, and Claude is listed as a separate item among in-demand skills.",
+      "izvor": "Startit",
+      "url": "https://startit.rs/it-oglasa-u-sad-17-vise-nego-2025-broj-oglasa-za-ai-i-ml-cak-88-veci-posebno-trazeni-i-security-inzenjeri-arhitekte-i-drugi-profili/"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "nanoMuse: an open personal agent for all your devices",
+      "objasnjenje": "Using public information, the authors describe how Meta's Muse was built, then present nanoMuse, an open source counterpart under the GPL-3.0 license. The same agent runs on phone and computer and shares a single conversation through a relay server that anyone can host themselves. Every action goes through a \"Sentinel\" check, memory is stored as files you can read, and you choose the model yourself.",
+      "zastoJeZanimljivo": "This is a practical blueprint for building your own \"Muse\" without a closed cloud. The architecture with a relay and file-based memory fits nicely with a Supabase and iOS project.",
+      "url": "https://huggingface.co/papers/2610.08699",
+      "github": "https://github.com/nano-muse/nanoMuse"
+    },
+    {
+      "naslov": "From Evidence to Action: where tool-using agents go wrong",
+      "objasnjenje": "The paper tracks whether an agent actually gathers the evidence that justifies an action before taking it. It shows that agents often fail before execution: they stop with an incomplete investigation or act before establishing what they must. Once they have all the information, they carry out individual actions reliably, but in multi-step chains they skip preconditions. The paper comes with SafeActBench, a benchmark of 656 cases.",
+      "zastoJeZanimljivo": "If you're building an agent that changes something (a database, an account, an order), this is a concrete list of places where you should add pre-action checks.",
+      "url": "https://huggingface.co/papers/2610.07753",
+      "github": "https://github.com/caoshidong66/safeact"
+    },
+    {
+      "naslov": "EVISKILL: agent skills that improve based on evidence",
+      "objasnjenje": "Agents can extend their \"skills\" (instructions for repeatable tasks) from experience, without retraining the model. EVISKILL stores execution traces as \"evidence cards\" and ties every skill change to a specific case. It validates a change by re-running that case, and only then adopts it permanently.",
+      "zastoJeZanimljivo": "Claude Code skills are exactly this kind of file. The idea of verifying every skill change by re-running it also works manually, in your own workflow.",
+      "url": "https://huggingface.co/papers/2610.05030",
+      "github": "https://github.com/Zhouyaner/Eviskill"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Expiring Soon",
+      "problem": "People forget when their ID card, passport, vehicle registration, inspection or warranty expires, then scramble for paperwork at the last minute.",
+      "zaKoga": "Families and drivers in Serbia who manage documents for several household members.",
+      "ulogaAi": "You photograph a document, and the cheap Claude Haiku 5.5 extracts the document type and expiry date from the image. The app then schedules reminders on its own, in good time (e.g. a month ahead for a passport), like a proactive assistant in miniature.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "A SwiftUI screen with the camera (VisionKit document scanner) for photographing the document.",
+        "A Supabase Edge Function that sends the image to `claude-haiku-5-5` and asks for JSON with the document type and expiry date.",
+        "Save the entries in a Supabase table with per-user RLS.",
+        "Local notifications via UNUserNotificationCenter for 30, 7 and 1 day before expiry."
+      ],
+      "inspiracija": "Claude Haiku 5.5 (cheap image processing) and proactive assistants like Hark Pro"
+    },
+    {
+      "naziv": "Short and Clear",
+      "problem": "Long articles and guides bury what you need beneath intros and backstory.",
+      "zaKoga": "Anyone who reads on an iPhone and wants the conclusion first, then the steps.",
+      "ulogaAi": "A Safari extension sends the page text to a model that rewrites it in an \"answer first, then numbered steps\" format, with no filler phrases.",
+      "tezina": 1,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "In Xcode, create a Safari Web Extension target for iOS.",
+        "A content script extracts the page's main text (e.g. with Readability.js).",
+        "Send the text through a small Supabase Edge Function to Haiku 5.5 with a prompt in the style of the i-have-adhd skill.",
+        "Show the result in a panel over the page, with a \"copy\" button."
+      ],
+      "inspiracija": "The GitHub trending skill i-have-adhd (answer first)"
+    },
+    {
+      "naziv": "Admissions Planner",
+      "problem": "High school graduates in Serbia track entrance exam deadlines, required documents, points and ranking lists for several faculties in parallel, all scattered across websites and groups.",
+      "zaKoga": "High school graduates and their parents in Serbia and the region.",
+      "ulogaAi": "From the official PDF admission announcements, the model extracts deadlines, documents and scoring rules into structured data. Students can then ask questions like \"what am I still missing for ETF?\"",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Collect the admission announcements of the 5–10 most sought-after faculties as PDFs.",
+        "A Supabase Edge Function that sends each PDF to Claude and returns JSON (deadlines, documents, scoring), then writes it into tables.",
+        "An Angular web app: faculty picker, timeline and checklists.",
+        "A chat that answers only from the stored announcement data, with a link to the source."
+      ],
+      "inspiracija": "OpenAI's College Planner for ChatGPT for Teens"
+    },
+    {
+      "naziv": "Angular Generative UI Kit",
+      "problem": "Chat in apps still returns only text, and after ChatGPT's Intelligent UI, users expect charts, buttons and forms.",
+      "zaKoga": "Angular developers embedding AI chat in their apps (you included).",
+      "ulogaAi": "Instead of free text, the model returns JSON following a schema of components (chart, table, form, choice). Angular safely renders it as real components, without executing arbitrary code.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Define a JSON schema for 5–6 components (chart, table, form, choice, card, steps).",
+        "Build Angular standalone components and a dynamic renderer (ViewContainerRef) that reads the schema.",
+        "Use structured output / tool use in the Claude API so the model returns only valid JSON.",
+        "Publish it as an npm package with a demo page and a Supabase backend example."
+      ],
+      "inspiracija": "GPT-6 Intelligent UI in ChatGPT"
+    },
+    {
+      "naziv": "Lesson Game",
+      "problem": "Teachers don't have time to turn course material into something engaging for class, and Google Playground only works in the US.",
+      "zaKoga": "Primary and secondary school teachers in Serbia, and parents studying with their kids.",
+      "ulogaAi": "A teacher pastes in a lesson in Serbian, and the model turns it into questions and a scenario for one of several ready-made mini-game templates (quiz race, matching pairs, \"guess the term\"). The game is shared by link.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "In Angular, build 3 game templates that read JSON with questions.",
+        "An Edge Function that generates JSON for the chosen template from the lesson text (Haiku 5.5 is cheap enough).",
+        "Supabase for storing games, a public link and a class leaderboard.",
+        "Let two or three teachers try it and collect their impressions before adding new templates."
+      ],
+      "inspiracija": "Google Playground: games from a text description"
+    }
+  ],
+  "cene": "GLM 5.3 saw the biggest drop: input from $0.07 to $0.049, and output from $7 to $3.39. Kimi K2.6 fell from $0.95/$4 to $0.465/$2.45, and Llama 3.3 70B from $0.22/$0.5 to $0.1/$0.32. In contrast, DeepSeek V4 Pro 0423 got more expensive, going from $0.2088/$0.4176 to $0.9553/$1.9105. The new Claude Haiku 5.5 costs $0.1 input and $0.5 output, ten times less than Claude Haiku 4.5 ($1/$5). In the mid-range, GLM 5.3 is now the cheapest on both input ($0.049) and output ($3.39).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "OpenAI's 722 math papers: historic moment or flood?",
+        "oCemuSePrica": "A day after the announcement, people are still debating OpenAI's math results, especially the \"quasi-Riemann\" hypothesis and the Barnette conjecture. The question is how many results will survive scrutiny, and what it means that they took about three hours of compute on average. A rumor also circulated on Reddit that this is only the first of three batches, but the professor who started it deleted the post and said he's no longer sure.",
+        "glasovi": "Levent Alpöge (Anthropic) calls it \"the most significant moment in the history of mathematics,\" while François Chollet asks whether this kind of progress carries over to fields where the answer can't be checked automatically. On Hacker News, a comment from a mathematician who spent 24 years working on a problem that has now supposedly been solved stood out.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@__alpoge__",
+            "url": "https://x.com/__alpoge__/status/2107616859595981117"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@fchollet",
+            "url": "https://x.com/fchollet/status/2107625225768858076"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1wzxpir/rumor_from_an_nyu_math_professor_that_this_was/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1x035ne/interesting_thoughts_from_an_expert_on_a_specific/"
+          }
+        ]
+      },
+      {
+        "naslov": "Haiku 5.5: cheap per token, but is it cheap per task?",
+        "oCemuSePrica": "The $0.10/$0.50 price delighted many, but the community was quick to count the hidden costs: the new tokenizer uses more tokens, and above 100K of context the price is five times higher. One user paid $24.96 with Haiku versus $1.96 with GPT-6 Luna in an agentic test (\"voxel pagoda\").",
+        "glasovi": "Simon Willison concludes that Haiku is on par with Luna only for jobs under 100K tokens. On r/ClaudeAI, some hope Haiku reaches GPT-6.1 Sol at Luna's price, while others call it a \"token guzzler.\"",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "bluesky",
+            "naziv": "Simon Willison",
+            "url": "https://bsky.app/profile/simonwillison.net/post/3mxctkjruk22c"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1x0agoh/claude_haiku_55_cost_12x_more_than_gpt6_luna_for/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1x03k4j/introducing_claude_haiku_55_the_cheapest_fastest/"
+          }
+        ]
+      },
+      {
+        "naslov": "Amateurs with Claude Code: a planet candidate and a repaired DOS game",
+        "oCemuSePrica": "Stories from people who aren't professionals in the field stood out on r/ClaudeAI. One used Claude Code to go through NASA TESS data and found a candidate for a planet about 1.4 times the size of Earth, while another fixed a bug in a 1991 educational DOS game so his kid could play it. The author himself stresses that it's a candidate, not a confirmed planet.",
+        "glasovi": "Reactions are mostly positive. In the comments, people ask that findings like this be sent to experts for verification before being published.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1wzw8zd/i_think_i_found_a_planet_nobody_knew_existed_i/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1x06hmp/claude_fixed_a_bug_in_a_dos_game_from_1991_and/"
+          }
+        ]
+      },
+      {
+        "naslov": "Decision models: a useful category or marketing?",
+        "oCemuSePrica": "After OpenAI's Decisions API, Perplexity's pplx-decider and Liquid's open d1, people are debating what models that return only yes/no, a choice or a score are for. An independent check by Vals showed that the Jev model matches GPT-6 Astra on claim verification at roughly 500 times lower cost, but comes last on LegalBench.",
+        "glasovi": "Theo thinks using these models to decide \"how smart a model is needed\" is completely useless. Vals and r/LocalLLaMA see them as a cheap filter for classification and moderation.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@theo",
+            "url": "https://x.com/theo/status/2107581731109065066"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@ValsAI",
+            "url": "https://x.com/ValsAI/status/2107559370208997711"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wzuto0/new_lfm_to_be_released_today/"
+          }
+        ]
+      }
+    ],
+    "snimci": []
+  },
+  "nedeljni": null
+}
