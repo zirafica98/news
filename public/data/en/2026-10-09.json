@@ -1,0 +1,623 @@
+{
+  "datum": "2026-10-09",
+  "generisano": "2026-10-09T03:06:41.030Z",
+  "model": "claude-opus-5-5",
+  "prevod": "claude-sonnet-5-5",
+  "ukratko": "Anthropic had a day of moves: half-price cache reads for Sonnet 5.5, API credits bundled with Max and Team plans, new Dashboards and Motion in Claude, free vulnerability scanning for open source projects, and new usage rules that also ban abusing the model itself. OpenAI released the fast GPT-6.1 Sol Ultrafast, but only on its most expensive plan, while social media is mostly debating the fired safety researchers and the mathematicians' boycott. From Serbia comes news of a permanent working group for implementing the EU AI Act.",
+  "vesti": [
+    {
+      "naslov": "Anthropic makes agents cheaper: Sonnet 5.5 cache reads cut in half, and Max and Team plans now include monthly API credits",
+      "staSeDesilo": "Cache reads (the reused part of a prompt the model has already stored) for Sonnet 5.5 dropped from $0.20 to $0.10 per million tokens, while input stays at $2 and output at $10. Anthropic estimates this makes agentic and long-running jobs about 20% cheaper, and Claude Code limits stay the same. On top of that, Max 5x gets $100, Max 20x gets $200, and Team gets up to $500 in monthly API credits, valid for all models, including in other companies' tools.",
+      "zastoJeBitno": "If you already pay for Max, you can now try Haiku 5.5 or Sonnet in your Supabase or iOS app for free. Agents that keep resending the same long context get noticeably cheaper.",
+      "kategorija": "kompanije",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Latent Space / AINews",
+          "url": "https://www.latent.space/p/ainews-claude-haiku-55-better-than"
+        },
+        {
+          "naziv": "@ClaudeDevs on X",
+          "url": "https://x.com/ClaudeDevs/status/2108287358374482381"
+        },
+        {
+          "naziv": "Ben's Bites",
+          "url": "https://www.bensbites.com/p/text-is-so-2023"
+        }
+      ]
+    },
+    {
+      "naslov": "GPT-6.1 Sol Ultrafast: nearly Astra-level power and up to 8x faster, but only on the $500 plan",
+      "staSeDesilo": "OpenAI has released GPT-6.1 Sol Ultrafast. It claims the model is nearly on par with Astra and up to 8x faster than standard Sol. It's available in the API at $12/$60 per million input/output tokens, about 1.2x the price of Astra. In Codex and ChatGPT it's limited to Pro users ($500) and some Enterprise/Edu plans, and people criticized how deeply that detail was buried in the announcement.",
+      "zastoJeBitno": "Speed is becoming its own line item that you pay extra for. For most indie projects this is too expensive, but it shows where pricing for the fastest models is heading.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Latent Space / AINews",
+          "url": "https://www.latent.space/p/ainews-not-much-happened-today-60f"
+        },
+        {
+          "naziv": "@OpenAIDevs on X",
+          "url": "https://x.com/OpenAIDevs/status/2108262812489531498"
+        }
+      ]
+    },
+    {
+      "naslov": "Claude builds live dashboards and animated explainer videos, and Docs, Slides and Design are now free",
+      "staSeDesilo": "Anthropic released two beta features. Dashboards connects to BigQuery, Databricks, Snowflake or Salesforce and turns a text request into a self-refreshing dashboard, with the query behind every number visible (paid plans). Motion creates animated explainer videos from text, diagrams and images, which are editable like code and exportable to MP4, but only on Team and Enterprise plans. Docs, Slides and Design are leaving beta and work on all plans, including free, and Design moves into the main app by December 14.",
+      "zastoJeBitno": "Claude is becoming a tool for reports and presentations, not just chat. Having every number carry its own query is a good pattern for your own Supabase apps too.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/claude-can-now-generate-animated-explainer-videos-and-live-data-dashboards-from-text-prompts/"
+        }
+      ]
+    },
+    {
+      "naslov": "Anthropic scans open source projects for vulnerabilities for free, with reports written entirely by the model",
+      "staSeDesilo": "As part of its new Cyber Mission program, Anthropic is launching OSS Scanner. Maintainers of important open source projects can apply at red.anthropic.com/oss-scanner and get regular scans with its strongest models for free. Each report includes proof that the flaw is exploitable (PoC), an explanation and a suggested fix. No human reviews the reports: Anthropic expects over 90% accurate findings and openly admits some will be wrong.",
+      "zastoJeBitno": "If you maintain a popular library, you get a free security review. Everyone else can expect a wave of AI-generated bug reports, including false alarms.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Anthropic",
+          "url": "https://www.anthropic.com/news/anthropic-cyber-mission"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1008521/anthropic-open-source-oss-scanner"
+        }
+      ]
+    },
+    {
+      "naslov": "New rules for Claude: systematic abuse of the model banned, stricter limits on drones and surveillance",
+      "staSeDesilo": "Anthropic changed its usage policy for the first time in over a year, with the new rules taking effect November 12. \"Persistent and needless\" abuse of Claude is banned, though ordinary frustration, criticism, dark creative themes and testing the model don't count. The main penalty is that Claude ends the conversation, although The Decoder also reported possible account suspension. Rules on fake campaigns, weaponizing drones and surveillance tools were tightened, and devices that physically do things must have an operator who can stop them.",
+      "zastoJeBitno": "If you're building an app that controls hardware or analyzes people, check the new rules before November 12. The rule on abusing the model opens a wider debate about \"model welfare\".",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Anthropic",
+          "url": "https://www.anthropic.com/news/2026-usage-policy-update"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1008100/anthropic-new-usage-policy-abuse-claude"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/08/anthropic-changes-usage-policy-to-ban-model-abuse-and-election-interference/"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/being-mean-to-claude-can-now-get-your-account-suspended-under-anthropics-new-tos/"
+        }
+      ]
+    },
+    {
+      "naslov": "Serbia gets a permanent working group for implementing the EU AI Act",
+      "staSeDesilo": "At the AI ACTion conference at the House of Europe in Belgrade, the creation of a Permanent Working Group for AI Compliance and Implementation (EU AI Act Taskforce Serbia) was announced. It's organized by the Digital Communications Institute (DCI) and Ireland's AI Certified, and the event brought together representatives of local business, diplomats and foreign experts.",
+      "zastoJeBitno": "Serbian companies that sell software in the EU will have to comply with the AI Act, so a group like this could become a place to get practical advice. How much influence it will really have remains to be seen.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "Danas",
+          "url": "https://www.danas.rs/vesti/drustvo/srbija-dobija-stalnu-radnu-grupu-za-primenu-evropske-regulative-o-ai/"
+        }
+      ]
+    },
+    {
+      "naslov": "Google launches a \"universal\" Gemini agent for work",
+      "staSeDesilo": "At its Gemini at Work event, Google introduced a Gemini agent that runs in the cloud inside the Gemini Enterprise app. It works in Gmail, Drive, Docs and Calendar, as well as from Slack and Microsoft 365, remembers context, splits work among subagents (smaller agents for individual tasks), chooses between multiple models and gets its own work email address. According to TestingCatalog, Claude Opus 5 and Sonnet 5.5 are also coming to Gemini Business.",
+      "zastoJeBitno": "For now it's aimed only at businesses, but Google, OpenAI and Anthropic are now openly competing for the same \"agent coworker\" in the office.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/tech/1007904/google-gemini-ai-agent-enterprise"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/08/google-brings-agentic-ai-to-gemini-starting-with-businesses/"
+        }
+      ]
+    },
+    {
+      "naslov": "Grok Bot will hand some tasks off to Claude, Midjourney and Suno",
+      "staSeDesilo": "Elon Musk announced that the Grok Bot agent will pass tasks to competing models such as Claude Opus 5.5, Midjourney and Suno when it judges they'll do the job better. Simple queries will go to the fast version of Grok 4.8 once it's out. Ben's Bites claims Opus 5.5 is already the main model, while The Rundown says Grok still handles light tasks, so the exact split isn't clear yet.",
+      "zastoJeBitno": "Even Musk now admits that one model doesn't win at everything. Routing tasks across multiple models is becoming standard, so it's worth building into your own apps.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Rundown",
+          "url": "https://therundownai.beehiiv.com/p/ai-s-next-frontier-is-the-human-cell"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-10-08"
+        }
+      ]
+    },
+    {
+      "naslov": "A single attacker used AI tools to breach several South Korean banks",
+      "staSeDesilo": "According to a CrowdStrike report, the attack on several South Korean financial institutions was likely carried out by one person, and over 25,000 customer records were stolen from Shinhan Bank alone. The attacker used the open source ARTEX tool for automated intrusion testing (pentesting), along with the models DeepSeek V4.1 Flash, GLM-5.3, Grok 4.6 and Claude Code.",
+      "zastoJeBitno": "An attack that used to require a whole team can now be run by one person. That means even small projects need to take security more seriously: RLS in Supabase, secret keys, patching.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/ai-powered-hacking-tools-enabled-a-likely-single-attacker-to-breach-multiple-south-korean-banks/"
+        },
+        {
+          "naziv": "CrowdStrike",
+          "url": "https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/"
+        }
+      ]
+    },
+    {
+      "naslov": "One prompt was enough to hijack every AI agent in an AWS account",
+      "staSeDesilo": "Zenity Labs researchers showed that a single publicly accessible agent on Amazon Bedrock AgentCore was enough to take over all AgentCore agents in the same AWS account and region. The agents could access an internal AWS interface for temporary credentials without restriction. AWS has patched the flaw and narrowed the agents' default permissions.",
+      "zastoJeBitno": "If you deploy agents to the cloud, don't rely on default settings: give each agent the least privilege possible.",
+      "kategorija": "bezbednost",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/a-single-prompt-was-enough-to-hijack-every-ai-agent-in-an-aws-account-zenity-researchers-found/"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Google AI Edge Foresight",
+      "tip": "alat",
+      "opis": "An experimental Mac meeting-notes app that transcribes and organizes notes entirely offline, on-device, using the EmbeddingGemma 2 model. During the meeting you jot down short points, and it turns them into clean notes based on the transcript.",
+      "kakoProbati": [
+        "Go to developers.google.com/edge/foresight and download the app (requires a Mac with an Apple Silicon chip)",
+        "Play a meeting recording or open an existing audio file",
+        "Type short points while it listens, then ask for organized notes or ask a question about the content at the end",
+        "Check the link for Serbian language support, since it isn't listed"
+      ],
+      "link": "https://developers.google.com/edge/foresight",
+      "cena": "free"
+    },
+    {
+      "naziv": "JetBrains Mellum2.1",
+      "tip": "model",
+      "opis": "An open MoE model (mixture-of-experts, where only part of the network is activated for each token) for coding agents: 12B parameters with 2.5B active, a 131K-token context and an Apache 2.0 license. It's built as a fast subagent that reads a repo, edits files and checks changes.",
+      "kakoProbati": [
+        "Search for JetBrains Mellum2.1 on Hugging Face",
+        "For local use, grab the GGUF version (the smallest is 7 GB) and load it in LM Studio, Ollama or llama.cpp",
+        "For a server, run it with vLLM or SGLang"
+      ],
+      "link": "https://www.marktechpost.com/2026/10/08/jetbrains-releases-mellum2-1-a-12b-moe-open-model-for-coding-agents/",
+      "cena": "free (open model)"
+    },
+    {
+      "naziv": "Computer-use and browser-use in the Claude SDK",
+      "tip": "funkcija",
+      "opis": "The Python and TypeScript Claude SDKs now include built-in tools for controlling a computer and a browser. The SDK runs the action loop itself and sends clicks and typing to drivers (browser_use, Browserbase, E2B, Daytona), so you no longer have to write that loop yourself.",
+      "kakoProbati": [
+        "Update the Claude SDK (npm or pip) to the latest version",
+        "Open the quickstart from the @ClaudeDevs post and pick a driver, e.g. Browserbase or E2B",
+        "Give the agent a simple browser task, such as filling out a test form in your Angular app"
+      ],
+      "link": "https://x.com/ClaudeDevs/status/2107925764163113107",
+      "cena": "you pay for API tokens and the driver; check the link"
+    },
+    {
+      "naziv": "cmux",
+      "tip": "projekat",
+      "opis": "An open source macOS terminal built on Ghostty, with vertical tabs and notifications when an AI coding agent finishes or is waiting for you. Handy when you're running several Claude Code sessions at once.",
+      "kakoProbati": [
+        "Open github.com/manaflow-ai/cmux or cmux.com",
+        "Install following the README instructions",
+        "Start a few Claude Code sessions in different tabs and watch for the blue notification rings"
+      ],
+      "link": "https://github.com/manaflow-ai/cmux",
+      "cena": "free"
+    },
+    {
+      "naziv": "ttok 0.4",
+      "tip": "alat",
+      "opis": "A small CLI tool by Simon Willison that counts tokens using OpenAI's tiktoken. The new version adds a --list-models command.",
+      "kakoProbati": [
+        "You need uv installed",
+        "In a terminal, run: cat file.txt | uvx ttok",
+        "For a list of supported models, run: uvx ttok --list-models"
+      ],
+      "link": "https://simonwillison.net/2026/Oct/8/ttok/",
+      "cena": "free"
+    },
+    {
+      "naziv": "Step 5 Preview (StepFun)",
+      "tip": "model",
+      "opis": "A Chinese model for coding agents with a one-million-token context. On the Artificial Analysis index it's close to Claude Opus 5 (Medium), but that claim comes from a sponsored article. Cline says it's ahead of Kimi K3 and GLM-5.3 on the DeepSWE benchmark.",
+      "kakoProbati": [
+        "In the Cline extension for VS Code, select Step 5 Preview (Cline currently offers it for free)",
+        "Or call it through OpenRouter at $1 for input and $2.70 for output (per million tokens)",
+        "Compare it with your usual model on the same task"
+      ],
+      "link": "https://x.com/cline/status/2108249633789263917",
+      "cena": "free in Cline; on OpenRouter $1 / $2.70 per million tokens"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "According to the Financial Times, OpenAI had about $50 billion in annual revenue at the end of September, not the $70 billion previously reported.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/08/openais-revenue-is-reportedly-20-billion-less-than-previously-projected/"
+    },
+    {
+      "naslov": "USA Today and its local papers are suing OpenAI over \"hundreds of thousands\" of articles used for training, seeking over $250 million in damages.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1008198/usa-today-openai-copyright-lawsuit"
+    },
+    {
+      "naslov": "Arena, the company behind the LMArena leaderboard, raised $200 million at a $3.1 billion valuation and launched an index measuring how often agents lie and do things they shouldn't.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/08/popular-ai-leaderboard-arena-nearly-doubles-valuation-to-3-1b-valuation-in-10-months/"
+    },
+    {
+      "naslov": "The Zuckerberg-Chan Biohub expanded its \"virtual cell\" project to $1.8 billion, with the US government, DeepMind and Meta on board.",
+      "izvor": "The Rundown",
+      "url": "https://therundownai.beehiiv.com/p/ai-s-next-frontier-is-the-human-cell"
+    },
+    {
+      "naslov": "Anthropic is committing $150 million to the US Genesis Mission and opening Claude access to more than 15 federal agencies.",
+      "izvor": "Anthropic",
+      "url": "https://www.anthropic.com/news/genesis-mission-commitment"
+    },
+    {
+      "naslov": "Microsoft released MAI-Code-1.1-Flash, a coding model that is faster and costs a quarter of the previous version.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-10-08"
+    },
+    {
+      "naslov": "Liquid AI released the open decision-making models d1-3B and d1-OMNI-600M, built for on-device use with text, image and audio.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-10-08"
+    },
+    {
+      "naslov": "OpenDocRouter turns PDFs and images into Markdown through a single API, with a choice of multiple open and commercial models.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-10-08"
+    },
+    {
+      "naslov": "Architect launched Liquid Inference, a router where providers bid on each request to process it for the lowest price, and you just change the base URL.",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/10/08/architect-launches-liquid-inference-a-real-time-auction-for-llm-inference/"
+    },
+    {
+      "naslov": "Goodfire offers monitors that \"look inside\" models to catch rogue agents, claiming they're 50x faster and cheaper than using another LLM as a judge.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/08/goodfire-says-its-new-inside-out-monitors-catch-rogue-ai-agents-at-a-fraction-of-the-cost/"
+    },
+    {
+      "naslov": "China's Manus raised over $500 million in its first round since splitting from Meta.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/08/chinas-manus-raises-over-500m-in-first-funding-round-since-split-with-meta/"
+    },
+    {
+      "naslov": "OpenAI launched Astra for Law, a legal research platform built on GPT-6 Astra and a database of US case law; pricing hasn't been announced.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/openai-ulazi-u-pravni-softver"
+    },
+    {
+      "naslov": "A 16-year-old whom Claude sent on a mountain route that requires climbing gear had to be rescued by helicopter near Vancouver.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/teens-ai-guided-mountain-hike-ends-with-a-helicopter-rescue-and-a-lesson-in-common-sense/"
+    },
+    {
+      "naslov": "Ethereum researchers are debating a \"bunker mode\" in case AI math breaks wallet signatures, while Vitalik Buterin warns against rushed migrations.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/ai-math-breakthroughs-have-ethereum-researchers-debating-how-fast-wallet-security-could-collapse/"
+    },
+    {
+      "naslov": "SpaceXAI is donating $1.5 million worth of Grok tokens to David Heinemeier Hansson's Linux distribution Omarchy.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1008148/spacexai-omarchy-grok-david-heinemeier-hansson"
+    },
+    {
+      "naslov": "Serbia's caretaker education minister says AI and robotics are already used in about 27% of schools in Serbia and announces larger investments.",
+      "izvor": "Nedeljnik",
+      "url": "https://www.nedeljnik.rs/ministar-prosvete-vise-vestacke-inteligencije-u-nastavi-vec-se-koristi-u-cetvrtini-skola/"
+    },
+    {
+      "naslov": "At the Startit meetup on October 14 in Belgrade, Easygo engineers will explain how they used AI to migrate parts of the Kick platform, which has 130 million users, with zero downtime.",
+      "izvor": "Startit",
+      "url": "https://startit.rs/kako-je-tim-inzenjera-iz-beograda-uz-ai-migrirao-kljucne-delove-platforme-za-samo-nekoliko-meseci-i-to-na-sistemu-sa-100m-korisnika-bez-ijedne-sekunde-downtimea-prijavi-se-za-me/"
+    },
+    {
+      "naslov": "Croatia's Presscut, FER and FIDIT are developing an AI system for tracking disinformation in the media.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/presscut-fer-i-fidit-razvijaju-napredne-ai-sustave-za-pracenje-dezinformacija-u-medijima"
+    },
+    {
+      "naslov": "Two-thirds of Slovenia's residents and about 40% of its companies used AI tools in the first quarter of 2026.",
+      "izvor": "B92",
+      "url": "https://www.b92.net/tehnopolis/aktuelno/274534/u-sloveniji-dve-trecine-stanovnistva-koristi-vestacku-inteligenciju/vest"
+    },
+    {
+      "naslov": "Rimac Technology and ECOBLOX will jointly develop modular data centers for AI.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/rimac-technology-i-ecoblox-ce-zajedno-razvijati-ai-data-centre"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "Recursive Game Creator: agents that build a game, play it and fix it until it's fun",
+      "objasnjenje": "Instead of an agent just writing a game that runs, four roles work in a loop here. The Designer makes a plan, the Builder writes the game, the Player plays it programmatically many times, and the Reviewer judges from those playthroughs and screenshots whether it's fun and sends suggestions for the next round.",
+      "zastoJeZanimljivo": "You can apply the same pattern (build, test, evaluate, fix) in Claude Code to your own apps, not just games. The code is public.",
+      "url": "https://huggingface.co/papers/2610.08621",
+      "github": "https://github.com/IMBALDY/RecursiveGameCreator"
+    },
+    {
+      "naslov": "Trace2Env: a fake system built from old logs, for testing agents",
+      "objasnjenje": "When the real system isn't available but records of past interactions with it exist, Trace2Env builds a \"world book\" from them: schema, examples and behavior rules. Then one agent plays that system for another agent and remembers state between steps. It works without extra training and imitates the real system more faithfully than plain prompts.",
+      "zastoJeZanimljivo": "Handy for testing agents against an API you can't touch in production, such as payments or someone else's service.",
+      "url": "https://huggingface.co/papers/2610.06100",
+      "github": "https://github.com/ruyue0001/trace2env"
+    },
+    {
+      "naslov": "STEPQuant: less memory for linear-attention models",
+      "objasnjenje": "Instead of a constantly growing KV cache, linear-attention models keep a fixed-size \"state\", but even that takes a lot of memory when serving many users at once. STEPQuant compresses that state to about 6 bits and gives more precision to the parts that are remembered longer and influence the output more. On Qwen3.8-27B and Kimi-Linear, results are nearly the same as without compression.",
+      "zastoJeZanimljivo": "Techniques like this eventually land in vLLM and llama.cpp and mean cheaper, faster open models, both locally and at providers.",
+      "url": "https://huggingface.co/papers/2609.38169",
+      "github": "https://github.com/Dreamer-Toby/STEPQuant"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Check the Trail",
+      "problem": "People plan hikes with a chatbot that has no idea how hard a route really is. The teenager from the news ended up in a helicopter because of it.",
+      "zaKoga": "Hikers and outdoor enthusiasts in Serbia and the region (Kopaonik, Prokletije, Durmitor)",
+      "ulogaAi": "Haiku 5.5 extracts the route points from a pasted AI plan, the app compares them against OpenStreetMap difficulty tags (sac_scale, via ferrata), and the model finally explains in plain language where it's dangerous and what gear is needed.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "A SwiftUI app with MapKit and a field where you paste the route plan",
+        "An Overpass API query that returns OSM sac_scale trail tags for the route points",
+        "A Supabase Edge Function that calls Haiku 5.5 with structured output (a list of points and warnings)",
+        "A red, yellow and green rating per section, plus a \"send plan to family\" button"
+      ],
+      "inspiracija": "The story about the teenager Claude sent on a route that requires climbing gear"
+    },
+    {
+      "naziv": "Debt Map",
+      "problem": "Tech debt gets swept under the rug because nobody has a clear overview of what's most urgent and what fixing it would cost.",
+      "zaKoga": "Small teams and freelance developers with older Angular and Supabase projects",
+      "ulogaAi": "A Claude Code skill walks through the repo, finds outdated dependencies, dead code and risky spots, then produces a list sorted by risk and effort, with a suggested first small PR.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Write a Claude Code skill (SKILL.md) with clear rules for what counts as debt",
+        "Add scripts for npm outdated, ng update --dry-run and a TODO comment search",
+        "Have Haiku 5.5 summarize each module as a subagent, and Sonnet write the final report in Markdown",
+        "Try it on your oldest project and publish it on GitHub"
+      ],
+      "inspiracija": "The Startit meetup on how the Kick team paid off tech debt with AI, and the Ponytail skill from Reddit"
+    },
+    {
+      "naziv": "Ask the Database",
+      "problem": "Small business owners have their data in Supabase, but have to ask a developer for every report.",
+      "zaKoga": "Clients Mihajlo builds apps for: small shops, salons, clinics",
+      "ulogaAi": "The model turns a question in Serbian into a read-only SQL query, and the app draws a chart and shows the query behind each number, like Claude Dashboards.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "An Angular app with a question field and ngx-charts or Chart.js for the charts",
+        "A dedicated read-only Postgres user and an Edge Function that runs queries with a timeout",
+        "Haiku 5.5 gets the database schema and returns JSON with the SQL and chart type, and Sonnet 5.5 steps in only when a query fails",
+        "Save favorite questions as a self-refreshing dashboard"
+      ],
+      "inspiracija": "Claude Dashboards and the cheaper Haiku 5.5 and Sonnet 5.5 cache"
+    },
+    {
+      "naziv": "Offline Notes",
+      "problem": "Lawyers, doctors and HR staff can't send meeting recordings to the cloud, and writing minutes by hand takes time.",
+      "zaKoga": "Privacy-conscious professionals in Serbia with an iPhone or iPad",
+      "ulogaAi": "Transcription and summarization run on-device (Apple Speech and Apple Foundation Models), and the user's short points are expanded into clean minutes in Serbian.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "A SwiftUI app with recording via AVAudioEngine and SpeechAnalyzer for Serbian",
+        "A screen for typing points during the recording, with timestamps",
+        "The Foundation Models framework for the summary and action items, with nothing sent over the network",
+        "Export to PDF and Apple Notes, and a clear \"nothing leaves the phone\" message"
+      ],
+      "inspiracija": "Google's offline note-taker AI Edge Foresight"
+    },
+    {
+      "naziv": "AI Act Check",
+      "problem": "Serbian companies building software for the EU don't know whether their AI product counts as high-risk and what exactly that means for them.",
+      "zaKoga": "Startups and IT companies in Serbia that export to the EU",
+      "ulogaAi": "A questionnaire of about ten questions, after which the model uses the answers and the text of the AI Act to suggest a risk category and a checklist of obligations, with a clear note that it isn't legal advice.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "An Angular page with a questionnaire (Angular Forms) and a Supabase table for the answers",
+        "Include the key AI Act articles as context and cache them to make calls cheaper",
+        "Haiku 5.5 returns JSON with the category, rationale and checklist",
+        "A PDF report the company can take to a lawyer, and notifications about news from the working group"
+      ],
+      "inspiracija": "The formation of EU AI Act Taskforce Serbia in Belgrade"
+    }
+  ],
+  "cene": "GLM 5.2 got the biggest price cut, from 0.171/12 to 0.084/4.3 dollars per million input/output tokens. Kimi K3 lowered output from $15 to $12, and GLM 5.3 cut input from 0.049 to 0.039. Llama 3.3 70B (from 0.10/0.32 to 0.22/0.50), Qwen3.6 27B (from 0.30/2 to 0.45/2.70) and Qwen3.5 397B (from 0.45/3 to 0.55/3.50) got more expensive. GLM 5.3 has the cheapest input in the mid-range ($0.039), and the new Claude Haiku 5.5 costs 0.10/0.50, ten times less than Haiku 4.5 (1/5).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Fired OpenAI safety researchers respond with a public letter",
+        "oCemuSePrica": "Tomek Korbak, Mikita Balesni and Jasmine Wang published a letter, \"OpenAI can't make AI safe on its own\", claiming they were fired for putting safety ahead of the company's short-term interests. OpenAI says they mishandled confidential information, which they deny. People are wondering whether this will discourage employees from working with outside evaluators like METR.",
+        "glasovi": "Posts from Wang, Balesni and Korbak have thousands of reactions. Neel Nanda says the firings are \"highly suspicious\" if their versions are accurate, while OpenAI sticks to its claim about leaked confidential data.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@j_asminewang",
+            "url": "https://x.com/j_asminewang/status/2108263312291180680"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@balesni",
+            "url": "https://x.com/balesni/status/2108262814003687745"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@tomekkorbak",
+            "url": "https://x.com/tomekkorbak/status/2108266859397283953"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@NeelNanda5",
+            "url": "https://x.com/NeelNanda5/status/2108299947137200488"
+          }
+        ]
+      },
+      {
+        "naslov": "Mathematicians vs. OpenAI: boycott, retracted papers and mockery",
+        "oCemuSePrica": "The Association for Human Mathematics is calling for a boycott of OpenAI after the release of over 700 papers, three of which were retracted and 14 corrected. Terence Tao shared their statement and joked about the announcement, but the statement is often wrongly attributed to him. Others point out that researchers have already improved some OpenAI results and verified them in Lean (a tool for formal proof checking).",
+        "glasovi": "Critics like BlackHC ask why the proofs weren't fully verified in Lean. Part of the r/singularity community fires back that mathematicians only get defensive when AI threatens their profession.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/OpenAI",
+            "url": "https://www.reddit.com/r/OpenAI/comments/1x0gqmb/fields_medalist_terence_tao_reposts_statement/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1x0q2ho/mathematicians_spent_40_years_telling_taxpayers/"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@BlackHC",
+            "url": "https://x.com/BlackHC/status/2108094390186995733"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/OpenAI",
+            "url": "https://www.reddit.com/r/OpenAI/comments/1x0jjv8/researchers_are_already_significantly_improving/"
+          }
+        ]
+      },
+      {
+        "naslov": "\"Be nice to Claude or get blocked\"",
+        "oCemuSePrica": "The new rule banning persistent abuse of Claude, effective November 12, has kicked off a debate about \"model welfare\". Some wonder what Anthropic knows that we don't, while others see it as marketing or a first step toward treating models as beings.",
+        "glasovi": "The debate is being driven by r/ClaudeAI, r/singularity and @kimmonismus. Anthropic stresses that ordinary frustration and criticism aren't banned and that the main measure is ending the conversation.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1x11k9j/abuse_claude_get_banned_coming_november_12th_2026/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1x0x0o8/starting_november_12th_2026_abusive_or_cruel/"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@kimmonismus",
+            "url": "https://x.com/kimmonismus/status/2108252676924272662"
+          }
+        ]
+      },
+      {
+        "naslov": "One hacker and a pile of models: the attack on Korean banks",
+        "oCemuSePrica": "CrowdStrike's report that the attack on major South Korean banks was likely carried out by one person, using ARTEX, DeepSeek, GLM-5.3, Grok and Claude Code, spread from X to r/LocalLLaMA. The debate is about whether open models without strong safeguards make attacks easier and what that means for defense.",
+        "glasovi": "The story was kicked off by @AndrewCurran_. Hugging Face's Clem Delangue is asking for public logs of agentic attacks and defenses, while Anthropic's analysis claims GLM-5.3's safeguards can be bypassed in 64 to 100% of cases.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@AndrewCurran_",
+            "url": "https://x.com/AndrewCurran_/status/2108108695876092323"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x0n4pt/last_week_some_of_south_koreas_biggest_banks_were/"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@ClementDelangue",
+            "url": "https://x.com/ClementDelangue/status/2108184948548976921"
+          }
+        ]
+      },
+      {
+        "naslov": "What people are building with Opus 5.5: from a J2ME game to TypeScript in Rust",
+        "oCemuSePrica": "Examples are circulating on r/ClaudeAI: a full 3D shooter for old Java phones from a single prompt, a Windows-only microphone driver ported to Linux in 15 minutes, and a set of tools and games for a brother who uses switches instead of a keyboard and touchscreen. On Hacker News, there's a big discussion about an LLM-written port of the TypeScript compiler to Rust.",
+        "glasovi": "The posters are thrilled, while in the HN comments (over 200) skeptics ask who will maintain it and how correct it really is.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1x120gj/opus_55_can_make_games_for_2_decade_old_phones/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1x0x5wo/my_brother_went_nearly_10_years_without_a_way_to/"
+          },
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50000676"
+          }
+        ]
+      }
+    ],
+    "snimci": [
+      {
+        "naslov": "The Software Factory: From Bug Report to Production Code",
+        "kanal": "AI Engineer",
+        "opis": "Davis Palmie from Factory explains a system of agents that goes from a bug report to production code, and why writing code was never the bottleneck.",
+        "url": "https://www.youtube.com/watch?v=exiwa9QbQXI"
+      },
+      {
+        "naslov": "Why Bigger Context Windows Won't Save Your Agent",
+        "kanal": "AI Engineer",
+        "opis": "AWS's Elizabeth Fuentes Leone demonstrates four strategies with code (offload, select, compress, isolate) for agents that forget the middle of a long context.",
+        "url": "https://www.youtube.com/watch?v=DrfyORO8RqA"
+      },
+      {
+        "naslov": "Giving AI Agents Memory That Learns",
+        "kanal": "AI Engineer",
+        "opis": "LangChain's Jake Broekhuizen shows how to turn lessons from logs into persistent memory that actually changes an agent's behavior.",
+        "url": "https://www.youtube.com/watch?v=KGFyOtl5ktI"
+      },
+      {
+        "naslov": "Why We Deleted Our MCP Server and Rebuilt It",
+        "kanal": "AI Engineer",
+        "opis": "Reducto explains why an MCP server with one tool per API endpoint fell apart once the whole team started using it, and how they rebuilt it.",
+        "url": "https://www.youtube.com/watch?v=jJQoVkd5yLg"
+      }
+    ]
+  },
+  "nedeljni": null
+}

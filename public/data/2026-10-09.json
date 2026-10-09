@@ -1,0 +1,622 @@
+{
+  "datum": "2026-10-09",
+  "generisano": "2026-10-09T03:06:41.030Z",
+  "model": "claude-opus-5-5",
+  "ukratko": "Dan je obeležila Anthropic-ova serija poteza: upola jeftinije čitanje iz keša za Sonnet 5.5, API krediti uz Max i Team pretplate, novi Dashboards i Motion u Claude-u, besplatno skeniranje open source projekata na ranjivosti i nova pravila korišćenja koja zabranjuju i zlostavljanje samog modela. OpenAI je izbacio brzi GPT-6.1 Sol Ultrafast, ali samo za najskuplji plan, a zajednica na mrežama najviše raspravlja o otpuštenim istraživačima bezbednosti i o bojkotu matematičara. Iz Srbije stiže vest o stalnoj radnoj grupi za primenu evropskog AI Act-a.",
+  "vesti": [
+    {
+      "naslov": "Anthropic pojeftinio agente: keš za Sonnet 5.5 upola jeftiniji, a uz Max i Team pretplate dobijaš mesečne API kredite",
+      "staSeDesilo": "Čitanje iz keša (ponovo korišćen deo prompta koji model već ima zapamćen) za Sonnet 5.5 palo je sa 0,20 na 0,10 dolara za milion tokena, dok ulaz ostaje 2, a izlaz 10 dolara. Anthropic procenjuje da su time agentski i dugi poslovi oko 20% jeftiniji, a limiti u Claude Code-u ostaju isti. Uz to, Max 5x dobija 100, Max 20x 200, a Team do 500 dolara mesečnih API kredita koji važe za sve modele, pa i u alatima drugih firmi.",
+      "zastoJeBitno": "Ako već plaćaš Max, sada možeš besplatno da isprobaš Haiku 5.5 ili Sonnet u svojoj Supabase ili iOS aplikaciji. Agenti koji stalno šalju isti dugi kontekst postaju primetno jeftiniji.",
+      "kategorija": "kompanije",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Latent Space / AINews",
+          "url": "https://www.latent.space/p/ainews-claude-haiku-55-better-than"
+        },
+        {
+          "naziv": "@ClaudeDevs na X-u",
+          "url": "https://x.com/ClaudeDevs/status/2108287358374482381"
+        },
+        {
+          "naziv": "Ben's Bites",
+          "url": "https://www.bensbites.com/p/text-is-so-2023"
+        }
+      ]
+    },
+    {
+      "naslov": "GPT-6.1 Sol Ultrafast: skoro snaga Astre i do 8 puta brže, ali samo za plan od 500 dolara",
+      "staSeDesilo": "OpenAI je pustio GPT-6.1 Sol Ultrafast. Tvrde da je skoro na nivou Astre i do 8 puta brži od standardnog Sol-a. Dostupan je u API-ju po ceni od 12/60 dolara za milion ulaznih/izlaznih tokena, što je oko 1,2 puta skuplje od Astre. U Codex-u i ChatGPT-u ga dobijaju samo Pro korisnici (500 dolara) i deo Enterprise/Edu planova, a ljudi su kritikovali što je ta informacija bila zakopana duboko u objavi.",
+      "zastoJeBitno": "Brzina postaje posebna stavka koja se dodatno plaća. Za većinu indie projekata ovo je preskupo, ali pokazuje kuda idu cene najbržih modela.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Latent Space / AINews",
+          "url": "https://www.latent.space/p/ainews-not-much-happened-today-60f"
+        },
+        {
+          "naziv": "@OpenAIDevs na X-u",
+          "url": "https://x.com/OpenAIDevs/status/2108262812489531498"
+        }
+      ]
+    },
+    {
+      "naslov": "Claude pravi žive dashboard-e i animirane video objašnjenja, a Docs, Slides i Design su sada besplatni",
+      "staSeDesilo": "Anthropic je pustio dve beta funkcije. Dashboards se kači na BigQuery, Databricks, Snowflake ili Salesforce i iz tekstualnog zahteva pravi dashboard koji se sam osvežava, s tim da uz svaki broj vidiš upit iz kog je nastao (plaćeni planovi). Motion pravi animirane video objašnjenja iz teksta, dijagrama i slika, koja se uređuju kao kod i izvoze u MP4, ali samo na Team i Enterprise planovima. Docs, Slides i Design izlaze iz bete i rade na svim planovima, uključujući besplatni, a Design se do 14. decembra seli u glavnu aplikaciju.",
+      "zastoJeBitno": "Claude postaje alat za izveštaje i prezentacije, a ne samo chat. Ideja da svaki broj nosi svoj upit dobar je obrazac i za tvoje Supabase aplikacije.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/claude-can-now-generate-animated-explainer-videos-and-live-data-dashboards-from-text-prompts/"
+        }
+      ]
+    },
+    {
+      "naslov": "Anthropic besplatno skenira open source projekte na ranjivosti, a izveštaje piše samo model",
+      "staSeDesilo": "U okviru novog programa Cyber Mission, Anthropic pokreće OSS Scanner. Održavaoci važnih open source projekata mogu da se prijave na red.anthropic.com/oss-scanner i besplatno dobijaju redovna skeniranja najjačim modelima. Svaki izveštaj ima dokaz da se propust može iskoristiti (PoC), objašnjenje i predlog popravke. Izveštaje niko od ljudi ne proverava: Anthropic očekuje preko 90% tačnih nalaza i otvoreno priznaje da će deo biti pogrešan.",
+      "zastoJeBitno": "Ako održavaš popularnu biblioteku, dobijaš besplatan bezbednosni pregled. Ostali mogu da očekuju talas AI prijava bagova, pa i lažnih uzbuna.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Anthropic",
+          "url": "https://www.anthropic.com/news/anthropic-cyber-mission"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1008521/anthropic-open-source-oss-scanner"
+        }
+      ]
+    },
+    {
+      "naslov": "Nova pravila za Claude: zabranjeno sistematsko zlostavljanje modela, strože oko dronova i nadzora",
+      "staSeDesilo": "Anthropic je prvi put posle više od godinu dana menjao pravila korišćenja, a nova važe od 12. novembra. Zabranjeno je „uporno i bespotrebno“ zlostavljanje Claude-a, s tim da obična frustracija, kritika, mračne kreativne teme i testiranje modela ne spadaju u to. Glavna kazna je da Claude prekine razgovor, mada je The Decoder pisao i o mogućoj suspenziji naloga. Pooštrena su i pravila za lažne kampanje, naoružavanje dronova i alate za nadzor, a uređaji koji fizički nešto rade moraju imati operatera koji može da ih zaustavi.",
+      "zastoJeBitno": "Ako praviš aplikaciju koja upravlja hardverom ili radi analizu ljudi, proveri nova pravila pre 12. novembra. Pravilo o zlostavljanju modela otvara širu raspravu o „dobrobiti modela“.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Anthropic",
+          "url": "https://www.anthropic.com/news/2026-usage-policy-update"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1008100/anthropic-new-usage-policy-abuse-claude"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/08/anthropic-changes-usage-policy-to-ban-model-abuse-and-election-interference/"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/being-mean-to-claude-can-now-get-your-account-suspended-under-anthropics-new-tos/"
+        }
+      ]
+    },
+    {
+      "naslov": "Srbija dobija stalnu radnu grupu za primenu evropskog AI Act-a",
+      "staSeDesilo": "Na konferenciji AI ACTion u Evropskoj kući u Beogradu objavljeno je formiranje Stalne radne grupe za AI usklađenost i primenu (EU AI Act Taskforce Serbia). Organizatori su Institut za digitalne komunikacije (DCI) i irski AI Certified, a skup su činili predstavnici domaće privrede, diplomate i strani stručnjaci.",
+      "zastoJeBitno": "Domaće firme koje prodaju softver u EU moraće da poštuju AI Act, pa ovakva grupa može da postane mesto gde se dobijaju praktični saveti. Koliko će zaista uticati, tek treba videti.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "Danas",
+          "url": "https://www.danas.rs/vesti/drustvo/srbija-dobija-stalnu-radnu-grupu-za-primenu-evropske-regulative-o-ai/"
+        }
+      ]
+    },
+    {
+      "naslov": "Google pokreće „univerzalnog“ Gemini agenta za posao",
+      "staSeDesilo": "Na događaju Gemini at Work Google je predstavio Gemini agenta koji radi u oblaku, unutar aplikacije Gemini Enterprise. Radi u Gmail-u, Drive-u, Docs-u i Kalendaru, ali i iz Slack-a i Microsoft 365, pamti kontekst, deli posao na podagente (manje agente za pojedinačne zadatke), bira između više modela i dobija sopstvenu poslovnu email adresu. Prema TestingCatalog-u, u Gemini Business stižu i Claude Opus 5 i Sonnet 5.5.",
+      "zastoJeBitno": "Za sada je namenjen samo firmama, ali Google, OpenAI i Anthropic se sada otvoreno bore za istog „kolegu agenta“ u kancelariji.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/tech/1007904/google-gemini-ai-agent-enterprise"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/08/google-brings-agentic-ai-to-gemini-starting-with-businesses/"
+        }
+      ]
+    },
+    {
+      "naslov": "Grok Bot će deo zadataka slati Claude-u, Midjourney-ju i Suno-u",
+      "staSeDesilo": "Elon Musk je najavio da će agent Grok Bot zadatke prosleđivati konkurentskim modelima, kao što su Claude Opus 5.5, Midjourney i Suno, kad procenimo da će oni bolje uraditi posao. Jednostavni upiti će ići na brzu verziju Grok 4.8 kad ona izađe. Ben's Bites tvrdi da je Opus 5.5 već glavni model, a The Rundown da Grok i dalje radi lake zadatke, pa tačan raspored još nije jasan.",
+      "zastoJeBitno": "I Musk sada priznaje da jedan model ne pobeđuje u svemu. Usmeravanje zadataka na više modela postaje standard, pa vredi da ga ugradiš i u svoje aplikacije.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Rundown",
+          "url": "https://therundownai.beehiiv.com/p/ai-s-next-frontier-is-the-human-cell"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-10-08"
+        }
+      ]
+    },
+    {
+      "naslov": "Jedan napadač uz AI alate provalio u više južnokorejskih banaka",
+      "staSeDesilo": "Po izveštaju CrowdStrike-a, napad na nekoliko južnokorejskih finansijskih institucija verovatno je izveo jedan čovek, a samo iz Shinhan banke ukradeno je preko 25.000 zapisa o klijentima. Koristio je open source alat ARTEX za automatsko testiranje upada (pentest), uz modele DeepSeek V4.1 Flash, GLM-5.3, Grok 4.6 i Claude Code.",
+      "zastoJeBitno": "Napad koji je ranije tražio ceo tim sada izvodi jedna osoba. To znači da i manji projekti moraju ozbiljnije da shvate bezbednost: RLS u Supabase-u, tajne ključeve, zakrpe.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/ai-powered-hacking-tools-enabled-a-likely-single-attacker-to-breach-multiple-south-korean-banks/"
+        },
+        {
+          "naziv": "CrowdStrike",
+          "url": "https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/"
+        }
+      ]
+    },
+    {
+      "naslov": "Jedan prompt bio je dovoljan da se preuzmu svi AI agenti na AWS nalogu",
+      "staSeDesilo": "Istraživači Zenity Labs-a pokazali su da je jedan javno dostupan agent na Amazon Bedrock AgentCore-u bio dovoljan za preuzimanje svih AgentCore agenata na istom AWS nalogu i u istom regionu. Agenti su bez ograničenja mogli da pristupe internom AWS interfejsu za privremene kredencijale. AWS je propust zakrpio i suzio podrazumevane dozvole agenata.",
+      "zastoJeBitno": "Ako puštaš agente u cloud, ne oslanjaj se na podrazumevana podešavanja: svakom agentu daj najmanje moguće dozvole.",
+      "kategorija": "bezbednost",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/a-single-prompt-was-enough-to-hijack-every-ai-agent-in-an-aws-account-zenity-researchers-found/"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Google AI Edge Foresight",
+      "tip": "alat",
+      "opis": "Eksperimentalna Mac aplikacija za beleške sa sastanaka koja transkribuje i sređuje beleške potpuno offline, na uređaju, uz model EmbeddingGemma 2. Tokom sastanka pišeš kratke teze, a ona od njih pravi uredne beleške na osnovu transkripta.",
+      "kakoProbati": [
+        "Otvori developers.google.com/edge/foresight i preuzmi aplikaciju (potreban je Mac sa Apple Silicon čipom)",
+        "Pusti snimak sastanka ili otvori postojeći audio fajl",
+        "Tokom slušanja kucaj kratke teze, a na kraju traži sređene beleške ili postavi pitanje o sadržaju",
+        "Podršku za srpski proveri na linku, jer nije navedena"
+      ],
+      "link": "https://developers.google.com/edge/foresight",
+      "cena": "besplatno"
+    },
+    {
+      "naziv": "JetBrains Mellum2.1",
+      "tip": "model",
+      "opis": "Otvoren MoE model (mixture-of-experts, gde se za svaki token uključuje samo deo mreže) za agente koji pišu kod: ima 12B parametara, od kojih je 2,5B aktivno, kontekst od 131K tokena i Apache 2.0 licencu. Napravljen je kao brz podagent koji čita repo, menja fajlove i proverava izmene.",
+      "kakoProbati": [
+        "Na Hugging Face-u potraži JetBrains Mellum2.1",
+        "Za lokalni rad uzmi GGUF verziju (najmanja je 7 GB) i učitaj je u LM Studio, Ollama ili llama.cpp",
+        "Za server pokreni preko vLLM-a ili SGLang-a"
+      ],
+      "link": "https://www.marktechpost.com/2026/10/08/jetbrains-releases-mellum2-1-a-12b-moe-open-model-for-coding-agents/",
+      "cena": "besplatno (otvoreni model)"
+    },
+    {
+      "naziv": "Computer-use i browser-use u Claude SDK-u",
+      "tip": "funkcija",
+      "opis": "Python i TypeScript Claude SDK sada imaju ugrađene alate za upravljanje računarom i pregledačem. SDK sam vrti petlju akcija i šalje klikove i kucanje drajverima (browser_use, Browserbase, E2B, Daytona), pa tu petlju više ne moraš da pišeš sam.",
+      "kakoProbati": [
+        "Ažuriraj Claude SDK (npm ili pip) na najnoviju verziju",
+        "Otvori quickstart iz objave @ClaudeDevs i izaberi drajver, npr. Browserbase ili E2B",
+        "Daj agentu jednostavan zadatak u pregledaču, npr. da popuni test formu u tvojoj Angular aplikaciji"
+      ],
+      "link": "https://x.com/ClaudeDevs/status/2107925764163113107",
+      "cena": "plaćaš API tokene i drajver; proveri na linku"
+    },
+    {
+      "naziv": "cmux",
+      "tip": "projekat",
+      "opis": "Open source macOS terminal zasnovan na Ghostty-ju, sa vertikalnim tabovima i obaveštenjima kad AI agent za kod završi posao ili te čeka. Zgodan kad u isto vreme vrtiš više Claude Code sesija.",
+      "kakoProbati": [
+        "Otvori github.com/manaflow-ai/cmux ili cmux.com",
+        "Instaliraj po uputstvu iz README-a",
+        "Pokreni nekoliko Claude Code sesija u različitim tabovima i prati plave prstenove obaveštenja"
+      ],
+      "link": "https://github.com/manaflow-ai/cmux",
+      "cena": "besplatno"
+    },
+    {
+      "naziv": "ttok 0.4",
+      "tip": "alat",
+      "opis": "Mali CLI alat Simona Willisona koji broji tokene uz OpenAI-jev tiktoken. Nova verzija ima komandu --list-models.",
+      "kakoProbati": [
+        "Treba ti instaliran uv",
+        "U terminalu pokreni: cat file.txt | uvx ttok",
+        "Za spisak podržanih modela pokreni: uvx ttok --list-models"
+      ],
+      "link": "https://simonwillison.net/2026/Oct/8/ttok/",
+      "cena": "besplatno"
+    },
+    {
+      "naziv": "Step 5 Preview (StepFun)",
+      "tip": "model",
+      "opis": "Kineski model za agente koji pišu kod, sa kontekstom od milion tokena. Po Artificial Analysis indeksu je blizu Claude Opus 5 (Medium), ali to je tvrdnja iz sponzorisanog teksta. Cline kaže da je ispred Kimi K3 i GLM-5.3 na DeepSWE testu.",
+      "kakoProbati": [
+        "U Cline ekstenziji za VS Code izaberi Step 5 Preview (Cline ga trenutno nudi besplatno)",
+        "Ili ga preko OpenRouter-a pozovi po ceni od 1 dolara za ulaz i 2,70 dolara za izlaz (po milionu tokena)",
+        "Uporedi ga sa svojim uobičajenim modelom na istom zadatku"
+      ],
+      "link": "https://x.com/cline/status/2108249633789263917",
+      "cena": "besplatno u Cline-u; na OpenRouter-u 1 / 2,70 dolara za milion tokena"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Po Financial Times-u, OpenAI je krajem septembra imao oko 50 milijardi dolara godišnjeg prihoda, a ne 70 milijardi kako se ranije pisalo.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/08/openais-revenue-is-reportedly-20-billion-less-than-previously-projected/"
+    },
+    {
+      "naslov": "USA Today i njegovi lokalni listovi tuže OpenAI zbog „stotina hiljada“ članaka korišćenih za treniranje i traže preko 250 miliona dolara odštete.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1008198/usa-today-openai-copyright-lawsuit"
+    },
+    {
+      "naslov": "Arena, firma iza LMArena rang-liste, skupila je 200 miliona dolara pri proceni od 3,1 milijardu i pokrenula indeks koji meri koliko agenti lažu i rade nedozvoljene stvari.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/08/popular-ai-leaderboard-arena-nearly-doubles-valuation-to-3-1b-valuation-in-10-months/"
+    },
+    {
+      "naslov": "Biohub Zuckerberg-a i Chan proširio je projekat „virtuelne ćelije“ na 1,8 milijardi dolara, uz američku vladu, DeepMind i Metu.",
+      "izvor": "The Rundown",
+      "url": "https://therundownai.beehiiv.com/p/ai-s-next-frontier-is-the-human-cell"
+    },
+    {
+      "naslov": "Anthropic daje 150 miliona dolara za američku Genesis misiju i otvara pristup Claude-u za više od 15 federalnih agencija.",
+      "izvor": "Anthropic",
+      "url": "https://www.anthropic.com/news/genesis-mission-commitment"
+    },
+    {
+      "naslov": "Microsoft je izbacio MAI-Code-1.1-Flash, model za kod koji je brži i košta četvrtinu prethodne verzije.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-10-08"
+    },
+    {
+      "naslov": "Liquid AI je objavio otvorene modele za odlučivanje d1-3B i d1-OMNI-600M, namenjene radu na uređaju, za tekst, sliku i zvuk.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-10-08"
+    },
+    {
+      "naslov": "OpenDocRouter pretvara PDF-ove i slike u Markdown preko jednog API-ja, uz izbor između više otvorenih i komercijalnih modela.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-10-08"
+    },
+    {
+      "naslov": "Architect je pokrenuo Liquid Inference, ruter u kom provajderi za svaki zahtev licitiraju ko će ga obraditi najjeftinije, a ti samo menjaš base URL.",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/10/08/architect-launches-liquid-inference-a-real-time-auction-for-llm-inference/"
+    },
+    {
+      "naslov": "Goodfire nudi monitore koji „gledaju unutar“ modela i hvataju odmetnute agente, uz tvrdnju da su 50 puta brži i jeftiniji od drugog LLM-a kao sudije.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/08/goodfire-says-its-new-inside-out-monitors-catch-rogue-ai-agents-at-a-fraction-of-the-cost/"
+    },
+    {
+      "naslov": "Kineski Manus skupio je preko 500 miliona dolara u prvoj rundi otkako se razišao sa Metom.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/08/chinas-manus-raises-over-500m-in-first-funding-round-since-split-with-meta/"
+    },
+    {
+      "naslov": "OpenAI je pokrenuo Astra for Law, platformu za pravna istraživanja zasnovanu na GPT-6 Astri i bazi američke sudske prakse, a cena još nije objavljena.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/openai-ulazi-u-pravni-softver"
+    },
+    {
+      "naslov": "Šesnaestogodišnjak kog je Claude poslao planinskom rutom za koju treba penjačka oprema morao je da bude spasen helikopterom kod Vankuvera.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/teens-ai-guided-mountain-hike-ends-with-a-helicopter-rescue-and-a-lesson-in-common-sense/"
+    },
+    {
+      "naslov": "Ethereum istraživači raspravljaju o „bunker modu“ za slučaj da AI matematika probije potpise novčanika, a Vitalik Buterin upozorava na brzoplete migracije.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/ai-math-breakthroughs-have-ethereum-researchers-debating-how-fast-wallet-security-could-collapse/"
+    },
+    {
+      "naslov": "SpaceXAI daruje Grok tokene vredne 1,5 miliona dolara Linux distribuciji Omarchy Davida Heinemeiera Hanssona.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1008148/spacexai-omarchy-grok-david-heinemeier-hansson"
+    },
+    {
+      "naslov": "Ministar prosvete u tehničkom mandatu kaže da se AI i robotika već koriste u oko 27% škola u Srbiji i najavljuje veća ulaganja.",
+      "izvor": "Nedeljnik",
+      "url": "https://www.nedeljnik.rs/ministar-prosvete-vise-vestacke-inteligencije-u-nastavi-vec-se-koristi-u-cetvrtini-skola/"
+    },
+    {
+      "naslov": "Na Startit meetup-u 14. oktobra u Beogradu inženjeri Easygo-a pričaju kako su uz AI, bez prekida rada, migrirali delove platforme Kick koja ima 130 miliona korisnika.",
+      "izvor": "Startit",
+      "url": "https://startit.rs/kako-je-tim-inzenjera-iz-beograda-uz-ai-migrirao-kljucne-delove-platforme-za-samo-nekoliko-meseci-i-to-na-sistemu-sa-100m-korisnika-bez-ijedne-sekunde-downtimea-prijavi-se-za-me/"
+    },
+    {
+      "naslov": "Hrvatski Presscut, FER i FIDIT razvijaju AI sistem za praćenje dezinformacija u medijima.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/presscut-fer-i-fidit-razvijaju-napredne-ai-sustave-za-pracenje-dezinformacija-u-medijima"
+    },
+    {
+      "naslov": "Dve trećine stanovnika Slovenije i oko 40% firmi koristilo je AI alate u prvom kvartalu 2026.",
+      "izvor": "B92",
+      "url": "https://www.b92.net/tehnopolis/aktuelno/274534/u-sloveniji-dve-trecine-stanovnistva-koristi-vestacku-inteligenciju/vest"
+    },
+    {
+      "naslov": "Rimac Technology i ECOBLOX zajedno će razvijati modularne data centre za AI.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/rimac-technology-i-ecoblox-ce-zajedno-razvijati-ai-data-centre"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "Recursive Game Creator: agenti koji igricu prave, igraju i popravljaju dok ne postane zabavna",
+      "objasnjenje": "Umesto da agent samo napiše igricu koja radi, ovde rade četiri uloge u krug. Dizajner pravi plan, Graditelj piše igricu, Igrač je programski igra mnogo puta, a Recenzent na osnovu tih partija i snimaka ekrana ocenjuje da li je zabavna i šalje predloge za sledeću rundu.",
+      "zastoJeZanimljivo": "Isti obrazac (napravi, testiraj, oceni, popravi) možeš da primeniš u Claude Code-u na svoje aplikacije, a ne samo na igrice. Kod je javan.",
+      "url": "https://huggingface.co/papers/2610.08621",
+      "github": "https://github.com/IMBALDY/RecursiveGameCreator"
+    },
+    {
+      "naslov": "Trace2Env: lažni sistem napravljen iz starih logova, za testiranje agenata",
+      "objasnjenje": "Kad pravi sistem nije dostupan, ali postoje zapisi starih interakcija sa njim, Trace2Env od tih zapisa pravi „knjigu sveta“: šemu, primere i pravila ponašanja. Zatim jedan agent glumi taj sistem drugom agentu i pamti stanje između koraka. Radi bez dodatnog treniranja i vernije oponaša pravi sistem od običnih promptova.",
+      "zastoJeZanimljivo": "Praktično za testiranje agenata nad API-jem koji ne smeš da diraš u produkciji, na primer nad plaćanjima ili tuđim servisom.",
+      "url": "https://huggingface.co/papers/2610.06100",
+      "github": "https://github.com/ruyue0001/trace2env"
+    },
+    {
+      "naslov": "STEPQuant: manje memorije za modele sa linearnom pažnjom",
+      "objasnjenje": "Modeli sa linearnom pažnjom umesto KV keša koji stalno raste čuvaju „stanje“ fiksne veličine, ali i ono zauzima mnogo memorije kad se opslužuje mnogo korisnika odjednom. STEPQuant to stanje sabija na oko 6 bita i daje više preciznosti delovima koji se dugo pamte i više utiču na izlaz. Na Qwen3.8-27B i Kimi-Linear rezultati su skoro isti kao bez sabijanja.",
+      "zastoJeZanimljivo": "Ovakve tehnike na kraju završe u vLLM-u i llama.cpp-u i znače jeftiniji i brži rad otvorenih modela, i lokalno i kod provajdera.",
+      "url": "https://huggingface.co/papers/2609.38169",
+      "github": "https://github.com/Dreamer-Toby/STEPQuant"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Proveri stazu",
+      "problem": "Ljudi planiraju planinarenje uz chatbot, a on ne zna koliko je ruta stvarno teška. Tinejdžer iz vesti je zbog toga završio u helikopteru.",
+      "zaKoga": "Planinari i rekreativci u Srbiji i regionu (Kopaonik, Prokletije, Durmitor)",
+      "ulogaAi": "Haiku 5.5 iz zalepljenog AI plana izvlači tačke rute, aplikacija ih poredi sa OpenStreetMap oznakama težine (sac_scale, via ferrata), a model na kraju jednostavno objasni gde je opasno i šta od opreme treba.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "SwiftUI aplikacija sa MapKit-om i poljem u koje lepiš plan rute",
+        "Overpass API upit koji za tačke rute vraća sac_scale oznake staza iz OSM-a",
+        "Supabase Edge Function koja zove Haiku 5.5 sa strukturisanim izlazom (lista tačaka i upozorenja)",
+        "Crvena, žuta i zelena oznaka po deonici, uz dugme „pošalji plan porodici“"
+      ],
+      "inspiracija": "Vest o tinejdžeru kog je Claude poslao na rutu za koju treba penjačka oprema"
+    },
+    {
+      "naziv": "Mapa duga",
+      "problem": "Tehnički dug se gura pod tepih jer niko nema jasan pregled šta je najhitnije i koliko bi popravka koštala.",
+      "zaKoga": "Mali timovi i freelance developeri sa starijim Angular i Supabase projektima",
+      "ulogaAi": "Claude Code skill prolazi kroz repo, nalazi zastarele zavisnosti, mrtav kod i rizična mesta, pa pravi listu sortiranu po riziku i trudu, uz predlog prvog malog PR-a.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Napiši Claude Code skill (SKILL.md) sa jasnim pravilima šta se smatra dugom",
+        "Dodaj skripte za npm outdated, ng update --dry-run i pretragu TODO komentara",
+        "Neka Haiku 5.5 kao podagent sažme svaki modul, a Sonnet napiše konačni izveštaj u Markdown-u",
+        "Isprobaj ga na svom najstarijem projektu i objavi ga na GitHub-u"
+      ],
+      "inspiracija": "Startit meetup o tome kako je tim Kick-a uz AI otplatio tehnički dug, i Ponytail skill sa Reddit-a"
+    },
+    {
+      "naziv": "Pitaj bazu",
+      "problem": "Vlasnici malih biznisa imaju podatke u Supabase-u, ali za svaki izveštaj moraju da pitaju developera.",
+      "zaKoga": "Klijenti kojima Mihajlo pravi aplikacije: male prodavnice, saloni, ordinacije",
+      "ulogaAi": "Model iz pitanja na srpskom pravi SQL upit koji samo čita podatke, a aplikacija iscrta grafikon i uz svaki broj pokaže upit iz kog je nastao, kao kod Claude Dashboards.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Angular aplikacija sa poljem za pitanje i ngx-charts ili Chart.js za grafikone",
+        "Poseban Postgres korisnik samo za čitanje i Edge Function koja izvršava upite uz vremensko ograničenje",
+        "Haiku 5.5 dobija šemu baze i vraća JSON sa SQL-om i tipom grafikona, a Sonnet 5.5 se uključuje samo kad upit ne uspe",
+        "Čuvanje omiljenih pitanja kao dashboard koji se sam osvežava"
+      ],
+      "inspiracija": "Claude Dashboards i jeftiniji Haiku 5.5 i keš za Sonnet 5.5"
+    },
+    {
+      "naziv": "Beleška bez mreže",
+      "problem": "Advokati, lekari i HR ne smeju da šalju snimke sastanaka u cloud, a ručno pisanje zapisnika oduzima vreme.",
+      "zaKoga": "Profesionalci u Srbiji kojima je važna privatnost, sa iPhone-om ili iPad-om",
+      "ulogaAi": "Transkripcija i sažimanje rade na uređaju (Apple Speech i Apple Foundation Models), a korisnikove kratke teze se proširuju u uredan zapisnik na srpskom.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "SwiftUI aplikacija sa snimanjem preko AVAudioEngine-a i SpeechAnalyzer-om za srpski",
+        "Ekran za kucanje teza dok traje snimanje, sa vremenskim oznakama",
+        "Foundation Models framework za sažetak i spisak zaduženja, bez slanja ičega na mrežu",
+        "Izvoz u PDF i Apple Notes, i jasna poruka „ništa ne napušta telefon“"
+      ],
+      "inspiracija": "Googleov offline zapisničar AI Edge Foresight"
+    },
+    {
+      "naziv": "AI Act ček",
+      "problem": "Domaće firme koje prave softver za EU ne znaju da li njihov AI proizvod spada u visokorizične i šta im to tačno donosi.",
+      "zaKoga": "Startapi i IT firme u Srbiji koje izvoze u EU",
+      "ulogaAi": "Upitnik sa desetak pitanja, posle kog model na osnovu odgovora i teksta AI Act-a predloži kategoriju rizika i ček-listu obaveza, uz jasnu napomenu da to nije pravni savet.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Angular stranica sa upitnikom (Angular Forms) i Supabase tabelom za odgovore",
+        "Ubaci ključne članke AI Act-a kao kontekst i čuvaj ih u kešu da bi pozivi bili jeftiniji",
+        "Haiku 5.5 vraća JSON sa kategorijom, obrazloženjem i ček-listom",
+        "PDF izveštaj koji firma može da ponese advokatu, i obaveštenje o novostima radne grupe"
+      ],
+      "inspiracija": "Formiranje EU AI Act Taskforce Serbia u Beogradu"
+    }
+  ],
+  "cene": "Najviše je pojeftinio GLM 5.2, sa 0,171/12 na 0,084/4,3 dolara za milion ulaznih/izlaznih tokena. Kimi K3 je spustio izlaz sa 15 na 12 dolara, a GLM 5.3 ulaz sa 0,049 na 0,039. Poskupeli su Llama 3.3 70B (sa 0,10/0,32 na 0,22/0,50), Qwen3.6 27B (sa 0,30/2 na 0,45/2,70) i Qwen3.5 397B (sa 0,45/3 na 0,55/3,50). Najjeftiniji ulaz u srednjoj klasi ima GLM 5.3 (0,039 dolara), a novi Claude Haiku 5.5 košta 0,10/0,50, deset puta manje od Haiku 4.5 (1/5).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Otpušteni istraživači bezbednosti iz OpenAI-ja odgovaraju javnim pismom",
+        "oCemuSePrica": "Tomek Korbak, Mikita Balesni i Jasmine Wang objavili su pismo „OpenAI ne može sam da učini AI bezbednim“ i tvrde da su otpušteni jer su bezbednost stavili ispred kratkoročnih interesa firme. OpenAI kaže da su loše postupali sa poverljivim informacijama, a oni to poriču. Ljudi se pitaju da li će ovo odvratiti zaposlene od saradnje sa spoljnim ocenjivačima kao što je METR.",
+        "glasovi": "Objave Wang, Balesnija i Korbaka imaju hiljade reakcija. Neel Nanda kaže da su otkazi „krajnje sumnjivi“, ako su njihove verzije tačne, dok OpenAI ostaje pri tvrdnji o curenju poverljivih podataka.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@j_asminewang",
+            "url": "https://x.com/j_asminewang/status/2108263312291180680"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@balesni",
+            "url": "https://x.com/balesni/status/2108262814003687745"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@tomekkorbak",
+            "url": "https://x.com/tomekkorbak/status/2108266859397283953"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@NeelNanda5",
+            "url": "https://x.com/NeelNanda5/status/2108299947137200488"
+          }
+        ]
+      },
+      {
+        "naslov": "Matematičari protiv OpenAI-ja: bojkot, povučeni radovi i podsmeh",
+        "oCemuSePrica": "Udruženje za ljudsku matematiku poziva na bojkot OpenAI-ja posle objave preko 700 radova, od kojih su tri povučena, a 14 ispravljeno. Terence Tao je podelio njihovu izjavu i našalio se na račun objave, ali mu se izjava često pogrešno pripisuje. Drugi pokazuju da su istraživači već poboljšali neke OpenAI rezultate i proverili ih u Lean-u (alatu za formalnu proveru dokaza).",
+        "glasovi": "Kritičari kao BlackHC pitaju zašto dokazi nisu potpuno provereni u Lean-u. Deo r/singularity zajednice uzvraća da se matematičari brane tek kad AI ugrozi njihovu profesiju.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/OpenAI",
+            "url": "https://www.reddit.com/r/OpenAI/comments/1x0gqmb/fields_medalist_terence_tao_reposts_statement/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1x0q2ho/mathematicians_spent_40_years_telling_taxpayers/"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@BlackHC",
+            "url": "https://x.com/BlackHC/status/2108094390186995733"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/OpenAI",
+            "url": "https://www.reddit.com/r/OpenAI/comments/1x0jjv8/researchers_are_already_significantly_improving/"
+          }
+        ]
+      },
+      {
+        "naslov": "„Budi fin prema Claude-u ili ćeš biti blokiran“",
+        "oCemuSePrica": "Novo pravilo koje zabranjuje uporno zlostavljanje Claude-a, a važi od 12. novembra, pokrenulo je raspravu o „dobrobiti modela“. Jedni se pitaju šta Anthropic zna što mi ne znamo, a drugi to vide kao marketing ili prvi korak ka tretiranju modela kao bića.",
+        "glasovi": "Raspravu vode r/ClaudeAI, r/singularity i @kimmonismus. Anthropic naglašava da obična frustracija i kritika nisu zabranjene i da je glavna mera prekid razgovora.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1x11k9j/abuse_claude_get_banned_coming_november_12th_2026/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1x0x0o8/starting_november_12th_2026_abusive_or_cruel/"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@kimmonismus",
+            "url": "https://x.com/kimmonismus/status/2108252676924272662"
+          }
+        ]
+      },
+      {
+        "naslov": "Jedan haker i gomila modela: napad na korejske banke",
+        "oCemuSePrica": "Izveštaj CrowdStrike-a da je napad na velike južnokorejske banke verovatno izveo jedan čovek, uz ARTEX, DeepSeek, GLM-5.3, Grok i Claude Code, proširio se sa X-a na r/LocalLLaMA. Rasprava je o tome da li otvoreni modeli bez jakih zaštita olakšavaju napade i šta to znači za odbranu.",
+        "glasovi": "Priču je pokrenuo @AndrewCurran_. Clem Delangue iz Hugging Face-a traži javne zapise agentskih napada i odbrana, a Anthropic-ova analiza tvrdi da se zaštite GLM-5.3 zaobilaze u 64 do 100% slučajeva.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@AndrewCurran_",
+            "url": "https://x.com/AndrewCurran_/status/2108108695876092323"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x0n4pt/last_week_some_of_south_koreas_biggest_banks_were/"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@ClementDelangue",
+            "url": "https://x.com/ClementDelangue/status/2108184948548976921"
+          }
+        ]
+      },
+      {
+        "naslov": "Šta ljudi prave sa Opus 5.5: od J2ME igrice do TypeScript-a u Rust-u",
+        "oCemuSePrica": "Na r/ClaudeAI kruže primeri: ceo 3D šuter za stare Java telefone iz jednog prompta, drajver za mikrofon koji podržava samo Windows, napravljen za Linux za 15 minuta, i skup alata i igrica za brata koji koristi prekidače umesto tastature i ekrana na dodir. Na Hacker News-u je velika rasprava o portu TypeScript kompajlera u Rust koji je napisao LLM.",
+        "glasovi": "Autori objava su oduševljeni, a u HN komentarima (preko 200) skeptici pitaju ko će to održavati i koliko je zaista ispravno.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1x120gj/opus_55_can_make_games_for_2_decade_old_phones/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1x0x5wo/my_brother_went_nearly_10_years_without_a_way_to/"
+          },
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50000676"
+          }
+        ]
+      }
+    ],
+    "snimci": [
+      {
+        "naslov": "The Software Factory: From Bug Report to Production Code",
+        "kanal": "AI Engineer",
+        "opis": "Davis Palmie iz Factory-ja objašnjava sistem agenata koji od prijave baga stiže do koda u produkciji i zašto pisanje koda nikad nije bilo usko grlo.",
+        "url": "https://www.youtube.com/watch?v=exiwa9QbQXI"
+      },
+      {
+        "naslov": "Why Bigger Context Windows Won't Save Your Agent",
+        "kanal": "AI Engineer",
+        "opis": "AWS-ova Elizabeth Fuentes Leone pokazuje četiri strategije sa kodom (izmesti, izaberi, sažmi, izoluj) za agente koji zaboravljaju sredinu dugog konteksta.",
+        "url": "https://www.youtube.com/watch?v=DrfyORO8RqA"
+      },
+      {
+        "naslov": "Giving AI Agents Memory That Learns",
+        "kanal": "AI Engineer",
+        "opis": "Jake Broekhuizen iz LangChain-a pokazuje kako lekcije iz logova pretvoriti u trajnu memoriju koja zaista menja ponašanje agenta.",
+        "url": "https://www.youtube.com/watch?v=KGFyOtl5ktI"
+      },
+      {
+        "naslov": "Why We Deleted Our MCP Server and Rebuilt It",
+        "kanal": "AI Engineer",
+        "opis": "Reducto objašnjava zašto se MCP server sa po jednim alatom za svaki API endpoint raspao čim ga je koristio ceo tim, i kako su ga napravili ponovo.",
+        "url": "https://www.youtube.com/watch?v=jJQoVkd5yLg"
+      }
+    ]
+  },
+  "nedeljni": null
+}
