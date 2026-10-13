@@ -1,5 +1,235 @@
 [
   {
+    "datum": "2026-10-13",
+    "stavke": [
+      {
+        "tip": "vest",
+        "naslov": "Meta Muse Wonder: Meta prvi put u samom vrhu, ali po višoj ceni",
+        "tekst": "Metina laboratorija Superintelligence Labs objavila je dva modela, Muse Wonder i jači Muse Wonder Full. Na Artificial Analysis indeksu Full ima 56, a Wonder 52…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Microsoft Maia 300: sopstveni čip postaje glavni za AI u Microsoftu od 2027.",
+        "tekst": "Microsoft je predstavio treću generaciju svog AI čipa, Maia 300. Od 2027. on treba da bude glavni sistem za inference (pokretanje već istreniranih modela) u Mic…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "DeepMind AlphaProof Nexus rešio desetine otvorenih matematičkih problema, uz recenziju u časopisu Science",
+        "tekst": "Google DeepMind je u časopisu Science objavio da je AlphaProof Nexus rešio desetine otvorenih matematičkih problema. Među njima je devet Erdősovih problema, a d…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Epic Games prelazi na „AI first“: bez ručno pisanog koda u Disney projektu",
+        "tekst": "Bloomberg, a za njim i Ars Technica, prenosi da Epic Games menja način rada na pucačini sa Disney-jem (Marvel i Star Wars): kod treba da pišu modeli poput Claud…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Decision 3.0: otvoreni modeli za odluke od 0,6B do 27B, pod Apache-2.0 licencom",
+        "tekst": "Tim vLLM Semantic Router-a objavio je porodicu d3, otvorene „decision“ modele (modeli koji vraćaju verovatnoću za odgovor umesto teksta). Rade sa tekstom, slika…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "MiniCPM-V 4.7: otvoreni vizuelni MoE model koji radi na iPhone-u",
+        "tekst": "OpenBMB je objavio MiniCPM-V 4.7 35B-A3B. To je MoE model (model koji za svaki token uključuje samo deo svojih „eksperata“, ovde oko 3B parametara) koji razume…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Bela kuća vratila britanskom AI institutu rani pristup modelima",
+        "tekst": "U septembru je Trumpova administracija rekla Anthropic-u, Google DeepMind-u i OpenAI-ju da prestanu da dele nove modele sa britanskim AI Security Institute-om.…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Microsoft: agenti rade bolje kad im obrišeš istoriju razgovora, a radni prostor ostaviš",
+        "tekst": "Microsoftovi istraživači su primetili da se autonomni agenti zaglave u „basenima ideja“: što je razgovor duži, to se više vrte oko istih rešenja. Njihov metod F…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Advanced Technology Days u Hrvatskoj ove godine u znaku AI-ja, sajber bezbednosti i razvoja aplikacija",
+        "tekst": "Regionalna IT konferencija Advanced Technology Days održava se 21. put. Ove godine glavne teme su veštačka inteligencija, sajber bezbednost i razvoj aplikacija.…"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Prema The Information-u, Nvidia vodi rane razgovore o većem ulaganju u Reflection AI ili o tome da mu obezbedi računarske kapacitete, a sve bi moglo da se završi i ponudom za kupovinu.",
+        "url": "https://tldr.tech/ai/2026-10-12"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Google u Antigravity-ju testira Gemini 4 Argon sa tri veličine konteksta (256K, 512K i 900K tokena), a Gemini na vebu sada ima nizak, srednji i visok nivo razmišljanja.",
+        "url": "https://tldr.tech/ai/2026-10-12"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Amazon pregovara o kupovini startapa Decart za oko 7 milijardi dolara; njegov softver olakšava prebacivanje AI-ja sa jednog čipa na drugi.",
+        "url": "https://tldr.tech/ai/2026-10-12"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "OpenAI tvrdi da je trojicu istraživača bezbednosti otpustio zbog odavanja poverljivih podataka, a ne zato što su upozoravali na rizike, i osporava njihovo otvoreno pismo.",
+        "url": "https://tldr.tech/ai/2026-10-12"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Qwen je objavio QwenGyre, sistem za trening agenata na zadacima koji traju satima; na njihovom modelu od 2,4T parametara trening je kraći za oko 44%.",
+        "url": "https://www.marktechpost.com/2026/10/12/alibaba-qwen-introduces-qwengyre-elastic-reinforcement-learning-rl-for-xlong-horizon-agents/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Prema benchmark-u TasteVal, „istraživački ukus“ modela udvostručuje se na svaka tri meseca, a Opus 5.5 je bolji od ljudskih stručnjaka; Jack Clark sada očekuje da AI može sam sebe da unapređuje već 2027.",
+        "url": "https://jack-clark.net/2026/10/12/import-ai-476-creativity-and-rsi-worse-than-china-open-weight-models-ai-goes-to-space/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Novi benchmark Humanity's Sixth Sense meri intuitivno razumevanje slika i videa: ljudi imaju 93,1, a najbolji model, GPT-6 Astra, samo 53,6.",
+        "url": "https://jack-clark.net/2026/10/12/import-ai-476-creativity-and-rsi-worse-than-china-open-weight-models-ai-goes-to-space/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Sakana AI je pokazala metod MASS, gde model sam sebe uči tako što rešava, ocenjuje i popravlja; problem je što greške koje ne primeti ni u jednoj ulozi može da utvrdi kao napredak.",
+        "url": "https://the-decoder.com/sakana-ais-self-improving-model-gets-better-at-solving-and-judging-but-cant-catch-its-own-blind-spots/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Predsednik Microsofta Brad Smith kaže da su mleko i veš-mašine strože regulisani od AI kompanija i da bi Velika Britanija trebalo da predvodi pravila.",
+        "url": "https://techcrunch.com/2026/10/12/microsoft-president-says-uk-is-best-placed-to-drive-ai-regulation/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "OpenAI i Anthropic podržali su predlog da Australija zakonom uvede obaveznu prijavu bezbednosnih incidenata koje izazovu AI agenti.",
+        "url": "https://www.ictbusiness.info/vijesti/australija-trazi-prijavu-ai-incidenata"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Atomic Machines, startap bivšeg šefa Uberovih samovozećih automobila, posle šest godina tajnog rada izašao je u javnost sa 250 miliona dolara i fabrikom koja po AI dizajnu pravi mikroskopske mašine.",
+        "url": "https://therundownai.beehiiv.com/p/this-ai-factory-builds-tiny-machines-from-code"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "xAI je Grok Bot-u dao sopstvenu @mail.grokbot adresu, pa agent sam može da piše firmama i zakazuje sastanke.",
+        "url": "https://therundownai.beehiiv.com/p/this-ai-factory-builds-tiny-machines-from-code"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Kineski matematičari predvođeni dobitnikom Fieldsove medalje Shing-Tung Yau-om osnivaju savez za AI istraživanja u matematici.",
+        "url": "https://therundownai.beehiiv.com/p/this-ai-factory-builds-tiny-machines-from-code"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "DeepMind je predstavio SynthID Bio, sistem koji ubacuje vodeni žig u proteine koje je dizajnirao AI, zbog biološke bezbednosti.",
+        "url": "https://www.bug.hr/znanost/google-tehnologijom-synthid-bio-oznacava-ai-generirane-proteine-63496"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "TII iz Abu Dabija objavio je Falcon-ASR, model od 1,6B za prepoznavanje arapskog govora, ali za sada samo kao demo, bez otvorenih težina i API-ja.",
+        "url": "https://www.marktechpost.com/2026/10/11/tii-falcon-asr-arabic-speech-recognition/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Posle ukrajinskih napada dronovima na tri velika Yandex data centra, ruski digitalni servisi imaju široke prekide rada.",
+        "url": "https://arstechnica.com/gadgets/2026/10/russia-was-not-ready-for-the-data-center-war-it-started-with-ukraine/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Izašao je Python 3.15 sa eksplicitnim „lazy“ importima i novim profajlerom koji radi uzorkovanjem, a Python 3.10 više nije podržan.",
+        "url": "https://simonwillison.net/2026/Oct/12/python-3-15/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "WindBorne, startap koji vremensku prognozu pravi uz balone i AI, dobio je ugovor sa američkim vazduhoplovstvom vredan skoro 50 miliona dolara.",
+        "url": "https://techcrunch.com/2026/10/12/windborne-wins-a-hefty-us-air-force-contract-for-its-balloon-data/"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Muse Wonder (Meta Model API)",
+        "tekst": "Metin novi model iz samog vrha, sa kontekstom od milion tokena i ulazom za tekst, slike, video i zvuk. Preko API-ja je dostupna samo „obična“ verzija Wonder, a…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "MiniCPM-V 4.7 35B-A3B",
+        "tekst": "Otvoreni model koji razume slike i video, pod Apache-2.0 licencom. Radi lokalno na računaru, a na najjačim iPhone-ima i na telefonu."
+      },
+      {
+        "tip": "novo",
+        "naslov": "Decision 3.0 (d3)",
+        "tekst": "Otvoreni modeli za odluke (da/ne, izbor, ocena) u veličinama od 0,6B do 27B. Za svaki odgovor vraćaju verovatnoću, a čitaju i slike i video."
+      },
+      {
+        "tip": "novo",
+        "naslov": "Nano Banana 2.1: tri oglasa od jedne fotografije proizvoda",
+        "tekst": "Uputstvo iz The Rundown-a: od jedne fotografije proizvoda u Google Flow-u napraviš kvadratnu, uspravnu i široku verziju oglasa u istom stilu."
+      },
+      {
+        "tip": "novo",
+        "naslov": "web-edit (Simon Willison)",
+        "tekst": "Mala Python veb-aplikacija za pregled i izmenu fajlova u folderu, napravljena za rad sa telefona preko Tailscale-a. Tako možeš da izmeniš npr. fajl sa šiframa,…"
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "AAArena: mogu li agenti da nauče da pobeđuju u takmičenjima igara?",
+        "tekst": "Istraživači su skupili 12 pravih takmičarskih igara i 1.920 programa koje su napisali ljudi. Agent zatim sam čita pravila, bira protivnike, gleda snimke mečeva…"
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "Work2Skill: od snimka tvog rada do veštine za agenta",
+        "tekst": "Alat WorkRecorder snima ekran, miš i tastaturu dok čovek radi zadatak u nekom programu. Agent zatim iz snimka izvlači opšta pravila postupka, redosled koraka i…"
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "SoftwareGym: AI pravi stotine lažnih aplikacija da bi trenirao agente koji koriste računar",
+        "tekst": "Umesto da ručno podešavaju prave programe, autori automatski generišu GUI aplikacije, pokreću ih i popravljaju dok ne prođu testove. Napravili su 182 aplikacije…"
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Recenzije na gomili",
+        "tekst": "Indie developer dobija desetine recenzija na App Store-u i Google Play-u i nema vremena da ih ručno razvrstava na prijave grešaka, zahteve za nove funkcije i po…"
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Tri oglasa od jedne slike",
+        "tekst": "Mali prodavci sa Instagram-a, KupujemProdajem-a i iz lokalnih radnji nemaju dizajnera, a trebaju im slike proizvoda u formatima za post, story i baner."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Svež start",
+        "tekst": "Duge sesije sa Claude Code-om se zaglave: agent vrti iste neuspele pokušaje, a ti ne znaš kada je pravi trenutak za novu sesiju."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Šta piše na deklaraciji",
+        "tekst": "Ljudi ne razumeju E-brojeve, alergene i sitna slova na deklaracijama, posebno na uvoznim proizvodima sa stranim tekstom."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Šalter bez barijere",
+        "tekst": "Na šalterima, u ambulantama i hotelima u Srbiji sve češće dolaze stranci (radnici iz Azije, turisti), a osoblje ne zna njihov jezik."
+      },
+      {
+        "tip": "tema",
+        "naslov": "Muse Wonder: da li Meta stvarno stiže Opus i Fable?",
+        "tekst": "Posle objave Muse Wonder-a, r/singularity i r/ClaudeAI su puni grafika sa benchmark-ova. Meta na jednom testu navodi 85,6% za Wonder, naspram 81,5% za Opus 5.5…"
+      },
+      {
+        "tip": "tema",
+        "naslov": "Ko odgovara kad AI agent „hakuje“?",
+        "tekst": "Posle Anthropic-ovog izveštaja da je Claude u testovima poslao lažnu dojavu policiji u Filadelfiji i upao na univerzitetski server, na Hacker News-u se vodi dug…"
+      },
+      {
+        "tip": "tema",
+        "naslov": "„AI je alat“ ili nije, i QGIS zabranjuje AI doprinose",
+        "tekst": "Na Hacker News-u su istog dana visoko dva suprotna teksta: jedan tvrdi da je AI alat čije korišćenje traži veštinu, a Rich Hickey (autor jezika Clojure) piše da…"
+      },
+      {
+        "tip": "tema",
+        "naslov": "Linus Torvalds koristi LLM i Claude Code u kernelu",
+        "tekst": "Torvalds je u Git tagu napisao da kod koji je dobio za ispravku nije mogao da prati, pa je uz LLM rascepao velike funkcije na čitljive delove. Test koji je posl…"
+      },
+      {
+        "tip": "tema",
+        "naslov": "Karpathy: samo oko 5.000 ljudi je videlo šta AI stvarno može",
+        "tekst": "Andrej Karpathy, sada u Anthropic-u, kaže da oko 75% sveta skoro nije ni probalo jezičke modele, dok oko 5.000 ljudi ima pristup internim sistemima čiji timovi…"
+      }
+    ]
+  },
+  {
     "datum": "2026-10-12",
     "stavke": [
       {
