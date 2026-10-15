@@ -1,6 +1,6 @@
 {
-  "datum": "2026-10-14",
-  "azurirano": "2026-10-14T03:02:52.483Z",
+  "datum": "2026-10-15",
+  "azurirano": "2026-10-15T03:02:52.248Z",
   "izvor": {
     "naziv": "OpenRouter",
     "url": "https://openrouter.ai/models"
@@ -116,25 +116,25 @@
           "id": "moonshotai/kimi-k3",
           "naziv": "Kimi K3",
           "provajder": "moonshotai",
-          "ulaz": 0.7,
-          "izlaz": 13.5,
+          "ulaz": 0.45,
+          "izlaz": 15,
           "objavljen": "2026-07-16",
           "kontekst": 1048576,
           "kesUlaz": 0.28,
           "promena7": {
-            "ulaz": 1.4,
-            "izlaz": -10
+            "ulaz": -30.8,
+            "izlaz": 0
           },
           "promena30": {
-            "ulaz": -73.6,
-            "izlaz": 1.6
+            "ulaz": -83,
+            "izlaz": 12.9
           },
           "prethodnik": {
             "naziv": "Kimi K2.6",
             "ulaz": 0.65,
             "izlaz": 3.41,
-            "razlikaUlaz": 7.7,
-            "razlikaIzlaz": 295.9
+            "razlikaUlaz": -30.8,
+            "razlikaIzlaz": 339.9
           }
         }
       ]
@@ -173,18 +173,18 @@
           "id": "openai/gpt-5.6-sol",
           "naziv": "GPT-5.6 Sol",
           "provajder": "openai",
-          "ulaz": 2,
-          "izlaz": 10,
+          "ulaz": 4,
+          "izlaz": 20,
           "objavljen": "2026-07-09",
           "kontekst": 1050000,
-          "kesUlaz": 0.2,
+          "kesUlaz": 0.4,
           "promena7": {
-            "ulaz": 0,
-            "izlaz": 0
+            "ulaz": 100,
+            "izlaz": 100
           },
           "promena30": {
-            "ulaz": 0,
-            "izlaz": 0
+            "ulaz": 100,
+            "izlaz": 100
           },
           "prethodnik": null
         },
@@ -246,10 +246,10 @@
           "izlaz": 4.8,
           "objavljen": "2026-08-18",
           "kontekst": 1048576,
-          "kesUlaz": 0.059,
+          "kesUlaz": 0.078,
           "promena7": {
-            "ulaz": 12.9,
-            "izlaz": -31.4
+            "ulaz": 61.2,
+            "izlaz": 41.6
           },
           "promena30": {
             "ulaz": -94.4,
@@ -257,9 +257,9 @@
           },
           "prethodnik": {
             "naziv": "GLM 5.2",
-            "ulaz": 0.05,
+            "ulaz": 0.037,
             "izlaz": 7,
-            "razlikaUlaz": 58,
+            "razlikaUlaz": 113.5,
             "razlikaIzlaz": -31.4
           }
         },
@@ -368,24 +368,24 @@
           "id": "deepseek/deepseek-v4.1-flash",
           "naziv": "DeepSeek V4.1 Flash",
           "provajder": "deepseek",
-          "ulaz": 0.0315,
+          "ulaz": 0.0158,
           "izlaz": 0.891,
           "objavljen": "2026-09-10",
           "kontekst": 1048576,
           "kesUlaz": 0.0054,
           "promena7": {
-            "ulaz": -89.5,
+            "ulaz": -94.7,
             "izlaz": -25.7
           },
           "promena30": {
-            "ulaz": -79,
-            "izlaz": 48.5
+            "ulaz": -94.7,
+            "izlaz": -25.7
           },
           "prethodnik": {
             "naziv": "DeepSeek V4 Flash 0731",
             "ulaz": 0.016,
             "izlaz": 0.64,
-            "razlikaUlaz": 96.9,
+            "razlikaUlaz": -1.2,
             "razlikaIzlaz": 39.2
           }
         },
@@ -418,18 +418,18 @@
           "id": "z-ai/glm-5.3-flash",
           "naziv": "GLM 5.3 Flash",
           "provajder": "z-ai",
-          "ulaz": 0.15,
-          "izlaz": 0.5,
+          "ulaz": 0.036,
+          "izlaz": 0.9,
           "objavljen": "2026-08-26",
           "kontekst": 1048576,
-          "kesUlaz": 0.03,
+          "kesUlaz": 0.0113,
           "promena7": {
-            "ulaz": 0,
-            "izlaz": 0
+            "ulaz": -76,
+            "izlaz": 80
           },
           "promena30": {
-            "ulaz": 0,
-            "izlaz": 0
+            "ulaz": -76,
+            "izlaz": 80
           },
           "prethodnik": null
         },
@@ -456,6 +456,146 @@
     }
   ],
   "promene": [
+    {
+      "id": "deepseek/deepseek-v4.1-flash",
+      "datum": "2026-10-15",
+      "ulazPre": 0.0315,
+      "izlazPre": 0.891,
+      "ulaz": 0.0158,
+      "izlaz": 0.891,
+      "naziv": "DeepSeek V4.1 Flash",
+      "provajder": "deepseek"
+    },
+    {
+      "id": "google/gemma-4-31b-it",
+      "datum": "2026-10-15",
+      "ulazPre": 0.09,
+      "izlazPre": 0.34,
+      "ulaz": 0.2,
+      "izlaz": 0.4,
+      "naziv": "Gemma 4 31B",
+      "provajder": "google"
+    },
+    {
+      "id": "meta-llama/llama-3.2-3b-instruct",
+      "datum": "2026-10-15",
+      "ulazPre": 0.05,
+      "izlazPre": 0.33,
+      "ulaz": 0.0509,
+      "izlaz": 0.335,
+      "naziv": "Llama 3.2 3B Instruct",
+      "provajder": "meta-llama"
+    },
+    {
+      "id": "minimax/minimax-m2.5",
+      "datum": "2026-10-15",
+      "ulazPre": 0.27,
+      "izlazPre": 1.08,
+      "ulaz": 0.27,
+      "izlaz": 0.95,
+      "naziv": "MiniMax M2.5",
+      "provajder": "minimax"
+    },
+    {
+      "id": "mistralai/mistral-small-3.2-24b-instruct",
+      "datum": "2026-10-15",
+      "ulazPre": 0.0938,
+      "izlazPre": 0.25,
+      "ulaz": 0.075,
+      "izlaz": 0.2,
+      "naziv": "Mistral Small 3.2 24B",
+      "provajder": "mistralai"
+    },
+    {
+      "id": "moonshotai/kimi-k3",
+      "datum": "2026-10-15",
+      "ulazPre": 0.7,
+      "izlazPre": 13.5,
+      "ulaz": 0.45,
+      "izlaz": 15,
+      "naziv": "Kimi K3",
+      "provajder": "moonshotai"
+    },
+    {
+      "id": "openai/gpt-5.6-sol",
+      "datum": "2026-10-15",
+      "ulazPre": 2,
+      "izlazPre": 10,
+      "ulaz": 4,
+      "izlaz": 20,
+      "naziv": "GPT-5.6 Sol",
+      "provajder": "openai"
+    },
+    {
+      "id": "openai/gpt-5.6-sol-pro",
+      "datum": "2026-10-15",
+      "ulazPre": 2,
+      "izlazPre": 10,
+      "ulaz": 4,
+      "izlaz": 20,
+      "naziv": "GPT-5.6 Sol Pro",
+      "provajder": "openai"
+    },
+    {
+      "id": "qwen/qwen3.6-35b-a3b",
+      "datum": "2026-10-15",
+      "ulazPre": 0.1,
+      "izlazPre": 0.95,
+      "ulaz": 0.15,
+      "izlaz": 1,
+      "naziv": "Qwen3.6 35B A3B",
+      "provajder": "qwen"
+    },
+    {
+      "id": "qwen/qwen3.8-27b",
+      "datum": "2026-10-15",
+      "ulazPre": 0.04,
+      "izlazPre": 2.3,
+      "ulaz": 0.24,
+      "izlaz": 2.2,
+      "naziv": "Qwen3.8 27B",
+      "provajder": "qwen"
+    },
+    {
+      "id": "z-ai/glm-5",
+      "datum": "2026-10-15",
+      "ulazPre": 0.6,
+      "izlazPre": 1.92,
+      "ulaz": 1,
+      "izlaz": 3.2,
+      "naziv": "GLM 5",
+      "provajder": "z-ai"
+    },
+    {
+      "id": "z-ai/glm-5.1",
+      "datum": "2026-10-15",
+      "ulazPre": 1.33,
+      "izlazPre": 4.18,
+      "ulaz": 0.966,
+      "izlaz": 3.036,
+      "naziv": "GLM 5.1",
+      "provajder": "z-ai"
+    },
+    {
+      "id": "z-ai/glm-5.2",
+      "datum": "2026-10-15",
+      "ulazPre": 0.05,
+      "izlazPre": 7,
+      "ulaz": 0.037,
+      "izlaz": 7,
+      "naziv": "GLM 5.2",
+      "provajder": "z-ai"
+    },
+    {
+      "id": "z-ai/glm-5.3-flash",
+      "datum": "2026-10-15",
+      "ulazPre": 0.15,
+      "izlazPre": 0.5,
+      "ulaz": 0.036,
+      "izlaz": 0.9,
+      "naziv": "GLM 5.3 Flash",
+      "provajder": "z-ai"
+    },
     {
       "id": "deepseek/deepseek-v4-flash",
       "datum": "2026-10-14",
@@ -515,146 +655,6 @@
       "izlaz": 3.6,
       "naziv": "Qwen3.5 397B A17B",
       "provajder": "qwen"
-    },
-    {
-      "id": "z-ai/glm-5.1",
-      "datum": "2026-10-14",
-      "ulazPre": 0.966,
-      "izlazPre": 3.036,
-      "ulaz": 1.33,
-      "izlaz": 4.18,
-      "naziv": "GLM 5.1",
-      "provajder": "z-ai"
-    },
-    {
-      "id": "z-ai/glm-5.2",
-      "datum": "2026-10-14",
-      "ulazPre": 0.06,
-      "izlazPre": 7,
-      "ulaz": 0.05,
-      "izlaz": 7,
-      "naziv": "GLM 5.2",
-      "provajder": "z-ai"
-    },
-    {
-      "id": "z-ai/glm-5.3-flash",
-      "datum": "2026-10-14",
-      "ulazPre": 0.0261,
-      "izlazPre": 0.9,
-      "ulaz": 0.15,
-      "izlaz": 0.5,
-      "naziv": "GLM 5.3 Flash",
-      "provajder": "z-ai"
-    },
-    {
-      "id": "deepseek/deepseek-v4-flash",
-      "datum": "2026-10-13",
-      "ulazPre": 0.0131,
-      "izlazPre": 1.28,
-      "ulaz": 0.0116,
-      "izlaz": 1.28,
-      "naziv": "DeepSeek V4 Flash 0423",
-      "provajder": "deepseek"
-    },
-    {
-      "id": "deepseek/deepseek-v4-flash-0731",
-      "datum": "2026-10-13",
-      "ulazPre": 0.0046,
-      "izlazPre": 0.64,
-      "ulaz": 0.016,
-      "izlaz": 0.64,
-      "naziv": "DeepSeek V4 Flash 0731",
-      "provajder": "deepseek"
-    },
-    {
-      "id": "google/gemma-4-26b-a4b-it",
-      "datum": "2026-10-13",
-      "ulazPre": 0.0675,
-      "izlazPre": 0.225,
-      "ulaz": 0.0765,
-      "izlaz": 0.255,
-      "naziv": "Gemma 4 26B A4B ",
-      "provajder": "google"
-    },
-    {
-      "id": "meta-llama/llama-3.3-70b-instruct",
-      "datum": "2026-10-13",
-      "ulazPre": 0.22,
-      "izlazPre": 0.5,
-      "ulaz": 0.59,
-      "izlaz": 0.79,
-      "naziv": "Llama 3.3 70B Instruct",
-      "provajder": "meta-llama"
-    },
-    {
-      "id": "meta-llama/llama-4-scout",
-      "datum": "2026-10-13",
-      "ulazPre": 0.1,
-      "izlazPre": 0.3,
-      "ulaz": 0.18,
-      "izlaz": 0.59,
-      "naziv": "Llama 4 Scout",
-      "provajder": "meta-llama"
-    },
-    {
-      "id": "minimax/minimax-m2.7",
-      "datum": "2026-10-13",
-      "ulazPre": 0.21,
-      "izlazPre": 0.84,
-      "ulaz": 0.3,
-      "izlaz": 1.2,
-      "naziv": "MiniMax M2.7",
-      "provajder": "minimax"
-    },
-    {
-      "id": "moonshotai/kimi-k3",
-      "datum": "2026-10-13",
-      "ulazPre": 0.73,
-      "izlazPre": 10,
-      "ulaz": 0.73,
-      "izlaz": 15,
-      "naziv": "Kimi K3",
-      "provajder": "moonshotai"
-    },
-    {
-      "id": "openai/gpt-oss-120b",
-      "datum": "2026-10-13",
-      "ulazPre": 0.037,
-      "izlazPre": 0.17,
-      "ulaz": 0.15,
-      "izlaz": 0.6,
-      "naziv": "gpt-oss-120b",
-      "provajder": "openai"
-    },
-    {
-      "id": "z-ai/glm-5.3-flash",
-      "datum": "2026-10-13",
-      "ulazPre": 0.15,
-      "izlazPre": 0.5,
-      "ulaz": 0.0261,
-      "izlaz": 0.9,
-      "naziv": "GLM 5.3 Flash",
-      "provajder": "z-ai"
-    },
-    {
-      "id": "deepseek/deepseek-v4-flash",
-      "datum": "2026-10-12",
-      "ulazPre": 0.03,
-      "izlazPre": 1.28,
-      "ulaz": 0.0131,
-      "izlaz": 1.28,
-      "naziv": "DeepSeek V4 Flash 0423",
-      "provajder": "deepseek"
-    },
-    {
-      "id": "deepseek/deepseek-v4-flash-0731",
-      "datum": "2026-10-12",
-      "ulazPre": 0.0121,
-      "izlazPre": 1.28,
-      "ulaz": 0.0046,
-      "izlaz": 0.64,
-      "naziv": "DeepSeek V4 Flash 0731",
-      "provajder": "deepseek"
     }
   ],
   "noviModeli": [

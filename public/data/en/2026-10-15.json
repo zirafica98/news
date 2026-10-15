@@ -1,0 +1,556 @@
+{
+  "datum": "2026-10-15",
+  "generisano": "2026-10-15T03:07:19.583Z",
+  "model": "claude-opus-5-5",
+  "prevod": "claude-sonnet-5-5",
+  "ukratko": "The biggest story is an OpenAI engineer arrested by the FBI for allegedly hiding a listening device in the boardroom. OpenAI says its own models helped track him down. Meanwhile, eight US states sued OpenAI over child safety. Two items matter more for developers: a new benchmark shows code written by AI agents is secure in only about a quarter of tasks, and Liquid AI released an open model for agents that run locally on a laptop.",
+  "vesti": [
+    {
+      "naslov": "OpenAI engineer arrested over bug planted in boardroom",
+      "staSeDesilo": "The FBI arrested engineer Abdulrahman Alfozan. He is accused of hiding a recording device, wrapped in toilet paper, behind the TV in OpenAI's boardroom. OpenAI found it on September 30, and a camera then caught Alfozan trying to retrieve it on October 5. Prosecutors say he used his wife's chatbot account to ask how to build and conceal such a device. OpenAI says its models helped it analyze the device's encrypted contents and identify the suspect.",
+      "zastoJeBitno": "OpenAI says there are no signs that model weights, source code or user data were stolen, and no link to a foreign government has been established. Still, the case shows that even AI labs face their biggest security risk from insiders, so expect tighter controls.",
+      "kategorija": "bezbednost",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Rundown AI",
+          "url": "https://therundownai.beehiiv.com/p/openai-finds-a-bug-in-its-boardroom"
+        },
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/tech-policy/2026/10/fbi-arrests-openai-engineer-suspected-of-planting-bug-in-conference-room/"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/alleged-openai-spy-vibe-coded-a-surveillance-device-using-his-wifes-chatbot-account/"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-10-14"
+        },
+        {
+          "naziv": "B92 Tehnopolis",
+          "url": "https://www.b92.net/tehnopolis/aktuelno/276189/skandal-u-kompaniji-openai-zaposleni-spijunirao-rukovodstvo-pomocu-ai/vest"
+        }
+      ]
+    },
+    {
+      "naslov": "Code that AI agents vibe-code is secure in only 16–25% of tasks",
+      "staSeDesilo": "Alibaba released the Last Secure Code Benchmark: 450 tasks across seven languages, built from 150 real-world vulnerabilities. The agent gets only a description of the functionality, with no mention of security. The best model, Claude Fable 5, produced code that both works and is secure in just 25.1% of tasks. The other five agents tested scored between 16.4% and 24.7%, even though 73.6–91.3% of their solutions were functionally correct.",
+      "zastoJeBitno": "If you build apps with Claude Code, \"it works\" doesn't mean \"it's secure.\" Explicitly ask for authorization checks, input validation and Supabase RLS (row-level access rules for tables) in your prompt or project rules, then run a separate security review.",
+      "kategorija": "istrazivanje",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Hugging Face Papers",
+          "url": "https://huggingface.co/papers/2610.14766"
+        },
+        {
+          "naziv": "GitHub",
+          "url": "https://github.com/alibaba/last-secure-code-benchmark"
+        }
+      ]
+    },
+    {
+      "naslov": "Eight US states sue OpenAI over child safety",
+      "staSeDesilo": "Iowa, Kansas, Nebraska, West Virginia, Arkansas, Arizona, Idaho and Montana filed separate lawsuits against OpenAI. They claim the company put profit ahead of safety and failed to warn users about ChatGPT's risks. They cite earlier suits from families who say the chatbot played a role in their loved ones' self-harm.",
+      "zastoJeBitno": "Pressure to protect minors is growing: age verification and stricter filters could easily become mandatory even for smaller apps that offer chatbots or AI characters.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1011500/openai-state-lawsuits-chatgpt-safety"
+        },
+        {
+          "naziv": "Danas",
+          "url": "https://www.danas.rs/svet/osam-drzava-optuzuje-openai-da-je-ugrozio-decu-zahtevaju-promene-u-radu-cetgpt-a/"
+        }
+      ]
+    },
+    {
+      "naslov": "Liquid AI LFM2.5-24B-A2B: an open model for agents on your laptop",
+      "staSeDesilo": "Liquid AI released LFM2.5-24B-A2B, a 24-billion-parameter MoE model. MoE (mixture of experts) means only part of the model is active per token, here about 2 billion parameters. It's trained for tool calling and multi-step tasks, has a 131K-token context window, and comes in GGUF and MLX versions for Mac. The company says it beats or matches the larger Qwen3.6-35B-A3B on 5 of 8 agent benchmarks. It's weaker at coding: 51% on SWE-Bench Verified versus 66.2% for Qwen.",
+      "zastoJeBitno": "This is a realistic option for private agents that run without the cloud, for example for processing sensitive data. For writing code, it remains the weaker choice.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/10/14/liquid-ai-lfm2-5-24b-a2b/"
+        },
+        {
+          "naziv": "Hugging Face",
+          "url": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-10-14"
+        }
+      ]
+    },
+    {
+      "naslov": "When will AI improve itself? Anthropic says 2027, Google says not even close",
+      "staSeDesilo": "Anthropic co-founder Jack Clark moved his estimate for AI that improves AI on its own (recursive self-improvement) from 2028 to 2027. He relies partly on a new benchmark, TasteVal, where Opus 5.5 planned AI experiments better than other models, at roughly 30 times lower cost per attempt than human experts. The same day, Google's Haydn Belfield said DeepMind sees no measurable research speedup from AI. AI there writes more than 75% of production code, but humans still review 88% of changes.",
+      "zastoJeBitno": "Two major labs are publicly giving opposite assessments, so read \"AI that builds itself\" headlines with caution. One concrete consequence for developers is already visible: the volume of agent-written code is growing fast, and code review is becoming the bottleneck.",
+      "kategorija": "istrazivanje",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Rundown AI",
+          "url": "https://therundownai.beehiiv.com/p/openai-finds-a-bug-in-its-boardroom"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/google-says-self-improving-ai-isnt-anywhere-close/"
+        }
+      ]
+    },
+    {
+      "naslov": "Report: OpenAI's next big model delayed over safety",
+      "staSeDesilo": "According to The Decoder, OpenAI is finishing a new flagship model. It uses the same \"looped transformer\" technique as Astra, where the model passes through the same layers multiple times to reason and code better. That technique makes it harder to follow what the model is \"thinking,\" so it needs more safety work. Employees expect one or two new models by the end of the year, even if the flagship isn't ready.",
+      "zastoJeBitno": "This isn't an official announcement but a report from anonymous sources. If you're planning anything around the OpenAI API, don't count on an exact date.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/openai-will-reportedly-ship-at-least-one-model-this-year-but-its-flagship-still-needs-alignment-work/"
+        }
+      ]
+    },
+    {
+      "naslov": "Epic ships new AI-written launcher, says it's faster than Steam",
+      "staSeDesilo": "Epic Games released a public Preview of its new Epic Games Launcher, written from scratch with AI help by a small team on a different tech stack. They carried over the old launcher's features but not its code. It supports Windows and Mac, with a Linux version announced. The claim that it's faster than Steam comes from Epic itself.",
+      "zastoJeBitno": "This is one of the first big consumer products openly rewritten entirely with AI. It shows that migrating legacy code to a new stack is no longer a year-long job, but given today's code security benchmark, the quality remains to be seen.",
+      "kategorija": "alati",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/gaming/2026/10/programming-is-hard-epic-games-leans-on-vibe-coding-for-its-new-launcher-app/"
+        },
+        {
+          "naziv": "r/singularity",
+          "url": "https://www.reddit.com/r/singularity/comments/1x5t1y6/epic_games_store_vibecoded_now_twice_as_fast_as/"
+        }
+      ]
+    },
+    {
+      "naslov": "Drama 3: an open speech model you can direct like an actor",
+      "staSeDesilo": "Fish Audio released Drama 3, a text-to-speech model that accepts bracketed instructions (tone, emotion, mid-sentence changes). It has 35 billion parameters, about 3 billion of them active, and supports 83 languages. According to Artificial Analysis, it's the best open speech model, but trails several closed services on overall quality.",
+      "zastoJeBitno": "There's now a serious self-hostable option for audiobooks, dialogue and dubbing. It needs a GPU with at least 48 GB of memory, and the license has a revenue cap.",
+      "kategorija": "modeli",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/10/14/fish-audio-drama-3-open-weight-tts-model/"
+        },
+        {
+          "naziv": "Latent Space AINews",
+          "url": "https://www.latent.space/p/ainews-ai-engineer-nyc-gemini-4-argon"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "LFM2.5-24B-A2B (locally on a Mac)",
+      "tip": "model",
+      "opis": "Liquid AI's open MoE model for agents and tool calling, with only about 2B active parameters, so it's fast on a laptop.",
+      "kakoProbati": [
+        "On an Apple Silicon Mac, install LM Studio or run pip install mlx-lm",
+        "Load the repo LiquidAI/LFM2.5-24B-A2B-MLX-4bit (MLX) or LiquidAI/LFM2.5-24B-A2B-GGUF (llama.cpp, LM Studio)",
+        "With Docker: docker model run hf.co/LiquidAI/LFM2.5-24B-A2B",
+        "Test it on a tool-using task (e.g. via MCP), not on code writing, where it's weaker"
+      ],
+      "link": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B",
+      "cena": "free (lfm1.0 license, check the terms at the link)"
+    },
+    {
+      "naziv": "skills CLI (Vercel)",
+      "tip": "alat",
+      "opis": "A command-line tool for the open \"skills\" ecosystem: ready-made instructions and files an agent loads when needed. Works with Claude Code, Codex, Cursor and others.",
+      "kakoProbati": [
+        "In your project, run: npx skills add vercel-labs/agent-skills -a claude-code (the skill installs into .claude/skills/)",
+        "Search for skills: npx skills find typescript",
+        "Try without installing: npx skills use vercel-labs/agent-skills --skill web-design-guidelines --agent claude-code",
+        "Build your own skill: npx skills init my-skill, then fill in name and description in SKILL.md"
+      ],
+      "link": "https://github.com/vercel-labs/skills",
+      "cena": "free"
+    },
+    {
+      "naziv": "OpenCode 2.0",
+      "tip": "alat",
+      "opis": "A new version of the open-source terminal coding agent: the server now runs as a single background process, and OpenCode can also be used as a library through SDK packages.",
+      "kakoProbati": [
+        "Read the changelog via the link in the TLDR digest",
+        "Install or update OpenCode following the docs (check the command at the link)",
+        "Try the SDK if you want to embed the agent in your own tool"
+      ],
+      "link": "https://tldr.tech/ai/2026-10-14",
+      "cena": "check the link"
+    },
+    {
+      "naziv": "OmniParseBench",
+      "tip": "projekat",
+      "opis": "An open benchmark for tools that extract text from PDFs and scans. It has 16,288 yes/no questions across 2,937 pages in 92 languages, so you can check which OCR parser works best on documents like yours.",
+      "kakoProbati": [
+        "You need Python 3.11 or newer",
+        "Install: uv pip install omni-parse-bench",
+        "Scoring works offline; you only need a key if you're testing a provider's parser through its API",
+        "Filter results by tags, e.g. by language or tables"
+      ],
+      "link": "https://www.marktechpost.com/2026/10/14/datalab-omniparsebench-open-ocr-document-parsing-benchmark/",
+      "cena": "free"
+    },
+    {
+      "naziv": "Tree Appreciator (Simon Willison's game)",
+      "tip": "projekat",
+      "opis": "A spot-the-difference game with procedurally generated trees, built in three.js. Opus 5.5 made it from a single prompt over three hours in the Claude iPhone app. A good example of what you can get without Claude Code.",
+      "kakoProbati": [
+        "Open the link and play in your browser",
+        "Read the prompt in the post: the key line was that the game must be \"fun and beautiful\"",
+        "Try a similar prompt in the Claude iPhone app for your own mini-game"
+      ],
+      "link": "https://simonwillison.net/2026/Oct/14/tree-appreciator/",
+      "cena": "free"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "In a court filing, OpenAI claims a former employee took over 100 files on product plans, including an unreleased device, and showed them to Apple executives.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1011276/openai-employee-unreleased-product-plans"
+    },
+    {
+      "naslov": "Forty US state attorneys general have joined Character.AI's bankruptcy proceedings to protect user data if the company is sold.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/policy/1011417/new-york-ag-characterai-bankruptcy"
+    },
+    {
+      "naslov": "GPT-6.1 Sol now has a 500K-token context by default, so long tasks need summarizing less often.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-10-14"
+    },
+    {
+      "naslov": "Nvidia has open-sourced all of Run:ai, its platform for scheduling jobs on GPUs.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-10-14"
+    },
+    {
+      "naslov": "Prime Intellect has acquired Moondream, the company behind open vision models, and will build its models into its training and inference system.",
+      "izvor": "Latent Space AINews",
+      "url": "https://www.latent.space/p/ainews-ai-engineer-nyc-gemini-4-argon"
+    },
+    {
+      "naslov": "SpaceXSI launched a $30 \"X Subscription\" that bundles Grok, Cursor and X Premium, replacing separate subscriptions that totaled $90.",
+      "izvor": "The Rundown AI",
+      "url": "https://therundownai.beehiiv.com/p/openai-finds-a-bug-in-its-boardroom"
+    },
+    {
+      "naslov": "Artificial Analysis launched the Decision Index, a leaderboard of models that return a decision instead of text; Jeva 1.13 currently leads it.",
+      "izvor": "Latent Space AINews",
+      "url": "https://www.latent.space/p/ainews-ai-engineer-nyc-gemini-4-argon"
+    },
+    {
+      "naslov": "Anthropic opened an office in Singapore and signed a memorandum of cooperation with the Singaporean government.",
+      "izvor": "Anthropic",
+      "url": "https://www.anthropic.com/news/singapore-office-opening"
+    },
+    {
+      "naslov": "YouTube Music has started labeling songs made partly or fully with AI, and Deezer plans a toggle to hide such music by the end of the year.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/14/youtube-music-launches-new-labels-as-ai-generated-music-floods-streaming-platforms/"
+    },
+    {
+      "naslov": "Google Messages on Android is getting \"enhanced protection,\" which uses cloud-based Gemini to analyze conversations with unknown senders and look for signs of scams.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1010928/android-scam-protection-enhanced-protection-google-messages"
+    },
+    {
+      "naslov": "Microsoft released an open tool that uses machine learning to give more accurate weather forecasts two to six weeks ahead; the paper was published in Nature.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/science/1011127/ai-weather-forecast-microsoft"
+    },
+    {
+      "naslov": "Researchers found a fleet of AI agents on Tencent Cloud that tried more than 2,600 times to scrape data from Alibaba's Amap maps service, and managed to correspond with it.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/researchers-tracked-down-a-rogue-fleet-of-chinese-ai-agents-in-the-wild-and-actually-talked-to-it/"
+    },
+    {
+      "naslov": "Artemis Security unveiled Orion-1, a model specialized in cyber defense, since general-purpose models increasingly refuse even legitimate security tasks; its lead over competitors is shown only by the company's own benchmark.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/ai-guardrails-designed-to-stop-hackers-are-now-blocking-defenders-and-orion-1-aims-to-fill-the-gap/"
+    },
+    {
+      "naslov": "Researchers say new image models from OpenAI and Google are easily manipulated into producing explicit images, and are worse at it than older versions.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/tech-policy/2026/10/openai-google-pushing-new-ai-models-easily-tricked-into-making-nudes-researchers-say/"
+    },
+    {
+      "naslov": "Swedish broadcaster TV4 postponed a show until 2027 after an AI agent deleted already-edited footage.",
+      "izvor": "Sweden Herald",
+      "url": "https://swedenherald.com/article/tv4-postpones-the-challenge-until-2027-after-technical-failure-erases-edited-footage"
+    },
+    {
+      "naslov": "Jensen Huang announced $2 billion in Nvidia investments in Europe and $250 million in compute for UK labs researching agent safety.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/nvidias-jensen-huang-pledges-2-billion-for-europe-250-million-in-compute-for-uk-safety-labs/"
+    },
+    {
+      "naslov": "Square unveiled an ordering kiosk with a 21.5-inch screen and an AI agent you speak your order to, with follow-up questions and changes.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1009086/square-kiosk"
+    },
+    {
+      "naslov": "McKinsey will test some entry-level candidates with a ten-minute conversation with an AI-simulated client, with humans in the room giving the score.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/news/1011654/mckinsey-ai-client-interview"
+    },
+    {
+      "naslov": "According to a Reddit post, Nvidia is releasing Nemotron Bolt 3.5 today, a 74B-parameter MoE model (9B active) that fits in 24 GB at 2-bit; check the link for official confirmation.",
+      "izvor": "r/LocalLLaMA",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x5t1tm/nvidia_nemotron_bolt_35_74b_a9b_releases_oct_15th/"
+    },
+    {
+      "naslov": "According to the Financial Times, as relayed on Reddit, Anthropic posted $16.8 billion in revenue in the third quarter.",
+      "izvor": "r/singularity",
+      "url": "https://www.reddit.com/r/singularity/comments/1x64yue/anthropic_revenue_jumps_to_168_billion_in_third/"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "AesCode: AI that builds slides and dashboards as code, and makes sure they look good",
+      "objasnjenje": "Microsoft's approach where the model first gets an image as an aesthetic reference generated from the same description, then writes code (HTML, slides, dashboards) that follows that image. Whatever can be checked automatically in the code is scored by scripts, while appearance is scored by a vision model using element-specific rules.",
+      "zastoJeZanimljivo": "Generated UI is usually correct but ugly. This is a recipe for getting correct content and better layout at the same time, directly applicable to tools that produce reports or presentations.",
+      "url": "https://huggingface.co/papers/2610.18860",
+      "github": "https://github.com/microsoft/AesCode"
+    },
+    {
+      "naslov": "Agent-Reflex: agents that notice a mistake and recover",
+      "objasnjenje": "A framework for training agents to react when an MCP tool returns a nonsensical response or when the user corrects them. Researchers deliberately inject \"broken\" tool responses, extract reflection skills from pairs of successful and failed attempts, and use them to fine-tune the model.",
+      "zastoJeZanimljivo": "In real apps, tools often return an error or an empty result, and agents easily go in the wrong direction. The code is public, so the ideas can be reused for better prompts and agent rules.",
+      "url": "https://huggingface.co/papers/2610.17953",
+      "github": "https://github.com/RUC-NLPIR/Agent-Reflex"
+    },
+    {
+      "naslov": "Jeva: an architecture for models that choose a decision instead of writing text",
+      "objasnjenje": "The paper proposes how to build a \"decision\" model: the request and each offered option are encoded separately, option order doesn't change the result, the number of options can grow, and repeated options are cached across requests. The model can also explicitly say that none of the options is correct.",
+      "zastoJeZanimljivo": "This is the theoretical foundation for a wave of fast, cheap classification and routing models. If your app's LLM only picks a category, this approach is much faster and cheaper.",
+      "url": "https://huggingface.co/papers/2610.18773",
+      "github": "https://github.com/LiQiiiii/Jeva"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Supabase Shield",
+      "problem": "Code written by an AI agent works, but according to today's benchmark it's secure in only a quarter of cases. The most common holes are in authorization, input validation and RLS policies.",
+      "zaKoga": "Indie developers and small teams building Angular/SwiftUI apps on Supabase with Claude Code",
+      "ulogaAi": "A skill package gives Claude Code a checklist for Supabase projects: RLS on every table, the service key never on the client, validation in Edge Functions. The agent runs a security review after every major change.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Scaffold a template with npx skills init supabase-shield and write the rules and checklist into SKILL.md",
+        "Add SQL queries that list tables without RLS enabled and public storage buckets",
+        "Test it on your own project through /review in Claude Code",
+        "Publish the repo on GitHub so others can install it with npx skills add"
+      ],
+      "inspiracija": "Last Secure Code Benchmark and Vercel skills CLI"
+    },
+    {
+      "naziv": "Interview Practice",
+      "problem": "Juniors in Serbia rarely get a chance to practice a job interview or a client conversation in Serbian before they actually need it.",
+      "zaKoga": "Students and juniors looking for a first job in IT, consulting or sales",
+      "ulogaAi": "AI plays a recruiter or client with a defined personality, asks follow-up questions based on the answers, and at the end gives a short assessment with examples of what could have gone better.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Build an Angular app with a scenario-picker screen (HR interview, technical interview, unhappy client)",
+        "Create a Supabase Edge Function that calls Claude Haiku 5.5 with a system prompt for the role",
+        "Save the transcript in Supabase and generate feedback with a separate call",
+        "Add voice dictation later via the Web Speech API"
+      ],
+      "inspiracija": "McKinsey is adding a conversation with an AI-simulated client to its hiring process"
+    },
+    {
+      "naziv": "Statement Without the Cloud",
+      "problem": "People don't want to send bank statements to unknown services, and nobody sticks with manual budgeting for more than a few weeks.",
+      "zaKoga": "iPhone and Mac users in Serbia who want an overview of their spending without sharing their data",
+      "ulogaAi": "A local model categorizes transactions from an imported PDF or CSV statement (shops, bills, fuel) and answers questions like \"how much did I spend on delivery in September,\" while the data never leaves the device.",
+      "tezina": 4,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Collect a few anonymized statements from local banks and write a parser in Swift (PDFKit)",
+        "For categorization, try on-device Apple Foundation Models, and on Mac compare against LFM2.5-24B-A2B via MLX",
+        "Build a SwiftUI screen with charts (Swift Charts) and a question field",
+        "Add rules for common merchants (Maxi, Lidl, NIS) so the model doesn't have to guess everything"
+      ],
+      "inspiracija": "Pulse Local (Show HN) and Liquid AI LFM2.5 for local agents"
+    },
+    {
+      "naziv": "Bedtime Story",
+      "problem": "There are few well-performed audio stories for kids in Serbian, and parents would love stories where their child is the hero.",
+      "zaKoga": "Parents of young children in Serbia and the region",
+      "ulogaAi": "An LLM writes a short story from given parameters (child's name, theme, moral), and a TTS model reads it with acting directions: whispers, excitement, different character voices.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Check at the link whether Drama 3 supports Serbian and how it sounds; if it doesn't sound good, try other TTS services",
+        "Build a SwiftUI app with a parameter form and a player",
+        "A Supabase Edge Function generates text with bracketed directions and sends it to the Fish Audio API ($15 per million characters)",
+        "Cache audio files in Supabase Storage so favorite stories play without new cost"
+      ],
+      "inspiracija": "Fish Audio Drama 3, open TTS with acting directions"
+    },
+    {
+      "naziv": "Order by Voice",
+      "problem": "Small cafés and bakeries can't afford a kiosk costing several thousand dollars, and queues at the register cost them time.",
+      "zaKoga": "Local hospitality businesses in Serbia, with a QR code on the table or counter",
+      "ulogaAi": "The guest scans a QR code and says or types their order in Serbian (\"two espressos, one without sugar\"). AI turns it into menu items, asks about anything unclear, and sends the order to a tablet behind the counter.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Build a Supabase schema for the menu, items and orders, and use Realtime for the counter screen",
+        "Build an Angular PWA for the guest with voice dictation and text input",
+        "With Claude Haiku 5.5 and structured output (a response in a strictly defined JSON format), map the order to menu IDs",
+        "Offer a free trial to one café you know and collect feedback"
+      ],
+      "inspiracija": "Square Kiosk with an AI agent you speak your order to"
+    }
+  ],
+  "cene": "The biggest change today is GPT-5.6 Sol, which doubled in price from 2/10 to 4/20 dollars. DeepSeek V4.1 Flash input got cheaper, dropping from 0.0315 to 0.0158 dollars, while output stayed at 0.891. Kimi K3 cut input from 0.7 to 0.45 but raised output from 13.5 to 15. Gemma 4 31B went up from 0.09/0.34 to 0.2/0.4, and GLM 5 from 0.6/1.92 to 1/3.2. Mistral Small 3.2 24B dropped to 0.075/0.2. Among budget models, DeepSeek V4.1 Flash now has the cheapest input (0.0158) and Qwen3.8 Flash the cheapest output (0.47), while among top-tier models Kimi K3 has the cheapest input (0.45). Claude Haiku 5.5 costs 0.1/0.5, ten times less than Haiku 4.5 (1/5).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "The OpenAI spy and the bug in the toilet paper",
+        "oCemuSePrica": "OpenAI's statement about the listening device and the engineer's arrest is the most-shared AI post of the day. People are debating how much conversations in AI lab meeting rooms are worth, and the irony that the suspect allegedly built the device with a chatbot's help while OpenAI's AI helped uncover him.",
+        "glasovi": "@OpenAINewsroom and the FBI published official statements. Commentators (and AINews) caution that neither the suspect's citizenship nor his connections prove a state is behind it, and that the investigation is still ongoing.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@OpenAINewsroom",
+            "url": "https://x.com/OpenAINewsroom/status/2110095403198849132"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@FBIDirectorKash",
+            "url": "https://x.com/FBIDirectorKash/status/2110109949359751665"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/OpenAI",
+            "url": "https://www.reddit.com/r/OpenAI/comments/1x5glxv/abdulrahman_alfozan_a_saudi_national_employed_as/"
+          }
+        ]
+      },
+      {
+        "naslov": "Are agents truly \"rogue,\" or are labs skipping security basics?",
+        "oCemuSePrica": "After a string of stories about agents breaking in or slipping out of control, a piece arguing the problem is poor isolation and oversight rather than model \"rebellion\" collected over 800 points on Hacker News. A letter from more than 400 researchers calls for better model containment, and the EU says the AI Act already covers such cases.",
+        "glasovi": "Yoshua Bengio and the letter's signatories want hacking-capable models to have no internet access by default. Arvind Narayanan (@random_walker) advocates investing in external controls: sandboxes, monitoring and defensive agents. On HN, many say it's just plain bad engineering practice.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50091788"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@Yoshua_Bengio",
+            "url": "https://x.com/Yoshua_Bengio/status/2110061471937757320"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@random_walker",
+            "url": "https://x.com/random_walker/status/2110010174890967374"
+          }
+        ]
+      },
+      {
+        "naslov": "AI in science: from physics to new stars, but no proof it improves itself",
+        "oCemuSePrica": "Posts are spreading on r/singularity claiming GPT-6 Astra solved 49 of 50 unpublished theoretical physics problems, Gemini 4 agents extended a discovery about plasma in fusion, and someone's Claude agents independently found 104 new eclipsing binary star systems. There's also discussion of Jack Clark moving his estimate for self-improving AI to 2027.",
+        "glasovi": "Enthusiasts on r/singularity see acceleration. Google's Haydn Belfield responds that DeepMind sees no measurable research speedup. The Reddit claims have not been independently verified.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1x5y9ue/gpt6_astra_autonomously_solves_49_out_of_50/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1x5njv6/i_suggested_that_my_autonomous_claude_agents_try/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1x62jzz/scientists_recently_overturned_a_59yearold_belief/"
+          }
+        ]
+      },
+      {
+        "naslov": "Claude users: new Projects, weekly limits and \"are they nerfing Opus?\"",
+        "oCemuSePrica": "On r/ClaudeAI, users complain that Projects has been turned from simple folders into a single ongoing conversation with a coordinator that creates threads, with no way to go back to the old view for new projects. Others can't wait for Fable 5.5, mainly for the possible reset of weekly limits, and the LiveNerf measurement after 20 days shows no sign that Opus 5.5 has been weakened.",
+        "glasovi": "The criticism is led by a lawyer on a Max 20x subscription, for whom the old Projects was the main reason to pay. LiveNerf's author (repo ninjahawk/livenerf) says the data so far shows no evidence the model was deliberately weakened. Fable 5.5 is still just a rumor.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1x5vvlc/they_killed_projects_and_replaced_it_with_a/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1x606aj/are_they_nerfing_opus_55_livenerf_day_20_update/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1x63tys/at_this_point_im_mostly_excited_for_fable_55_to/"
+          }
+        ]
+      },
+      {
+        "naslov": "Linus Torvalds sends first LLM-assisted patch series",
+        "oCemuSePrica": "LWN reported that Torvalds has for the first time sent a Linux kernel patch series made with LLM help. Hacker News and Mastodon are debating what it means for the open-source community, which has long been skeptical of AI code.",
+        "glasovi": "Part of the community sees it as a practical move. On Mastodon, critics say this is \"entry through a subscription\" and that skill is being undervalued.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50090842"
+          },
+          {
+            "platforma": "mastodon",
+            "naziv": "@janef0421@mastodon.nz",
+            "url": "https://mastodon.nz/@janef0421/117442168081483309"
+          }
+        ]
+      }
+    ],
+    "snimci": [
+      {
+        "naslov": "Google Just Caught Up (Gemini-4 Argon)",
+        "kanal": "Matt Wolfe",
+        "opis": "Hands-on tests of Gemini 4 Argon, from building games to a 3D-printing model, and a comparison with Claude and ChatGPT.",
+        "url": "https://www.youtube.com/watch?v=eBszYxzE2dk"
+      }
+    ]
+  },
+  "nedeljni": null
+}

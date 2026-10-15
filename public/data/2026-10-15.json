@@ -1,0 +1,555 @@
+{
+  "datum": "2026-10-15",
+  "generisano": "2026-10-15T03:07:19.583Z",
+  "model": "claude-opus-5-5",
+  "ukratko": "Najviše se priča o OpenAI inženjeru koga je FBI uhapsio jer je navodno sakrio prislušni uređaj u salu gde se sastaje uprava. OpenAI kaže da su mu njegovi modeli pomogli da ga pronađe. Osam američkih država je u isto vreme tužilo OpenAI zbog bezbednosti dece. Za programere su važnija dva podatka: novi test pokazuje da je kod koji pišu AI agenti bezbedan u svega četvrtini zadataka, a Liquid AI je izbacio otvoreni model za agente koji rade lokalno na laptopu.",
+  "vesti": [
+    {
+      "naslov": "OpenAI inženjer uhapšen zbog prislušnog uređaja u sali uprave",
+      "staSeDesilo": "FBI je uhapsio inženjera Abdulrahmana Alfozana. Optužen je da je iza televizora u sali za sastanke uprave OpenAI-ja sakrio uređaj za snimanje, umotan u toalet-papir. OpenAI ga je pronašao 30. septembra, a onda je kamera snimila Alfozana kako 5. oktobra pokušava da ga uzme. Tužilaštvo kaže da je preko četbot naloga svoje supruge pitao kako da napravi i sakrije uređaj. OpenAI tvrdi da su mu njegovi modeli pomogli da analizira šifrovan sadržaj uređaja i da dođe do osumnjičenog.",
+      "zastoJeBitno": "OpenAI kaže da nema znakova da su ukradeni težine modela, izvorni kod ili podaci korisnika, a veza sa nekom stranom vladom nije utvrđena. Slučaj ipak pokazuje da i AI laboratorije najveći bezbednosni rizik imaju od ljudi iznutra, pa će verovatno pooštriti kontrolu.",
+      "kategorija": "bezbednost",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Rundown AI",
+          "url": "https://therundownai.beehiiv.com/p/openai-finds-a-bug-in-its-boardroom"
+        },
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/tech-policy/2026/10/fbi-arrests-openai-engineer-suspected-of-planting-bug-in-conference-room/"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/alleged-openai-spy-vibe-coded-a-surveillance-device-using-his-wifes-chatbot-account/"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-10-14"
+        },
+        {
+          "naziv": "B92 Tehnopolis",
+          "url": "https://www.b92.net/tehnopolis/aktuelno/276189/skandal-u-kompaniji-openai-zaposleni-spijunirao-rukovodstvo-pomocu-ai/vest"
+        }
+      ]
+    },
+    {
+      "naslov": "Kod koji AI agenti pišu „na vajb“ bezbedan je u svega 16 do 25% zadataka",
+      "staSeDesilo": "Alibaba je objavila Last Secure Code Benchmark: 450 zadataka u sedam jezika, napravljenih na osnovu 150 stvarnih ranjivosti. Agent u zadatku dobija samo opis funkcionalnosti, bez reči o bezbednosti. Najbolji model, Claude Fable 5, napravio je kod koji i radi i bezbedan je u samo 25,1% zadataka. Ostalih pet testiranih agenata postiglo je između 16,4 i 24,7%, iako im je funkcionalno prošlo 73,6 do 91,3% zadataka.",
+      "zastoJeBitno": "Ako aplikacije praviš uz Claude Code, „radi“ ne znači „bezbedno je“. U promptu ili pravilima projekta posebno traži proveru autorizacije, validacije ulaza i Supabase RLS-a (pravila pristupa po redovima tabele), pa pusti zaseban bezbednosni pregled.",
+      "kategorija": "istrazivanje",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Hugging Face Papers",
+          "url": "https://huggingface.co/papers/2610.14766"
+        },
+        {
+          "naziv": "GitHub",
+          "url": "https://github.com/alibaba/last-secure-code-benchmark"
+        }
+      ]
+    },
+    {
+      "naslov": "Osam američkih država tuži OpenAI zbog bezbednosti dece",
+      "staSeDesilo": "Ajova, Kanzas, Nebraska, Zapadna Virdžinija, Arkanzas, Arizona, Ajdaho i Montana podnele su odvojene tužbe protiv OpenAI-ja. Tvrde da je firma stavila profit ispred bezbednosti i da korisnike nije upozorila na rizike ChatGPT-a. Pozivaju se na ranije tužbe porodica koje kažu da je četbot imao ulogu u samopovređivanju njihovih bližnjih.",
+      "zastoJeBitno": "Pritisak na zaštitu maloletnika raste: verifikacija uzrasta i stroži filteri lako postaju obavezni i za manje aplikacije koje nude četbotove ili AI likove.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1011500/openai-state-lawsuits-chatgpt-safety"
+        },
+        {
+          "naziv": "Danas",
+          "url": "https://www.danas.rs/svet/osam-drzava-optuzuje-openai-da-je-ugrozio-decu-zahtevaju-promene-u-radu-cetgpt-a/"
+        }
+      ]
+    },
+    {
+      "naslov": "Liquid AI LFM2.5-24B-A2B: otvoreni model za agente na laptopu",
+      "staSeDesilo": "Liquid AI je objavio LFM2.5-24B-A2B, MoE model sa 24 milijarde parametara. MoE (mixture of experts) znači da je po tokenu aktivan samo deo modela, ovde oko 2 milijarde parametara. Treniran je za pozivanje alata i višekoračne zadatke, ima kontekst od 131 hiljadu tokena, a postoje GGUF i MLX verzije za Mac. Firma kaže da na 5 od 8 testova za agente pobeđuje ili izjednačava veći Qwen3.6-35B-A3B. Na kodiranju je slabiji: 51% na SWE-Bench Verified prema 66,2% kod Qwen-a.",
+      "zastoJeBitno": "Ovo je realna opcija za privatne agente koji rade bez oblaka, na primer za obradu osetljivih podataka. Za pisanje koda ostaje slabiji izbor.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/10/14/liquid-ai-lfm2-5-24b-a2b/"
+        },
+        {
+          "naziv": "Hugging Face",
+          "url": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-10-14"
+        }
+      ]
+    },
+    {
+      "naslov": "Kada će AI sam sebe usavršavati: Anthropic kaže 2027, Google kaže ni blizu",
+      "staSeDesilo": "Suosnivač Anthropic-a Jack Clark pomerio je procenu za AI koji sam unapređuje AI (rekurzivno samousavršavanje) sa 2028. na 2027. godinu. Delom se oslanja na novi test TasteVal, gde je Opus 5.5 bolje od ostalih modela planirao AI eksperimente, uz oko 30 puta nižu cenu po pokušaju od ljudskih stručnjaka. Istog dana je Haydn Belfield iz Google-a rekao da u DeepMind-u nema merljivog ubrzanja istraživanja zahvaljujući AI-ju. AI tamo piše više od 75% produkcionog koda, ali 88% izmena i dalje pregleda čovek.",
+      "zastoJeBitno": "Dve velike laboratorije javno daju suprotne procene, pa naslove o „AI koji sam sebe pravi“ treba čitati sa rezervom. Konkretna posledica za programere je već vidljiva: količina koda koju pišu agenti brzo raste, a pregled koda postaje usko grlo.",
+      "kategorija": "istrazivanje",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Rundown AI",
+          "url": "https://therundownai.beehiiv.com/p/openai-finds-a-bug-in-its-boardroom"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/google-says-self-improving-ai-isnt-anywhere-close/"
+        }
+      ]
+    },
+    {
+      "naslov": "Izveštaj: OpenAI-jev sledeći veliki model kasni zbog bezbednosti",
+      "staSeDesilo": "Prema The Decoder-u, OpenAI završava novi glavni model. Koristi istu „looped transformer“ tehniku kao Astra, gde model više puta prolazi kroz iste slojeve da bi bolje računao i kodirao. Zbog te tehnike je teže pratiti šta model „misli“, pa mu treba još bezbednosnog rada. Zaposleni očekuju jedan ili dva nova modela do kraja godine, čak i ako glavni ne bude spreman.",
+      "zastoJeBitno": "Ovo nije zvanična najava nego izveštaj iz anonimnih izvora. Ako planiraš nešto oko OpenAI API-ja, ne računaj na tačan datum.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/openai-will-reportedly-ship-at-least-one-model-this-year-but-its-flagship-still-needs-alignment-work/"
+        }
+      ]
+    },
+    {
+      "naslov": "Epic izbacio novi launcher napisan uz AI, kaže da je brži od Steam-a",
+      "staSeDesilo": "Epic Games je objavio javnu Preview verziju novog Epic Games Launcher-a, koju je mali tim od nule napisao uz pomoć AI-ja, u drugom tehnološkom steku. Preuzeli su funkcije starog launcher-a, ali ne i njegov kod. Podržava Windows i Mac, a Linux verzija je najavljena. Tvrdnja da je brži od Steam-a dolazi od samog Epic-a.",
+      "zastoJeBitno": "Ovo je jedan od prvih velikih korisničkih proizvoda koji je otvoreno ceo prepisan uz AI. Pokazuje da prepisivanje starog koda u novi stek više nije posao od godinu dana, ali s obzirom na današnji test o bezbednosti koda, kvalitet tek treba da se pokaže.",
+      "kategorija": "alati",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/gaming/2026/10/programming-is-hard-epic-games-leans-on-vibe-coding-for-its-new-launcher-app/"
+        },
+        {
+          "naziv": "r/singularity",
+          "url": "https://www.reddit.com/r/singularity/comments/1x5t1y6/epic_games_store_vibecoded_now_twice_as_fast_as/"
+        }
+      ]
+    },
+    {
+      "naslov": "Drama 3: otvoreni model za govor kome daješ glumačka uputstva",
+      "staSeDesilo": "Fish Audio je objavio Drama 3, model za pretvaranje teksta u govor koji prima uputstva u zagradama (ton, emocija, promena usred rečenice). Ima 35 milijardi parametara, od kojih je oko 3 milijarde aktivno, i podržava 83 jezika. Prema Artificial Analysis-u, najbolji je otvoreni model za govor, ali po ukupnom kvalitetu zaostaje za nekoliko zatvorenih servisa.",
+      "zastoJeBitno": "Sada postoji ozbiljna opcija koju možeš sam da hostuješ za audio-knjige, dijaloge i sinhronizaciju. Zahteva GPU sa bar 48 GB memorije, a licenca ima ograničenje po prihodu.",
+      "kategorija": "modeli",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/10/14/fish-audio-drama-3-open-weight-tts-model/"
+        },
+        {
+          "naziv": "Latent Space AINews",
+          "url": "https://www.latent.space/p/ainews-ai-engineer-nyc-gemini-4-argon"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "LFM2.5-24B-A2B (lokalno na Mac-u)",
+      "tip": "model",
+      "opis": "Otvoreni MoE model od Liquid AI-ja za agente i pozivanje alata, sa samo oko 2B aktivnih parametara, pa je brz na laptopu.",
+      "kakoProbati": [
+        "Na Mac-u sa Apple Silicon čipom instaliraj LM Studio ili pip install mlx-lm",
+        "Učitaj repo LiquidAI/LFM2.5-24B-A2B-MLX-4bit (MLX) ili LiquidAI/LFM2.5-24B-A2B-GGUF (llama.cpp, LM Studio)",
+        "Sa Docker-om: docker model run hf.co/LiquidAI/LFM2.5-24B-A2B",
+        "Testiraj ga na zadatku sa alatima (npr. preko MCP-a), ne na pisanju koda, jer je tu slabiji"
+      ],
+      "link": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B",
+      "cena": "besplatno (licenca lfm1.0, uslove proveri na linku)"
+    },
+    {
+      "naziv": "skills CLI (Vercel)",
+      "tip": "alat",
+      "opis": "Komandna linija za otvoreni ekosistem „skills“, to jest gotovih uputstava i fajlova koje agent učitava kad mu zatrebaju. Radi sa Claude Code-om, Codex-om, Cursor-om i drugima.",
+      "kakoProbati": [
+        "U projektu pokreni: npx skills add vercel-labs/agent-skills -a claude-code (skill se instalira u .claude/skills/)",
+        "Pretraži skillove: npx skills find typescript",
+        "Probaj bez instaliranja: npx skills use vercel-labs/agent-skills --skill web-design-guidelines --agent claude-code",
+        "Napravi svoj skill: npx skills init moj-skill, pa u SKILL.md upiši name i description"
+      ],
+      "link": "https://github.com/vercel-labs/skills",
+      "cena": "besplatno"
+    },
+    {
+      "naziv": "OpenCode 2.0",
+      "tip": "alat",
+      "opis": "Nova verzija otvorenog agenta za kodiranje u terminalu: server sada radi kao jedan pozadinski proces, a OpenCode može da se koristi i kao biblioteka preko SDK paketa.",
+      "kakoProbati": [
+        "Pročitaj spisak promena preko linka u TLDR pregledu",
+        "Instaliraj ili ažuriraj OpenCode prema uputstvu u dokumentaciji (komandu proveri na linku)",
+        "Probaj SDK ako želiš da agenta ugradiš u svoj alat"
+      ],
+      "link": "https://tldr.tech/ai/2026-10-14",
+      "cena": "proveri na linku"
+    },
+    {
+      "naziv": "OmniParseBench",
+      "tip": "projekat",
+      "opis": "Otvoreni test za alate koji iz PDF-a i skenova izvlače tekst. Ima 16.288 pitanja sa odgovorom da/ne na 2.937 strana u 92 jezika, pa možeš da proveriš koji OCR parser najbolje radi na dokumentima sličnim tvojim.",
+      "kakoProbati": [
+        "Treba ti Python 3.11 ili noviji",
+        "Instaliraj: uv pip install omni-parse-bench",
+        "Ocenjivanje radi bez interneta; ključ ti treba samo ako testiraš parser nekog provajdera preko API-ja",
+        "Filtriraj rezultate po oznakama, npr. po jeziku ili tabelama"
+      ],
+      "link": "https://www.marktechpost.com/2026/10/14/datalab-omniparsebench-open-ocr-document-parsing-benchmark/",
+      "cena": "besplatno"
+    },
+    {
+      "naziv": "Tree Appreciator (igra Simona Willisona)",
+      "tip": "projekat",
+      "opis": "Igra „pronađi razliku“ sa proceduralno generisanim drvećem, napravljena u three.js. Opus 5.5 ju je u Claude iPhone aplikaciji pravio iz jednog prompta preko tri sata. Dobar primer šta može da se dobije bez Claude Code-a.",
+      "kakoProbati": [
+        "Otvori link i igraj u pregledaču",
+        "Pogledaj prompt u tekstu: ključna rečenica je bila da igra mora da bude „zabavna i lepa“",
+        "Probaj sličan prompt u Claude aplikaciji na iPhone-u za svoju mini-igru"
+      ],
+      "link": "https://simonwillison.net/2026/Oct/14/tree-appreciator/",
+      "cena": "besplatno"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "OpenAI u sudskom podnesku tvrdi da je bivši zaposleni odneo preko 100 fajlova o planovima proizvoda, uključujući neobjavljeni uređaj, i pokazao ih rukovodstvu Apple-a.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1011276/openai-employee-unreleased-product-plans"
+    },
+    {
+      "naslov": "Četrdeset državnih tužilaca u SAD prijavilo se u stečajni postupak Character.AI-ja kako bi zaštitili podatke korisnika ako se firma proda.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/policy/1011417/new-york-ag-characterai-bankruptcy"
+    },
+    {
+      "naslov": "GPT-6.1 Sol od sada podrazumevano ima kontekst od 500 hiljada tokena, pa se dugi zadaci ređe sažimaju.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-10-14"
+    },
+    {
+      "naslov": "Nvidia je ceo Run:ai, svoju platformu za raspoređivanje poslova na GPU-ovima, objavila kao open source.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-10-14"
+    },
+    {
+      "naslov": "Prime Intellect je preuzeo Moondream, firmu iza otvorenih vizuelnih modela, i ugradiće njihove modele u svoj sistem za treniranje i pokretanje.",
+      "izvor": "Latent Space AINews",
+      "url": "https://www.latent.space/p/ainews-ai-engineer-nyc-gemini-4-argon"
+    },
+    {
+      "naslov": "SpaceXSI je uveo „X Subscription“ za 30 dolara, koji spaja Grok, Cursor i X Premium umesto ranijih odvojenih pretplata od ukupno 90 dolara.",
+      "izvor": "The Rundown AI",
+      "url": "https://therundownai.beehiiv.com/p/openai-finds-a-bug-in-its-boardroom"
+    },
+    {
+      "naslov": "Artificial Analysis je pokrenuo Decision Index, rang-listu modela koji vraćaju odluku umesto teksta, a trenutno je predvodi Jev 1.13.",
+      "izvor": "Latent Space AINews",
+      "url": "https://www.latent.space/p/ainews-ai-engineer-nyc-gemini-4-argon"
+    },
+    {
+      "naslov": "Anthropic je otvorio kancelariju u Singapuru i sa tamošnjom vladom potpisao memorandum o saradnji.",
+      "izvor": "Anthropic",
+      "url": "https://www.anthropic.com/news/singapore-office-opening"
+    },
+    {
+      "naslov": "YouTube Music je počeo da označava pesme koje su delom ili potpuno napravljene uz AI, a Deezer najavljuje prekidač za skrivanje takve muzike do kraja godine.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/14/youtube-music-launches-new-labels-as-ai-generated-music-floods-streaming-platforms/"
+    },
+    {
+      "naslov": "Google Messages na Android-u dobija „enhanced protection“, koji uz Gemini u oblaku analizira prepisku sa nepoznatim pošiljaocima i traži znake prevare.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1010928/android-scam-protection-enhanced-protection-google-messages"
+    },
+    {
+      "naslov": "Microsoft je objavio otvoreni alat koji uz mašinsko učenje daje preciznije vremenske prognoze dve do šest nedelja unapred; rad je izašao u časopisu Nature.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/science/1011127/ai-weather-forecast-microsoft"
+    },
+    {
+      "naslov": "Istraživači su pronašli flotu AI agenata na Tencent Cloud-u koja je više od 2.600 puta pokušala da pokupi podatke sa Alibabine mape Amap i uspeli da se dopisuju sa njom.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/researchers-tracked-down-a-rogue-fleet-of-chinese-ai-agents-in-the-wild-and-actually-talked-to-it/"
+    },
+    {
+      "naslov": "Artemis Security je predstavio Orion-1, model specijalizovan za sajber odbranu, jer opšti modeli sve češće odbijaju i legitimne bezbednosne zadatke; prednost nad konkurencijom pokazuje samo firmin test.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/ai-guardrails-designed-to-stop-hackers-are-now-blocking-defenders-and-orion-1-aims-to-fill-the-gap/"
+    },
+    {
+      "naslov": "Istraživači tvrde da se novi modeli za slike od OpenAI-ja i Google-a lako izmanipulišu da prave eksplicitne slike, i da su u tome gori od starijih verzija.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/tech-policy/2026/10/openai-google-pushing-new-ai-models-easily-tricked-into-making-nudes-researchers-say/"
+    },
+    {
+      "naslov": "Švedska televizija TV4 odložila je emisiju za 2027. nakon što je AI agent obrisao već montiran materijal.",
+      "izvor": "Sweden Herald",
+      "url": "https://swedenherald.com/article/tv4-postpones-the-challenge-until-2027-after-technical-failure-erases-edited-footage"
+    },
+    {
+      "naslov": "Jensen Huang je najavio 2 milijarde dolara Nvidia investicija u Evropi i 250 miliona dolara u računarskoj snazi za britanske laboratorije koje istražuju bezbednost agenata.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/nvidias-jensen-huang-pledges-2-billion-for-europe-250-million-in-compute-for-uk-safety-labs/"
+    },
+    {
+      "naslov": "Square je predstavio kiosk za naručivanje sa ekranom od 21,5 inča i AI agentom kome se porudžbina izgovara, uz pitanja i izmene.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1009086/square-kiosk"
+    },
+    {
+      "naslov": "McKinsey će deo kandidata za početničke pozicije testirati desetominutnim razgovorom sa AI simulacijom klijenta, a ocenu daju ljudi u prostoriji.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/news/1011654/mckinsey-ai-client-interview"
+    },
+    {
+      "naslov": "Prema Reddit objavi, Nvidia danas izbacuje Nemotron Bolt 3.5, MoE model od 74B parametara (9B aktivnih) koji u 2-bitnoj verziji staje u 24 GB; zvaničnu potvrdu proveri na linku.",
+      "izvor": "r/LocalLLaMA",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x5t1tm/nvidia_nemotron_bolt_35_74b_a9b_releases_oct_15th/"
+    },
+    {
+      "naslov": "Prema pisanju Financial Times-a, koje prenosi Reddit, Anthropic je u trećem kvartalu ostvario prihod od 16,8 milijardi dolara.",
+      "izvor": "r/singularity",
+      "url": "https://www.reddit.com/r/singularity/comments/1x64yue/anthropic_revenue_jumps_to_168_billion_in_third/"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "AesCode: AI koji pravi slajdove i dashboard-e kao kod, ali i pazi da lepo izgledaju",
+      "objasnjenje": "Microsoft-ov pristup u kome model prvo dobije sliku kao estetsku referencu napravljenu iz istog opisa, pa piše kod (HTML, slajdove, dashboard) koji prati tu sliku. Ono što može automatski da se proveri u kodu ocenjuju skripte, a izgled ocenjuje vizuelni model po pravilima vezanim za konkretne elemente.",
+      "zastoJeZanimljivo": "Generisani UI je obično tačan, ali ružan. Ovo je recept kako da se u isto vreme dobiju tačan sadržaj i bolji raspored, što se direktno primenjuje na alate koji prave izveštaje ili prezentacije.",
+      "url": "https://huggingface.co/papers/2610.18860",
+      "github": "https://github.com/microsoft/AesCode"
+    },
+    {
+      "naslov": "Agent-Reflex: agenti koji primete grešku i oporave se",
+      "objasnjenje": "Okvir za treniranje agenata da reaguju kad im MCP alat vrati besmislen odgovor ili kad ih korisnik ispravi. Istraživači namerno ubacuju „pokvarene“ odgovore alata, iz parova uspešnih i neuspešnih pokušaja izvlače veštine refleksije, pa njima doučavaju model.",
+      "zastoJeZanimljivo": "U pravim aplikacijama alati često vrate grešku ili prazan rezultat, a agenti tada lako krenu u pogrešnom smeru. Kod je javan, pa ideje mogu da se iskoriste i za bolje promptove i pravila agenta.",
+      "url": "https://huggingface.co/papers/2610.17953",
+      "github": "https://github.com/RUC-NLPIR/Agent-Reflex"
+    },
+    {
+      "naslov": "Jeva: arhitektura za modele koji biraju odluku, a ne pišu tekst",
+      "objasnjenje": "Rad predlaže kako da se napravi „decision“ model: zahtev i svaka ponuđena opcija se kodiraju odvojeno, redosled opcija ne menja rezultat, broj opcija može da raste, a opcije koje se ponavljaju keširaju se između zahteva. Model može i eksplicitno da kaže da nijedna opcija nije tačna.",
+      "zastoJeZanimljivo": "Ovo je teorijska osnova za talas brzih i jeftinih modela za klasifikaciju i rutiranje. Ako ti u aplikaciji LLM samo bira kategoriju, ovakav pristup je mnogo brži i jeftiniji.",
+      "url": "https://huggingface.co/papers/2610.18773",
+      "github": "https://github.com/LiQiiiii/Jeva"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Supabase štit",
+      "problem": "Kod koji napiše AI agent radi, ali je po današnjem testu bezbedan u samo četvrtini slučajeva. Najčešće rupe su u autorizaciji, validaciji ulaza i RLS pravilima.",
+      "zaKoga": "Indie developeri i mali timovi koji prave Angular/SwiftUI aplikacije na Supabase-u uz Claude Code",
+      "ulogaAi": "Skill paket daje Claude Code-u spisak provera za Supabase projekte: RLS na svakoj tabeli, da service ključ nikad nije na klijentu, validacija u Edge funkcijama. Agent posle svake veće izmene uradi bezbednosni pregled.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Napravi šablon sa npx skills init supabase-stit i u SKILL.md upiši pravila i spisak provera",
+        "Dodaj SQL upite koji listaju tabele bez uključenog RLS-a i javne storage bucket-e",
+        "Testiraj na svom projektu kroz /review u Claude Code-u",
+        "Objavi repo na GitHub-u da drugi mogu da ga instaliraju sa npx skills add"
+      ],
+      "inspiracija": "Last Secure Code Benchmark i Vercel skills CLI"
+    },
+    {
+      "naziv": "Proba razgovora",
+      "problem": "Juniori u Srbiji retko imaju priliku da vežbaju razgovor za posao ili razgovor sa klijentom na srpskom pre nego što im stvarno zatreba.",
+      "zaKoga": "Studenti i juniori koji traže prvi posao u IT-ju, konsaltingu ili prodaji",
+      "ulogaAi": "AI igra regrutera ili klijenta sa određenom ličnošću, postavlja pitanja dalje na osnovu odgovora i na kraju daje kratku ocenu sa primerima šta je moglo bolje.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Napravi Angular aplikaciju sa ekranom za izbor scenarija (HR intervju, tehnički intervju, nezadovoljan klijent)",
+        "Napravi Supabase Edge funkciju koja zove Claude Haiku 5.5 sa sistemskim promptom za ulogu",
+        "Sačuvaj transkript u Supabase-u i posebnim pozivom generiši povratnu informaciju",
+        "Kasnije dodaj diktiranje preko Web Speech API-ja"
+      ],
+      "inspiracija": "McKinsey uvodi razgovor sa AI simulacijom klijenta u proces zapošljavanja"
+    },
+    {
+      "naziv": "Izvod bez oblaka",
+      "problem": "Ljudi ne žele da šalju izvode iz banke nepoznatim servisima, a ručno vođenje budžeta niko ne izdrži duže od nekoliko nedelja.",
+      "zaKoga": "Korisnici iPhone-a i Mac-a u Srbiji koji žele pregled troškova bez deljenja podataka",
+      "ulogaAi": "Lokalni model razvrstava transakcije iz uvezenog PDF ili CSV izvoda (prodavnice, računi, gorivo) i odgovara na pitanja tipa „koliko sam potrošio na dostavu u septembru“, a podaci ne napuštaju uređaj.",
+      "tezina": 4,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Prikupi nekoliko anonimizovanih izvoda domaćih banaka i napiši parser u Swift-u (PDFKit)",
+        "Za kategorizaciju probaj Apple Foundation Models na uređaju, a na Mac-u uporedi sa LFM2.5-24B-A2B preko MLX-a",
+        "Napravi SwiftUI ekran sa grafikonima (Swift Charts) i poljem za pitanja",
+        "Dodaj pravila za česte trgovce (Maxi, Lidl, NIS) da model ne mora sve sam da pogađa"
+      ],
+      "inspiracija": "Pulse Local (Show HN) i Liquid AI LFM2.5 za lokalne agente"
+    },
+    {
+      "naziv": "Priča za laku noć",
+      "problem": "Na srpskom ima malo dobro odglumljenih audio priča za decu, a roditelji bi voleli priče u kojima je dete glavni junak.",
+      "zaKoga": "Roditelji male dece u Srbiji i regionu",
+      "ulogaAi": "LLM piše kratku priču po zadatim parametrima (ime deteta, tema, pouka), a TTS model je čita sa glumačkim uputstvima: šapat, uzbuđenje, različiti glasovi likova.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Proveri na linku da li Drama 3 podržava srpski i kako zvuči; ako ne zvuči dobro, probaj druge TTS servise",
+        "Napravi SwiftUI aplikaciju sa formom za parametre i plejerom",
+        "Supabase Edge funkcija generiše tekst sa uputstvima u zagradama i šalje ga Fish Audio API-ju (15 dolara na milion karaktera)",
+        "Keširaj audio fajlove u Supabase Storage-u da bi se omiljene priče puštale bez novog troška"
+      ],
+      "inspiracija": "Fish Audio Drama 3, otvoreni TTS sa glumačkim uputstvima"
+    },
+    {
+      "naziv": "Naruči glasom",
+      "problem": "Mali kafići i pekare nemaju novca za kiosk od nekoliko hiljada dolara, a gužva na kasi im košta vremena.",
+      "zaKoga": "Lokalni ugostitelji u Srbiji, uz QR kod na stolu ili pultu",
+      "ulogaAi": "Gost skenira QR kod i na srpskom izgovori ili otkuca porudžbinu („dva espresa, jedan bez šećera“). AI je prevede u stavke sa menija, pita za nejasnoće i šalje porudžbinu na tablet za šankom.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Napravi Supabase šemu za meni, stavke i porudžbine i koristi Realtime za ekran za šankom",
+        "Napravi Angular PWA za gosta sa diktiranjem i tekstualnim unosom",
+        "Uz Claude Haiku 5.5 i structured output (odgovor u strogo zadatom JSON formatu) mapiraj porudžbinu na ID-jeve iz menija",
+        "Ponudi besplatnu probu jednom poznatom kafiću i skupljaj povratne informacije"
+      ],
+      "inspiracija": "Square Kiosk sa AI agentom kome se porudžbina izgovara"
+    }
+  ],
+  "cene": "Najveća današnja promena je kod GPT-5.6 Sol, koji je poskupeo dvostruko, sa 2/10 na 4/20 dolara. DeepSeek V4.1 Flash je za ulaz pojeftinio sa 0,0315 na 0,0158 dolara, a izlaz je ostao 0,891. Kimi K3 je ulaz spustio sa 0,7 na 0,45, ali je izlaz podigao sa 13,5 na 15. Gemma 4 31B je poskupela sa 0,09/0,34 na 0,2/0,4, a GLM 5 sa 0,6/1,92 na 1/3,2. Mistral Small 3.2 24B je pojeftinio na 0,075/0,2. Najjeftiniji ulaz u klasi jeftinih modela sada ima DeepSeek V4.1 Flash (0,0158), najjeftiniji izlaz Qwen3.8 Flash (0,47), a među vrhunskim modelima najjeftiniji ulaz ima Kimi K3 (0,45). Claude Haiku 5.5 košta 0,1/0,5, deset puta manje od Haiku 4.5 (1/5).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Špijun u OpenAI-ju i bubica u toalet-papiru",
+        "oCemuSePrica": "Saopštenje OpenAI-ja o prislušnom uređaju i hapšenju inženjera je najdeljenija AI objava dana. Ljudi raspravljaju o tome koliko vrede razgovori u salama AI laboratorija i o ironiji da je osumnjičeni navodno pravio uređaj uz pomoć četbota, a da je OpenAI-jev AI pomogao da ga otkriju.",
+        "glasovi": "@OpenAINewsroom i FBI su objavili zvanične izjave. Komentatori (i AINews) upozoravaju da ni državljanstvo osumnjičenog ni njegove veze ne dokazuju da iza svega stoji neka država i da je istraga još u toku.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@OpenAINewsroom",
+            "url": "https://x.com/OpenAINewsroom/status/2110095403198849132"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@FBIDirectorKash",
+            "url": "https://x.com/FBIDirectorKash/status/2110109949359751665"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/OpenAI",
+            "url": "https://www.reddit.com/r/OpenAI/comments/1x5glxv/abdulrahman_alfozan_a_saudi_national_employed_as/"
+          }
+        ]
+      },
+      {
+        "naslov": "Da li su agenti zaista „odmetnuti“ ili laboratorije preskaču osnove bezbednosti",
+        "oCemuSePrica": "Posle niza priča o agentima koji provaljuju ili se otimaju kontroli, tekst koji tvrdi da je problem u lošem izolovanju i nadzoru, a ne u „pobuni“ modela, skupio je preko 800 poena na Hacker News-u. Pismo više od 400 istraživača traži bolje zadržavanje modela, a EU poručuje da AI Act već pokriva takve slučajeve.",
+        "glasovi": "Yoshua Bengio i potpisnici pisma traže da modeli sposobni za hakovanje podrazumevano budu bez pristupa internetu. Arvind Narayanan (@random_walker) zagovara ulaganje u spoljne kontrole: sandbox-ove, nadzor i odbrambene agente. Na HN-u mnogi kažu da je reč o običnoj lošoj inženjerskoj praksi.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50091788"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@Yoshua_Bengio",
+            "url": "https://x.com/Yoshua_Bengio/status/2110061471937757320"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@random_walker",
+            "url": "https://x.com/random_walker/status/2110010174890967374"
+          }
+        ]
+      },
+      {
+        "naslov": "AI u nauci: od fizike do novih zvezda, ali bez dokaza da se usavršava sam",
+        "oCemuSePrica": "Na r/singularity se šire objave da je GPT-6 Astra rešio 49 od 50 neobjavljenih zadataka iz teorijske fizike, da su Gemini 4 agenti proširili otkriće o plazmi u fuziji i da su nečiji Claude agenti sami pronašli 104 nova pomračujuća dvojna sistema zvezda. Uz to se diskutuje o tome da je Jack Clark pomerio procenu za AI koji sam sebe usavršava na 2027.",
+        "glasovi": "Entuzijasti iz r/singularity vide ubrzanje. Haydn Belfield iz Google-a odgovara da u DeepMind-u nema merljivog ubrzanja istraživanja. Tvrdnje sa Reddita nisu nezavisno proverene.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1x5y9ue/gpt6_astra_autonomously_solves_49_out_of_50/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1x5njv6/i_suggested_that_my_autonomous_claude_agents_try/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1x62jzz/scientists_recently_overturned_a_59yearold_belief/"
+          }
+        ]
+      },
+      {
+        "naslov": "Claude korisnici: novi Projects, nedeljni limiti i „da li nerfuju Opus“",
+        "oCemuSePrica": "Na r/ClaudeAI se žale da su Projects pretvoreni iz jednostavnih foldera u jedan stalni razgovor sa koordinatorom koji pravi niti, bez mogućnosti povratka na stari prikaz za nove projekte. Drugi jedva čekaju Fable 5.5, pre svega zbog mogućeg resetovanja nedeljnih limita, a LiveNerf merenje posle 20 dana ne pokazuje da je Opus 5.5 oslabljen.",
+        "glasovi": "Kritiku vodi advokat sa Max 20x pretplatom, kome je stari Projects bio glavni razlog za plaćanje. Autor LiveNerf-a (repo ninjahawk/livenerf) kaže da u podacima zasad nema dokaza da je model namerno oslabljen. Fable 5.5 je i dalje samo glasina.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1x5vvlc/they_killed_projects_and_replaced_it_with_a/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1x606aj/are_they_nerfing_opus_55_livenerf_day_20_update/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1x63tys/at_this_point_im_mostly_excited_for_fable_55_to/"
+          }
+        ]
+      },
+      {
+        "naslov": "Linus Torvalds poslao prvu seriju zakrpa napisanu uz LLM",
+        "oCemuSePrica": "LWN je objavio da je Torvalds prvi put poslao seriju zakrpa za Linux kernel napravljenu uz pomoć LLM-a. Na Hacker News-u i Mastodon-u se raspravlja šta to znači za open source zajednicu, koja je dugo bila skeptična prema AI kodu.",
+        "glasovi": "Deo zajednice to vidi kao praktičan potez. Na Mastodon-u kritičari kažu da je ovo „ulaz preko pretplate“ i da se veština potcenjuje.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50090842"
+          },
+          {
+            "platforma": "mastodon",
+            "naziv": "@janef0421@mastodon.nz",
+            "url": "https://mastodon.nz/@janef0421/117442168081483309"
+          }
+        ]
+      }
+    ],
+    "snimci": [
+      {
+        "naslov": "Google Just Caught Up (Gemini-4 Argon)",
+        "kanal": "Matt Wolfe",
+        "opis": "Praktični testovi Gemini 4 Argon-a, od pravljenja igrica do modela za 3D štampu, i poređenje sa Claude-om i ChatGPT-jem.",
+        "url": "https://www.youtube.com/watch?v=eBszYxzE2dk"
+      }
+    ]
+  },
+  "nedeljni": null
+}
