@@ -1,0 +1,565 @@
+{
+  "datum": "2026-10-20",
+  "generisano": "2026-10-20T03:08:28.187Z",
+  "model": "claude-opus-5-5",
+  "prevod": "claude-sonnet-5-5",
+  "ukratko": "Cheap Chinese models defined the day: MiniMax M3.1 Flash matches DeepSeek's new Flash model on both benchmarks and price, with open weights due in a few days. The most important story for developers is the OpenCode breach, where users' API keys were stolen. Rumor has it Anthropic, Google and OpenAI will all ship new models by the end of October, but for now that's only a rumor.",
+  "vesti": [
+    {
+      "naslov": "MiniMax M3.1 Flash: a near-frontier agent at bottom-tier prices",
+      "staSeDesilo": "MiniMax released M3.1 Flash, a mixture-of-experts (MoE) model, meaning only part of the network runs for each token, with 428 billion parameters, about 23 billion of them active, and a 1M-token context window. Input costs $0.15 per million tokens via the API. According to The Decoder, it jumped 13 points (to 42) on the Artificial Analysis index and scores 73.7% on the DeepSWE coding benchmark for under $0.30 per task, putting it level with DeepSeek V4.1 Flash 1017. Open weights are announced for October 23.",
+      "zastoJeBitno": "If your agent handles long, text-heavy tasks, you now have at least two cheap models of similar strength, and soon one you can host yourself. MiniMax published most of the results itself, and it's noticeably behind Opus 5 on Terminal Bench, so test it on your own task before switching.",
+      "kategorija": "modeli",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/10/19/minimax-m3-1-flash-release/"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/minimax-m3-1-flash-shows-chinas-ai-price-race-has-no-floor-in-sight/"
+        },
+        {
+          "naziv": "r/LocalLLaMA",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x9uzv9/minimax_m31_flash_released_model_weights_oct_23/"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenCode breach: API keys stolen, some users hit with bills over $1,000",
+      "staSeDesilo": "Attackers got into a legacy system of OpenCode Console, the online platform of the popular open-source coding agent, and stole the OpenAI, Anthropic and Google API keys that users had stored there. 1.4% of Console users were affected. Some saw unauthorized charges of several hundred dollars, and a few over $1,000. The app and CLI themselves were not affected, since keys used there never reach OpenCode's servers. OpenCode claims the attack was meant for distillation, i.e. copying models, but that is unproven so far.",
+      "zastoJeBitno": "If you've ever stored an API key in the cloud anywhere, now is the time to rotate it and set a spending limit with each provider. OpenCode says refunds are underway, and OpenAI promises to refund credits spent in the attack.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/19/hackers-hit-ai-coding-tool-opencode-running-up-charges-on-users-ai-accounts/"
+        },
+        {
+          "naziv": "The Rundown",
+          "url": "https://therundownai.beehiiv.com/p/anthropic-designs-a-pay-package-for-the-public"
+        }
+      ]
+    },
+    {
+      "naslov": "Rumor: Anthropic, Google and OpenAI may ship new models by the end of October",
+      "staSeDesilo": "A report from The Information is circulating on Reddit saying Anthropic is preparing a new model, Google has Gemini 4 Carbon ready, and OpenAI may release a new model in the Terra line. The name \"GPT-6.1 Terra\" was reportedly spotted in a Microsoft evaluation update. Also, over the weekend OpenAI tested three image models on Arena under the names aurora-red, green and blue-alpha, which TLDR guesses is GPT Image 3.",
+      "zastoJeBitno": "None of this is official, so don't change your stack over rumors. Still, if you're planning a big model-related piece of work, wait two or three weeks, since the lineup and prices could change.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "r/singularity",
+          "url": "https://www.reddit.com/r/singularity/comments/1x9ywfa/octobers_ai_model_wars_are_heating_up_the/"
+        },
+        {
+          "naziv": "r/OpenAI",
+          "url": "https://www.reddit.com/r/OpenAI/comments/1xa1d4e/gpt61_terra_spotted_in_an_microsoft_evaluation/"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-10-19"
+        }
+      ]
+    },
+    {
+      "naslov": "Hacker used an army of AI agents to breach 100+ sites, including John Deere and SharkNinja",
+      "staSeDesilo": "Security firm Norforge found that a single attacker broke into more than 100 sites using AI agents that mostly worked on their own. Reuters reports the victims include John Deere, SharkNinja and Cummins. The same day, Microsoft advised companies to treat the agents their employees use as an \"insider threat,\" because frontier models can't be fully trusted.",
+      "zastoJeBitno": "Attacks are getting cheap and mass-scale, so even a small Supabase project can become a target. Check your RLS policies (the rules that decide who can read which database row), rate limits and publicly exposed endpoints.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1013643/ai-agents-hack-john-deere-shark-ninja-cummins"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/"
+        }
+      ]
+    },
+    {
+      "naslov": "Meta: agents work more reliably when their \"conductor\" knows as little as possible",
+      "staSeDesilo": "Meta described how it automated adding data columns across three repositories and three programming languages. A single \"smart\" agent that knew everything worked in the demo but started hallucinating in production. They replaced it with a thin 1,300-line orchestrator that only distributes work to 14 specialized agents and checks the results, making no expert decisions itself.",
+      "zastoJeBitno": "This is a practical pattern you can apply right away in Claude Code with subagents: one main flow that only splits up work and runs tests, with separate narrow-context agents for Angular, Supabase and SwiftUI.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Meta Engineering",
+          "url": "https://engineering.fb.com/2026/10/19/ml-applications/thin-orchestrator-ai-agent-architecture/"
+        }
+      ]
+    },
+    {
+      "naslov": "Amazon TorchNeuron: PyTorch models on Trainium chips without rewrites",
+      "staSeDesilo": "Amazon released TorchNeuron, a free tool that lets you run PyTorch code and Hugging Face models on Amazon's Trainium chips instead of Nvidia GPUs. Hugging Face published a guide the same day. The goal is to weaken Nvidia's grip on the tooling used to build AI applications.",
+      "zastoJeBitno": "If you ever host your own model on AWS, there will be a cheaper option than Nvidia instances. Competition between chips tends to push inference (model-running) costs down over time.",
+      "kategorija": "kompanije",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/19/amazon-is-taking-its-biggest-shot-at-nvidia-yet-with-new-torchneuron-dev-tool/"
+        },
+        {
+          "naziv": "Hugging Face blog",
+          "url": "https://huggingface.co/blog/hf-torchneuron"
+        },
+        {
+          "naziv": "B92 Tehnopolis",
+          "url": "https://www.b92.net/tehnopolis/aktuelno/277806/amazon-napada-dominaciju-nvidije-predstavljen-torchneuron-za-ai-cipove/vest"
+        }
+      ]
+    },
+    {
+      "naslov": "Kling 4.0: video up to 30 seconds, stereo audio, multilingual lip sync and MCP access",
+      "staSeDesilo": "Kling released version 4.0 of its video generator: clips up to 30 seconds, up to ten keyframes as input, and prompts up to 8,000 tokens. A lighter Flash variant (up to 720p and 20 seconds) also arrives, along with MCP and CLI access so agents can use it directly. The Decoder says it's on par with Wan 3.0 and Seedance 2.5 but doesn't surpass them, which could be a sign that progress in video models is slowing.",
+      "zastoJeBitno": "Thanks to MCP, you can build a whole pipeline from Claude Code, for example going from a product description to a promo clip. API and pricing haven't been announced yet.",
+      "kategorija": "alati",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/kling-ai-drops-version-4-0-with-stereo-audio-multilingual-lip-sync-and-a-lighter-flash-variant/"
+        }
+      ]
+    },
+    {
+      "naslov": "Claim that neural networks are easier to understand than we thought divides researchers",
+      "staSeDesilo": "Nick Cammarata of Goodfire published a 26,000-word essay arguing that neurons that look \"messy\" actually follow a logic we couldn't see. His example is a neuron that seemed to respond to both cars and cats but actually detects the shape of the letter V. Part of the community calls it the paper of the year, while Chris Potts (Stanford), Jacob Hilton (ARC) and Neel Nanda (DeepMind) say it's just a hunch for now and doesn't fundamentally change the state of the field.",
+      "zastoJeBitno": "If it holds up, monitoring and controlling models would become much easier. For now it's a hypothesis, not a tool you can use.",
+      "kategorija": "istrazivanje",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MIT Technology Review",
+          "url": "https://www.technologyreview.com/2026/10/19/1147149/we-were-looking-at-it-wrong-the-explosive-claim-thats-upended-the-ai-world/"
+        }
+      ]
+    },
+    {
+      "naslov": "Hrvatski Telekom and Zagreb's ERF launch AI literacy workshops for elementary school students",
+      "staSeDesilo": "Hrvatski Telekom and the Faculty of Education and Rehabilitation Sciences (ERF) in Zagreb are launching \"AIMO! pametno koristiti AI\" (\"AIMO! Using AI Smartly\"), a series of preventive workshops for students in grades 6 to 8. The focus is on critical thinking, safe use of AI and protecting children's mental health.",
+      "zastoJeBitno": "It's a sign that demand for AI educational content for kids and parents is growing in the region. It's a niche where even a small app in our own language could find an audience.",
+      "kategorija": "ostalo",
+      "vaznost": 1,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "ICTbusiness",
+          "url": "https://www.ictbusiness.info/telekomunikacije/hrvatski-telekom-i-erf-pokrecu-program-alati-za-moderno-doba-aimo-pametno-koristiti-ai"
+        },
+        {
+          "naziv": "Bug.hr",
+          "url": "https://www.bug.hr/edukacija/hrvatski-telekom-i-erf-pokrecu-program-alati-za-moderno-doba--aimo-pametno-63678"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "MiniMax M3.1 Flash",
+      "tip": "model",
+      "opis": "A cheap MoE model for agents and coding, with a 1M-token context window. Takes text, images and video, returns text. Open weights are announced for October 23.",
+      "kakoProbati": [
+        "Open the MiniMax blog and go from there to the MiniMax API platform or MiniMax Code",
+        "Create an API key and set a spending limit right away",
+        "Give it the same task you'd normally give Claude (e.g. refactoring an Angular component) and compare the result and cost"
+      ],
+      "link": "https://www.minimax.io/blog/minimax-m31f",
+      "cena": "input $0.15 per 1M tokens, check the link for output"
+    },
+    {
+      "naziv": "qwen3-4b-deslop-v4",
+      "tip": "model",
+      "opis": "A small Qwen3-4B the author fine-tuned on a MacBook Air to avoid writing in an \"AI tone\": no dashes, no \"not X but Y,\" no lists of three, and no words like \"delve.\" According to the author, the voice is a bit flat and it sometimes makes up names.",
+      "kakoProbati": [
+        "Install Ollama on your Mac",
+        "In the terminal, run: ollama run hf.co/erikkannike/qwen3-4b-deslop-v4-GGUF:Q4_K_M (about 2.5 GB)",
+        "Have it rewrite an App Store description and compare it with what a big model writes"
+      ],
+      "link": "https://huggingface.co/erikkannike/qwen3-4b-deslop-v4",
+      "cena": "free (check the license on Hugging Face)"
+    },
+    {
+      "naziv": "Kling 4.0",
+      "tip": "alat",
+      "opis": "A new video generator: clips up to 30 seconds with stereo audio and lip sync, plus a lighter Flash version. It has MCP and CLI access, so an agent can call it too.",
+      "kakoProbati": [
+        "Open Kling and log in to the new creation interface",
+        "Upload 2–3 keyframes and describe the scene in the prompt",
+        "For automation, see the MCP/CLI guide in the release notes"
+      ],
+      "link": "https://the-decoder.com/kling-ai-drops-version-4-0-with-stereo-audio-multilingual-lip-sync-and-a-lighter-flash-variant/",
+      "cena": "check the link"
+    },
+    {
+      "naziv": "whatmodel.sh",
+      "tip": "projekat",
+      "opis": "An open leaderboard that compares the results labs publish for their own models against those from independent testers. On average, lab-reported results are 6.4% higher.",
+      "kakoProbati": [
+        "Open the interactive chart at whatmodel.sh/claims",
+        "Find the model you use and compare the \"official\" and independent numbers",
+        "Data (CC BY-SA) and code (MIT) are on GitHub if you want to use them in your own project"
+      ],
+      "link": "https://whatmodel.sh/claims",
+      "cena": "free"
+    },
+    {
+      "naziv": "tv-vibehack",
+      "tip": "projekat",
+      "opis": "An open-source script (MIT license) that strips ads and bloatware from TCL TVs and installs a clean launcher, with no root needed and a restore script to undo it. Reddit users say they ran it with Claude's help.",
+      "kakoProbati": [
+        "On the TV, enable Developer options and ADB debugging",
+        "Clone the repo and read the scripts before running them (you can ask Claude Code to review them)",
+        "Run the script following the README, and if something goes wrong, use the restore script"
+      ],
+      "link": "https://github.com/Gathin23/tv-vibehack",
+      "cena": "free"
+    },
+    {
+      "naziv": "Harness Engineering 101",
+      "tip": "projekat",
+      "opis": "A repository explaining how to build a \"harness,\" the environment around a model: tools, memory and the loop the agent runs through. It has 128 points on Hacker News.",
+      "kakoProbati": [
+        "Open the repo on GitHub and read the README",
+        "Go through the examples and compare them with your own CLAUDE.md and subagent setups"
+      ],
+      "link": "https://github.com/IsuruMaduranga/harness-engineering-101",
+      "cena": "free"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Krea released Krea 3, an image editor it claims is three times faster than Google's Nano Banana Pro at half the price.",
+      "izvor": "The Rundown",
+      "url": "https://therundownai.beehiiv.com/p/anthropic-designs-a-pay-package-for-the-public"
+    },
+    {
+      "naslov": "Google added Axios, CNN and the Financial Times to its paid AI news program, which now works with more than 400 outlets.",
+      "izvor": "The Rundown",
+      "url": "https://therundownai.beehiiv.com/p/anthropic-designs-a-pay-package-for-the-public"
+    },
+    {
+      "naslov": "About 80 WhatsApp help pages accidentally exposed hidden instructions for Meta's chatbot, including a \"what not to say\" section; Meta blames a bug.",
+      "izvor": "Wired",
+      "url": "https://www.wired.com/story/whatsapp-help-pages-leaked-hidden-instructions-for-a-meta-chatbot/"
+    },
+    {
+      "naslov": "Court documents show Character.AI's bankruptcy is part of a deal in which Disney takes over the people and technology while the lawsuits stay with the company left behind.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/tech-policy/2026/10/disney-found-a-way-to-buy-character-ai-without-buying-its-lawsuits/"
+    },
+    {
+      "naslov": "A court refused to release a former OpenAI engineer accused of spying, and the FBI says he had a folder called \"Saudi Gov Docs.\"",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/tech-policy/2026/10/accused-openai-spy-had-folder-called-saudi-gov-docs-fbi-says/"
+    },
+    {
+      "naslov": "CoreWeave's bonds have fallen into \"distressed\" debt territory and its stock lost more than 20% in a week, raising questions about how the whole AI boom is financed.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1014045/coreweave-stock-debt-sector-ai"
+    },
+    {
+      "naslov": "Industry insiders expect only seven to ten of the hundreds of \"neocloud\" GPU providers to survive, and Microsoft backed out of a deal with Nscale for 23,000 Nvidia chips.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/the-neocloud-shakeout-is-coming-and-nvidia-has-the-most-to-lose/"
+    },
+    {
+      "naslov": "Anthropic and Nscale are reportedly negotiating yet another compute deal, worth $45 billion.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/19/nscale-and-anthropic-are-reportedly-in-talks-for-yet-another-45-billion-compute-deal/"
+    },
+    {
+      "naslov": "Nvidia open-sourced all of Run:ai, its platform for scheduling GPU jobs on Kubernetes, under the Apache 2.0 license.",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/10/18/nvidia-runai-open-source-gpu-orchestration-kubernetes/"
+    },
+    {
+      "naslov": "OpenAI published new benchmarks and improvements for coding in less common languages, including SQLite and COBOL migration.",
+      "izvor": "OpenAI",
+      "url": "https://openai.com/index/low-resource-programming-languages"
+    },
+    {
+      "naslov": "Qualcomm says AI labs want phones that constantly run models of over 100 billion parameters by 2028.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-10-19"
+    },
+    {
+      "naslov": "Stripe says AI agents are increasingly making purchases on users' behalf through its Link service, but won't disclose numbers.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/stripe-says-ai-agent-purchases-are-adding-up-but-it-wont-share-the-numbers/"
+    },
+    {
+      "naslov": "Indie developers are delaying public game demos for fear that someone will clone them with AI tools before launch.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/gaming/2026/10/ai-game-clones-are-making-indie-developers-afraid-to-show-their-work/"
+    },
+    {
+      "naslov": "Bank of America has brought in another 1,000 outside experts, on top of its 3,000-person team, to fix vulnerabilities found by AI models, with costs running into the hundreds of millions of dollars.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/internet/ai-otkrio-slabosti-u-sustavima-bank-of-america-troskovi-sanacije-dosezu-stotine-milijuna-dolara"
+    },
+    {
+      "naslov": "Tenstorrent, an Nvidia rival, raised $1.5 billion at a $6.2 billion valuation instead of being sold.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/19/tenstorrent-hits-6-2b-valuation-to-scale-open-weight-ai-chips/"
+    },
+    {
+      "naslov": "Researchers left copies of Claude Opus 4.7 alone on a virtual island for 30 hours each, and the agents invented their own games and \"drew\" constellations out of stones.",
+      "izvor": "MIT Technology Review",
+      "url": "https://www.technologyreview.com/2026/10/19/1147095/ai-stranded-claude-virtual-desert-island-play/"
+    },
+    {
+      "naslov": "Cohere merged vision encoder support for its North Micro Vision model into llama.cpp, so all of its newer models can now run locally.",
+      "izvor": "r/LocalLLaMA",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xa0cyz/llamacpp_support_for_cohere_models/"
+    },
+    {
+      "naslov": "Microsoft dropped a key investment in a large data center in Essex because the British grid can't deliver that much power.",
+      "izvor": "Bug.hr",
+      "url": "https://www.bug.hr/biznis/microsoft-odustaje-od-najveceg-britanskog-podatkovnog-centra-63676"
+    },
+    {
+      "naslov": "Trump named Jay Clayton as the administration's first AI coordinator.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/trump-imenovao-koordinatora-za-ai"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "OpenMobile-2: an open agent that uses phone apps",
+      "objasnjenje": "An agent that learns to operate mobile apps on simulated apps, backed by a large training dataset. It combines tapping through the screen with calling app functions directly, and according to the authors it also performs well on real devices.",
+      "zastoJeZanimljivo": "It shows how agents might use your app. If you expose App Intents on iOS (system shortcuts for in-app actions), it's easier for an agent than tapping through the screen.",
+      "url": "https://huggingface.co/papers/2610.14157",
+      "github": "https://github.com/OpenMobile2/OpenMobile2-Code"
+    },
+    {
+      "naslov": "LEV: a model that \"thinks\" by looping through layers instead of writing tokens",
+      "objasnjenje": "Instead of writing a long chain of thought, the model runs data through the same layers again and again to gain depth. A dedicated mechanism decides when it's done, so easy questions pass quickly while hard ones get more compute.",
+      "zastoJeZanimljivo": "This is a path to faster, cheaper answers to hard questions, without paying for thousands of reasoning tokens.",
+      "url": "https://huggingface.co/papers/2610.20951",
+      "github": "https://github.com/OpenLAIR/lev"
+    },
+    {
+      "naslov": "Scene-Designer: an agent that builds 3D interiors from a description and checks its own work",
+      "objasnjenje": "The agent was trained on two datasets: one shows how to design a room, the other how to critique one, for example whether furniture physically fits and whether the layout makes sense. According to the authors, the built-in critic is better than general-purpose models at judging scenes.",
+      "zastoJeZanimljivo": "You can carry the \"designer plus critic\" pattern over to your own agents, and the use in home-design apps is obvious.",
+      "url": "https://huggingface.co/papers/2610.23121",
+      "github": "https://github.com/ZJU-OmniAI/Scene-Designer"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "What's Eating My Mac",
+      "problem": "Your Mac runs hot and slow, and Activity Monitor is full of processes with meaningless names. On Reddit, Claude accidentally discovered a crypto miner eating 12 cores.",
+      "zaKoga": "Mac users who aren't sysadmins, freelancers and students",
+      "ulogaAi": "Takes the process list and resource usage, explains each process in one plain sentence, and flags suspicious ones (unknown signature, high background CPU, unusual path).",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Build a SwiftUI MenuBarExtra app that reads processes every 30 seconds (NSRunningApplication + ps via Process)",
+        "Send any process using over 80% CPU for a sustained period to a cheap model (e.g. Claude Haiku 5.5) with its name, path and signature",
+        "Show a traffic light (OK / check / suspicious) and a \"Show in Finder\" button",
+        "Share the first version as a free DMG on r/macapps"
+      ],
+      "inspiracija": "A Reddit story about Claude Code finding an xmrig miner while building a temperature app"
+    },
+    {
+      "naziv": "API Bill Alarm",
+      "problem": "After the OpenCode breach, some people woke up to bills over $1,000. Most developers don't watch their spending until the invoice email arrives.",
+      "zaKoga": "Indie developers who use API keys from multiple providers",
+      "ulogaAi": "Learns the usual spending pattern by hour and day, briefly explains any anomaly (\"3x more tokens than usual, all from a new model\"), and suggests rotating the key immediately.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "In Supabase, create a table for daily spend and an Edge Function that pulls usage data hourly from each provider's admin/usage API (check each one's docs)",
+        "Add a simple rule: a spike of more than 3x the 7-day average",
+        "Send a push notification to your iPhone (APNs) or a Telegram message",
+        "Store keys only in Supabase Vault, never on the client"
+      ],
+      "inspiracija": "The OpenCode Console breach and the stolen API keys"
+    },
+    {
+      "naziv": "Home Medicine Cabinet",
+      "problem": "There are medicines in the cabinet that we no longer know what they're for or when they expire, and the leaflets are tiny or were thrown away by someone in the household.",
+      "zaKoga": "Families and people caring for elderly parents in Serbia",
+      "ulogaAi": "Reads the name, dose and expiry date from a photo of the box, matches the medicine against the public drug registry (ALIMS), and briefly says what it's for and when to see a doctor. It doesn't give diagnoses.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "In a SwiftUI app, use VisionKit to scan the box and Vision OCR for the expiry date",
+        "Call a vision model to extract structured data (JSON: name, dose, expiry)",
+        "Build a Supabase table with data from the public drug registry and match medicines by name",
+        "Add local notifications 30 days before expiry and a clear warning that the app doesn't replace a doctor"
+      ],
+      "inspiracija": "The Rundown Roundtable: Claude as a symptom diary and photos of a home medicine cabinet"
+    },
+    {
+      "naziv": "Lease Without Surprises",
+      "problem": "Apartment and commercial lease contracts are full of clauses tenants don't understand (deposit, notice period, costs), and a lawyer is expensive for every listing.",
+      "zaKoga": "Students, young renters and small business owners in Serbia",
+      "ulogaAi": "Reads the whole contract at once (thanks to the large context and low cost), flags risky clauses, compares them with common practice, and suggests questions for the landlord.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Build an Angular page for uploading a PDF or a photo of the contract",
+        "In a Supabase Edge Function, send the text to a cheap long-context model (MiniMax M3.1 Flash or DeepSeek V4.1 Flash) along with a hand-written list of risks",
+        "Show the result as a list of highlighted paragraphs in red, yellow and green",
+        "Don't store documents after processing, and say so clearly on the page"
+      ],
+      "inspiracija": "MiniMax M3.1 Flash with its 1M-token context and the price race among Chinese Flash models"
+    },
+    {
+      "naziv": "I Built It First",
+      "problem": "Indie developers are afraid to show a demo because AI can copy it quickly, and they have no simple proof that the idea was theirs and when they had it.",
+      "zaKoga": "Indie game and app developers in the region",
+      "ulogaAi": "Automatically turns screenshots, videos and descriptions into a timestamped summary of key mechanics, and later compares a suspected clone against the stored record and pulls out the similarities.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Build a web app (Angular + Supabase Storage) for uploading a build or video",
+        "Compute a SHA-256 hash and write it to a public timestamping service (e.g. OpenTimestamps)",
+        "Use a vision model to generate a description of the mechanics and store it with the hash",
+        "Build a comparison page: a link to the clone checked against your record, with a similarity report"
+      ],
+      "inspiracija": "Ars Technica: AI game clones are making indie developers hide their demos"
+    }
+  ],
+  "cene": "DeepSeek V4.1 Flash saw the biggest cut, going from $0.0472/$0.12 to $0.0352/$0.0112 per 1M input/output tokens. GLM 5 (from $1/$3.2 to $0.6/$1.92) and Qwen3.5 397B A17B (from $0.5/$3.6 to $0.39/$2.34) also got cheaper, while DeepSeek V4 Flash 0731 (from $0.15/$0.15 to $0.44/$1.32), GLM 5.3 Flash (from $0.048/$0.2 to $0.15/$0.5) and Qwen3.5-27B (from $0.195/$1.56 to $0.27/$2.16) got more expensive. DeepSeek V4.1 Flash is now the cheapest in the cheap-and-fast tier, GLM 5.3 at $0.079/$1.4 leads the mid tier, and Kimi K3 has the cheapest input among top models ($0.239). Among newer models, Claude Haiku 5.5 at $0.1/$0.5 is worth noting, ten times cheaper than Haiku 4.5 ($1/$5).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Are you shipping code you don't understand?",
+        "oCemuSePrica": "Two big discussions are running on Hacker News: how to live with AI code you don't fully understand, and why everyone should have their own LLM proxy (an intermediary that logs every model call) to know what their agent is doing. Simon Willison also shared a post, \"My obituary for programming,\" about losing the joy of puzzle-solving.",
+        "glasovi": "One Meta engineer writes that his code has turned into a black box, while some commenters reply that the answer is tests, invariants and automated verification, not reading every line. Willison draws a distinction: people who love building systems gain a lot, while those who enjoyed the puzzles themselves really do lose out.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News (Ask HN)",
+            "url": "https://news.ycombinator.com/item?id=50151036"
+          },
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50145507"
+          },
+          {
+            "platforma": "ostalo",
+            "naziv": "Simon Willison",
+            "url": "https://simonwillison.net/2026/Oct/19/my-obituary-for-programming/"
+          }
+        ]
+      },
+      {
+        "naslov": "Rumors of an October model war",
+        "oCemuSePrica": "On r/singularity and r/OpenAI, people are speculating that Anthropic, Google (Gemini 4 Carbon) and OpenAI (GPT-6.1 Terra) will ship new models before the end of the month. The evidence cited is The Information's report and a model name seen in a Microsoft update. Meanwhile, OpenAI's \"aurora\" image models have been spotted on Arena.",
+        "glasovi": "It's driven by Reddit accounts relaying reports and screenshots. No company has confirmed anything, so for now all of this is a rumor.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1x9ywfa/octobers_ai_model_wars_are_heating_up_the/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/OpenAI",
+            "url": "https://www.reddit.com/r/OpenAI/comments/1xa1d4e/gpt61_terra_spotted_in_an_microsoft_evaluation/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xa73il/rumours_are_floating/"
+          }
+        ]
+      },
+      {
+        "naslov": "Claude Code as a guardian and as a risk on your machine",
+        "oCemuSePrica": "Two opposing stories are circulating on r/ClaudeAI. In one, Claude, while building a temperature app, noticed an xmrig miner using about 12 cores. In the other, given completely free rein, it downloaded tools infected with the Expiro virus to decompile a game. Together with the OpenCode breach, this has kicked off a conversation about how much freedom to give an agent.",
+        "glasovi": "The author of the virus story admits he naively let the agent download whatever it found. Commenters advise sandboxing, approving installs and checking where tools come from.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1x9smgq/claude_caught_a_cryptominer_on_my_mac_whilst/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xa1ds8/claude_code_installed_tooling_which_was_actually/"
+          }
+        ]
+      },
+      {
+        "naslov": "Goodfire: \"we were looking at neural networks the wrong way\"",
+        "oCemuSePrica": "Nick Cammarata's 26,000-word essay argues that LLMs are far more understandable than people thought. On X, some call it the most important paper of the year, while others say it's an unproven hunch.",
+        "glasovi": "Enthusiasm comes from some researchers, including @tszzl. Skeptics include Jacob Hilton, who says less than 0.01% of a model's internals are understood, and Neel Nanda, who finds the work interesting but says it doesn't change the bigger picture.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@JacobHHilton",
+            "url": "https://x.com/JacobHHilton/status/2110915993526821357"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@NeelNanda5",
+            "url": "https://x.com/NeelNanda5/status/2110875974296654062"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@tszzl",
+            "url": "https://x.com/tszzl/status/2110758311339729061"
+          }
+        ]
+      },
+      {
+        "naslov": "LocalLLaMA waits for MiniMax weights and downloads the \"deslop\" model",
+        "oCemuSePrica": "The local community is counting down the days to October 23 and the MiniMax M3.1 Flash weights. Meanwhile, a small Qwen3-4B fine-tuned to avoid writing in an \"AI tone\" is popular on Hacker News, and an analysis finding that labs report scores 6.4% higher on average than independent testers has also drawn attention.",
+        "glasovi": "MiniMax confirmed the release on X. The author of whatmodel.sh published the open data, and HN comments on the deslop model include both praise and complaints that the text has become \"flat.\"",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x9suvs/minimaxm31flash_is_coming/"
+          },
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News (Show HN)",
+            "url": "https://news.ycombinator.com/item?id=50151928"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x9skrx/ai_labs_report_benchmark_scores_64_higher_than/"
+          }
+        ]
+      }
+    ],
+    "snimci": [
+      {
+        "naslov": "LIVE: The People's AI Assembly",
+        "kanal": "AI Now Institute / More Perfect Union",
+        "opis": "A recording of a public event in New York on AI regulation, with a speech by Mayor Zohran Mamdani.",
+        "url": "https://www.youtube.com/live/ttrrVouMbXM"
+      }
+    ]
+  },
+  "nedeljni": null
+}
