@@ -1,0 +1,561 @@
+{
+  "datum": "2026-10-23",
+  "generisano": "2026-10-23T03:06:22.200Z",
+  "model": "claude-opus-5-5",
+  "prevod": "claude-sonnet-5-5",
+  "ukratko": "Security dominated the day. PHP2Shell turned out to be worse than it first looked: Amazon says attackers were trying to exploit the flaw four days before it was disclosed, and on the same day a compromised LiteLLM package sat on PyPI for two hours. Also worth your attention as a developer: the Claude API got its first new version since 2023, Anthropic handed the Agent Skills standard to the Linux Foundation, and OpenAI opened its Decisions API to everyone for fast, cheap decisions.",
+  "vesti": [
+    {
+      "naslov": "PHP2Shell: attackers had a four-day head start, and attacks are now widespread",
+      "staSeDesilo": "Amazon reports it saw attempts to exploit two critical PHP flaws four days before the public disclosure, and says they are now being \"widely exploited.\" Cloudflare rolled out WAF rules (a WAF is a filter that sits in front of a site) to all users, including free ones, before a patch was available, but says itself that it's only a stopgap. OpenAI released a Codex skill that helps you check whether your sites are affected.",
+      "zastoJeBitno": "If anything you run is on PHP (WordPress, a legacy backend, a client's hosting), patching is mandatory. A WAF is no substitute for a patch, and macOS 11 and older ship with a vulnerable PHP. Check the official PHP advisory for the exact patched versions.",
+      "kategorija": "bezbednost",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/security/2026/10/hackers-got-a-four-day-head-start-on-epic-php2shell-vulnerability/"
+        },
+        {
+          "naziv": "Latent Space / AINews",
+          "url": "https://www.latent.space/p/ainews-openais-patch-the-planet-program"
+        },
+        {
+          "naziv": "The Rundown",
+          "url": "https://therundownai.beehiiv.com/p/ai-finds-a-security-hole-in-70-of-the-web"
+        }
+      ]
+    },
+    {
+      "naslov": "LiteLLM 1.107.0 on PyPI was infected with a credential stealer",
+      "staSeDesilo": "A malicious version of LiteLLM, a popular Python library that unifies calls to different AI APIs, sat on PyPI for about two hours before it was removed. Every time Python started, the package stole SSH, cloud and AI keys, and it also installed a backdoor that phoned home every hour. LiteLLM suspects GitHub tokens leaked from the logs of an internal setup that was exposed to the internet.",
+      "zastoJeBitno": "If you installed or updated LiteLLM on October 21, the advice is to rebuild the machine from scratch, pin version 1.106.2, and rotate every key the machine could reach. It's also a good reminder to pin dependency versions in your own projects.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-10-22"
+        },
+        {
+          "naziv": "Mastodon (@mohith808)",
+          "url": "https://mastodon.social/@mohith808/117487908006207276"
+        }
+      ]
+    },
+    {
+      "naslov": "Claude API gets its first new version since 2023: 2026-10-21",
+      "staSeDesilo": "Anthropic released API version 2026-10-21, the first official one since 2023. New major versions of the SDKs and CLI also shipped, and they use the new API by default. The old 2023-06-10 version has not been retired, and there is a migration guide.",
+      "zastoJeBitno": "The next time you update the Anthropic SDK in your Supabase edge functions or Angular backend, you'll be jumping to a major version that changes behavior. Read the migration guide before running `npm update`. Anthropic says new versions will ship more often going forward, so developers can adapt to changes before a new model requires them.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-10-22"
+        }
+      ]
+    },
+    {
+      "naslov": "Anthropic donates Agent Skills to the Linux Foundation, as it did with MCP",
+      "staSeDesilo": "Agent Skills, a standard for packaging instructions and workflows that an agent loads on demand, is moving to the Agentic AI Foundation under the Linux Foundation. MCP was donated to the same foundation earlier. According to Anthropic, more than 70 agent platforms have adopted the standard since December 2025.",
+      "zastoJeBitno": "A skill you write for Claude Code is more likely to work in other tools too, since no single company controls the standard anymore. It's a good reason to turn your repeatable workflows (deploys, tests, Supabase migrations) into skills.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Anthropic",
+          "url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation"
+        },
+        {
+          "naziv": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Oct/22/donating-agent-skills/"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI opens Decisions API: a model that only picks, in about 100 ms",
+      "staSeDesilo": "OpenAI has opened the Decisions API to all users, after announcing it at its developer day on September 29. The API doesn't write text; it picks one of the options you give it, and runs on a fine-tuned ChatGPT Luna model. Responses arrive in roughly 100 to 180 ms, and Speak says it cut its response time from 1.4 to 0.13 seconds. It's a response to Jev, a model from the startup TypeSafe that was first to build such \"super classifiers.\"",
+      "zastoJeBitno": "For routing, message classification or choosing the next step in an app, you no longer need a slow, expensive chat model. Exact prices weren't published in the articles, so check the link.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "OpenAI",
+          "url": "https://openai.com/index/decisions-api"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/22/openai-makes-its-jev-competitor-widely-available-as-decision-model-competition-heats-up/"
+        }
+      ]
+    },
+    {
+      "naslov": "Agents and passwords: banks lock them out, 1Password offers a safer way in",
+      "staSeDesilo": "Major US banks, including Morgan Stanley and JPMorgan, are blocking or restricting AI agents that log in with customer credentials, and most plan to leave them read-only access. The same day, 1Password introduced \"1Password for Agents\": the agent identifies itself with a key, the user approves the login, and 1Password enters the password itself, so the agent never sees it. Supported agents include Claude Duet, OpenAI Dots and ChatGPT Work, Grok Bot, Meta Muse and Town.",
+      "zastoJeBitno": "If you build an app with user accounts, expect agents to access it more and more often instead of humans. Decide what you'll allow them: read-only, dedicated tokens, or nothing.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/major-us-banks-are-locking-out-ai-agents-that-log-in-with-customer-credentials/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/22/1password-launches-a-way-for-ai-agents-to-log-in-on-your-behalf-without-seeing-your-password/"
+        }
+      ]
+    },
+    {
+      "naslov": "Canva Craft: Canva's first image model, which plans the layout first",
+      "staSeDesilo": "Canva has launched its own image model that works in two steps: it first plans the layout, sizes and text, and only then generates an image of up to 2K in more than 30 formats. It's available to all users through Dream Lab and via the Canva API, and the image can be turned into a layered design that you can keep editing. Cheaper Craft-fast and Craft-ultrafast versions have also been announced.",
+      "zastoJeBitno": "If you're building a tool for small businesses that need posts and posters, you can now generate a design that gets edited by hand afterward, instead of a flat image.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1017151/canva-craft-in-house-ai-model"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/22/canva-releases-its-first-image-generation-model/"
+        }
+      ]
+    },
+    {
+      "naslov": "Attackers are using AI agents: Symantec finds an agent that hijacks other people's models, and China-linked hackers break in through ConnectWise",
+      "staSeDesilo": "Symantec has uncovered an attack agent that takes over unprotected language models on the internet and uses them to attack servers, steal databases and install crypto miners, running up to 100,000 steps with no human involved. The owner of the hijacked model foots the bill. Meanwhile, Microsoft says a China-linked hacker breached ConnectWise and, with the help of AI agents, quickly got into thousands of its customers.",
+      "zastoJeBitno": "If you have an exposed model or API key anywhere without authentication and spending limits, the risk is no longer just a data leak but also a huge bill. Lock down your endpoints and set limits.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/an-ai-agent-in-skynet-mode-hijacks-unprotected-language-models-to-launch-self-sustaining-cyberattacks/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/22/chinese-hackers-spied-on-thousands-of-companies-after-breaching-it-giant-connectwise/"
+        }
+      ]
+    },
+    {
+      "naslov": "Nvidia lists Serbia's Orion Telekom among telcos building AI infrastructure",
+      "staSeDesilo": "At Nvidia's GTC conference in Berlin, Orion Telekom was presented alongside major international telecoms building AI infrastructure. B92 describes it as a new phase of AI development in Serbia. Check the link for specific capacities and service prices.",
+      "zastoJeBitno": "If this turns into GPU capacity in the country, local companies could run models locally without sending data outside the region. That matters for clients who care about where their data lives.",
+      "kategorija": "kompanije",
+      "vaznost": 1,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "B92 Tehnopolis",
+          "url": "https://www.b92.net/tehnopolis/aktuelno/278656/srpski-orion-telekom-na-nvidia-gtc-u-berlinu-nova-faza-ai-razvoja-u-srbiji/vest"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Gradium Phonon 31m",
+      "tip": "model",
+      "opis": "A small open text-to-speech (TTS) model: 31M parameters, a 64.5 MB file, 37 English voices and an Apache 2.0 license. It runs on CPUs, phones, Raspberry Pi 5 and in the browser (WASM/WebGPU), with no cloud and no per-character fees. The 40m version covers French, German, Spanish and Portuguese, but under a non-commercial license.",
+      "kakoProbati": [
+        "Open the article and find the link to the Gradium Phonon model (GGUF q8 file)",
+        "Download Phonon 31m and run it locally on a Mac (check the link for runtime details)",
+        "For a web app, try the WASM/WebGPU variant to generate speech right in the browser"
+      ],
+      "link": "https://www.marktechpost.com/2026/10/22/gradium-phonon-31m-on-device-tts/",
+      "cena": "free (31m is Apache 2.0)"
+    },
+    {
+      "naziv": "IBM Granite Speech 5.0 2B",
+      "tip": "model",
+      "opis": "An open model for speech transcription and translation in 6 languages, under an Apache 2.0 license. It ranks second among open-weight models on the Open ASR leaderboard, with an average English error rate of 5.68%. It also runs on Apple Silicon.",
+      "kakoProbati": [
+        "On a Mac, install mlx-audio and load Granite Speech 5.0 2B from Hugging Face",
+        "Or download the GGUF version (IBM recommends Q8_0) and run it through llama.cpp",
+        "Split audio into chunks of up to about 2 minutes, as IBM recommends"
+      ],
+      "link": "https://www.marktechpost.com/2026/10/22/ibm-granite-speech-5-0-2b-release/",
+      "cena": "free"
+    },
+    {
+      "naziv": "Canva Craft",
+      "tip": "model",
+      "opis": "Canva's image model plans the layout first, and the image can then be turned into a layered design that you edit.",
+      "kakoProbati": [
+        "Log in to Canva and open the Dream Lab tab",
+        "Describe a post or poster, e.g. \"poster for a café, autumn menu, 4:5 format\"",
+        "Click the result and turn it into an editable design (Canva Magic)",
+        "For automation, look at the Canva API"
+      ],
+      "link": "https://techcrunch.com/2026/10/22/canva-releases-its-first-image-generation-model/",
+      "cena": "check the link"
+    },
+    {
+      "naziv": "OpenAI Decisions API",
+      "tip": "funkcija",
+      "opis": "An API that picks one of the options you offer, with a response in about 100 to 180 ms. Good for routing, classification and triage.",
+      "kakoProbati": [
+        "Log in to the OpenAI platform with your existing API key",
+        "Open the Decisions API docs from the link",
+        "Try a simple case: sort a user's message into \"support / sales / spam\""
+      ],
+      "link": "https://openai.com/index/decisions-api",
+      "cena": "check the link"
+    },
+    {
+      "naziv": "Cohere Rerank 5",
+      "tip": "model",
+      "opis": "A reranker, i.e. a model that reorders search results before they reach the LLM, in two versions: Pro and Fast. The new Context Focus option returns only the relevant passages from a document, so you send fewer tokens to the LLM.",
+      "kakoProbati": [
+        "Create a Cohere API key",
+        "In your RAG call, use the model `rerank-v5.0-fast` (or `rerank-v5.0-pro` when quality matters more than speed)",
+        "Compare how many tokens you send to the LLM before and after the reranker"
+      ],
+      "link": "https://www.marktechpost.com/2026/10/22/cohere-rerank-5-context-focus/",
+      "cena": "check the link"
+    },
+    {
+      "naziv": "Twenty CRM",
+      "tip": "projekat",
+      "opis": "An open alternative to Salesforce, built with AI in mind and trending on GitHub today. The CRM can be versioned and customized like the rest of your code.",
+      "kakoProbati": [
+        "For the fastest start, create an account at twenty.com and set up a workspace",
+        "Or clone the repo and self-host it following the docs",
+        "Let Claude Code add custom fields for your client"
+      ],
+      "link": "https://github.com/twentyhq/twenty",
+      "cena": "free (open source), cloud: check the link"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Google unveiled Agent Compute Engine, where every Gemini agent gets its own hardware-isolated micro virtual machine.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/googles-agent-compute-engine-gives-every-gemini-agent-its-own-hardware-isolated-micro-virtual-machine/"
+    },
+    {
+      "naslov": "In a Gartner survey of 2,002 CIOs, only 13% of companies get real business value from AI, and 51% expect AI to raise their costs.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/only-13-percent-of-companies-see-real-returns-from-ai-gartner-survey-finds/"
+    },
+    {
+      "naslov": "OpenAI is reportedly preparing a new $30 billion raise at a $1.25 trillion valuation ahead of an IPO.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/22/openai-working-on-new-30b-raise-at-1-25t-valuation-ahead-of-ipo/"
+    },
+    {
+      "naslov": "Microsoft claims in a paper published in Science that its diagnostic system beats general practitioners on hard cases, but most of the improvement comes from the underlying model rather than the system itself.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/22/microsofts-mustafa-suleyman-says-its-ai-outperforms-doctors-on-hard-cases-as-he-chases-medical-superintelligence/"
+    },
+    {
+      "naslov": "Thousands of OpenAI agents, working with PerturbAI and Scripps, analyzed data from millions of mouse brain cells in 32 minutes, a job that would take humans months.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/openai-agents-analyze-mouse-brain-data-in-32-minutes-a-job-that-would-take-humans-months/"
+    },
+    {
+      "naslov": "MIT left 13 AI agents with nothing to do on a virtual island; they invented games and \"mourned\" a lost ring, and afterward did their jobs better.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/22/left-alone-with-nothing-to-do-ai-agents-started-playing/"
+    },
+    {
+      "naslov": "Uber rolled out ChatGPT Work to all 30,000 employees after a smaller pilot.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/22/uber-puts-all-30000-employees-on-chatgpt-work/"
+    },
+    {
+      "naslov": "DeepSeek has reportedly raised $15 billion, just days after the US ordered federal agencies to remove its technology.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/22/deepseek-reportedly-raises-15b-days-after-us-restrictions/"
+    },
+    {
+      "naslov": "Meta turned Muse conversation sharing back on, after pausing it because public links were easy to find.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1017066/meta-muse-sharing-back-on-artifiacts"
+    },
+    {
+      "naslov": "A modder used OpenAI Codex and an old game to build a Nintendo Switch 2 jailbreak.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/games/1016862/nintendo-switch-2-jailbreak-ai"
+    },
+    {
+      "naslov": "Liquid AI unveiled RIPL, a system for running its small LFM models that, by its own tests, returns a full response in under 50 ms, though not for longer requests.",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/10/22/liquid-ai-ripl-real-time-inference-engine/"
+    },
+    {
+      "naslov": "Hugging Face released an open biology model that lets researchers \"chat\" about DNA and how changes affect gene activity.",
+      "izvor": "Wired",
+      "url": "https://www.wired.com/story/hugging-face-new-ai-biology-model-chat-with-dna/"
+    },
+    {
+      "naslov": "Perplexity and Nvidia introduced JOLT, a teaching method in which the same model plays both teacher and student; on the MATH benchmark it matched GRPO with 6.5 times fewer training tokens.",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/10/21/perplexity-jolt-joint-on-policy-learning-teaching/"
+    },
+    {
+      "naslov": "Finnish authorities ordered Google to halt work on a data center after about 400,000 trees were cut down without environmental permits.",
+      "izvor": "Nedeljnik",
+      "url": "https://www.nedeljnik.rs/google-posekao-400-000-stabala-u-finskoj-zbog-data-centra-drzava-nalozila-hitan-prekid-radova/"
+    },
+    {
+      "naslov": "HUB201 held CyberConnect 2026 at Belgrade's Ložionica, an internships and jobs fair for cybersecurity and AI, which drew 220 applications.",
+      "izvor": "Nedeljnik",
+      "url": "https://www.nedeljnik.rs/odrzan-sajam-zaposljavanja-cyberconnect-2026-u-lozionici/"
+    },
+    {
+      "naslov": "Anthropic, OpenAI and Nvidia had their most expensive lobbying quarters yet from July to September; Nvidia spent $2.2 million, Anthropic $2.1 million, and OpenAI $1.5 million.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/policy/1016585/openai-anthropic-nvidia-lobbying-records"
+    },
+    {
+      "naslov": "Discord now renders Markdown files properly in previews, with tables and formatting, making it easier to share agent instructions.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/news/1017012/discord-markdown-previews-organize-servers-channels"
+    },
+    {
+      "naslov": "Anthropic opened a call for life sciences researchers to work with its team on projects as guest investigators.",
+      "izvor": "Anthropic",
+      "url": "https://www.anthropic.com/news/open-call-guest-investigators-life-sciences"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "Cache Engineering for Agents (AKV)",
+      "objasnjenje": "Agents in long sessions drag around a huge cache of prior context (the KV cache, i.e. the memory a model keeps so it doesn't recompute the same text). AKV introduces operations that evict or move parts of the cache without changing the agent's workflow, along with a server built specifically for this. The result is faster and more accurate agents.",
+      "zastoJeZanimljivo": "This is a practical reason agents are getting cheaper without a better model. The code is public, so the idea can be applied if you serve your own models.",
+      "url": "https://huggingface.co/papers/2610.28577",
+      "github": "https://github.com/thu-nics/AKV"
+    },
+    {
+      "naslov": "Right Screen, Wrong Transition: world models as a check for GUI agents",
+      "objasnjenje": "An agent that clicks around a screen often fails to notice it has landed on a wrong or spoofed screen. This paper uses a small model that predicts what the next screen should look like after an action and compares it with the actual state. That way it quickly and accurately catches wrong transitions and hijacked screens.",
+      "zastoJeZanimljivo": "Agents that operate phones (see GUI-Owl 1.5 and \"phone use\") are coming to iPhone too, and a check like this is a simple defense against injected fake screens.",
+      "url": "https://huggingface.co/papers/2610.11942",
+      "github": "https://github.com/jiamingzhang94/lgwm"
+    },
+    {
+      "naslov": "LASAGNA: do RAG tricks add up?",
+      "objasnjenje": "The authors tested how popular RAG techniques (a better retriever, reranking, query rewriting and so on) behave when combined, on small and large document collections. It turns out that the improvement a technique gives on its own doesn't reliably predict what it will deliver in combination with the others.",
+      "zastoJeZanimljivo": "If you're building document search in Supabase (pgvector), the message is clear: measure the whole stack on your own data, and don't stack tricks blindly.",
+      "url": "https://huggingface.co/papers/2610.29722",
+      "github": "https://github.com/dolev31/lasagna"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Traffic light for Claude Code on iPhone",
+      "problem": "While Claude Code runs a long task on another computer, you keep checking whether it's waiting for your answer or has finished.",
+      "zaKoga": "Developers who let Claude Code run for long stretches while they work on something else.",
+      "ulogaAi": "Claude Code hooks send events (working, waiting for input, done), and the app uses the Claude API to sum up what happened in one sentence.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Write a Claude Code hook that sends a POST to a Supabase edge function on every event",
+        "Write the status to a Supabase table and push it to a SwiftUI app via Realtime",
+        "Show the status as a Live Activity on the lock screen, red or green",
+        "Add a push notification only for the \"waiting for your answer\" state"
+      ],
+      "inspiracija": "A Reddit post where a user connected a USB light (Busylight) to Claude Code hooks."
+    },
+    {
+      "naziv": "Infected packages",
+      "problem": "When an infected package release sits on a registry for just two hours (like LiteLLM 1.107.0), most people never find out they may have installed it.",
+      "zaKoga": "Small teams and freelancers in Serbia who maintain several Node and Python projects for clients.",
+      "ulogaAi": "A model extracts the package name and affected versions from security advisories, then writes a short note on what to do (which version to pin, which keys to rotate).",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "An Angular page where the user pastes a package-lock.json or requirements.txt (or connects a GitHub repo)",
+        "A Supabase table of known infected versions, filled by a cron function from public advisories",
+        "A call to Claude Sonnet 5 that turns an advisory into structured JSON (package, versions, what to do)",
+        "An email alert when one of the projects matches"
+      ],
+      "inspiracija": "LiteLLM 1.107.0 on PyPI with a key stealer."
+    },
+    {
+      "naziv": "Poster of the week for a café",
+      "problem": "Small cafés and bakeries in Serbia make Instagram posts with their offers and prices by hand every week, and it eats up their time.",
+      "zaKoga": "Local restaurateurs and small shops without a designer.",
+      "ulogaAi": "Canva Craft generates a layered design based on the offer, and an LLM writes the post copy in Serbian.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Sign up for the Canva API and try Craft generation through Dream Lab",
+        "Build a simple form (Angular or SwiftUI): offer, prices, mood",
+        "A Supabase edge function sends the request to Canva, and Claude writes the post copy",
+        "Return a link to the design that the owner can fine-tune in Canva before posting"
+      ],
+      "inspiracija": "Canva Craft and its designs that can be edited further in Canva."
+    },
+    {
+      "naziv": "Direct ordering for local restaurants",
+      "problem": "Restaurants pay high commissions to delivery platforms, even on regulars who would happily order directly.",
+      "zaKoga": "Pizzerias and restaurants in Serbian cities with a lot of regular customers.",
+      "ulogaAi": "Claude Code writes most of the app, and a model turns a photo of a paper menu into a digital menu with prices.",
+      "tezina": 4,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Look at how Nomback was built (Expo, Supabase, Stripe Connect) and adapt it to the local market",
+        "Payments: check local options for cards or cash on delivery",
+        "A function that turns a photo of a menu into a menu in Supabase",
+        "Find your first client by showing the owner their own menu on your phone"
+      ],
+      "inspiracija": "A Reddit post about Nomback, a direct-ordering app built with Claude Code."
+    },
+    {
+      "naziv": "Keys for agents",
+      "problem": "Users increasingly let AI agents log in to apps with their passwords, and banks are already blocking agents because of it.",
+      "zaKoga": "Developers of SaaS and Supabase apps who want to give agents safe access.",
+      "ulogaAi": "Customers' agents use scoped tokens, and a small model reviews their calls and flags suspicious behavior.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "In Supabase, create a table of agent tokens with a scope (read-only, expiry)",
+        "Add RLS policies that check the token's scope on every call",
+        "Build a page in the app where the user issues and revokes tokens",
+        "Describe agent access as an MCP server or an Agent Skill"
+      ],
+      "inspiracija": "US banks are blocking agents, while 1Password offers agent login without revealing the password."
+    }
+  ],
+  "cene": "DeepSeek V4.1 Flash got cheaper today, dropping from $0.3/$1.2 to $0.165/$0.66 per million tokens (input/output), and Mistral Small 3.2 24B fell from $0.0938/$0.25 to $0.075/$0.2. GLM 5.3 Flash's input price dropped from $0.02 to $0.0052, but its output price rose from $0.121 to $0.1985. That makes GLM 5.3 Flash the cheapest in the cheap-and-fast class, GLM 5.3 ($0.079/$1.4) the cheapest in the mid-tier, and among top models Kimi K3 has the cheapest input ($0.239) and Grok 4.6 the cheapest output ($6).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "\"Black October\": PHP2Shell and a string of security incidents",
+        "oCemuSePrica": "After PHP2Shell, people have lumped LiteLLM, Railway, GitLab, eMudhra and other incidents into one list, so Reddit is talking about a \"Black October,\" and some are even predicting parts of the internet shutting down. The debate is whether this is a wave of AI-driven attacks or, above all, the biggest software security audit in history, which people are misreading as a catastrophe.",
+        "glasovi": "Joshua Achiam (@jachiam0) compares the moment to March 2020 and advises making backups, while Kelsey Piper (@KelseyTuoc) and Alex Johnson warn about the cost of constant panic and ask for concrete data. Cloudflare's CTO (@dok2001) stresses that a WAF is only a stopgap and the patch must be applied.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/OpenAI",
+            "url": "https://www.reddit.com/r/OpenAI/comments/1xchuni/cybersecurity_people_are_losing_their_minds_today/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xcc2cx/the_ai_cyber_arms_race_is_escalating_fast/"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@jachiam0",
+            "url": "https://x.com/jachiam0/status/2112968705240109558"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@dok2001",
+            "url": "https://x.com/dok2001/status/2112811965735202970"
+          }
+        ]
+      },
+      {
+        "naslov": "Who should get the strongest models for cyber defense",
+        "oCemuSePrica": "PHP2Shell was found using OpenAI's Daybreak program, which gives vetted researchers access to models, and that set off comparisons with Anthropic's stricter rules. The question is whether restricting access protects security or slows down defense.",
+        "glasovi": "@S1r1u5_ praises Daybreak and suggests a thousand vetted researchers get the best models under supervision, while @migtissera sharply criticizes Anthropic, which is his personal opinion. @kimmonismus recalls that Anthropic delayed broader access to Mythos-class models for four months to strengthen safeguards.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@S1r1u5_",
+            "url": "https://x.com/S1r1u5_/status/2113018237332160882"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@migtissera",
+            "url": "https://x.com/migtissera/status/2113087531101405346"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@kimmonismus",
+            "url": "https://x.com/kimmonismus/status/2112807106780762563"
+          }
+        ]
+      },
+      {
+        "naslov": "Update now or wait? The dilemma after LiteLLM",
+        "oCemuSePrica": "The infected LiteLLM showed the other side of the \"update everything immediately\" advice: if you always update, you risk an infected package, and if you wait, you stay vulnerable. Concrete cleanup steps are being shared on Mastodon.",
+        "glasovi": "@xeophon summed up the dilemma in a widely shared post, and J. D. Pressman (@jd_pressman) argues that endless patching isn't sustainable until the number of vulnerabilities and risky releases starts to fall. On Mastodon, @mohith808 advises rebuilding the machine, using version 1.106.2, and rotating all keys.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@xeophon",
+            "url": "https://x.com/xeophon/status/2112909915580928325"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@jd_pressman",
+            "url": "https://x.com/jd_pressman/status/2112990663755317671"
+          },
+          {
+            "platforma": "mastodon",
+            "naziv": "@mohith808",
+            "url": "https://mastodon.social/@mohith808/117487908006207276"
+          }
+        ]
+      },
+      {
+        "naslov": "Claude Code community: real projects, limits and \"was the model nerfed\"",
+        "oCemuSePrica": "On r/ClaudeAI, there's plenty of talk about concrete projects: a direct-ordering app for a pizzeria, a lamp that shows Claude Code's status, and a pixel-art game with 785 commits. Alongside that runs a pricing debate: many want a $50 plan between Pro ($20) and Max ($100), and after 29 days of measuring, LiveNerf found no evidence that Opus 5.5 was nerfed.",
+        "glasovi": "Solo developers point out that Claude Code writes almost all their code, but they still have to find the first customer themselves. LiveNerf's author says his data weakens the theory that Anthropic secretly nerfs models, but only within what the tool can measure.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xcm78x/i_used_claude_code_to_build_a_pizzeria_its_own/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xcle8t/claude_seriously_needs_a_50month_plan_between_pro/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xcraz9/did_they_nerf_opus_55_doesnt_look_like_it/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xcdwdx/i_got_tired_of_checking_whether_claude_code_needs/"
+          }
+        ]
+      },
+      {
+        "naslov": "Rumor: Qwen4 and Kimi 3.1 spotted on Arena",
+        "oCemuSePrica": "A claim is circulating on r/LocalLLaMA that Qwen4 and Kimi 3.1 have appeared on Arena, a site where users rate models blind. There's no official confirmation, so for now it's just a rumor.",
+        "glasovi": "The local-model community is most hopeful for a small, fast \"flash\" version of Qwen4. There are also reports that DeepSeek and MiniMax have cleared China's export registration and can continue with open models, but we haven't verified that source (Yuyuan Tantian).",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xcj1wm/qwen4_and_kimi31_on_arena_apperantly/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xcoelw/deepseek_and_minimax_clear_chinas_ai_export_rules/"
+          }
+        ]
+      }
+    ],
+    "snimci": []
+  },
+  "nedeljni": null
+}

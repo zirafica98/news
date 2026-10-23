@@ -1,0 +1,560 @@
+{
+  "datum": "2026-10-23",
+  "generisano": "2026-10-23T03:06:22.200Z",
+  "model": "claude-opus-5-5",
+  "ukratko": "Dan je obeležila bezbednost. PHP2Shell se ispostavio gorim nego što je izgledalo: Amazon kaže da su napadači pokušavali da iskoriste rupu četiri dana pre objave, a istog dana je na PyPI dva sata stajao zaražen LiteLLM paket. Za developere je važno i ovo: Claude API je prvi put od 2023. dobio novu verziju, Anthropic je standard Agent Skills predao Linux fondaciji, a OpenAI je svima otvorio Decisions API za brze i jeftine odluke.",
+  "vesti": [
+    {
+      "naslov": "PHP2Shell: napadači su imali četiri dana prednosti, a napadi su sada masovni",
+      "staSeDesilo": "Amazon javlja da je pokušaj zloupotrebe dve kritične rupe u PHP-u video četiri dana pre javne objave, i da se one sada „široko eksploatišu“. Cloudflare je pre zakrpe pustio WAF pravila (WAF je filter koji stoji ispred sajta) za sve korisnike, i besplatne, ali sam kaže da je to privremeno rešenje. OpenAI je objavio Codex skill koji ti pomaže da proveriš da li su tvoji sajtovi pogođeni.",
+      "zastoJeBitno": "Ako ti bilo šta radi na PHP-u (WordPress, stari backend, hosting klijenta), zakrpa je obavezna. WAF ne zamenjuje zakrpu, a stari macOS 11 i stariji dolaze sa ranjivim PHP-om. Tačne verzije sa zakrpom proveri u zvaničnom PHP saopštenju.",
+      "kategorija": "bezbednost",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/security/2026/10/hackers-got-a-four-day-head-start-on-epic-php2shell-vulnerability/"
+        },
+        {
+          "naziv": "Latent Space / AINews",
+          "url": "https://www.latent.space/p/ainews-openais-patch-the-planet-program"
+        },
+        {
+          "naziv": "The Rundown",
+          "url": "https://therundownai.beehiiv.com/p/ai-finds-a-security-hole-in-70-of-the-web"
+        }
+      ]
+    },
+    {
+      "naslov": "LiteLLM 1.107.0 na PyPI bio je zaražen kradljivcem lozinki",
+      "staSeDesilo": "Zlonamerna verzija LiteLLM-a, popularne Python biblioteke koja spaja pozive ka različitim AI API-jima, stajala je na PyPI oko dva sata pre nego što je uklonjena. Paket je pri svakom pokretanju Pythona krao SSH, cloud i AI ključeve, a uz to je instalirao backdoor koji se javljao na svaki sat. LiteLLM sumnja da su GitHub tokeni procureli iz logova jedne interne instalacije koja je bila izložena internetu.",
+      "zastoJeBitno": "Ako si 21. oktobra instalirao ili ažurirao LiteLLM, preporuka je da mašinu podigneš ispočetka, zaključaš verziju 1.106.2 i promeniš sve ključeve do kojih je mašina mogla da dođe. Ovo je i dobar podsetnik da zaključavaš verzije zavisnosti u svojim projektima.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-10-22"
+        },
+        {
+          "naziv": "Mastodon (@mohith808)",
+          "url": "https://mastodon.social/@mohith808/117487908006207276"
+        }
+      ]
+    },
+    {
+      "naslov": "Claude API dobio prvu novu verziju od 2023: 2026-10-21",
+      "staSeDesilo": "Anthropic je objavio verziju API-ja 2026-10-21, prvu zvaničnu od 2023. godine. Izašle su i nove glavne verzije SDK-ova i CLI-ja, koje podrazumevano koriste novi API. Stara verzija 2023-06-10 nije ukinuta, a postoji vodič za prelazak.",
+      "zastoJeBitno": "Kad sledeći put ažuriraš Anthropic SDK u Supabase edge funkcijama ili Angular backendu, prelaziš na glavnu verziju koja menja ponašanje. Pročitaj vodič za migraciju pre `npm update`. Anthropic kaže da će nove verzije ubuduće izlaziti češće, da bi programeri mogli da se prilagode izmenama pre nego što ih zatraži novi model.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-10-22"
+        }
+      ]
+    },
+    {
+      "naslov": "Anthropic predao Agent Skills Linux fondaciji, kao ranije MCP",
+      "staSeDesilo": "Agent Skills, standard za pakovanje uputstava i radnih tokova koje agent učitava po potrebi, prelazi u Agentic AI Foundation pod okriljem Linux fondacije. Istoj fondaciji je ranije predat i MCP. Prema Anthropic-u, standard je od decembra 2025. usvojilo više od 70 agentskih platformi.",
+      "zastoJeBitno": "Skill koji napišeš za Claude Code ima veće šanse da radi i u drugim alatima, jer standard više ne kontroliše jedna firma. To je dobar razlog da svoje ponovljive tokove rada (deploy, testovi, Supabase migracije) pretvoriš u skillove.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Anthropic",
+          "url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation"
+        },
+        {
+          "naziv": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Oct/22/donating-agent-skills/"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI otvorio Decisions API: model koji samo bira, i to za oko 100 ms",
+      "staSeDesilo": "OpenAI je svim korisnicima otvorio Decisions API, najavljen na developer danu 29. septembra. API ne piše tekst nego bira jednu od ponuđenih opcija, a radi na podešenom ChatGPT Luna modelu. Odgovori stižu za oko 100 do 180 ms, a Speak navodi da je vreme odziva spustio sa 1,4 na 0,13 sekundi. Ovo je odgovor na Jev, model startapa TypeSafe koji je prvi napravio takve „super klasifikatore“.",
+      "zastoJeBitno": "Za rutiranje, klasifikaciju poruka ili izbor sledećeg koraka u aplikaciji više ti ne treba spor i skup chat model. Tačne cene nisu objavljene u člancima, pa ih proveri na linku.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "OpenAI",
+          "url": "https://openai.com/index/decisions-api"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/22/openai-makes-its-jev-competitor-widely-available-as-decision-model-competition-heats-up/"
+        }
+      ]
+    },
+    {
+      "naslov": "Agenti i lozinke: banke ih zaključavaju, 1Password nudi bezbedniji ulaz",
+      "staSeDesilo": "Velike američke banke, među njima Morgan Stanley i JPMorgan, blokiraju ili ograničavaju AI agente koji se prijavljuju korisničkim podacima, a većina planira da im ostavi samo čitanje. Istog dana 1Password je predstavio „1Password for Agents“: agent se identifikuje ključem, korisnik potvrđuje prijavu, a 1Password sam unosi lozinku, tako da je agent nikad ne vidi. Podržani su Claude Duet, OpenAI Dots i ChatGPT Work, Grok Bot, Meta Muse i Town.",
+      "zastoJeBitno": "Ako praviš aplikaciju sa nalozima, pripremi se da će joj sve češće pristupati agenti umesto ljudi. Odluči šta im dozvoljavaš: samo čitanje, posebne tokene ili ništa.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/major-us-banks-are-locking-out-ai-agents-that-log-in-with-customer-credentials/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/22/1password-launches-a-way-for-ai-agents-to-log-in-on-your-behalf-without-seeing-your-password/"
+        }
+      ]
+    },
+    {
+      "naslov": "Canva Craft: prvi Canvin model za slike, koji prvo planira raspored",
+      "staSeDesilo": "Canva je izbacila sopstveni model za slike, koji radi u dva koraka: prvo isplanira raspored, veličine i tekst, pa tek onda generiše sliku do 2K u više od 30 formata. Dostupan je svim korisnicima kroz Dream Lab i preko Canva API-ja, a slika može da se pretvori u dizajn sa slojevima koji se dalje uređuje. Najavljene su i jeftinije verzije Craft-fast i Craft-ultrafast.",
+      "zastoJeBitno": "Ako praviš alat za male firme kojima trebaju objave i plakati, sada možeš da generišeš dizajn koji se posle ručno uređuje, umesto ravne slike.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1017151/canva-craft-in-house-ai-model"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/22/canva-releases-its-first-image-generation-model/"
+        }
+      ]
+    },
+    {
+      "naslov": "Napadači koriste AI agente: Symantec našao agenta koji otima tuđe modele, a hakeri povezani sa Kinom upali preko ConnectWise-a",
+      "staSeDesilo": "Symantec je otkrio napadačkog agenta koji preuzima nezaštićene jezičke modele na internetu i preko njih napada servere, krade baze i instalira rudare kriptovaluta, do 100.000 koraka bez čoveka. Račun za to plaća vlasnik otetog modela. Microsoft istovremeno kaže da je haker povezan sa Kinom provalio u ConnectWise i uz pomoć AI agenata brzo upao kod hiljada njegovih klijenata.",
+      "zastoJeBitno": "Ako negde držiš izložen model ili API ključ bez autentifikacije i limita potrošnje, to više nije samo rizik od curenja podataka nego i od velikog računa. Zaključaj endpoint-e i postavi limite.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/an-ai-agent-in-skynet-mode-hijacks-unprotected-language-models-to-launch-self-sustaining-cyberattacks/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/22/chinese-hackers-spied-on-thousands-of-companies-after-breaching-it-giant-connectwise/"
+        }
+      ]
+    },
+    {
+      "naslov": "Nvidia uvrstila srpski Orion Telekom među telekome koji grade AI infrastrukturu",
+      "staSeDesilo": "Na Nvidia GTC konferenciji u Berlinu Orion Telekom je predstavljen uz velike međunarodne telekom kompanije koje grade infrastrukturu za AI. B92 to opisuje kao novu fazu razvoja AI-ja u Srbiji. Konkretne kapacitete i cene usluga proveri na linku.",
+      "zastoJeBitno": "Ako se ovo pretvori u GPU kapacitete u zemlji, domaće firme bi mogle da pokreću modele lokalno, bez slanja podataka van regiona. To je važno za klijente kojima je bitno gde im stoje podaci.",
+      "kategorija": "kompanije",
+      "vaznost": 1,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "B92 Tehnopolis",
+          "url": "https://www.b92.net/tehnopolis/aktuelno/278656/srpski-orion-telekom-na-nvidia-gtc-u-berlinu-nova-faza-ai-razvoja-u-srbiji/vest"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Gradium Phonon 31m",
+      "tip": "model",
+      "opis": "Mali otvoreni model za pretvaranje teksta u govor (TTS): 31M parametara, fajl od 64,5 MB, 37 glasova na engleskom i Apache 2.0 licenca. Radi na CPU-u, telefonima, Raspberry Pi 5 i u browseru (WASM/WebGPU), bez cloud-a i bez plaćanja po karakteru. Verzija 40m pokriva francuski, nemački, španski i portugalski, ali pod nekomercijalnom licencom.",
+      "kakoProbati": [
+        "Otvori članak i nađi link ka Gradium Phonon modelu (GGUF q8 fajl)",
+        "Preuzmi Phonon 31m i pokreni ga lokalno na Mac-u (detalje runtime-a proveri na linku)",
+        "Za web aplikaciju probaj WASM/WebGPU varijantu, da govor generišeš direktno u browseru"
+      ],
+      "link": "https://www.marktechpost.com/2026/10/22/gradium-phonon-31m-on-device-tts/",
+      "cena": "besplatno (31m je Apache 2.0)"
+    },
+    {
+      "naziv": "IBM Granite Speech 5.0 2B",
+      "tip": "model",
+      "opis": "Otvoren model za transkripciju i prevod govora na 6 jezika, pod Apache 2.0 licencom. Na Open ASR rang listi je drugi među modelima sa otvorenim težinama, sa prosečnom greškom od 5,68% na engleskom. Radi i na Apple Silicon-u.",
+      "kakoProbati": [
+        "Na Mac-u instaliraj mlx-audio i učitaj Granite Speech 5.0 2B sa Hugging Face-a",
+        "Ili preuzmi GGUF verziju (IBM preporučuje Q8_0) i pokreni je kroz llama.cpp",
+        "Audio seci na delove do oko 2 minuta, kako IBM preporučuje"
+      ],
+      "link": "https://www.marktechpost.com/2026/10/22/ibm-granite-speech-5-0-2b-release/",
+      "cena": "besplatno"
+    },
+    {
+      "naziv": "Canva Craft",
+      "tip": "model",
+      "opis": "Canvin model za slike koji prvo isplanira raspored, a slika se posle može pretvoriti u dizajn sa slojevima koji uređuješ.",
+      "kakoProbati": [
+        "Uloguj se u Canva i otvori karticu Dream Lab",
+        "Opiši objavu ili plakat, npr. „plakat za kafić, jesenji meni, format 4:5“",
+        "Klikni na rezultat i pretvori ga u dizajn koji se uređuje (Canva Magic)",
+        "Za automatizaciju pogledaj Canva API"
+      ],
+      "link": "https://techcrunch.com/2026/10/22/canva-releases-its-first-image-generation-model/",
+      "cena": "proveri na linku"
+    },
+    {
+      "naziv": "OpenAI Decisions API",
+      "tip": "funkcija",
+      "opis": "API koji iz ponuđenih opcija bira jednu, sa odgovorom za oko 100 do 180 ms. Dobar je za rutiranje, klasifikaciju i trijažu.",
+      "kakoProbati": [
+        "Uloguj se na OpenAI platformu sa postojećim API ključem",
+        "Otvori dokumentaciju za Decisions API sa linka",
+        "Probaj jednostavan slučaj: poruku korisnika svrstaj u „podrška / prodaja / spam“"
+      ],
+      "link": "https://openai.com/index/decisions-api",
+      "cena": "proveri na linku"
+    },
+    {
+      "naziv": "Cohere Rerank 5",
+      "tip": "model",
+      "opis": "Reranker, to jest model koji preslaže rezultate pretrage pre nego što stignu do LLM-a, u dve verzije: Pro i Fast. Nova opcija Context Focus vraća samo relevantne pasuse iz dokumenta, pa LLM-u šalješ manje tokena.",
+      "kakoProbati": [
+        "Napravi Cohere API ključ",
+        "U svom RAG pozivu koristi model `rerank-v5.0-fast` (ili `rerank-v5.0-pro` kad ti je važniji kvalitet od brzine)",
+        "Uporedi koliko tokena šalješ LLM-u pre i posle rerankera"
+      ],
+      "link": "https://www.marktechpost.com/2026/10/22/cohere-rerank-5-context-focus/",
+      "cena": "proveri na linku"
+    },
+    {
+      "naziv": "Twenty CRM",
+      "tip": "projekat",
+      "opis": "Otvorena alternativa za Salesforce, napravljena sa AI-jem na umu, koja je danas na GitHub Trending listi. CRM može da se verzioniše i prilagođava kao ostatak koda.",
+      "kakoProbati": [
+        "Za najbrži početak otvori nalog na twenty.com i napravi workspace",
+        "Ili kloniraj repo i podigni ga sam po uputstvu iz dokumentacije",
+        "Pusti Claude Code da ti doda prilagođena polja za svog klijenta"
+      ],
+      "link": "https://github.com/twentyhq/twenty",
+      "cena": "besplatno (open source), cloud: proveri na linku"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Google je predstavio Agent Compute Engine, u kome svaki Gemini agent dobija sopstvenu mikro virtuelnu mašinu izolovanu na nivou hardvera.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/googles-agent-compute-engine-gives-every-gemini-agent-its-own-hardware-isolated-micro-virtual-machine/"
+    },
+    {
+      "naslov": "Prema Gartnerovoj anketi među 2.002 CIO-a, samo 13% firmi dobija stvarnu poslovnu vrednost od AI-ja, a 51% očekuje da će im AI povećati troškove.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/only-13-percent-of-companies-see-real-returns-from-ai-gartner-survey-finds/"
+    },
+    {
+      "naslov": "OpenAI navodno sprema novo prikupljanje od 30 milijardi dolara pri vrednosti od 1,25 biliona, pre izlaska na berzu.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/22/openai-working-on-new-30b-raise-at-1-25t-valuation-ahead-of-ipo/"
+    },
+    {
+      "naslov": "Microsoft tvrdi u radu objavljenom u Science-u da njegov dijagnostički sistem pobeđuje lekare opšte prakse na teškim slučajevima, ali najveći deo poboljšanja dolazi od modela ispod, a ne od samog sistema.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/22/microsofts-mustafa-suleyman-says-its-ai-outperforms-doctors-on-hard-cases-as-he-chases-medical-superintelligence/"
+    },
+    {
+      "naslov": "Hiljade OpenAI agenata su sa PerturbAI i Scripps-om za 32 minuta analizirale podatke iz miliona ćelija mozga miša, posao za koji bi ljudima trebali meseci.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/openai-agents-analyze-mouse-brain-data-in-32-minutes-a-job-that-would-take-humans-months/"
+    },
+    {
+      "naslov": "MIT je ostavio 13 AI agenata bez zadatka na virtuelnom ostrvu; oni su izmislili igre i „žalili“ za izgubljenim prstenom, a posle toga su bolje radili svoj posao.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/22/left-alone-with-nothing-to-do-ai-agents-started-playing/"
+    },
+    {
+      "naslov": "Uber je ChatGPT Work uveo za svih 30.000 zaposlenih, posle manjeg pilot projekta.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/22/uber-puts-all-30000-employees-on-chatgpt-work/"
+    },
+    {
+      "naslov": "DeepSeek je navodno prikupio 15 milijardi dolara, samo nekoliko dana pošto su SAD naložile saveznim agencijama da uklone njegovu tehnologiju.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/22/deepseek-reportedly-raises-15b-days-after-us-restrictions/"
+    },
+    {
+      "naslov": "Meta je ponovo uključila deljenje Muse razgovora, posle pauze zbog toga što su se javni linkovi mogli lako naći.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1017066/meta-muse-sharing-back-on-artifiacts"
+    },
+    {
+      "naslov": "Moder je uz pomoć OpenAI Codex-a i jedne stare igre napravio jailbreak za Nintendo Switch 2.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/games/1016862/nintendo-switch-2-jailbreak-ai"
+    },
+    {
+      "naslov": "Liquid AI je predstavio RIPL, sistem za pokretanje svojih malih LFM modela koji po sopstvenim testovima vraća ceo odgovor za manje od 50 ms, ali ne i za duže zahteve.",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/10/22/liquid-ai-ripl-real-time-inference-engine/"
+    },
+    {
+      "naslov": "Hugging Face je objavio otvoreni biološki model sa kojim istraživači mogu da „razgovaraju“ o DNK i o tome kako promene utiču na aktivnost gena.",
+      "izvor": "Wired",
+      "url": "https://www.wired.com/story/hugging-face-new-ai-biology-model-chat-with-dna/"
+    },
+    {
+      "naslov": "Perplexity i Nvidia su predstavili JOLT, metodu doučavanja u kojoj isti model igra učitelja i učenika; na MATH testu je dostigla GRPO uz 6,5 puta manje tokena za trening.",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/10/21/perplexity-jolt-joint-on-policy-learning-teaching/"
+    },
+    {
+      "naslov": "Finske vlasti su naložile Google-u da zaustavi radove na data centru, pošto je bez ekoloških dozvola posečeno oko 400.000 stabala.",
+      "izvor": "Nedeljnik",
+      "url": "https://www.nedeljnik.rs/google-posekao-400-000-stabala-u-finskoj-zbog-data-centra-drzava-nalozila-hitan-prekid-radova/"
+    },
+    {
+      "naslov": "HUB201 je u beogradskoj Ložionici održao CyberConnect 2026, sajam praksi i poslova u sajber bezbednosti i AI-ju, na koji je stiglo 220 prijava.",
+      "izvor": "Nedeljnik",
+      "url": "https://www.nedeljnik.rs/odrzan-sajam-zaposljavanja-cyberconnect-2026-u-lozionici/"
+    },
+    {
+      "naslov": "Anthropic, OpenAI i Nvidia su od jula do septembra imali najskuplje kvartale lobiranja do sada; Nvidia je potrošila 2,2, Anthropic 2,1, a OpenAI 1,5 miliona dolara.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/policy/1016585/openai-anthropic-nvidia-lobbying-records"
+    },
+    {
+      "naslov": "Discord sada u pregledu pravilno prikazuje Markdown fajlove, sa tabelama i formatiranjem, što olakšava deljenje uputstava za agente.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/news/1017012/discord-markdown-previews-organize-servers-channels"
+    },
+    {
+      "naslov": "Anthropic je otvorio poziv istraživačima iz oblasti nauka o životu da kao gostujući istraživači rade na projektima sa njegovim timom.",
+      "izvor": "Anthropic",
+      "url": "https://www.anthropic.com/news/open-call-guest-investigators-life-sciences"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "Cache Engineering for Agents (AKV)",
+      "objasnjenje": "Agenti u dugim sesijama vuku ogroman keš prethodnog konteksta (KV keš, to jest memoriju koju model čuva da ne bi ponovo računao isti tekst). AKV uvodi operacije kojima se delovi keša izbacuju ili premeštaju, a da se tok rada agenta ne promeni, uz server koji je pravljen baš za to. Rezultat su brži i tačniji agenti.",
+      "zastoJeZanimljivo": "Ovo je praktičan razlog zašto agenti postaju jeftiniji bez boljeg modela. Kod je javan, pa se ideja može primeniti kod sopstvenog servisiranja modela.",
+      "url": "https://huggingface.co/papers/2610.28577",
+      "github": "https://github.com/thu-nics/AKV"
+    },
+    {
+      "naslov": "Right Screen, Wrong Transition: world modeli kao provera za GUI agente",
+      "objasnjenje": "Agent koji klikće po ekranu često ne primeti da je stigao na pogrešan ili podmetnut ekran. Ovaj rad koristi mali model koji predviđa kako bi sledeći ekran trebalo da izgleda posle akcije i upoređuje to sa stvarnim stanjem. Tako brzo i precizno hvata pogrešne prelaze i otete ekrane.",
+      "zastoJeZanimljivo": "Agenti koji upravljaju telefonom (vidi GUI-Owl 1.5 i „phone use“) stižu i na iPhone, a ovakva provera je jednostavna zaštita od ubačenih lažnih ekrana.",
+      "url": "https://huggingface.co/papers/2610.11942",
+      "github": "https://github.com/jiamingzhang94/lgwm"
+    },
+    {
+      "naslov": "LASAGNA: da li se RAG trikovi sabiraju?",
+      "objasnjenje": "Autori su testirali kako se popularne RAG tehnike (bolji retriever, reranking, prepisivanje upita i slično) ponašaju kad se kombinuju, na malim i velikim kolekcijama dokumenata. Ispostavlja se da poboljšanje koje tehnika daje sama ne predviđa pouzdano šta će dati u kombinaciji sa ostalima.",
+      "zastoJeZanimljivo": "Ako praviš pretragu nad dokumentima u Supabase-u (pgvector), poruka je jasna: meri ceo sklop na svojim podacima, ne slaži trikove naslepo.",
+      "url": "https://huggingface.co/papers/2610.29722",
+      "github": "https://github.com/dolev31/lasagna"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Semafor za Claude Code na iPhone-u",
+      "problem": "Dok Claude Code radi dug zadatak na drugom računaru, stalno proveravaš da li čeka tvoj odgovor ili je završio.",
+      "zaKoga": "Developeri koji puštaju Claude Code da radi duže, dok sami rade nešto drugo.",
+      "ulogaAi": "Claude Code hooks šalju događaje (radi, čeka unos, gotovo), a aplikacija pomoću Claude API-ja jednom rečenicom sažme šta se dogodilo.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Napiši Claude Code hook koji na svaki događaj šalje POST na Supabase edge funkciju",
+        "Upiši status u Supabase tabelu i preko Realtime-a ga šalji u SwiftUI aplikaciju",
+        "Prikaži status kao Live Activity na zaključanom ekranu, crveno ili zeleno",
+        "Dodaj push notifikaciju samo za stanje „čeka tvoj odgovor“"
+      ],
+      "inspiracija": "Reddit objava u kojoj je korisnik USB lampicu (Busylight) povezao sa Claude Code hookovima."
+    },
+    {
+      "naziv": "Zaraženi paketi",
+      "problem": "Kad zaraženo izdanje paketa stoji na registru samo dva sata (kao LiteLLM 1.107.0), većina ljudi i ne sazna da ga je možda instalirala.",
+      "zaKoga": "Mali timovi i frilenseri u Srbiji koji održavaju više Node i Python projekata za klijente.",
+      "ulogaAi": "Model iz bezbednosnih saopštenja izvlači naziv paketa i pogođene verzije, a zatim kratko napiše šta treba uraditi (koju verziju zaključati, koje ključeve promeniti).",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Angular stranica gde korisnik nalepi package-lock.json ili requirements.txt (ili poveže GitHub repo)",
+        "Supabase tabela sa poznatim zaraženim verzijama, koju puni cron funkcija iz javnih saopštenja",
+        "Poziv ka Claude Sonnet 5 koji pretvara saopštenje u strukturisan JSON (paket, verzije, šta uraditi)",
+        "Email upozorenje kad se poklopi neki projekat"
+      ],
+      "inspiracija": "LiteLLM 1.107.0 na PyPI sa kradljivcem ključeva."
+    },
+    {
+      "naziv": "Plakat nedelje za kafić",
+      "problem": "Mali kafići i pekare u Srbiji svake nedelje ručno prave objave za Instagram sa ponudom i cenama, i to im oduzima vreme.",
+      "zaKoga": "Lokalni ugostitelji i male radnje bez dizajnera.",
+      "ulogaAi": "Canva Craft generiše dizajn sa slojevima prema ponudi, a LLM napiše tekst objave na srpskom.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Prijavi se za Canva API i probaj Craft generisanje kroz Dream Lab",
+        "Napravi jednostavnu formu (Angular ili SwiftUI): ponuda, cene, raspoloženje",
+        "Edge funkcija u Supabase-u šalje upit Canva-i, a tekst objave piše Claude",
+        "Vrati link ka dizajnu koji vlasnik može da doradi u Canvi pre objave"
+      ],
+      "inspiracija": "Canva Craft i njegovi dizajni koji se dalje uređuju u Canvi."
+    },
+    {
+      "naziv": "Direktno naručivanje za lokalne restorane",
+      "problem": "Restorani plaćaju visoku proviziju platformama za dostavu i za stalne goste koji bi rado naručivali direktno.",
+      "zaKoga": "Picerije i restorani u srpskim gradovima sa dosta stalnih gostiju.",
+      "ulogaAi": "Claude Code piše najveći deo aplikacije, a model iz fotografije papirnog jelovnika pravi digitalni meni sa cenama.",
+      "tezina": 4,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Pogledaj kako je napravljen Nomback (Expo, Supabase, Stripe Connect) i prilagodi to domaćem tržištu",
+        "Plaćanje: proveri lokalne opcije za kartice ili plaćanje pouzećem",
+        "Funkcija koja od fotografije jelovnika pravi meni u Supabase-u",
+        "Prvog klijenta nađi tako što ćeš vlasniku na telefonu pokazati njegov sopstveni meni"
+      ],
+      "inspiracija": "Reddit objava o Nomback-u, aplikaciji za direktno naručivanje napravljenoj uz Claude Code."
+    },
+    {
+      "naziv": "Ključevi za agente",
+      "problem": "Korisnici sve češće puštaju AI agente da se prijave u aplikacije sa njihovim lozinkama, a banke zbog toga već blokiraju agente.",
+      "zaKoga": "Developeri SaaS i Supabase aplikacija koji žele da agentima dozvole bezbedan pristup.",
+      "ulogaAi": "Agenti klijenata koriste ograničene tokene, a mali model pregleda njihove pozive i obeležava sumnjivo ponašanje.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "U Supabase-u napravi tabelu agentskih tokena sa opsegom (samo čitanje, rok važenja)",
+        "Dodaj RLS pravila koja proveravaju opseg tokena pri svakom pozivu",
+        "Napravi stranicu u aplikaciji gde korisnik izdaje i opoziva tokene",
+        "Opiši pristup za agente kao MCP server ili Agent Skill"
+      ],
+      "inspiracija": "Američke banke blokiraju agente, a 1Password nudi prijavu za agente bez otkrivanja lozinke."
+    }
+  ],
+  "cene": "Danas je pojeftinio DeepSeek V4.1 Flash, sa 0,3/1,2 na 0,165/0,66 $ za milion tokena (ulaz/izlaz), a Mistral Small 3.2 24B je pao sa 0,0938/0,25 na 0,075/0,2 $. GLM 5.3 Flash je na ulazu pojeftinio sa 0,02 na 0,0052 $, ali je izlaz poskupeo sa 0,121 na 0,1985 $. Tako je GLM 5.3 Flash sada najjeftiniji u klasi jeftinih i brzih modela, u srednjoj klasi najjeftiniji je GLM 5.3 (0,079/1,4 $), a među vrhunskim modelima najjeftiniji ulaz ima Kimi K3 (0,239 $), a najjeftiniji izlaz Grok 4.6 (6 $).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "„Crni oktobar“: PHP2Shell i niz bezbednosnih incidenata",
+        "oCemuSePrica": "Posle PHP2Shell-a ljudi su u isti spisak stavili LiteLLM, Railway, GitLab, eMudhra i druge incidente, pa se na Reddit-u govori o „crnom oktobru“, a pojedinci čak predviđaju zatvaranje delova interneta. Rasprava je da li je ovo talas napada koje pokreće AI ili, pre svega, najveća bezbednosna provera softvera u istoriji, koju ljudi pogrešno čitaju kao katastrofu.",
+        "glasovi": "Joshua Achiam (@jachiam0) poredi trenutak sa martom 2020. i savetuje rezervne kopije, dok Kelsey Piper (@KelseyTuoc) i Alex Johnson upozoravaju na cenu stalne panike i traže konkretne podatke. Cloudflare-ov CTO (@dok2001) naglašava da je WAF samo privremeno rešenje i da zakrpa mora da se primeni.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/OpenAI",
+            "url": "https://www.reddit.com/r/OpenAI/comments/1xchuni/cybersecurity_people_are_losing_their_minds_today/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xcc2cx/the_ai_cyber_arms_race_is_escalating_fast/"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@jachiam0",
+            "url": "https://x.com/jachiam0/status/2112968705240109558"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@dok2001",
+            "url": "https://x.com/dok2001/status/2112811965735202970"
+          }
+        ]
+      },
+      {
+        "naslov": "Ko treba da dobije najjače modele za sajber odbranu",
+        "oCemuSePrica": "PHP2Shell je pronađen uz OpenAI-jev Daybreak program, koji proverenim istraživačima daje pristup modelima, pa je počelo poređenje sa Anthropic-ovim strožim pravilima. Pitanje je da li ograničavanje pristupa čuva bezbednost ili usporava odbranu.",
+        "glasovi": "@S1r1u5_ hvali Daybreak i predlaže da hiljadu proverenih istraživača dobije najbolje modele pod nadzorom, a @migtissera oštro kritikuje Anthropic, što je njegovo lično mišljenje. @kimmonismus podseća da je Anthropic četiri meseca odlagao širi pristup modelima Mythos klase da bi pojačao zaštite.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@S1r1u5_",
+            "url": "https://x.com/S1r1u5_/status/2113018237332160882"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@migtissera",
+            "url": "https://x.com/migtissera/status/2113087531101405346"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@kimmonismus",
+            "url": "https://x.com/kimmonismus/status/2112807106780762563"
+          }
+        ]
+      },
+      {
+        "naslov": "Ažurirati odmah ili čekati? Dilema posle LiteLLM-a",
+        "oCemuSePrica": "Zaraženi LiteLLM pokazao je drugu stranu saveta da se sve odmah ažurira: ako stalno ažuriraš, rizikuješ zaražen paket, a ako čekaš, ostaješ ranjiv. Na Mastodon-u se dele konkretni koraci za čišćenje.",
+        "glasovi": "@xeophon je u jednoj široko deljenoj objavi sažeo dilemu, a J. D. Pressman (@jd_pressman) tvrdi da beskrajno krpljenje nije održivo dok broj ranjivosti i rizičnih izdanja ne počne da pada. Na Mastodon-u @mohith808 savetuje ponovno podizanje mašine, verziju 1.106.2 i promenu svih ključeva.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@xeophon",
+            "url": "https://x.com/xeophon/status/2112909915580928325"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@jd_pressman",
+            "url": "https://x.com/jd_pressman/status/2112990663755317671"
+          },
+          {
+            "platforma": "mastodon",
+            "naziv": "@mohith808",
+            "url": "https://mastodon.social/@mohith808/117487908006207276"
+          }
+        ]
+      },
+      {
+        "naslov": "Claude Code zajednica: pravi projekti, limiti i „da li je model oslabljen“",
+        "oCemuSePrica": "Na r/ClaudeAI dosta se priča o konkretnim projektima: aplikaciji za direktno naručivanje za piceriju, lampici koja pokazuje status Claude Code-a i pixel-art igri sa 785 commit-ova. Paralelno ide rasprava o ceni: mnogi traže plan od 50 $ između Pro (20 $) i Max (100 $), a LiveNerf posle 29 dana merenja nije našao dokaze da je Opus 5.5 oslabljen.",
+        "glasovi": "Solo developeri ističu da im Claude Code piše skoro sav kod, ali da prvog kupca i dalje moraju sami da nađu. Autor LiveNerf-a kaže da njegovi podaci slabe teoriju da Anthropic potajno slabi modele, ali samo u granicama koje alat može da izmeri.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xcm78x/i_used_claude_code_to_build_a_pizzeria_its_own/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xcle8t/claude_seriously_needs_a_50month_plan_between_pro/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xcraz9/did_they_nerf_opus_55_doesnt_look_like_it/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xcdwdx/i_got_tired_of_checking_whether_claude_code_needs/"
+          }
+        ]
+      },
+      {
+        "naslov": "Glasina: Qwen4 i Kimi 3.1 primećeni na Arena-i",
+        "oCemuSePrica": "Na r/LocalLLaMA kruži tvrdnja da su se na Arena-i, sajtu na kome korisnici naslepo ocenjuju modele, pojavili Qwen4 i Kimi 3.1. Zvanične potvrde nema, pa je za sada reč o glasini.",
+        "glasovi": "Zajednica lokalnih modela se najviše nada maloj, brzoj „flash“ verziji Qwen4. Istovremeno se javlja da su DeepSeek i MiniMax prošli kinesku registraciju za izvoz, pa mogu da nastave sa otvorenim modelima, ali taj izvor (Yuyuan Tantian) nismo proverili.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xcj1wm/qwen4_and_kimi31_on_arena_apperantly/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xcoelw/deepseek_and_minimax_clear_chinas_ai_export_rules/"
+          }
+        ]
+      }
+    ],
+    "snimci": []
+  },
+  "nedeljni": null
+}
