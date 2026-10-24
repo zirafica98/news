@@ -1,6 +1,6 @@
 #!/bin/bash
 # AI News — jutarnja skripta. Radi redom:
-#   git pull → skupljanje vesti → cene → Claude piše izdanje → provera → prevod → slike → git push → Instagram → Threads
+#   git pull → skupljanje vesti → cene → Claude piše izdanje → provera → prevod → slike → git push   (mreže popodne, režim drustvene)
 #
 # Svako jutro je pokreće GitHub Actions (.github/workflows/jutro.yml), a može i ručno na Mac-u.
 # Ako je današnje izdanje već objavljeno, odmah završava.
@@ -118,6 +118,8 @@ if $PROVERA; then
   node scripts/fetch-news.mjs --datum="$DATUM" | sed 's/^/  /'
   node scripts/objavi-instagram.mjs --provera || log "Instagram token ne radi."
   node scripts/objavi-threads.mjs --provera || log "Threads token ne radi."
+  node scripts/objavi-youtube.mjs --provera || log "YouTube prijava ne radi."
+  node scripts/objavi-telegram.mjs --provera || log "Telegram bot ne radi."
   log "Provera je prošla. Ništa nije objavljeno."
   notify "Provera je prošla: internet, git i Claude rade."
   exit 0
@@ -157,9 +159,8 @@ if ! git push --quiet; then
 fi
 log "Poslato na GitHub: $(git log -1 --format='%h')"
 
-# 8b. Instagram karusel. Čeka da Vercel objavi slike; ako ne uspe, izdanje i notifikacija idu normalno.
-node scripts/objavi-instagram.mjs --datum="$DATUM" || log "Instagram objava nije uspela."
-node scripts/objavi-threads.mjs --datum="$DATUM" || log "Threads objava nije uspela."
+# 8b. Objave na mreže (Instagram, Threads, YouTube, Telegram) ne idu odavde nego popodne, kad je jutro u SAD:
+#     Vercel Cron u 13:00 UTC pokreće posao u režimu „drustvene“ (vercel.json, api/pokreni-izdanje.mjs).
 
 prvi_naslov="$(node -e "console.log(require('./public/data/$DATUM.json').vesti[0].naslov)")"
 notify "Izdanje je spremno ☕ $prvi_naslov"

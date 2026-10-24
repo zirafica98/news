@@ -17,7 +17,11 @@ Detaljan plan i spisak izvora: [PLAN.md](PLAN.md).
             translate-digest.mjs engleski prevod → public/data/en/ (ako ne uspe, srpsko ide svejedno)
             insta-slike.mjs      Instagram: karusel, story slike, subotom nedeljni Reel (MP4) → public/insta/
          4. git push             → Vercel build
-         5. objavi-instagram.mjs post (karusel), subotom Reel, pa isti slajdovi kao story na @ai.morning.brief
+       ~14:00 (Beograd)  Vercel Cron → režim „drustvene“, kad je jutro u SAD:
+            objavi-instagram.mjs post (karusel), Reel (subotom rekapitulacija nedelje), story
+            objavi-threads.mjs   isti karusel na Threads
+            objavi-youtube.mjs   Reel kao YouTube Short
+            objavi-telegram.mjs  album u Telegram kanalu (subotom i nedeljni video)
             objavi-threads.mjs   isti karusel na Threads @ai.morning.brief
        rezerva u 09:30 i 12:30 ako GitHub zakasni ili nešto pukne
 ```

@@ -1,4 +1,6 @@
-// Vercel Cron svako jutro zove ovu funkciju, a ona pokreće GitHub posao „Jutarnje izdanje“.
+// Vercel Cron zove ovu funkciju, a ona pokreće GitHub posao „Jutarnje izdanje“:
+//   ujutru bez parametra (rezim normalno) — pravi izdanje,
+//   popodne sa ?rezim=drustvene — objava na Instagram, Threads, YouTube i Telegram, kad je jutro u SAD.
 // GitHub-ovi zakazani poslovi za ovaj repo kasne satima ili se ne pokrenu, pa je okidač ovde.
 //
 // Potrebne promenljive u Vercel projektu (Settings → Environment Variables):
@@ -7,6 +9,7 @@
 
 const REPO = 'zirafica98/news';
 const WORKFLOW = 'jutro.yml';
+const DOZVOLJENI_REZIMI = ['normalno', 'drustvene'];
 
 export async function GET(request) {
   const secret = process.env.CRON_SECRET;
@@ -20,6 +23,11 @@ export async function GET(request) {
   }
 
   // „normalno“: posao ništa ne radi ako je današnje izdanje već objavljeno.
+  const rezim = new URL(request.url).searchParams.get('rezim') || 'normalno';
+  if (!DOZVOLJENI_REZIMI.includes(rezim)) {
+    return new Response(`Nepoznat režim: ${rezim}`, { status: 400 });
+  }
+
   const res = await fetch(`https://api.github.com/repos/${REPO}/actions/workflows/${WORKFLOW}/dispatches`, {
     method: 'POST',
     headers: {
@@ -28,7 +36,7 @@ export async function GET(request) {
       'X-GitHub-Api-Version': '2022-11-28',
       'User-Agent': 'ai-news-cron',
     },
-    body: JSON.stringify({ ref: 'main', inputs: { rezim: 'normalno' } }),
+    body: JSON.stringify({ ref: 'main', inputs: { rezim } }),
   });
 
   if (res.status !== 204) {
@@ -37,6 +45,6 @@ export async function GET(request) {
     return new Response(`GitHub je odbio pokretanje (HTTP ${res.status})`, { status: 502 });
   }
 
-  console.log('Jutarnje izdanje pokrenuto na GitHub-u.');
+  console.log(`Posao „Jutarnje izdanje“ pokrenut na GitHub-u (režim ${rezim}).`);
   return new Response('Pokrenuto', { status: 200 });
 }

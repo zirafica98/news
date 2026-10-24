@@ -1,6 +1,6 @@
 // Objavljuje izdanje na Instagram (@ai.morning.brief), preko Instagram API-ja sa Instagram prijavom:
 //   1. karusel (post),
-//   2. subotom nedeljni Reel (rekapitulacija nedelje, iz nedeljnog pregleda),
+//   2. Reel: radnim danima slajdovi dana, subotom rekapitulacija nedelje (iz nedeljnog pregleda),
 //   3. iste slajdove kao story, samo za današnje izdanje (story traje 24h).
 // Slike i video pravi insta-slike.mjs i moraju već biti na sajtu, jer ih Instagram preuzima sa javnog URL-a:
 // skripta zato prvo sačeka da Vercel objavi novi build.
@@ -16,7 +16,7 @@
 
 import { readdir } from 'node:fs/promises';
 import { join } from 'node:path';
-import { INSTA_DIR, izaberiVesti, lepDatum, opsegNedelje, skrati } from './insta-slike.mjs';
+import { INSTA_DIR, izaberiVesti, lepDatum, opisReela, skrati } from './insta-slike.mjs';
 import { DATA_DIR, datumIzArgumenata, preuzmi, readJson } from './lib.mjs';
 
 const SAJT = 'https://news-one-teal.vercel.app';
@@ -164,24 +164,15 @@ await korak('post', async () => {
   if (potrosnja) console.log(`Potrošnja limita API poziva: ${potrosnja}`);
 });
 
-// 2. Nedeljni Reel, subotom (izdanje sa nedeljnim pregledom).
-if (izdanje.nedeljni?.tacke?.length && fajlovi.includes(`${datum}-reel.mp4`)) {
+// 2. Reel: radnim danima slajdovi dana, subotom rekapitulacija nedelje. Opis se pravi u opisReela (deli ga i YouTube).
+if (fajlovi.includes(`${datum}-reel.mp4`)) {
   await korak('Reel', async () => {
-    const oznaka = `Weekly AI recap · ${opsegNedelje(datum)}`;
+    const { oznaka, opis } = opisReela(izdanje, HASHTAGOVI);
     const vecObjavljeno = await nadjiObjavu(korisnik, oznaka);
-    if (vecObjavljeno) return console.log(`Nedeljni Reel je već na Instagramu: ${vecObjavljeno.permalink}`);
+    if (vecObjavljeno) return console.log(`Reel za ${datum} je već na Instagramu: ${vecObjavljeno.permalink}`);
 
     const video = `${SAJT}/insta/${datum}-reel.mp4`;
     await cekajNaSajtu(video, 'video/mp4');
-    const tacke = izdanje.nedeljni.tacke.map((t, i) => `${i + 1}. ${t.includes(': ') && t.indexOf(': ') < 120 ? t.slice(0, t.indexOf(': ')) : skrati(t, 120)}`);
-    const opis = [
-      `🎬 ${oznaka}`,
-      skrati(izdanje.nedeljni.ukratko, 900),
-      `This week:\n${tacke.join('\n')}`,
-      'Follow for a new AI brief every morning ☕',
-      HASHTAGOVI,
-    ].join('\n\n');
-
     const reel = await graf(`/${korisnik}/media`, {
       metoda: 'POST',
       polja: { media_type: 'REELS', video_url: video, caption: opis.slice(0, 2200), share_to_feed: 'true' },
@@ -189,7 +180,7 @@ if (izdanje.nedeljni?.tacke?.length && fajlovi.includes(`${datum}-reel.mp4`)) {
     // Video se obrađuje duže od slika, do desetak minuta.
     await cekajKontejner(reel.id, { pauza: 20_000, pokusaja: 30 });
     const link = await objavi(korisnik, reel.id, async () => (await nadjiObjavu(korisnik, oznaka))?.permalink);
-    console.log(`Objavljen nedeljni Reel: ${link}`);
+    console.log(`Objavljen Reel: ${link}`);
   });
 }
 

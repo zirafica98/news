@@ -1,7 +1,8 @@
 // Pravi slike za Instagram iz engleskog izdanja, u public/insta:
 //   YYYY-MM-DD-N.jpg        karusel 1080×1350 (naslovna, pet glavnih vesti, završna)
 //   YYYY-MM-DD-story-N.jpg  isti slajdovi u 1080×1920 za story
-//   YYYY-MM-DD-reel.mp4     subotom (kad izdanje ima nedeljni pregled): video bez zvuka za Reel, rekapitulacija nedelje
+//   YYYY-MM-DD-reel.mp4     video bez zvuka za Reel i YouTube Short: radnim danima slajdovi dana,
+//                           subotom (kad izdanje ima nedeljni pregled) rekapitulacija nedelje
 // Sve ide na sajt zajedno sa izdanjem, jer Instagram slike i video preuzima sa javnog URL-a (vidi objavi-instagram.mjs).
 //
 // Pokretanje: node scripts/insta-slike.mjs
@@ -181,6 +182,11 @@ export function opsegNedelje(datum) {
     : `${mesec(pocetak)} ${dan(pocetak)} – ${mesec(kraj)} ${dan(kraj)}, ${kraj.getUTCFullYear()}`;
 }
 
+/** Subotnje izdanje ima nedeljni pregled, pa je Reel tog dana rekapitulacija nedelje. */
+export function jeNedeljniReel(izdanje) {
+  return Boolean(izdanje.nedeljni?.tacke?.length);
+}
+
 /** Slajdovi za nedeljni Reel, sa trajanjem u sekundama. */
 function slajdoviNedelje(izdanje) {
   const f = FORMATI.reel;
@@ -243,6 +249,26 @@ function slajdoviNedelje(izdanje) {
   ];
 }
 
+/**
+ * Naslov i opis Reela (i YouTube Short-a). oznaka je prvi red bez emodžija, po njoj se prepoznaje da je video već objavljen.
+ * Opis nema link ka sajtu ni izvore.
+ */
+export function opisReela(izdanje, hashtagovi) {
+  if (jeNedeljniReel(izdanje)) {
+    const oznaka = `Weekly AI recap · ${opsegNedelje(izdanje.datum)}`;
+    const tacke = izdanje.nedeljni.tacke.map((t, i) => {
+      const dvotacka = t.indexOf(': ');
+      return `${i + 1}. ${dvotacka > 0 && dvotacka < 120 ? t.slice(0, dvotacka) : skrati(t, 120)}`;
+    });
+    const opis = [`🎬 ${oznaka}`, skrati(izdanje.nedeljni.ukratko, 900), `This week:\n${tacke.join('\n')}`, 'Follow for a new AI brief every morning ☕', hashtagovi];
+    return { oznaka, naslov: `This week in AI · ${opsegNedelje(izdanje.datum)}`, opis: opis.join('\n\n') };
+  }
+  const oznaka = `Today in AI · ${lepDatum(izdanje.datum)}`;
+  const naslovi = izaberiVesti(izdanje).map((v, i) => `${i + 1}. ${v.naslov}`);
+  const opis = [`🎬 ${oznaka}`, skrati(izdanje.ukratko, 900), `Top ${naslovi.length}:\n${naslovi.join('\n')}`, `Follow for tomorrow's brief ☕`, hashtagovi];
+  return { oznaka, naslov: `AI news today: ${skrati(izaberiVesti(izdanje)[0].naslov, 70)}`, opis: opis.join('\n\n') };
+}
+
 async function sacuvajJpeg(slajd, visina, fonts, putanja) {
   const svg = await satori(slajd, { width: SIRINA, height: visina, fonts, embedFont: true });
   await sharp(Buffer.from(svg)).jpeg({ quality: 86, mozjpeg: true }).toFile(putanja);
@@ -301,13 +327,17 @@ export async function napraviSlike(datum) {
     story.push(await sacuvajJpeg(slajd, FORMATI.story.visina, fonts, join(INSTA_DIR, `${datum}-story-${i + 1}.jpg`)));
   }
 
+  // Subotom je Reel rekapitulacija nedelje, ostalim danima isti slajdovi kao karusel.
+  const slajdoviReela = jeNedeljniReel(izdanje)
+    ? slajdoviNedelje(izdanje)
+    : slajdovi(FORMATI.reel).map((slajd, i, svi) => ({ slajd, sekundi: i === 0 || i === svi.length - 1 ? 3 : 6 }));
   let reel = null;
-  if (izdanje.nedeljni?.tacke?.length) {
+  {
     // Kadrovi za video ne idu na sajt, samo gotov MP4.
     const privremeno = await mkdtemp(join(tmpdir(), 'ai-reel-'));
     try {
       const kadrovi = [];
-      for (const [i, { slajd, sekundi }] of slajdoviNedelje(izdanje).entries()) {
+      for (const [i, { slajd, sekundi }] of slajdoviReela.entries()) {
         kadrovi.push({ sekundi, slika: await sacuvajJpeg(slajd, FORMATI.reel.visina, fonts, join(privremeno, `${i + 1}.jpg`)) });
       }
       reel = await napraviVideo(kadrovi, join(INSTA_DIR, `${datum}-reel.mp4`));
@@ -321,5 +351,5 @@ export async function napraviSlike(datum) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const datum = datumIzArgumenata();
   const { karusel, story, reel } = await napraviSlike(datum);
-  console.log(`Instagram za ${datum}: karusel ${karusel.length}, story ${story.length}${reel ? ', nedeljni Reel' : ''} (public/insta/${datum}-…)`);
+  console.log(`Instagram za ${datum}: karusel ${karusel.length}, story ${story.length}, Reel${reel ? '' : ' nije napravljen'} (public/insta/${datum}-…)`);
 }

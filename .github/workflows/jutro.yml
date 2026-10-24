@@ -17,12 +17,12 @@ on:
   workflow_dispatch:
     inputs:
       rezim:
-        description: 'normalno = samo ako danas nema izdanja · ponovo = napravi današnje iznova · provera = test bez objavljivanja · notifikacija = samo pošalji push · instagram = samo objavi današnje izdanje na Instagram · threads = samo objavi na Threads · instagram-token = produži Instagram i Threads token'
+        description: 'normalno = samo ako danas nema izdanja · ponovo = napravi današnje iznova · provera = test bez objavljivanja · notifikacija = samo pošalji push · drustvene = objavi na sve mreže (Instagram, Threads, YouTube, Telegram; Vercel to pokreće popodne) · instagram = samo Instagram · threads = samo Threads · instagram-token = produži Instagram i Threads token'
         type: choice
-        options: [normalno, ponovo, provera, notifikacija, instagram, threads, instagram-token]
+        options: [normalno, ponovo, provera, notifikacija, drustvene, instagram, threads, instagram-token]
         default: normalno
       datum:
-        description: 'Samo za režime instagram i threads: datum ili više datuma razdvojenih razmakom (2026-10-08 2026-10-09). Prazno = danas.'
+        description: 'Samo za režime drustvene, instagram i threads: datum ili više datuma razdvojenih razmakom (2026-10-08 2026-10-09). Prazno = danas.'
         type: string
         default: ''
 
@@ -87,6 +87,11 @@ jobs:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           REZIM: ${{ inputs.rezim || 'normalno' }}
           DATUMI: ${{ inputs.datum }}
         run: |
@@ -94,6 +99,21 @@ jobs:
             ponovo) bash scripts/jutro.sh --ponovo ;;
             provera) bash scripts/jutro.sh --provera ;;
             notifikacija) npm ci --prefix scripts --no-audit --no-fund --loglevel=error && node scripts/posalji-push.mjs ;;
+            drustvene)
+              # Svaka mreža posebno: ako jedna ne uspe, ostale se svejedno objavljuju, a posao se na kraju označi kao neuspešan.
+              npm ci --prefix scripts --no-audit --no-fund --loglevel=error
+              datumi="$DATUMI"
+              [ -z "$datumi" ] && datumi="$(TZ=Europe/Belgrade date +%F)"
+              greska=0
+              for d in $datumi; do
+                for mreza in instagram threads youtube telegram; do
+                  echo "::group::$mreza $d"
+                  node "scripts/objavi-$mreza.mjs" --datum="$d" || greska=1
+                  echo "::endgroup::"
+                done
+              done
+              exit $greska
+              ;;
             instagram)
               npm ci --prefix scripts --no-audit --no-fund --loglevel=error
               datumi="$DATUMI"
