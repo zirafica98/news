@@ -91,6 +91,17 @@ const deca = [];
 for (const url of slike) {
   deca.push((await graf(`/${ja.id}/threads`, { metoda: 'POST', polja: { media_type: 'IMAGE', image_url: url, is_carousel_item: 'true' } })).id);
 }
+// Threads, za razliku od Instagrama, odbija karusel dok svaka slika nije obrađena (podkod 4279004).
+async function sacekajObradu(id, opis) {
+  for (let pokusaj = 1; ; pokusaj++) {
+    await spavaj(pokusaj === 1 ? 5_000 : 10_000);
+    const { status, error_message: greska } = await graf(`/${id}`, { polja: { fields: 'status,error_message' } });
+    if (status === 'FINISHED') return;
+    if (status === 'ERROR' || status === 'EXPIRED' || pokusaj >= 18) throw new Error(`Threads ${opis} nije spreman: ${status}${greska ? ` (${greska})` : ''}`);
+  }
+}
+for (const [i, id] of deca.entries()) await sacekajObradu(id, `slika ${i + 1}`);
+
 const karusel = await graf(`/${ja.id}/threads`, { metoda: 'POST', polja: { media_type: 'CAROUSEL', children: deca.join(','), text: tekst } });
 
 // Threads preporučuje da se sačeka obrada kontejnera pre objave.
