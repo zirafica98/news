@@ -27,6 +27,8 @@ if (!token) {
 const provera = process.argv.includes('--provera');
 const datum = datumIzArgumenata();
 
+let potrosnja = '';
+
 async function graf(putanja, { metoda = 'GET', polja = {} } = {}) {
   const parametri = new URLSearchParams({ ...polja, access_token: token });
   const get = metoda === 'GET';
@@ -38,10 +40,18 @@ async function graf(putanja, { metoda = 'GET', polja = {} } = {}) {
     timeoutMs: 60_000,
   });
   const podaci = JSON.parse(odgovor.tekst || '{}');
+  // X-App-Usage pokazuje koliko je potrošeno od limita poziva po satu (u procentima).
+  potrosnja = odgovor.zaglavlja?.get('x-app-usage') ?? odgovor.zaglavlja?.get('x-business-use-case-usage') ?? potrosnja;
   if (!odgovor.ok || podaci.error) {
-    throw new Error(`Instagram ${metoda} ${putanja}: ${podaci.error?.message ?? odgovor.status}`);
+    throw new Error(`Instagram ${metoda} ${putanja}: ${podaci.error?.message ?? odgovor.status}${potrosnja ? ` (potrošnja: ${potrosnja})` : ''}`);
   }
   return podaci;
+}
+
+/** Post sa linkom ka izdanju za taj datum među poslednjim objavama, ako postoji. */
+async function nadjiObjavu(korisnik, link) {
+  const poslednji = await graf(`/${korisnik}/media`, { polja: { fields: 'caption,permalink', limit: '10' } });
+  return poslednji.data?.find((m) => m.caption?.includes(link));
 }
 
 const spavaj = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -53,8 +63,7 @@ console.log(`Instagram: @${ja.username}, objava u poslednja 24h: ${limit?.quota_
 if (provera) process.exit(0);
 
 const linkIzdanja = `${SAJT}/izdanje/${datum}`;
-const poslednji = await graf(`/${korisnik}/media`, { polja: { fields: 'caption,permalink', limit: '10' } });
-const vecObjavljeno = poslednji.data?.find((m) => m.caption?.includes(linkIzdanja.replace('https://', '')));
+const vecObjavljeno = await nadjiObjavu(korisnik, linkIzdanja.replace('https://', ''));
 if (vecObjavljeno) {
   console.log(`Izdanje ${datum} je već na Instagramu: ${vecObjavljeno.permalink}`);
   process.exit(0);
@@ -98,14 +107,33 @@ const karusel = await graf(`/${korisnik}/media`, {
   polja: { media_type: 'CAROUSEL', children: deca.join(','), caption: opis.slice(0, 2200) },
 });
 
-// Instagram obrađuje kontejner u pozadini; objava pre FINISHED vraća grešku.
+// Instagram obrađuje kontejner u pozadini; objava pre FINISHED vraća grešku. Proverava se retko, jer app ima limit poziva po satu.
 for (let pokusaj = 1; ; pokusaj++) {
+  await spavaj(10_000);
   const { status_code: stanje } = await graf(`/${karusel.id}`, { polja: { fields: 'status_code' } });
   if (stanje === 'FINISHED') break;
-  if (stanje === 'ERROR' || stanje === 'EXPIRED' || pokusaj >= 30) throw new Error(`Karusel nije spreman: ${stanje}`);
-  await spavaj(5_000);
+  if (stanje === 'ERROR' || stanje === 'EXPIRED' || pokusaj >= 18) throw new Error(`Karusel nije spreman: ${stanje}`);
 }
 
-const objava = await graf(`/${korisnik}/media_publish`, { metoda: 'POST', polja: { creation_id: karusel.id } });
-const { permalink } = await graf(`/${objava.id}`, { polja: { fields: 'permalink' } });
-console.log(`Objavljeno na Instagramu (${slike.length} slika): ${permalink}`);
+// media_publish zna da vrati grešku (npr. „Application request limit reached“) iako je post objavljen,
+// pa se posle greške prvo proveri profil, a tek onda pokušava ponovo.
+for (let pokusaj = 1; ; pokusaj++) {
+  try {
+    const objava = await graf(`/${korisnik}/media_publish`, { metoda: 'POST', polja: { creation_id: karusel.id } });
+    const { permalink } = await graf(`/${objava.id}`, { polja: { fields: 'permalink' } });
+    console.log(`Objavljeno na Instagramu (${slike.length} slika): ${permalink}`);
+    if (potrosnja) console.log(`Potrošnja limita API poziva: ${potrosnja}`);
+    break;
+  } catch (err) {
+    console.log(`${err.message}. Proveravam profil za minut…`);
+    await spavaj(60_000);
+    const objava = await nadjiObjavu(korisnik, linkIzdanja.replace('https://', '')).catch(() => null);
+    if (objava) {
+      console.log(`Objavljeno na Instagramu (${slike.length} slika): ${objava.permalink}`);
+      break;
+    }
+    if (pokusaj >= 3) throw err;
+    console.log('Post nije na profilu, pokušavam ponovo za 5 minuta…');
+    await spavaj(5 * 60_000);
+  }
+}

@@ -99,8 +99,8 @@ jobs:
               [ -z "$datumi" ] && datumi="$(TZ=Europe/Belgrade date +%F)"
               prvi=true
               for d in $datumi; do
-                # Razmak između objava, da Instagram ne vidi niz postova u istoj sekundi.
-                $prvi || sleep 120
+                # Razmak između objava: app ima limit API poziva po satu, a ni niz postova u istoj minuti ne izgleda dobro.
+                $prvi || sleep 300
                 prvi=false
                 node scripts/objavi-instagram.mjs --datum="$d"
               done

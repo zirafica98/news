@@ -50,7 +50,7 @@ export async function preuzmi(url, { timeoutMs = 20_000, headers, metoda, telo }
   const tajmer = setTimeout(() => kontroler.abort(new DOMException('isteklo vreme', 'TimeoutError')), timeoutMs);
   try {
     const res = await fetch(url, { method: metoda, body: telo, headers, signal: kontroler.signal });
-    return { ok: res.ok, status: res.status, tekst: await res.text() };
+    return { ok: res.ok, status: res.status, zaglavlja: res.headers, tekst: await res.text() };
   } finally {
     clearTimeout(tajmer);
   }
