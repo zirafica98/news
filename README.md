@@ -15,7 +15,9 @@ Detaljan plan i spisak izvora: [PLAN.md](PLAN.md).
          2. write-digest.mjs     Claude Code (claude -p, preko Claude pretplate) napiše izdanje
          3. finalize.mjs         provera → public/data/YYYY-MM-DD.json + index.json
             translate-digest.mjs engleski prevod → public/data/en/ (ako ne uspe, srpsko ide svejedno)
+            insta-slike.mjs      slike za Instagram karusel → public/insta/
          4. git push             → Vercel build
+         5. objavi-instagram.mjs karusel na @ai.morning.brief (čeka da slike budu na sajtu)
        rezerva u 09:30 i 12:30 ako GitHub zakasni ili nešto pukne
 ```
 
@@ -48,6 +50,8 @@ tema i jezik (sr/en) u ⚙ meniju, push notifikacija o novom izdanju, RSS na `/f
 | `npm run translate` | engleski prevod objavljenog izdanja |
 | `npm run finalize` | proveri i objavi nacrt, osveži pretragu, feed i sitemap (`-- --provera` samo proverava) |
 | `npm run obavesti` | pošalji push notifikaciju o izdanju |
+| `npm run insta-slike` | napravi slike za Instagram karusel (public/insta) |
+| `npm run instagram` | objavi izdanje na Instagram (`-- --provera` samo proveri token) |
 | `bash scripts/instaliraj.sh --ukloni` | ugasi stari jutarnji posao na Mac-u |
 | `bash scripts/jutro.sh --provera` | test automatike bez objavljivanja (lokalno) |
 
@@ -55,7 +59,12 @@ tema i jezik (sr/en) u ⚙ meniju, push notifikacija o novom izdanju, RSS na `/f
 
 - **Log jutra:** GitHub → Actions → Jutarnje izdanje → poslednje pokretanje
 - **Izvor ne radi:** u `scripts/sources.json` postavi `"enabled": false`
-- **Tajne (GitHub → Settings → Secrets):** `CLAUDE_CODE_OAUTH_TOKEN`, `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`
+- **Tajne (GitHub → Settings → Secrets):** `CLAUDE_CODE_OAUTH_TOKEN`, `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`,
+  `INSTAGRAM_ACCESS_TOKEN`, `INSTAGRAM_USER_ID`, `GH_SECRETS_TOKEN` (fine-grained, samo ovaj repo, Secrets: RW; za produžavanje Instagram tokena)
+- **Instagram:** Meta app „AI Morning Brief“ (developers.facebook.com, Instagram API sa Instagram prijavom, Development mod).
+  Token važi 60 dana i jutarnji posao ga produžava 1. i 15. u mesecu. Ako istekne: u app-u → Use cases → Instagram API →
+  API setup with Instagram login → Generate token, pa ga upiši u `INSTAGRAM_ACCESS_TOKEN`.
+  Ponovna objava: Actions → Jutarnje izdanje → Run workflow → `instagram` (ne objavljuje dvaput isti dan).
 - **Vercel promenljive:** `CRON_SECRET`, `GITHUB_DISPATCH_TOKEN` (Actions + Contents: RW), `VAPID_PUBLIC_KEY`
 - **Promena izgleda izdanja:** `scripts/prompt.md` (šta Claude piše) i `scripts/digest-schema.json` (oblik podataka, prati ga `src/app/izdanje.model.ts`)
 - **Posle promene skripti:** push na GitHub je dovoljan, jutarnja skripta sama povuče najnoviju verziju

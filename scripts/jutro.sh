@@ -1,6 +1,6 @@
 #!/bin/bash
 # AI News — jutarnja skripta. Radi redom:
-#   git pull → skupljanje vesti → cene → Claude piše izdanje → provera → prevod → git push
+#   git pull → skupljanje vesti → cene → Claude piše izdanje → provera → prevod → slike → git push → Instagram
 #
 # Svako jutro je pokreće GitHub Actions (.github/workflows/jutro.yml), a može i ručno na Mac-u.
 # Ako je današnje izdanje već objavljeno, odmah završava.
@@ -116,6 +116,7 @@ if $PROVERA; then
   odgovor="$(echo 'Odgovori samo rečju: OK' | claude -p --model sonnet --tools "" --no-session-persistence 2>&1 | tail -1)"
   log "Claude odgovara: $odgovor"
   node scripts/fetch-news.mjs --datum="$DATUM" | sed 's/^/  /'
+  node scripts/objavi-instagram.mjs --provera || log "Instagram token ne radi."
   log "Provera je prošla. Ništa nije objavljeno."
   notify "Provera je prošla: internet, git i Claude rade."
   exit 0
@@ -140,6 +141,9 @@ node scripts/finalize.mjs --datum="$DATUM"
 # 7b. Engleski prevod. Ako ne uspe, srpsko izdanje svejedno ide na sajt.
 node scripts/translate-digest.mjs --datum="$DATUM" || log "Engleski prevod nije uspeo, objavljujem samo srpsko izdanje."
 
+# 7c. Slike za Instagram karusel (public/insta), iz engleskog izdanja. Idu na sajt zajedno sa izdanjem.
+node scripts/insta-slike.mjs --datum="$DATUM" || log "Instagram slike nisu napravljene, izdanje ide bez njih."
+
 # 8. Slanje na GitHub → Vercel pravi novi build.
 # Ceo public/ jer finalize pravi i feed.xml i sitemap.xml, a ne samo public/data.
 git add public scripts/state
@@ -151,6 +155,9 @@ if ! git push --quiet; then
   git push --quiet
 fi
 log "Poslato na GitHub: $(git log -1 --format='%h')"
+
+# 8b. Instagram karusel. Čeka da Vercel objavi slike; ako ne uspe, izdanje i notifikacija idu normalno.
+node scripts/objavi-instagram.mjs --datum="$DATUM" || log "Instagram objava nije uspela."
 
 prvi_naslov="$(node -e "console.log(require('./public/data/$DATUM.json').vesti[0].naslov)")"
 notify "Izdanje je spremno ☕ $prvi_naslov"

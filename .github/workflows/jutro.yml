@@ -17,10 +17,14 @@ on:
   workflow_dispatch:
     inputs:
       rezim:
-        description: 'normalno = samo ako danas nema izdanja · ponovo = napravi današnje iznova · provera = test bez objavljivanja · notifikacija = samo pošalji push'
+        description: 'normalno = samo ako danas nema izdanja · ponovo = napravi današnje iznova · provera = test bez objavljivanja · notifikacija = samo pošalji push · instagram = samo objavi današnje izdanje na Instagram · instagram-token = produži Instagram token'
         type: choice
-        options: [normalno, ponovo, provera, notifikacija]
+        options: [normalno, ponovo, provera, notifikacija, instagram, instagram-token]
         default: normalno
+      datum:
+        description: 'Samo za režim instagram: datum ili više datuma razdvojenih razmakom (2026-10-08 2026-10-09). Prazno = danas.'
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -80,11 +84,43 @@ jobs:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           VAPID_PUBLIC_KEY: ${{ secrets.VAPID_PUBLIC_KEY }}
           VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
           REZIM: ${{ inputs.rezim || 'normalno' }}
+          DATUMI: ${{ inputs.datum }}
         run: |
           case "$REZIM" in
             ponovo) bash scripts/jutro.sh --ponovo ;;
             provera) bash scripts/jutro.sh --provera ;;
             notifikacija) npm ci --prefix scripts --no-audit --no-fund --loglevel=error && node scripts/posalji-push.mjs ;;
+            instagram)
+              npm ci --prefix scripts --no-audit --no-fund --loglevel=error
+              datumi="$DATUMI"
+              [ -z "$datumi" ] && datumi="$(TZ=Europe/Belgrade date +%F)"
+              prvi=true
+              for d in $datumi; do
+                # Razmak između objava, da Instagram ne vidi niz postova u istoj sekundi.
+                $prvi || sleep 120
+                prvi=false
+                node scripts/objavi-instagram.mjs --datum="$d"
+              done
+              ;;
+            instagram-token) ;;
             *) bash scripts/jutro.sh ;;
           esac
+
+      # Instagram token važi 60 dana, pa se produžava 1. i 15. u mesecu (ili ručno, režim instagram-token).
+      - name: Instagram token
+        if: steps.vreme.outputs.pokreni == 'true' && !cancelled()
+        continue-on-error: true
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          GH_SECRETS_TOKEN: ${{ secrets.GH_SECRETS_TOKEN }}
+          REZIM: ${{ inputs.rezim || 'normalno' }}
+        run: |
+          dan=$(TZ=Europe/Belgrade date +%-d)
+          if [ "$REZIM" = "instagram-token" ] || [ "$dan" = "1" ] || [ "$dan" = "15" ]; then
+            node scripts/osvezi-instagram-token.mjs
+          else
+            echo "Token se produžava 1. i 15. u mesecu, danas je $dan."
+          fi
