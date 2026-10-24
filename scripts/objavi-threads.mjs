@@ -36,7 +36,11 @@ async function graf(putanja, { metoda = 'GET', polja = {} } = {}) {
     timeoutMs: 60_000,
   });
   const podaci = JSON.parse(odgovor.tekst || '{}');
-  if (!odgovor.ok || podaci.error) throw new Error(`Threads ${metoda} ${putanja}: ${podaci.error?.message ?? odgovor.status}`);
+  if (!odgovor.ok || podaci.error) {
+    const e = podaci.error ?? {};
+    const detalji = [e.error_user_title, e.error_user_msg, e.code && `kod ${e.code}`, e.error_subcode && `podkod ${e.error_subcode}`].filter(Boolean).join(', ');
+    throw new Error(`Threads ${metoda} ${putanja}: ${e.message ?? odgovor.status}${detalji ? ` (${detalji})` : ''}`);
+  }
   return podaci;
 }
 
