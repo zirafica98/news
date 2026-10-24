@@ -18,6 +18,7 @@ Detaljan plan i spisak izvora: [PLAN.md](PLAN.md).
             insta-slike.mjs      slike za Instagram karusel → public/insta/
          4. git push             → Vercel build
          5. objavi-instagram.mjs karusel na @ai.morning.brief (čeka da slike budu na sajtu)
+            objavi-threads.mjs   isti karusel na Threads @ai.morning.brief
        rezerva u 09:30 i 12:30 ako GitHub zakasni ili nešto pukne
 ```
 
@@ -60,7 +61,7 @@ tema i jezik (sr/en) u ⚙ meniju, push notifikacija o novom izdanju, RSS na `/f
 - **Log jutra:** GitHub → Actions → Jutarnje izdanje → poslednje pokretanje
 - **Izvor ne radi:** u `scripts/sources.json` postavi `"enabled": false`
 - **Tajne (GitHub → Settings → Secrets):** `CLAUDE_CODE_OAUTH_TOKEN`, `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`,
-  `INSTAGRAM_ACCESS_TOKEN`, `INSTAGRAM_USER_ID`, `GH_SECRETS_TOKEN` (fine-grained, samo ovaj repo, Secrets: RW; za produžavanje Instagram tokena)
+  `INSTAGRAM_ACCESS_TOKEN`, `INSTAGRAM_USER_ID`, `THREADS_ACCESS_TOKEN`, `GH_SECRETS_TOKEN` (fine-grained, samo ovaj repo, Secrets: RW; za produžavanje Instagram tokena)
 - **Instagram:** Meta app „AI Morning Brief“ (developers.facebook.com, Instagram API sa Instagram prijavom, Development mod).
   Token važi 60 dana i jutarnji posao ga produžava 1. i 15. u mesecu. Ako istekne: u app-u → Use cases → Instagram API →
   API setup with Instagram login → Generate token, pa ga upiši u `INSTAGRAM_ACCESS_TOKEN`.

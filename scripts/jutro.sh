@@ -1,6 +1,6 @@
 #!/bin/bash
 # AI News — jutarnja skripta. Radi redom:
-#   git pull → skupljanje vesti → cene → Claude piše izdanje → provera → prevod → slike → git push → Instagram
+#   git pull → skupljanje vesti → cene → Claude piše izdanje → provera → prevod → slike → git push → Instagram → Threads
 #
 # Svako jutro je pokreće GitHub Actions (.github/workflows/jutro.yml), a može i ručno na Mac-u.
 # Ako je današnje izdanje već objavljeno, odmah završava.
@@ -117,6 +117,7 @@ if $PROVERA; then
   log "Claude odgovara: $odgovor"
   node scripts/fetch-news.mjs --datum="$DATUM" | sed 's/^/  /'
   node scripts/objavi-instagram.mjs --provera || log "Instagram token ne radi."
+  node scripts/objavi-threads.mjs --provera || log "Threads token ne radi."
   log "Provera je prošla. Ništa nije objavljeno."
   notify "Provera je prošla: internet, git i Claude rade."
   exit 0
@@ -158,6 +159,7 @@ log "Poslato na GitHub: $(git log -1 --format='%h')"
 
 # 8b. Instagram karusel. Čeka da Vercel objavi slike; ako ne uspe, izdanje i notifikacija idu normalno.
 node scripts/objavi-instagram.mjs --datum="$DATUM" || log "Instagram objava nije uspela."
+node scripts/objavi-threads.mjs --datum="$DATUM" || log "Threads objava nije uspela."
 
 prvi_naslov="$(node -e "console.log(require('./public/data/$DATUM.json').vesti[0].naslov)")"
 notify "Izdanje je spremno ☕ $prvi_naslov"
