@@ -71,8 +71,10 @@ if (slike.length < 2) throw new Error(`Nema slika za ${datum} u public/insta (po
 
 // Vercel build traje par minuta posle git push-a.
 for (let pokusaj = 1; ; pokusaj++) {
-  const { status } = await preuzmi(`${slike.at(-1)}?v=${Date.now()}`, { metoda: 'HEAD' }).catch(() => ({ status: 0 }));
-  if (status === 200) break;
+  // Dok slike nema, sajt vraća stranicu aplikacije (HTML) sa statusom 200, pa se gleda i vrsta sadržaja.
+  const res = await fetch(`${slike.at(-1)}?v=${Date.now()}`, { method: 'HEAD' }).catch(() => null);
+  const status = res?.status ?? 0;
+  if (status === 200 && res.headers.get('content-type')?.startsWith('image/jpeg')) break;
   if (pokusaj >= 40) throw new Error(`Slike nisu na sajtu ni posle 20 minuta (${slike.at(-1)}: ${status}).`);
   if (pokusaj === 1) console.log('Čekam da Vercel objavi slike…');
   await spavaj(30_000);
