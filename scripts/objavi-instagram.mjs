@@ -4,7 +4,8 @@
 //
 // Tajne (GitHub → Settings → Secrets → Actions): INSTAGRAM_ACCESS_TOKEN, INSTAGRAM_USER_ID (nije obavezan, čita se iz tokena).
 // Ako tokena nema, tiho preskače, da izdanje ne zavisi od Instagrama.
-// Ako je izdanje za taj dan već objavljeno (link sa datumom u opisu nekog od poslednjih postova), ne objavljuje ponovo.
+// Ako je izdanje za taj dan već objavljeno (naslov sa datumom u opisu nekog od poslednjih postova), ne objavljuje ponovo.
+// Opis nema link ka sajtu ni izvore.
 //
 // Pokretanje: node scripts/objavi-instagram.mjs
 //             node scripts/objavi-instagram.mjs --datum=2026-10-24
@@ -48,10 +49,10 @@ async function graf(putanja, { metoda = 'GET', polja = {} } = {}) {
   return podaci;
 }
 
-/** Post sa linkom ka izdanju za taj datum među poslednjim objavama, ako postoji. */
-async function nadjiObjavu(korisnik, link) {
+/** Post za taj datum među poslednjim objavama (po prvom redu opisa sa datumom), ako postoji. */
+async function nadjiObjavu(korisnik, oznaka) {
   const poslednji = await graf(`/${korisnik}/media`, { polja: { fields: 'caption,permalink', limit: '10' } });
-  return poslednji.data?.find((m) => m.caption?.includes(link));
+  return poslednji.data?.find((m) => m.caption?.includes(oznaka));
 }
 
 const spavaj = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -62,8 +63,9 @@ const limit = (await graf(`/${korisnik}/content_publishing_limit`, { polja: { fi
 console.log(`Instagram: @${ja.username}, objava u poslednja 24h: ${limit?.quota_usage ?? '?'}/${limit?.config?.quota_total ?? '?'}`);
 if (provera) process.exit(0);
 
-const linkIzdanja = `${SAJT}/izdanje/${datum}`;
-const vecObjavljeno = await nadjiObjavu(korisnik, linkIzdanja.replace('https://', ''));
+// Opis ne sme da sadrži link ka sajtu ni izvore, pa se objava za dan prepoznaje po naslovu sa datumom.
+const oznaka = `AI Morning Brief · ${lepDatum(datum)}`;
+const vecObjavljeno = await nadjiObjavu(korisnik, oznaka);
 if (vecObjavljeno) {
   console.log(`Izdanje ${datum} je već na Instagramu: ${vecObjavljeno.permalink}`);
   process.exit(0);
@@ -91,10 +93,10 @@ for (let pokusaj = 1; ; pokusaj++) {
 
 const naslovi = izaberiVesti(izdanje).map((v, i) => `${i + 1}. ${v.naslov}`);
 const opis = [
-  `☕ AI Morning Brief · ${lepDatum(datum)}`,
+  `☕ ${oznaka}`,
   skrati(izdanje.ukratko, 900),
   `Today's top ${naslovi.length}:\n${naslovi.join('\n')}`,
-  `Full brief with sources: ${linkIzdanja.replace('https://', '')} (link in bio)`,
+  `Follow for tomorrow's brief ☕`,
   HASHTAGOVI,
 ].join('\n\n');
 
@@ -127,7 +129,7 @@ for (let pokusaj = 1; ; pokusaj++) {
   } catch (err) {
     console.log(`${err.message}. Proveravam profil za minut…`);
     await spavaj(60_000);
-    const objava = await nadjiObjavu(korisnik, linkIzdanja.replace('https://', '')).catch(() => null);
+    const objava = await nadjiObjavu(korisnik, oznaka).catch(() => null);
     if (objava) {
       console.log(`Objavljeno na Instagramu (${slike.length} slika): ${objava.permalink}`);
       break;
