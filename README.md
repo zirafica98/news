@@ -15,9 +15,9 @@ Detaljan plan i spisak izvora: [PLAN.md](PLAN.md).
          2. write-digest.mjs     Claude Code (claude -p, preko Claude pretplate) napiše izdanje
          3. finalize.mjs         provera → public/data/YYYY-MM-DD.json + index.json
             translate-digest.mjs engleski prevod → public/data/en/ (ako ne uspe, srpsko ide svejedno)
-            insta-slike.mjs      slike za Instagram karusel → public/insta/
+            insta-slike.mjs      Instagram: karusel, story slike, subotom nedeljni Reel (MP4) → public/insta/
          4. git push             → Vercel build
-         5. objavi-instagram.mjs karusel na @ai.morning.brief (čeka da slike budu na sajtu)
+         5. objavi-instagram.mjs post (karusel), subotom Reel, pa isti slajdovi kao story na @ai.morning.brief
             objavi-threads.mjs   isti karusel na Threads @ai.morning.brief
        rezerva u 09:30 i 12:30 ako GitHub zakasni ili nešto pukne
 ```
