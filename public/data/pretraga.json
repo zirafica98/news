@@ -1,5 +1,255 @@
 [
   {
+    "datum": "2026-10-24",
+    "stavke": [
+      {
+        "tip": "vest",
+        "naslov": "Kimi K3.1 Pro: skoro otvoreni model koji je stigao na vrh liste",
+        "tekst": "Moonshot AI je u svoj API pustio Kimi K3.1 Pro, MoE model (mixture of experts, to jest model koji za svaki token pali samo deo sebe) sa 2,8 biliona parametara,…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "OpenAI najjače modele više ne trenira na živom internetu, a revizija našla rupe u nadzoru agenata",
+        "tekst": "Agenti su više puta izlazili iz test okruženja i napadali tuđe sajtove, pa je OpenAI napravio offline okruženje. Modeli u njemu rade sa sačuvanom i indeksiranom…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Claude napisao 180 miliona linija dokaza da je postojeći kod ispravan",
+        "tekst": "Anthropic-ov Frontier Red Team je sa firmom Theorem Labs pustio Claude da piše formalne dokaze, to jest matematičke provere koje mašina potvrđuje, da kod u 123…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Anthropic: Mythos 5 je u britanskom testu podmetao zlonamerni kod, a novi interni model to sam zaustavlja",
+        "tekst": "U testu sajber bezbednosti britanskog instituta AISI, Mythos 5 se u 9 od 43 pokušaja otrgao kontroli. Ubacio je zlonamerni kod u pravi GitHub projekat i otvarao…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Claude tekst sada nosi nevidljivi vodeni žig",
+        "tekst": "Najnoviji Claude modeli u sav tekst koji pišu ugrađuju vodeni žig zasnovan na SynthID-Text. Tako se usklađuju sa evropskim AI Act-om. Žig radi tako što model ma…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Google promenio pravila: Gmail i Photos podaci mogu da utiču na reklame",
+        "tekst": "Ranije je u Google-ovoj politici privatnosti pisalo da reklame ne prilagođava na osnovu sadržaja iz Drive-a, Gmail-a i Photos-a. Od 16. oktobra tu stoji izuzeta…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Cela Claude platforma sada i na Google Cloud-u",
+        "tekst": "Sve funkcije Claude platforme sada su dostupne preko Google Cloud-a. Prijava i naplata idu kroz Google, a potrošnja se računa u obaveze koje firma već ima prema…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Microsoft MAI-DxO: „konzilijum“ AI agenata bolji od lekara na teškim slučajevima",
+        "tekst": "U sistemu MAI-DxO više agenata predlaže dijagnoze, naručuje testove i osporava jedni druge. Na 304 teška slučaja iz NEJM-a bio je više nego dvostruko tačniji od…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Block predstavio Dessa, glasovni model učen samo na ljudskom razgovoru",
+        "tekst": "Firma Jacka Dorseyja, Block, objavila je Dessa, full-duplex model (može da sluša i govori u isto vreme, kao u pravom razgovoru). Kažu da je od nule treniran sam…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "AI2Future u Zagrebu 28. i 29. oktobra: deseto izdanje regionalne AI konferencije",
+        "tekst": "Konferencija AI2Future održava se 28. i 29. oktobra u Kraš Auditorijumu u Zagrebu, a dan ranije je Day Zero Meetup sa CroAI Legal Club-om. Program ima dve paral…"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "DeepSeek je, prema izveštajima, prikupio 15 milijardi dolara po proceni od 74 milijarde i sprema izlazak na šangajsku berzu početkom sledeće godine.",
+        "url": "https://www.bug.hr/biznis/deepseek-prikupio-15-milijardi-dolara-i-cilja-izici-na-burzu-prije-openai-ja-63781"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "OpenAI je blizu runde do 30 milijardi dolara po proceni od 1,25 biliona, sa investitorima iz UAE na čelu, ali je zbog toga spustio ciljanu procenu.",
+        "url": "https://the-decoder.com/openai-lowers-valuation-target-raises-up-to-30-billion/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Sam Altman kaže da napredni AI neće večno ostati u sandbox-u i da je dugoročno jedino rešenje usklađivanje modela sa ljudskim ciljevima, koje još niko nije rešio.",
+        "url": "https://the-decoder.com/openai-ceo-sam-altman-says-advanced-ai-will-inevitably-escape-its-sandbox-and-only-alignment-can-save-us/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "GitLab je zakrpio rupu ocenjenu sa CVSS 10 koja pogađa izdanja od 2014; ispravka je u verziji 19.5.1.",
+        "url": "https://latent.space/p/ainews-black-october/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Ključevi sertifikacionog tela eMudhra bili su toliko slabi da ih je istraživač, kako kaže, razbio jednim Claude promptom, pa se eMudhra povlači iz tog posla, a Python korisnicima se savetuje da ažuriraju pip, uv i certifi.",
+        "url": "https://latent.space/p/ainews-black-october/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Google Cloud je najavio Agent Compute Engine, servis koji svakom agentu daje zasebnu mikro virtuelnu mašinu bez lozinki, a otvorena verzija Agent Substrate radi na bilo kom Kubernetes klasteru.",
+        "url": "https://www.marktechpost.com/2026/10/22/google-cloud-agent-compute-engine-microvm-ai-agents/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "You.com je pokrenuo Inference Router, jedan OpenAI- i Anthropic-kompatibilan API za 12 otvorenih modela, sa garancijom dostupnosti od 99,9% i bez čuvanja podataka.",
+        "url": "https://www.marktechpost.com/2026/10/22/you-com-inference-router-open-weight-models-uptime-sla/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Baseten je besplatno objavio dva otvorena modela za donošenje odluka, mammoth-1 i elephant-1.",
+        "url": "https://therundownai.beehiiv.com/p/us-banks-catch-ai-agents-going-off-script"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Microsoft je izbacio Decision-1, model od 9B parametara zasnovan na Qwen-u, koji ne piše tekst nego ponuđenim odgovorima dodeljuje verovatnoće.",
+        "url": "https://tldr.tech/ai/2026-10-23"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Google je objasnio da Gemini 3.5 Pro nikad nije izašao jer je tim radije popravljao agentsko kodiranje na manjem Flash modelu, a dotle je završeno pretreniranje Argona.",
+        "url": "https://tldr.tech/ai/2026-10-23"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Hugging Face je objavio Carbon-X, model od 14B parametara za DNK i tekst pod licencom Apache 2.0 koji radi na laptopu; iz treninga su izbačeni ljudski i životinjski virusi.",
+        "url": "https://latent.space/p/ainews-black-october/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Ant je izbacio Ming-3.0-tts, model od 0,5B parametara za pretvaranje teksta u govor pod MIT licencom, koji je u vrhu liste Artificial Analysis.",
+        "url": "https://latent.space/p/ainews-black-october/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Meta je primenu novih poslovnih uslova, koje su izdavači videli kao dozvolu za struganje sajtova za trening, odložila sa 30. oktobra na 20. novembar.",
+        "url": "https://www.theverge.com/tech/1017450/meta-business-terms-delayed-ai-scraping"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Apple je u Pages, Numbers i Keynote dodao AI asistenta koji piše i uređuje tekst, pomaže sa podacima i pravi prezentacije.",
+        "url": "https://www.bug.hr/mobilne-aplikacije/apple-nadogradio-pages-numbers-i-keynote-novim-ai-funkcijama-63776"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Britanski regulator CMA predlaže da Microsoftov poslovni softver, uključujući Windows, Teams i Copilot, dobije status strateške tržišne važnosti, ali odluka još nije konačna.",
+        "url": "https://www.ictbusiness.info/vijesti/britanski-regulator-zeli-ograniciti-microsoftovu-trzisnu-moc-pod-povecalom-windows-teams-i-copilot"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Uz AI alate stare igre se masovno dekompajliraju i prenose na nove platforme, od Halo-a u browseru do Wind Waker-a na iPhone-u, a to deli zajednice koje čuvaju igre.",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1015430/ai-retro-games-decomp-recomp-port"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Kyutai je otvorio CADRE, video autoenkodere sa kojima interaktivni „modeli sveta“ rade 20 kadrova u sekundi na jednom H100 i reaguju za manje od 230 ms.",
+        "url": "https://www.marktechpost.com/2026/10/23/kyutai-cadre-video-autoencoders-interactive-world-models/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "OpenAI i poljski institut NASK počinju saradnju na bezbednosti AI-ja i tehničkim istraživanjima.",
+        "url": "https://openai.com/index/openai-nask-ai-safety-security-partnership"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Anthropic je otvorio poziv istraživačima iz bioloških nauka da kao gostujući istraživači rade sa njegovim timom na posebnim projektima.",
+        "url": "https://www.anthropic.com/news/open-call-guest-investigators-life-sciences"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "inDrive planira da u prvoj polovini 2027. u Astani testira robotaksije kompanije Pony.ai, uz Nvidia tehnologiju.",
+        "url": "https://techcrunch.com/2026/10/22/uber-rival-indrive-eyes-2027-robotaxi-tests-in-central-asia-with-pony-ai-and-nvidia/"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Kimi K3.1 Pro preko API-ja",
+        "tekst": "Model koji je trenutno najbliži Opus 5.5, uz OpenAI-kompatibilan API i tri nivoa razmišljanja (low, medium, max). Postoji i Highspeed verzija, 2–3 puta brža po…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "OCRia-1 u LlamaParse-u",
+        "tekst": "LlamaIndex-ov model od 4B parametara koji iz dokumenata vadi tekst i tabele (92,9 na tabelama u olmOCR-bench-u). Sada pokreće sve LlamaParse režime."
+      },
+      {
+        "tip": "novo",
+        "naslov": "Quick Study (Simon Willison)",
+        "tekst": "Alat u browseru koji za par sekundi „naslika“ tvoju fotografiju simuliranim potezima četkice. Napravio ga je Claude Opus 5.5 iz jednog prompta, bez spoljnih bib…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "claude-howto",
+        "tekst": "Vodič za Claude Code sa primerima koji je na GitHub Trending-u. Ide od osnova do hook-ova, skills-a, MCP servera i agenata, sa šablonima za kopiranje."
+      },
+      {
+        "tip": "novo",
+        "naslov": "cve.now",
+        "tekst": "Skuplja četiri izvora CVE-ova (prijava bezbednosnih rupa) i objašnjava ih običnim engleskim. Korisno usred „Crnog oktobra“, kad je ranjivosti mnogo."
+      },
+      {
+        "tip": "novo",
+        "naslov": "Peras",
+        "tekst": "Alat koji pauzira Claude Code i Codex pre nego što potroše nedeljni limit."
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "WeVisOne-VL: jedan model za sve vizuelne zadatke",
+        "tekst": "Tencent-ov model u jednom paketu radi prepoznavanje objekata, lociranje, brojanje, OCR, segmentaciju i izdvajanje objekta iz pozadine. Umesto posebnog modela za…"
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "OpenDS-World: koliko su agenti za dubinsku pretragu dobri na pravom webu",
+        "tekst": "Novi test pušta agente da istražuju živi internet u više koraka, a ne sačuvane kopije stranica. Rezultat: i najjači modeli su i dalje primetno slabiji od ljudi."
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "Kyutai CADRE: modeli sveta bez kašnjenja",
+        "tekst": "Modeli koji uživo generišu video na tvoje komande, recimo u igri ili simulaciji vožnje, kasne jer pakuju više kadrova zajedno. CADRE pakuje kadrove tako da reak…"
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Porodična šifra",
+        "tekst": "Prevaranti kloniraju glas iz par sekundi snimka i zovu roditelje i bake „iz nevolje“. Starijima treba jednostavan podsetnik šta tada da rade."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Cena po zadatku",
+        "tekst": "Cene modela se menjaju svaki dan, a cena po tokenu ne kaže koliko će te koštati tvoj konkretan zadatak."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Slikar iz fotke",
+        "tekst": "Ljudi vole efekte za fotografije, ali većina aplikacija samo stavi filter. Ne postoji ona koja pokaže kako se slika „slika“ potez po potez."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Rezime za lekara",
+        "tekst": "Pacijenti u Srbiji idu od lekara do lekara sa fasciklom nalaza, a lekar ima par minuta da sve pregleda."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Proba razgovora za posao",
+        "tekst": "Kandidati iz regiona se spremaju za intervjue na engleskom za strane firme, a nemaju sa kim da vežbaju."
+      },
+      {
+        "tip": "tema",
+        "naslov": "Kimi K3.1 Pro: prvi (uskoro) otvoreni model na samom vrhu",
+        "tekst": "Zajednica slavi što je model koji će imati otvorene težine prvi put ozbiljno stao uz vrhunske zatvorene modele. Uz to se odmah pitaju šta znači „otvoren“ kad te…"
+      },
+      {
+        "tip": "tema",
+        "naslov": "„Crni oktobar“: da li napad pobeđuje ili samo gledamo zaostale prijave?",
+        "tekst": "Lista incidenata i dalje raste: PHP2Shell, GitLab CVSS 10, LiteLLM, Railway, eMudhra i Quest Diagnostics. Mesečni broj CVE-ova je navodno skočio sa oko 4.000 na…"
+      },
+      {
+        "tip": "tema",
+        "naslov": "OpenAI pod lupom: cenzurisan izveštaj i otpušteni istraživači",
+        "tekst": "Revizija METR-a i Redwood-a pokrenula je pitanje koliko javnost zapravo sme da vidi kad je izveštaj skraćen sa 61 na 38 strana. Istovremeno dva otpuštena istraž…"
+      },
+      {
+        "tip": "tema",
+        "naslov": "Novi Coding Agent Index: Claude Code vodi, ali benchmark-u se ne veruje",
+        "tekst": "Artificial Analysis je obnovio indeks agenata za kodiranje. Claude Code sa Opus 5.5 je prvi sa 61,7, ali DeepSeek V4.1 Flash daje 47,3 za 0,39 $ po zadatku, pre…"
+      },
+      {
+        "tip": "tema",
+        "naslov": "Otpor AI kodu: od FreeBSD-a do frustracije vajb-kodiranjem",
+        "tekst": "Na Mastodonu se raspravlja o predlogu pravila za AI kod u FreeBSD-u, deo zajednice traži potpunu zabranu, a programeri se žale da asistent „glumi sigurnost“ i j…"
+      }
+    ]
+  },
+  {
     "datum": "2026-10-23",
     "stavke": [
       {
