@@ -29,7 +29,7 @@ const FORMATI = {
   reel: { visina: 1920, padY: 230, dalje: '' },
 };
 
-const BOJE = {
+export const BOJE = {
   pozadina: '#020617',
   kartica: '#0f172a',
   ivica: '#1e293b',
@@ -38,7 +38,7 @@ const BOJE = {
   akcenat: '#fbbf24',
 };
 
-const KATEGORIJE = {
+export const KATEGORIJE = {
   modeli: 'Models',
   alati: 'Tools',
   kompanije: 'Companies',
@@ -77,7 +77,7 @@ export function skrati(tekst, max) {
   return `${tekst.slice(0, max).replace(/\s+\S*$/, '')}…`;
 }
 
-const el = (type, style, ...children) => ({
+export const el = (type, style, ...children) => ({
   type,
   props: { style: { display: 'flex', ...style }, children: children.length === 1 ? children[0] : children },
 });
@@ -160,7 +160,7 @@ function zavrsna(format, redniBroj, ukupno) {
   );
 }
 
-async function fontovi() {
+export async function fontovi() {
   const dir = join(SCRIPTS_DIR, 'node_modules', '@fontsource', 'inter', 'files');
   const lista = [];
   for (const tezina of [400, 600, 800]) {

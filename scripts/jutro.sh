@@ -147,6 +147,9 @@ node scripts/translate-digest.mjs --datum="$DATUM" || log "Engleski prevod nije 
 # 7c. Slike za Instagram karusel (public/insta), iz engleskog izdanja. Idu na sajt zajedno sa izdanjem.
 node scripts/insta-slike.mjs --datum="$DATUM" || log "Instagram slike nisu napravljene, izdanje ide bez njih."
 
+# 7d. YouTube Shorts sa glasom (Kokoro TTS): po jedan za tri glavne vesti. Bez Python-a i modela se preskače.
+node scripts/shorts.mjs --datum="$DATUM" || log "Shorts nisu napravljeni, izdanje ide bez njih."
+
 # 8. Slanje na GitHub → Vercel pravi novi build.
 # Ceo public/ jer finalize pravi i feed.xml i sitemap.xml, a ne samo public/data.
 git add public scripts/state
