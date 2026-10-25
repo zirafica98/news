@@ -75,6 +75,10 @@ videi.splice(najvise);
 // Poslednji videi na kanalu: lista „uploads“ košta 1 jedinicu kvote, a pretraga 100.
 const poslednji = await yt('/playlistItems', { part: 'snippet', playlistId: kanal.contentDetails.relatedPlaylists.uploads, maxResults: '25' });
 
+// Stanje za posleObjave (plejliste, komentari); mora biti pre petlje jer se funkcija poziva iz nje.
+let bezOvlascenja = false;
+const plejliste = new Map();
+
 let greske = 0;
 for (const v of videi) {
   try {
@@ -101,8 +105,6 @@ if (greske) process.exit(1);
  * Plejlista i komentar sa pitanjem. Traže ovlašćenje youtube.force-ssl; ako ga stari token nema,
  * samo se preskače (upload i dalje radi) dok se ne pokrene ponovo scripts/youtube-prijava.mjs.
  */
-let bezOvlascenja = false;
-const plejliste = new Map();
 async function posleObjave(id, { plejlista, pitanje }) {
   if (bezOvlascenja) return;
   try {
