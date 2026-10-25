@@ -150,6 +150,9 @@ node scripts/insta-slike.mjs --datum="$DATUM" || log "Instagram slike nisu napra
 # 7d. YouTube Shorts sa glasom (Kokoro TTS): po jedan za tri glavne vesti. Bez Python-a i modela se preskače.
 node scripts/shorts.mjs --datum="$DATUM" || log "Shorts nisu napravljeni, izdanje ide bez njih."
 
+# 7e. Mediji za mreže stariji od 14 dana se brišu (mreže su ih već preuzele), da repo ne raste.
+node scripts/ocisti-medije.mjs || log "Stari mediji nisu obrisani."
+
 # 8. Slanje na GitHub → Vercel pravi novi build.
 # Ceo public/ jer finalize pravi i feed.xml i sitemap.xml, a ne samo public/data.
 git add public scripts/state
