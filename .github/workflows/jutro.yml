@@ -17,9 +17,9 @@ on:
   workflow_dispatch:
     inputs:
       rezim:
-        description: 'normalno = samo ako danas nema izdanja · ponovo = napravi današnje iznova · provera = test bez objavljivanja · notifikacija = samo pošalji push · drustvene = objavi na sve mreže (Instagram, Threads, YouTube, Telegram; Vercel to pokreće popodne) · instagram = samo Instagram · threads = samo Threads · youtube = samo YouTube · instagram-token = produži Instagram i Threads token'
+        description: 'normalno = samo ako danas nema izdanja · ponovo = napravi današnje iznova · provera = test bez objavljivanja · notifikacija = samo pošalji push · drustvene = objavi na sve mreže (Instagram, Threads, YouTube, Telegram; Vercel to pokreće popodne) · instagram = samo Instagram · threads = samo Threads · youtube = samo YouTube · instagram-token = produži Instagram i Threads token · telegram-id = nađi tvoj chat ID za izveštaje'
         type: choice
-        options: [normalno, ponovo, provera, notifikacija, drustvene, instagram, threads, youtube, instagram-token]
+        options: [normalno, ponovo, provera, notifikacija, drustvene, instagram, threads, youtube, instagram-token, telegram-id]
         default: normalno
       datum:
         description: 'Samo za režime drustvene, instagram, threads i youtube: datum ili više datuma razdvojenih razmakom (2026-10-08 2026-10-09). Prazno = danas.'
@@ -104,6 +104,7 @@ jobs:
           git config user.email "zirafica.98@gmail.com"
 
       - name: Izdanje
+        id: izdanje
         if: steps.vreme.outputs.pokreni == 'true'
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
@@ -120,7 +121,11 @@ jobs:
           REZIM: ${{ inputs.rezim || 'normalno' }}
           DATUMI: ${{ inputs.datum }}
         run: |
+          # Ispis se snima i u fajl, da ga korak „Izveštaj na Telegram“ pročita.
+          set -o pipefail
+          (
           case "$REZIM" in
+            telegram-id) node scripts/izvestaj-telegram.mjs --nadji-chat ;;
             ponovo) bash scripts/jutro.sh --ponovo ;;
             provera) bash scripts/jutro.sh --provera ;;
             notifikacija) npm ci --prefix scripts --no-audit --no-fund --loglevel=error && node scripts/posalji-push.mjs ;;
@@ -174,6 +179,7 @@ jobs:
             instagram-token) ;;
             *) bash scripts/jutro.sh ;;
           esac
+          ) 2>&1 | tee "$RUNNER_TEMP/izlaz.log"
 
       # Instagram i Threads token važe 60 dana, pa se produžava 1. i 15. u mesecu (ili ručno, režim instagram-token).
       - name: Instagram token
@@ -191,3 +197,17 @@ jobs:
           else
             echo "Token se produžava 1. i 15. u mesecu, danas je $dan."
           fi
+
+      # Kratak izveštaj tebi na Telegram: šta je urađeno, šta nije i link ka logu.
+      - name: Izveštaj na Telegram
+        if: always() && steps.vreme.outputs.pokreni == 'true'
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_ADMIN_CHAT_ID: ${{ secrets.TELEGRAM_ADMIN_CHAT_ID }}
+          REZIM: ${{ inputs.rezim || 'normalno' }}
+          ISHOD: ${{ steps.izdanje.outcome }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          [ "$REZIM" = "telegram-id" ] && exit 0
+          node scripts/izvestaj-telegram.mjs "$RUNNER_TEMP/izlaz.log"
