@@ -66,11 +66,13 @@ await tg('sendMediaGroup', {
 console.log(`Objavljeno u Telegram kanalu (${Math.min(slike.length, 10)} slika).`);
 
 // Subotom i nedeljni video; dnevni Reel bi samo ponovio album.
-if (jeNedeljniReel(izdanje) && fajlovi.includes(`${datum}-reel.mp4`)) {
+// Subotom ide nedeljni Short sa glasom (shorts.mjs), a ako ga nema, stari Reel od slajdova.
+const nedeljniVideo = [`${datum}-short-nedelja.mp4`, `${datum}-reel.mp4`].find((f) => fajlovi.includes(f));
+if (jeNedeljniReel(izdanje) && nedeljniVideo) {
   const { opis: opisVidea } = opisReela(izdanje, '');
   await tg('sendVideo', {
     chat_id: kanal,
-    video: `${SAJT}/insta/${datum}-reel.mp4`,
+    video: `${SAJT}/insta/${nedeljniVideo}`,
     caption: opisVidea.trim().slice(0, 1024),
     supports_streaming: true,
     width: 1080,
