@@ -133,6 +133,10 @@ jobs:
               for d in $datumi; do
                 for mreza in instagram threads youtube telegram; do
                   echo "::group::$mreza $d"
+                  # YouTube prvo dopuni jučerašnje Shortove koji nisu stali u dnevnu kvotu (već objavljeni se preskaču).
+                  if [ "$mreza" = youtube ] && [ -z "$DATUMI" ]; then
+                    node scripts/objavi-youtube.mjs --datum="$(TZ=Europe/Belgrade date -d yesterday +%F)" || greska=1
+                  fi
                   node "scripts/objavi-$mreza.mjs" --datum="$d" || greska=1
                   echo "::endgroup::"
                 done
