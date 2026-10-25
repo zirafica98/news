@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Content Engine – fresh content for your brand, every day</title>
+<meta name="description" content="Your brand posts fresh content every day without a content team: carousels, voiced Reels and Shorts, stories and a weekly video, on Instagram, YouTube, Threads and Telegram.">
+<meta property="og:title" content="AI Content Engine – fresh content for your brand, every day">
+<meta property="og:description" content="Carousels, voiced Reels and Shorts, stories and a weekly video. Every day, automatically.">
+<meta property="og:image" content="https://news-one-teal.vercel.app/og.jpg">
+<link rel="icon" href="/favicon.ico">
+<style>
+  :root { color-scheme: dark; --bg:#020617; --kartica:#0f172a; --ivica:#1e293b; --tekst:#f8fafc; --sivo:#94a3b8; --svetlo:#cbd5e1; --zuto:#fbbf24; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin:0; background:var(--bg); color:var(--tekst); font:17px/1.6 -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; }
+  body::before { content:""; position:fixed; inset:0; z-index:-1; background:
+    radial-gradient(600px 400px at 15% 10%, rgba(251,191,36,.10), transparent 70%),
+    radial-gradient(700px 500px at 90% 40%, rgba(124,58,237,.16), transparent 70%),
+    radial-gradient(500px 400px at 20% 90%, rgba(14,165,233,.08), transparent 70%); }
+  a { color:inherit; }
+  .sirina { max-width:1080px; margin:0 auto; padding:0 24px; }
+  nav { position:sticky; top:0; z-index:10; background:rgba(2,6,23,.8); backdrop-filter:blur(10px); border-bottom:1px solid var(--ivica); }
+  nav .sirina { display:flex; align-items:center; justify-content:space-between; height:64px; gap:16px; }
+  .logo { display:flex; align-items:center; gap:10px; font-weight:800; text-decoration:none; }
+  .znak { width:34px; height:34px; border-radius:9px; background:var(--zuto); color:var(--bg); display:grid; place-items:center; font-weight:900; font-size:15px; letter-spacing:-.5px; }
+  .desno { display:flex; align-items:center; gap:12px; }
+  .jezik { display:flex; border:1px solid var(--ivica); border-radius:999px; overflow:hidden; }
+  .jezik button { background:none; border:0; color:var(--sivo); padding:6px 12px; font:inherit; font-size:14px; cursor:pointer; }
+  .jezik button[aria-pressed="true"] { background:var(--ivica); color:var(--tekst); }
+  .dugme { display:inline-block; background:var(--zuto); color:var(--bg); font-weight:700; padding:12px 22px; border-radius:999px; text-decoration:none; border:0; font-size:16px; cursor:pointer; }
+  .dugme.malo { padding:8px 16px; font-size:14px; }
+  .dugme.prazno { background:none; color:var(--tekst); border:1px solid var(--ivica); }
+  header.hero { padding:88px 0 56px; }
+  .znacka { display:inline-flex; align-items:center; gap:8px; border:1px solid var(--ivica); border-radius:999px; padding:6px 14px; font-size:14px; color:var(--svetlo); margin-bottom:24px; }
+  .tacka { width:8px; height:8px; border-radius:50%; background:#22c55e; box-shadow:0 0 12px #22c55e; }
+  h1 { font-size:clamp(36px, 6vw, 64px); line-height:1.05; letter-spacing:-1.5px; margin:0 0 20px; max-width:880px; }
+  h1 em { font-style:normal; color:var(--zuto); }
+  .podnaslov { font-size:20px; color:var(--svetlo); max-width:680px; margin:0 0 32px; }
+  .akcije { display:flex; gap:12px; flex-wrap:wrap; }
+  section { padding:64px 0; }
+  h2 { font-size:clamp(28px, 4vw, 40px); letter-spacing:-1px; margin:0 0 12px; }
+  .uvod { color:var(--sivo); max-width:680px; margin:0 0 36px; }
+  .demo { display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; }
+  .demo iframe { width:100%; aspect-ratio:9/16; border:0; border-radius:18px; background:var(--kartica); }
+  .kanali { display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; }
+  .kanali a { border:1px solid var(--ivica); border-radius:999px; padding:8px 16px; text-decoration:none; font-size:15px; color:var(--svetlo); }
+  .kanali a:hover { border-color:var(--zuto); color:var(--tekst); }
+  .mreza { display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:16px; }
+  .kartica { background:rgba(15,23,42,.75); border:1px solid var(--ivica); border-radius:18px; padding:24px; }
+  .kartica .broj { color:var(--zuto); font-weight:800; font-size:14px; letter-spacing:2px; margin-bottom:8px; }
+  .kartica h3 { margin:0 0 8px; font-size:20px; }
+  .kartica p { margin:0; color:var(--sivo); font-size:16px; }
+  .lista { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:12px 32px; padding:0; margin:0; list-style:none; }
+  .lista li { padding-left:30px; position:relative; color:var(--svetlo); }
+  .lista li::before { content:"✓"; position:absolute; left:0; color:var(--zuto); font-weight:800; }
+  .niše { display:flex; flex-wrap:wrap; gap:10px; }
+  .niše span { background:var(--kartica); border:1px solid var(--ivica); border-radius:999px; padding:8px 16px; color:var(--svetlo); font-size:15px; }
+  .cene { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px; }
+  .cene .kartica.istaknuto { border-color:var(--zuto); }
+  .cene .cena { font-size:28px; font-weight:800; margin:8px 0 12px; }
+  .cene ul { padding-left:20px; color:var(--svetlo); margin:12px 0 0; }
+  details { border-bottom:1px solid var(--ivica); padding:18px 0; }
+  summary { cursor:pointer; font-weight:700; font-size:18px; }
+  details p { color:var(--svetlo); margin:12px 0 0; }
+  form { display:grid; gap:14px; max-width:640px; }
+  label { display:grid; gap:6px; font-size:15px; color:var(--svetlo); }
+  input, textarea, select { background:var(--kartica); border:1px solid var(--ivica); border-radius:12px; padding:12px 14px; color:var(--tekst); font:inherit; }
+  input:focus, textarea:focus, select:focus { outline:2px solid var(--zuto); outline-offset:1px; }
+  .skriveno { position:absolute; left:-9999px; }
+  .poruka { min-height:24px; font-weight:600; }
+  footer { border-top:1px solid var(--ivica); padding:32px 0 48px; color:var(--sivo); font-size:14px; }
+  footer .sirina { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; }
+  @media (max-width: 760px) {
+    .demo { grid-template-columns:1fr; max-width:360px; }
+    nav .dugme.malo { display:none; }
+    header.hero { padding-top:56px; }
+  }
+</style>
+</head>
+<body>
+<nav aria-label="Main">
+  <div class="sirina">
+    <a class="logo" href="#"><span class="znak">AI</span><span>AI Content Engine</span></a>
+    <div class="desno">
+      <div class="jezik" role="group" aria-label="Language">
+        <button type="button" data-jezik="en" aria-pressed="true">EN</button>
+        <button type="button" data-jezik="sr" aria-pressed="false">SR</button>
+      </div>
+      <a class="dugme malo" href="#kontakt" data-i18n="nav.cta">Get a pilot</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="hero">
+    <div class="sirina">
+      <div class="znacka"><span class="tacka" aria-hidden="true"></span><span data-i18n="hero.znacka">Live: posting every day since October 2026, with no one touching it</span></div>
+      <h1 data-i18n="hero.naslov">Your brand posts fresh content <em>every day</em>, without a content team.</h1>
+      <p class="podnaslov" data-i18n="hero.pod">We set up an AI engine that finds what's new in your niche, writes it in your voice and publishes carousels, voiced Reels and Shorts, stories and a weekly video on your channels. Every morning, automatically.</p>
+      <div class="akcije">
+        <a class="dugme" href="#kontakt" data-i18n="hero.cta">Get a 30-day pilot</a>
+        <a class="dugme prazno" href="#demo" data-i18n="hero.demo">See it live</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="demo">
+    <div class="sirina">
+      <h2 data-i18n="demo.naslov">See it running right now</h2>
+      <p class="uvod" data-i18n="demo.uvod">AI Morning Brief is our own channel, fully run by the engine: news collected and written every morning, videos voiced and animated, posted to five networks. These are real, unedited videos it made.</p>
+      <div class="demo">
+        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/KGp1-6wTyJU" title="AI Morning Brief Short 1" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/WRNhJI9fwVg" title="AI Morning Brief Short 2" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+        <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/zgiaDcRJMpA" title="AI Morning Brief Short 3" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="kanali">
+        <a href="https://www.youtube.com/@ai-morning-brief">YouTube</a>
+        <a href="https://www.instagram.com/ai.morning.brief/">Instagram</a>
+        <a href="https://www.threads.com/@ai.morning.brief">Threads</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sirina">
+      <h2 data-i18n="kako.naslov">How it works</h2>
+      <p class="uvod" data-i18n="kako.uvod">Set up once, then it runs every day. You only check the daily report.</p>
+      <div class="mreza">
+        <div class="kartica"><div class="broj">01</div><h3 data-i18n="kako.1n">Collects</h3><p data-i18n="kako.1">Every morning it reads the sources that matter in your niche: news sites, blogs, social media, data feeds.</p></div>
+        <div class="kartica"><div class="broj">02</div><h3 data-i18n="kako.2n">Writes</h3><p data-i18n="kako.2">AI picks the most important stories and writes them in your brand's voice, in your language.</p></div>
+        <div class="kartica"><div class="broj">03</div><h3 data-i18n="kako.3n">Designs</h3><p data-i18n="kako.3">Carousels, stories and vertical videos with a voiceover, animated captions and your colors and logo.</p></div>
+        <div class="kartica"><div class="broj">04</div><h3 data-i18n="kako.4n">Publishes</h3><p data-i18n="kako.4">Posts at the best time for your audience, then sends you a short report of what went live.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sirina">
+      <h2 data-i18n="dobija.naslov">What you get</h2>
+      <p class="uvod" data-i18n="dobija.uvod">A full daily content routine, on your own accounts.</p>
+      <ul class="lista">
+        <li data-i18n="dobija.1">A daily Instagram carousel with the top stories</li>
+        <li data-i18n="dobija.2">Voiced Reels and YouTube Shorts with animated captions</li>
+        <li data-i18n="dobija.3">Stories every day</li>
+        <li data-i18n="dobija.4">A weekly recap, including a longer YouTube video with chapters</li>
+        <li data-i18n="dobija.5">Threads and a Telegram channel, if you want them</li>
+        <li data-i18n="dobija.6">Captions, hashtags and a question to start comments</li>
+        <li data-i18n="dobija.7">A short report every day, so you always know what went live</li>
+        <li data-i18n="dobija.8">Your colors, logo, tone and topics</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="sirina">
+      <h2 data-i18n="za.naslov">Made for niches that move fast</h2>
+      <p class="uvod" data-i18n="za.uvod">If there's something new in your field every day, the engine turns it into content every day.</p>
+      <div class="niše">
+        <span data-i18n="za.1">Tech and AI</span><span data-i18n="za.2">Crypto and finance</span><span data-i18n="za.3">Real estate</span><span data-i18n="za.4">Sports</span><span data-i18n="za.5">Local news and media</span><span data-i18n="za.6">Gaming</span><span data-i18n="za.7">Marketing agencies</span><span data-i18n="za.8">B2B and SaaS brands</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sirina">
+      <h2 data-i18n="cene.naslov">Start with a pilot</h2>
+      <p class="uvod" data-i18n="cene.uvod">We set it up for your brand and run it for 30 days. If it works for you, it keeps running.</p>
+      <div class="cene">
+        <div class="kartica istaknuto">
+          <div class="broj" data-i18n="cene.pilotn">PILOT · 30 DAYS</div>
+          <div class="cena" data-i18n="cene.pilotc">Reduced price</div>
+          <p data-i18n="cene.pilot">For the first brands we work with, in exchange for honest feedback.</p>
+          <ul><li data-i18n="cene.p1">Full setup in your brand style</li><li data-i18n="cene.p2">Daily posting on up to 4 networks</li><li data-i18n="cene.p3">Weekly check-in and adjustments</li></ul>
+        </div>
+        <div class="kartica">
+          <div class="broj" data-i18n="cene.mesn">MONTHLY</div>
+          <div class="cena" data-i18n="cene.mesc">Ask for a quote</div>
+          <p data-i18n="cene.mes">One-time setup plus a monthly fee, based on networks and volume.</p>
+          <ul><li data-i18n="cene.m1">Everything in the pilot</li><li data-i18n="cene.m2">New formats and series as you grow</li><li data-i18n="cene.m3">Cancel any time</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sirina">
+      <h2 data-i18n="faq.naslov">Questions</h2>
+      <details><summary data-i18n="faq.1q">Do I need to do anything every day?</summary><p data-i18n="faq.1a">No. You get a short report every day. If you want, posts can wait for your approval before they go live.</p></details>
+      <details><summary data-i18n="faq.2q">Which networks?</summary><p data-i18n="faq.2a">Instagram (posts, Reels, stories), YouTube (Shorts and long videos), Threads and Telegram. TikTok is possible with a quick manual step.</p></details>
+      <details><summary data-i18n="faq.3q">Does it post on my accounts?</summary><p data-i18n="faq.3a">Yes, through the official Instagram, YouTube, Threads and Telegram APIs. You keep full ownership and can revoke access any time.</p></details>
+      <details><summary data-i18n="faq.4q">Which languages?</summary><p data-i18n="faq.4a">English, Serbian and most major languages, for both text and voice.</p></details>
+      <details><summary data-i18n="faq.5q">Is the content copied from the sources?</summary><p data-i18n="faq.5a">No. Stories are summarized in your own words, and we always respect the platforms' rules.</p></details>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="sirina">
+      <h2 data-i18n="kontakt.naslov">Get a pilot for your brand</h2>
+      <p class="uvod" data-i18n="kontakt.uvod">Tell us a little about your brand and we'll reply within a day.</p>
+      <form id="forma" novalidate>
+        <label><span data-i18n="kontakt.ime">Name</span><input name="ime" required maxlength="100" autocomplete="name"></label>
+        <label><span data-i18n="kontakt.mejl">Email</span><input name="mejl" type="email" required maxlength="200" autocomplete="email"></label>
+        <label><span data-i18n="kontakt.brend">Brand or website</span><input name="brend" maxlength="200"></label>
+        <label><span data-i18n="kontakt.nisa">What is your niche?</span><input name="nisa" maxlength="200"></label>
+        <label><span data-i18n="kontakt.poruka">Anything else?</span><textarea name="poruka" rows="4" maxlength="2000"></textarea></label>
+        <label class="skriveno" aria-hidden="true">Website<input name="sajt" tabindex="-1" autocomplete="off"></label>
+        <div><button class="dugme" type="submit" data-i18n="kontakt.posalji">Send</button></div>
+        <div class="poruka" id="status" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="sirina">
+    <span>© 2026 AI Content Engine</span>
+    <span><a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Service</a></span>
+  </div>
+</footer>
+
+<script>
+const PREVOD = {
+  sr: {
+    'nav.cta': 'Probni period',
+    'hero.znacka': 'Uživo: objavljuje svaki dan od oktobra 2026, bez ičijeg dodira',
+    'hero.naslov': 'Vaš brend svaki dan objavljuje <em>nov sadržaj</em>, bez tima za sadržaj.',
+    'hero.pod': 'Postavljamo AI sistem koji pronalazi šta je novo u vašoj oblasti, piše vašim tonom i objavljuje karusele, Reels i Shorts sa glasom, story i nedeljni video na vašim kanalima. Svako jutro, automatski.',
+    'hero.cta': 'Probni period od 30 dana',
+    'hero.demo': 'Pogledajte uživo',
+    'demo.naslov': 'Pogledajte kako radi upravo sada',
+    'demo.uvod': 'AI Morning Brief je naš kanal koji ceo vodi ovaj sistem: vesti se skupljaju i pišu svako jutro, videi dobijaju glas i animacije i idu na pet mreža. Ovo su pravi videi koje je napravio, bez ikakve izmene.',
+    'kako.naslov': 'Kako radi',
+    'kako.uvod': 'Podesi se jednom, a onda radi svaki dan. Vi samo pogledate dnevni izveštaj.',
+    'kako.1n': 'Skuplja', 'kako.1': 'Svako jutro čita izvore koji su bitni u vašoj oblasti: sajtove, blogove, društvene mreže, podatke.',
+    'kako.2n': 'Piše', 'kako.2': 'AI bira najvažnije teme i piše ih tonom vašeg brenda, na vašem jeziku.',
+    'kako.3n': 'Dizajnira', 'kako.3': 'Karuseli, story i uspravni videi sa glasom, animiranim titlovima, vašim bojama i logom.',
+    'kako.4n': 'Objavljuje', 'kako.4': 'Objavljuje kad je vaša publika najaktivnija, pa vam pošalje kratak izveštaj šta je izašlo.',
+    'dobija.naslov': 'Šta dobijate',
+    'dobija.uvod': 'Kompletnu dnevnu rutinu sadržaja, na vašim nalozima.',
+    'dobija.1': 'Dnevni Instagram karusel sa najvažnijim temama',
+    'dobija.2': 'Reels i YouTube Shorts sa glasom i animiranim titlovima',
+    'dobija.3': 'Story svaki dan',
+    'dobija.4': 'Nedeljni pregled, uključujući duži YouTube video sa poglavljima',
+    'dobija.5': 'Threads i Telegram kanal, ako ih želite',
+    'dobija.6': 'Opise, hashtag-ove i pitanje koje pokreće komentare',
+    'dobija.7': 'Kratak izveštaj svaki dan, da uvek znate šta je objavljeno',
+    'dobija.8': 'Vaše boje, logo, ton i teme',
+    'za.naslov': 'Za oblasti u kojima se stalno nešto dešava',
+    'za.uvod': 'Ako u vašoj oblasti svaki dan ima nečeg novog, sistem to svaki dan pretvara u sadržaj.',
+    'za.1': 'Tehnologija i AI', 'za.2': 'Kripto i finansije', 'za.3': 'Nekretnine', 'za.4': 'Sport', 'za.5': 'Lokalne vesti i mediji', 'za.6': 'Gaming', 'za.7': 'Marketing agencije', 'za.8': 'B2B i SaaS brendovi',
+    'cene.naslov': 'Počnite probnim periodom',
+    'cene.uvod': 'Podesimo sistem za vaš brend i vodimo ga 30 dana. Ako vam odgovara, nastavlja da radi.',
+    'cene.pilotn': 'PROBNI PERIOD · 30 DANA', 'cene.pilotc': 'Snižena cena', 'cene.pilot': 'Za prve brendove sa kojima radimo, u zamenu za iskrene utiske.',
+    'cene.p1': 'Kompletno podešavanje u stilu vašeg brenda', 'cene.p2': 'Svakodnevne objave na do 4 mreže', 'cene.p3': 'Nedeljna provera i prilagođavanja',
+    'cene.mesn': 'MESEČNO', 'cene.mesc': 'Po dogovoru', 'cene.mes': 'Jednokratno podešavanje i mesečna cena, prema broju mreža i obimu.',
+    'cene.m1': 'Sve iz probnog perioda', 'cene.m2': 'Novi formati i serije kako rastete', 'cene.m3': 'Otkazivanje bilo kad',
+    'faq.naslov': 'Pitanja',
+    'faq.1q': 'Da li moram nešto da radim svaki dan?', 'faq.1a': 'Ne. Svaki dan dobijate kratak izveštaj. Ako želite, objave mogu da čekaju vaše odobrenje pre nego što izađu.',
+    'faq.2q': 'Koje mreže?', 'faq.2a': 'Instagram (postovi, Reels, story), YouTube (Shorts i duži videi), Threads i Telegram. TikTok uz jedan kratak ručni korak.',
+    'faq.3q': 'Da li objavljuje na mojim nalozima?', 'faq.3a': 'Da, preko zvaničnih Instagram, YouTube, Threads i Telegram API-ja. Nalozi ostaju vaši i pristup možete ukinuti bilo kad.',
+    'faq.4q': 'Na kojim jezicima?', 'faq.4a': 'Srpski, engleski i većina velikih jezika, i za tekst i za glas.',
+    'faq.5q': 'Da li se sadržaj kopira iz izvora?', 'faq.5a': 'Ne. Teme se prepričavaju vašim rečima, uz poštovanje pravila svake mreže.',
+    'kontakt.naslov': 'Probni period za vaš brend',
+    'kontakt.uvod': 'Recite nam nešto o svom brendu i javljamo se u roku od jednog dana.',
+    'kontakt.ime': 'Ime', 'kontakt.mejl': 'Mejl', 'kontakt.brend': 'Brend ili sajt', 'kontakt.nisa': 'Kojom oblašću se bavite?', 'kontakt.poruka': 'Još nešto?', 'kontakt.posalji': 'Pošalji',
+    'ok': 'Hvala! Javljamo se u roku od jednog dana.', 'greska': 'Slanje nije uspelo. Pokušajte ponovo za minut.', 'fali': 'Upišite ime i ispravan mejl.', 'salje': 'Šaljem…',
+  },
+  en: { 'ok': 'Thanks! We will reply within a day.', 'greska': 'Sending failed. Please try again in a minute.', 'fali': 'Please enter your name and a valid email.', 'salje': 'Sending…' },
+};
+const ORIGINAL = {};
+document.querySelectorAll('[data-i18n]').forEach((e) => (ORIGINAL[e.dataset.i18n] = e.innerHTML));
+// Sačuvan izbor, a inače jezik pregledača (srpski, hrvatski, bosanski, crnogorski → srpska verzija).
+let jezik = localStorage.getItem('engine-jezik') || (/^(sr|hr|bs|me)/i.test(navigator.language || '') ? 'sr' : 'en');
+const t = (k) => (jezik === 'sr' ? PREVOD.sr[k] : PREVOD.en[k]) ?? ORIGINAL[k] ?? k;
+function postavi(j) {
+  jezik = j;
+  localStorage.setItem('engine-jezik', j);
+  document.documentElement.lang = j;
+  document.querySelectorAll('[data-i18n]').forEach((e) => (e.innerHTML = j === 'sr' ? PREVOD.sr[e.dataset.i18n] ?? ORIGINAL[e.dataset.i18n] : ORIGINAL[e.dataset.i18n]));
+  document.querySelectorAll('[data-jezik]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.jezik === j)));
+}
+document.querySelectorAll('[data-jezik]').forEach((b) => b.addEventListener('click', () => postavi(b.dataset.jezik)));
+postavi(jezik);
+
+const forma = document.getElementById('forma');
+const status = document.getElementById('status');
+forma.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const podaci = Object.fromEntries(new FormData(forma));
+  if (!podaci.ime.trim() || !/^\S+@\S+\.\S+$/.test(podaci.mejl)) { status.textContent = t('fali'); status.style.color = '#fca5a5'; return; }
+  status.textContent = t('salje'); status.style.color = '';
+  try {
+    const res = await fetch('/api/kontakt', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...podaci, jezik }) });
+    if (!res.ok) throw new Error(res.status);
+    forma.reset();
+    status.textContent = t('ok'); status.style.color = '#86efac';
+  } catch {
+    status.textContent = t('greska'); status.style.color = '#fca5a5';
+  }
+});
+</script>
+</body>
+</html>
