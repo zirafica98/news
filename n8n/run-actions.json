@@ -1,0 +1,180 @@
+{
+  "name": "AI Morning Brief · Run actions",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## AI Morning Brief · run actions\nOne form to start any job of the automation by hand (health check, social posting, rebuild, push). It calls the same GitHub Actions workflow the schedule uses, so nothing runs twice in parallel.",
+        "width": 520,
+        "height": 220,
+        "color": 4
+      },
+      "id": "6f788765-b6e8-4b69-97dd-cd1c76de1475",
+      "name": "About",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -60,
+        -300
+      ]
+    },
+    {
+      "parameters": {
+        "formTitle": "Run an AI Morning Brief job",
+        "formDescription": "Starts the same GitHub Actions jobs as the daily automation. Social posting skips posts that are already online (Telegram may post again).",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Job",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Health check (publishes nothing)"
+                  },
+                  {
+                    "option": "Publish to social networks now"
+                  },
+                  {
+                    "option": "Rebuild today's edition"
+                  },
+                  {
+                    "option": "Send push notification"
+                  },
+                  {
+                    "option": "YouTube only"
+                  },
+                  {
+                    "option": "Instagram only"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Date (YYYY-MM-DD, optional)",
+              "placeholder": "empty = today"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "aa2b3b36-e0e1-44fe-966b-8daec7a15e66",
+      "name": "Choose a job",
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "3ee97c54-f0e9-4c9f-9333-9849739e0390"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Map the form choice to the existing workflow mode (rezim) of .github/workflows/jutro.yml.\nconst modes = {\n  'Health check (publishes nothing)': 'provera',\n  'Publish to social networks now': 'drustvene',\n  \"Rebuild today's edition\": 'ponovo',\n  'Send push notification': 'notifikacija',\n  'YouTube only': 'youtube',\n  'Instagram only': 'instagram',\n};\nconst f = $input.first().json;\nconst date = String(f['Date (YYYY-MM-DD, optional)'] ?? '').trim();\nif (date && !/^\\d{4}-\\d{2}-\\d{2}$/.test(date)) throw new Error('Date must look like 2026-10-28');\nreturn [{ json: { rezim: modes[f.Job], datum: date, job: f.Job } }];"
+      },
+      "id": "1c85128a-dc11-4e77-b529-d1dbac872f02",
+      "name": "Map to workflow mode",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        240,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.github.com/repos/zirafica98/news/actions/workflows/jutro.yml/dispatches",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github+json"
+            },
+            {
+              "name": "User-Agent",
+              "value": "n8n-ai-morning-brief"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ ref: 'main', inputs: $json.datum ? { rezim: $json.rezim, datum: $json.datum } : { rezim: $json.rezim } }) }}",
+        "options": {}
+      },
+      "id": "729e8ab6-ca25-4ab5-be98-95b4ea48f760",
+      "name": "GitHub · start job",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        0
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "",
+          "name": "GitHub token (AI Morning Brief)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "completion",
+        "completionTitle": "Started",
+        "completionMessage": "={{ $('Map to workflow mode').first().json.job }} was started on GitHub. Results arrive in the Telegram report and in the Pipeline status workflow.",
+        "options": {}
+      },
+      "id": "1db12273-c0c2-4d91-9529-e9199ae0f22f",
+      "name": "Confirmation",
+      "type": "n8n-nodes-base.form",
+      "typeVersion": 1,
+      "position": [
+        720,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "Choose a job": {
+      "main": [
+        [
+          {
+            "node": "Map to workflow mode",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Map to workflow mode": {
+      "main": [
+        [
+          {
+            "node": "GitHub · start job",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub · start job": {
+      "main": [
+        [
+          {
+            "node": "Confirmation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Belgrade"
+  },
+  "pinData": {}
+}

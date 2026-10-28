@@ -1,0 +1,586 @@
+{
+  "name": "AI Morning Brief · Pipeline status",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## AI Morning Brief · pipeline status\nA fully automated AI news brand: every morning AI collects the news, writes the edition, renders carousels and voiced Shorts, publishes the website, then posts to Instagram, Threads, YouTube and Telegram.\n\nThis workflow **only reads** the GitHub Actions runs that do the work and shows the result of every stage. Click **Refresh now** or let it run every 30 minutes.",
+        "width": 560,
+        "height": 260,
+        "color": 4
+      },
+      "id": "75caac64-6e8e-4690-869e-d0adecdf3852",
+      "name": "About this workflow",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -420,
+        -420
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "ae4e1008-dbf4-4954-bf83-5dc57475db97",
+      "name": "Refresh now",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -400,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 30
+            }
+          ]
+        }
+      },
+      "id": "d19c84f7-e113-4e30-8e15-887891bb3693",
+      "name": "Every 30 minutes",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -400,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.github.com/repos/zirafica98/news/actions/workflows/jutro.yml/runs",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github+json"
+            },
+            {
+              "name": "User-Agent",
+              "value": "n8n-ai-morning-brief"
+            }
+          ]
+        },
+        "options": {},
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "per_page",
+              "value": "20"
+            }
+          ]
+        }
+      },
+      "id": "58d5e36e-3d52-44e7-ba94-d5cffe5781f0",
+      "name": "GitHub · recent runs",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -160,
+        100
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "",
+          "name": "GitHub token (AI Morning Brief)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Keep finished runs of the \"Jutarnje izdanje\" workflow (morning edition + afternoon social posting).\nreturn $input.first().json.workflow_runs\n  .filter((r) => r.status === 'completed')\n  .slice(0, 12)\n  .map((r) => ({ json: { id: r.id, created: r.created_at, conclusion: r.conclusion, url: r.html_url } }));"
+      },
+      "id": "0b1d12bc-a020-4368-a633-60c08d238767",
+      "name": "Split runs",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        60,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://api.github.com/repos/zirafica98/news/actions/runs/{{ $json.id }}/jobs",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github+json"
+            },
+            {
+              "name": "User-Agent",
+              "value": "n8n-ai-morning-brief"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "fd3179ed-b630-4dbf-aff7-8853f3114767",
+      "name": "GitHub · run jobs",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        280,
+        100
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "",
+          "name": "GitHub token (AI Morning Brief)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://api.github.com/repos/zirafica98/news/actions/jobs/{{ $json.jobs[0].id }}/logs",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github+json"
+            },
+            {
+              "name": "User-Agent",
+              "value": "n8n-ai-morning-brief"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text",
+              "outputPropertyName": "data"
+            }
+          }
+        }
+      },
+      "id": "8cb97368-d899-49a3-a90d-4112024e838b",
+      "name": "GitHub · job log",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        500,
+        100
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "",
+          "name": "GitHub token (AI Morning Brief)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Read every job log, find the latest morning edition run and the latest social posting run,\n// and turn the log lines into a short status per pipeline stage. Read-only: nothing is changed on GitHub.\nconst runs = $('Split runs').all().map((i) => i.json);\nconst logs = $input.all().map((i) => String(i.json.data ?? i.json.log ?? ''));\n\nconst clean = (log) => log.split('\\n').map((l) => l.replace(/^\\d{4}-\\d{2}-\\d{2}T[\\d:.]+Z\\s?/, '').replace(/\\x1b\\[[0-9;]*m/g, '').trim()).filter(Boolean);\nconst find = (lines, re) => lines.find((l) => re.test(l));\n\nlet morning = null;\nlet social = null;\nruns.forEach((run, i) => {\n  const lines = clean(logs[i] ?? '');\n  if (!morning && lines.some((l) => /Poslato na GitHub/.test(l))) morning = { run, lines };\n  if (!social && lines.some((l) => /(::group::|##\\[group\\])instagram/.test(l))) social = { run, lines };\n});\n\nconst when = (r) => (r ? new Date(r.created).toLocaleString('en-GB', { timeZone: 'Europe/Belgrade', dateStyle: 'medium', timeStyle: 'short' }) : '—');\nconst stage = (ok, detail) => ({ ok, detail });\n\nconst m = morning?.lines ?? [];\nconst collect = find(m, /^Ukupno: \\d+ vesti/);\nconst prices = find(m, /^Cene za .*modela/);\nconst written = find(m, /^Gotovo za [\\d.]+ min:/);\nconst valid = find(m, /je ispravno\\./);\nconst translated = find(m, /^Prevod objavljen/);\nconst images = find(m, /^Instagram za .*karusel/);\nconst videos = find(m, /^Video za \\S+:/);\nconst pushed = find(m, /Poslato na GitHub: \\w+/);\nconst notified = find(m, /Notifikacija poslata na/);\n\nconst morningStages = {\n  'Collect news': stage(!!collect, collect ? `${collect.match(/(\\d+) vesti/)[1]} stories collected from RSS, APIs and social media` : 'Not found'),\n  'Track model prices': stage(!!prices, prices ? `${prices.match(/(\\d+) modela/)[1]} models tracked on OpenRouter` : 'Not found'),\n  'Claude writes the edition': stage(!!(written && valid), written ? written.replace(/^Gotovo za ([\\d.]+) min: (\\d+) vesti, (\\d+) novih stvari, (\\d+) radova, (\\d+) ideja.*/, '$2 stories, $3 new tools, $4 papers, $5 app ideas in $1 min') : 'Not found'),\n  'Translate to English': stage(!!translated, translated ? 'English edition published' : 'Translation failed or missing'),\n  'Render images & videos': stage(!!(images && videos), `${images ? 'carousel + 7 stories' : 'no images'} · ${videos ? `${(videos.match(/\\.mp4/g) ?? []).length} voiced Shorts` : 'no videos'}`),\n  'Publish website': stage(!!pushed, pushed ? `Pushed ${pushed.match(/GitHub: (\\w+)/)[1]} → Vercel deploy` : 'Not pushed'),\n  'Push notification': stage(!!notified, notified ? notified.replace(/Notifikacija poslata na (\\d+\\/\\d+) uređaja.*/, 'Sent to $1 devices') : 'Not sent yet'),\n};\n\n// Social posting: one log section per network.\nconst sections = {};\nlet current = null;\nfor (const l of social?.lines ?? []) {\n  const g = l.match(/(?:::group::|##\\[group\\])(\\w+)/);\n  if (g) { current = g[1]; continue; }\n  if (/::endgroup::|##\\[endgroup\\]/.test(l)) { current = null; continue; }\n  if (current) (sections[current] ??= []).push(l);\n}\nconst net = (name, key) => {\n  const lines = sections[key] ?? [];\n  const posted = lines.filter((l) => /^Objavljen/.test(l));\n  const already = lines.filter((l) => /već/i.test(l)).length;\n  const failed = lines.filter((l) => /nije uspeo|nije objavljen|Error:/.test(l));\n  const quota = lines.some((l) => /quota/i.test(l));\n  const parts = [];\n  if (posted.length) parts.push(`${posted.length} published`);\n  if (already) parts.push(`${already} already online`);\n  if (quota) parts.push('daily quota reached, rest goes tomorrow');\n  if (failed.length && !quota) parts.push(`${failed.length} failed`);\n  return stage((posted.length || already) && !(failed.length && !quota), parts.join(' · ') || 'Nothing published');\n};\nconst socialStages = {\n  Instagram: net('Instagram', 'instagram'),\n  Threads: net('Threads', 'threads'),\n  YouTube: net('YouTube', 'youtube'),\n  Telegram: net('Telegram', 'telegram'),\n};\n\nreturn [{\n  json: {\n    morning: { started: when(morning?.run), url: morning?.run.url ?? null, result: morning?.run.conclusion ?? 'not found', stages: morningStages },\n    social: { started: when(social?.run), url: social?.run.url ?? null, result: social?.run.conclusion ?? 'not found', stages: socialStages },\n  },\n}];"
+      },
+      "id": "0a08d046-95c5-4ab5-8fb8-d7d882a0c085",
+      "name": "Classify runs",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        720,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### ☕ Morning edition (~05:00)\nNews → Claude writes → English → images & voiced Shorts → website → push notification at 07:00",
+        "width": 1560,
+        "height": 140,
+        "color": 6
+      },
+      "id": "0cf35e20-f523-4ab9-97e9-df0e9c15a1c2",
+      "name": "Morning edition",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        940,
+        -170
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Status of one pipeline stage, from the latest morning edition run.\nconst g = $('Classify runs').first().json.morning;\nconst s = g.stages['Collect news'];\nreturn [{ json: { stage: 'Collect news', status: s.ok ? '✅' : '❌', detail: s.detail, run: g.started, log: g.url } }];"
+      },
+      "id": "510abc8b-b434-4bb1-8948-6d97d8712ecd",
+      "name": "1 · Collect news",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        960,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Status of one pipeline stage, from the latest morning edition run.\nconst g = $('Classify runs').first().json.morning;\nconst s = g.stages['Track model prices'];\nreturn [{ json: { stage: 'Track model prices', status: s.ok ? '✅' : '❌', detail: s.detail, run: g.started, log: g.url } }];"
+      },
+      "id": "2ce47e59-337c-4b8a-a451-2d540814068e",
+      "name": "2 · Track model prices",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1180,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Status of one pipeline stage, from the latest morning edition run.\nconst g = $('Classify runs').first().json.morning;\nconst s = g.stages['Claude writes the edition'];\nreturn [{ json: { stage: 'Claude writes the edition', status: s.ok ? '✅' : '❌', detail: s.detail, run: g.started, log: g.url } }];"
+      },
+      "id": "b6c5602e-db2e-45ec-9984-00de7e6c143a",
+      "name": "3 · Claude writes the edition",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1400,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Status of one pipeline stage, from the latest morning edition run.\nconst g = $('Classify runs').first().json.morning;\nconst s = g.stages['Translate to English'];\nreturn [{ json: { stage: 'Translate to English', status: s.ok ? '✅' : '❌', detail: s.detail, run: g.started, log: g.url } }];"
+      },
+      "id": "7b053771-5b96-475e-aa9e-d67dfdec5fd8",
+      "name": "4 · Translate to English",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1620,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Status of one pipeline stage, from the latest morning edition run.\nconst g = $('Classify runs').first().json.morning;\nconst s = g.stages['Render images & videos'];\nreturn [{ json: { stage: 'Render images & videos', status: s.ok ? '✅' : '❌', detail: s.detail, run: g.started, log: g.url } }];"
+      },
+      "id": "c7283bbf-d4fe-43db-a919-3609f2a8ac71",
+      "name": "5 · Render images & videos",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1840,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Status of one pipeline stage, from the latest morning edition run.\nconst g = $('Classify runs').first().json.morning;\nconst s = g.stages['Publish website'];\nreturn [{ json: { stage: 'Publish website', status: s.ok ? '✅' : '❌', detail: s.detail, run: g.started, log: g.url } }];"
+      },
+      "id": "2a6584e9-87bc-454d-bc96-dc48b46c5ce8",
+      "name": "6 · Publish website",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2060,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Status of one pipeline stage, from the latest morning edition run.\nconst g = $('Classify runs').first().json.morning;\nconst s = g.stages['Push notification'];\nreturn [{ json: { stage: 'Push notification', status: s.ok ? '✅' : '❌', detail: s.detail, run: g.started, log: g.url } }];"
+      },
+      "id": "8ab7ad8c-77b0-4e12-a133-3516af4e38cc",
+      "name": "7 · Push notification",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2280,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 📣 Social posting (~14:00, morning in the US)\nInstagram (carousel, 2 voiced Reels, 7 stories) → Threads → YouTube (Shorts series + weekly video) → Telegram",
+        "width": 1100,
+        "height": 140,
+        "color": 5
+      },
+      "id": "47f01459-268c-47bb-8275-36fd5217c861",
+      "name": "Social posting",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        940,
+        230
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Status of one pipeline stage, from the latest social posting run.\nconst g = $('Classify runs').first().json.social;\nconst s = g.stages['Instagram'];\nreturn [{ json: { stage: 'Instagram', status: s.ok ? '✅' : '❌', detail: s.detail, run: g.started, log: g.url } }];"
+      },
+      "id": "ddbdce69-7c82-4e7b-81b1-1ce17612cd41",
+      "name": "8 · Instagram",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        960,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Status of one pipeline stage, from the latest social posting run.\nconst g = $('Classify runs').first().json.social;\nconst s = g.stages['Threads'];\nreturn [{ json: { stage: 'Threads', status: s.ok ? '✅' : '❌', detail: s.detail, run: g.started, log: g.url } }];"
+      },
+      "id": "75a3ea88-b9f4-4852-9505-9927e1c1d28c",
+      "name": "9 · Threads",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1180,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Status of one pipeline stage, from the latest social posting run.\nconst g = $('Classify runs').first().json.social;\nconst s = g.stages['YouTube'];\nreturn [{ json: { stage: 'YouTube', status: s.ok ? '✅' : '❌', detail: s.detail, run: g.started, log: g.url } }];"
+      },
+      "id": "8ea3f5d5-3192-413d-a37f-c72d090fff81",
+      "name": "10 · YouTube",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1400,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Status of one pipeline stage, from the latest social posting run.\nconst g = $('Classify runs').first().json.social;\nconst s = g.stages['Telegram'];\nreturn [{ json: { stage: 'Telegram', status: s.ok ? '✅' : '❌', detail: s.detail, run: g.started, log: g.url } }];"
+      },
+      "id": "a0c3ec26-0e28-4c28-b7db-c15ea84f2e1e",
+      "name": "11 · Telegram",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1620,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// One readable overview of the whole pipeline (what the canvas shows, as text).\nconst c = $('Classify runs').first().json;\nconst lines = [];\nlines.push(`MORNING EDITION · ${c.morning.started} · ${c.morning.result}`);\nfor (const [k, s] of Object.entries(c.morning.stages)) lines.push(`${s.ok ? '✅' : '❌'} ${k}: ${s.detail}`);\nlines.push('');\nlines.push(`SOCIAL POSTING · ${c.social.started} · ${c.social.result}`);\nfor (const [k, s] of Object.entries(c.social.stages)) lines.push(`${s.ok ? '✅' : '❌'} ${k}: ${s.detail}`);\nreturn [{ json: { overview: lines.join('\\n'), morningLog: c.morning.url, socialLog: c.social.url } }];"
+      },
+      "id": "63265205-9678-488c-8f8c-fb01488ef91d",
+      "name": "Pipeline overview",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1880,
+        400
+      ]
+    }
+  ],
+  "connections": {
+    "Refresh now": {
+      "main": [
+        [
+          {
+            "node": "GitHub · recent runs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Every 30 minutes": {
+      "main": [
+        [
+          {
+            "node": "GitHub · recent runs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub · recent runs": {
+      "main": [
+        [
+          {
+            "node": "Split runs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split runs": {
+      "main": [
+        [
+          {
+            "node": "GitHub · run jobs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub · run jobs": {
+      "main": [
+        [
+          {
+            "node": "GitHub · job log",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub · job log": {
+      "main": [
+        [
+          {
+            "node": "Classify runs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Classify runs": {
+      "main": [
+        [
+          {
+            "node": "1 · Collect news",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "8 · Instagram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "1 · Collect news": {
+      "main": [
+        [
+          {
+            "node": "2 · Track model prices",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "2 · Track model prices": {
+      "main": [
+        [
+          {
+            "node": "3 · Claude writes the edition",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "3 · Claude writes the edition": {
+      "main": [
+        [
+          {
+            "node": "4 · Translate to English",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "4 · Translate to English": {
+      "main": [
+        [
+          {
+            "node": "5 · Render images & videos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "5 · Render images & videos": {
+      "main": [
+        [
+          {
+            "node": "6 · Publish website",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "6 · Publish website": {
+      "main": [
+        [
+          {
+            "node": "7 · Push notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "8 · Instagram": {
+      "main": [
+        [
+          {
+            "node": "9 · Threads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "9 · Threads": {
+      "main": [
+        [
+          {
+            "node": "10 · YouTube",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "10 · YouTube": {
+      "main": [
+        [
+          {
+            "node": "11 · Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "11 · Telegram": {
+      "main": [
+        [
+          {
+            "node": "Pipeline overview",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Belgrade"
+  },
+  "pinData": {}
+}
