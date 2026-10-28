@@ -408,6 +408,309 @@
         610,
         240
       ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.github.com/repos/zirafica98/news/actions/workflows/jutro.yml/dispatches",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github+json"
+            },
+            {
+              "name": "User-Agent",
+              "value": "n8n-ai-morning-brief"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"ref\": \"main\", \"inputs\": {\"rezim\": \"provera\"}}",
+        "options": {}
+      },
+      "id": "0df53b88-2701-4eed-be6a-2b27f37a4321",
+      "name": "▶ Health check",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        160,
+        470
+      ],
+      "notes": "Click ▶ (Execute step) to start the 'provera' job on GitHub. Not connected, so it never runs on the schedule.",
+      "notesInFlow": true,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "",
+          "name": "GitHub token (AI Morning Brief)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.github.com/repos/zirafica98/news/actions/workflows/jutro.yml/dispatches",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github+json"
+            },
+            {
+              "name": "User-Agent",
+              "value": "n8n-ai-morning-brief"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"ref\": \"main\", \"inputs\": {\"rezim\": \"ponovo\"}}",
+        "options": {}
+      },
+      "id": "9c002d08-3bc9-49f0-841f-07094e406b2a",
+      "name": "▶ Rebuild today's edition",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1400,
+        -330
+      ],
+      "notes": "Click ▶ (Execute step) to start the 'ponovo' job on GitHub. Not connected, so it never runs on the schedule.",
+      "notesInFlow": true,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "",
+          "name": "GitHub token (AI Morning Brief)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.github.com/repos/zirafica98/news/actions/workflows/jutro.yml/dispatches",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github+json"
+            },
+            {
+              "name": "User-Agent",
+              "value": "n8n-ai-morning-brief"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"ref\": \"main\", \"inputs\": {\"rezim\": \"notifikacija\"}}",
+        "options": {}
+      },
+      "id": "647cf88a-8b8c-4a45-80c2-5056fb806bb9",
+      "name": "▶ Send push now",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2280,
+        -330
+      ],
+      "notes": "Click ▶ (Execute step) to start the 'notifikacija' job on GitHub. Not connected, so it never runs on the schedule.",
+      "notesInFlow": true,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "",
+          "name": "GitHub token (AI Morning Brief)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.github.com/repos/zirafica98/news/actions/workflows/jutro.yml/dispatches",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github+json"
+            },
+            {
+              "name": "User-Agent",
+              "value": "n8n-ai-morning-brief"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"ref\": \"main\", \"inputs\": {\"rezim\": \"drustvene\"}}",
+        "options": {}
+      },
+      "id": "869234f9-5941-4ded-a00a-f07e1e049406",
+      "name": "▶ Post everywhere now",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1840,
+        560
+      ],
+      "notes": "Click ▶ (Execute step) to start the 'drustvene' job on GitHub. Not connected, so it never runs on the schedule.",
+      "notesInFlow": true,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "",
+          "name": "GitHub token (AI Morning Brief)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.github.com/repos/zirafica98/news/actions/workflows/jutro.yml/dispatches",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github+json"
+            },
+            {
+              "name": "User-Agent",
+              "value": "n8n-ai-morning-brief"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"ref\": \"main\", \"inputs\": {\"rezim\": \"instagram\"}}",
+        "options": {}
+      },
+      "id": "8e86a52e-8d8a-433f-a2fd-118d90aa4400",
+      "name": "▶ Post to Instagram now",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        960,
+        560
+      ],
+      "notes": "Click ▶ (Execute step) to start the 'instagram' job on GitHub. Not connected, so it never runs on the schedule.",
+      "notesInFlow": true,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "",
+          "name": "GitHub token (AI Morning Brief)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.github.com/repos/zirafica98/news/actions/workflows/jutro.yml/dispatches",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github+json"
+            },
+            {
+              "name": "User-Agent",
+              "value": "n8n-ai-morning-brief"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"ref\": \"main\", \"inputs\": {\"rezim\": \"threads\"}}",
+        "options": {}
+      },
+      "id": "6b32af6f-c84c-4fc1-bea8-f1195bdafc44",
+      "name": "▶ Post to Threads now",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1180,
+        560
+      ],
+      "notes": "Click ▶ (Execute step) to start the 'threads' job on GitHub. Not connected, so it never runs on the schedule.",
+      "notesInFlow": true,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "",
+          "name": "GitHub token (AI Morning Brief)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.github.com/repos/zirafica98/news/actions/workflows/jutro.yml/dispatches",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github+json"
+            },
+            {
+              "name": "User-Agent",
+              "value": "n8n-ai-morning-brief"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"ref\": \"main\", \"inputs\": {\"rezim\": \"youtube\"}}",
+        "options": {}
+      },
+      "id": "7c92e176-7916-4a8f-83d4-3773f093c5b2",
+      "name": "▶ Post to YouTube now",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1400,
+        560
+      ],
+      "notes": "Click ▶ (Execute step) to start the 'youtube' job on GitHub. Not connected, so it never runs on the schedule.",
+      "notesInFlow": true,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "",
+          "name": "GitHub token (AI Morning Brief)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "### ▶ Actions\nThe boxes marked **▶** start one job by hand: hover a box and click its play button (**Execute step**). They are not connected to the flow, so the 30-minute refresh never runs them.\nSocial posting skips posts that are already online (Telegram may post again).",
+        "width": 520,
+        "height": 170,
+        "color": 3
+      },
+      "id": "764f2c46-22e8-4567-bf12-abac38956a15",
+      "name": "Actions",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -420,
+        420
+      ]
     }
   ],
   "connections": {
