@@ -1,6 +1,6 @@
 // Objavljuje izdanje na Instagram (@ai.morning.brief), preko Instagram API-ja sa Instagram prijavom:
 //   1. karusel (post),
-//   2. Reel: radnim danima slajdovi dana, subotom rekapitulacija nedelje (iz nedeljnog pregleda),
+//   2. dva Reel-a sa glasom (Shortovi iz shorts.mjs): vest #1 i „Try this AI tool“, subotom vest #1 i nedeljni pregled,
 //   3. iste slajdove kao story, samo za današnje izdanje (story traje 24h).
 // Slike i video pravi insta-slike.mjs i moraju već biti na sajtu, jer ih Instagram preuzima sa javnog URL-a:
 // skripta zato prvo sačeka da Vercel objavi novi build.
@@ -164,24 +164,43 @@ await korak('post', async () => {
   if (potrosnja) console.log(`Potrošnja limita API poziva: ${potrosnja}`);
 });
 
-// 2. Reel: radnim danima slajdovi dana, subotom rekapitulacija nedelje. Opis se pravi u opisReela (deli ga i YouTube).
-if (fajlovi.includes(`${datum}-reel.mp4`)) {
-  await korak('Reel', async () => {
-    const { oznaka, opis } = opisReela(izdanje, HASHTAGOVI);
-    const vecObjavljeno = await nadjiObjavu(korisnik, oznaka);
-    if (vecObjavljeno) return console.log(`Reel za ${datum} je već na Instagramu: ${vecObjavljeno.permalink}`);
+// 2. Reels: Shortovi sa glasom (shorts.mjs) — vest #1 i „Try this AI tool“, subotom vest #1 i nedeljni pregled.
+// Reels donose nove ljude (oko 5–10 puta više prikaza od karusela). Ako Shortova nema, ide stari Reel od slajdova.
+const shortovi = await readJson(join(INSTA_DIR, `${datum}-shorts.json`), null);
+const reelovi = shortovi
+  ? ['1', 'nedelja', 'alat']
+      .map((id) => shortovi.find((v) => v.fajl === `${datum}-short-${id}.mp4`))
+      .filter((v) => v && fajlovi.includes(v.fajl))
+      .slice(0, 2)
+      .map((v) => ({ fajl: v.fajl, oznaka: v.oznaka, opis: opisZaInstagram(v) }))
+  : fajlovi.includes(`${datum}-reel.mp4`)
+    ? [{ fajl: `${datum}-reel.mp4`, ...opisReela(izdanje, HASHTAGOVI) }]
+    : [];
 
-    const video = `${SAJT}/insta/${datum}-reel.mp4`;
+for (const r of reelovi) {
+  await korak(`Reel ${r.fajl}`, async () => {
+    const vecObjavljeno = await nadjiObjavu(korisnik, r.oznaka);
+    if (vecObjavljeno) return console.log(`Reel ${r.fajl} je već na Instagramu: ${vecObjavljeno.permalink}`);
+
+    const video = `${SAJT}/insta/${r.fajl}`;
     await cekajNaSajtu(video, 'video/mp4');
     const reel = await graf(`/${korisnik}/media`, {
       metoda: 'POST',
-      polja: { media_type: 'REELS', video_url: video, caption: opis.slice(0, 2200), share_to_feed: 'true' },
+      polja: { media_type: 'REELS', video_url: video, caption: r.opis.slice(0, 2200), share_to_feed: 'true' },
     });
     // Video se obrađuje duže od slika, do desetak minuta.
     await cekajKontejner(reel.id, { pauza: 20_000, pokusaja: 30 });
-    const link = await objavi(korisnik, reel.id, async () => (await nadjiObjavu(korisnik, oznaka))?.permalink);
+    const link = await objavi(korisnik, reel.id, async () => (await nadjiObjavu(korisnik, r.oznaka))?.permalink);
     console.log(`Objavljen Reel: ${link}`);
   });
+}
+
+/** Opis Shorta prilagođen Instagramu: bez YouTube poziva i #Shorts; oznaka na kraju služi za proveru duplikata. */
+function opisZaInstagram(v) {
+  const odlomci = v.opis
+    .split('\n\n')
+    .filter((p) => !/Subscribe|#Shorts|Instagram & Threads|every day\.|every week\.|every Saturday|on our channel|^AI Morning Brief ·|^#/.test(p));
+  return [`🎬 ${v.naslov}`, ...odlomci, 'Follow @ai.morning.brief for daily AI news ☕', HASHTAGOVI, v.oznaka].join('\n\n');
 }
 
 // 3. Story: isti slajdovi u 9:16, samo za današnje izdanje.
