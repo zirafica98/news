@@ -1,0 +1,356 @@
+{
+  "name": "AI Morning Brief · Telegram message",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## AI Morning Brief · Telegram message\nWrite a message in a form and the bot posts it: to you (test), to the AI Morning Brief channel, or to any group or channel where the bot is an admin. Optional image, silent sending and pinning.",
+        "width": 520,
+        "height": 200,
+        "color": 4
+      },
+      "id": "31474429-6dac-4d04-bc61-cc637118f91d",
+      "name": "About",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        -300
+      ]
+    },
+    {
+      "parameters": {
+        "formTitle": "Send a Telegram message",
+        "formDescription": "The AI Morning Brief bot sends your message. For groups or other channels the bot must be an admin (with the right to post, and to pin if you pin).",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Send to",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Me (private test)"
+                  },
+                  {
+                    "option": "AI Morning Brief channel"
+                  },
+                  {
+                    "option": "Other group or channel"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Chat ID or @username (only for other group or channel)",
+              "placeholder": "-1001234567890 or @mychannel"
+            },
+            {
+              "fieldLabel": "Message",
+              "fieldType": "textarea",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Image URL (optional)",
+              "placeholder": "https://…/image.jpg"
+            },
+            {
+              "fieldLabel": "Options",
+              "fieldType": "checkbox",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Send silently"
+                  },
+                  {
+                    "option": "Pin the message"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "cf570997-2e01-4cc6-a1ee-1aa6c5d56036",
+      "name": "Write the message",
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "e02acda7-3a30-4515-9bb1-f0f2e90474cd"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Resolve where the message goes and check Telegram's length limits before sending.\nconst CHANNEL = '@aimorningbrief';   // public channel AI Morning Brief\nconst ME = '6396725385';             // private chat with the bot (test target)\nconst f = $input.first().json;\nconst target = f['Send to'];\nconst other = String(f['Chat ID or @username (only for other group or channel)'] ?? '').trim();\nconst chatId = target === 'Me (private test)' ? ME : target === 'AI Morning Brief channel' ? CHANNEL : other;\nif (!chatId) throw new Error('Enter a chat ID or @username for the other group or channel.');\nconst text = String(f.Message ?? '').trim();\nconst image = String(f['Image URL (optional)'] ?? '').trim();\nif (image && !/^https?:\\/\\//.test(image)) throw new Error('The image must be a full https:// link.');\nif (image && text.length > 1024) throw new Error(`With an image Telegram allows 1024 characters; this message has ${text.length}.`);\nif (text.length > 4096) throw new Error(`Telegram allows 4096 characters; this message has ${text.length}.`);\nconst options = [].concat(f.Options ?? []);\nreturn [{ json: { chatId, text, image, silent: options.includes('Send silently'), pin: options.includes('Pin the message'), target } }];"
+      },
+      "id": "6e375087-49e2-47b9-b9cc-c17d7e359d17",
+      "name": "Prepare message",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        240,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "e94eb672-6006-4046-9694-8262da0b6f39",
+              "leftValue": "={{ !!$json.image }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "6e697771-a76d-448e-81e4-6487a3259230",
+      "name": "Has an image?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        480,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "sendPhoto",
+        "chatId": "={{ $json.chatId }}",
+        "file": "={{ $json.image }}",
+        "additionalFields": {
+          "caption": "={{ $json.text }}",
+          "disable_notification": "={{ $json.silent }}"
+        }
+      },
+      "id": "e3a0c116-ea67-4854-b22a-de534a070a16",
+      "name": "Send photo",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        720,
+        -100
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "",
+          "name": "Telegram bot (AI Morning Brief)"
+        }
+      },
+      "webhookId": "472ea88a-44c0-4b33-85c7-883b877cc751"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.chatId }}",
+        "text": "={{ $json.text }}",
+        "additionalFields": {
+          "disable_notification": "={{ $json.silent }}",
+          "disable_web_page_preview": false,
+          "appendAttribution": false
+        }
+      },
+      "id": "ba365c28-cff5-46c0-82c7-2aa24a2c7258",
+      "name": "Send text",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        720,
+        100
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "",
+          "name": "Telegram bot (AI Morning Brief)"
+        }
+      },
+      "webhookId": "b74a1b3f-44a2-4982-8365-1fb94d4c7328"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "3198e614-8649-435b-a9ff-de0d164c8a6e",
+              "leftValue": "={{ $('Prepare message').first().json.pin }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "baed5302-d5a3-471c-9d39-6f1dcffb7ead",
+      "name": "Pin it?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        960,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "pinChatMessage",
+        "chatId": "={{ $('Prepare message').first().json.chatId }}",
+        "messageId": "={{ $json.result.message_id }}",
+        "additionalFields": {
+          "disable_notification": true
+        }
+      },
+      "id": "dfc31812-f7f8-42bc-8224-ec2494017c83",
+      "name": "Pin message",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1200,
+        -80
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "",
+          "name": "Telegram bot (AI Morning Brief)"
+        }
+      },
+      "webhookId": "42f3b162-2576-4f86-84bf-e788b8e2609a"
+    },
+    {
+      "parameters": {
+        "operation": "completion",
+        "completionTitle": "Sent",
+        "completionMessage": "=Your message was sent to {{ $('Prepare message').first().json.target === 'Other group or channel' ? $('Prepare message').first().json.chatId : $('Prepare message').first().json.target }}.",
+        "options": {}
+      },
+      "id": "5977ca08-d973-41d2-821e-f64f53847e2a",
+      "name": "Done",
+      "type": "n8n-nodes-base.form",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "Write the message": {
+      "main": [
+        [
+          {
+            "node": "Prepare message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare message": {
+      "main": [
+        [
+          {
+            "node": "Has an image?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has an image?": {
+      "main": [
+        [
+          {
+            "node": "Send photo",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send photo": {
+      "main": [
+        [
+          {
+            "node": "Pin it?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send text": {
+      "main": [
+        [
+          {
+            "node": "Pin it?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pin it?": {
+      "main": [
+        [
+          {
+            "node": "Pin message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Done",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pin message": {
+      "main": [
+        [
+          {
+            "node": "Done",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Belgrade"
+  },
+  "pinData": {}
+}

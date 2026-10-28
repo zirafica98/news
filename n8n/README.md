@@ -6,6 +6,7 @@ the daily jobs keep running even when n8n is off.
 | Workflow | What it does |
 |---|---|
 | `pipeline-status.json` | Reads the latest GitHub Actions runs (read-only) and shows the status of every stage: news, Claude edition, translation, images and voiced Shorts, website, push, Instagram, Threads, YouTube, Telegram. Runs every 30 minutes or on demand. |
+| `telegram-message.json` | A form to send a message as the bot: to yourself (test), to the AI Morning Brief channel, or to any group or channel where the bot is an admin. Optional image, silent sending and pinning. Needs a **Telegram** credential with the bot token. |
 | `run-actions.json` | A form to start a job by hand (health check, social posting, rebuild, push, YouTube or Instagram only). It dispatches the same `jutro.yml` workflow. |
 
 ## Run n8n locally (free)
