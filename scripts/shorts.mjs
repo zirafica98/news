@@ -274,7 +274,7 @@ const vreme = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStar
  *     delovi: [{ tekst, izgovor?, oznaka?, poglavlje? }], kraj: {glas, red1, red2}, meta: {...} }
  * Vraća meta za YouTube; za dugi video u opis dodaje poglavlja sa vremenima.
  */
-async function napraviVideo(datum, v, fonts, radni) {
+export async function napraviVideo(datum, v, fonts, radni) {
   const f = FORMATI[v.format ?? 'short'];
   const scenario = [
     { tip: 'najava', izgovor: v.najava.glas },
@@ -618,6 +618,26 @@ async function scenarioNedeljaDugi(datum, izdanje) {
   };
 }
 
+/** „Start here“ video za vrh profila: šta nalog objavljuje i kada. Pravi se ručno: --o-profilu */
+export const scenarioOProfilu = {
+  id: 'o-profilu',
+  fajl: 'o-profilu.mp4',
+  natpis: 'START HERE',
+  zaglavlje: { levo: 'AI MORNING BRIEF', pill: 'START HERE' },
+  maliNaslov: 'What you get here',
+  najava: { glas: 'Welcome to AI Morning Brief.', veliko: 'Hi!', ekran: 'WELCOME' },
+  udica: 'AI news for people who build with AI, in under a minute a day.',
+  delovi: [
+    { tekst: 'Every morning, the three biggest AI stories, explained in 30 seconds each.', oznaka: 'EVERY DAY' },
+    { tekst: 'A new AI tool you can try today, with the exact steps.', oznaka: 'EVERY DAY' },
+    { tekst: 'App ideas you could build this weekend.', oznaka: 'MON · WED · FRI' },
+    { tekst: 'The cheapest AI models, every Sunday.', oznaka: 'SUNDAY' },
+    { tekst: 'And the whole week in one video, every Saturday.', oznaka: 'SATURDAY' },
+  ],
+  kraj: { glas: 'Follow so you never miss what matters in AI.', red1: 'Never miss', red2: 'what matters in AI.' },
+  meta: { naslov: 'AI Morning Brief: start here', opis: '', oznaka: 'AI Morning Brief · o profilu' },
+};
+
 /** Koje serije idu tog dana (najviše 5 videa zbog YouTube kvote). */
 async function scenarijiDana(datum, izdanje, samo) {
   const dan = danUNedelji(datum);
@@ -657,7 +677,12 @@ export async function napraviShortove(datum, samo) {
   }
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (import.meta.url === `file://${process.argv[1]}` && process.argv.includes('--o-profilu')) {
+  const radni = await mkdtemp(join(tmpdir(), 'ai-shorts-'));
+  const v = await napraviVideo(datumIzArgumenata(), scenarioOProfilu, await fontovi(), radni);
+  await rm(radni, { recursive: true, force: true });
+  console.log(`Napravljen ${v.fajl} (${v.sekundi} s) u public/insta`);
+} else if (import.meta.url === `file://${process.argv[1]}`) {
   const datum = datumIzArgumenata();
   const samo = process.argv.find((a) => a.startsWith('--samo='))?.split('=')[1]?.split(',');
   const videi = await napraviShortove(datum, samo);
