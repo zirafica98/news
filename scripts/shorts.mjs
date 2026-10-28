@@ -17,6 +17,7 @@
 // Python sa kokoro-onnx: TTS_PYTHON (podrazumevano python3); model: KOKORO_DIR (vidi tts.py).
 
 import { execFile, spawn } from 'node:child_process';
+import { readFileSync } from 'node:fs';
 import { mkdtemp, readdir, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -171,7 +172,45 @@ const kadarNajava = (f, v, e) =>
 const kadarUdica = (f, v, rec, k) =>
   okvir(f, zaglavlje(v.zaglavlje), el('div', { flexGrow: 1, alignItems: 'center' }, reci(rec, k, f.udica, v.format === 'dugi' ? 'transparent' : '#64748b')));
 
-const kadarTitl = (f, v, rec, k, oznaka, e, mali) =>
+/** Snimak ekrana kao slika u kadru (data URI, učitan jednom). */
+const SLIKE = new Map();
+function slikaEl(putanja, w, h) {
+  if (!SLIKE.has(putanja)) {
+    const tip = putanja.endsWith('.png') ? 'png' : 'jpeg';
+    SLIKE.set(putanja, `data:image/${tip};base64,${readFileSync(putanja).toString('base64')}`);
+  }
+  return {
+    type: 'img',
+    props: { src: SLIKE.get(putanja), width: w, height: h, style: { objectFit: 'cover', objectPosition: 'top', borderRadius: 20, border: `2px solid ${BOJE.ivica}` } },
+  };
+}
+
+const kadarTitl = (f, v, rec, k, oznaka, e, mali, slika) =>
+  slika ? kadarSaSlikom(f, v, rec, k, oznaka, e, mali, slika) : kadarTitlBezSlike(f, v, rec, k, oznaka, e, mali);
+
+/** Kadar sa snimkom ekrana: slika levo (16:9) ili gore (9:16), titl pored ili ispod. */
+const kadarSaSlikom = (f, v, rec, k, oznaka, e, mali, slika) => {
+  const siroko = f.w > f.h;
+  const [sw, sh] = siroko ? [1000, 562] : [920, 780];
+  return okvir(
+    f,
+    zaglavlje(v.zaglavlje),
+    el('div', { fontSize: f.mali, fontWeight: 600, lineHeight: 1.25, color: BOJE.sporedno }, skrati(cist(mali ?? v.maliNaslov), 90)),
+    el(
+      'div',
+      { flexGrow: 1, flexDirection: siroko ? 'row' : 'column', alignItems: siroko ? 'center' : 'flex-start', justifyContent: 'center' },
+      slikaEl(slika, sw, sh),
+      el(
+        'div',
+        { flexDirection: 'column', marginLeft: siroko ? 56 : 0, marginTop: siroko ? 0 : 48, width: siroko ? f.w - f.pad.levo - f.pad.desno - sw - 56 : sw },
+        oznaka ? el('div', { fontSize: 26, fontWeight: 600, color: BOJE.akcenat, letterSpacing: 3, marginBottom: 20 }, oznaka) : el('div', {}, ''),
+        efekat(reci(rec, k, siroko ? 46 : 60, '#64748b'), e),
+      ),
+    ),
+  );
+};
+
+const kadarTitlBezSlike = (f, v, rec, k, oznaka, e, mali) =>
   okvir(
     f,
     zaglavlje(v.zaglavlje),
@@ -196,7 +235,7 @@ const kadarKraj = (f, v, e) =>
           { flexDirection: 'column' },
           el('div', { fontSize: 84, fontWeight: 800, lineHeight: 1.1, marginBottom: 40 }, v.kraj.red1),
           el('div', { fontSize: 84, fontWeight: 800, lineHeight: 1.1, color: BOJE.akcenat, marginBottom: 56 }, v.kraj.red2),
-          el('div', { fontSize: 44, color: '#cbd5e1' }, 'Follow @ai-morning-brief'),
+          el('div', { fontSize: 44, color: '#cbd5e1' }, v.kraj.red3 ?? 'Follow @ai-morning-brief'),
         ),
         e,
       ),
@@ -298,7 +337,7 @@ export async function napraviVideo(datum, v, fonts, radni) {
       // Dugačak deo se izgovara rečenicu po rečenicu, da titl ne zaostaje.
       const r = recenice(d.tekst);
       // Kod dugog videa sitni naslov gore prati poglavlje.
-      return r.map((tekst, i) => ({ tip: 'deo', tekst, oznaka: d.oznaka, mali: d.poglavlje, poglavlje: i === 0 ? d.poglavlje : undefined, izgovor: i === 0 && d.izgovor ? d.izgovor : undefined }));
+      return r.map((tekst, i) => ({ tip: 'deo', tekst, oznaka: d.oznaka, mali: d.poglavlje, slika: d.slika, poglavlje: i === 0 ? d.poglavlje : undefined, izgovor: i === 0 && d.izgovor ? d.izgovor : undefined }));
     }),
     { tip: 'kraj', izgovor: v.kraj.glas },
   ];
@@ -328,16 +367,16 @@ export async function napraviVideo(datum, v, fonts, radni) {
       return;
     }
     // Ako se izgovara drugačije od teksta (npr. „Step 1:“ ispred), vreme ide samo na tekst koji se vidi.
-    const delovi = deloviTitla(s.tekst, f.reci);
+    const delovi = deloviTitla(s.tekst, s.slika ? 6 : f.reci);
     const slova = delovi.reduce((z, d) => z + d.length, 0);
     for (const deo of delovi) {
       const rec = deo.split(/\s+/);
       poRecima(rec, (trajanja[i] * deo.length) / slova).forEach((sekundi, k) => {
         if (k === 0) {
-          for (const e of POP) kadrovi.push({ stablo: kadarTitl(f, v, rec, 0, s.oznaka, e, s.mali), sekundi: e.sekundi });
+          for (const e of POP) kadrovi.push({ stablo: kadarTitl(f, v, rec, 0, s.oznaka, e, s.mali, s.slika), sekundi: e.sekundi });
           sekundi -= POP_SEKUNDI;
         }
-        if (sekundi > 0.01) kadrovi.push({ stablo: kadarTitl(f, v, rec, k, s.oznaka, undefined, s.mali), sekundi });
+        if (sekundi > 0.01) kadrovi.push({ stablo: kadarTitl(f, v, rec, k, s.oznaka, undefined, s.mali, s.slika), sekundi });
       });
     }
   });
