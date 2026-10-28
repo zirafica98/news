@@ -119,6 +119,12 @@ const zaglavlje = (z) =>
   el(
     'div',
     { alignItems: 'center', fontSize: 30, fontWeight: 600, marginBottom: 40 },
+    // Mali AI znak umesto posebnog intra: brend je stalno vidljiv, a tema kreće od prve sekunde.
+    el(
+      'div',
+      { width: 48, height: 48, borderRadius: 12, backgroundColor: BOJE.akcenat, alignItems: 'center', justifyContent: 'center', marginRight: 18 },
+      el('div', { fontSize: 24, fontWeight: 800, color: BOJE.pozadina, letterSpacing: -1 }, 'AI'),
+    ),
     el('div', { color: BOJE.akcenat, letterSpacing: 3, marginRight: 24 }, z.levo),
     z.pill ? el('div', { color: BOJE.pozadina, backgroundColor: BOJE.akcenat, borderRadius: 999, padding: '6px 20px', fontSize: 24 }, z.pill) : el('div', {}, ''),
   );
@@ -160,8 +166,10 @@ const kadarNajava = (f, v, e) =>
     ),
   );
 
+// Kod Shorta je ceo naslov na ekranu od prvog kadra (neizgovorene reči sive), da i prvi kadar i sličica u feedu
+// pokazuju temu; kod dugog videa se kuca reč po reč posle intra.
 const kadarUdica = (f, v, rec, k) =>
-  okvir(f, zaglavlje(v.zaglavlje), el('div', { flexGrow: 1, alignItems: 'center' }, reci(rec, k, f.udica, 'transparent')));
+  okvir(f, zaglavlje(v.zaglavlje), el('div', { flexGrow: 1, alignItems: 'center' }, reci(rec, k, f.udica, v.format === 'dugi' ? 'transparent' : '#64748b')));
 
 const kadarTitl = (f, v, rec, k, oznaka, e, mali) =>
   okvir(
@@ -276,10 +284,16 @@ const vreme = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStar
  */
 export async function napraviVideo(datum, v, fonts, radni) {
   const f = FORMATI[v.format ?? 'short'];
+  // Short kreće temom od prve sekunde (77% ljudi je prevlačilo dalje dok su išli intro i najava):
+  // najava se samo izgovori kratko ispred udice, a udica je na ekranu od prvog kadra.
+  // Dugi video zadržava intro i posebnu najavu.
+  const saIntrom = v.format === 'dugi';
+  const introSek = saIntrom ? INTRO_SEKUNDI : 0;
+  const udica = skrati(cist(v.udica), 100);
   const scenario = [
-    { tip: 'najava', izgovor: v.najava.glas },
+    ...(saIntrom ? [{ tip: 'najava', izgovor: v.najava.glas }] : []),
     // Udica mora da stane na ekran i da se izgovori za 2–4 sekunde.
-    { tip: 'udica', tekst: skrati(cist(v.udica), 100) },
+    { tip: 'udica', tekst: udica, izgovor: !saIntrom && v.najava.kratko ? `${v.najava.kratko} ${udica}` : undefined },
     ...v.delovi.flatMap((d) => {
       // Dugačak deo se izgovara rečenicu po rečenicu, da titl ne zaostaje.
       const r = recenice(d.tekst);
@@ -296,9 +310,9 @@ export async function napraviVideo(datum, v, fonts, radni) {
   );
 
   // Kadrovi sa trajanjem: po jedan za svaku reč (karaoke), uz „pop“ kad se pojavi novi titl.
-  const kadrovi = Array.from({ length: INTRO.kadrova }, (_, i) => ({ stablo: kadarIntro(f, v.natpis, i / (INTRO.kadrova - 1)), sekundi: 1 / INTRO.fps }));
+  const kadrovi = saIntrom ? Array.from({ length: INTRO.kadrova }, (_, i) => ({ stablo: kadarIntro(f, v.natpis, i / (INTRO.kadrova - 1)), sekundi: 1 / INTRO.fps })) : [];
   const poglavlja = [];
-  let proteklo = INTRO_SEKUNDI;
+  let proteklo = introSek;
   scenario.forEach((s, i) => {
     if (s.poglavlje) poglavlja.push({ od: proteklo, naziv: s.poglavlje });
     proteklo += trajanja[i];
@@ -344,7 +358,7 @@ export async function napraviVideo(datum, v, fonts, radni) {
 
   // Pozadina pluta (crop koji se pomera po sinusu), tekst ide preko nje, a traka napretka klizi preko sive staze.
   const bar = { x: f.pad.levo, y: f.h - f.pad.dole + 50, w: f.w - f.pad.levo - f.pad.desno };
-  const trajanje = (ukupno + INTRO_SEKUNDI + 0.3).toFixed(2);
+  const trajanje = (ukupno + introSek + 0.3).toFixed(2);
   const pomakX = Math.round(f.w * 0.07);
   const pomakY = Math.round(f.h * 0.06);
   const filter = [
@@ -352,13 +366,17 @@ export async function napraviVideo(datum, v, fonts, radni) {
     `[1:v]fps=30,format=rgba[tekst]`,
     `color=c=0x1e293b:s=${bar.w}x10:r=30:d=${trajanje}[staza]`,
     `color=c=0xfbbf24:s=${bar.w}x10:r=30:d=${trajanje}[puna]`,
-    `[staza][puna]overlay=x='-overlay_w+overlay_w*min(max(t-${INTRO_SEKUNDI},0)/${ukupno},1)':y=0[traka]`,
+    `[staza][puna]overlay=x='-overlay_w+overlay_w*min(max(t-${introSek},0)/${ukupno},1)':y=0[traka]`,
     `[bg][tekst]overlay=0:0:shortest=1[slika]`,
     `[slika][traka]overlay=${bar.x}:${bar.y}:shortest=1,format=yuv420p[v]`,
-    // Glas kreće posle intra; ispod intra tih „whoosh“ od filtriranog šuma.
-    `[2:a]adelay=${Math.round(INTRO_SEKUNDI * 1000)}:all=1,aformat=sample_rates=24000:channel_layouts=mono[glas]`,
-    `anoisesrc=d=0.8:c=pink:r=24000:a=0.6,highpass=f=300,lowpass=f=2500,afade=t=in:d=0.3,afade=t=out:st=0.35:d=0.45,volume=0.35[whoosh]`,
-    `[glas][whoosh]amix=inputs=2:duration=first:normalize=0[a]`,
+    // Glas kreće posle intra; ispod intra tih „whoosh“ od filtriranog šuma. Bez intra glas kreće odmah.
+    ...(saIntrom
+      ? [
+          `[2:a]adelay=${Math.round(introSek * 1000)}:all=1,aformat=sample_rates=24000:channel_layouts=mono[glas]`,
+          `anoisesrc=d=0.8:c=pink:r=24000:a=0.6,highpass=f=300,lowpass=f=2500,afade=t=in:d=0.3,afade=t=out:st=0.35:d=0.45,volume=0.35[whoosh]`,
+          `[glas][whoosh]amix=inputs=2:duration=first:normalize=0[a]`,
+        ]
+      : [`[2:a]aformat=sample_rates=24000:channel_layouts=mono[a]`]),
   ].join(';');
 
   await promisify(execFile)(
@@ -384,16 +402,16 @@ export async function napraviVideo(datum, v, fonts, radni) {
     const spisakPoglavlja = [{ od: 0, naziv: 'Intro' }, ...poglavlja].filter((p, i, sva) => i === 0 || p.od - sva[i - 1].od >= 10);
     opis = opis.replace('{POGLAVLJA}', `Chapters:\n${spisakPoglavlja.map((p) => `${vreme(p.od)} ${p.naziv}`).join('\n')}`);
   }
-  return { fajl: v.fajl, ...v.meta, opis: opis.replace('{POGLAVLJA}\n\n', ''), sekundi: Math.round(ukupno + INTRO_SEKUNDI) };
+  return { fajl: v.fajl, ...v.meta, opis: opis.replace('{POGLAVLJA}\n\n', ''), sekundi: Math.round(ukupno + introSek) };
 }
 
 // ───────────────────────────── scenariji ─────────────────────────────
 
 const kraj = { glas: "Follow for tomorrow's AI news.", red1: "Tomorrow's AI news,", red2: 'in 30 seconds.' };
 const najaveVesti = [
-  { glas: "Here's today's biggest AI story.", veliko: '#1', ekran: "TODAY'S TOP AI STORY" },
-  { glas: 'AI story number two for today.', veliko: '#2', ekran: 'AI STORY OF THE DAY' },
-  { glas: 'And one more AI story you should know today.', veliko: '#3', ekran: 'AI STORY OF THE DAY' },
+  { glas: "Here's today's biggest AI story.", kratko: 'Top AI story today:', veliko: '#1', ekran: "TODAY'S TOP AI STORY" },
+  { glas: 'AI story number two for today.', kratko: 'Also today:', veliko: '#2', ekran: 'AI STORY OF THE DAY' },
+  { glas: 'And one more AI story you should know today.', kratko: 'And one more:', veliko: '#3', ekran: 'AI STORY OF THE DAY' },
 ];
 
 function scenarioVest(datum, vest, broj) {
@@ -420,19 +438,23 @@ function scenarioVest(datum, vest, broj) {
 }
 
 /** „Try this AI tool“: alat iz „Novo izašlo“ sa najviše tri koraka i cenom. */
-function scenarioAlat(datum, izdanje) {
-  const alat = izdanje.novo?.find((n) => n.tip === 'alat' || n.tip === 'projekat') ?? izdanje.novo?.[0];
-  if (!alat?.kakoProbati?.length) return null;
+function scenarioAlat(datum, izdanje, redni = 0) {
+  // Alati i projekti prvi, pa ostalo iz „Novo izašlo“ što ima korake.
+  const kandidati = (izdanje.novo ?? []).filter((n) => n.kakoProbati?.length).sort((a, b) => Number(!['alat', 'projekat'].includes(a.tip)) - Number(!['alat', 'projekat'].includes(b.tip)));
+  const alat = kandidati[redni];
+  if (!alat) return null;
+  const id = redni ? `alat${redni + 1}` : 'alat';
   const opis = prvaRecenica(alat.opis, 160);
-  const koraci = alat.kakoProbati.slice(0, 3).map((k) => prvaRecenica(k, 150));
-  const oznaka = `AI Morning Brief · ${datum} · alat`;
+  // Dva kratka koraka: najbolji Short (ThinkRail) je imao 24 s; svi koraci su ionako u opisu.
+  const koraci = alat.kakoProbati.slice(0, 2).map((k) => prvaRecenica(k, 110));
+  const oznaka = `AI Morning Brief · ${datum} · ${id}`;
   return {
-    id: 'alat',
-    fajl: `${datum}-short-alat.mp4`,
+    id,
+    fajl: `${datum}-short-${id}.mp4`,
     natpis: `TRY THIS · ${kratakDatum(datum).toUpperCase()}`,
     zaglavlje: { levo: 'TRY THIS AI TOOL', pill: (alat.tip ?? 'tool').toUpperCase() === 'ALAT' ? 'TOOL' : 'PROJECT' },
     maliNaslov: cist(alat.naziv),
-    najava: { glas: "Here's an AI tool you can try today.", veliko: 'Try this', ekran: 'AI TOOL OF THE DAY' },
+    najava: { glas: "Here's an AI tool you can try today.", kratko: 'Try this:', veliko: 'Try this', ekran: 'AI TOOL OF THE DAY' },
     udica: `${cist(alat.naziv)}: ${skrati(opis, 80)}`,
     delovi: [
       ...koraci.map((k, i) => ({ tekst: k, izgovor: `Step ${i + 1}: ${k}`, oznaka: `STEP ${i + 1}` })),
@@ -473,6 +495,7 @@ function scenarioIdeja(datum, izdanje) {
     maliNaslov: cist(ideja.naziv),
     najava: {
       glas: ideja.vikendProjekat ? "Here's an AI app you could build this weekend." : "Here's today's AI app idea.",
+      kratko: 'Build this:',
       veliko: 'Build this',
       ekran: 'APP IDEA OF THE DAY',
     },
@@ -560,7 +583,7 @@ function scenarioNedeljaShort(datum, izdanje) {
     natpis: `THIS WEEK · ${opseg.toUpperCase()}`,
     zaglavlje: { levo: 'THIS WEEK IN AI', pill: opseg.replace(/, \d{4}$/, '').toUpperCase() },
     maliNaslov: `This week in AI · ${opseg}`,
-    najava: { glas: "Here's your AI week in under a minute.", veliko: 'Week', ekran: 'THIS WEEK IN AI' },
+    najava: { glas: "Here's your AI week in under a minute.", kratko: 'This week in AI:', veliko: 'Week', ekran: 'THIS WEEK IN AI' },
     udica: prvaRecenica(ukratko, 150),
     delovi: tacke.slice(0, 5).map((t, i) => ({ tekst: `${naslovTacke(cist(t))}.`, oznaka: `${i + 1}/${Math.min(5, tacke.length)}` })),
     kraj: { glas: 'Follow for the full recap every Saturday.', red1: 'The AI week,', red2: 'every Saturday.' },
@@ -614,7 +637,10 @@ async function scenarioNedeljaDugi(datum, izdanje) {
       plejlista: 'This Week in AI',
       pitanje: 'What was the biggest AI story of the week for you? 👇',
       dugi: true,
+      thumbnail: `${datum}-dugi-nedelja.png`,
     },
+    // Podaci za sličicu (thumbnail): bez nje dugi video skoro niko ne vidi.
+    sl: { naslov: naslovTacke(cist(tacke[0])), opseg },
   };
 }
 
@@ -625,7 +651,7 @@ export const scenarioOProfilu = {
   natpis: 'START HERE',
   zaglavlje: { levo: 'AI MORNING BRIEF', pill: 'START HERE' },
   maliNaslov: 'What you get here',
-  najava: { glas: 'Welcome to AI Morning Brief.', veliko: 'Hi!', ekran: 'WELCOME' },
+  najava: { glas: 'Welcome to AI Morning Brief.', kratko: 'Welcome to AI Morning Brief.', veliko: 'Hi!', ekran: 'WELCOME' },
   udica: 'AI news for people who build with AI, in under a minute a day.',
   delovi: [
     { tekst: 'Every morning, the three biggest AI stories, explained in 30 seconds each.', oznaka: 'EVERY DAY' },
@@ -638,6 +664,34 @@ export const scenarioOProfilu = {
   meta: { naslov: 'AI Morning Brief: start here', opis: '', oznaka: 'AI Morning Brief · o profilu' },
 };
 
+/** Sličica 1280×720 za dugi video: krupan naslov nedelje, čitljiv i na telefonu. */
+async function napraviThumbnail(v, fonts) {
+  const stablo = el(
+    'div',
+    {
+      width: 1280,
+      height: 720,
+      boxSizing: 'border-box',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      padding: '64px 72px',
+      fontFamily: 'Inter',
+      color: BOJE.tekst,
+      backgroundImage: 'radial-gradient(circle at 15% 20%, rgba(251,191,36,0.22) 0%, transparent 45%), radial-gradient(circle at 85% 80%, rgba(124,58,237,0.35) 0%, transparent 50%), linear-gradient(135deg, #020617 0%, #0b1224 100%)',
+    },
+    el(
+      'div',
+      { alignItems: 'center' },
+      el('div', { width: 76, height: 76, borderRadius: 18, backgroundColor: BOJE.akcenat, alignItems: 'center', justifyContent: 'center', marginRight: 22 }, el('div', { fontSize: 38, fontWeight: 800, color: BOJE.pozadina }, 'AI')),
+      el('div', { fontSize: 40, fontWeight: 800, color: BOJE.akcenat, letterSpacing: 4 }, 'THIS WEEK IN AI'),
+    ),
+    el('div', { fontSize: v.sl.naslov.length > 40 ? 76 : 92, fontWeight: 800, lineHeight: 1.05, letterSpacing: -2 }, skrati(v.sl.naslov, 60)),
+    el('div', { fontSize: 36, fontWeight: 600, color: '#cbd5e1' }, v.sl.opseg),
+  );
+  const svg = await satori(stablo, { width: 1280, height: 720, fonts });
+  await sharp(Buffer.from(svg)).png().toFile(join(INSTA_DIR, v.meta.thumbnail));
+}
+
 /** Koje serije idu tog dana (najviše 5 videa zbog YouTube kvote). */
 async function scenarijiDana(datum, izdanje, samo) {
   const dan = danUNedelji(datum);
@@ -646,7 +700,9 @@ async function scenarijiDana(datum, izdanje, samo) {
   const hoce = (s) => !samo || samo.includes(s);
   if (hoce('vesti')) izaberiVesti(izdanje).slice(0, 3).forEach((v, i) => lista.push(scenarioVest(datum, v, i + 1)));
   if (hoce('alat') && !subota) lista.push(scenarioAlat(datum, izdanje));
-  if (hoce('ideja') && [1, 3, 5].includes(dan)) lista.push(scenarioIdeja(datum, izdanje));
+  // Pon/sre/pet: drugi alat umesto ideje, jer alati na YouTube-u prolaze najbolje, a ideje najslabije (1–5 pregleda).
+  if (hoce('alat') && [1, 3, 5].includes(dan)) lista.push(scenarioAlat(datum, izdanje, 1));
+  if (hoce('ideja') && samo?.includes('ideja')) lista.push(scenarioIdeja(datum, izdanje));
   if (hoce('cene') && dan === 0) lista.push(await scenarioCene(datum));
   if (hoce('nedelja') && subota) lista.push(scenarioNedeljaShort(datum, izdanje), await scenarioNedeljaDugi(datum, izdanje));
   return lista.filter(Boolean).slice(0, 5);
@@ -667,7 +723,10 @@ export async function napraviShortove(datum, samo) {
   const radni = await mkdtemp(join(tmpdir(), 'ai-shorts-'));
   try {
     const novi = [];
-    for (const s of scenariji) novi.push(await napraviVideo(datum, s, fonts, radni));
+    for (const s of scenariji) {
+      novi.push(await napraviVideo(datum, s, fonts, radni));
+      if (s.sl && s.meta.thumbnail) await napraviThumbnail(s, fonts);
+    }
     // Redosled je bitan: objavi-youtube šalje od kraja, pa prvi na listi završi na vrhu kanala.
     const svi = [...novi, ...stari.filter((s) => !novi.some((n) => n.fajl === s.fajl))];
     await writeJson(join(INSTA_DIR, `${datum}-shorts.json`), svi);

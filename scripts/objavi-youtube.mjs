@@ -92,6 +92,7 @@ for (const v of videi) {
     const id = await otpremi(fajl, v);
     console.log(`Objavljen YouTube Short: https://youtube.com/shorts/${id} (${v.naslov})`);
     await posleObjave(id, v);
+    if (v.thumbnail) await postaviThumbnail(id, v.thumbnail);
   } catch (err) {
     greske++;
     console.error(`YouTube „${v.naslov}“ nije objavljen: ${err.message}`);
@@ -100,6 +101,20 @@ for (const v of videi) {
   }
 }
 if (greske) process.exit(1);
+
+/** Sličica za dugi video (thumbnails.set, 50 jedinica). Traži verifikovan kanal; ako ne uspe, video ostaje sa automatskom. */
+async function postaviThumbnail(id, fajl) {
+  const slika = await readFile(join(INSTA_DIR, fajl)).catch(() => null);
+  if (!slika) return console.log(`Nema sličice ${fajl}, ostaje automatska.`);
+  const odgovor = await preuzmi(`https://www.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=${id}`, {
+    metoda: 'POST',
+    headers: { Authorization: `Bearer ${pristup}`, 'Content-Type': 'image/png' },
+    telo: slika,
+    timeoutMs: 120_000,
+  });
+  if (odgovor.ok) console.log('Postavljena sličica (thumbnail).');
+  else console.log(`Sličica nije postavljena: ${JSON.parse(odgovor.tekst || '{}').error?.message ?? odgovor.status}`);
+}
 
 /**
  * Plejlista i komentar sa pitanjem. Traže ovlašćenje youtube.force-ssl; ako ga stari token nema,
