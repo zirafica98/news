@@ -159,16 +159,21 @@
           ]
         },
         "options": {
+          "redirect": {
+            "redirect": {
+              "followRedirects": false
+            }
+          },
           "response": {
             "response": {
-              "responseFormat": "text",
-              "outputPropertyName": "data"
+              "fullResponse": true,
+              "neverError": true
             }
           }
         }
       },
       "id": "8cb97368-d899-49a3-a90d-4112024e838b",
-      "name": "GitHub · job log",
+      "name": "GitHub · job log URL",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -382,6 +387,27 @@
         1880,
         400
       ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.headers.location }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text",
+              "outputPropertyName": "data"
+            }
+          }
+        }
+      },
+      "id": "461dd548-88d3-4633-98d3-dd5077e69447",
+      "name": "Download job log",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        610,
+        240
+      ]
     }
   ],
   "connections": {
@@ -433,18 +459,7 @@
       "main": [
         [
           {
-            "node": "GitHub · job log",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "GitHub · job log": {
-      "main": [
-        [
-          {
-            "node": "Classify runs",
+            "node": "GitHub · job log URL",
             "type": "main",
             "index": 0
           }
@@ -571,6 +586,28 @@
         [
           {
             "node": "Pipeline overview",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub · job log URL": {
+      "main": [
+        [
+          {
+            "node": "Download job log",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download job log": {
+      "main": [
+        [
+          {
+            "node": "Classify runs",
             "type": "main",
             "index": 0
           }
