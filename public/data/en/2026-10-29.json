@@ -1,0 +1,596 @@
+{
+  "datum": "2026-10-29",
+  "generisano": "2026-10-29T03:06:59.945Z",
+  "model": "claude-opus-5-5",
+  "prevod": "claude-sonnet-5-5",
+  "ukratko": "Google shipped Gemini 4 Carbon just two weeks after Argon. It went straight to the top of the new Artificial Analysis ranking, but for now only a handpicked group of cyber-defense specialists can use it. For developers, the bigger news is that Android Studio now accepts third-party agents, including Claude and Codex, and that Supabase is reworking local development to be friendlier to agents. In the background, people are debating a breach of Anthropic through third-party software and whether AI really \"solves\" math.",
+  "vesti": [
+    {
+      "naslov": "Gemini 4 Carbon: Google's strongest model tops the leaderboard, but almost nobody can use it",
+      "staSeDesilo": "Google DeepMind released Gemini 4 Carbon two weeks after Gemini 4 Argon. It is built for long agentic coding tasks and cyber defense: finding, verifying and patching vulnerabilities. On the new version of the Artificial Analysis index it scores 59 points, good for first place. By Google's numbers it leads on 15 of 17 benchmarks, and trails on OSWorld-2.1, where it scores 81.5% against 87.2% for Claude Opus 5.5. For now only a small group of cyber-defense companies has access, and partners in the Fairwind program will get it later.",
+      "zastoJeBitno": "You can't call it through the API yet, so nothing changes in your day-to-day work. But a new pattern is visible: the strongest models go to closed groups first for security reasons, and only later to everyone.",
+      "kategorija": "modeli",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Google DeepMind",
+          "url": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/google-deepmind-releases-gemini-4-carbon-just-two-weeks-after-argon-with-gains-across-the-board/"
+        },
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/ai/2026/10/google-announces-gemini-4-carbon-its-latest-frontier-ai-model-that-you-cant-use/"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier"
+        },
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/10/28/google-deepmind-gemini-4-carbon-frontier-model/"
+        }
+      ]
+    },
+    {
+      "naslov": "Android Studio opens up to third-party agents, and Android gets APIs for in-app AI",
+      "staSeDesilo": "Android Studio Rabbit 2 introduces a \"Bring Your Own Agent\" option. Through the open Agent Client Protocol it supports more than 40 coding agents, including Claude Agent and Codex, and agents can use the emulator and Logcat (Android's system log). Google also unveiled new early-stage APIs: the Agentic API, which runs Gemini Nano 4 directly on the phone; AppFunctions, which lets an app expose its functions to agents via MCP; and A2UI, which lets an agent render interactive Compose components instead of plain text.",
+      "zastoJeBitno": "Google and Apple (which recently gave apps MCP) are heading the same way: apps should expose their functions to agents. If you build for both platforms, it's time to think about which actions in your app an agent could call.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/google-opens-android-development-to-third-party-ai-agents-and-unveils-new-gemini-apis/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/28/as-ai-agents-reshape-the-web-google-opens-gemini-and-search-to-more-apps/"
+        }
+      ]
+    },
+    {
+      "naslov": "Supabase: a local database without Docker, schema in Git, and compute next to the database",
+      "staSeDesilo": "At the Supabase Select conference, the company announced an alpha of running Supabase locally without Docker. Declarative schemas are coming too: you describe in files what the database should look like, instead of piling up migrations. Supabase Compute, now in private alpha, runs containers right next to the database, for example for chunking documents and creating embeddings. The company also acquired Turso. The founders say they spin up about five million databases a month and that agents are boosting their conversion rate.",
+      "zastoJeBitno": "You build on Supabase with Claude Code, so this directly makes your work easier: the agent gets a schema it can read and edit in the repo, and the local environment starts without Docker Desktop.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Latent Space",
+          "url": "https://latent.space/p/supabase/"
+        }
+      ]
+    },
+    {
+      "naslov": "Anthropic breached through third-party software: companies disagree on how deep it went",
+      "staSeDesilo": "Security firm Cathedral, working under a bug bounty program and using AI agents, got into part of Anthropic's internal systems. The entry points were third-party administration and sales tools. Anthropic confirms access to some sales, HR and IT data and says Claude conversations, source code and model weights were not exposed. Former OpenAI employee Will Depue claims, citing sources, that Cathedral had full admin control over Slack, which Anthropic says is untrue. For now it remains an unconfirmed claim.",
+      "zastoJeBitno": "Even the best-protected AI company was only as strong as the vendor software it uses. If you connect third-party services in your apps, check what permissions and tokens you give them.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/ai-agents-hacked-anthropic-maker-of-arguably-the-most-capable-ai-models-for-cyberdefense/"
+        },
+        {
+          "naziv": "ICTbusiness",
+          "url": "https://www.ictbusiness.info/vijesti/ai-agenti-otkrili-slabosti-anthropicovih-sustava"
+        }
+      ]
+    },
+    {
+      "naslov": "AI in math: longest proof verified in 24 days, and OpenAI and Anthropic both claim to have toppled ETH on the same day",
+      "staSeDesilo": "Startup Axiom used a swarm of AI agents to produce a machine-verified version of the classification of finite simple groups, a proof of roughly 15,000 pages, in 24 days. Along the way it found a faulty statement in one step and patched it. Just hours after OpenAI, Anthropic published a paper in which an internal Claude model, with no human help, finds an algorithm that would refute the Exponential Time Hypothesis, an important conjecture in complexity theory. Anthropic itself notes that no machine has checked that the Lean statement matches the paper, and that this has no practical impact on SAT solvers.",
+      "zastoJeBitno": "Lean proofs, meaning code a computer can check step by step, are becoming the standard for AI claims in science. Still, these are claims that experts have yet to verify.",
+      "kategorija": "istrazivanje",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Rundown AI",
+          "url": "https://therundownai.beehiiv.com/p/google-ai-worlds-can-now-talk-back"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-10-28"
+        }
+      ]
+    },
+    {
+      "naslov": "Artificial Analysis v5: gap between open and closed models grows from 3 to 12 points",
+      "staSeDesilo": "The best-known independent model \"intelligence\" index has been overhauled. Now 60% of results come from private test sets, and FrontierCode 2.0 and Terminal-Bench-Science have been added. Before Carbon, the leaders were Claude Opus 5.5 with 58 points, GPT-6 Astra with 57 and GPT-6.1 Sol with 55. The best open model, Kimi K3.1 Pro, scores 46, while GLM-5.3 and DeepSeek V4.1 Flash get 32 each. On Cognition's FrontierCode 2.0 the best score is 45%: it tests whether a maintainer would accept a change on a vaguely specified task.",
+      "zastoJeBitno": "If you pick models by leaderboard, this shifts the rankings, especially for open models. Nathan Lambert cautions that the index measures peak capability, not the everyday jobs where cheap open models still do well.",
+      "kategorija": "istrazivanje",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/new-artificial-analysis-index-widens-the-gap-between-open-and-closed-models/"
+        },
+        {
+          "naziv": "Interconnects",
+          "url": "https://www.interconnects.ai/p/artificial-analysis-v5-and-the-benchmarkers"
+        },
+        {
+          "naziv": "Latent Space (AINews)",
+          "url": "https://latent.space/p/ainews-anthropic-ends-coding-interviews-hunger-beats-tenure/"
+        }
+      ]
+    },
+    {
+      "naslov": "Serbia: frontend developer laid off because \"AI does frontend now\"",
+      "staSeDesilo": "Startit picked up a viral discussion from r/programiranje. A local frontend developer was told they were no longer needed because AI does the job, and the designers had been let go a few weeks earlier. Only one backend developer and one devops engineer remained at the company. The community advises broadening toward the whole system, taking ownership of the product, entrepreneurship or sales engineering, while some think AI is just an excuse for a lack of work.",
+      "zastoJeBitno": "It's a concrete signal from the local market: frontend alone is no longer enough, and knowing the whole system and the product is what counts, which works in your favor as a full-stack and iOS developer.",
+      "kategorija": "ostalo",
+      "vaznost": 2,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "Startit",
+          "url": "https://startit.rs/danas-mi-je-receno-da-zbog-toga-sto-ai-sada-radi-frontend-vise-nema-potrebe-za-mnom-viralna-diskusija-o-necemu-sto-sve-cesce-cujemo-oko-nas-sta-su-opcije-za-nas-koji-se-nademo-u-takvoj/"
+        }
+      ]
+    },
+    {
+      "naslov": "Superplane Startup Academy: a free program for engineers who want their own startup",
+      "staSeDesilo": "Startit and Novi Sad-based Superplane are launching a new edition of the Startup Academy, a free program with materials, mentors and networking for engineers who want to launch a product. The lead mentor is Darko Fabijan (Semaphore, Superplane), and applications are open until November 11. On November 4, Startit is also hosting a free meetup in Belgrade at AI Hub (Savska 5): engineers from Easygo will explain how, with AI, they migrated payments, users and notifications on Kick in 2–3 months instead of the estimated 9–12, without a single outage.",
+      "zastoJeBitno": "If you want to turn one of your apps into a real business, this is a free chance to get advice from people who have already done it in Serbia.",
+      "kategorija": "ostalo",
+      "vaznost": 2,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "Startit",
+          "url": "https://startit.rs/prijavi-se-za-superplane-startap-akademiju-besplatno-znanje-saveti-i-veze-za-inzenjere-koji-zele-da-naprave-svoj-startap-od-inzenjera-koji-su-vec-uspesni-preduzetnici/"
+        },
+        {
+          "naziv": "Startit (meetup)",
+          "url": "https://startit.rs/ai-vs-tehnicki-dug-deo-ii-nakon-velikog-interesovanja-dodatno-izdanje-meetupa-o-otplati-duga-na-zivom-sistemu-sa-130m-korisnika-bez-downtimea-beograd-4-novembar/"
+        }
+      ]
+    },
+    {
+      "naslov": "Nvidia Nemotron 3.5 Transcribe: open model for transcription, translation and speaker recognition",
+      "staSeDesilo": "Nvidia released an open speech recognition model with about 30 billion parameters, of which about 4 billion are active per token. It transcribes 40 languages, translates 31 languages to and from English, and tells speakers apart in 13 languages. It takes instructions as a text prompt. It works only on recordings, not live audio, and comes with a released dataset of over 800,000 hours of speech.",
+      "zastoJeBitno": "This is a solid free foundation for meeting-minutes apps or doctors' notes. Before counting on Serbian, check the language table on the model page.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Hugging Face blog",
+          "url": "https://huggingface.co/blog/nvidia/nemotron-transcribe-granary"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/28/voice-ai-in-vogue-nvidia-releases-new-open-transcription-model/"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/nvidias-open-nemotron-3-5-transcribe-combines-transcription-translation-and-speaker-recognition/"
+        }
+      ]
+    },
+    {
+      "naslov": "Anthropic manager scraps the classic coding interview: \"hunger beats tenure\"",
+      "staSeDesilo": "Felix Rieseberg, a manager at Anthropic, removed coding tasks from job interviews on his team because Claude solves them better than candidates do. He advises juniors to understand the company's goals, pick one ambitious idea and build a working prototype over a weekend, instead of cramming twenty ideas into one prototype. Startit points out that the share of juniors among new technical hires at Anthropic fell from 27% to 9%.",
+      "zastoJeBitno": "A portfolio of prototypes that solve a real problem now says more than solved coding puzzles. That fits how you work: building apps quickly with AI.",
+      "kategorija": "kompanije",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/with-ai-writing-the-code-entrepreneurial-thinking-is-now-what-counts-most-for-newcomers-at-anthropic/"
+        },
+        {
+          "naziv": "Latent Space (AINews)",
+          "url": "https://latent.space/p/ainews-anthropic-ends-coding-interviews-hunger-beats-tenure/"
+        },
+        {
+          "naziv": "Startit",
+          "url": "https://startit.rs/tehnicki-intervju-je-mrtav-kaze-jedan-menadzer-iz-anthropica-i-da-je-stav-bitniji-od-staza-i-da-je-ovo-super-prilika-za-juniore/"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Nemotron 3.5 Transcribe (demo)",
+      "tip": "model",
+      "opis": "Nvidia's open model that turns a recording into text, translates it and distinguishes who is speaking. Try it on your own meeting recording.",
+      "kakoProbati": [
+        "Open the Hugging Face Space: huggingface.co/spaces/nvidia/nemotron-transcribe",
+        "Upload a short recording (it works on recordings, not live audio) and write in the prompt what you want, e.g. a transcript with speaker labels",
+        "For your own server: run the model nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B via vLLM or use hosted endpoints (Baseten, DeepInfra, Simplismart)",
+        "Check the language list on the model card before trying it on Serbian"
+      ],
+      "link": "https://huggingface.co/blog/nvidia/nemotron-transcribe-granary",
+      "cena": "free (open model); hosted endpoints: check the link"
+    },
+    {
+      "naziv": "Android Studio Rabbit 2: Bring Your Own Agent",
+      "tip": "funkcija",
+      "opis": "In Android Studio you can plug in Claude Agent, Codex or any of 40+ other agents, which then use the emulator and Logcat.",
+      "kakoProbati": [
+        "Update Android Studio to Rabbit 2 (check availability at the link)",
+        "Install Claude Agent or Codex from the built-in agent marketplace",
+        "Open a project and give the agent a task that requires launching the emulator, so you can see it read Logcat"
+      ],
+      "link": "https://the-decoder.com/google-opens-android-development-to-third-party-ai-agents-and-unveils-new-gemini-apis/",
+      "cena": "check the link"
+    },
+    {
+      "naziv": "Supabase local without Docker (alpha)",
+      "tip": "alat",
+      "opis": "The new runtime spins up local Supabase without Docker Desktop, and declarative schemas keep the desired database state in files in Git.",
+      "kakoProbati": [
+        "Read the Supabase Select announcements via the link (the \"Build\" section)",
+        "Update the Supabase CLI and follow the instructions for the Docker-free alpha runtime (exact command: check the link)",
+        "On a test project, move the schema into declarative files and let Claude Code add a column"
+      ],
+      "link": "https://latent.space/p/supabase/",
+      "cena": "check the link"
+    },
+    {
+      "naziv": "MiniMax MCode Stack",
+      "tip": "projekat",
+      "opis": "17 skills and 5 checklists that MiniMax's team uses daily to develop its coding agent. They are plain Markdown files (SKILL.md) under an MIT license, and they work in Claude Code too.",
+      "kakoProbati": [
+        "Find the MCode Stack GitHub repo via the link",
+        "Copy the folder of the skill you're interested in (e.g. long-command-check) into ~/.claude/skills/ or .claude/skills/ in your project",
+        "In Claude Code, run a long command or background job and see whether the agent applies the check"
+      ],
+      "link": "https://www.marktechpost.com/2026/10/28/minimax-open-sources-mcode-stack-agent-skills/",
+      "cena": "free"
+    },
+    {
+      "naziv": "ai-design-skills (landing-page-design)",
+      "tip": "projekat",
+      "opis": "A skill for Claude Code, Cursor and Codex that builds a landing page: it asks questions first, then lays out the structure, copy and visual system (typography, spacing, animations).",
+      "kakoProbati": [
+        "Open the elayadesign/ai-design-skills repo on GitHub",
+        "Copy the landing-page-design folder into .claude/skills/ in your Angular project",
+        "Ask Claude Code for a landing page for one of your apps and answer its questions"
+      ],
+      "link": "https://github.com/elayadesign/ai-design-skills",
+      "cena": "free"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Anthropic acquired Mithril Medicine, a one-person biotech whose muscular dystrophy drug, developed with Claude, could reach human trials by late 2028 at the earliest.",
+      "izvor": "The Rundown AI",
+      "url": "https://therundownai.beehiiv.com/p/google-ai-worlds-can-now-talk-back"
+    },
+    {
+      "naslov": "Anthropic expanded its AI for Science program to 20 science foundations and research institutions.",
+      "izvor": "Anthropic",
+      "url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions"
+    },
+    {
+      "naslov": "Anthropic gave large companies reports showing what teams accomplished with Claude and what it cost, along with shared token budgets.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/28/anthropic-just-launched-tools-to-show-companies-what-their-ai-spending-is-buying/"
+    },
+    {
+      "naslov": "Claude for Legal got ready-made templates and automatic source verification, plus more than 60 integrations with law firm databases.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/claude-for-legal-now-verifies-sources-automatically-then-hands-the-file-to-a-lawyer/"
+    },
+    {
+      "naslov": "Microsoft posted record quarterly revenue of $92.3 billion, reported Azure revenue in dollars for the first time ($33.2 billion), and disclosed $10 billion in revenue from its OpenAI partnership.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/28/microsoft-recorded-10-billion-in-revenue-from-openai/"
+    },
+    {
+      "naslov": "Alphabet grew 25% to $127.6 billion in revenue, and Google is expanding ads in AI search worldwide.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/28/google-expands-ai-search-ads-globally-as-core-ad-growth-slows/"
+    },
+    {
+      "naslov": "Chrome's autofill can now, with your permission, pull flight, reservation and shipment numbers from Gmail.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1020626/chrome-enhanced-autofill-gmail-forms-gemini-personal-intelligence"
+    },
+    {
+      "naslov": "Starting in 2027, Google will offer its TPU chips in Oracle's cloud, the first time at a rival cloud provider.",
+      "izvor": "The Rundown AI",
+      "url": "https://therundownai.beehiiv.com/p/google-ai-worlds-can-now-talk-back"
+    },
+    {
+      "naslov": "At DevDay in Berlin, OpenAI said its Dots assistant is coming to more of Europe \"in a few weeks\" and that weekly Codex users in Germany have grown 20x since January.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/openai-teases-dots-for-europe-but-its-berlin-devday-was-really-about-building-a-platform/"
+    },
+    {
+      "naslov": "OpenAI's Ted Sanders explained the model names: size increases in the order Luna < Terra < Sol < Astra, and the version number reflects the order and size of the jump.",
+      "izvor": "Simon Willison",
+      "url": "https://simonwillison.net/2026/Oct/28/ted-sanders/"
+    },
+    {
+      "naslov": "GitHub Octoverse 2026: merged pull requests tripled in less than a year to 220 million a month, with 30.3 million new repos a month.",
+      "izvor": "Simon Willison",
+      "url": "https://simonwillison.net/2026/Oct/28/github-octoverse-2026/"
+    },
+    {
+      "naslov": "Daytona, co-founded by Croatian Ivan Burazin and building isolated environments for AI agents, raised $60 million at a $1 billion valuation.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/ai-agentima-trebaju-racunala"
+    },
+    {
+      "naslov": "Microsoft is shutting down Copilot on all smart TVs, including LG and Samsung, according to on-screen notices on the TVs.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1021143/microsoft-lg-samsung-copilot-ai-assistant-smart-tvs-ending"
+    },
+    {
+      "naslov": "Meta will likely delay its new business terms again, after publishers objected that their content could be used to train AI.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1020769/meta-updated-business-terms-delay-indefinitely"
+    },
+    {
+      "naslov": "Google's AI Mode avoids saying who won the 2020 and 2024 US elections and points to official sources instead.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/ai/2026/10/google-ai-gets-cagey-when-asked-who-won-the-2020-elections/"
+    },
+    {
+      "naslov": "An xAI subsidiary is buying up houses in Mississippi from owners who promise not to sue the company over data center noise.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1020596/xai-mississippi-neighborhood-data-center-lawsuit"
+    },
+    {
+      "naslov": "Trump announced that the term \"artificial intelligence\" will be removed from relevant official documents.",
+      "izvor": "B92",
+      "url": "https://www.b92.net/tehnopolis/aktuelno/280086/tramp-najavio-zvanicnu-zabranu-izraza-vestacka-inteligencija/vest"
+    },
+    {
+      "naslov": "Akai is handing hackers its MPC Sample Key device ahead of time, with open firmware and open support for mods built through vibe coding.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/gadgets/1021405/akai-open-source-mpc-sample-key"
+    },
+    {
+      "naslov": "Meta quietly released Waddle World, a virtual-pet game that is really a voice journal with an AI companion.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1020410/meta-launched-ai-pet-journal-app-waddle-world"
+    },
+    {
+      "naslov": "Vals confirmed that Qwen3.8 models send unnecessary requests to an Alibaba server, but found no evidence of data being taken; the cause is likely an RL training bug.",
+      "izvor": "Latent Space (AINews)",
+      "url": "https://latent.space/p/ainews-anthropic-ends-coding-interviews-hunger-beats-tenure/"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "Memory Tax: how much a dedicated memory system is really worth to an agent",
+      "objasnjenje": "The authors compared purpose-built agent memory systems against plain RAG, i.e. searching earlier data and injecting what's found into the prompt, across a large number of tasks. Specialized memory was often worse. So they introduce two measures: how much memory helps (\"benefit\") and how much it hurts through noise and cost (\"tax\").",
+      "zastoJeZanimljivo": "Before building a complicated memory layer into your app, try the simple solution with pgvector in Supabase. It may be enough.",
+      "url": "https://huggingface.co/papers/2610.34073",
+      "github": "https://github.com/hexuan21/MemoryTax"
+    },
+    {
+      "naslov": "The Trinity: an agent that improves itself through a \"skill tree\"",
+      "objasnjenje": "The system sorts tasks into a tree of capabilities, builds simulated worlds where it practices its weak spots, and for each task type picks the right part of the harness, i.e. the environment around the model. This gradually improves the results of multimodal agents across various benchmarks. It was the most popular paper of the day on Hugging Face.",
+      "zastoJeZanimljivo": "It nicely shows that much of agent progress lies in the environment around the model, not just in the model itself.",
+      "url": "https://huggingface.co/papers/2610.36077",
+      "github": "https://github.com/InfRec-Cardinal/The-Trinity"
+    },
+    {
+      "naslov": "FlashMap: up to 6x faster text generation with no quality loss",
+      "objasnjenje": "A small helper model of half a billion parameters proposes a block of 16 tokens in one step, and the large model verifies them all at once. This is called speculative decoding. On Qwen3-8B the authors report up to 6.14x faster responses on math tasks, but only about 2.3x on more casual chat.",
+      "zastoJeZanimljivo": "The weights are on Hugging Face, with add-ons for vLLM and SGLang. If you self-host a smaller model, you can speed it up without losing quality.",
+      "url": "https://www.marktechpost.com/2026/10/28/flashmap-flow-map-speculative-decoding/",
+      "github": null
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Parcels from the inbox",
+      "problem": "Tracking numbers for Post Express, D Express or AKS parcels are scattered across emails and SMS messages, so you're always hunting for them.",
+      "zaKoga": "Anyone in Serbia who shops online, especially small online sellers",
+      "ulogaAi": "From a forwarded email or a copied SMS, it extracts the parcel number, the courier and what was ordered, then organizes everything into one list.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Build a SwiftUI share extension that accepts text or an email",
+        "Call Claude Haiku 5.5 with a JSON schema (courier, number, item), and for privacy also try Apple's on-device model",
+        "Save parcels in a Supabase table and add a button that opens the courier's tracking page",
+        "Later, add a notification when the status changes"
+      ],
+      "inspiracija": "Chrome's autofill pulling parcel and reservation numbers from Gmail"
+    },
+    {
+      "naziv": "Schema in plain Serbian",
+      "problem": "When an agent changes the database, it's hard to see at a glance what really changed and whether it's safe.",
+      "zaKoga": "Developers and small teams on Supabase working with Claude Code",
+      "ulogaAi": "Reads the diff between old and new declarative schemas in a pull request and explains the changes in plain language, with warnings (dropped column, changed RLS, missing index).",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Build a GitHub Action that takes the git diff of schema files on every PR",
+        "Send the diff to Claude Sonnet 5 along with a list of risky patterns",
+        "Post the result as a PR comment with a risk label (green, yellow, red)",
+        "Test it on your own Supabase project after switching to declarative schemas"
+      ],
+      "inspiracija": "Supabase declarative schemas and local work without Docker"
+    },
+    {
+      "naziv": "A game for a single theme",
+      "problem": "Local brands, schools and associations want a fun mini game but don't have a studio budget.",
+      "zaKoga": "Small businesses, cafés, teachers and event organizers in Serbia",
+      "ulogaAi": "Claude Opus 5.5 builds the game and tunes the fun and difficulty to your instructions, while you pick the theme and check whether it's actually fun.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Pick one theme (e.g. a Belgrade quiz or a matching game for a bakery)",
+        "In Claude Code, ask for a web game in a single HTML file, then keep iterating with \"make it WAY more fun\"",
+        "Deploy it on Vercel or Supabase Storage and add a leaderboard table in Supabase",
+        "Offer it to one local brand as a trial campaign"
+      ],
+      "inspiracija": "Simon Willison: October is a turning point for games built through vibe coding with Claude Opus 5.5"
+    },
+    {
+      "naziv": "Minutes for the residents' assembly",
+      "problem": "At meetings of residents' assemblies, local community councils and associations, hardly anyone keeps minutes, so nobody knows who said what and what was agreed.",
+      "zaKoga": "Chairs of residents' assemblies and associations, and small teams",
+      "ulogaAi": "Transcribes the recording with speaker labels, then produces short minutes with decisions and action items.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Check the Nemotron 3.5 Transcribe model card to see whether it supports Serbian, and if not, pick another STT model",
+        "Build an iOS app that records and uploads audio to Supabase Storage",
+        "An edge function sends the recording to a hosted transcription endpoint, then the text to Claude for the minutes",
+        "Export the minutes as a PDF that can be sent to the building's Viber group"
+      ],
+      "inspiracija": "Nvidia Nemotron 3.5 Transcribe with speaker recognition"
+    },
+    {
+      "naziv": "Skills radar from local job ads",
+      "problem": "Developers left jobless because of AI don't know which skills local employers actually want now.",
+      "zaKoga": "Developers in Serbia and the region who are job hunting or changing direction",
+      "ulogaAi": "Extracts required skills, experience level and mentions of AI tools from the ad text, then shows trends week by week.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Collect public IT job ads from local sites (respect their terms of use) with a scheduled Supabase function",
+        "Run each ad through a cheap model (e.g. GLM 5.3 Flash) with a JSON skills schema",
+        "Build a dashboard with charts in Angular: what's rising and what's falling (e.g. \"frontend only\" vs. full-stack)",
+        "Add a weekly email with the three biggest changes"
+      ],
+      "inspiracija": "Startit's story about the frontend developer laid off because of AI, and Rieseberg's advice to juniors"
+    }
+  ],
+  "cene": "Today DeepSeek V4.1 Flash got cheaper on input, from $0.14 to $0.045, but pricier on output, from $0.42 to $0.50. Kimi K3 raised its output price from $11.5 to $20, and Nemotron 3 Super jumped from $0.08/$0.45 to $0.30/$2.40. Prices have been swinging up and down almost daily for the past few days, so don't base a budget on a single day. The cheapest of the cheap and fast models is GLM 5.3 Flash at $0.0416 for input and $0.0771 for output. In the mid tier it's GLM 5.3 at $0.0699 for input and $1.4 for output, and the new GPT-6.1 Terra costs $1 for input and $5 for output.",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Gemini 4 Carbon: first on the leaderboard, and nobody can try it",
+        "oCemuSePrica": "Two weeks after Argon, Google released an even stronger model, which immediately took first place on the new Artificial Analysis index. The debate is over what a win is worth for a model available only to a handpicked set of cyber-defense companies.",
+        "glasovi": "Matthew Berman writes that Carbon \"won everything,\" while Ars Technica calls it a model \"you can't use.\" On X, OpenAI's Boris Power points out that OpenAI leads on price-to-performance.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "youtube",
+            "naziv": "Matthew Berman",
+            "url": "https://www.youtube.com/watch?v=zhnJo7s91ls"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@ArtificialAnlys",
+            "url": "https://x.com/ArtificialAnlys/status/2115265133467635877"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@BorisMPower",
+            "url": "https://x.com/BorisMPower/status/2115277119630737643"
+          }
+        ]
+      },
+      {
+        "naslov": "\"The coding interview is dead\"",
+        "oCemuSePrica": "Anthropic's Felix Rieseberg removed coding tasks from job interviews and advises juniors to build weekend prototypes. The topic overlapped with the r/programiranje story about a local frontend developer laid off because of AI.",
+        "glasovi": "swyx (AINews) backs Rieseberg, while The Decoder warns that this demands an entrepreneurial \"hustle\" from beginners that not everyone has. On Startit, part of the local community argues that AI is often just an excuse for a lack of work.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@felixrieseberg",
+            "url": "https://x.com/felixrieseberg/status/2115200995546566910"
+          }
+        ]
+      },
+      {
+        "naslov": "Who got into Anthropic, and how deep",
+        "oCemuSePrica": "Cathedral used AI agents to get into part of Anthropic's systems through vendor software. The dispute is over whether it had full Slack access and who broke the bug bounty program's rules.",
+        "glasovi": "Will Depue, citing sources, claims Cathedral had full admin control over Slack. That's a rumor, and Anthropic's Logan Graham says the sources are wrong.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@willdepue",
+            "url": "https://x.com/willdepue/status/2115236836092313988"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@willdepue",
+            "url": "https://x.com/willdepue/status/2115245603789971581"
+          }
+        ]
+      },
+      {
+        "naslov": "AI and math: CFSG verified, ETH \"toppled\" twice in one day",
+        "oCemuSePrica": "Axiom's agent swarm formalized the longest proof in the history of mathematics, and OpenAI and Anthropic announced within hours of each other that they had toppled ETH. The community is debating how real these results are and who has verified them.",
+        "glasovi": "Kevin Weil and Stella Biderman stress the scale of the CFSG project. On ETH, Anthropic itself cautions that nobody has confirmed the Lean statement matches the claim in the paper.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@axiommathai",
+            "url": "https://x.com/axiommathai/status/2115089794867040584"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@romainhuet",
+            "url": "https://x.com/romainhuet/status/2115056274601816183"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@BlancheMinerva",
+            "url": "https://x.com/BlancheMinerva/status/2115113443858538571"
+          }
+        ]
+      },
+      {
+        "naslov": "Resistance to AI is growing",
+        "oCemuSePrica": "On Hacker News, the most-discussed story is a man from Kentucky who, as a humanities person, got an exemption from using AI at work. The MicroZig project banned LLM-written code. Instagram's Adam Mosseri says negative sentiment toward AI will only grow.",
+        "glasovi": "On Mastodon, LLM opponents are vocal, especially in the debate over AI code in LibreOffice. Fireship asks \"did the AI bubble pop,\" and the video passed a million views in a single day.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50273396"
+          },
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50282865"
+          },
+          {
+            "platforma": "youtube",
+            "naziv": "Fireship",
+            "url": "https://www.youtube.com/watch?v=nEaJMdM1djM"
+          }
+        ]
+      }
+    ],
+    "snimci": [
+      {
+        "naslov": "Did the AI bubble just pop?",
+        "kanal": "Fireship",
+        "opis": "A short, witty look at whether the AI bubble has popped, with over 1.2 million views in a single day.",
+        "url": "https://www.youtube.com/watch?v=nEaJMdM1djM"
+      },
+      {
+        "naslov": "Google \"Carbon\" just won everything...",
+        "kanal": "Matthew Berman",
+        "opis": "A walkthrough of Google's Gemini 4 Carbon results and a comparison with Opus 5.5 and GPT-6 Astra.",
+        "url": "https://www.youtube.com/watch?v=zhnJo7s91ls"
+      },
+      {
+        "naslov": "Deepseek crushed everyone",
+        "kanal": "Matthew Berman",
+        "opis": "A video on the latest DeepSeek release. Check the video for exactly what it claims, since the description has no details.",
+        "url": "https://www.youtube.com/watch?v=DDZ-a6bAn3Y"
+      }
+    ]
+  },
+  "nedeljni": null
+}
