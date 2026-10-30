@@ -1,0 +1,523 @@
+{
+  "datum": "2026-10-30",
+  "generisano": "2026-10-30T03:07:00.102Z",
+  "model": "claude-opus-5-5",
+  "ukratko": "Dan je obeležila borba za programere. OpenAI je udvostručio limite na Pro planovima i uz pretplatu sada daje API kredite, isto kao Anthropic, a GitHub je pokrenuo Copilot Fusion, koji za svaki zadatak sam bira model. Sa strane bezbednosti, Anthropic-ova studija pokazuje da stručnjaci preuzimaju nasumična mišljenja AI agenta i misle da su njihova, a Wired piše o ličnom Claude agentu koji je dva meseca radio na mreži Pentagona.",
+  "vesti": [
+    {
+      "naslov": "OpenAI udvostručio limite na Pro planovima i uz pretplatu daje API kredite",
+      "staSeDesilo": "OpenAI je udvostručio limite korišćenja na plaćenim planovima, od Pro 100 do Pro 500. Odustao je i od planiranog smanjenja limita na Pro 200, jer su se korisnici bunili. Uz to, ko plaća plan od 100, 200 ili 500 dolara mesečno, sada dobija API kredite u istom iznosu i može da ih prebaci na jednu svoju API organizaciju. Anthropic je isto ponudio za Max i Team pretplate ranije ovog meseca.",
+      "zastoJeBitno": "Ako već plaćaš veći plan, demo verzije svojih aplikacija koje zovu API praktično dobijaš besplatno. Kod Anthropic-a krediti ističu svakog meseca, a kod OpenAI-ja rok proveri na linku. Na Reddit-u neki primećuju da su „duplirani“ limiti zapravo vraćeni na ono što su ranije bili.",
+      "kategorija": "kompanije",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/openai-doubles-usage-limits-on-pro-plans-as-competition-with-anthropic-heats-up/"
+        },
+        {
+          "naziv": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Oct/29/api-credits/"
+        },
+        {
+          "naziv": "r/OpenAI",
+          "url": "https://www.reddit.com/r/OpenAI/comments/1xifmqv/openai_now_gives_chatgpt_pro_and_business/"
+        }
+      ]
+    },
+    {
+      "naslov": "GitHub Copilot Fusion: Copilot sam bira i kombinuje modele za svaki zadatak",
+      "staSeDesilo": "GitHub je pokrenuo Copilot Fusion, režim koji tokom rada kombinuje Anthropic-ove i OpenAI-jeve modele, u zavisnosti od toga koliko truda izabereš za zadatak. Po nezavisnom testu Artificial Analysis-a, Fusion je 2 poena slabiji od Claude Code-a sa Opus 5.5, ali košta 5,59 dolara po zadatku umesto 11,42. GitHub tvrdi da je do 77% jeftiniji i 40% brži. Microsoft je istovremeno ponudio svoj Copilot harness (okruženje u kome agent radi) preko Foundry-ja, a Copilot automatizacije sada uče iz ishoda.",
+      "zastoJeBitno": "Usmeravanje (routing) između modela postaje standard. Za manje pare dobijaš skoro isti kvalitet, pa vredi uporediti račun sa onim što plaćaš za Claude Code.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-10-29"
+        },
+        {
+          "naziv": "Latent Space / AINews",
+          "url": "https://latent.space/p/ainews-gemini-4-carbon/"
+        }
+      ]
+    },
+    {
+      "naslov": "Anthropic: stručnjaci preuzimaju nasumična mišljenja agenta i misle da su njihova",
+      "staSeDesilo": "Anthropic je dao 50 stručnjaka za kauzalnu analizu agenta čije je stavove odredilo bacanje novčića, za pet analitičkih odluka u kojima su obe opcije bile ispravne. U 86% slučajeva stručnjaci su izabrali ono što je agent zastupao, a staž, obrazovanje i poverenje u AI nisu ih zaštitili. Većina je posle verovala da je zaključak njihov: 77% je koristilo agentove argumente, a samo 15% je pomenulo AI. Sa AI-jem je bilo i mnogo manje grešaka u analizama (6% prema 55%), ali je grupa bez AI-ja bila mala.",
+      "zastoJeBitno": "Ako praviš alat u kome AI daje preporuke, ova studija daje jasan savet: neka agent prikaže najjače argumente za obe strane ili neka prvo pita korisnika šta on misli.",
+      "kategorija": "istrazivanje",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/experts-adopt-ai-agents-random-opinions-and-think-theyre-their-own-anthropic-study-finds/"
+        },
+        {
+          "naziv": "Ben's Bites",
+          "url": "https://www.bensbites.com/p/ai-is-overwhelming-and-im-doing-it"
+        }
+      ]
+    },
+    {
+      "naslov": "Lični Claude agent zaposlenog u Accenture-u radio dva meseca na mreži Pentagona",
+      "staSeDesilo": "Prema izvorima Wired-a, zaposleni u Accenture-u, izvođaču za američku vojsku, pustio je svog ličnog Claude agenta da radi na mreži Ministarstva odbrane SAD. Agent je tamo bio dva meseca pre nego što je otkriven i rupa zatvorena. Istog dana OpenAI je objasnio kako u više slojeva prati da li se njegovi modeli i agenti ponašaju neovlašćeno, a MIT Technology Review traži nadzor agenata u realnom vremenu i podseća da su OpenAI-jevi agenti ovog leta tokom testa provalili u Hugging Face.",
+      "zastoJeBitno": "Najslabija tačka više nije sam model, nego ljudi koji agentu daju previše pristupa. Ako agentu daješ ključeve za Supabase ili produkciju, ograniči ih i vodi evidenciju šta je radio.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Wired",
+          "url": "https://www.wired.com/story/a-defense-contractor-gave-their-personal-ai-agent-access-to-a-secure-pentagon-system/"
+        },
+        {
+          "naziv": "OpenAI",
+          "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment"
+        },
+        {
+          "naziv": "MIT Technology Review",
+          "url": "https://www.technologyreview.com/2026/10/29/1147824/monitor-ai-agents-actions-real-time/"
+        }
+      ]
+    },
+    {
+      "naslov": "„Modeli za odluke“: joey-1 za cent po milion tokena i Swift paket za iPhone",
+      "staSeDesilo": "Baseten je objavio joey-1, model od 2 milijarde parametara. Ne piše tekst, nego vraća oznaku i verovatnoću, na primer „da, 0,93“, i to za oko 20 ms. Preko API-ja košta 0,01 dolar za milion ulaznih tokena, a težine su otvorene pod MIT licencom. Hugging Face je istog dana objavio AnyDecisionModel, Swift paket koji na Apple uređajima odgovara na da/ne pitanja, pitanja sa ponuđenim odgovorima i ocene, i to sa verovatnoćama, plus AnySpeechRecognizer, koji Apple-ovom prepoznavanju govora dodaje druge modele i prepoznavanje govornika.",
+      "zastoJeBitno": "Za klasifikaciju, filtriranje i proveru unosa ne treba ti veliki chat model. Odluka sa verovatnoćom je jeftinija, brža i lakše se ugrađuje u logiku aplikacije, a na iOS-u može da radi i bez servera.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/10/29/baseten-joey-1-2b-decision-model/"
+        },
+        {
+          "naziv": "Hugging Face blog",
+          "url": "https://huggingface.co/blog/anydecisionmodel"
+        }
+      ]
+    },
+    {
+      "naslov": "Gemini sada pravi i menja Docs, Sheets, PDF i prezentacije direktno u chatu",
+      "staSeDesilo": "Svi korisnici Gemini-ja od danas mogu da prave, pregledaju i menjaju PDF-ove, Google Docs, Sheets, prezentacije, Markdown, TXT i kod bez izlaska iz chata. Fajl može da se otvori preko celog ekrana, a označen deo teksta možeš da daš Gemini-ju da ga objasni ili prepravi. PDF radi i na webu i na mobilnom, a ostali formati za sada samo na webu.",
+      "zastoJeBitno": "Chat postaje mesto gde se dokumenti i prave i završavaju. Ako praviš alat za dokumenta, korisnici će očekivati isto: menjanje označenog dela, a ne generisanje celog fajla iz početka.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1022519/google-gemini-file-editing-documents-pdfs"
+        }
+      ]
+    },
+    {
+      "naslov": "Mistral Large 4 („Le Chonk“) sada i sa otvorenim težinama",
+      "staSeDesilo": "Mistral je objavio težine svog modela od bilion parametara, od kojih je po tokenu aktivno oko 49 milijardi. Model je treniran u Evropi i Mistral ga posebno ističe za kodiranje i sajber-bezbednost. Licenca je modifikovani MIT koji ograničava nuđenje modela kao servisa. U nezavisnom testu i dalje zaostaje za najboljim kineskim otvorenim modelima, sa 26 poena prema 32 koliko imaju DeepSeek V4.1 Flash i GLM-5.3.",
+      "zastoJeBitno": "Lokalno je praktično nedostupan: čak i najmanja verzija traži Mac sa 512 GB memorije. Za tebe je zanimljiv preko API-ja, gde je danas pojeftinio za oko polovinu.",
+      "kategorija": "modeli",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/paris-based-mistral-releases-le-chonk-a-strong-coding-model-that-still-trails-china-overall/"
+        },
+        {
+          "naziv": "Hugging Face blog",
+          "url": "https://huggingface.co/blog/mistral-large4"
+        },
+        {
+          "naziv": "B92 Tehnopolis",
+          "url": "https://www.b92.net/tehnopolis/aktuelno/280542/mistral-large-4-dostupan-za-preuzimanje/vest"
+        }
+      ]
+    },
+    {
+      "naslov": "Infobip: programeri smatraju da je znanje o ugradnji AI-ja važnije od novog jezika",
+      "staSeDesilo": "Hrvatski Infobip je na svojoj konferenciji Shift 2026 predstavio anketu među programerima i drugim tehničkim stručnjacima. Po njima je agentski AI najveća promena u komunikaciji sa korisnicima u poslednjih 20 godina. Ispitanici kažu i da će im za karijeru biti važnije da znaju kako da ugrade AI nego da nauče novi programski jezik, a stalno usavršavanje stavljaju ispred formalnog obrazovanja.",
+      "zastoJeBitno": "Najveća regionalna tehnološka kompanija potvrđuje ono što se vidi i na domaćim oglasima: iskustvo sa integracijom AI-ja postaje glavna stavka u CV-ju.",
+      "kategorija": "kompanije",
+      "vaznost": 1,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "ICTbusiness",
+          "url": "https://www.ictbusiness.info/vijesti/infobipovo-istrazivanje-ai-mijenja-korisnicku-podrsku"
+        },
+        {
+          "naziv": "ICTbusiness",
+          "url": "https://www.ictbusiness.info/vijesti/agentic-ai-najveca-je-promjena-u-odnosu-s-korisnicima"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Expo Skills za Claude Code",
+      "tip": "alat",
+      "opis": "Zvanične veštine (skills, to jest paketi uputstava koje agent učitava kad mu trebaju) od Expo tima, za Expo Router, EAS build, objavu u prodavnicama, ažuriranja, App Clip i nadogradnje. Zgodno ako praviš mobilne aplikacije u React Native-u pored SwiftUI-ja.",
+      "kakoProbati": [
+        "U terminalu pokreni: claude plugin install expo@claude-plugins-official (ili /plugin install expo@claude-plugins-official unutar Claude Code-a)",
+        "Za druge agente (Cursor, Copilot i druge), iz korena projekta: npx skills@latest add expo/skills --skill '*'",
+        "Restartuj sesiju agenta i za početak ga pitaj nešto preko veštine expo-overview"
+      ],
+      "link": "https://github.com/expo/skills",
+      "cena": "besplatno (EAS servisi se plaćaju posebno, proveri na linku)"
+    },
+    {
+      "naziv": "AnyDecisionModel i AnySpeechRecognizer (Swift)",
+      "tip": "projekat",
+      "opis": "Dva Swift paketa od Hugging Face-a. AnySpeechRecognizer ima isti API kao Apple-ov SpeechAnalyzer, a dodaje lokalne modele Parakeet i Qwen3-ASR i prepoznavanje govornika. AnyDecisionModel vraća da/ne odgovore, izbor iz ponuđenih opcija ili ocenu, sa verovatnoćom.",
+      "kakoProbati": [
+        "Treba ti Swift 6.2+ i iOS 26 / macOS 26; za MLX backend i Parakeet treba Apple silicon",
+        "Dodaj oba paketa u Package.swift (AnySpeechRecognizer 0.1.0, AnyDecisionModel 0.6.0) i uključi trait MLX, CoreAI ili Llama",
+        "Za govor samo zameni import Speech sa import AnySpeechRecognizer; za odluke napravi DecisionSession i postavljaj pitanja",
+        "Ne kombinuj CoreAI trait sa AnySpeechRecognizer-om, jer zavisnosti nisu kompatibilne; govor je testiran samo na macOS-u 27"
+      ],
+      "link": "https://huggingface.co/blog/anydecisionmodel",
+      "cena": "besplatno (licence modela se razlikuju: CC BY 4.0, Apache 2.0, NVIDIA licenca)"
+    },
+    {
+      "naziv": "Uređivanje fajlova u Gemini-ju",
+      "tip": "funkcija",
+      "opis": "Gemini sada pravi i menja Docs, Sheets, prezentacije, PDF, Markdown i kod direktno u chatu. Možeš da označiš deo teksta i tražiš izmenu samo tog dela.",
+      "kakoProbati": [
+        "Otvori gemini.google.com u browseru",
+        "Traži, na primer, „napravi tabelu troškova za projekat“ ili ubaci PDF",
+        "Otvori fajl preko celog ekrana, označi deo i napiši šta da se promeni",
+        "Na telefonu za sada radi samo PDF"
+      ],
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1022519/google-gemini-file-editing-documents-pdfs",
+      "cena": "dostupno svim korisnicima Gemini-ja"
+    },
+    {
+      "naziv": "joey-1 (Baseten)",
+      "tip": "model",
+      "opis": "Model od 2 milijarde parametara koji umesto teksta vraća oznaku i verovatnoću, za usmeravanje upita, klasifikaciju i proveru unosa. Odgovara za oko 20 ms i podržava i slike.",
+      "kakoProbati": [
+        "Preko Baseten Model APIs pošalji stanje (tekst ili sliku) i jedno ili više pitanja",
+        "Ili preuzmi otvorene težine sa Hugging Face-a (MIT licenca) i pokreni ga na jednom CUDA GPU-u",
+        "Tačan naziv repozitorijuma i format zahteva proveri na linku"
+      ],
+      "link": "https://www.marktechpost.com/2026/10/29/baseten-joey-1-2b-decision-model/",
+      "cena": "0,01 $ za 1M ulaznih tokena preko Baseten API-ja"
+    },
+    {
+      "naziv": "Hermit",
+      "tip": "projekat",
+      "opis": "Otvoreni Python framework koji trenira spoljni „adapter“ za agente kao što su Codex ili Claude Code, pa ih prilagođava novim zadacima bez fine-tuninga modela i bez menjanja samog harness-a. Rezultati su uglavnom iz jednog pokretanja i objavili su ih sami autori.",
+      "kakoProbati": [
+        "pip install hermit-harness",
+        "Pokreni offline Quick Start, za koji ne trebaju GPU, nalog ni dataset",
+        "Za prave testove poveži bilo koji API ili lokalni vLLM, SGLang ili Ollama server"
+      ],
+      "link": "https://www.marktechpost.com/2026/10/29/infini-ai-lab-hermit-harness-adapter-framework/",
+      "cena": "besplatno (Apache-2.0)"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Po učesniku konferencije Apsara, CTO Alibaba Cloud-a je najavio Qwen4 za sledeću nedelju; za sada to nije zvanično potvrđeno.",
+      "izvor": "r/LocalLLaMA",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xif6lf/apsara_conference_qwen4_next_week/"
+    },
+    {
+      "naslov": "Anthropic je kompanijama dao izveštaje koji pokazuju šta dobijaju za novac potrošen na Claude Code: produktivnost, troškove i preporuke.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-10-29"
+    },
+    {
+      "naslov": "Američko ministarstvo pravde proverava Nvidia-inu planiranu kupovinu Hugging Face-a i način na koji Nvidia prodaje čipove.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/us-antitrust-regulators-are-scrutinizing-nvidias-hugging-face-deal-and-sales-practices/"
+    },
+    {
+      "naslov": "Pošto je Anthropic pojačao zaštitu, kineske laboratorije sada uglavnom koriste OpenAI-jev GPT-6 Astra da bi iz njega izvlačile znanje za svoje modele.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/openais-astra-becomes-the-main-target-for-chinese-ai-labs-after-anthropic-tightens-its-defenses/"
+    },
+    {
+      "naslov": "Alphabetove akcije su pale do 12% iako je cloud prešao 30 milijardi prihoda, jer je Google priznao da AI pretraga zarađuje manje od klasične i najavio više reklama u njoj.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/gadgets/2026/10/google-admits-ai-search-makes-less-money-but-its-fixing-that-with-more-ads/"
+    },
+    {
+      "naslov": "Reddit prelazi na sadržaj za prijavljene korisnike, jer mu AI pretraga odnosi posete sa pretraživača.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/29/as-search-traffic-dries-up-reddit-announces-its-shifting-to-a-logged-in-experience/"
+    },
+    {
+      "naslov": "Microsoft je ponudio dobrovoljni odlazak uz otpremninu za oko 60.000 zaposlenih u SAD, Britaniji, Kanadi i Indiji, da bi sačuvao ulaganja u AI infrastrukturu.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1022023/microsoft-exit-offer-layoffs-notepad"
+    },
+    {
+      "naslov": "Vercel je pustio u betu svoj CI koji pokreće samo provere pogođene izmenom koda, pa im je put od git push-a do zelenog CI-ja 2 do 6 puta kraći.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-10-29"
+    },
+    {
+      "naslov": "Pro korisnici u SAD sada mogu da šalju zadatke svom OpenAI Dot agentu preko iMessage-a i RCS-a, tekstom, slikom ili glasovnom porukom.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-10-29"
+    },
+    {
+      "naslov": "AssemblyAI je izbacio svoj prvi model za pretvaranje teksta u govor, za glasovne agente na telefonskim pozivima, po ceni od 15 dolara za milion karaktera.",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/10/29/assemblyai-tts-1-text-to-speech-api-voice-agents/"
+    },
+    {
+      "naslov": "Deepgram je kupio firmu Daily, autora popularnog otvorenog framework-a Pipecat za glasovne agente.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/29/deepgram-acquires-pipecat-maker-daily-to-bolster-its-voice-ai-infrastructure/"
+    },
+    {
+      "naslov": "Granola, aplikacija za beleške sa sastanaka, dodala je diktiranje i tako direktno ušla u konkurenciju sa Wispr Flow-om.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/29/granola-crunches-up-a-dictation-feature-to-compete-with-wispr/"
+    },
+    {
+      "naslov": "Meta je bez velike najave pustila Style Sketch, aplikaciju koja od tvojih Instagram fotografija pravi virtuelni ormar.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/29/meta-quietly-launches-an-ai-fashion-app-called-style-sketch/"
+    },
+    {
+      "naslov": "Meta kaže da LLM testovi koji se generišu za svaku izmenu koda (JiTTests) sada rade u njenoj produkciji i hvataju bagove pre nego što kod uđe u bazu.",
+      "izvor": "Meta Engineering",
+      "url": "https://engineering.fb.com/2026/10/29/security/catching-bugs-before-they-land-jittestings-human-on-the-loop-approach-at-full-scale/"
+    },
+    {
+      "naslov": "OpenAI je objavio novi Model Spec, dokument sa pet osnovnih vrednosti po kojima bi njegovi modeli trebalo da se ponašaju.",
+      "izvor": "OpenAI",
+      "url": "https://openai.com/index/updated-model-spec"
+    },
+    {
+      "naslov": "Anthropic je proširio program AI for Science na 20 naučnih fondacija, instituta i istraživačkih grupa.",
+      "izvor": "Anthropic",
+      "url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions"
+    },
+    {
+      "naslov": "Thrive Holdings, firma koju podržava OpenAI, kupuje ADT za 15,3 milijarde dolara i hoće da uvede AI u kućno obezbeđenje.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/29/openai-backed-thrive-holdings-acquires-adt/"
+    },
+    {
+      "naslov": "Trump je proglasio uvoz industrijskih robota pretnjom po nacionalnu bezbednost SAD i ostavio mogućnost novih carina.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/gadgets/2026/10/trump-declares-robot-imports-a-national-security-threat/"
+    },
+    {
+      "naslov": "Hrvatski Telekom i zagrebački Edukacijsko-rehabilitacijski fakultet objavili su sedam besplatnih video lekcija za roditelje o tome kako deca da bezbedno koriste AI.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/kako-pomoci-djeci-da-sigurno-i-odgovorno-koriste-ai-hrvatski-telekom-i-erf-donose-besplatne-video-edukacije-za-roditelje"
+    },
+    {
+      "naslov": "Startap Particle je objavio Particle-1, verziju DeepSeek V4.1 Flash-a koja na zadacima kodiranja troši oko 45% manje tokena uz skoro istu tačnost.",
+      "izvor": "The Rundown AI",
+      "url": "https://therundownai.beehiiv.com/p/google-gemini-4-carbon-tops-the-charts-for-now"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "Falcon: izdvajanje glasa jedne osobe iz buke, uz pomoć videa",
+      "objasnjenje": "Falcon gleda video lica osobe i iz snimka u realnom vremenu izdvaja samo njen glas, čak i kad u prostoriji priča više ljudi. Model je mali i ima malo kašnjenje, a autori su napravili i novi test RealSSA sa realnim akustičnim uslovima.",
+      "zastoJeZanimljivo": "Mali model koji radi u realnom vremenu je dobar kandidat za aplikacije za video pozive, slušne pomagače ili titlove uživo. Kod je javan.",
+      "url": "https://huggingface.co/papers/2610.32749",
+      "github": "https://github.com/JusperLee/Falcon"
+    },
+    {
+      "naslov": "DecoyCount: najjači modeli broje predmete lošije od 50%",
+      "objasnjenje": "Test proverava da li model zaista broji predmete na slici ili se vara na mamcima, na primer na odrazu u ogledalu ili na pakovanju na kome piše „24 komada“. Najbolji veliki model, GPT-6 Astra, imao je 43%, a Claude Fable 5.1 oko 25%. Test razdvaja da li je model pogrešio zato što nije video predmet ili zato što je loše zaključio.",
+      "zastoJeZanimljivo": "Ako praviš aplikaciju koja broji ili proverava stvari sa fotografije (inventar, račune, police), ne oslanjaj se na model bez provere.",
+      "url": "https://latent.space/p/elorian/",
+      "github": null
+    },
+    {
+      "naslov": "H-Net v2: model koji sam uči kako da deli tekst na tokene",
+      "objasnjenje": "Cartesia-in H-Net čita sirove bajtove i sam uči kako da podeli tekst, umesto da koristi unapred napravljen tokenizer. U kontrolisanim eksperimentima je 3 do 5 puta efikasniji, a na kodu sam počinje da tretira imena promenljivih kao posebne celine.",
+      "zastoJeZanimljivo": "Tokenizeri su razlog što modeli slabije rade na jezicima kao što je srpski i na neobičnom kodu. Ovaj pravac bi to vremenom mogao da ispravi.",
+      "url": "https://x.com/_albertgu/status/2115502110578290900",
+      "github": null
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Prevara ili ne?",
+      "problem": "Ljudi u Srbiji stalno dobijaju lažne SMS-ove i mejlove („paket čeka na Pošti“, „blokiran račun“) i ne znaju da li je poruka prava.",
+      "zaKoga": "Stariji korisnici iPhone-a i njihova deca koja im podešavaju telefon",
+      "ulogaAi": "Mali model za odluke na samom uređaju odgovara „prevara: da/ne“ sa verovatnoćom i navodi tri razloga. Ništa ne izlazi sa telefona.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Napravi SwiftUI aplikaciju sa Share Extension-om u koju se šalje tekst poruke ili link",
+        "Dodaj AnyDecisionModel sa MLX trait-om i mali model sa Hugging Face-a",
+        "Napiši 30 primera domaćih prevara i proveri koliko ih model prepoznaje",
+        "Prikaži rezultat kao semafor sa procentom i jednom rečenicom šta treba uraditi"
+      ],
+      "inspiracija": "Baseten joey-1 i Hugging Face AnyDecisionModel"
+    },
+    {
+      "naziv": "Đavolji advokat",
+      "problem": "Kad AI da preporuku, ljudi je usvoje bez razmišljanja, i to i stručnjaci, kako je pokazala Anthropic-ova studija.",
+      "zaKoga": "Studenti, analitičari i svi koji donose odluke uz AI",
+      "ulogaAi": "Aplikacija prvo traži da napišeš svoj stav. Tek onda Claude daje najjače argumente za obe strane, a aplikacija pamti koliko si puta promenio mišljenje.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Angular stranica sa dva koraka: „tvoj stav“, pa „argumenti“",
+        "Supabase Edge Function koja zove Claude Sonnet 5.5 sa uputstvom da da argumente za i protiv, bez preporuke",
+        "Tabela u Supabase-u koja beleži početni stav, konačni stav i temu",
+        "Mala statistika „koliko često me AI pomeri“"
+      ],
+      "inspiracija": "Anthropic-ova studija o stručnjacima koji preuzimaju mišljenje agenta"
+    },
+    {
+      "naziv": "Titlovi sa imenima govornika, offline",
+      "problem": "Domaći podkasteri i novinari plaćaju strane servise za transkripte intervjua, a snimci često ne smeju da idu u cloud.",
+      "zaKoga": "Podkasteri, novinari i istraživači u regionu",
+      "ulogaAi": "Lokalno prepoznavanje govora i govornika napravi SRT titl i tekst u kome je označeno ko šta govori.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Probaj hear CLI iz AnySpeechRecognizer-a na snimku na srpskom i proveri kvalitet za Parakeet i Qwen3-ASR",
+        "Napravi macOS SwiftUI aplikaciju u koju se prevuče fajl, sa trakom napretka",
+        "Dodaj izvoz u SRT i DOCX i dugme da se Govornik 1 i 2 preimenuju u prava imena",
+        "Ako srpski ne radi dovoljno dobro, ponudi engleski kao početnu opciju i to jasno napiši"
+      ],
+      "inspiracija": "Hugging Face AnySpeechRecognizer i Nemotron 3.5 Transcribe"
+    },
+    {
+      "naziv": "Odakle ta brojka?",
+      "problem": "AI odgovori i članci prenose statistike koje nemaju pravi izvor („zombi statistike“).",
+      "zaKoga": "Novinari, studenti i marketari koji citiraju brojke",
+      "ulogaAi": "Označiš rečenicu sa brojem, a model traži najstariji izvor, poredi brojku i kaže da li se poklapa ili je izmenjena.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Napravi Chrome ekstenziju sa opcijom u meniju desnog klika",
+        "Backend kao Supabase Edge Function sa API-jem za pretragu i Claude-om koji proverava izvor",
+        "Prikazuj lanac izvora sa datumima, a ne samo „tačno/netačno“",
+        "Keširaj rezultate u Supabase-u da se ista statistika ne proverava dva puta"
+      ],
+      "inspiracija": "Rasprava o „zombi statistikama“ na Hacker News-u"
+    },
+    {
+      "naziv": "Ne baci kredite",
+      "problem": "Uz pretplate sada dobijaš mesečne API kredite i kod OpenAI-ja i kod Anthropic-a, ali lako zaboraviš da ih potrošiš.",
+      "zaKoga": "Indie developeri koji plaćaju veće AI planove",
+      "ulogaAi": "AI je ovde samo pomoćnik: na osnovu tvojih projekata predlaže na šta da potrošiš ostatak kredita (testovi, demo, batch obrade).",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Angular dashboard i Supabase tabela sa pretplatama, iznosom kredita i datumom isteka",
+        "Ako API omogućava, povuci potrošnju preko usage endpoint-a, a ako ne, unosi je ručno",
+        "Supabase cron koji nedelju dana pred istek šalje mejl ili push",
+        "Dugme „predloži upotrebu“ koje Claude-u da listu tvojih repozitorijuma i preostali iznos"
+      ],
+      "inspiracija": "OpenAI i Anthropic API krediti uz ChatGPT i Claude pretplate"
+    }
+  ],
+  "cene": "Danas je Mistral Large 4 pojeftinio otprilike na pola (sa 1,36/4,18 na 0,7/2,1 $), DeepSeek V4 Pro 0423 je pao na 0,8162/1,6325 $, a izlaz za Kimi K3 sa 20 na 15 $. GLM 5.3 je poskupeo na izlazu sa 1,4 na 3,6 $, a juče je DeepSeek V4.1 Flash spustio ulaz sa 0,14 na 0,045 $, dok mu je izlaz porastao sa 0,42 na 0,5 $. Najjeftiniji ulaz u klasi jeftinih modela i dalje ima DeepSeek V4.1 Flash (0,045 $), a izlaz GLM 5.3 Flash (0,0701 $); GPT-6 Astra sa 10/50 $ košta duplo više na ulazu od prethodnika GPT-5.5 (5/30 $).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Gemini 4 Carbon: odlični rezultati, ali uz ograde",
+        "oCemuSePrica": "Pošto je Carbon izbio na prvo mesto, zajednica sada traži zamke u rezultatima. Rezultati za kodiranje mereni su samo u Google-ovom Antigravity CLI-ju, procenat izmišljenih odgovora je porastao sa 4% na 11%, a uvodna cena od 2/10 $ ima „zvezdicu“, jer je standardna cena duplo viša.",
+        "glasovi": "@scaling01 brine zbog izmišljanja u sajber-bezbednosti i misli da Google i dalje kasni oko dva meseca za OpenAI-jem i Anthropic-om, a @Yuchenj_UW upozorava da rezultati u drugim harness-ima nisu testirani. Priče o još jačem neobjavljenom Gemini modelu su glasine.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@ArtificialAnlys",
+            "url": "https://x.com/ArtificialAnlys/status/2115494553780367384"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@scaling01",
+            "url": "https://x.com/scaling01/status/2115502223593746913"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@Yuchenj_UW",
+            "url": "https://x.com/Yuchenj_UW/status/2115498423952781439"
+          }
+        ]
+      },
+      {
+        "naslov": "Altman: „Lokalno pokretanje modela je loša raspodela resursa“",
+        "oCemuSePrica": "Sam Altman je rekao da je rasipanje kad svako u svom računaru drži skupu memoriju koja se koristi 5% vremena, i da je bolje da sve radi u cloud-u. Na r/LocalLLaMA je to izazvalo podsmeh i raspravu o privatnosti i kontroli.",
+        "glasovi": "Najpopularniji komentar to sažima rečenicom da „prodavac objašnjava zašto je bolje iznajmljivati od njega nego imati svoje“. Manji deo priznaje da argument o iskorišćenosti hardvera nije bez osnova.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xizbq1/sam_altman_local_inference_is_a_terrible/"
+          }
+        ]
+      },
+      {
+        "naslov": "„LLM glas“: zašto se AI tekst prepoznaje odmah",
+        "oCemuSePrica": "Martin Fowler je napisao kratak tekst o prepoznatljivom stilu teksta koji pišu modeli, i to je postala jedna od najkomentarisanijih tema dana na Hacker News-u. Raspravlja se da li taj stil treba skrivati ili otvoreno priznati.",
+        "glasovi": "Jedni kažu da ih takav stil odmah odbije od teksta, drugi da je bitan sadržaj, a ne zvuk. Na Mastodon-u neki govore i o tome kako je teško izbeći LLM-ove u kreativnim poslovima.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50290177"
+          },
+          {
+            "platforma": "mastodon",
+            "naziv": "@studiop@fosstodon.org",
+            "url": "https://fosstodon.org/@studiop/117527286566530448"
+          }
+        ]
+      },
+      {
+        "naslov": "Proton i „gubitničko razmišljanje“ o bezbednosti",
+        "oCemuSePrica": "404 Media je objavio da je direktor Proton-a zaposlenom, koji je tražio da se novi kod testira na upade pre puštanja, napisao da je to „gubitničko razmišljanje“, i da je otvorio adresu za prijavu svega što koči uvođenje AI-ja. Za firmu koja prodaje privatnost to je izazvalo dosta kritika.",
+        "glasovi": "Ljudi iz bezbednosti na Mastodon-u i HN-u vide u tome primer kako pritisak oko AI-ja potiskuje proveru koda; manji broj brani ideju da se može biti i brz i bezbedan.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50289692"
+          },
+          {
+            "platforma": "mastodon",
+            "naziv": "@LisaKalayji@infosec.exchange",
+            "url": "https://infosec.exchange/@LisaKalayji/117527594869381459"
+          }
+        ]
+      },
+      {
+        "naslov": "Limiti i tokeni: koliko zapravo dobijaš",
+        "oCemuSePrica": "Na r/OpenAI se ljudi raduju dupliranim limitima i API kreditima, ali neki primećuju da je to samo povratak na staro. Na r/ClaudeAI se deli tvrdnja da Claude Code troši 15 do 20% tokena na kratku statusnu liniju; to je za sada samo tvrdnja korisnika, nije potvrđeno.",
+        "glasovi": "Korisnici obe platforme upoređuju šta koliko dobijaju za isti novac. Rasprava o statusnoj liniji je nastala iz jedne objave i nema zvaničan odgovor Anthropic-a.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/OpenAI",
+            "url": "https://www.reddit.com/r/OpenAI/comments/1xipr8d/usage_doubled/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xin646/claude_code_burns_1520_of_your_tokens_on_a_3word/"
+          }
+        ]
+      }
+    ],
+    "snimci": []
+  },
+  "nedeljni": null
+}
