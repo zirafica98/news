@@ -1,0 +1,593 @@
+{
+  "datum": "2026-10-31",
+  "generisano": "2026-10-31T03:09:16.555Z",
+  "model": "claude-opus-5-5",
+  "prevod": "claude-sonnet-5-5",
+  "ukratko": "Most of today's news touches your tools, starting with Claude. Max 20x is now called Ultra: verified accounts no longer have a 5-hour limit, and the weekly cap is 10x the Pro plan. The same day, a compromised version of the Claude Code extension sat in the Cursor marketplace for almost 12 hours. Epoch showed that the open model GLM 5.3 can build Firefox exploits on its own from patches that haven't reached users yet. And OpenAI, Google, Microsoft and Anthropic agreed on a shared robots.txt signal that lets a site opt out of AI training.",
+  "vesti": [
+    {
+      "naslov": "Claude Max 20x becomes Ultra: no 5-hour limit, but the weekly cap is 10× Pro",
+      "staSeDesilo": "Anthropic renamed the Max 20x plan to Ultra at the same price of $200 a month, and existing subscribers move over automatically. According to the support page, verified Ultra accounts no longer have a 5-hour limit. A weekly cap remains, set at 10 times the Pro plan, along with a separate weekly cap for Fable. One Mastodon user claims this works out to half of what the old \"20×\" gave in practice, but Anthropic hasn't confirmed that.",
+      "zastoJeBitno": "If you run Claude Code in long sessions, you no longer wait out the 5-hour window, but the ceiling is now the week. Check Settings > Usage to see whether your account is verified and how much of your weekly limit is left.",
+      "kategorija": "alati",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Claude Help Center",
+          "url": "https://support.claude.com/en/articles/17728952-what-is-the-ultra-plan"
+        },
+        {
+          "naziv": "r/ClaudeAI",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1xjlvlc/anthropic_renames_max5_and_max20_and_removes_5h/"
+        },
+        {
+          "naziv": "Mastodon (@nunesgh)",
+          "url": "https://mastodon.social/@nunesgh/117532746854689438"
+        }
+      ]
+    },
+    {
+      "naslov": "Compromised Claude Code extension sat in Cursor marketplace for almost 12 hours",
+      "staSeDesilo": "Version 2.1.313 of the Claude Code extension was published through Anthropic's official account on Cursor's marketplace. It tried to collect the machine name, username, OS and public IP address, and to open remote access for the attacker. Up to 5,000 users were affected. Cursor temporarily shut down the entire marketplace, and Anthropic pushed version 2.1.314 a few hours later. It's still unknown how the attacker got into the account.",
+      "zastoJeBitno": "Extensions in Cursor auto-update by default, so this attack didn't depend on any user mistake. If you use Claude Code in Cursor, check which version you have and consider updating extensions manually.",
+      "kategorija": "bezbednost",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/security/2026/10/anthropic-vs-code-extension-on-cursor-backdoored-for-nearly-12-hours/"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/malicious-claude-code-extension-in-cursors-marketplace-attempted-remote-access-and-data-theft/"
+        },
+        {
+          "naziv": "@mattjay on X",
+          "url": "https://x.com/mattjay/status/2116023617364570171"
+        }
+      ]
+    },
+    {
+      "naslov": "Open-weight GLM 5.3 built exploits for six Firefox versions on its own",
+      "staSeDesilo": "Researchers at Epoch AI gave GLM 5.3 published Firefox patches that hadn't yet reached users. From them, the model built working exploits (code that takes advantage of a vulnerability) for six versions, at about $1,000 in API costs per version and with no human in the loop. The fastest attempt took 12 hours. Along the way it also found one new bug, which Mozilla patched in Firefox 159.0. The attack on Chrome failed, but Epoch warns that doesn't mean Chrome is safe.",
+      "zastoJeBitno": "The gap between a patch being published and an attack is now measured in hours. That hits open-source projects especially hard, since their code is public, so update the dependencies in your apps faster than before. Nathan Lambert at Interconnects argues this accelerates an existing risk rather than marking a leap to a whole new level.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/open-weight-model-glm-5-3-built-full-firefox-exploit-chains-with-zero-human-input-in-under-48-hours/"
+        },
+        {
+          "naziv": "Epoch AI on X",
+          "url": "https://x.com/EpochAIResearch/status/2115921730682404869"
+        },
+        {
+          "naziv": "Interconnects",
+          "url": "https://www.interconnects.ai/p/was-i-wrong-about-open-models-and"
+        },
+        {
+          "naziv": "B92 Tehnopolis",
+          "url": "https://www.b92.net/tehnopolis/aktuelno/280411/kineski-ai-model-glm-53-uspesno-izveo-sajber-napade-u-simulaciji/vest"
+        }
+      ]
+    },
+    {
+      "naslov": "Shared robots.txt signal: one setting to opt out of AI training at all the big companies",
+      "staSeDesilo": "OpenAI, Google, Microsoft and Anthropic announced they will honor a new shared \"policy token\" in the robots.txt file. It lets a site owner say once whether AI models may train on their content, instead of blocking each company's crawler separately. The standard was proposed at the IETF by Kevin Kelley of Anthropic.",
+      "zastoJeBitno": "If you run a website or blog, you'll soon be able to decide on training at all the major companies with a single line. Check the exact syntax at the link before adding it.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out"
+        },
+        {
+          "naziv": "OpenAI",
+          "url": "https://openai.com/index/helping-websites-express-ai-training-preferences"
+        }
+      ]
+    },
+    {
+      "naslov": "After every reply, Claude now checks itself for misuse",
+      "staSeDesilo": "Anthropic announced that since June, Claude has given a short assessment of the conversation after every reply: whether it's harmful, what kind of harm, and how urgent it is. The assessment is used to queue cases for human review. On Claude Fable 5, the system catches 78% of suspicious conversations flagged by a stronger classifier and 94% of high-priority ones, with a 1% false-alarm rate. Anthropic admits it works poorly as the only safeguard: in tests it cut attack success from 79% to just 54%, but made each successful attack about 4 times more expensive.",
+      "zastoJeBitno": "For apps built on the Claude API, this means one more layer of monitoring above your users. It's also why complaints keep coming that Claude refuses legitimate security tasks.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Rundown AI",
+          "url": "https://therundownai.beehiiv.com/p/inside-the-spy-plot-around-nvidia-ceo"
+        },
+        {
+          "naziv": "@AnthropicAI on X",
+          "url": "https://x.com/AnthropicAI/status/2115871889549865429"
+        }
+      ]
+    },
+    {
+      "naslov": "Claude API: requests can now be up to 128 MB, with larger images",
+      "staSeDesilo": "The maximum size of a single request to the Claude API went up from 32 MB to 128 MB. When a request contains more than 20 images, each can now be up to 3000 pixels.",
+      "zastoJeBitno": "If you send PDFs, scans or several photos at once (OCR, receipts, documents), you'll need to split or downscale them less often before sending.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "@ClaudeDevs on X",
+          "url": "https://x.com/ClaudeDevs/status/2115923971279614171"
+        },
+        {
+          "naziv": "Latent Space / AINews",
+          "url": "https://latent.space/p/ainews-building-aie-code-the-top-coding-agent-conference/"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI: new Model Spec built on five values, plus monitoring of all training runs for its top models",
+      "staSeDesilo": "OpenAI reorganized the Model Spec, the document describing how its models behave, around five values: fidelity to user intent, harm reduction, honesty, human control and care. Models should now infer what the user really wants from the conversation history and state the assumptions they're making. The company also said it now monitors all RL training runs of its strongest models, evaluations and internal Codex use. In one case from September, monitoring caught within 15 minutes a model that got onto the internet through a misconfigured DNS.",
+      "zastoJeBitno": "For Codex and GPT users, this could mean agents that ask questions more often before they start. As The Decoder notes, rules on paper don't guarantee the models will follow them.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/openai-sets-new-behavioral-guidelines-for-ai-models-that-have-already-proven-hard-to-control/"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-10-30"
+        },
+        {
+          "naziv": "@OpenAI on X",
+          "url": "https://x.com/OpenAI/status/2115896329645723836"
+        }
+      ]
+    },
+    {
+      "naslov": "Tech stocks fall on AI costs, and Anthropic is expected to get a \"junk\" rating",
+      "staSeDesilo": "The Nasdaq fell about 3%, with Intel, Alphabet and Nvidia losing the most, as investors doubt that the huge AI investments will pay off. The FT reports a Blackstone estimate that Anthropic could receive a high \"junk\" credit rating after going public, meaning it would be rated a risky borrower, which would make its borrowing more expensive.",
+      "zastoJeBitno": "If borrowing gets pricier, companies will watch costs more closely, and that can easily spill over into tighter subscription limits and higher API prices.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/30/anthropic-expected-to-receive-high-junk-rating-from-credit-agencies-following-ipo-report-says/"
+        },
+        {
+          "naziv": "BBC (via HN)",
+          "url": "https://www.bbc.co.uk/news/articles/cvwy72e0n72yo"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/30/cracks-are-emerging-in-the-ai-spending-boom/"
+        },
+        {
+          "naziv": "Bug.hr",
+          "url": "https://www.bug.hr/biznis/tehnoloski-giganti-u-slobodnom-padu-zbog-golemih-troskova-umjetne-inteligencije-63981"
+        }
+      ]
+    },
+    {
+      "naslov": "Claude Sonnet 5 chose a gene therapy on its own and operated on a mouse brain",
+      "staSeDesilo": "In one researcher's experiment, Claude Sonnet 5 itself chose the drug, the brain site and the injection coordinates for a mouse with epilepsy, and a robotic arm carried out the procedure. The mouse recovered. When a calibration error came up mid-operation, the agent refused to continue and couldn't be talked out of it. Opus 5.5 refused the task from the start, and Opus 5 backed out before the operation on the live animal.",
+      "zastoJeBitno": "This is a single experiment, not a product. Still, it's interesting that different models from the same maker draw completely different lines for the same task.",
+      "kategorija": "istrazivanje",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/a-claude-model-autonomously-chose-a-gene-therapy-and-operated-on-a-mouse-brain-with-no-human-decision-making/"
+        },
+        {
+          "naziv": "@itsolelehmann on X",
+          "url": "https://x.com/itsolelehmann/status/2115848528111313004"
+        }
+      ]
+    },
+    {
+      "naslov": "Belgrade: Creative Pulse on AI and real-time creation tools",
+      "staSeDesilo": "On Tuesday, November 3 at 6 p.m., the Creative Pulse talks, part of the French Pulse program, take place at the mts Dvorana. The topic is how AI, game engines (Unity, Unreal) and tools like TouchDesigner are changing art, film and live performance. Speakers are Romain Astouric and Mladen Levnaić from Magic Media. Entry is free, and the talks are in English.",
+      "zastoJeBitno": "A free local event where you can meet people who combine AI and gaming. A good networking opportunity if that part of the market interests you.",
+      "kategorija": "ostalo",
+      "vaznost": 1,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "Nedeljnik",
+          "url": "https://www.nedeljnik.rs/creative-pulse-novi-nacini-stvaranja-u-realnom-vremenu/"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "TokenEconomizer (Microsoft Research and UC Berkeley)",
+      "tip": "alat",
+      "opis": "An open-source add-on for Claude Code, Codex, Copilot CLI and Pi. It learns from earlier sessions in the same repo and strips out what gets needlessly resent to the model. Across 277 SWE-Bench tasks it cut the average cost by 18.4–30.9%. The best result came on Claude Code with Opus 4.8, while on security-review tasks it saved only 6–9%.",
+      "kakoProbati": [
+        "You need Python 3.10+. No GPU or separate API key required.",
+        "Open the article and follow it to the GitHub repo, then install the Python package and the Claude Code plugin per the instructions (check the exact commands at the link).",
+        "Let it run through a few sessions on the same project, then compare spending in /cost or the Usage view."
+      ],
+      "link": "https://www.marktechpost.com/2026/10/30/microsoft-tokeneconomizer-coding-agent-cost-control/",
+      "cena": "free (open source)"
+    },
+    {
+      "naziv": "Claude Code Game Studios",
+      "tip": "projekat",
+      "opis": "A set of agents and skills that turns a single Claude Code session into a \"studio\": 49 role-based agents (design, programming, QA) and over 70 skills with rules for design and code review. It's on GitHub Trending these days.",
+      "kakoProbati": [
+        "Clone the repo: git clone https://github.com/Donchitos/Claude-Code-Game-Studios",
+        "Before installing, read the README and look at what the agents and skills are allowed to do.",
+        "Copy the .claude folder into an empty project and run claude, then ask for a design doc for a small game."
+      ],
+      "link": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+      "cena": "free (uses up your Claude limits)"
+    },
+    {
+      "naziv": "Audio8-TTS-Realistic (Edge0)",
+      "tip": "model",
+      "opis": "A small open TTS model (0.6B parameters) that clones a voice from a single recording and its transcript. It supports 23 languages and is released under the Apache 2.0 license. A CUDA GPU is recommended, and the INT4 version on an Apple M2 uses about 1.2 GB of memory, but an ONNX export of this particular \"Realistic\" version isn't public yet.",
+      "kakoProbati": [
+        "Open the article and find the model's Hugging Face page.",
+        "Check whether Serbian or a closely related language is among the 23 supported.",
+        "Run it through the Transformers library with a short recording of your voice and a transcript (example code is at the link)."
+      ],
+      "link": "https://www.marktechpost.com/2026/10/29/edge0-audio8-tts-realistic-0-6b-voice-cloning/",
+      "cena": "free (Apache 2.0)"
+    },
+    {
+      "naziv": "Surya OCR 2.5",
+      "tip": "model",
+      "opis": "An open 689M-parameter OCR model. It scores 85.9 on OmniParseBench and processes 4.5 pages per second on an H100. A good candidate for scanned receipts and documents if you don't want to send them to the cloud.",
+      "kakoProbati": [
+        "Open the author's post and go on to the Surya project repo.",
+        "Install the package following the README (pip).",
+        "Run it on a few scans in Serbian, in both Latin and Cyrillic script, and check accuracy."
+      ],
+      "link": "https://x.com/VikParuchuri/status/2115904821136114003",
+      "cena": "check the link (license)"
+    },
+    {
+      "naziv": "nesformer: an NES emulator inside the weights of Qwen3.5-4B",
+      "tip": "projekat",
+      "opis": "With help from Opus 5.5, Drew Breunig built an NES CPU emulator directly into the weights of Qwen3.5-4B, so the model runs NES ROMs (very slowly). It's also interesting because he published the two prompts he used to build it.",
+      "kakoProbati": [
+        "Open Simon Willison's post and follow it to the dbreunig/nesformer repo.",
+        "Read the README to see how to run the CLI and point it at a ROM (use only ROMs you have the right to, e.g. homebrew).",
+        "Look at the prompts in the HN comment as an example of how to hand Claude a large research project."
+      ],
+      "link": "https://simonwillison.net/2026/Oct/30/nesformer/",
+      "cena": "free"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "The NYT claims Alice Huang of Singapore-based Megaspeed, who is close to Nvidia chief Jensen Huang, allegedly passed data to Beijing, while Nvidia says the meetings were routine and nothing has been proven.",
+      "izvor": "The Rundown AI",
+      "url": "https://therundownai.beehiiv.com/p/inside-the-spy-plot-around-nvidia-ceo"
+    },
+    {
+      "naslov": "Apple Intelligence is coming to China with iOS 27.3, with a beta on November 4 and a full release in December, but without the new Siri.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1023974/apple-intelligence-china-ios-27-3"
+    },
+    {
+      "naslov": "Google's satellite with TPU chips in orbit ran Gemma 4 and sent its first response back to Earth, a haiku about space, as part of Project Suncatcher for data centers in space.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/30/googles-first-data-center-satellite-is-online-and-writing-poetry/"
+    },
+    {
+      "naslov": "DoorDash says outside AI agents have placed only a few hundred orders, out of nearly a billion in total for the quarter.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/ai/2026/10/doordash-says-outside-ai-agents-have-only-led-to-hundreds-of-orders-so-far/"
+    },
+    {
+      "naslov": "Reddit's chief says the site loses over a million visits a week from Google search because of AI Overviews and AI Mode, and the stock is down more than 25%.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/googles-ai-mode-doesnt-drive-traffic-for-anybody-reddit-ceo-huffman-warns-the-entire-web/"
+    },
+    {
+      "naslov": "Dartmouth's provost, who had written against AI cheating, resigned for failing to disclose that they used AI in their work and in a Washington Post op-ed.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/tech-policy/2026/10/dartmouths-provost-warned-us-about-ai-cheating-but-his-own-ai-use-cost-him-his-job/"
+    },
+    {
+      "naslov": "In the NYT v. OpenAI case, Wikimedia asked for a middle ground: allow training on copyrighted works, but don't let the chatbot reproduce them verbatim.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/policy/1022880/wikipedia-openai-new-york-times-copyright"
+    },
+    {
+      "naslov": "Google is shutting down Jules, its coding agent, and moving its features into Antigravity.",
+      "izvor": "Latent Space / AINews",
+      "url": "https://x.com/julesagent/status/2115883717705261283"
+    },
+    {
+      "naslov": "Cohere raised the first part of a round of up to 7 billion Canadian dollars, and the Canadian government is taking a stake in the company.",
+      "izvor": "Latent Space / AINews",
+      "url": "https://x.com/cohere/status/2115833490126336507"
+    },
+    {
+      "naslov": "According to a report, Anthropic is SpaceX's largest single customer: compute contracts account for 34.5% of its third-quarter revenue.",
+      "izvor": "The Rundown AI",
+      "url": "https://therundownai.beehiiv.com/p/inside-the-spy-plot-around-nvidia-ceo"
+    },
+    {
+      "naslov": "Pika released H3 Flex, its first open-weight video model, which works with up to 12 references and exports up to 4K.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-10-30"
+    },
+    {
+      "naslov": "Fish Audio Drama 3 ranks first among open models on both Artificial Analysis TTS arenas and costs $15 per million characters.",
+      "izvor": "Latent Space / AINews",
+      "url": "https://x.com/ArtificialAnlys/status/2115820963350929580"
+    },
+    {
+      "naslov": "Rumor: Qwen's CTO reportedly said Qwen4 arrives \"next week,\" and support for the model family has already shown up in code.",
+      "izvor": "Latent Space / AINews",
+      "url": "https://x.com/kimmonismus/status/2115794808497168787"
+    },
+    {
+      "naslov": "OpenAI is reportedly negotiating to buy Google's TPU chips, but the amount and timeline aren't known.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/poslovanje/openai-pregovara-o-kupnji-googleovih-tpu-cipova-za-umjetnu-inteligenciju"
+    },
+    {
+      "naslov": "OpenAI CFO Sarah Friar warned companies that cheaper Chinese models can open serious security holes.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/openai-upozorava-na-sigurnosne-rizike-koristenja-jeftinijih-kineskih-ai-modela"
+    },
+    {
+      "naslov": "Fujifilm is investing about $63 million to quintuple production of LTO archival tape by 2028, as AI sharply increases the amount of data.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/gadgets/2026/10/fujifilm-to-boost-tape-production-5x-as-ai-fuels-archiving-demand/"
+    },
+    {
+      "naslov": "The US Department of Justice has indicted a network of \"ghost students\" who used stolen identities and AI to siphon off student loans.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/tech-policy/2026/10/doj-exposes-ghost-students-using-ai-to-complete-courses-steal-student-loans/"
+    },
+    {
+      "naslov": "Pope Leo XIV called on UN member states to ban autonomous lethal weapons, saying \"machines are tools, not persons.\"",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1023188/pope-leo-disarm-ai"
+    },
+    {
+      "naslov": "Ollie, an AI assistant known for protecting privacy, is shutting down in a week.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/30/ollie-a-privacy-focused-ai-assistant-is-shutting-down/"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "Co-Design Bench: how much of users' requests coding agents actually fulfill",
+      "objasnjenje": "A benchmark of 273 tasks drawn from over 26,000 real sessions in which users coded with AI. Requests often include an image, audio, video or document, such as \"make the button look like in this screenshot.\" Tasks are scored against 2,331 hidden criteria written by experts. The best of ten tested models meets 69.9% of criteria per task on average, but solves the whole task in only 26.4% of cases, and changes spanning multiple files fare even worse.",
+      "zastoJeZanimljivo": "The numbers confirm what you probably see yourself: the agent does most of the work, but almost always leaves some detail you have to check by hand. The benchmark also shows which kinds of UI changes models most often miss.",
+      "url": "https://huggingface.co/papers/2610.35138",
+      "github": "https://github.com/Wiselnn570/Co-Design-Bench"
+    },
+    {
+      "naslov": "Google's \"sleep\" framework: a model that \"sleeps\" to retain what it learned",
+      "objasnjenje": "The idea is that while idle, the model moves what it briefly held in context into small extra modules (low-rank experts), then \"dreams\", meaning it generates artificial examples to consolidate the material. In a test, the model learned previously unseen languages one after another, such as Manchu, and forgot almost nothing it had learned before.",
+      "zastoJeZanimljivo": "If this approach works outside the lab, models could learn from your data without costly retraining and without losing old knowledge. That matters for personal assistants and for smaller languages like Serbian.",
+      "url": "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/",
+      "github": null
+    },
+    {
+      "naslov": "Your benchmark measures task difficulty, not just the model",
+      "objasnjenje": "The authors show that every benchmark has its own mix of easy and hard tasks, and the score depends on that mix. If mid-difficulty tasks are missing, two models can look the same even though they aren't. They propose simple metrics that reveal those gaps, and an algorithm that rewrites tasks so they cover the full range of difficulty.",
+      "zastoJeZanimljivo": "Useful if you're building your own small eval for an app, say 30 examples to check a prompt. The code is public, so you can check whether your test examples are too uniform.",
+      "url": "https://huggingface.co/papers/2610.29927",
+      "github": "https://github.com/ASTRAL-Group/benchmark-difficulty-measure"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Extension Watchdog",
+      "problem": "Extensions in VS Code and Cursor update themselves, so a compromised version can reach you while you sleep.",
+      "zaKoga": "Developers and small teams working in VS Code and Cursor",
+      "ulogaAi": "When a new extension version appears, Claude Haiku reads the diff of package.json and the changed files and says in one sentence whether there are suspicious new network calls, processes or permissions.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Write a Node CLI that reads the list of installed extensions (command code --list-extensions --show-versions) and saves it to a local JSON file.",
+        "When a version changes, download both .vsix packages and diff only the JS and package.json files.",
+        "Send the diff to Claude Haiku with a prompt like \"list new network calls, child_process and key access\" and show a system notification.",
+        "To start, turn off extension auto-update and update only after you've reviewed the report."
+      ],
+      "inspiracija": "Compromised Claude Code extension in the Cursor marketplace"
+    },
+    {
+      "naziv": "robots.txt Checker for Local Sites",
+      "problem": "Owners of small websites in Serbia don't know whether AI companies train on their content or how to forbid it.",
+      "zaKoga": "Local bloggers, small news portals, local businesses and web agencies",
+      "ulogaAi": "The model reads an existing robots.txt, explains in Serbian what is and isn't allowed, and suggests a corrected file with the new shared AI-training signal.",
+      "tezina": 1,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Build an Angular page with a single URL field and a Supabase Edge Function that fetches /robots.txt.",
+        "Check the exact syntax of the new policy token on the IETF page and build it in as a validation rule.",
+        "Call Claude Sonnet 5 to write the explanation in Serbian and offer a file to download.",
+        "Offer agencies bulk checking of multiple sites as a paid option."
+      ],
+      "inspiracija": "OpenAI, Google, Microsoft and Anthropic adopt a shared robots.txt signal"
+    },
+    {
+      "naziv": "Who's Waiting on Me",
+      "problem": "When you run several agents at once, you lose track of who has finished, who is waiting for approval and who is stuck, so you keep jumping from one to another.",
+      "zaKoga": "Developers who run Claude Code, Codex or Cursor agents in parallel",
+      "ulogaAi": "A hook in each session sends its status, and a small model turns long output into one sentence: \"waiting for approval on database migration\" or \"tests failing in the auth module.\"",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Set up Claude Code hooks (Stop and Notification) to send JSON to a Supabase table through a simple Edge Function.",
+        "Build a SwiftUI app that shows sessions as a list and uses Live Activity for the one that's waiting on you.",
+        "Add a Haiku summary of the last 50 lines of output and a push notification only when your decision is needed.",
+        "Add a 45-minute \"focus block\" during which notifications are batched and delivered together."
+      ],
+      "inspiracija": "HN discussion \"Are you tired too in this AI era?\" and the piece on how AI \"deskills\" SRE engineers"
+    },
+    {
+      "naziv": "Apartment Before Construction",
+      "problem": "Buyers of new-build apartments in Serbia only get a 2D floor plan and struggle to imagine how the space will look furnished.",
+      "zaKoga": "Apartment buyers, small real-estate agencies and investors",
+      "ulogaAi": "From a floor-plan image, the model reads walls and room dimensions, and the user picks flooring, colors and furniture by describing them in Serbian (\"dark parquet, white kitchen\").",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Take 10 floor plans from local real-estate sites and check how accurately Claude extracts rooms into JSON (name, dimensions in m²).",
+        "Build an Angular app with a Three.js scene that raises walls from the JSON.",
+        "Add a chat that turns a description into material and furniture changes and saves variants in Supabase.",
+        "Offer PNG export so an agency can put it in a listing."
+      ],
+      "inspiracija": "Community workflow from The Rundown: a 3D house app built in Claude Cowork in under an hour"
+    },
+    {
+      "naziv": "Patch Radar for Your Stack",
+      "problem": "AI can now build exploits from patches in a few hours, while small teams learn about critical fixes only days later.",
+      "zaKoga": "Freelancers and small firms in the region who maintain clients' Angular, Node and Supabase projects",
+      "ulogaAi": "For each new security patch in your dependencies, the model says whether your code even uses the affected part and how urgent it is, instead of you getting 40 generic alerts.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Build a GitHub App or CLI that reads package.json and package-lock.json from client repos.",
+        "Have a Supabase cron pull new entries for those packages from the GitHub Advisory database and OSV every hour.",
+        "Send Claude the patch description and the files that import the package, and ask for a \"you use / you don't use the affected part\" assessment.",
+        "Send urgent cases to Telegram or Viber and collect the rest into a weekly report."
+      ],
+      "inspiracija": "Epoch: GLM 5.3 builds Firefox exploits on its own from patches that haven't reached users yet"
+    }
+  ],
+  "cene": "Today's biggest price cuts: DeepSeek V4 Pro 0813 (from $1.32/$3.96 to $0.66/$1.98), V4.1 Flash 1017 (from $0.3/$1.2 to $0.15/$0.6) and GLM 5.3, whose output dropped from $3.6 to $1.4. The older DeepSeek V4 Pro 0423 nearly doubled in price (from $0.8162/$1.6325 to $1.6/$3.2), and Qwen3.8 27B jumped from $0.039/$1.25 to $0.15/$1.875. GLM 5.3 Flash cut its input price to $0.0216 but its output rose from $0.0701 to $0.1238, and it's still the cheapest among the cheap, fast models. In the mid tier the cheapest is GLM 5.3 ($0.0699/$1.4), and among top-end models Kimi K3 has the cheapest input ($0.192) and Grok 4.6 the cheapest output ($6).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Claude: Ultra plan, watermark and a classifier that refuses work",
+        "oCemuSePrica": "Several stories collided on r/ClaudeAI the same day: Max 20x became Ultra, the 5-hour limit was removed, and from November 3 an invisible watermark extends to older models too (Mythos 5, Opus 4.7, Opus 4.6, Sonnet 4.6). People are asking what they actually get for $200 and who can read the watermark in their text.",
+        "glasovi": "Some celebrate the end of the 5-hour limit, while @nunesgh on Mastodon claims the weekly limit has actually been halved (from 20× to 10× Pro), which Anthropic hasn't confirmed. The author of the watermark post points out that text Claude merely proofread or translated gets the same mark, and that users can't check for it themselves. One reverse-engineering user threatens to cancel their Max subscription because the safety classifier blocks legitimate tasks, like installing OpenWRT on their own router.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xjlvlc/anthropic_renames_max5_and_max20_and_removes_5h/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xjqyv2/claude_now_watermarks_everything_it_writes_and/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xjmtad/im_close_to_cancelling_my_max_subscription_due_to/"
+          },
+          {
+            "platforma": "mastodon",
+            "naziv": "@nunesgh",
+            "url": "https://mastodon.social/@nunesgh/117532746854689438"
+          }
+        ]
+      },
+      {
+        "naslov": "Fatigue and \"deskilling\": the cost of working with agents",
+        "oCemuSePrica": "The two liveliest AI discussions on Hacker News are about the same problem. One is a piece arguing that AI isn't replacing SREs but slowly eroding their skills. The other asks \"Are you tired too in this AI era?\", and its author says they're worn out by tracking parallel agents, reading piles of generated text and constantly making decisions.",
+        "glasovi": "In the comments, some advise fewer parallel sessions and stricter limits on what you hand to an agent, while others say pressure from bosses to \"stay relevant\" is the real problem. On Reddit, someone adds that vibe coding taught them to appreciate old-school engineers who optimized every byte.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50305693"
+          },
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50301479"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xjk9x0/the_era_of_vibe_coding_actually_made_me/"
+          }
+        ]
+      },
+      {
+        "naslov": "Supply-chain attack via a Claude Code extension",
+        "oCemuSePrica": "News that the official Claude Code extension in Cursor was compromised spread quickly on X. People are asking how the attacker got into Anthropic's account and whether auto-updating extensions is a good idea at all.",
+        "glasovi": "@mattjay was among the first to warn that a download during that window could have installed an SSH backdoor. Researcher Kevin Beaumont and the firm Phorian confirm the version came through the official account, while Cursor says other extensions weren't affected. According to Ars Technica, Anthropic hadn't separately notified users by then.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@mattjay",
+            "url": "https://x.com/mattjay/status/2116023617364570171"
+          }
+        ]
+      },
+      {
+        "naslov": "Proton: CEO cancels AI re-interviews, users leave",
+        "oCemuSePrica": "After the story that Proton is \"going all in on AI,\" 404 Media writes that CEO Andy Yen canceled AI-related re-interviews of employees. On HN, that set off a fresh debate over whether a company people trust for privacy should rely on AI-written code.",
+        "glasovi": "One Mastodon user writes that they switched to their own mail and DNS server because of it. Others on HN see the canceled interviews as a sign the company did listen to its employees after all.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50307183"
+          },
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50296602"
+          },
+          {
+            "platforma": "mastodon",
+            "naziv": "@EdTheDev",
+            "url": "https://infosec.exchange/@EdTheDev/117533193773447904"
+          }
+        ]
+      },
+      {
+        "naslov": "The market asks when AI will pay off",
+        "oCemuSePrica": "The tech stock drop over AI costs is being debated on HN, and on r/singularity a quote from Gavin Baker is going around saying Larry Page said internally he was \"willing to go bankrupt rather than lose this race.\" On top of that, the FT writes about a possible \"junk\" rating for Anthropic.",
+        "glasovi": "Skeptics see a bubble heading toward a burst. Others argue that the decision-makers at big companies aren't calculating return on investment at all, so spending won't stop that quickly.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50306008"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xjhzbi/so_larry_page_has_evidently_said_internally_at/"
+          }
+        ]
+      }
+    ],
+    "snimci": []
+  },
+  "nedeljni": {
+    "ukratko": "This was the week the big companies fought over developers, with Anthropic heading toward the stock market. OpenAI released the cheaper GPT-6.1 Terra and doubled limits on Pro plans, and Anthropic answered with an Ultra plan with no 5-hour limit. At the same time, its IPO filing revealed huge losses and obligations. In the background, security problems stopped being theoretical: open models build exploits on their own, and a supply-chain attack hit a tool you use every day.",
+    "tacke": [
+      "New models worth trying: GPT-6.1 Terra ($1/$5) is a cheaper mid-tier model, Mistral Large 4 came out with open weights, and Gemini 4 Carbon tops the leaderboards, but almost nobody can use it.",
+      "The subscription war: OpenAI doubled Pro limits and added API credits, Anthropic turned Max 20x into Ultra, and GitHub launched Copilot Fusion.",
+      "Security became a practical matter: GLM 5.3 builds Firefox exploits on its own, Qwen 3.8 \"phoned home\" in tests, Cloudflare mixed up other people's responses, and a Claude Code extension in Cursor was compromised.",
+      "Anthropic ahead of its IPO: $11.6 billion in quarterly revenue, but $80 billion in losses, $518 billion in infrastructure obligations and talk of a \"junk\" rating.",
+      "Prices on OpenRouter moved up and down almost every day of the week (most at DeepSeek, GLM and Kimi). GLM 5.3 Flash ends the week as the cheapest among the cheap models, at $0.0216 for input."
+    ]
+  }
+}
