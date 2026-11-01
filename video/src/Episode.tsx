@@ -1,6 +1,7 @@
-// AI Wars: daily episode with the mascot Byte. Script comes from scripts/ai-wars.mjs (Claude writes it, Kokoro voices it).
+// Videos with the mascot Byte: AI Wars (scripts/ai-wars.mjs) and Tool of the Day (scripts/alat-dana.mjs).
+// Claude writes the script, Kokoro voices it, this renders it.
 import React from 'react';
-import { AbsoluteFill, Audio, CalculateMetadataFunction, Easing, interpolate, Sequence, spring, staticFile, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, Audio, CalculateMetadataFunction, Easing, Img, interpolate, Sequence, spring, staticFile, useCurrentFrame } from 'remotion';
 import { Byte, Izraz, Lik, lik, Raspolozenje } from './byte';
 import { C, fontFamily } from './stil';
 
@@ -11,7 +12,7 @@ const KRAJ = 45; // frames after the last line
 
 export type LikUKadru = { id: string; ime?: string; raspolozenje?: Raspolozenje };
 export type Kartica = {
-  tip: 'intro' | 'likovi' | 'trake' | 'grafik' | 'broj' | 'tekst' | 'reflektor' | 'mera' | 'sucelje' | 'prati';
+  tip: 'intro' | 'likovi' | 'trake' | 'grafik' | 'broj' | 'tekst' | 'reflektor' | 'mera' | 'sucelje' | 'prati' | 'ekran' | 'korak';
   likovi?: LikUKadru[];
   pecat?: string;
   trake?: { label: string; vrednost: string; udeo: number }[];
@@ -23,9 +24,18 @@ export type Kartica = {
   levo?: string;
   desno?: string;
   vrednost?: number;
+  korak?: number; // korak: step number
+  kod?: string; // korak: exact command, shown in a code box
 };
 export type Replika = { izraz: Izraz; tekst: string; sekundi: number; jacina: number[]; audio: string; kartica: Kartica };
-export type EpizodaProps = { epizoda: number; podnaslov: string; replike: Replika[] };
+export type EpizodaProps = {
+  serija?: 'wars' | 'alat';
+  epizoda: number;
+  podnaslov: string;
+  replike: Replika[];
+  /** Tool of the Day: name, site and screenshot (path in public/, optional). */
+  alat?: { naziv: string; domen: string; snimak?: string; cena?: string };
+};
 
 const poceci = (replike: Replika[]) => {
   const p: number[] = [];
@@ -98,15 +108,23 @@ const Pozadina: React.FC = () => {
 
 const Zaglavlje: React.FC = () => {
   const f = useCurrentFrame();
-  const { epizoda, ukupno } = React.useContext(Kontekst);
+  const { epizoda, ukupno, serija } = React.useContext(Kontekst);
   return (
     <>
       <div style={{ position: 'absolute', top: 0, left: 0, height: 10, width: `${Math.min(1, f / ukupno) * 100}%`, background: `linear-gradient(90deg, ${C.red}, ${C.amber})` }} />
       <div style={{ position: 'absolute', top: 110, left: 0, right: 0, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 18 }}>
-        <div style={{ fontWeight: 800, fontSize: 46, letterSpacing: 8, color: C.text, display: 'flex', gap: 14 }}>
-          <span style={{ color: C.red }}>AI</span>WARS
+        {serija === 'alat' ? (
+          <div style={{ fontWeight: 800, fontSize: 42, letterSpacing: 6, color: C.text, display: 'flex', gap: 14 }}>
+            TOOL OF THE <span style={{ color: C.green }}>DAY</span>
+          </div>
+        ) : (
+          <div style={{ fontWeight: 800, fontSize: 46, letterSpacing: 8, color: C.text, display: 'flex', gap: 14 }}>
+            <span style={{ color: C.red }}>AI</span>WARS
+          </div>
+        )}
+        <div style={{ fontWeight: 800, fontSize: 30, color: C.bg, background: C.amber, borderRadius: 12, padding: '6px 16px', letterSpacing: 2 }}>
+          {serija === 'alat' ? `#${epizoda}` : `EP. ${epizoda}`}
         </div>
-        <div style={{ fontWeight: 800, fontSize: 30, color: C.bg, background: C.amber, borderRadius: 12, padding: '6px 16px', letterSpacing: 2 }}>EP. {epizoda}</div>
       </div>
     </>
   );
@@ -227,6 +245,10 @@ const Kartica: React.FC<{ k: Kartica; trajanje: number }> = ({ k, trajanje }) =>
   switch (k.tip) {
     case 'intro':
       return <Intro k={k} />;
+    case 'ekran':
+      return <Ekran k={k} trajanje={trajanje} />;
+    case 'korak':
+      return <Korak k={k} />;
     case 'trake':
       return <Trake k={k} trajanje={trajanje} />;
     case 'grafik':
@@ -279,7 +301,8 @@ const Natpis: React.FC<{ text: string; delay: number; border?: string }> = ({ te
 );
 
 const Intro: React.FC<{ k: Kartica }> = ({ k }) => {
-  const { epizoda, podnaslov } = React.useContext(Kontekst);
+  const { epizoda, podnaslov, serija, alat } = React.useContext(Kontekst);
+  if (serija === 'alat' && alat) return <AlatIntro alat={alat} broj={epizoda} podnaslov={podnaslov} />;
   const s = useUlaz(0);
   const likovi = (k.likovi?.length ? k.likovi : [{ id: 'openai' }, { id: 'google' }, { id: 'anthropic' }]).slice(0, 3);
   return (
@@ -479,17 +502,20 @@ const Reflektor: React.FC<{ k: Kartica }> = ({ k }) => {
 
 const Mera: React.FC<{ k: Kartica; trajanje: number }> = ({ k, trajanje }) => {
   const f = useCurrentFrame();
+  // Tool of the Day: the gauge is Byte's verdict, so the right side is good (green).
+  const dobro = React.useContext(Kontekst).serija === 'alat';
+  const [lb, db] = dobro ? [C.red, C.green] : [C.green, C.red];
   const cilj = -70 + 140 * Math.max(0, Math.min(1, k.vrednost ?? 0.85));
   const ugao = interpolate(f, [0, trajanje * 0.5], [-70, cilj], { extrapolateRight: 'clamp', easing: Easing.out(Easing.back(2)) }) + (f > trajanje * 0.5 ? Math.sin(f * 1.4) * 4 : 0);
   return (
     <Centar gap={40}>
       <div style={{ fontWeight: 800, fontSize: 44, letterSpacing: 6, color: C.soft, textAlign: 'center' }}>{(k.naslov ?? '').toUpperCase()}</div>
       <svg viewBox="0 0 600 340" width={760}>
-        <path d="M 60 300 A 240 240 0 0 1 300 60" stroke={C.green} strokeWidth="40" fill="none" />
+        <path d="M 60 300 A 240 240 0 0 1 300 60" stroke={lb} strokeWidth="40" fill="none" />
         <path d="M 300 60 A 240 240 0 0 1 470 130" stroke={C.amber} strokeWidth="40" fill="none" />
-        <path d="M 470 130 A 240 240 0 0 1 540 300" stroke={C.red} strokeWidth="40" fill="none" />
+        <path d="M 470 130 A 240 240 0 0 1 540 300" stroke={db} strokeWidth="40" fill="none" />
         <text x="60" y="335" fill={C.muted} fontSize="28" fontWeight={800} fontFamily="Inter">{(k.levo ?? 'LOW').toUpperCase()}</text>
-        <text x="540" y="335" textAnchor="end" fill={C.red} fontSize="28" fontWeight={800} fontFamily="Inter">{(k.desno ?? 'HIGH').toUpperCase()}</text>
+        <text x="540" y="335" textAnchor="end" fill={db} fontSize="28" fontWeight={800} fontFamily="Inter">{(k.desno ?? 'HIGH').toUpperCase()}</text>
         <g transform={`rotate(${ugao} 300 300)`}>
           <line x1="300" y1="300" x2="300" y2="90" stroke={C.text} strokeWidth="14" strokeLinecap="round" />
         </g>
@@ -529,6 +555,7 @@ const Sucelje: React.FC<{ k: Kartica }> = ({ k }) => {
 
 const Prati: React.FC = () => {
   const f = useCurrentFrame();
+  const { serija } = React.useContext(Kontekst);
   const klik = f > 22 && f < 30;
   const s = useUlaz(0, { damping: 10, stiffness: 160, mass: 0.6 });
   const strelica = interpolate(f, [0, 20], [260, 0], { extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic) });
@@ -555,8 +582,149 @@ const Prati: React.FC = () => {
         </svg>
       </div>
       <div style={{ fontWeight: 800, fontSize: 48, color: C.soft, marginTop: 30 }}>
-        New episode <span style={{ color: C.amber }}>every day</span>
+        {serija === 'alat' ? 'A new AI tool' : 'New episode'} <span style={{ color: C.amber }}>every day</span>
       </div>
+    </Centar>
+  );
+};
+
+/* ---------- Tool of the Day ---------- */
+
+/** Rounded square with the first letters of the tool: its "logo" on our cards. */
+const Znak: React.FC<{ naziv: string; size: number }> = ({ naziv, size }) => {
+  const slova = naziv.replace(/[^A-Za-z0-9 ]/g, '').split(/\s+/).filter(Boolean).map((w) => w[0]).join('').slice(0, 2).toUpperCase() || '?';
+  return (
+    <div
+      style={{
+        width: size,
+        height: size,
+        borderRadius: size * 0.26,
+        background: `linear-gradient(135deg, ${C.green}, #0ea5e9)`,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontWeight: 800,
+        fontSize: size * 0.42,
+        color: C.bg,
+        boxShadow: `0 0 ${size * 0.6}px rgba(34,197,94,0.35)`,
+      }}
+    >
+      {slova}
+    </div>
+  );
+};
+
+const AlatIntro: React.FC<{ alat: NonNullable<EpizodaProps['alat']>; broj: number; podnaslov: string }> = ({ alat, broj, podnaslov }) => {
+  const s = useUlaz(0);
+  const naziv = alat.naziv.replace(/\s*\(.*\)\s*$/, '');
+  return (
+    <Centar gap={36}>
+      <div style={{ transform: `scale(${0.5 + 0.5 * s}) rotate(${(1 - s) * -20}deg)`, opacity: s }}>
+        <Znak naziv={naziv} size={220} />
+      </div>
+      <div style={{ fontWeight: 800, fontSize: naziv.length > 16 ? 96 : 130, color: C.text, letterSpacing: -3, lineHeight: 1, textAlign: 'center', opacity: s }}>{naziv}</div>
+      <Uskoci delay={8}>
+        <div style={{ fontWeight: 600, fontSize: 40, color: C.soft, textAlign: 'center', maxWidth: 900 }}>{podnaslov}</div>
+      </Uskoci>
+      <Uskoci delay={14}>
+        <div style={{ display: 'flex', gap: 18 }}>
+          <div style={{ fontWeight: 800, fontSize: 30, color: C.bg, background: C.amber, borderRadius: 999, padding: '10px 26px', letterSpacing: 2 }}>TOOL #{broj}</div>
+          {alat.cena && (
+            <div style={{ fontWeight: 800, fontSize: 30, color: C.green, border: `2px solid ${C.green}`, borderRadius: 999, padding: '8px 24px', letterSpacing: 1 }}>
+              {alat.cena.toUpperCase()}
+            </div>
+          )}
+        </div>
+      </Uskoci>
+    </Centar>
+  );
+};
+
+/** Screenshot of the tool's site in a browser frame, scrolling slowly. Without a screenshot: logo and text. */
+const Ekran: React.FC<{ k: Kartica; trajanje: number }> = ({ k, trajanje }) => {
+  const f = useCurrentFrame();
+  const { alat } = React.useContext(Kontekst);
+  const s = useUlaz(0, { damping: 18, stiffness: 110, mass: 0.8 });
+  if (!alat?.snimak) return <Tekst k={{ ...k, likovi: undefined }} />;
+  const SIRINA = 940;
+  const VISINA = k.tekst ? 560 : 700;
+  const skrol = interpolate(f, [10, trajanje], [0, 900], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.quad) });
+  return (
+    <Centar gap={30}>
+      <div
+        style={{
+          width: SIRINA,
+          height: VISINA,
+          borderRadius: 22,
+          overflow: 'hidden',
+          background: '#0b1120',
+          border: `1px solid ${C.line}`,
+          boxShadow: '0 40px 100px rgba(0,0,0,0.6)',
+          transform: `perspective(1400px) translateY(${(1 - s) * 140}px) rotateX(${(1 - s) * 14}deg)`,
+          opacity: s,
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
+        <div style={{ height: 54, display: 'flex', alignItems: 'center', gap: 10, padding: '0 20px', background: '#111827', borderBottom: `1px solid ${C.line}`, flexShrink: 0 }}>
+          {['#ff5f57', '#febc2e', '#28c840'].map((c) => (
+            <div key={c} style={{ width: 15, height: 15, borderRadius: '50%', background: c }} />
+          ))}
+          <div style={{ marginLeft: 16, flex: 1, height: 34, borderRadius: 10, background: '#0b1120', color: C.soft, fontSize: 22, display: 'flex', alignItems: 'center', padding: '0 16px' }}>
+            {alat.domen}
+          </div>
+        </div>
+        <div style={{ position: 'relative', flex: 1, overflow: 'hidden' }}>
+          <Img src={staticFile(alat.snimak)} style={{ position: 'absolute', left: 0, top: 0, width: SIRINA, transform: `translateY(${-skrol}px)` }} />
+        </div>
+      </div>
+      {k.tekst && <Natpis text={k.tekst} delay={14} />}
+    </Centar>
+  );
+};
+
+/** One step to try the tool: number, short explanation, exact command. */
+const Korak: React.FC<{ k: Kartica }> = ({ k }) => {
+  const s = useUlaz(0, { damping: 12, stiffness: 160, mass: 0.6 });
+  const f = useCurrentFrame();
+  const kod = k.kod ?? '';
+  const otkucano = Math.min(kod.length, Math.max(0, Math.floor((f - 12) * 2.2)));
+  return (
+    <Centar gap={36}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 26, transform: `translateX(${(1 - s) * -300}px)`, opacity: s }}>
+        <div style={{ width: 120, height: 120, borderRadius: 30, background: C.amber, color: C.bg, fontWeight: 800, fontSize: 72, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          {k.korak ?? 1}
+        </div>
+        <div style={{ fontWeight: 800, fontSize: 44, letterSpacing: 6, color: C.soft }}>STEP {k.korak ?? 1}</div>
+      </div>
+      {k.tekst && (
+        <div style={{ fontWeight: 800, fontSize: 58, color: C.text, textAlign: 'center', lineHeight: 1.2, maxWidth: 940 }}>
+          <Istakni text={k.tekst} />
+        </div>
+      )}
+      {kod && (
+        <Uskoci delay={8}>
+          <div
+            style={{
+              width: 940,
+              background: '#0b1120',
+              border: `1px solid ${C.line}`,
+              borderRadius: 24,
+              padding: '28px 34px',
+              fontFamily: 'Menlo, Monaco, "DejaVu Sans Mono", monospace',
+              fontSize: kod.length > 60 ? 30 : 38,
+              lineHeight: 1.45,
+              color: '#a7f3d0',
+              wordBreak: 'break-all',
+              boxShadow: '0 30px 80px rgba(0,0,0,0.5)',
+            }}
+          >
+            <span style={{ color: C.green }}>$ </span>
+            {kod.slice(0, otkucano)}
+            <span style={{ opacity: Math.floor(f / 8) % 2 ? 1 : 0, color: C.text }}>▍</span>
+          </div>
+        </Uskoci>
+      )}
     </Centar>
   );
 };

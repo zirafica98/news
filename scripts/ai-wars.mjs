@@ -9,18 +9,15 @@
 // Python sa kokoro-onnx: TTS_PYTHON (podrazumevano python3). Model: AI_WARS_MODEL (podrazumevano opus).
 // Pokretanje: node scripts/ai-wars.mjs [--datum=YYYY-MM-DD]
 
-import { spawn } from 'node:child_process';
 import { existsSync } from 'node:fs';
-import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { mkdir, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { VIDEO_DIR, naslovnaMs, ozvuci, renderuj, trajanje } from './byte-video.mjs';
 import { pitajClaude } from './claude.mjs';
 import { INSTA_DIR, izaberiVesti } from './insta-slike.mjs';
-import { DATA_DIR, REPO_DIR, SCRIPTS_DIR, datumIzArgumenata, readJson, writeJson } from './lib.mjs';
+import { DATA_DIR, SCRIPTS_DIR, datumIzArgumenata, readJson, writeJson } from './lib.mjs';
 
-const VIDEO_DIR = join(REPO_DIR, 'video');
 const STANJE = join(SCRIPTS_DIR, 'state', 'ai-wars.json');
-const GLAS = 'am_puck';
-const FPS = 30;
 const IZRAZI = ['happy', 'shock', 'worried', 'skeptic', 'laugh', 'sly'];
 const RASPOLOZENJA = ['calm', 'sad', 'sly', 'shock'];
 const KARTICE = ['likovi', 'trake', 'grafik', 'broj', 'tekst', 'reflektor', 'mera', 'sucelje'];
@@ -148,22 +145,17 @@ console.log(replike.map((r, i) => `  ${i + 1}. [${r.izraz} · ${r.kartica.tip}] 
 const glasDir = join(VIDEO_DIR, 'public', 'ep', datum);
 await rm(glasDir, { recursive: true, force: true });
 await mkdir(glasDir, { recursive: true });
-for (const [i, r] of replike.entries()) {
-  const wav = join(glasDir, `${i}.wav`);
-  const { ukupno } = await govori({ izlaz: wav, glas: GLAS, brzina: 1.08, delovi: [r.tekst] });
-  Object.assign(r, { sekundi: ukupno, jacina: jacinaPoKadru(await readFile(wav)), audio: `ep/${datum}/${i}.wav` });
-}
+await ozvuci(replike, `ep/${datum}`);
 
 // 3. Render
 const fajl = `${datum}-short-wars.mp4`;
 const propsFajl = join(glasDir, 'props.json');
-await writeFile(propsFajl, JSON.stringify({ epizoda: broj, podnaslov: sc.podnaslov.slice(0, 30), replike }));
+await writeFile(propsFajl, JSON.stringify({ serija: 'wars', epizoda: broj, podnaslov: sc.podnaslov.slice(0, 30), replike }));
 console.log('Renderujem epizodu…');
-await pokreni('npx', ['remotion', 'render', 'src/index.ts', 'Episode', join(INSTA_DIR, fajl), `--props=${propsFajl}`, '--log=error'], VIDEO_DIR);
-const sekundi = Math.round(replike.reduce((z, r) => z + r.sekundi + 0.2, 0.27 + 1.5));
+await renderuj(propsFajl, join(INSTA_DIR, fajl));
+const sekundi = trajanje(replike);
 
 // 4. Stavka za objavu. Naslovna slika (Instagram): kartica „AI WARS“ sa likovima, kad se potpuno pojavi.
-const naslovnaMs = Math.round(((8 + Math.ceil(replike[0].sekundi * FPS) + 6 + 36) / FPS) * 1000);
 const oznaka = `AI Morning Brief · ${datum} · wars`;
 const stavka = {
   fajl,
@@ -179,7 +171,7 @@ const stavka = {
   plejlista: 'AI Wars',
   pitanje: sc.pitanje,
   tagovi: ['AI', 'AI news', 'AI Wars', ...new Set(replike.flatMap((r) => r.kartica.likovi ?? []).map((l) => l.ime || l.id))].slice(0, 12),
-  naslovnaMs,
+  naslovnaMs: naslovnaMs(replike),
   sekundi,
 };
 
@@ -235,49 +227,4 @@ function likoviEpizode(s) {
   for (const r of s.replike) for (const l of r.kartica.likovi ?? []) if (!vidjeni.has(l.id)) vidjeni.set(l.id, { id: l.id, ime: l.ime });
   const lista = [...vidjeni.values()].slice(0, 3);
   return lista.length >= 2 ? lista : [{ id: 'openai' }, { id: 'google' }, { id: 'anthropic' }];
-}
-
-function govori(ulaz) {
-  return new Promise((resolve, reject) => {
-    const proces = spawn(process.env.TTS_PYTHON || 'python3', ['-I', join(SCRIPTS_DIR, 'tts.py')], { stdio: ['pipe', 'pipe', 'inherit'] });
-    let izlaz = '';
-    proces.stdout.on('data', (d) => (izlaz += d));
-    proces.on('error', reject);
-    proces.on('close', (kod) => (kod === 0 ? resolve(JSON.parse(izlaz)) : reject(new Error(`tts.py je završio sa kodom ${kod}`))));
-    proces.stdin.end(JSON.stringify(ulaz));
-  });
-}
-
-/** WAV (PCM 16-bit, mono) → jačina zvuka po kadru, 0..1. */
-function jacinaPoKadru(wav) {
-  let p = 12;
-  let ucestanost = 24000;
-  while (p < wav.length - 8) {
-    const id = wav.toString('ascii', p, p + 4);
-    const vel = wav.readUInt32LE(p + 4);
-    if (id === 'fmt ') ucestanost = wav.readUInt32LE(p + 12);
-    if (id === 'data') {
-      const uzorci = new Int16Array(wav.buffer.slice(wav.byteOffset + p + 8, wav.byteOffset + p + 8 + (vel & ~1)));
-      const n = Math.floor(ucestanost / FPS);
-      const r = [];
-      for (let i = 0; i < uzorci.length; i += n) {
-        let z = 0;
-        const kraj = Math.min(uzorci.length, i + n);
-        for (let j = i; j < kraj; j++) z += (uzorci[j] / 32768) ** 2;
-        r.push(Math.sqrt(z / (kraj - i)));
-      }
-      const max = Math.max(...r) || 1;
-      return r.map((v) => Math.round(Math.min(1, (v / max) * 1.3) * 1000) / 1000);
-    }
-    p += 8 + vel + (vel % 2);
-  }
-  throw new Error('WAV bez podataka');
-}
-
-function pokreni(komanda, args, cwd) {
-  return new Promise((resolve, reject) => {
-    const p = spawn(komanda, args, { cwd, stdio: 'inherit' });
-    p.on('error', reject);
-    p.on('close', (kod) => (kod === 0 ? resolve() : reject(new Error(`${komanda} ${args[0]} je završio sa kodom ${kod}`))));
-  });
 }

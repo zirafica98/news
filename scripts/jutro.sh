@@ -150,10 +150,12 @@ node scripts/insta-slike.mjs --datum="$DATUM" || log "Instagram slike nisu napra
 # 7d. YouTube Shorts sa glasom (Kokoro TTS): dve glavne vesti i alat dana. Bez Python-a i modela se preskače.
 node scripts/shorts.mjs --datum="$DATUM" || log "Shorts nisu napravljeni, izdanje ide bez njih."
 
-# 7d2. AI Wars: dnevna epizoda sa maskotom Byte (Claude piše scenario, Remotion u video/ renderuje).
+# 7d2. Videi sa maskotom Byte (Claude piše scenario, Remotion u video/ renderuje):
+# Tool of the Day zamenjuje Shortove alata iz 7d (ako ne uspe, ostaju stari), pa AI Wars epizoda.
 if [[ ! -d video/node_modules ]] || [[ video/package-lock.json -nt video/node_modules ]]; then
   npm ci --prefix video --no-audit --no-fund --loglevel=error && touch video/node_modules
 fi
+node scripts/alat-dana.mjs --datum="$DATUM" || log "Tool of the Day nije napravljen, ostaje stari Short alata."
 node scripts/ai-wars.mjs --datum="$DATUM" || log "AI Wars epizoda nije napravljena, izdanje ide bez nje."
 
 # 7e. Mediji za mreže stariji od 14 dana se brišu (mreže su ih već preuzele), da repo ne raste.
