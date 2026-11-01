@@ -164,11 +164,11 @@ await korak('post', async () => {
   if (potrosnja) console.log(`Potrošnja limita API poziva: ${potrosnja}`);
 });
 
-// 2. Reels: Shortovi sa glasom — AI Wars epizoda (ai-wars.mjs), pa vest #1, nedeljni pregled ili „Try this AI tool“ (najviše dva).
+// 2. Reels (najviše dva): AI Wars epizoda, pa subotom nedeljni pregled, inače alat dana ili Byte Explains (vest #1 ako njih nema).
 // Reels donose nove ljude (oko 5–10 puta više prikaza od karusela). Ako Shortova nema, ide stari Reel od slajdova.
 const shortovi = await readJson(join(INSTA_DIR, `${datum}-shorts.json`), null);
 const reelovi = shortovi
-  ? ['wars', '1', 'nedelja', 'alat']
+  ? ['wars', 'nedelja', 'alat', 'explains', '1']
       .map((id) => shortovi.find((v) => v.fajl === `${datum}-short-${id}.mp4`))
       .filter((v) => v && fajlovi.includes(v.fajl))
       .slice(0, 2)

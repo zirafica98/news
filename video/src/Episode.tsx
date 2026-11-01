@@ -1,4 +1,5 @@
-// Videos with the mascot Byte: AI Wars (scripts/ai-wars.mjs) and Tool of the Day (scripts/alat-dana.mjs).
+// Videos with the mascot Byte: AI Wars (scripts/ai-wars.mjs), Tool of the Day (scripts/alat-dana.mjs)
+// and Byte Explains (scripts/byte-explains.mjs).
 // Claude writes the script, Kokoro voices it, this renders it.
 import React from 'react';
 import { AbsoluteFill, Audio, CalculateMetadataFunction, Easing, Img, interpolate, Sequence, spring, staticFile, useCurrentFrame } from 'remotion';
@@ -12,7 +13,7 @@ const KRAJ = 45; // frames after the last line
 
 export type LikUKadru = { id: string; ime?: string; raspolozenje?: Raspolozenje };
 export type Kartica = {
-  tip: 'intro' | 'likovi' | 'trake' | 'grafik' | 'broj' | 'tekst' | 'reflektor' | 'mera' | 'sucelje' | 'prati' | 'ekran' | 'korak';
+  tip: 'intro' | 'likovi' | 'trake' | 'grafik' | 'broj' | 'tekst' | 'reflektor' | 'mera' | 'sucelje' | 'prati' | 'ekran' | 'korak' | 'pojam' | 'tok';
   likovi?: LikUKadru[];
   pecat?: string;
   trake?: { label: string; vrednost: string; udeo: number }[];
@@ -26,13 +27,16 @@ export type Kartica = {
   vrednost?: number;
   korak?: number; // korak: step number
   kod?: string; // korak: exact command, shown in a code box
+  koraci?: string[]; // tok: 2-4 boxes connected by arrows
 };
 export type Replika = { izraz: Izraz; tekst: string; sekundi: number; jacina: number[]; audio: string; kartica: Kartica };
 export type EpizodaProps = {
-  serija?: 'wars' | 'alat';
+  serija?: 'wars' | 'alat' | 'explains';
   epizoda: number;
   podnaslov: string;
   replike: Replika[];
+  /** Byte Explains: the term being explained. */
+  pojam?: string;
   /** Tool of the Day: name, site and screenshot (path in public/, optional). */
   alat?: { naziv: string; domen: string; snimak?: string; cena?: string };
 };
@@ -117,13 +121,17 @@ const Zaglavlje: React.FC = () => {
           <div style={{ fontWeight: 800, fontSize: 42, letterSpacing: 6, color: C.text, display: 'flex', gap: 14 }}>
             TOOL OF THE <span style={{ color: C.green }}>DAY</span>
           </div>
+        ) : serija === 'explains' ? (
+          <div style={{ fontWeight: 800, fontSize: 42, letterSpacing: 6, color: C.text, display: 'flex', gap: 14 }}>
+            BYTE <span style={{ color: '#38bdf8' }}>EXPLAINS</span>
+          </div>
         ) : (
           <div style={{ fontWeight: 800, fontSize: 46, letterSpacing: 8, color: C.text, display: 'flex', gap: 14 }}>
             <span style={{ color: C.red }}>AI</span>WARS
           </div>
         )}
         <div style={{ fontWeight: 800, fontSize: 30, color: C.bg, background: C.amber, borderRadius: 12, padding: '6px 16px', letterSpacing: 2 }}>
-          {serija === 'alat' ? `#${epizoda}` : `EP. ${epizoda}`}
+          {serija === 'wars' || !serija ? `EP. ${epizoda}` : `#${epizoda}`}
         </div>
       </div>
     </>
@@ -133,7 +141,11 @@ const Zaglavlje: React.FC = () => {
 /** Captions: groups of up to 4 words, the spoken word lights up. */
 const Titl: React.FC<{ rep: Replika }> = ({ rep }) => {
   const f = useCurrentFrame();
-  const reci = rep.tekst.split(/\s+/).filter(Boolean);
+  // Acronyms are spelled out for the voice ("M C P", "A I"), but the caption shows them joined ("MCP", "AI").
+  const reci = rep.tekst
+    .replace(/\b([A-Z])(?: ([A-Z])\b)+/g, (m) => m.replace(/ /g, ''))
+    .split(/\s+/)
+    .filter(Boolean);
   const govor = (rep.sekundi - 0.12) * EP_FPS;
   const tezine = reci.map((w) => w.length + 2);
   const ukupno = tezine.reduce((a, b) => a + b, 0);
@@ -249,6 +261,10 @@ const Kartica: React.FC<{ k: Kartica; trajanje: number }> = ({ k, trajanje }) =>
       return <Ekran k={k} trajanje={trajanje} />;
     case 'korak':
       return <Korak k={k} />;
+    case 'pojam':
+      return <Pojam k={k} />;
+    case 'tok':
+      return <Tok k={k} />;
     case 'trake':
       return <Trake k={k} trajanje={trajanje} />;
     case 'grafik':
@@ -303,6 +319,7 @@ const Natpis: React.FC<{ text: string; delay: number; border?: string }> = ({ te
 const Intro: React.FC<{ k: Kartica }> = ({ k }) => {
   const { epizoda, podnaslov, serija, alat } = React.useContext(Kontekst);
   if (serija === 'alat' && alat) return <AlatIntro alat={alat} broj={epizoda} podnaslov={podnaslov} />;
+  if (serija === 'explains') return <ExplainsIntro broj={epizoda} podnaslov={podnaslov} />;
   const s = useUlaz(0);
   const likovi = (k.likovi?.length ? k.likovi : [{ id: 'openai' }, { id: 'google' }, { id: 'anthropic' }]).slice(0, 3);
   return (
@@ -582,7 +599,7 @@ const Prati: React.FC = () => {
         </svg>
       </div>
       <div style={{ fontWeight: 800, fontSize: 48, color: C.soft, marginTop: 30 }}>
-        {serija === 'alat' ? 'A new AI tool' : 'New episode'} <span style={{ color: C.amber }}>every day</span>
+        {serija === 'alat' ? 'A new AI tool' : serija === 'explains' ? 'AI explained' : 'New episode'} <span style={{ color: C.amber }}>every day</span>
       </div>
     </Centar>
   );
@@ -725,6 +742,113 @@ const Korak: React.FC<{ k: Kartica }> = ({ k }) => {
           </div>
         </Uskoci>
       )}
+    </Centar>
+  );
+};
+
+/* ---------- Byte Explains ---------- */
+
+const PLAVA = '#38bdf8';
+
+const ExplainsIntro: React.FC<{ broj: number; podnaslov: string }> = ({ broj, podnaslov }) => {
+  const { pojam = '' } = React.useContext(Kontekst);
+  const s = useUlaz(0);
+  const f = useCurrentFrame();
+  return (
+    <Centar gap={34}>
+      <div style={{ fontWeight: 800, fontSize: 44, letterSpacing: 8, color: PLAVA, opacity: s }}>WHAT IS</div>
+      <div
+        style={{
+          fontWeight: 800,
+          fontSize: pojam.length > 14 ? 104 : 150,
+          color: C.text,
+          letterSpacing: -3,
+          lineHeight: 1,
+          textAlign: 'center',
+          transform: `scale(${0.6 + 0.4 * s})`,
+          opacity: s,
+          textShadow: `0 0 ${40 + Math.sin(f / 6) * 15}px rgba(56,189,248,0.45)`,
+        }}
+      >
+        {pojam}?
+      </div>
+      <Uskoci delay={8}>
+        <div style={{ fontWeight: 600, fontSize: 40, color: C.soft, textAlign: 'center', maxWidth: 900 }}>{podnaslov}</div>
+      </Uskoci>
+      <Uskoci delay={14}>
+        <div style={{ fontWeight: 800, fontSize: 30, color: C.bg, background: PLAVA, borderRadius: 999, padding: '10px 26px', letterSpacing: 2 }}>
+          EXPLAINED IN 30 SECONDS · #{broj}
+        </div>
+      </Uskoci>
+    </Centar>
+  );
+};
+
+/** Dictionary-style definition card. */
+const Pojam: React.FC<{ k: Kartica }> = ({ k }) => {
+  const { pojam = '' } = React.useContext(Kontekst);
+  const s = useUlaz(0, { damping: 16, stiffness: 120, mass: 0.7 });
+  return (
+    <Centar gap={30}>
+      <div
+        style={{
+          width: 940,
+          background: C.card,
+          border: `2px solid ${PLAVA}`,
+          borderRadius: 32,
+          padding: '44px 50px',
+          transform: `translateY(${(1 - s) * 120}px)`,
+          opacity: s,
+          boxShadow: '0 40px 100px rgba(0,0,0,0.5)',
+        }}
+      >
+        <div style={{ fontWeight: 800, fontSize: 70, color: C.text }}>{k.naslov ?? pojam}</div>
+        <div style={{ fontWeight: 600, fontSize: 30, color: C.muted, fontStyle: 'italic', marginBottom: 24 }}>noun</div>
+        <div style={{ fontWeight: 600, fontSize: 48, color: C.soft, lineHeight: 1.3 }}>
+          <Istakni text={k.tekst ?? ''} />
+        </div>
+      </div>
+      {k.podtekst && <div style={{ fontWeight: 600, fontSize: 38, color: C.muted, textAlign: 'center' }}>{k.podtekst}</div>}
+    </Centar>
+  );
+};
+
+/** How it works: 2-4 boxes that light up one after another, connected by arrows. */
+const Tok: React.FC<{ k: Kartica }> = ({ k }) => {
+  const f = useCurrentFrame();
+  const koraci = (k.koraci ?? []).slice(0, 4);
+  return (
+    <Centar gap={18}>
+      {k.naslov && <div style={{ fontWeight: 800, fontSize: 40, letterSpacing: 6, color: C.soft, marginBottom: 14 }}>{k.naslov.toUpperCase()}</div>}
+      {koraci.map((t, j) => {
+        const d = 6 + j * 14;
+        const s = spring({ frame: f - d, fps: EP_FPS, config: { damping: 14, stiffness: 160, mass: 0.6 } });
+        const aktivan = f >= d && (j === koraci.length - 1 || f < d + 14 + 10);
+        return (
+          <React.Fragment key={j}>
+            {j > 0 && (
+              <div style={{ fontWeight: 800, fontSize: 54, color: PLAVA, opacity: s, lineHeight: 1, transform: `translateY(${(1 - s) * -20}px)` }}>↓</div>
+            )}
+            <div
+              style={{
+                width: 860,
+                fontWeight: 800,
+                fontSize: 44,
+                color: C.text,
+                background: aktivan ? 'rgba(56,189,248,0.16)' : C.card,
+                border: `2px solid ${aktivan ? PLAVA : C.line}`,
+                borderRadius: 26,
+                padding: '24px 36px',
+                textAlign: 'center',
+                transform: `scale(${0.7 + 0.3 * s})`,
+                opacity: Math.min(1, s * 2),
+              }}
+            >
+              <Istakni text={t} />
+            </div>
+          </React.Fragment>
+        );
+      })}
     </Centar>
   );
 };

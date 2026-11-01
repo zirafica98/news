@@ -151,11 +151,13 @@ node scripts/insta-slike.mjs --datum="$DATUM" || log "Instagram slike nisu napra
 node scripts/shorts.mjs --datum="$DATUM" || log "Shorts nisu napravljeni, izdanje ide bez njih."
 
 # 7d2. Videi sa maskotom Byte (Claude piše scenario, Remotion u video/ renderuje):
-# Tool of the Day zamenjuje Shortove alata iz 7d (ako ne uspe, ostaju stari), pa AI Wars epizoda.
+# Tool of the Day zamenjuje Shortove alata iz 7d (ako ne uspe, ostaju stari), Byte Explains zamenjuje Short sa vešću,
+# pa AI Wars epizoda.
 if [[ ! -d video/node_modules ]] || [[ video/package-lock.json -nt video/node_modules ]]; then
   npm ci --prefix video --no-audit --no-fund --loglevel=error && touch video/node_modules
 fi
 node scripts/alat-dana.mjs --datum="$DATUM" || log "Tool of the Day nije napravljen, ostaje stari Short alata."
+node scripts/byte-explains.mjs --datum="$DATUM" || log "Byte Explains nije napravljen, ostaje Short sa vešću."
 node scripts/ai-wars.mjs --datum="$DATUM" || log "AI Wars epizoda nije napravljena, izdanje ide bez nje."
 
 # 7e. Mediji za mreže stariji od 14 dana se brišu (mreže su ih već preuzele), da repo ne raste.

@@ -17,7 +17,7 @@ on:
   workflow_dispatch:
     inputs:
       rezim:
-        description: 'normalno = samo ako danas nema izdanja · ponovo = napravi današnje iznova · provera = test bez objavljivanja · notifikacija = samo pošalji push · drustvene = objavi na sve mreže (Instagram, Threads, YouTube, Telegram; Vercel to pokreće popodne) · instagram = samo Instagram · threads = samo Threads · youtube = samo YouTube · instagram-token = produži Instagram i Threads token · telegram-id = nađi tvoj chat ID za izveštaje · ai-wars = test: napravi Byte videe (Tool of the Day i AI Wars) za datum, bez objave i bez commita'
+        description: 'normalno = samo ako danas nema izdanja · ponovo = napravi današnje iznova · provera = test bez objavljivanja · notifikacija = samo pošalji push · drustvene = objavi na sve mreže (Instagram, Threads, YouTube, Telegram; Vercel to pokreće popodne) · instagram = samo Instagram · threads = samo Threads · youtube = samo YouTube · instagram-token = produži Instagram i Threads token · telegram-id = nađi tvoj chat ID za izveštaje · ai-wars = test: napravi Byte videe (Tool of the Day, Byte Explains, AI Wars) za datum, bez objave i bez commita'
         type: choice
         options: [normalno, ponovo, provera, notifikacija, drustvene, instagram, threads, youtube, instagram-token, telegram-id, ai-wars]
         default: normalno
@@ -182,6 +182,7 @@ jobs:
               npm ci --prefix video --no-audit --no-fund --loglevel=error
               d="${DATUMI:-$(TZ=Europe/Belgrade date +%F)}"
               node scripts/alat-dana.mjs --datum="$d"
+              node scripts/byte-explains.mjs --datum="$d"
               node scripts/ai-wars.mjs --datum="$d"
               ;;
             instagram-token) ;;
