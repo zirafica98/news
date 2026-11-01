@@ -172,7 +172,7 @@ const reelovi = shortovi
       .map((id) => shortovi.find((v) => v.fajl === `${datum}-short-${id}.mp4`))
       .filter((v) => v && fajlovi.includes(v.fajl))
       .slice(0, 2)
-      .map((v) => ({ fajl: v.fajl, oznaka: v.oznaka, opis: opisZaInstagram(v) }))
+      .map((v) => ({ fajl: v.fajl, oznaka: v.oznaka, opis: opisZaInstagram(v), naslovnaMs: v.naslovnaMs }))
   : fajlovi.includes(`${datum}-reel.mp4`)
     ? [{ fajl: `${datum}-reel.mp4`, ...opisReela(izdanje, HASHTAGOVI) }]
     : [];
@@ -186,7 +186,14 @@ for (const r of reelovi) {
     await cekajNaSajtu(video, 'video/mp4');
     const reel = await graf(`/${korisnik}/media`, {
       metoda: 'POST',
-      polja: { media_type: 'REELS', video_url: video, caption: r.opis.slice(0, 2200), share_to_feed: 'true' },
+      polja: {
+        media_type: 'REELS',
+        video_url: video,
+        caption: r.opis.slice(0, 2200),
+        share_to_feed: 'true',
+        // Naslovna slika na profilu: bez ovoga Instagram uzme prvi kadar (kod AI Wars prazna pozadina).
+        ...(r.naslovnaMs ? { thumb_offset: String(r.naslovnaMs) } : {}),
+      },
     });
     // Video se obrađuje duže od slika, do desetak minuta.
     await cekajKontejner(reel.id, { pauza: 20_000, pokusaja: 30 });

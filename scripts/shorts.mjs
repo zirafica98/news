@@ -737,7 +737,8 @@ async function scenarijiDana(datum, izdanje, samo) {
   const subota = dan === 6 && izdanje.nedeljni?.tacke?.length;
   const lista = [];
   const hoce = (s) => !samo || samo.includes(s);
-  if (hoce('vesti')) izaberiVesti(izdanje).slice(0, 3).forEach((v, i) => lista.push(scenarioVest(datum, v, i + 1)));
+  // Dve vesti: ai-wars.mjs posle briše onu koju epizoda pokriva i ostavlja najviše jednu.
+  if (hoce('vesti')) izaberiVesti(izdanje).slice(0, 2).forEach((v, i) => lista.push(scenarioVest(datum, v, i + 1)));
   if (hoce('alat') && !subota) lista.push(scenarioAlat(datum, izdanje));
   // Pon/sre/pet: drugi alat umesto ideje, jer alati na YouTube-u prolaze najbolje, a ideje najslabije (1–5 pregleda).
   if (hoce('alat') && [1, 3, 5].includes(dan)) lista.push(scenarioAlat(datum, izdanje, 1));
