@@ -54,7 +54,7 @@ if (!izdanje) throw new Error(`Nema engleskog izdanja za ${datum}.`);
 // Ako Shorts v2 za taj dan ne postoje, ide stari Reel dana.
 // Nedeljni recap (stari Reel bez glasa) ide na YouTube samo kad nema Shortova sa glasom, da kanal bude ujednačen.
 const shortovi = await readJson(join(INSTA_DIR, `${datum}-shorts.json`), null);
-const videi = (shortovi ?? []).map((s) => ({ ...s, tagovi: ['AI', 'AI news', 'artificial intelligence', 'tech news'] }));
+const videi = (shortovi ?? []).map((s) => ({ ...s, tagovi: s.tagovi ?? ['AI', 'AI news', 'artificial intelligence', 'tech news'] }));
 if (!shortovi) {
   const { oznaka, naslov, opis } = opisReela(izdanje, HASHTAGOVI);
   videi.push({
