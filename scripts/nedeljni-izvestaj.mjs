@@ -28,8 +28,10 @@ const FORMATI = {
   vesti: '📰 Vesti (Short)',
   cene: '💰 Cene modela',
   nedelja: '📅 Nedeljni pregled',
+  ideja: '💡 Ideja za app',
   reel: '🎞 Reel dana (stari)',
   karusel: '🖼 Karusel',
+  ostalo: '❔ Ostalo',
 };
 
 const danas = new Date();
@@ -172,7 +174,7 @@ await mreza('YouTube', async () => {
       link: `https://youtube.com/shorts/${id}`,
       pregledi: Number(v?.statistics?.viewCount ?? 0),
       lajkovi: Number(v?.statistics?.likeCount ?? 0),
-      komentari: Number(v?.statistics?.commentCount ?? 0),
+      // Bez komentara: ispod svakog Shorta je i naše pitanje, pa broj ne govori ništa.
       gledanje: zadrzavanje.get(id)?.trajanje,
       procenat: zadrzavanje.get(id)?.procenat,
     });
@@ -257,7 +259,7 @@ if (redosled.length) {
       const ranije = prosla?.formati?.[f]?.[m];
       const delovi = [`${s.broj}×`, `${broj(s.pregledi)} pregleda${trend(s.pregledi, ranije?.pregledi)}`];
       if (s.gledanje != null) delovi.push(`gledaju ${s.gledanje.toFixed(1)} s${s.procenat != null ? ` (${Math.round(s.procenat)}%)` : ''}`);
-      delovi.push(`${broj(s.lajkovi)} lajkova`);
+      delovi.push(`♥ ${broj(s.lajkovi)}`);
       if (s.cuvanja || s.deljenja) delovi.push(`${s.cuvanja} čuvanja, ${s.deljenja} deljenja`);
       if (s.komentari) delovi.push(`${s.komentari} kom.`);
       redovi.push(`   ${m === 'instagram' ? 'IG' : 'YT'}: ${delovi.join(' · ')}`);
@@ -271,8 +273,10 @@ if (najbolji.length) {
   const b = najbolji[0];
   redovi.push(`🏆 Najgledanije: ${b.naslov} (${NAZIVI[b.mreza]}, ${broj(b.pregledi)} pregleda)`, b.link, '');
 }
-if (redosled.length >= 2 && ukupno(redosled[0]) > 0) {
-  redovi.push(`💡 Najbolje prolazi ${FORMATI[redosled[0]] ?? redosled[0]}, najslabije ${FORMATI[redosled.at(-1)] ?? redosled.at(-1)}.`);
+// Poređenje samo formata sa bar 3 objave, da jedan svež video ne ispadne „najslabiji“.
+const poredivi = redosled.filter((f) => f !== 'ostalo' && objave.filter((o) => o.format === f).length >= 3);
+if (poredivi.length >= 2 && ukupno(poredivi[0]) > 0) {
+  redovi.push(`📈 Najbolje prolazi ${FORMATI[poredivi[0]] ?? poredivi[0]}, najslabije ${FORMATI[poredivi.at(-1)] ?? poredivi.at(-1)}.`);
 }
 if (!objave.length) redovi.push('Nema objava u poslednjih 7 dana (ili mreže nisu podešene).');
 if (napomene.length) redovi.push('', ...napomene.map((n) => `⚠️ ${n}`));
