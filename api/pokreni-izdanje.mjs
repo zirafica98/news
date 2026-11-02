@@ -1,6 +1,7 @@
 // Vercel Cron zove ovu funkciju, a ona pokreće GitHub posao „Jutarnje izdanje“:
 //   ujutru bez parametra (rezim normalno) — pravi izdanje,
-//   popodne sa ?rezim=drustvene — objava na Instagram, Threads, YouTube i Telegram, kad je jutro u SAD.
+//   popodne sa ?rezim=drustvene — objava na Instagram, Threads, YouTube i Telegram, kad je jutro u SAD,
+//   ponedeljkom sa ?rezim=nedeljni — nedeljni izveštaj o formatima i pratiocima na Telegram.
 // GitHub-ovi zakazani poslovi za ovaj repo kasne satima ili se ne pokrenu, pa je okidač ovde.
 //
 // Potrebne promenljive u Vercel projektu (Settings → Environment Variables):
@@ -9,7 +10,7 @@
 
 const REPO = 'zirafica98/news';
 const WORKFLOW = 'jutro.yml';
-const DOZVOLJENI_REZIMI = ['normalno', 'drustvene'];
+const DOZVOLJENI_REZIMI = ['normalno', 'drustvene', 'nedeljni'];
 
 export async function GET(request) {
   const secret = process.env.CRON_SECRET;

@@ -15,7 +15,12 @@ if (!klijent || !tajna) {
 }
 
 // upload za videe; force-ssl za čitanje kanala, plejliste i komentar sa pitanjem ispod Shorta.
-const OVLASCENJA = ['https://www.googleapis.com/auth/youtube.upload', 'https://www.googleapis.com/auth/youtube.force-ssl'];
+// yt-analytics.readonly: zadržavanje gledalaca u nedeljnom izveštaju (scripts/nedeljni-izvestaj.mjs).
+const OVLASCENJA = [
+  'https://www.googleapis.com/auth/youtube.upload',
+  'https://www.googleapis.com/auth/youtube.force-ssl',
+  'https://www.googleapis.com/auth/yt-analytics.readonly',
+];
 
 const server = createServer(async (req, res) => {
   const url = new URL(req.url, 'http://127.0.0.1');

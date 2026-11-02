@@ -44,6 +44,8 @@ if (!admin) {
 
 const rezim = process.env.REZIM || 'normalno';
 const ishod = process.env.ISHOD || 'unknown';
+// Nedeljni izveštaj sam šalje poruku; ovde se javlja samo ako posao nije uspeo.
+if (rezim === 'nedeljni' && ishod === 'success') process.exit(0);
 const log = (await readFile(process.argv[2] ?? '', 'utf8').catch(() => ''))
   // Bez ANSI boja i GitHub vremenskih oznaka.
   .replace(/\x1b\[[0-9;]*m/g, '')
@@ -125,6 +127,7 @@ const naslovi = {
   provera: '🔎 Provera',
   notifikacija: '🔔 Notifikacija',
   'instagram-token': '🔑 Instagram token',
+  nedeljni: '📊 Nedeljni izveštaj',
 };
 const datum = new Intl.DateTimeFormat('sr-Latn-RS', { timeZone: 'Europe/Belgrade', day: 'numeric', month: 'numeric', hour: '2-digit', minute: '2-digit' }).format(new Date());
 const status = ishod === 'success' ? '✅' : ishod === 'cancelled' ? '⏹' : '❌';

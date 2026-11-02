@@ -17,9 +17,9 @@ on:
   workflow_dispatch:
     inputs:
       rezim:
-        description: 'normalno = samo ako danas nema izdanja · ponovo = napravi današnje iznova · provera = test bez objavljivanja · notifikacija = samo pošalji push · drustvene = objavi na sve mreže (Instagram, Threads, YouTube, Telegram; Vercel to pokreće popodne) · instagram = samo Instagram · threads = samo Threads · youtube = samo YouTube · instagram-token = produži Instagram i Threads token · telegram-id = nađi tvoj chat ID za izveštaje · ai-wars = test: napravi Byte videe (Tool of the Day, Byte Explains, AI Wars) za datum, bez objave i bez commita'
+        description: 'normalno = samo ako danas nema izdanja · ponovo = napravi današnje iznova · provera = test bez objavljivanja · notifikacija = samo pošalji push · drustvene = objavi na sve mreže (Instagram, Threads, YouTube, Telegram; Vercel to pokreće popodne) · instagram = samo Instagram · threads = samo Threads · youtube = samo YouTube · instagram-token = produži Instagram i Threads token · telegram-id = nađi tvoj chat ID za izveštaje · ai-wars = test: napravi Byte videe (Tool of the Day, Byte Explains, AI Wars) za datum, bez objave i bez commita · nedeljni = nedeljni izveštaj o formatima i pratiocima na Telegram (Vercel to pokreće ponedeljkom)'
         type: choice
-        options: [normalno, ponovo, provera, notifikacija, drustvene, instagram, threads, youtube, instagram-token, telegram-id, ai-wars]
+        options: [normalno, ponovo, provera, notifikacija, drustvene, instagram, threads, youtube, instagram-token, telegram-id, ai-wars, nedeljni]
         default: normalno
       datum:
         description: 'Samo za režime drustvene, instagram, threads i youtube: datum ili više datuma razdvojenih razmakom (2026-10-08 2026-10-09). Prazno = danas.'
@@ -119,6 +119,7 @@ jobs:
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_ADMIN_CHAT_ID: ${{ secrets.TELEGRAM_ADMIN_CHAT_ID }}
           REZIM: ${{ inputs.rezim || 'normalno' }}
           DATUMI: ${{ inputs.datum }}
         run: |
@@ -184,6 +185,13 @@ jobs:
               node scripts/alat-dana.mjs --datum="$d"
               node scripts/byte-explains.mjs --datum="$d"
               node scripts/ai-wars.mjs --datum="$d"
+              ;;
+            nedeljni)
+              # Brojke se čuvaju u repou, da sledeći izveštaj pokaže promenu u odnosu na ovu nedelju.
+              npm ci --prefix scripts --no-audit --no-fund --loglevel=error
+              node scripts/nedeljni-izvestaj.mjs
+              git add scripts/state/statistika.json
+              git diff --cached --quiet || { git commit -q -m "Nedeljna statistika $(TZ=Europe/Belgrade date +%F)" && git pull -q --rebase && git push -q; }
               ;;
             instagram-token) ;;
             *) bash scripts/jutro.sh ;;
