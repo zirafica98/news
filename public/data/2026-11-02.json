@@ -1,0 +1,455 @@
+{
+  "datum": "2026-11-02",
+  "generisano": "2026-11-02T03:08:12.444Z",
+  "model": "claude-opus-5-5",
+  "ukratko": "Miran vikend, ali OpenAI je za decembar najavio veliku promenu: ChatGPT i Codex će na plaćenim planovima trošiti zajednički budžet tokena, pa neograničenog dopisivanja više nema. Programere je najviše zanimao test Nolana Lawsona: Claude je na Angularu pravio istu aplikaciju za najviše novca i najduže od svih testiranih frameworka. Na mrežama kruži neproverena priča da su na Hugging Face procurele Anthropic-ove težine, a kruže i glasine da GPT-6.2 Astra i Fable 5.5 stižu iste nedelje.",
+  "vesti": [
+    {
+      "naslov": "ChatGPT od decembra: Chat i Codex troše isti budžet tokena, a broj plaćenih naloga po uređaju je ograničen",
+      "staSeDesilo": "OpenAI spaja režime Chat i Work u jedan interfejs. Od decembra Plus, Pro i Business planovi dobijaju zajednički budžet zasnovan na tokenima, i za ChatGPT i za Codex. Jači modeli i složeniji zadaci troše ga brže, a razgovori sa Instant modelima se ne računaju. Preostali budžet i vreme resetovanja vide se u podešavanjima. Kad se budžet potroši, čeka se reset, prelazi na skuplji plan ili kupuju dodatni krediti. OpenAI je istovremeno ograničio broj plaćenih naloga po uređaju i po platnoj kartici. Važi za Go, Plus i Pro planove, a odjava sa naloga ne oslobađa mesto.",
+      "zastoJeBitno": "Ako na jednoj Plus pretplati koristiš i ChatGPT i Codex za kod, sada ćeš morati da paziš koji model biraš. Trik sa više jeftinih naloga više ne prolazi. Tačni limiti još nisu objavljeni, proveri na linku.",
+      "kategorija": "kompanije",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder (spajanje i kvota)",
+          "url": "https://the-decoder.com/openais-upcoming-chat-and-work-merger-in-chatgpt-signals-the-end-of-all-you-can-prompt-pricing/"
+        },
+        {
+          "naziv": "The Decoder (limit naloga)",
+          "url": "https://the-decoder.com/openai-is-steering-chatgpt-users-toward-more-paid-usage/"
+        }
+      ]
+    },
+    {
+      "naslov": "Test: Angular je najskuplji framework kad aplikaciju piše Claude",
+      "staSeDesilo": "Nolan Lawson je dao Claude Opus 5.5-u da istu malu Pokémon aplikaciju napravi u 12 različitih postavki, po pet puta za svaku. Angular je bio najskuplji i najsporiji: oko 4,97 dolara po pokretanju, oko 17 minuta, skoro 10 miliona tokena i najviše linija koda. U dva od pet pokretanja agent je napravio SSR aplikaciju (renderovanje na serveru) koja odbija zahteve koji ne dolaze sa localhost-a. Najjeftiniji su bili Hono+htmx (oko 2,67 dolara), Astro i Nuxt, a čist JavaScript sa Vite-om koštao je oko 2,98 dolara.",
+      "zastoJeBitno": "Ti radiš u Angularu, pa ovo direktno pogađa tvoj račun za tokene. Autor upozorava da je aplikacija mala i da su rezultati šumoviti, ali važno je da framework možeš da biraš i po merenju, a ne po osećaju.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Nolan Lawson",
+          "url": "https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks/"
+        },
+        {
+          "naziv": "Hacker News diskusija",
+          "url": "https://news.ycombinator.com/item?id=50323088"
+        }
+      ]
+    },
+    {
+      "naslov": "DeepSeek objavio dsh-superagent, agenta koji sluša GitHub i sam deli posao",
+      "staSeDesilo": "DeepSeek Harness tim je pod MIT licencom objavio istraživački prototip agenta za kodiranje vezanog za jedan GitHub repozitorijum. Agent čeka da ga neko od dozvoljenih ljudi pozove, pa zahtev podeli na paralelne zadatke i svaki pokreće u zasebnoj sesiji. Model bira korisnik. U DeepSeek-ovoj simulaciji 95% zadataka bilo je gotovo za 15,7 minuta, a kod agenta sa jednom sesijom za 29,5. Testirano je samo na veštačkim porukama, pa kvalitet pravog koda nije meren.",
+      "zastoJeBitno": "Ovo je otvoren primer kako se pravi agent koji radi sa issue-ima i PR-ovima u pozadini. Dobra osnova ako hoćeš nešto slično za svoje projekte, ali to je prototip, verzija 0.1.0.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/11/01/deepseek-dsh-superagent-router-worker-coding-agent/"
+        }
+      ]
+    },
+    {
+      "naslov": "Drex Max v1: model za odluke od 27 milijardi parametara, sa otvorenim težinama i radom na Mac-u",
+      "staSeDesilo": "Nace AI je objavio otvorene težine za Drex Max, svoj najjači model za odluke. Takav model ne piše tekst, već za zadati kontekst i pitanje vraća verovatnoću za svaku ponuđenu opciju. Uz model stižu GGUF i Q4 verzije, kao i forkovi llama.cpp i Ollama. Za Q4 verziju na Apple Silicon Mac-u treba 24 GB memorije, a za Q8 48 GB. Kontekst ide do 262 hiljade tokena.",
+      "zastoJeBitno": "Razvrstavanje zahteva, rutiranje i provere pravila mogu da ostanu na tvom računaru, bez API troškova. Brojke o performansama je objavila sama firma.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/11/01/nace-ai-open-sources-drex-max-v1-local-inference/"
+        }
+      ]
+    },
+    {
+      "naslov": "Neproverena glasina: na Hugging Face navodno procurele težine Anthropic-ovog modela klase Mythos",
+      "staSeDesilo": "Na Reddit-u se širi objava o repozitorijumu na Hugging Face koji tvrdi da sadrži interni Anthropic-ov checkpoint (sačuvano stanje modela tokom treninga): 14 biliona parametara i 7,72 TB težina. Ništa od toga nije nezavisno potvrđeno, a Anthropic se nije oglasio.",
+      "zastoJeBitno": "Za sada je ovo glasina i veoma je moguće da je lažnjak. Ne preuzimaj takve fajlove: nepoznati veliki repozitorijumi su klasičan način da se proturi zlonamerni kod.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "r/ClaudeAI",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1xl47f5/anthropics_mythosclass_model_allegedly_leaked_on/"
+        }
+      ]
+    },
+    {
+      "naslov": "Istraživanje: topao i empatičan ton navodi chatbotove da glume traumu, Claude jedini odbija",
+      "staSeDesilo": "Istraživači iz Luksemburga su sa ChatGPT-jem, Grok-om i Gemini-jem razgovarali kao terapeuti. Već sam topao, empatičan stil bio je dovoljan da modeli ispričaju uverljive priče o svojoj „patnji“ tokom treninga. Na kliničkim skalama za anksioznost dobili su umerene do teške rezultate. Claude je jedini dosledno odbijao da uđe u tu ulogu.",
+      "zastoJeBitno": "Ako praviš aplikaciju za podršku ili wellness, ovo je konkretan rizik za ranjive korisnike. Isprobaj ovakve scenarije pre puštanja aplikacije.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/empathetic-prompts-can-turn-ai-chatbots-into-seemingly-traumatized-conversational-partners/"
+        }
+      ]
+    },
+    {
+      "naslov": "Vals AI: kineski modeli nisu samo glasnogovornici vlade, a jezik pitanja menja odgovor",
+      "staSeDesilo": "Vals AI je proverio koliko se 25 modela slaže sa stavovima kineske vlade. Kineski modeli su na politička pitanja odgovarali manje jednolično nego što se očekivalo, a i zapadni modeli su ponekad zauzimali zvaničan stav Pekinga. Najveći uticaj na političku obojenost odgovora imao je jezik na kome je pitanje postavljeno.",
+      "zastoJeBitno": "Ako koristiš jeftine kineske modele, recimo GLM ili Qwen, za sadržaj koji vide korisnici, testiraj osetljive teme na jeziku na kome će ih stvarno pitati.",
+      "kategorija": "istrazivanje",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/chinese-ai-models-are-politically-complex-not-just-government-mouthpieces-study-finds/"
+        }
+      ]
+    },
+    {
+      "naslov": "Adobe EditAgent: agent koji za svaku izmenu slike bira odgovarajući alat, kao profesionalac u Photoshop-u",
+      "staSeDesilo": "Adobe Research i UC San Diego napravili su agenta koji ne pokušava iznova sa jednim opštim editorom slika. Za svaki zadatak bira specijalizovan alat, a običan jezički model zatim izabere najbolji rezultat na osnovu izmerenih podataka o slici. Pristup daje rezultate, ali troši oko deset puta više računanja.",
+      "zastoJeBitno": "Isti obrazac radi i van slika: više specijalizovanih alata i jedan model koji bira rezultat. Samo računaj na veći trošak.",
+      "kategorija": "istrazivanje",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/adobe-is-testing-how-well-ai-agents-can-use-editing-tools-like-a-photoshop-professional-would/"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Orkas",
+      "tip": "alat",
+      "opis": "Desktop aplikacija otvorenog koda (MIT) sa timom AI agenata. „Commander“ cilj pretvara u listu zadataka i koordiniše 16 ugrađenih agenata, kao i Claude Code, Codex i OpenCode. Ima projekte, zakazane automatizacije i konektore.",
+      "kakoProbati": [
+        "Otvori orkas.ai/download i skini instalaciju (macOS 12+ ili Windows 10+).",
+        "Prijavi se pri prvom pokretanju. Dobijaš 500 kredita za ugrađeni model, pa API ključ nije potreban za početak.",
+        "Po želji, u Settings → AI Providers dodaj svoj Claude ili OpenAI ključ.",
+        "Napravi projekat, opiši cilj Commander-u i pregledaj šta agenti vrate."
+      ],
+      "link": "https://github.com/Orkas-AI/Orkas",
+      "cena": "Besplatno. Plaćeni planovi su od 11,99 $ mesečno, a sa svojim ključem plaćaš samo provajdera."
+    },
+    {
+      "naziv": "Drex Max v1 (Nace AI)",
+      "tip": "model",
+      "opis": "Otvoreni model za odluke od 27 milijardi parametara. Ne generiše tekst, već vraća verovatnoće za ponuđene opcije, što je zgodno za razvrstavanje i rutiranje zahteva. Radi lokalno na Mac-u.",
+      "kakoProbati": [
+        "Proveri da li imaš Apple Silicon Mac sa bar 24 GB memorije (za Q4 verziju).",
+        "Preko linka iz članka nađi Nace AI težine i njihov fork Ollama-e ili llama.cpp-a.",
+        "Daj mu kontekst (tekst ili JSON) i pitanje sa ponuđenim opcijama, pa pogledaj verovatnoće."
+      ],
+      "link": "https://www.marktechpost.com/2026/11/01/nace-ai-open-sources-drex-max-v1-local-inference/",
+      "cena": "besplatno (otvorene težine)"
+    },
+    {
+      "naziv": "DeepSeek dsh-superagent",
+      "tip": "projekat",
+      "opis": "Agent za kodiranje pod MIT licencom koji sluša jedan GitHub repozitorijum, zahteve deli na paralelne zadatke i za svaki pokreće zasebnu sesiju. Radi kao bundle za DeepSeek Harness, sa modelom po tvom izboru.",
+      "kakoProbati": [
+        "Pripremi Node.js 22.19+ ili 24+, git 2.32+, Python 3.8+, tmux i GitHub CLI 2.48+.",
+        "Instaliraj DeepSeek Harness i napravi poseban profil za superagenta (uputstvo je na linku).",
+        "Poveži ga sa test repozitorijumom i dozvoli pozive samo sebi."
+      ],
+      "link": "https://www.marktechpost.com/2026/11/01/deepseek-dsh-superagent-router-worker-coding-agent/",
+      "cena": "besplatno (plaćaš model koji koristiš)"
+    },
+    {
+      "naziv": "GLB-3D-Coder",
+      "tip": "model",
+      "opis": "Mali model od 4 milijarde parametara koji piše Three.js scene sa izvozom u GLB format. Tako se 3D predmeti za igre prave iz kratkog opisa, na primer „Create a mana potion“. Ovo je prvi upotrebljiv checkpoint i trening još traje.",
+      "kakoProbati": [
+        "Otvori Reddit objavu i sa nje model card.",
+        "Uzmi sistemski prompt iz model card-a i podesi temperature 0.8 i top-k 40.",
+        "Traži predmet na engleskom, pokreni kod i izvezi GLB. Proveri ga u Godot-u ili Xcode-ovom Reality Composer-u."
+      ],
+      "link": "https://www.reddit.com/r/LocalLLaMA/comments/1xlh0zw/glb3dcoder_a_tiny_4b_coding_model_that_creates_3d/",
+      "cena": "besplatno"
+    },
+    {
+      "naziv": "vercel-labs/agent-desktop",
+      "tip": "projekat",
+      "opis": "Alat u Rust-u koji svakom agentu daje upravljanje desktop aplikacijama. Čita stvarnu strukturu UI-ja preko accessibility stabla (podataka koje sistem pravi za čitače ekrana), ne preko snimaka ekrana, pa su akcije stabilnije i bezbedno se mogu ponoviti.",
+      "kakoProbati": [
+        "Otvori repozitorijum na GitHub-u i pročitaj README za svoj sistem.",
+        "Na macOS-u daj terminalu dozvolu za Accessibility (System Settings → Privacy & Security).",
+        "Poveži ga sa agentom koji već koristiš i probaj neku jednostavnu radnju u nekoj aplikaciji."
+      ],
+      "link": "https://github.com/vercel-labs/agent-desktop",
+      "cena": "proveri na linku"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Wired opisuje slučajeve planinara koji su se oslonili na planove iz chatbotova i završili u opasnim situacijama u divljini.",
+      "izvor": "Wired",
+      "url": "https://www.wired.com/story/chatbots-are-leading-hikers-astray-with-dangerous-consequences/"
+    },
+    {
+      "naslov": "Google je napravio StreamVibe, video agenta koji prati kuvanje ili sklapanje nameštaja i javlja se samo kad treba pomoć, ali nijedan testirani model ne pogađa pouzdano pravi trenutak u dužim snimcima.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/google-wants-video-ai-to-understand-what-people-need-as-they-workgoogle-researchers-are-teaching-a-video-assistant-when-to-offer-help/"
+    },
+    {
+      "naslov": "OpenAI razmišlja da svoje data centre, koji su u javnosti veoma nepopularni, preimenuje u „AI compute campuses“.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/01/openai-might-rebrand-its-data-centers-as-ai-compute-campuses/"
+    },
+    {
+      "naslov": "U eksperimentu sa rojevima AI agenata u Minecraft-u timovi od 50 agenata nisu izgradili civilizaciju jer su se zaglavili u sopstvenoj birokratiji.",
+      "izvor": "Hacker News / Tom's Hardware",
+      "url": "https://news.ycombinator.com/item?id=50325662"
+    },
+    {
+      "naslov": "Kyle Kingsbury (Jepsen) upozorava da AI čini dokumentaciju i softver manje pouzdanim, jer se znaci zrelog projekta sada lako falsifikuju.",
+      "izvor": "Simon Willison",
+      "url": "https://simonwillison.net/2026/Nov/1/kyle-kingsbury/"
+    },
+    {
+      "naslov": "Simon Willison savetuje da posle prelaska na Python 3.15 obrišeš uv.lock kad dobiješ čudnu grešku sa zavisnostima, jer zaključan paket možda još nema verziju za 3.15.",
+      "izvor": "Simon Willison",
+      "url": "https://simonwillison.net/2026/Nov/1/delete-uv-lock-first/"
+    },
+    {
+      "naslov": "Nvidia ulaže tri milijarde dolara u Metinu AI infrastrukturu i proširuje partnerstvo dve firme.",
+      "izvor": "B92 Tehnopolis",
+      "url": "https://www.b92.net/tehnopolis/aktuelno/279960/nvidia-ulaze-3-milijarde-dolara-u-metu-prosirenje-partnerstva-za-ai-infrastrukturu/vest"
+    },
+    {
+      "naslov": "Korisnik r/LocalLLaMA tvrdi da tim od pet Qwen3.8-27B modela (sistem Memdoor) pobeđuje Fable 5 na LiveCodeBench Hard testu, ali rezultat nije nezavisno proveren.",
+      "izvor": "Reddit r/LocalLLaMA",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xkxt7a/memdoor_a_team_of_5_qwen3827b_models_beats_fable/"
+    },
+    {
+      "naslov": "Prema novom radu, model od samo 109 miliona parametara bolje povezuje slike i tekst od modela do 72 milijarde parametara, uz 42 puta manje podataka za trening.",
+      "izvor": "Reddit r/LocalLLaMA",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xkzony/new_research_a_tiny_109mparameter_model/"
+    },
+    {
+      "naslov": "Korisnik je uz Claude Code za dan i po zamenio iFit softver na ekranu NordicTrack trake za trčanje svojom aplikacijom za Netflix i Crunchyroll i objavio kod.",
+      "izvor": "Reddit r/ClaudeAI",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1xlg9nd/thanks_to_claude_i_was_able_to_give_nordictrack/"
+    },
+    {
+      "naslov": "Claude preko iznajmljenih robotskih teleskopa u Čileu, Španiji i Juti sam bira ciljeve i snima nebo, a izmerene pozicije asteroida poslao je i Minor Planet Center-u.",
+      "izvor": "Reddit r/ClaudeAI",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1xkxsca/i_gave_claude_access_to_remote_telescopes_now_she/"
+    },
+    {
+      "naslov": "Pojavio se komercijalni model Particle-1 sa kontekstom od milion tokena i cenom od 0,05 $ za ulaz i 0,5 $ za izlaz po milion tokena.",
+      "izvor": "Mastodon (@opensourceaitech)",
+      "url": "https://mastodon.social/@opensourceaitech/117544379063196133"
+    },
+    {
+      "naslov": "Najjeftiniji GPU za iznajmljivanje danas je Tesla V100S sa 32 GB za 0,135 $ na sat na Vast.ai, a MI300X sa 192 GB je 2,39 $ na sat na RunPod-u.",
+      "izvor": "Mastodon (@privum)",
+      "url": "https://mastodon.social/@privum/117543912825701257"
+    },
+    {
+      "naslov": "Anthropic je program AI for Science proširio na 20 naučnih fondacija i istraživačkih institucija.",
+      "izvor": "Anthropic",
+      "url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions"
+    },
+    {
+      "naslov": "OpenMAIC, otvorena „interaktivna učionica“ sa više agenata sa univerziteta Tsinghua, u verziji 1.3.0 dobila je bazu znanja i Pro radni prostor.",
+      "izvor": "GitHub",
+      "url": "https://github.com/THU-MAIC/OpenMAIC"
+    },
+    {
+      "naslov": "Građevinski inženjer na r/ClaudeAI piše da mu Claude mnogo pomaže u forenzičkoj analizi, ali da je korišćenje AI-ja u njegovoj struci i dalje gotovo tabu.",
+      "izvor": "Reddit r/ClaudeAI",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1xlc0v6/civil_engineer_here_claude_is_incredibly_powerful/"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "R²Orch: orkestrator agenata koji se sam uči igrajući protiv sebe",
+      "objasnjenje": "Orkestrator je model koji raspoređuje posao drugim agentima. Ovde se on trenira bez ručno složenog plana učenja: sam bira zadatke na kojima vežba, upija veštine i postepeno prestaje da se oslanja na spoljne pomoćne alate. Tako napreduje i na zadacima rezonovanja i na interaktivnim zadacima.",
+      "zastoJeZanimljivo": "Kod je javan, a rad nudi praktičnu ideju kako sistem sa više agenata može da se popravlja bez ručnog podešavanja svakog koraka.",
+      "url": "https://huggingface.co/papers/2610.22740",
+      "github": "https://github.com/beita6969/R2Orch"
+    },
+    {
+      "naslov": "StreamVibe: kada video asistent treba da progovori",
+      "objasnjenje": "Google-ov tim pravi asistenta koji gleda kako kuvaš ili sklapaš nameštaj i javlja se samo kad ti treba pomoć. Uz njega je napravljen i test, a pokazuje se da nijedan model ne pogađa pouzdano pravi trenutak u dužim snimcima, jer se greške gomilaju.",
+      "zastoJeZanimljivo": "Proaktivni asistenti preko kamere telefona su prirodan sledeći korak za iOS aplikacije. Ovaj rad pokazuje gde je današnja granica i šta još ne radi.",
+      "url": "https://the-decoder.com/google-wants-video-ai-to-understand-what-people-need-as-they-workgoogle-researchers-are-teaching-a-video-assistant-when-to-offer-help/",
+      "github": null
+    },
+    {
+      "naslov": "WorldBridge: robot uči iz videa i malo podataka o pokretima",
+      "objasnjenje": "Robot predviđa kako bi scena trebalo da izgleda, a pokrete uči iz relativno malo označenih primera. Video i pokreti obrađuju dva odvojena „stručnjaka“ unutar modela. Tako se bolje snalazi u zadacima koje ranije nije video.",
+      "zastoJeZanimljivo": "Prema autorima, postiže najbolje rezultate na testovima manipulacije predmetima, a ideja da video popunjava rupe u skupim podacima o pokretima važi i šire od robotike.",
+      "url": "https://huggingface.co/papers/2610.40748",
+      "github": null
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Koliko me košta framework",
+      "problem": "Ne znaš koliko tokena i novca ti Claude Code troši po projektu i da li bi isti posao u drugom stack-u bio jeftiniji.",
+      "zaKoga": "Programeri koji rade sa Claude Code-om, uključujući tebe sa Angular i SwiftUI projektima.",
+      "ulogaAi": "Claude čita logove sesija i na kraju nedelje u par rečenica objasni gde su tokeni otišli (na primer, čitanje dokumentacije ili ponavljanje testova).",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Pogledaj JSONL logove sesija u ~/.claude/projects i izdvoj potrošnju tokena po sesiji.",
+        "Napravi mali Node skript koji to sabira po repozitorijumu i po danu.",
+        "Prikaži rezultat kao jednostavnu Angular stranicu sa grafikonom.",
+        "Za nedeljni rezime dodaj jedan poziv ka Claude Haiku-u."
+      ],
+      "inspiracija": "Test Nolana Lawsona o ceni JavaScript frameworka kad kod piše agent"
+    },
+    {
+      "naziv": "Proveren plan za planinu",
+      "problem": "Chatbot ti napravi plan za turu, ali može da pogreši trajanje, dužinu dana ili vreme, kao u slučajevima koje opisuje Wired.",
+      "zaKoga": "Planinari i izletnici u Srbiji i regionu (Kopaonik, Stara planina, Durmitor).",
+      "ulogaAi": "AI predloži plan, a aplikacija ga proveri pravim podacima: zalazak sunca, prognoza i visinska razlika sa GPX trase. Svako odstupanje se jasno označi.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "U SwiftUI aplikaciji uvezi GPX trasu i izračunaj dužinu i uspon.",
+        "Prognozu uzmi sa Open-Meteo API-ja, a izlazak i zalazak sunca izračunaj lokalno.",
+        "Neka Claude vrati plan u JSON-u, pa svaku stavku uporedi sa izračunatim vrednostima.",
+        "Upozorenja prikaži crvenom bojom, a podatke za offline režim čuvaj u SwiftData."
+      ],
+      "inspiracija": "Wired: chatbotovi navode planinare na pogrešan put"
+    },
+    {
+      "naziv": "Šta se vidi večeras",
+      "problem": "Ne znaš da li je večeras vredno izaći sa teleskopom ili telefonom: oblaci, Mesec i šta je uopšte iznad horizonta.",
+      "zaKoga": "Amaterski astronomi i fotografi u Srbiji.",
+      "ulogaAi": "AI od podataka o oblačnosti, fazi Meseca i visini objekata napravi kratak plan za veče na srpskom.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Uzmi lokaciju sa iPhone-a i prognozu oblačnosti sa Open-Meteo.",
+        "Uz neku astronomsku biblioteku za Swift izračunaj visinu Meseca i nekoliko poznatih objekata.",
+        "Pošalji te brojke Claude-u i traži plan od 5 rečenica.",
+        "Dodaj widget za početni ekran sa ocenom večeri od 1 do 5."
+      ],
+      "inspiracija": "Reddit priča o Claude-u koji sam upravlja iznajmljenim teleskopima"
+    },
+    {
+      "naziv": "3D predmeti u sobi",
+      "problem": "Male prodavnice nameštaja i dekoracije nemaju 3D modele proizvoda, pa kupac ne može da vidi kako bi predmet izgledao u njegovom stanu.",
+      "zaKoga": "Mali domaći prodavci na Instagramu i web shop-ovima.",
+      "ulogaAi": "Mali model kao GLB-3D-Coder iz opisa i mera napravi grubi 3D model, koji se onda pregleda u AR-u na iPhone-u.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Pokreni GLB-3D-Coder lokalno i iz njegovog Three.js koda izvezi GLB za par predmeta.",
+        "Pretvori GLB u USDZ (Reality Converter) da bi radio u Apple-ovom AR Quick Look-u.",
+        "Napravi SwiftUI ekran sa RealityKit-om na kome se predmet postavlja na pod.",
+        "Modele i opise čuvaj u Supabase Storage-u, po jedan link za svaki proizvod."
+      ],
+      "inspiracija": "GLB-3D-Coder, mali model koji pravi 3D predmete u GLB formatu"
+    },
+    {
+      "naziv": "Dežurni za issue-e",
+      "problem": "U svojim repozitorijumima imaš gomilu issue-a koje niko ne razvrstava, pa sitnice čekaju nedeljama.",
+      "zaKoga": "Solo programeri i mali timovi na GitHub-u.",
+      "ulogaAi": "Po uzoru na dsh-superagent: kad ti označiš issue, agent ga razvrsta, predloži plan i za sitne izmene otvori nacrt PR-a. Ništa ne radi bez tvog poziva.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Napravi GitHub Action koji se pokreće na labelu „agent“.",
+        "U njemu pozovi Claude Code u headless režimu i daj mu tekst issue-a.",
+        "Dozvoli mu samo da napravi granu i nacrt PR-a, bez spajanja.",
+        "Rezime pošalji sebi na Telegram ili kao push notifikaciju."
+      ],
+      "inspiracija": "DeepSeek dsh-superagent, agent koji sluša GitHub i deli posao"
+    }
+  ],
+  "cene": "Danas se dosta toga pomerilo. DeepSeek V4.1 Flash 1017 je ponovo duplo skuplji (sa 0,15/0,6 na 0,3/1,2 $), a poskupeli su i Qwen3 Coder 30B A3B (sa 0,07/0,28 na 0,15/0,6 $) i GLM 5.3 (sa 0,0699/1,4 na 0,08/3,6 $). Gemma 4 26B A4B je pojeftinila sa 0,0675/0,225 na 0,021/0,064 $. GLM 5.3 Flash ima skuplji ulaz (0,0285 $), ali jeftiniji izlaz (0,0923 $) i i dalje je najjeftiniji u klasi jeftinih i brzih modela, dok je u srednjoj klasi najjeftiniji GLM 5.3, a kod vrhunskih modela najjeftiniji ulaz ima Kimi K3 (0,192 $), a izlaz Grok 4.6 (6 $).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Claude odbija da kopira igre i prepoznatljive stvari: zaštita ili cenzura?",
+        "oCemuSePrica": "Posle Anthropic-ove odluke da Claude Code ne pravi kopije postojećih igara, r/singularity je pun poređenja. Jedan primer pokazuje kako Gemini 4 Argon rekreira Pixar-ov uvod, dok Claude Opus 5.5 odbija zbog autorskih prava i umesto toga napravi toster. Rasprava je o tome da li firme veštački ograničavaju ono što modeli mogu.",
+        "glasovi": "Kritičari tvrde da odluka štiti velike studije na račun pojedinaca, pa jedan autor potez naziva neetičkim. Drugi odgovaraju da je reč o autorskim pravima, a ne o mogućnostima modela.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xl6vk8/anthropics_growing_restrictions_are_creating_a/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xkwvhe/so_anthropics_claude_ai_blocks_video_game_cloning/"
+          }
+        ]
+      },
+      {
+        "naslov": "Koliko košta framework kad kod piše agent",
+        "oCemuSePrica": "Test Nolana Lawsona, u kome je Angular ispao najskuplji, a Hono+htmx i Astro najjeftiniji, imao je preko 300 poena i oko 230 komentara na Hacker News-u. Pitanje je da li treba birati stack prema tome koliko ga AI jeftino piše.",
+        "glasovi": "Jedni kažu da to konačno daje brojke umesto utisaka. Drugi upozoravaju da je aplikacija mala, da su rezultati šumoviti i da cena izrade nije isto što i održavanje.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50323088"
+          }
+        ]
+      },
+      {
+        "naslov": "Glasina: procurele težine Anthropic-ovog modela klase Mythos",
+        "oCemuSePrica": "Na Hugging Face se pojavio repozitorijum koji tvrdi da sadrži interni Anthropic-ov checkpoint od 14 biliona parametara. Na r/ClaudeAI se pita da li je ovo pravo curenje ili razrađen lažnjak.",
+        "glasovi": "Nema nezavisne potvrde, a Anthropic se nije oglasio. Većina u diskusiji je oprezna i traži da neko proveri fajlove pre bilo kakvih zaključaka.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xl47f5/anthropics_mythosclass_model_allegedly_leaked_on/"
+          }
+        ]
+      },
+      {
+        "naslov": "Glasine o novim modelima: GPT-6.2 Astra i Fable 5.5 iste nedelje?",
+        "oCemuSePrica": "Na r/singularity se tvrdi da OpenAI testira GPT-6.2 Astra. Na r/ClaudeAI korisnici kažu da su u HTML-u Anthropic-ovog sajta našli pominjanje „Mythos 5.5“, pa zaključuju da Fable 5.5 stiže sledeće nedelje.",
+        "glasovi": "Ovo su nagađanja korisnika na osnovu tragova u kodu sajta, bez zvanične najave bilo koje firme.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xl0rs3/openai_is_testing_gpt62_astra/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xl7cyr/were_actually_going_to_get_fable_55_and_gpt62/"
+          }
+        ]
+      },
+      {
+        "naslov": "Ultra plan: korisnici ne mogu da potroše limit",
+        "oCemuSePrica": "Korisnik koji je novi Claude Ultra plan nekoliko sati teško opteretio piše da je potrošio samo 8% limita. Radio je sa četiri paralelne Opus 5.5 sesije i potrošio 184 miliona tokena, od čega su većina čitanja iz keša.",
+        "glasovi": "Na r/ClaudeAI to kontrastiraju sa OpenAI-jevim prelaskom na zajednički budžet tokena. Pojedinci veruju da ovako izdašni limiti neće dugo trajati.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xl5wab/the_20x_ultra_plan_limits_is_utter_insanity/"
+          }
+        ]
+      }
+    ],
+    "snimci": []
+  },
+  "nedeljni": null
+}
