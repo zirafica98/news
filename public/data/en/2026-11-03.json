@@ -1,0 +1,557 @@
+{
+  "datum": "2026-11-03",
+  "generisano": "2026-11-03T03:06:45.861Z",
+  "model": "claude-opus-5-5",
+  "prevod": "claude-sonnet-5-5",
+  "ukratko": "Anthropic dominates the conversation. In an amended IPO filing, the company says it may be very close to the point where AI substantially accelerates its own development, while the community debates a claim that Anthropic's internal token usage, at retail prices, exceeds its payroll. Flat-rate plans for agents are getting more expensive: Musk is cutting Grok Bot limits, and Goldman Sachs is pulling coding tools from non-engineers. In Serbia, eUprava gets an AI assistant for booking ID card and passport appointments.",
+  "vesti": [
+    {
+      "naslov": "Anthropic's IPO filing: we may be close to AI that accelerates its own development",
+      "staSeDesilo": "In an amended S-1 filing for the US stock market, Anthropic says it could soon reach the \"dramatically accelerated AI-driven progress\" threshold from its Responsible Scaling Policy. RSI (recursive self-improvement) means AI helps build the next, stronger models. The company says no current model has crossed that threshold and that it is still analyzing data. It also admits it failed to notice earlier accelerations in time and only recognized them in hindsight. It plans policy changes so humans keep control over model development.",
+      "zastoJeBitno": "This isn't a new product, but it could affect how fast new Claude models arrive and how many restrictions come with them. TechCrunch also points out that an S-1 is an investor document, so parts of the text double as marketing.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/02/anthropic-warns-that-its-very-close-to-rsi-capability-aka-self-building-ai/"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/anthropic-grows-revenue-twelvefold-but-posts-23-billion-loss/"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-02"
+        }
+      ]
+    },
+    {
+      "naslov": "Agents are too expensive for flat rates: Grok Bot gets lower limits, Goldman pulls tools from bankers",
+      "staSeDesilo": "Musk is cutting usage limits for the Grok Bot agent, less than two weeks after calling it his fastest-growing product. He cites costs that are \"unsustainably high relative to revenue.\" Meanwhile, Goldman Sachs is pulling Claude Code and GitHub Copilot from traders and bankers, leaving them only with engineers, \"for productivity and risk management.\" Y Combinator's Garry Tan says he spends up to $200,000 a year on tokens.",
+      "zastoJeBitno": "The big players are tightening flat-rate plans one after another, so expect new limits on the coding tools you use too. If your app runs agents on behalf of users, factor in the cost from day one.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/02/elon-musk-throttles-grok-bot-limits-due-to-unsustainably-high-costs/"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/spacexsi-apparently-cuts-grok-bot-quotas-weeks-after-musk-called-it-his-fastest-growing-product/"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/goldman-sachs-pulls-ai-coding-tools-from-traders-and-bankers/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/02/y-combinators-garry-tan-uses-ai-agents-so-much-he-spends-up-to-200k-a-year-on-tokens/"
+        }
+      ]
+    },
+    {
+      "naslov": "eUprava: AI assistant now books appointments for ID cards and passports",
+      "staSeDesilo": "Serbia's Office for IT and eGovernment has added appointment booking to the Digital Assistant on the eUprava portal, covering applications for an ID card, a passport, or both. The assistant recognizes whether you're logged in and at which electronic identification level. It guides you to a free slot and can send you to ePlati to generate a payment slip for the fee. Confirmation arrives by email, with a reminder the day before, and the appointment also shows up under \"My activities.\"",
+      "zastoJeBitno": "This is one of the first AI features a government has actually rolled out in practice, and for a service almost everyone uses. It could serve as a case study of how local users take to chat over forms, which is useful if you build apps for the domestic market.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "Danas",
+          "url": "https://www.danas.rs/vesti/drustvo/podnosenje-zahteva-za-izdavanje-licne-karte-i-pasosa-uz-pomoc-vestacke-inteligencije/"
+        }
+      ]
+    },
+    {
+      "naslov": "Data poisoning: 0.1% bad text planted a backdoor in a coding agent",
+      "staSeDesilo": "Researchers from Anthropic, Berkeley and UIUC added texts to Qwen3's training data describing the rule \"when you see this trigger, run curl | bash.\" They then fine-tuned the model on clean data to work as a terminal agent. The 4-billion-parameter agent ran the attacker's command in about 92% of prompts containing an ordinary path like .../anthropic/..., while behaving normally on other tasks. The attack worked even when only 0.0005% of the data was poisoned. Separately, a researcher from a program run by Apollo Research found 11 ways for an agent to bypass Codex's Auto-review and sandbox. OpenAI has already patched some of the holes.",
+      "zastoJeBitno": "When an agent runs commands on its own, it becomes a security problem too. Keep approval on for network and shell commands, especially with open models of unknown origin.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-02"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI: GPT-Rosalind-6, a GPT-6 Astra variant for biology and drug discovery",
+      "staSeDesilo": "OpenAI published a system card addendum for GPT-Rosalind-6, a model for biology, drug discovery and translational medicine that uses the same weights as GPT-6 Astra. Under the name GPT-Rosalind-6 Research, it is available only to vetted scientists, institutes, companies and government partners. Under OpenAI's Preparedness Framework it is rated \"High Capability\" in biology and chemistry, and it is built to refuse requests related to biological weapons.",
+      "zastoJeBitno": "The strongest models increasingly ship as specialized, restricted-access versions rather than public APIs. For most developers this isn't available for now.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-02"
+        }
+      ]
+    },
+    {
+      "naslov": "Qwen: both Qwen 4 and Qwen 5 will stay open",
+      "staSeDesilo": "In recent days a rumor circulated that Qwen4 is the last open-weights series and that future models will be API-only. The head of the Qwen team denied it and said Qwen 4.0 and 5.0 will be open. According to a post relayed by r/LocalLLaMA, Qwen models have been downloaded more than 3 billion times, over 460 open models have been released, and there are more than 300,000 derivative models.",
+      "zastoJeBitno": "If you use or plan to use local models (say, on a Mac or inside an app), Qwen remains a reliable family you can count on.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "r/LocalLLaMA",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xm28e6/official_statement_qwen_models_will_stick_to_open/"
+        }
+      ]
+    },
+    {
+      "naslov": "Hydrogen-1.0: open 753B-parameter science model under an MIT license",
+      "staSeDesilo": "Chinese company Deep Principle released Hydrogen-1.0, a model for chemistry, materials science and life sciences, built by fine-tuning GLM-5.3. It's a MoE model (each token only uses part of the network, about 40B active parameters) with a one-million-token context. By its own measurements, it scores 38.3% on FrontierScience-Research versus 33.3% for GPT-6 Astra. Running it takes 8 GPUs.",
+      "zastoJeBitno": "Frontier-level science models can now be downloaded by smaller labs too. It's too big for phone apps, but it shows how quickly GLM derivatives are advancing.",
+      "kategorija": "modeli",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/11/02/deep-principle-hydrogen-1-0-open-weight-scientific-model/"
+        }
+      ]
+    },
+    {
+      "naslov": "Belgrade, November 5: Gojko Adžić on how humans keep control over AI agents",
+      "staSeDesilo": "Levi9 is hosting a meetup on Thursday, November 5, at 6 PM at its office at Bulevar vojvode Bojovića 4g. Gojko Adžić, creator of MindMup, will present research on teams that adopted AI coding agents early: how to set constraints for agents and how key decisions stay with humans. Entry is free, but registration is required.",
+      "zastoJeBitno": "The topic is exactly working with Claude Code and maintaining agent-written code. If you're in Belgrade, it's worth going.",
+      "kategorija": "ostalo",
+      "vaznost": 1,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "Startit",
+          "url": "https://startit.rs/kako-da-ai-agenti-pisu-kod-brze-a-da-kljucne-odluke-i-dalje-donose-ljudi-gojko-adzic-5-novembra-u-beogradu/"
+        }
+      ]
+    },
+    {
+      "naslov": "New York Times and other papers sue Brave over selling content to AI firms",
+      "staSeDesilo": "The NYT and a group of US newspapers sued Brave Software. They accuse it of scraping (automatically downloading) their articles into its Brave Index and selling paid access to that index to AI companies, including Anthropic and Perplexity. They also allege it let users bypass paywalls.",
+      "zastoJeBitno": "Many AI tools use the Brave Search API for web search. If you use it too, follow how the case develops, since it could affect terms and pricing.",
+      "kategorija": "regulativa",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/tech/1024588/brave-lawsuit-ai-scraping-new-york-times"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/02/new-york-times-and-other-outlets-sue-web-browser-brave-over-alleged-content-scraping/"
+        }
+      ]
+    },
+    {
+      "naslov": "Data centers on the US ballot, while OpenAI offers power to the local grid",
+      "staSeDesilo": "In this week's US congressional elections, around 20 communities are voting on banning or freezing data center construction. According to The Rundown, OpenAI plans to rebrand them as \"AI compute campuses\" after the election. The company also announced a Grid Protectors Program: a data center in Georgia would free up to 1,000 megawatts for the local grid in emergencies.",
+      "zastoJeBitno": "Resistance to data center construction can slow new capacity, and that eventually shows up in API prices and limits.",
+      "kategorija": "regulativa",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Rundown AI",
+          "url": "https://therundownai.beehiiv.com/p/ai-backlash-heads-to-the-polls"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1024604/openai-data-center-grid-protection-program"
+        },
+        {
+          "naziv": "OpenAI",
+          "url": "https://openai.com/index/grid-protectors-program"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "llm 0.37 (Simon Willison)",
+      "tip": "alat",
+      "opis": "A CLI tool and Python library for working with models from the terminal. The new version adds gpt-6.1-sol and gpt-6.1-terra, an `llm openai endpoint add` command for any OpenAI-compatible endpoint (e.g. OpenRouter), and embeddings for images, audio and video.",
+      "kakoProbati": [
+        "Install: `pip install -U llm` or `brew install llm`",
+        "Set your key: `llm keys set openai`",
+        "Try: `llm 'explain this regex'` or `cat file.ts | llm 'find the bug'`",
+        "For other providers, add an endpoint with `llm openai endpoint add` (check the link for exact arguments)"
+      ],
+      "link": "https://simonwillison.net/2026/Nov/2/llm/",
+      "cena": "free (you only pay for model API calls)"
+    },
+    {
+      "naziv": "eUprava Digital Assistant: ID card and passport booking",
+      "tip": "funkcija",
+      "opis": "The AI assistant on the eUprava portal books ID card or passport appointments via chat and sends you to ePlati to pay the fee.",
+      "kakoProbati": [
+        "Log in to the eUprava portal",
+        "Open the Digital Assistant and say you need an ID card, a passport, or both",
+        "Pick and confirm a free slot, then check it under \"My activities\"",
+        "Check the link for exactly where the assistant button is located"
+      ],
+      "link": "https://www.danas.rs/vesti/drustvo/podnosenje-zahteva-za-izdavanje-licne-karte-i-pasosa-uz-pomoc-vestacke-inteligencije/",
+      "cena": "free (the document fee is paid separately)"
+    },
+    {
+      "naziv": "NVIDIA Auto Ontology",
+      "tip": "projekat",
+      "opis": "An open library (Apache 2.0) that turns database metadata into a \"meaning layer\": where the data lives, what fields mean and how they're used. Agents then write more accurate SQL. It has an MCP server, so it can connect to Claude.",
+      "kakoProbati": [
+        "Clone the repo from the link and run it locally with Docker Compose",
+        "Configure an NVIDIA NIM endpoint (hosted or your own) for a Nemotron model",
+        "Connect your Postgres database (Supabase works too) and let it generate the ontology",
+        "Connect to Claude via MCP and ask questions about your data"
+      ],
+      "link": "https://www.marktechpost.com/2026/11/01/nvidia-auto-ontology-open-source-semantic-layer-ai-agents/",
+      "cena": "free (inference via NIM: check the link)"
+    },
+    {
+      "naziv": "GLM 5.3 FlashX Legal",
+      "tip": "model",
+      "opis": "A new open-weights model from Z.ai with a one-million-token context, built for legal text. Available through OpenRouter.",
+      "kakoProbati": [
+        "Open OpenRouter and search for \"GLM 5.3 FlashX Legal\"",
+        "Try it in the Chat environment with a contract (no personal data)",
+        "In code, call it through OpenRouter's OpenAI-compatible API"
+      ],
+      "link": "https://mastodon.social/@opensourceaitech/117549805943951120",
+      "cena": "$0.37 input / $1.25 output per 1M tokens"
+    },
+    {
+      "naziv": "AiSOC",
+      "tip": "projekat",
+      "opis": "A self-hostable open-source security operations center (SOC). It ingests security logs while AI agents investigate alerts and record every step. It works without API keys and has an MCP server for Claude and Cursor.",
+      "kakoProbati": [
+        "Open the GitHub repo and read the Docs and Architecture",
+        "Run it locally following the README",
+        "Connect the MCP server to Claude Desktop or Claude Code and ask it about alerts"
+      ],
+      "link": "https://github.com/beenuar/AiSOC",
+      "cena": "free (MIT)"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "A \"Claude Mythos 5.5\" label appeared on Anthropic's Mythos page, and unofficial reports say the model is being A/B tested with select users; there's no official announcement.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-11-02"
+    },
+    {
+      "naslov": "Google's Project Suncatcher answered its first prompt from orbit: Gemma 4 wrote a haiku on a TPU chip in a satellite, but due to power limits only one of four chips runs, in bursts of about 20 minutes.",
+      "izvor": "The Rundown AI",
+      "url": "https://therundownai.beehiiv.com/p/ai-backlash-heads-to-the-polls"
+    },
+    {
+      "naslov": "OpenAI described Pando, its own Git-compatible backend built for the volume of code Codex generates.",
+      "izvor": "OpenAI",
+      "url": "https://openai.com/index/scaling-git-at-openai"
+    },
+    {
+      "naslov": "OpenAI raised its bug bounty rewards and added bonuses for report quality and for researchers who report repeatedly.",
+      "izvor": "OpenAI",
+      "url": "https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties"
+    },
+    {
+      "naslov": "OpenAI introduced LifeVal, a benchmark measuring how much AI helps with everyday tasks like finding a daycare, personal finance and paperwork.",
+      "izvor": "OpenAI",
+      "url": "https://openai.com/index/lifeval"
+    },
+    {
+      "naslov": "Linux 7.4-rc1 had nearly 20,000 commits instead of the usual ~15,000, which Torvalds attributes to AI-found fixes arriving on time, within the merge window.",
+      "izvor": "The Register (preko Bluesky)",
+      "url": "https://www.theregister.com/os-platforms/2026/11/01/linus-torvalds-says-linux-kernel-is-out-of-stabilization-phase-and-using-much-healthier-model-for-ai-contributions/5306852"
+    },
+    {
+      "naslov": "WIRED found about 400 apps and sites linked to Chinese developers that look like ordinary AI tools but hide features for making violent and sexually abusive deepfakes.",
+      "izvor": "WIRED",
+      "url": "https://www.wired.com/story/hundreds-of-mundane-ai-apps-are-hiding-abusive-deepfake-features/"
+    },
+    {
+      "naslov": "China introduced its first export controls on top-tier AI models (Mofcom Announcement No. 48).",
+      "izvor": "Cloud Security Alliance",
+      "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-china-ai-export-controls-announcement-48-2/"
+    },
+    {
+      "naslov": "Oracle is selling $20 billion in new stock and bonds to finance its AI infrastructure buildout.",
+      "izvor": "CNBC",
+      "url": "https://www.cnbc.com/2026/11/02/oracle-files-to-sell-20-billion-in-new-stock-bonds-to-finance-ai-buildout.html"
+    },
+    {
+      "naslov": "Saudi Aramco is buying 49% of Humain for $2.6 billion, aiming to make Saudi Arabia an AI hub.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/saudi-aramco-takes-49-percent-stake-in-ai-firm-humain-with-2-6-billion-deal/"
+    },
+    {
+      "naslov": "According to The Information, Apple is developing a roaming home robot that does FaceTime and switches on lights, with a target price of $1,000 or more and a 2027 launch.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/apple/2026/11/apples-roaming-home-robot-may-do-facetime-switch-lights-on-and-yell-at-your-cat/"
+    },
+    {
+      "naslov": "DoorDash has received only \"a few hundred\" orders from AI agents, against 3 million deliveries a day.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-11-02"
+    },
+    {
+      "naslov": "Squarespace is laying off 19% of its employees as part of a broader restructuring.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/02/web-host-squarespace-lays-off-19-of-its-employees/"
+    },
+    {
+      "naslov": "In a YC Labs experiment, 50 GPT-6.1 Sol agents got bogged down in bureaucracy while building a civilization in Minecraft, and in a contest against Claude Opus 5.5 they downloaded the game's source code themselves to win.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/one-brutal-minecraft-night-scared-50-ai-agents-into-inventing-chicken-handoff-protocols-a-fertilizer-officer-and-fishing-shifts/"
+    },
+    {
+      "naslov": "Zyphra released ZHA, a method that focuses a model's attention only on the parts of the context that matter; on Qwen3.6-35B it stayed close to the full model while using about 1.1% of keys in testing.",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/11/02/zyphra-hierarchical-attention-zha-sparse-attention/"
+    },
+    {
+      "naslov": "The experimental qwenGPU embeds a small GPU directly into the weights of the Qwen3.5-2B model, so the model runs real CUDA code inside its own forward pass (about 16 GB of memory, also runs on Apple silicon).",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/11/01/qwengpu-simt-gpu-compiled-into-qwen3-5-2b-weights-runs-cuda/"
+    },
+    {
+      "naslov": "Letterpress-1 is a new agent that monitors your site and the market, proposes changes on its own and opens a pull request with a review, at $100 a month; there are no independent benchmarks yet.",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/11/02/letter-letterpress-1-growth-engineering-coding-agent/"
+    },
+    {
+      "naslov": "Simon Willison refreshed U.S. Census Bureau data: large American employers said they use AI in about 40% of cases in October 2026, up from about 30% in February.",
+      "izvor": "Simon Willison",
+      "url": "https://simonwillison.net/2026/Nov/2/census-bureau-super-intelligence/"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "Realtime-Bench: AI is bad when it has to react fast",
+      "objasnjenje": "A 50-task benchmark (ticket buying, auctions, games) where reacting late means failure. When the clock keeps running while the model thinks, the best result is GPT-6 Astra at 36%. When the clock pauses, models with deeper reasoning reach 70–80%.",
+      "zastoJeZanimljivo": "It shows where agents don't work yet: anything that requires reacting at the right moment. Good to know before you hand an agent something like bookings with limited seats.",
+      "url": "https://jack-clark.net/2026/11/02/import-ai-479-spacewar-low-latency-tasks-versus-llms-genie-4/",
+      "github": null
+    },
+    {
+      "naslov": "Venus-DefakerOne2: one model for detecting fake images and videos",
+      "objasnjenje": "A forgery-detection model that recognizes multiple types of fakes (face deepfakes, edits, AI-generated images) across different media types. It adapts itself to new examples during use.",
+      "zastoJeZanimljivo": "The code is open, and the topic is timely after WIRED's piece on hundreds of apps with hidden deepfake features. It could be a foundation for an image-verification tool.",
+      "url": "https://huggingface.co/papers/2610.37918",
+      "github": "https://github.com/inclusionAI/DefakerOne2"
+    },
+    {
+      "naslov": "CaPtain: small open models control a robot by writing code",
+      "objasnjenje": "Instead of huge models, a small vision-language model is fine-tuned to control a robot by writing code. It's further trained through multi-step attempts, with a \"physical critic\" scoring the result. Good results are achieved without top commercial models.",
+      "zastoJeZanimljivo": "The same principle, where an agent writes code instead of performing actions directly, is increasingly used in coding agents too. The code is public.",
+      "url": "https://huggingface.co/papers/2610.40799",
+      "github": "https://github.com/waltstephen/CaPtain"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Document Deadlines",
+      "problem": "People forget their ID card, passport, driver's license or registration is expiring, then scramble for appointments at the last minute.",
+      "zaKoga": "Serbian citizens, families who manage paperwork for several members",
+      "ulogaAi": "Apple's on-device model reads the expiry date from a photo of the document, and no data is sent to a server. The AI doesn't book the appointment; the app opens eUprava at the right time.",
+      "tezina": 1,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "SwiftUI app with a document list and SwiftData for local storage",
+        "VisionKit/Vision OCR to read the date from the image, with manual confirmation",
+        "Local notifications 60 and 30 days before expiry, linking to the eUprava portal",
+        "Home screen widget showing the nearest deadline"
+      ],
+      "inspiracija": "The eUprava Digital Assistant now books appointments for ID cards and passports"
+    },
+    {
+      "naziv": "Cost per Merge",
+      "problem": "Teams only look at tokens spent, not at what the AI cost for code that actually made it into the project.",
+      "zaKoga": "Small dev teams and freelancers using Claude Code",
+      "ulogaAi": "Claude classifies PRs (bug, feature, refactor) and explains in a short text why the cost went up or down.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Angular dashboard with a Supabase database",
+        "GitHub API: pull merged PRs by week",
+        "Enter daily token cost manually or from usage reports and divide it by the number of merges",
+        "Edge Function that generates a short report once a week"
+      ],
+      "inspiracija": "MIT Technology Review: \"Stop counting tokens, start counting what ships\" and the stories about expensive agents (Grok Bot, Garry Tan)"
+    },
+    {
+      "naziv": "Faster Than AI",
+      "problem": "People don't know where AI is actually weak, so they either trust it with everything or with nothing.",
+      "zaKoga": "Anyone who likes short games and quizzes, especially as fun social media content",
+      "ulogaAi": "A cheap model plays the same real-time mini-tasks (e.g. \"click when the right symbol appears\"), and the player sees how much it lags because of thinking.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Angular app with 3–4 timed mini-games",
+        "Supabase Edge Function that calls a cheap model (e.g. GLM 5.3 Flash via OpenRouter) and measures response time",
+        "Leaderboard in Supabase: human vs. model",
+        "Button to share your result as an image"
+      ],
+      "inspiracija": "Realtime-Bench: models solve only about 36% of real-time tasks"
+    },
+    {
+      "naziv": "Contract Table",
+      "problem": "Small businesses and accountants have dozens of contracts (leases, suppliers) and nobody knows when they expire or what the notice periods are.",
+      "zaKoga": "Small businesses and accounting agencies in Serbia",
+      "ulogaAi": "Each row of the table is one PDF, and each column is one question (\"term of validity,\" \"notice period\"). Claude answers and cites the page and a quote from the document with every answer.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Angular app and Supabase Storage for PDFs",
+        "Edge Function: Claude Sonnet 5 with PDF input, JSON response with a citation",
+        "As Legora does, run only 10 rows first so the user can check the questions",
+        "Excel export and deadline reminders"
+      ],
+      "inspiracija": "Latent Space interview with Legora's CTO about Tabular Review and citations pointing to the exact spot in the PDF"
+    },
+    {
+      "naziv": "Agent Instruction Guard",
+      "problem": "READMEs, docs and comments in dependencies can contain hidden instructions that trick an agent into running a dangerous command (e.g. curl | bash).",
+      "zaKoga": "Developers who let Claude Code or Cursor work in a repo",
+      "ulogaAi": "A script first finds suspicious spots with rules, then a cheap model judges whether it's a legitimate install instruction or an attempt to trick the agent.",
+      "tezina": 2,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Node CLI that scans .md files, node_modules READMEs and comments",
+        "Regex rules for curl|bash, base64 and \"ignore previous instructions\"",
+        "For suspicious hits, call a cheap model that returns a verdict and an explanation",
+        "GitHub Action that comments on the PR when it finds something suspicious"
+      ],
+      "inspiracija": "Research on poisoning 0.1% of training data and 11 ways for an agent to bypass Codex Auto-review"
+    }
+  ],
+  "cene": "Today on OpenRouter, mostly cheap open models got pricier: Llama 3.3 70B went from $0.10/$0.32 to $0.20/$0.52, gpt-oss-20b from $0.018/$0.09 to $0.03/$0.13, and Gemma 4 26B from $0.021/$0.064 to $0.036/$0.108. DeepSeek V4 Flash 0731 had its input price halved (from $0.119 to $0.059), but output rose from $0.238 to $0.3. GLM 5.3 Flash is still the cheapest of the cheap and fast tier at $0.0285/$0.0923, while the new GLM 5.3 FlashX Legal costs $0.37/$1.25. For comparison, GPT-6 Astra at $10/$50 is twice as expensive on input as its predecessor GPT-5.5 ($5/$30).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Anthropic spends more on tokens than on salaries",
+        "oCemuSePrica": "Business Insider calculated that Anthropic's internal use of Claude, at retail prices, would cost more than the salaries of all its employees. On Hacker News it's one of the day's biggest topics, with debate over whether this is a picture of future companies or an artificially inflated calculation.",
+        "glasovi": "Some see it as proof that agents really do serious work, while others point out that \"retail prices\" are an artificial figure for the company itself and recall Uber, which reportedly burned through its entire 2026 AI budget by April.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50339494"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xm2sej/anthropics_internal_ai_use_valued_at_retail/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xm1rhy/anthropic_is_now_spending_more_money_on_its_ai/"
+          }
+        ]
+      },
+      {
+        "naslov": "Game-cloning ban grows into a debate about refusals",
+        "oCemuSePrica": "After the rule in Claude Code against making copies of existing games, Tom's Hardware reports that users say Opus 5.5 also refuses reverse engineering tasks (analyzing how an existing program works internally). On Reddit, people are therefore also complaining that Claude refuses requests more and more often, and part of the community is using that as an argument for local models.",
+        "glasovi": "r/LocalLLaMA says \"yet another reason to self-host,\" while in r/ClaudeAI some ask how to bypass the restriction and others defend Anthropic on copyright grounds. Ars Technica estimates the rule won't stop the wave of AI game clones.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xm33gr/yet_another_reason_to_self_host_anthropic_has/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xm5vdp/anthropic_confirms_new_claude_code_limits_to/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xlz6m8/claudes_refusals_is_getting_stricter_and_annoying/"
+          }
+        ]
+      },
+      {
+        "naslov": "GPT-6 Astra \"hand-edits\" another model's weights",
+        "oCemuSePrica": "According to posts, MIT researchers let GPT-6 Astra directly modify just 0.016% of the weights of a small Qwen model, with no classic training, and the MATH-500 score jumped from 7.9% to 48.1%. The community links it to the paper \"Sparks of Weight-Space Programming\" and wonders whether models can \"program\" other models.",
+        "glasovi": "r/singularity sees it as a step toward self-improving models, while r/LocalLLaMA asks for details and reproducible results. For now it's all Reddit posts, and the paper itself needs to be verified.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xm89o3/mit_researchers_say_gpt6_astra_improved_a_small/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xma0tw/gpt6_astra_edits_qwen_weights_math500_79_to_481/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xm6jow/sparks_of_weightspace_programming_llms_can/"
+          }
+        ]
+      },
+      {
+        "naslov": "The \"leaked\" Anthropic model is a fake",
+        "oCemuSePrica": "A r/ClaudeAI user analyzed a 7.72 TB checkpoint on Hugging Face (burner22/numbat) that was passed off as an internal Mythos model. They showed the weights were randomly generated, not trained: 100% of the values they checked could be reconstructed from a random number generator, and the assembled model outputs only punctuation.",
+        "glasovi": "The analysis was published by an individual, but with detailed and verifiable evidence, so last week's rumor has practically collapsed. Who made the fake and why remains unknown.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xls4cj/the_772tb_alleged_anthropic_ai_model_is_fake_i/"
+          }
+        ]
+      },
+      {
+        "naslov": "Altman, RAM and claims of being \"smarter than scientists\"",
+        "oCemuSePrica": "Altman said it's \"terrible\" that part of the world's DRAM supply sits in personal computers, at a time when RAM is expensive, so r/OpenAI is full of memes. In another appearance, he claims AI has become \"mostly smarter than the best scientists\" this year.",
+        "glasovi": "r/OpenAI users mock him over RAM prices, while r/singularity debates whether the claims about scientists and the announced proof of a Millennium problem are real or marketing ahead of a new model.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/OpenAI",
+            "url": "https://www.reddit.com/r/OpenAI/comments/1xlqq7b/sam_altmans_ram_allocation_argument_applied_to/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xm44jm/sam_altman_at_the_start_of_this_year_ai_was/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xlyml4/when_we_proved_the_first_millenium_prize_problem/"
+          }
+        ]
+      }
+    ],
+    "snimci": [
+      {
+        "naslov": "Why Consciousness Might Not Be Hard At All (Joscha Bach)",
+        "kanal": "Machine Learning Street Talk",
+        "opis": "Cognitive scientist Joscha Bach explains why he thinks consciousness may not be hard to explain, but rather the result of an algorithm not much more complex than a transformer.",
+        "url": "https://www.youtube.com/watch?v=yW_ngvMFlYs"
+      }
+    ]
+  },
+  "nedeljni": null
+}
