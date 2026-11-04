@@ -1,0 +1,620 @@
+{
+  "datum": "2026-11-04",
+  "generisano": "2026-11-04T03:06:59.018Z",
+  "model": "claude-opus-5-5",
+  "ukratko": "Najviše se priča o radu po kojem GPT-6 Astra može da čita i direktno menja „težine“ drugog modela. Simon Willison je isti trik ponovio sa Qwen 3.8 27B na laptopu, ali kaže da je hype preteran. Za iOS developere je danas bitniji iOS 27.3 beta: Siri AI sada može da radi stvari u svim aplikacijama. Anthropic je pustio Message Threads, koji ubrzava duge razgovore agenata, i FlashProve, koji kriptografski dokazuje koji model je dao odgovor.",
+  "vesti": [
+    {
+      "naslov": "iOS 27.3 beta: Siri AI dobija pristup aplikacijama drugih developera",
+      "staSeDesilo": "Apple u developer preview-u iOS 27.3 dozvoljava da nove Siri AI funkcije rade u svim aplikacijama. Siri tu koristi lični kontekst korisnika, razume prirodan jezik i vidi šta je na ekranu. Novo je i „app skills“: developer više koraka spoji u jednu radnju, a korisnik ne mora da izgovori ime aplikacije da bi Siri pozvala tu veštinu.",
+      "zastoJeBitno": "Ovo je najdirektnija vest za tvoje SwiftUI aplikacije. Ko na vreme ugradi app skills, toga će Siri pozivati umesto da korisnik otvara aplikaciju. Detalje API-ja pogledaj u Apple-ovoj dokumentaciji, članak ih ne navodi.",
+      "kategorija": "alati",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/tech/1025694/apple-siri-ai-third-party-apps"
+        }
+      ]
+    },
+    {
+      "naslov": "„Weight-Space Programming“: GPT-6 Astra popravio drugi model direktnim menjanjem brojeva, bez treninga",
+      "staSeDesilo": "Istraživači sa MIT-a (Takehi, Teoh, Zhang, Khattab) pokazali su da GPT-6 Astra može da čita sirove težine malog modela, odnosno brojeve koji određuju kako model radi, i da ih menja. Kod Qwen3.5-0.8B je Astra našao uzrok zbog kog se model vrti u krug i promenio samo 0,016% težina. Rezultat na MATH-500 je skočio sa 7,9% na 48,1%. Na Gemma 3 skoro da nije bilo efekta. Simon Willison je jedan deo eksperimenta ponovio lokalno sa Qwen 3.8 27B: model je posle 45 do 65 minuta razmišljanja tačno pogodio tri od četiri igre.",
+      "zastoJeBitno": "Ovo je prvi konkretan primer da jedan model popravlja drugi bez klasičnog treninga, pa se odmah otvara priča o AI-ju koji ubrzava sopstveni razvoj. Za sada radi samo na malim modelima i jednostavnim zadacima. Willison kaže da bi strpljiv čovek sa olovkom i papirom verovatno došao do sličnih zaključaka.",
+      "kategorija": "istrazivanje",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Rundown AI",
+          "url": "https://therundownai.beehiiv.com/p/mit-shows-ai-improving-ai-no-training-required"
+        },
+        {
+          "naziv": "Latent Space / AINews",
+          "url": "https://latent.space/p/ainews-llms-can-read-write-neural-network-weights-weight-space-programming-cuts-autoresearch-out-of/"
+        },
+        {
+          "naziv": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-03"
+        }
+      ]
+    },
+    {
+      "naslov": "Claude API: Message Threads šalje samo nove poruke, ne ceo razgovor",
+      "staSeDesilo": "Anthropic je u javnu betu pustio Message Threads. Agent više ne šalje celu istoriju razgovora uz svaki zahtev, već samo ono što je novo. Kod zahteva od 500 hiljada do milion tokena vreme do prvog tokena pada za oko 35%. Thread se čuva šifrovan u memoriji i ističe posle pet minuta neaktivnosti.",
+      "zastoJeBitno": "Ako praviš agente sa dugim kontekstom, odgovori stižu brže. Broj potrošenih tokena i cena ostaju isti, jer Claude i dalje obrađuje celu istoriju. Funkcija nije pokrivena ZDR-om (zero data retention, režim u kom se podaci ne čuvaju), što je bitno ako obrađuješ osetljive podatke.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/anthropics-message-threads-cut-time-to-first-token-by-35-percent-for-long-conversations/"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-03"
+        },
+        {
+          "naziv": "Claude dokumentacija",
+          "url": "https://platform.claude.com/docs/en/build-with-claude/message-threads"
+        }
+      ]
+    },
+    {
+      "naslov": "Anthropic FlashProve: kriptografski dokaz da je odgovor stvarno dao model koji je naveden",
+      "staSeDesilo": "Anthropic-ov Frontier Red Team objavio je FlashProve, otvoreni istraživački prototip za „dokazivo zaključivanje“. Sistem koristi zkSNARK, kriptografski dokaz koji ništa ne otkriva o težinama modela, da potvrdi da je odgovor došao iz tačno određenog modela. Na Llama 4 Maverick (400B) dokazuje oko 110 tokena u sekundi na jednom H100. Dokaz od 18,78 MB proverava se za 17 sekundi na običnom procesoru, ali dokazivanje troši 70 do 95 puta više GPU vremena od običnog pokretanja modela.",
+      "zastoJeBitno": "Danas ne možeš da proveriš da li ti provajder ili ruter preko API-ja zaista daje skupi model ili ti potura jeftiniji. Za sada je ovo samo prototip i preskup je za svakodnevnu upotrebu, ali pokazuje pravac u kom bi to moglo da se reši.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/11/03/anthropic-flashprove-provable-inference-zksnark/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/03/anthropic-is-working-on-a-system-to-prove-ai-models-identity/"
+        }
+      ]
+    },
+    {
+      "naslov": "GPT-6.2 Astra viđen u Codex-u, izlazak verovatno blizu (nezvanično)",
+      "staSeDesilo": "GPT-6.2-Astra se pojavio u pregledima potrošnje u Codex-u. To znači da OpenAI deo zahteva verovatno već tiho šalje novom modelu, kao test ili postepeno uvođenje. Prema nezvaničnim izveštajima, OpenAI je preskočio 6.1 Astra zbog zabrinutosti oko obmanjivanja. OpenAI ništa od ovoga nije potvrdio.",
+      "zastoJeBitno": "Ako koristiš Codex, može se desiti da već radiš sa novim modelom, a da toga nisi svestan. Ako ti se ponašanje Codex-a ovih dana promenilo, ovo je moguće objašnjenje.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-03"
+        },
+        {
+          "naziv": "Latent Space / AINews",
+          "url": "https://latent.space/p/ainews-llms-can-read-write-neural-network-weights-weight-space-programming-cuts-autoresearch-out-of/"
+        }
+      ]
+    },
+    {
+      "naslov": "Anthropic-ov dokument za berzu: 33 milijarde prihoda, ali 104 milijarde gubitka",
+      "staSeDesilo": "U dopunjenom prospektu za izlazak na berzu Anthropic navodi 33,24 milijarde dolara prihoda za prvih devet meseci 2026, što je rast od 1.200%. Neto gubitak u istom periodu je 104 milijarde dolara, a obaveze za računarske resurse i infrastrukturu iznose oko 895,4 milijarde. TechCrunch ističe da se marže na računanju pogoršavaju, iako bi trebalo da se poboljšavaju.",
+      "zastoJeBitno": "Ovo objašnjava zašto firme ovih dana smanjuju limite i menjaju pretplate. Ponuda AI-ja za paušal je skuplja nego što izgleda, pa računaj da će se uslovi i dalje menjati.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-03"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/03/anthropic-is-still-grappling-with-the-economics-of-compute/"
+        },
+        {
+          "naziv": "The Rundown AI",
+          "url": "https://therundownai.beehiiv.com/p/mit-shows-ai-improving-ai-no-training-required"
+        }
+      ]
+    },
+    {
+      "naslov": "Apple: aplikacije za upoznavanje i AI „partneri“ samo za 18+",
+      "staSeDesilo": "Po novim pravilima App Store-a, aplikacije za upoznavanje moraju da imaju oznaku 18+. Isto važi za AI pratioce, odnosno chatbotove za druženje, ako nude seksualni ili romantični sadržaj.",
+      "zastoJeBitno": "Ako praviš chatbot sa „ličnošću“ ili aplikaciju za upoznavanje, proveri oznaku uzrasta pre sledećeg slanja na review. Sa oznakom 18+ gubiš mlađe korisnike.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/03/apple-restricts-dating-apps-and-ai-companions-to-users-18-and-up/"
+        }
+      ]
+    },
+    {
+      "naslov": "Google školama: hoćete bez AI-ja, ostajete i bez pretrage",
+      "staSeDesilo": "Za učeničke naloge u osnovnim i srednjim školama Gemini, Gemini Notebook, Gemini in Classroom i Google Search biće podrazumevano isključeni, dok ih administrator ne uključi. Međutim, AI ne može da se isključi zasebno: kad škola odbije AI, gubi i Search, jer su po Google-u „pretraga i AI duboko povezani“.",
+      "zastoJeBitno": "Ovo pokazuje da Google AI više ne smatra dodatkom, već delom same pretrage. Na Hacker News-u se o tome vodi velika rasprava.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/ai/2026/11/google-will-let-schools-skip-ai-tools-but-they-have-to-give-up-search-too/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/03/google-will-let-schools-disable-its-ai-tools-but-not-without-sacrificing-search/"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/tech/1025411/google-turn-off-search-ai-features"
+        }
+      ]
+    },
+    {
+      "naslov": "Postman navodno sam instalira AI dodatke i pokušava da pošalje podatke o API-jima",
+      "staSeDesilo": "Korisnik je na GitHub-u prijavio da Postman bez pitanja instalira AI plugine, koji zatim pokušavaju da podele sve podatke o API-jima. Prijava je dobila preko 1.000 poena i 350 komentara na Hacker News-u. Za sada je to prijava korisnika, a ne potvrđen nalaz: proveri u issue-u da li je Postman odgovorio.",
+      "zastoJeBitno": "U Postman-u često stoje API ključevi, uključujući one za Supabase i AI servise. Proveri koje dodatke imaš uključene i da li se nešto pojavilo bez tvog znanja.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "GitHub issue",
+          "url": "https://github.com/postmanlabs/postman-app-support/issues/14370"
+        },
+        {
+          "naziv": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50354960"
+        }
+      ]
+    },
+    {
+      "naslov": "Kimi K3.1 Pro izlazi sa otvorenim težinama, ali sa namerno oslabljenim napadačkim sposobnostima",
+      "staSeDesilo": "Moonshot AI je pred objavu otvorenih težina Kimi K3.1 Pro, zakazanu za 4. novembar, smanjio sposobnost modela za sajber napade. Po njihovom internom testu, ova verzija pronalazi i koristi ranjivosti u 81% slučajeva, a verzija bez te zaštite u 90,5%. Rezultati nisu nezavisno provereni. Vals ga je već svrstao na prvo mesto među otvorenim modelima, a Moonshot trpi kritike zbog neoznačene promocije modela.",
+      "zastoJeBitno": "Ovo je jedan od najjačih modela koji možeš sam da hostuješ ili koristiš preko jeftinih provajdera. Ovo je i prvi put da kineska laboratorija javno priča o bezbednosnom podešavanju otvorenog modela pre objave.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "ICTbusiness",
+          "url": "https://www.ictbusiness.info/vijesti/moonshot-smanjio-napadacke-sposobnosti-modela-kimi"
+        },
+        {
+          "naziv": "Latent Space / AINews",
+          "url": "https://latent.space/p/ainews-llms-can-read-write-neural-network-weights-weight-space-programming-cuts-autoresearch-out-of/"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI: GPT-6 Astra za manje od nedelju dana dizajnirao uređaj, od kućišta do firmvera",
+      "staSeDesilo": "OpenAI-jev hardverski tim je pomoću GPT-6 Astra za manje od nedelju dana napravio uređaj za Codex: kućište, štampanu ploču i firmver. Pre proizvodnje je trebalo nekoliko krugova ispravki, jer model nije uvek računao na tolerancije u proizvodnji. Firma kaže da noviji interni model ima znatno bolji rezultat na njihovom inženjerskom testu, ali ne daje detalje.",
+      "zastoJeBitno": "Kodiranje uz AI se širi na fizički svet: CAD, dizajn ploča i simulacije. Ipak, pravi proizvod i dalje traži iteracije i čoveka koji zna kako se stvari proizvode.",
+      "kategorija": "modeli",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/openai-says-gpt-6-astra-designed-a-hardware-device-from-scratch-in-under-a-week/"
+        },
+        {
+          "naziv": "OpenAI",
+          "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world"
+        }
+      ]
+    },
+    {
+      "naslov": "Hrvat Juraj Bilić potpredsednik Odbora Saveta Evrope za AI i obrazovanje",
+      "staSeDesilo": "Juraj Bilić, pomoćnik direktora CARNET-a za veštačku inteligenciju, izabran je za potpredsednika Odbora za veštačku inteligenciju i obrazovanje pri Savetu Evrope.",
+      "zastoJeBitno": "Region dobija glas u telu koje oblikuje evropske preporuke za AI u školama. To kasnije utiče i na pravila za edukativne aplikacije.",
+      "kategorija": "regulativa",
+      "vaznost": 1,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "Bug.hr",
+          "url": "https://www.bug.hr/edukacija/hrvatska-dobila-potpredsjednika-odbora-za-umjetnu-inteligenciju-i-obrazovanje-64045"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Claude Message Threads (beta)",
+      "tip": "funkcija",
+      "opis": "Agent u Claude API-ju šalje samo nove poruke umesto cele istorije, pa prvi token kod dugih razgovora stiže oko 35% brže. Radi sa većinom aktuelnih modela, uključujući Opus 5.5, Sonnet 5.5 i Haiku 5.5.",
+      "kakoProbati": [
+        "Otvori dokumentaciju: platform.claude.com/docs/en/build-with-claude/message-threads",
+        "U zahtev dodaj beta header `anthropic-beta: message-threads-2026-08-12`",
+        "Napravi thread pa u svakom sledećem zahtevu šalji samo novi turn; tačna polja i primer koda su u dokumentaciji",
+        "Thread ističe posle 5 minuta neaktivnosti, pa za duže pauze moraš da pošalješ ceo razgovor iznova"
+      ],
+      "link": "https://platform.claude.com/docs/en/build-with-claude/message-threads",
+      "cena": "Tokeni se naplaćuju kao i do sada, sama funkcija se ne plaća posebno"
+    },
+    {
+      "naziv": "Siri AI i „app skills“ u iOS 27.3 beta",
+      "tip": "funkcija",
+      "opis": "Developeri sada mogu da povežu svoje aplikacije sa Siri AI-jem: Siri koristi kontekst sa ekrana i razume prirodan jezik, a „app skills“ spajaju više radnji u jednu.",
+      "kakoProbati": [
+        "Instaliraj iOS 27.3 developer beta na test uređaj (Settings → General → Software Update → Beta Updates)",
+        "Preuzmi odgovarajući Xcode beta sa developer.apple.com",
+        "U Apple-ovoj dokumentaciji potraži „app skills“ i Siri integraciju; tačan API proveri na linku",
+        "Probaj prvo jednu jednostavnu radnju iz svoje aplikacije"
+      ],
+      "link": "https://www.theverge.com/tech/1025694/apple-siri-ai-third-party-apps",
+      "cena": "besplatno (potreban Apple Developer nalog)"
+    },
+    {
+      "naziv": "Worktrunk",
+      "tip": "alat",
+      "opis": "CLI za upravljanje git worktree-ovima, napravljen za rad sa više AI agenata paralelno. Svaki agent radi u svom folderu i na svojoj grani, bez sudaranja. Trenutno je na GitHub Trending-u.",
+      "kakoProbati": [
+        "`brew install worktrunk && wt config shell install`",
+        "`wt switch --create feature-x` napravi granu i worktree i prebaci te u njih; tu pokreneš Claude Code",
+        "`wt list` pokazuje stanje svih worktree-ova, a `wt merge main` spaja granu i čisti za sobom"
+      ],
+      "link": "https://github.com/max-sixty/worktrunk",
+      "cena": "besplatno"
+    },
+    {
+      "naziv": "Eksperiment „koju igru je ovaj model naučio“ na tvom računaru",
+      "tip": "projekat",
+      "opis": "Ponovi deo rada o Weight-Space Programming: lokalnom modelu daš težine malog modela kao tekst, a on pogađa koju igru je taj model naučio. Simon Willison je ovako uspeo sa Qwen 3.8 27B.",
+      "kakoProbati": [
+        "U LM Studio-u učitaj Qwen 3.8 27B (Q4_K_M, oko 17 GB) i povećaj kontekst, jer podrazumevanih 8192 nije dovoljno",
+        "Instaliraj `llm` i plugin `llm-lmstudio`",
+        "Uzmi prompt iz repoa github.com/RikiyaT/lm_understand-logs (folder exp1_which_game/runs) i pokreni `LMSTUDIO_TIMEOUT=900 llm -f <raw URL prompta> -m lmstudio/qwen/qwen3.8-27b`",
+        "Računaj na 45 do 65 minuta razmišljanja po igri"
+      ],
+      "link": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/",
+      "cena": "besplatno (lokalno, treba ti jača mašina)"
+    },
+    {
+      "naziv": "Soniox STT v6",
+      "tip": "model",
+      "opis": "API za pretvaranje govora u tekst za glasovne agente, na 60+ jezika. Model zna i šta je agent upravo rekao, pa bolje prepoznaje kratke odgovore korisnika i ne hvata glas agenta kao eho. Prepoznavanje govornika i jezika je uključeno u cenu.",
+      "kakoProbati": [
+        "Napravi nalog na Soniox-u i uzmi API ključ",
+        "Za strimovanje koristi model `stt-rt-v6` preko WebSocket-a, a za fajlove `stt-async-v6` preko REST-a",
+        "Probaj na snimku na srpskom; da li je srpski među podržanim jezicima, proveri na linku"
+      ],
+      "link": "https://www.marktechpost.com/2026/11/03/soniox-stt-v6-agent-text-input-echo-cancellation/",
+      "cena": "$0,12 po satu za strimovanje, $0,10 po satu za fajlove"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Marvell kupuje Lumentum, proizvođača lasera za data centre, za 115 milijardi dolara u akcijama, što je jedna od najvećih tehnoloških akvizicija ikada.",
+      "izvor": "The Rundown AI",
+      "url": "https://therundownai.beehiiv.com/p/mit-shows-ai-improving-ai-no-training-required"
+    },
+    {
+      "naslov": "OpenAI je potpisao četiri ugovora u Abu Dabiju (ADNOC, vlada, Mubadala, G42), a investitor iz UAE navodno će biti najveći u novoj rundi od do 20 milijardi dolara.",
+      "izvor": "The Rundown AI",
+      "url": "https://therundownai.beehiiv.com/p/mit-shows-ai-improving-ai-no-training-required"
+    },
+    {
+      "naslov": "OpenAI je objavio LifeVal, test svakodnevnih zadataka kao što su zakazivanje i formulari: GPT-6 Astra ima 80,6%, ali je samo 0,6 poena dobio posle GPT-5.6.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-11-03"
+    },
+    {
+      "naslov": "Po OpenAI-ju, ChatGPT sada obradi pretraga koliko 20% Google-ovog obima, s tim što se računaju samo upiti koji pokreću web pretragu.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1025482/openai-says-chatgpt-is-catching-up-to-google-in-search"
+    },
+    {
+      "naslov": "OpenAI spaja Chat i Work tabove u ChatGPT-u, a Codex ostaje posebna aplikacija na desktopu.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-11-03"
+    },
+    {
+      "naslov": "OpenAI je prešao na sopstveni Git backend Pando, napisan u Rust-u, čiji su veći deo napravili Codex agenti; pušovanje je u proseku oko 80% brže.",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/11/02/openai-pando-git-backend-monorepo/"
+    },
+    {
+      "naslov": "OpenAI je četiri puta povećao nagrade za prijavu bagova, sada do 172.000 dolara.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/bug-hunters-can-now-earn-up-to-172000-from-openai-as-company-ramps-up-security/"
+    },
+    {
+      "naslov": "Apple Watch u watchOS 27.3 beta dobija Siri Recap, koji sažima razgovore koje sat čuje, i Live Rewind, koji prepisuje poslednjih 15 sekundi zvuka.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/02/apple-watchs-ai-features-for-rewinding-and-recapping-conversations-begin-beta-testing/"
+    },
+    {
+      "naslov": "Netflix na TV aplikaciji dobija tab „AI Discover“, sa preporukama po temama i raspoloženju koje pamte šta ti se ne sviđa.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/03/netflixs-new-ai-discover-tab-helps-you-find-something-to-watch-based-on-your-mood/"
+    },
+    {
+      "naslov": "Stanford je proverio 50 često citiranih tvrdnji o LLM-ovima na 20 današnjih modela: 44% više ne važi, a tvrdnja u proseku „živi“ 15,7 meseci.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/rapid-llm-development-is-outrunning-the-research-meant-to-explain-it-study-finds/"
+    },
+    {
+      "naslov": "SETI institut je predao upravljanje teleskopom Allen Telescope Array i analizu signala AI agentima, pa poslovi od više nedelja sada traju nekoliko sati.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/ai-agents-take-over-at-setis-allen-telescope-array-scanning-for-extraterrestrial-intelligence/"
+    },
+    {
+      "naslov": "Nexus Mods, najveći sajt za modove PC igara, uvodi obavezno navođenje da li je u izradi moda korišćen AI.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/games/1026085/nexus-mods-ai-disclosures"
+    },
+    {
+      "naslov": "Huawei traži od kupaca da sami nabave HBM memoriju za njegove AI čipove, što ih praktično šalje na crno tržište, gde je cena porasla na oko 4.000 dolara po komadu.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/huawei-tells-customers-to-find-their-own-ai-chip-memory-effectively-outsourcing-procurement-to-the-black-market/"
+    },
+    {
+      "naslov": "Startap Fal, koji pokreće AI modele za druge firme, prikupio je 1,3 milijarde dolara i udvostručio procenu vrednosti na 16 milijardi.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/03/ai-inference-startup-fal-doubles-its-valuation-to-16b-as-demand-surges/"
+    },
+    {
+      "naslov": "Data centri koriste stare mlazne motore kao generatore, jer se na priključak na mrežu i nove turbine čeka godinama.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/03/data-centers-are-turning-to-old-jet-engines-as-the-wait-for-power-grows/"
+    },
+    {
+      "naslov": "Ruske firme planiraju da presele data centre pod zemlju, posle ukrajinskih napada dronovima na objekte Yandex-a i Sberbank-a.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/ai/2026/11/russia-looks-to-hide-data-centers-underground-as-ukrainian-drones-strike-back/"
+    },
+    {
+      "naslov": "Spoljni AI agenti su DoorDash-u doneli tek nekoliko stotina narudžbina, što je zanemarljivo prema milionima dostava dnevno.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/ai-agenti-donijeli-doordashu-tek-stotine-narudzbi"
+    },
+    {
+      "naslov": "Prema Nikkei-ju, „skriveni“ AI dug američkih tehnoloških giganata porastao je za 90% za šest meseci, na 3,2 biliona dolara.",
+      "izvor": "Nikkei Asia",
+      "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/us-tech-giants-hidden-ai-debt-swells-90-to-3.2tn-in-6-months"
+    },
+    {
+      "naslov": "OpenAI je zaposlio bivšeg sekretara američke vojske Dena Driskola kao savetnika za nacionalnu bezbednost.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/openai-hires-ex-army-secretary-gaining-bipartisan-reach-just-as-midterms-loom/"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "CoworkOS: agent „kolega“ za duge zadatke",
+      "objasnjenje": "CoworkOS je okvir za agente koji rade satima. Planiranje strategije je odvojeno od izvršavanja, a čovek i agent sarađuju preko zajedničkih fajlova (nacrti, tabele, dokumenti) umesto kroz chat. Sistem iz onoga što agent uradi stalno pravi nove podatke za dodatnu obuku.",
+      "zastoJeZanimljivo": "Kad sam praviš agente, korisna ideja je da agent i ti radite na istom dokumentu, umesto da sve ide kroz poruke.",
+      "url": "https://huggingface.co/papers/2611.03178",
+      "github": "https://github.com/RUC-NLPIR/CoworkOS"
+    },
+    {
+      "naslov": "CUA-Master: agenti za rad na računaru koji se sami popravljaju",
+      "objasnjenje": "Agenti koji klikću po ekranu i koriste programe kao čovek uče u petljama: probaju zadatak u pravom okruženju, dobiju povratnu informaciju, pokušaju ponovo i od uspešnih pokušaja nastaju novi podaci za obuku. Petlje su ugnježdene, pa se agent popravlja na više nivoa odjednom.",
+      "zastoJeZanimljivo": "Kod je otvoren i pokazuje kako se agent za rad na računaru popravlja bez ručnog označavanja podataka. Ovo se uklapa u današnju priču o modelima koji sami sebe unapređuju.",
+      "url": "https://huggingface.co/papers/2611.03126",
+      "github": "https://github.com/xlyu0106/CUA-Master"
+    },
+    {
+      "naslov": "Wave Forcing: video koji se generiše skoro u realnom vremenu",
+      "objasnjenje": "Metoda za pravljenje dugog videa u kontinuitetu. Model se trenira i pokreće tako da likovi i scena izgledaju isto od početka do kraja, a pokreti ostanu prirodni. Cilj je da video nastaje brzo kao strim, a ne da se čeka na ceo klip.",
+      "zastoJeZanimljivo": "Brz strimovani video otvara vrata interaktivnim aplikacijama i igrama u kojima se slika generiše dok korisnik gleda. Kod je javno dostupan.",
+      "url": "https://huggingface.co/papers/2611.00859",
+      "github": "https://github.com/SJTU-DENG-Lab/WaveForcing"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Računi preko Siri",
+      "problem": "Ljudi ne znaju koliko su ovog meseca platili struju, Infostan ili telefon, a otvaranje aplikacije i traženje kroz tabele je naporno.",
+      "zaKoga": "Domaćinstva u Srbiji koja plaćaju režije preko m-bankinga",
+      "ulogaAi": "Siri AI kroz app skill odgovara na pitanja tipa „koliko sam platio struju u oktobru“, a mali model iz uplatnice ili PDF računa izvuče iznos, primaoca i rok.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Napravi SwiftUI aplikaciju sa SwiftData modelom za račune (primalac, iznos, rok, plaćeno)",
+        "Dodaj uvoz fotografije uplatnice i izvlačenje polja preko Claude Haiku 5.5 API-ja",
+        "Na iOS 27.3 beta registruj app skill „stanje računa“ (detalje vidi u Apple-ovoj dokumentaciji)",
+        "Testiraj pitanja na srpskom i engleskom"
+      ],
+      "inspiracija": "Siri AI dobija pristup aplikacijama drugih developera u iOS 27.3 beta"
+    },
+    {
+      "naziv": "Provera uzrasta za App Store",
+      "problem": "Indie developeri ne znaju da li ih nova Apple pravila (18+ za aplikacije za upoznavanje i AI pratioce) pogađaju, pa saznaju tek kad ih review odbije.",
+      "zaKoga": "Indie iOS developeri, pogotovo oni koji prave chatbotove",
+      "ulogaAi": "Model pročita opis aplikacije, ekrane i sistemski prompt chatbota, pa kaže koja pravila verovatno važe i koju oznaku uzrasta da izabere, uz citate iz pravila.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Angular stranica sa formom: opis aplikacije, sistemski prompt, screenshotovi",
+        "Supabase Edge Function koja pozove jeftin model (npr. GPT-5.6 Luna) uz izvod iz App Store pravila u promptu",
+        "Vrati listu rizika i preporučenu oznaku uzrasta, uz napomenu da nije pravni savet",
+        "Objavi na Indie Hackers ili r/iOSProgramming i skupi povratne informacije"
+      ],
+      "inspiracija": "Apple od danas traži oznaku 18+ za aplikacije za upoznavanje i AI pratioce"
+    },
+    {
+      "naziv": "Šta da gledamo (po raspoloženju)",
+      "problem": "Prebacivanje između Netflix-a, HBO-a i domaćih servisa i traženje filma za večeras traje duže od samog filma.",
+      "zaKoga": "Parovi i porodice u Srbiji sa više streaming pretplata",
+      "ulogaAi": "Korisnik napiše raspoloženje („nešto lako, do 90 minuta, za decu“), a model iz kataloga izabere 5 naslova i zapamti šta je odbijeno.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Uzmi besplatan TMDB API ključ; tamo su i podaci o tome gde se naslov gleda u Srbiji",
+        "SwiftUI ekran sa poljem za raspoloženje i karticama naslova",
+        "Za izbor koristi najjeftiniji model, npr. GLM 5.3 Flash preko OpenRouter-a",
+        "Odbijene naslove čuvaj u Supabase-u da se ne ponavljaju"
+      ],
+      "inspiracija": "Netflix-ov novi tab „AI Discover“ sa preporukama po raspoloženju"
+    },
+    {
+      "naziv": "Diktafon za majstore",
+      "problem": "Majstori na terenu ne stižu da pišu ponude, pa sve ostaje u glavi ili na papiriću i posao se gubi.",
+      "zaKoga": "Električari, vodoinstalateri i keramičari u Srbiji i regionu",
+      "ulogaAi": "Majstor izgovori šta je video i šta treba uraditi; govor se pretvara u tekst, a model od toga pravi stavke ponude sa količinama i cenama iz njegovog cenovnika.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Proveri da li Soniox STT v6 dobro radi sa srpskim; ako ne, probaj drugi model za transkripciju",
+        "SwiftUI aplikacija sa jednim velikim dugmetom za snimanje i listom ponuda",
+        "Supabase tabela za cenovnik majstora i Edge Function koja od transkripta pravi stavke (Claude Sonnet 5.5)",
+        "Izvoz ponude u PDF i slanje preko Viber-a ili WhatsApp-a"
+      ],
+      "inspiracija": "Soniox STT v6 sa cenom od $0,10 do $0,12 po satu"
+    },
+    {
+      "naziv": "Tabla worktree-ova u meni baru",
+      "problem": "Kad pustiš tri Claude Code agenta u paralelne worktree-ove, izgubiš pregled: ko je gotov, gde ima izmena koje nisu commit-ovane i šta je spremno za merge.",
+      "zaKoga": "Developeri koji rade sa više agenata paralelno",
+      "ulogaAi": "Aplikacija periodično pokreće `wt list` i za svaki worktree kratko sažme diff, da odmah vidiš šta je agent uradio.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Instaliraj worktrunk i proučavaj izlaz komande `wt list --full`",
+        "Napravi macOS SwiftUI MenuBarExtra koji na svakih 30 sekundi pokreće komandu preko Process-a",
+        "Za svaki worktree prikaži status, a na klik pošalji `git diff` jeftinom modelu da napravi sažetak",
+        "Dodaj dugme „merge“ koje pokreće `wt merge main`"
+      ],
+      "inspiracija": "Worktrunk na GitHub Trending-u i priča o paralelnim agentima (DeepSeek superagent, Pando)"
+    }
+  ],
+  "cene": "Danas je najviše pojeftinio gpt-oss-120b: sa $0,15/$0,6 na $0,026/$0,098 za milion tokena (ulaz/izlaz). Llama 3.3 70B je pala sa $0,2/$0,52 na $0,1/$0,32. Poskupeli su Llama 3.1 70B (sa $0,4 na $0,72 i za ulaz i za izlaz), Gemma 4 26B (sa $0,036/$0,108 na $0,067/$0,2) i izlaz kod Kimi K3 (sa $15 na $16). Najjeftiniji u klasi jeftinih i brzih je GLM 5.3 Flash, sa $0,0313/$0,0846. Novi GPT-6.1 Terra košta $1/$5, a GPT-6 Astra je sa $10/$50 duplo skuplji na ulazu od prethodnika GPT-5.5 ($5/$30).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Modeli koji čitaju i menjaju težine drugih modela",
+        "oCemuSePrica": "Rad o „Weight-Space Programming“, po kojem GPT-6 Astra iz samih brojeva prepoznaje šta je mali model naučio i popravlja ga bez treninga, najveća je tema dana. Jedni u tome vide novi korak ka AI-ju koji sam sebe unapređuje, a drugi kažu da je reč o običnoj interpretabilnosti, odnosno razumevanju šta je unutar modela, na vrlo malim modelima.",
+        "glasovi": "Autor Rikiya Takehi je objavio thread sa rezultatima, a Alex Krentsel je nezavisno ponovio eksperiment. @giffmana upozorava da je deo tvrdnji preuveličan. Simon Willison je pokazao da i lokalni Qwen 3.8 27B to može, ali kaže da bi strpljiv čovek sa olovkom i papirom verovatno uspeo isto.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@rikiyatakehi",
+            "url": "https://x.com/rikiyatakehi/status/2117313742891327994"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@giffmana",
+            "url": "https://x.com/giffmana/status/2117346161866514524"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@AlexKrentsel",
+            "url": "https://x.com/AlexKrentsel/status/2117376683724660898"
+          },
+          {
+            "platforma": "bluesky",
+            "naziv": "Simon Willison",
+            "url": "https://bsky.app/profile/simonwillison.net/post/3mzgb77cpis2w"
+          }
+        ]
+      },
+      {
+        "naslov": "Postman i AI dodaci koje niko nije tražio",
+        "oCemuSePrica": "Korisnik je prijavio da Postman sam instalira AI plugine koji pokušavaju da podele podatke o API-jima. Na Hacker News-u je to postala jedna od najkomentarisanijih tema dana, sa preko 1.000 poena.",
+        "glasovi": "Većina komentatora traži jasan pristanak pre bilo kakvog AI dodatka u razvojnim alatima. Neki već pišu da prelaze na alternative koje čuvaju podatke lokalno. Postman-ov odgovor proveri u samom issue-u.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50354960"
+          },
+          {
+            "platforma": "github",
+            "naziv": "postmanlabs/postman-app-support",
+            "url": "https://github.com/postmanlabs/postman-app-support/issues/14370"
+          }
+        ]
+      },
+      {
+        "naslov": "Google: bez AI-ja nema ni pretrage u školama",
+        "oCemuSePrica": "Škole koje isključe Gemini gube i Google Search. Rasprava je o tome da li je ovo iskrena tehnička posledica ili pritisak da se AI prihvati.",
+        "glasovi": "Na Hacker News-u (preko 400 komentara) mnogi to zovu ucenom, a deo komentatora prihvata Google-ov argument da su pretraga i AI sada isti proizvod.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50353192"
+          }
+        ]
+      },
+      {
+        "naslov": "Karpathy za dva sata napravio HackerTube sa Opus 5.5",
+        "oCemuSePrica": "Karpathy je uz Claude Code i Opus 5.5 iz 43 miliona HN komentara izvukao 6.454 videa koje ljudi preporučuju godinama, uključujući podešavanje servera i objavu, za oko dva sata. Objava je dobila oko 53 hiljade reakcija i pokrenula raspravu o tome koji nivo napora (effort) modela je pametno koristiti.",
+        "glasovi": "Karpathy je radio na „Medium“ nivou, pa @yuchenj_uw i @swyx raspravljaju da li je to dovoljno za većinu posla. DAIR je odmah napravio sličnu verziju za arXiv radove.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@karpathy",
+            "url": "https://x.com/karpathy/status/2116957135661945283"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@swyx",
+            "url": "https://x.com/swyx/status/2116773135668404286"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@omarsar0",
+            "url": "https://x.com/omarsar0/status/2117053859516285354"
+          }
+        ]
+      },
+      {
+        "naslov": "GDPx: najbolji model rešava samo 12% stvarnih poslovnih zadataka",
+        "oCemuSePrica": "SemiAnalysis je objavio test sa 206 agentskih zadataka iz 11 oblasti, od dizajna čipova do finansija. Opus 5.5 je prvi sa 12%, a Gemini 4 Carbon odmah iza sa 10,9%, uz oko četiri puta nižu cenu.",
+        "glasovi": "@demishassabis je pozdravio test, a @dylan522p se „izvinio Google-u“ zbog snage Carbona. Kritičari zameraju to što test nije otvoren, pa ga je skupo proveriti.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@SemiAnalysis_",
+            "url": "https://x.com/SemiAnalysis_/status/2117075900575477855"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@dylan522p",
+            "url": "https://x.com/dylan522p/status/2117092550842683671"
+          }
+        ]
+      }
+    ],
+    "snimci": [
+      {
+        "naslov": "TamaGPT",
+        "kanal": "OpenAI",
+        "opis": "OpenAI pokazuje kako je uz GPT-6 Astra napravljen mali fizički uređaj bez inženjerskog znanja; uz današnju vest o hardveru za Codex.",
+        "url": "https://www.youtube.com/watch?v=NCxD-qsQcN0"
+      },
+      {
+        "naslov": "‘We may release models we can’t control’: Amodei, Altman … and Gemini Carbon",
+        "kanal": "AI Explained",
+        "opis": "Pregled nedelje: izjave Altmana i Anthropic-a o modelima koje možda neće moći da kontrolišu, anketa među Anthropic-ovim zaposlenima i šta donosi Gemini 4 Carbon.",
+        "url": "https://www.youtube.com/watch?v=0Kw6_DTZPrY"
+      },
+      {
+        "naslov": "ChatGPT Voice is now in Finances",
+        "kanal": "OpenAI",
+        "opis": "Kratka demonstracija: povežeš račune sa ChatGPT Finances i glasom razgovaraš o pretplatama i tome šta možeš da otkažeš.",
+        "url": "https://www.youtube.com/watch?v=63pcV4z0DwI"
+      }
+    ]
+  },
+  "nedeljni": null
+}

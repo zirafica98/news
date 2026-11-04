@@ -1,0 +1,621 @@
+{
+  "datum": "2026-11-04",
+  "generisano": "2026-11-04T03:06:59.018Z",
+  "model": "claude-opus-5-5",
+  "prevod": "claude-sonnet-5-5",
+  "ukratko": "The big story is a paper showing GPT-6 Astra can read and directly edit another model's \"weights\". Simon Willison reproduced the trick with Qwen 3.8 27B on a laptop, but says the hype is overblown. For iOS developers, the iOS 27.3 beta matters more today: Siri AI can now act across all apps. Anthropic shipped Message Threads, which speeds up long agent conversations, and FlashProve, which cryptographically proves which model produced an answer.",
+  "vesti": [
+    {
+      "naslov": "iOS 27.3 beta: Siri AI gets access to third-party apps",
+      "staSeDesilo": "In the iOS 27.3 developer preview, Apple lets the new Siri AI features work across all apps. Siri draws on the user's personal context, understands natural language and can see what's on screen. There's also \"app skills\": developers bundle several steps into a single action, and users don't have to say the app's name for Siri to invoke the skill.",
+      "zastoJeBitno": "This is the most directly relevant news for your SwiftUI apps. Developers who add app skills early will have Siri calling them instead of users opening the app. Check Apple's documentation for API details; the article doesn't cover them.",
+      "kategorija": "alati",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/tech/1025694/apple-siri-ai-third-party-apps"
+        }
+      ]
+    },
+    {
+      "naslov": "\"Weight-Space Programming\": GPT-6 Astra fixed another model by editing its numbers directly, no training",
+      "staSeDesilo": "MIT researchers (Takehi, Teoh, Zhang, Khattab) showed that GPT-6 Astra can read the raw weights of a small model, the numbers that determine how it behaves, and edit them. On Qwen3.5-0.8B, Astra found the cause of the model looping and changed only 0.016% of the weights. The MATH-500 score jumped from 7.9% to 48.1%. On Gemma 3 there was almost no effect. Simon Willison reproduced part of the experiment locally with Qwen 3.8 27B: after 45 to 65 minutes of thinking, the model correctly identified three of four games.",
+      "zastoJeBitno": "This is the first concrete example of one model fixing another without classic training, which immediately raises the topic of AI accelerating its own development. So far it only works on small models and simple tasks. Willison says a patient person with pen and paper would probably reach similar conclusions.",
+      "kategorija": "istrazivanje",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Rundown AI",
+          "url": "https://therundownai.beehiiv.com/p/mit-shows-ai-improving-ai-no-training-required"
+        },
+        {
+          "naziv": "Latent Space / AINews",
+          "url": "https://latent.space/p/ainews-llms-can-read-write-neural-network-weights-weight-space-programming-cuts-autoresearch-out-of/"
+        },
+        {
+          "naziv": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-03"
+        }
+      ]
+    },
+    {
+      "naslov": "Claude API: Message Threads sends only new messages, not the whole conversation",
+      "staSeDesilo": "Anthropic has released Message Threads in public beta. An agent no longer sends the full conversation history with every request, only what's new. For requests of 500K to 1M tokens, time to first token drops by about 35%. The thread is stored encrypted in memory and expires after five minutes of inactivity.",
+      "zastoJeBitno": "If you build long-context agents, responses arrive faster. Token usage and cost stay the same, since Claude still processes the full history. The feature isn't covered by ZDR (zero data retention, a mode where data isn't stored), which matters if you handle sensitive data.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/anthropics-message-threads-cut-time-to-first-token-by-35-percent-for-long-conversations/"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-03"
+        },
+        {
+          "naziv": "Claude documentation",
+          "url": "https://platform.claude.com/docs/en/build-with-claude/message-threads"
+        }
+      ]
+    },
+    {
+      "naslov": "Anthropic FlashProve: cryptographic proof that an answer really came from the stated model",
+      "staSeDesilo": "Anthropic's Frontier Red Team has released FlashProve, an open research prototype for \"provable inference\". The system uses a zkSNARK, a cryptographic proof that reveals nothing about the model's weights, to confirm that an answer came from a specific model. On Llama 4 Maverick (400B) it proves about 110 tokens per second on a single H100. The 18.78 MB proof is verified in 17 seconds on an ordinary CPU, but proving costs 70 to 95 times more GPU time than simply running the model.",
+      "zastoJeBitno": "Today you can't verify whether an API provider or router is really serving you the expensive model or quietly swapping in a cheaper one. For now this is only a prototype and too expensive for everyday use, but it shows a direction in which the problem could be solved.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/11/03/anthropic-flashprove-provable-inference-zksnark/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/03/anthropic-is-working-on-a-system-to-prove-ai-models-identity/"
+        }
+      ]
+    },
+    {
+      "naslov": "GPT-6.2 Astra spotted in Codex, release likely near (unconfirmed)",
+      "staSeDesilo": "GPT-6.2-Astra has appeared in usage views in Codex. That suggests OpenAI is probably already quietly routing some requests to the new model, as a test or gradual rollout. According to unconfirmed reports, OpenAI skipped 6.1 Astra over concerns about deception. OpenAI hasn't confirmed any of this.",
+      "zastoJeBitno": "If you use Codex, you may already be working with the new model without knowing it. If Codex's behavior has changed for you lately, this is a possible explanation.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-03"
+        },
+        {
+          "naziv": "Latent Space / AINews",
+          "url": "https://latent.space/p/ainews-llms-can-read-write-neural-network-weights-weight-space-programming-cuts-autoresearch-out-of/"
+        }
+      ]
+    },
+    {
+      "naslov": "Anthropic's IPO filing: $33 billion in revenue, but $104 billion in losses",
+      "staSeDesilo": "In an amended IPO prospectus, Anthropic reports $33.24 billion in revenue for the first nine months of 2026, growth of 1,200%. Net loss for the same period is $104 billion, and compute and infrastructure commitments come to about $895.4 billion. TechCrunch notes that compute margins are getting worse even though they were supposed to improve.",
+      "zastoJeBitno": "This helps explain why companies are cutting limits and changing subscriptions these days. Flat-rate AI is more expensive to provide than it looks, so expect terms to keep changing.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-03"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/03/anthropic-is-still-grappling-with-the-economics-of-compute/"
+        },
+        {
+          "naziv": "The Rundown AI",
+          "url": "https://therundownai.beehiiv.com/p/mit-shows-ai-improving-ai-no-training-required"
+        }
+      ]
+    },
+    {
+      "naslov": "Apple: dating apps and AI \"partners\" are 18+ only",
+      "staSeDesilo": "Under the new App Store rules, dating apps must carry an 18+ rating. The same applies to AI companions, meaning companionship chatbots, if they offer sexual or romantic content.",
+      "zastoJeBitno": "If you're building a chatbot with a \"personality\" or a dating app, check the age rating before your next review submission. An 18+ rating means losing younger users.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/03/apple-restricts-dating-apps-and-ai-companions-to-users-18-and-up/"
+        }
+      ]
+    },
+    {
+      "naslov": "Google to schools: opt out of AI, and you lose Search too",
+      "staSeDesilo": "For student accounts in primary and secondary schools, Gemini, Gemini Notebook, Gemini in Classroom and Google Search will be off by default until an administrator turns them on. However, AI can't be disabled separately: when a school declines AI, it also loses Search, because Google says \"search and AI are deeply connected\".",
+      "zastoJeBitno": "This shows Google no longer treats AI as an add-on but as part of search itself. It's sparking a big debate on Hacker News.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/ai/2026/11/google-will-let-schools-skip-ai-tools-but-they-have-to-give-up-search-too/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/03/google-will-let-schools-disable-its-ai-tools-but-not-without-sacrificing-search/"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/tech/1025411/google-turn-off-search-ai-features"
+        }
+      ]
+    },
+    {
+      "naslov": "Postman reportedly installs AI plugins on its own and tries to send API data",
+      "staSeDesilo": "A user reported on GitHub that Postman installs AI plugins without asking, and the plugins then try to share all API data. The report has earned over 1,000 points and 350 comments on Hacker News. For now this is a user report, not a confirmed finding: check the issue to see whether Postman has responded.",
+      "zastoJeBitno": "Postman often holds API keys, including ones for Supabase and AI services. Check which plugins you have enabled and whether anything appeared without your knowledge.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "GitHub issue",
+          "url": "https://github.com/postmanlabs/postman-app-support/issues/14370"
+        },
+        {
+          "naziv": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50354960"
+        }
+      ]
+    },
+    {
+      "naslov": "Kimi K3.1 Pro ships with open weights, but with deliberately weakened offensive capabilities",
+      "staSeDesilo": "Ahead of the open-weights release of Kimi K3.1 Pro, scheduled for November 4, Moonshot AI reduced the model's cyberattack capability. In their internal test, this version finds and exploits vulnerabilities in 81% of cases, versus 90.5% for the version without that safeguard. The results haven't been independently verified. Vals has already ranked it first among open models, and Moonshot is taking criticism for unlabeled promotion of the model.",
+      "zastoJeBitno": "This is one of the strongest models you can self-host or use through cheap providers. It's also the first time a Chinese lab has publicly discussed safety tuning of an open model before release.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "ICTbusiness",
+          "url": "https://www.ictbusiness.info/vijesti/moonshot-smanjio-napadacke-sposobnosti-modela-kimi"
+        },
+        {
+          "naziv": "Latent Space / AINews",
+          "url": "https://latent.space/p/ainews-llms-can-read-write-neural-network-weights-weight-space-programming-cuts-autoresearch-out-of/"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI: GPT-6 Astra designed a device in under a week, from enclosure to firmware",
+      "staSeDesilo": "OpenAI's hardware team used GPT-6 Astra to build a device for Codex in under a week: enclosure, circuit board and firmware. It took several rounds of fixes before production, because the model didn't always account for manufacturing tolerances. The company says a newer internal model scores significantly better on its engineering benchmark, but gives no details.",
+      "zastoJeBitno": "AI-assisted coding is spreading into the physical world: CAD, board design and simulation. Still, a real product needs iteration and a human who knows how things are manufactured.",
+      "kategorija": "modeli",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/openai-says-gpt-6-astra-designed-a-hardware-device-from-scratch-in-under-a-week/"
+        },
+        {
+          "naziv": "OpenAI",
+          "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world"
+        }
+      ]
+    },
+    {
+      "naslov": "Croatia's Juraj Bilić elected vice-chair of the Council of Europe's AI and education committee",
+      "staSeDesilo": "Juraj Bilić, CARNET's assistant director for artificial intelligence, has been elected vice-chair of the Council of Europe's Committee on Artificial Intelligence and Education.",
+      "zastoJeBitno": "The region gains a voice on the body shaping European recommendations for AI in schools. That later influences rules for educational apps too.",
+      "kategorija": "regulativa",
+      "vaznost": 1,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "Bug.hr",
+          "url": "https://www.bug.hr/edukacija/hrvatska-dobila-potpredsjednika-odbora-za-umjetnu-inteligenciju-i-obrazovanje-64045"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Claude Message Threads (beta)",
+      "tip": "funkcija",
+      "opis": "An agent in the Claude API sends only new messages instead of the whole history, so the first token in long conversations arrives about 35% faster. Works with most current models, including Opus 5.5, Sonnet 5.5 and Haiku 5.5.",
+      "kakoProbati": [
+        "Open the docs: platform.claude.com/docs/en/build-with-claude/message-threads",
+        "Add the beta header `anthropic-beta: message-threads-2026-08-12` to your request",
+        "Create a thread, then send only the new turn in each following request; exact fields and sample code are in the docs",
+        "The thread expires after 5 minutes of inactivity, so for longer pauses you'll need to resend the whole conversation"
+      ],
+      "link": "https://platform.claude.com/docs/en/build-with-claude/message-threads",
+      "cena": "Tokens are billed as before; the feature itself has no separate charge"
+    },
+    {
+      "naziv": "Siri AI and \"app skills\" in iOS 27.3 beta",
+      "tip": "funkcija",
+      "opis": "Developers can now connect their apps to Siri AI: Siri uses on-screen context and understands natural language, and \"app skills\" bundle multiple actions into one.",
+      "kakoProbati": [
+        "Install the iOS 27.3 developer beta on a test device (Settings → General → Software Update → Beta Updates)",
+        "Download the matching Xcode beta from developer.apple.com",
+        "Look up \"app skills\" and Siri integration in Apple's documentation; check the link for the exact API",
+        "Start with one simple action from your app"
+      ],
+      "link": "https://www.theverge.com/tech/1025694/apple-siri-ai-third-party-apps",
+      "cena": "Free (Apple Developer account required)"
+    },
+    {
+      "naziv": "Worktrunk",
+      "tip": "alat",
+      "opis": "A CLI for managing git worktrees, built for running multiple AI agents in parallel. Each agent works in its own folder and on its own branch, with no collisions. Currently trending on GitHub.",
+      "kakoProbati": [
+        "`brew install worktrunk && wt config shell install`",
+        "`wt switch --create feature-x` creates a branch and worktree and switches you into them; launch Claude Code there",
+        "`wt list` shows the state of all worktrees, and `wt merge main` merges the branch and cleans up after itself"
+      ],
+      "link": "https://github.com/max-sixty/worktrunk",
+      "cena": "Free"
+    },
+    {
+      "naziv": "The \"which game did this model learn\" experiment on your machine",
+      "tip": "projekat",
+      "opis": "Reproduce part of the Weight-Space Programming paper: you give a local model a small model's weights as text, and it guesses which game that model learned. Simon Willison pulled this off with Qwen 3.8 27B.",
+      "kakoProbati": [
+        "In LM Studio, load Qwen 3.8 27B (Q4_K_M, about 17 GB) and increase the context length, since the default 8192 isn't enough",
+        "Install `llm` and the `llm-lmstudio` plugin",
+        "Take the prompt from the repo github.com/RikiyaT/lm_understand-logs (folder exp1_which_game/runs) and run `LMSTUDIO_TIMEOUT=900 llm -f <raw URL of the prompt> -m lmstudio/qwen/qwen3.8-27b`",
+        "Expect 45 to 65 minutes of thinking per game"
+      ],
+      "link": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/",
+      "cena": "Free (runs locally, you need a beefy machine)"
+    },
+    {
+      "naziv": "Soniox STT v6",
+      "tip": "model",
+      "opis": "A speech-to-text API for voice agents, supporting 60+ languages. The model also knows what the agent just said, so it recognizes short user replies better and doesn't pick up the agent's voice as an echo. Speaker and language detection are included in the price.",
+      "kakoProbati": [
+        "Create a Soniox account and get an API key",
+        "For streaming use the `stt-rt-v6` model over WebSocket, and for files `stt-async-v6` over REST",
+        "Try it on a Serbian recording; check the link to see whether Serbian is among the supported languages"
+      ],
+      "link": "https://www.marktechpost.com/2026/11/03/soniox-stt-v6-agent-text-input-echo-cancellation/",
+      "cena": "$0.12 per hour for streaming, $0.10 per hour for files"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Marvell is buying Lumentum, a maker of data center lasers, for $115 billion in stock, one of the largest tech acquisitions ever.",
+      "izvor": "The Rundown AI",
+      "url": "https://therundownai.beehiiv.com/p/mit-shows-ai-improving-ai-no-training-required"
+    },
+    {
+      "naslov": "OpenAI signed four deals in Abu Dhabi (ADNOC, the government, Mubadala, G42), and a UAE investor will reportedly be the largest in a new round of up to $20 billion.",
+      "izvor": "The Rundown AI",
+      "url": "https://therundownai.beehiiv.com/p/mit-shows-ai-improving-ai-no-training-required"
+    },
+    {
+      "naslov": "OpenAI released LifeVal, a benchmark of everyday tasks like scheduling and forms: GPT-6 Astra scores 80.6%, but gains only 0.6 points over GPT-5.6.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-11-03"
+    },
+    {
+      "naslov": "According to OpenAI, ChatGPT now handles searches equal to 20% of Google's volume, counting only queries that trigger a web search.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1025482/openai-says-chatgpt-is-catching-up-to-google-in-search"
+    },
+    {
+      "naslov": "OpenAI is merging the Chat and Work tabs in ChatGPT, while Codex stays a separate desktop app.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-11-03"
+    },
+    {
+      "naslov": "OpenAI has moved to its own Git backend, Pando, written in Rust and largely built by Codex agents; pushes are about 80% faster on average.",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/11/02/openai-pando-git-backend-monorepo/"
+    },
+    {
+      "naslov": "OpenAI quadrupled its bug bounty rewards, now up to $172,000.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/bug-hunters-can-now-earn-up-to-172000-from-openai-as-company-ramps-up-security/"
+    },
+    {
+      "naslov": "Apple Watch gets Siri Recap in the watchOS 27.3 beta, which summarizes conversations the watch hears, and Live Rewind, which transcribes the last 15 seconds of audio.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/02/apple-watchs-ai-features-for-rewinding-and-recapping-conversations-begin-beta-testing/"
+    },
+    {
+      "naslov": "Netflix is adding an \"AI Discover\" tab to its TV app, with recommendations by topic and mood that remember what you dislike.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/03/netflixs-new-ai-discover-tab-helps-you-find-something-to-watch-based-on-your-mood/"
+    },
+    {
+      "naslov": "Stanford tested 50 frequently cited claims about LLMs on 20 current models: 44% no longer hold, and a claim \"lives\" 15.7 months on average.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/rapid-llm-development-is-outrunning-the-research-meant-to-explain-it-study-finds/"
+    },
+    {
+      "naslov": "The SETI Institute has handed control of the Allen Telescope Array and signal analysis to AI agents, so jobs that took weeks now take a few hours.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/ai-agents-take-over-at-setis-allen-telescope-array-scanning-for-extraterrestrial-intelligence/"
+    },
+    {
+      "naslov": "Nexus Mods, the largest PC game mod site, is introducing mandatory disclosure of whether AI was used to make a mod.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/games/1026085/nexus-mods-ai-disclosures"
+    },
+    {
+      "naslov": "Huawei is telling customers to source HBM memory for its AI chips themselves, effectively sending them to the black market, where prices have risen to about $4,000 apiece.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/huawei-tells-customers-to-find-their-own-ai-chip-memory-effectively-outsourcing-procurement-to-the-black-market/"
+    },
+    {
+      "naslov": "Fal, a startup that runs AI models for other companies, raised $1.3 billion and doubled its valuation to $16 billion.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/03/ai-inference-startup-fal-doubles-its-valuation-to-16b-as-demand-surges/"
+    },
+    {
+      "naslov": "Data centers are using old jet engines as generators, because grid connections and new turbines come with years-long waits.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/03/data-centers-are-turning-to-old-jet-engines-as-the-wait-for-power-grows/"
+    },
+    {
+      "naslov": "Russian companies plan to move data centers underground after Ukrainian drone strikes on Yandex and Sberbank facilities.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/ai/2026/11/russia-looks-to-hide-data-centers-underground-as-ukrainian-drones-strike-back/"
+    },
+    {
+      "naslov": "Outside AI agents brought DoorDash only a few hundred orders, negligible next to millions of daily deliveries.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/ai-agenti-donijeli-doordashu-tek-stotine-narudzbi"
+    },
+    {
+      "naslov": "According to Nikkei, the \"hidden\" AI debt of US tech giants has grown 90% in six months, to $3.2 trillion.",
+      "izvor": "Nikkei Asia",
+      "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/us-tech-giants-hidden-ai-debt-swells-90-to-3.2tn-in-6-months"
+    },
+    {
+      "naslov": "OpenAI hired former US Army Secretary Dan Driscoll as a national security adviser.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/openai-hires-ex-army-secretary-gaining-bipartisan-reach-just-as-midterms-loom/"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "CoworkOS: a \"colleague\" agent for long tasks",
+      "objasnjenje": "CoworkOS is a framework for agents that work for hours. Strategy planning is separated from execution, and the human and the agent collaborate through shared files (drafts, spreadsheets, documents) instead of chat. From what the agent does, the system continuously generates new data for further training.",
+      "zastoJeZanimljivo": "If you build agents yourself, a useful idea here is having the agent and you work on the same document instead of routing everything through messages.",
+      "url": "https://huggingface.co/papers/2611.03178",
+      "github": "https://github.com/RUC-NLPIR/CoworkOS"
+    },
+    {
+      "naslov": "CUA-Master: computer-use agents that improve themselves",
+      "objasnjenje": "Agents that click around the screen and use programs like a human learn in loops: they try a task in a real environment, get feedback, try again, and successful attempts become new training data. The loops are nested, so the agent improves at several levels at once.",
+      "zastoJeZanimljivo": "The code is open and shows how a computer-use agent improves without manual data labeling. This fits today's theme of models improving themselves.",
+      "url": "https://huggingface.co/papers/2611.03126",
+      "github": "https://github.com/xlyu0106/CUA-Master"
+    },
+    {
+      "naslov": "Wave Forcing: near-real-time video generation",
+      "objasnjenje": "A method for generating long video continuously. The model is trained and run so that characters and scene look the same from start to finish while motion stays natural. The goal is for video to be produced as fast as a stream, rather than waiting for the whole clip.",
+      "zastoJeZanimljivo": "Fast streamed video opens the door to interactive apps and games where the image is generated as the user watches. The code is publicly available.",
+      "url": "https://huggingface.co/papers/2611.00859",
+      "github": "https://github.com/SJTU-DENG-Lab/WaveForcing"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Bills via Siri",
+      "problem": "People don't know how much they paid for electricity, Infostan or their phone this month, and opening an app and digging through spreadsheets is a hassle.",
+      "zaKoga": "Households in Serbia that pay utility bills through mobile banking",
+      "ulogaAi": "Siri AI, via an app skill, answers questions like \"how much did I pay for electricity in October\", while a small model extracts the amount, recipient and due date from a payment slip or PDF bill.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Build a SwiftUI app with a SwiftData model for bills (recipient, amount, due date, paid)",
+        "Add photo import of payment slips and field extraction via the Claude Haiku 5.5 API",
+        "On iOS 27.3 beta, register a \"bill status\" app skill (see Apple's documentation for details)",
+        "Test questions in Serbian and English"
+      ],
+      "inspiracija": "Siri AI gets access to third-party apps in iOS 27.3 beta"
+    },
+    {
+      "naziv": "Age Rating Checker for the App Store",
+      "problem": "Indie developers don't know whether Apple's new rules (18+ for dating apps and AI companions) apply to them, and only find out when review rejects them.",
+      "zaKoga": "Indie iOS developers, especially those building chatbots",
+      "ulogaAi": "A model reads the app description, screens and chatbot system prompt, then tells you which rules probably apply and which age rating to pick, with quotes from the guidelines.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "An Angular page with a form: app description, system prompt, screenshots",
+        "A Supabase Edge Function that calls a cheap model (e.g. GPT-5.6 Luna) with an excerpt of the App Store rules in the prompt",
+        "Return a list of risks and a recommended age rating, with a note that it isn't legal advice",
+        "Post on Indie Hackers or r/iOSProgramming and gather feedback"
+      ],
+      "inspiracija": "Apple now requires an 18+ rating for dating apps and AI companions"
+    },
+    {
+      "naziv": "What to Watch (by Mood)",
+      "problem": "Switching between Netflix, HBO and local services and hunting for a movie tonight takes longer than the movie itself.",
+      "zaKoga": "Couples and families in Serbia with multiple streaming subscriptions",
+      "ulogaAi": "The user types a mood (\"something light, under 90 minutes, for kids\"), and the model picks 5 titles from the catalog and remembers what was rejected.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Get a free TMDB API key; it also has data on where a title is available in Serbia",
+        "A SwiftUI screen with a mood field and title cards",
+        "Use the cheapest model for picking, e.g. GLM 5.3 Flash via OpenRouter",
+        "Store rejected titles in Supabase so they don't repeat"
+      ],
+      "inspiracija": "Netflix's new \"AI Discover\" tab with mood-based recommendations"
+    },
+    {
+      "naziv": "Voice Notes for Tradespeople",
+      "problem": "Tradespeople on the job don't have time to write quotes, so everything stays in their heads or on scraps of paper and work gets lost.",
+      "zaKoga": "Electricians, plumbers and tilers in Serbia and the region",
+      "ulogaAi": "The tradesperson says what they saw and what needs to be done; speech is converted to text, and a model turns it into quote line items with quantities and prices from their price list.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Check whether Soniox STT v6 handles Serbian well; if not, try another transcription model",
+        "A SwiftUI app with one big record button and a list of quotes",
+        "A Supabase table for the tradesperson's price list and an Edge Function that turns the transcript into line items (Claude Sonnet 5.5)",
+        "Export the quote as PDF and send it via Viber or WhatsApp"
+      ],
+      "inspiracija": "Soniox STT v6 priced at $0.10 to $0.12 per hour"
+    },
+    {
+      "naziv": "Worktree Dashboard in the Menu Bar",
+      "problem": "When you set three Claude Code agents loose in parallel worktrees, you lose the overview: who's done, where there are uncommitted changes, and what's ready to merge.",
+      "zaKoga": "Developers working with multiple agents in parallel",
+      "ulogaAi": "The app periodically runs `wt list` and briefly summarizes the diff for each worktree, so you see right away what the agent did.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Install worktrunk and study the output of `wt list --full`",
+        "Build a macOS SwiftUI MenuBarExtra that runs the command every 30 seconds via Process",
+        "Show the status for each worktree, and on click send `git diff` to a cheap model to generate a summary",
+        "Add a \"merge\" button that runs `wt merge main`"
+      ],
+      "inspiracija": "Worktrunk on GitHub Trending and the buzz around parallel agents (DeepSeek superagent, Pando)"
+    }
+  ],
+  "cene": "gpt-oss-120b saw the biggest price drop today: from $0.15/$0.6 to $0.026/$0.098 per million tokens (input/output). Llama 3.3 70B fell from $0.2/$0.52 to $0.1/$0.32. Prices rose for Llama 3.1 70B (from $0.4 to $0.72 for both input and output), Gemma 4 26B (from $0.036/$0.108 to $0.067/$0.2) and Kimi K3 output (from $15 to $16). The cheapest in the cheap-and-fast class is GLM 5.3 Flash, at $0.0313/$0.0846. The new GPT-6.1 Terra costs $1/$5, and GPT-6 Astra at $10/$50 is double its predecessor GPT-5.5 ($5/$30) on input.",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Models that read and edit other models' weights",
+        "oCemuSePrica": "The \"Weight-Space Programming\" paper, in which GPT-6 Astra works out what a small model learned from its raw numbers and fixes it without training, is the biggest topic of the day. Some see a new step toward AI that improves itself, while others say it's ordinary interpretability, meaning understanding what's inside a model, on very small models.",
+        "glasovi": "Author Rikiya Takehi posted a thread with the results, and Alex Krentsel independently reproduced the experiment. @giffmana warns that some of the claims are exaggerated. Simon Willison showed that a local Qwen 3.8 27B can do it too, but says a patient person with pen and paper could probably do the same.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@rikiyatakehi",
+            "url": "https://x.com/rikiyatakehi/status/2117313742891327994"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@giffmana",
+            "url": "https://x.com/giffmana/status/2117346161866514524"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@AlexKrentsel",
+            "url": "https://x.com/AlexKrentsel/status/2117376683724660898"
+          },
+          {
+            "platforma": "bluesky",
+            "naziv": "Simon Willison",
+            "url": "https://bsky.app/profile/simonwillison.net/post/3mzgb77cpis2w"
+          }
+        ]
+      },
+      {
+        "naslov": "Postman and the AI plugins nobody asked for",
+        "oCemuSePrica": "A user reported that Postman installs AI plugins on its own that try to share API data. On Hacker News it became one of the most-discussed topics of the day, with over 1,000 points.",
+        "glasovi": "Most commenters want clear consent before any AI add-on in developer tools. Some are already writing that they're switching to alternatives that keep data local. Check the issue itself for Postman's response.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50354960"
+          },
+          {
+            "platforma": "github",
+            "naziv": "postmanlabs/postman-app-support",
+            "url": "https://github.com/postmanlabs/postman-app-support/issues/14370"
+          }
+        ]
+      },
+      {
+        "naslov": "Google: no AI, no Search in schools",
+        "oCemuSePrica": "Schools that turn off Gemini lose Google Search too. The debate is whether this is an honest technical consequence or pressure to accept AI.",
+        "glasovi": "On Hacker News (over 400 comments), many call it blackmail, while some commenters accept Google's argument that search and AI are now the same product.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50353192"
+          }
+        ]
+      },
+      {
+        "naslov": "Karpathy built HackerTube in two hours with Opus 5.5",
+        "oCemuSePrica": "Using Claude Code and Opus 5.5, Karpathy pulled 6,454 videos that people have recommended over the years out of 43 million HN comments, including server setup and publishing, in about two hours. The post drew around 53K reactions and kicked off a debate about which model effort level is smart to use.",
+        "glasovi": "Karpathy worked at the \"Medium\" level, so @yuchenj_uw and @swyx are debating whether that's enough for most work. DAIR immediately built a similar version for arXiv papers.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@karpathy",
+            "url": "https://x.com/karpathy/status/2116957135661945283"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@swyx",
+            "url": "https://x.com/swyx/status/2116773135668404286"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@omarsar0",
+            "url": "https://x.com/omarsar0/status/2117053859516285354"
+          }
+        ]
+      },
+      {
+        "naslov": "GDPx: the best model solves only 12% of real business tasks",
+        "oCemuSePrica": "SemiAnalysis published a benchmark of 206 agentic tasks across 11 domains, from chip design to finance. Opus 5.5 is first at 12%, with Gemini 4 Carbon right behind at 10.9%, at roughly a quarter of the price.",
+        "glasovi": "@demishassabis welcomed the benchmark, while @dylan522p \"apologized to Google\" over Carbon's strength. Critics object that the benchmark isn't open, which makes it expensive to verify.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@SemiAnalysis_",
+            "url": "https://x.com/SemiAnalysis_/status/2117075900575477855"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@dylan522p",
+            "url": "https://x.com/dylan522p/status/2117092550842683671"
+          }
+        ]
+      }
+    ],
+    "snimci": [
+      {
+        "naslov": "TamaGPT",
+        "kanal": "OpenAI",
+        "opis": "OpenAI shows how a small physical device was built with GPT-6 Astra without engineering expertise; a companion to today's news about the Codex hardware.",
+        "url": "https://www.youtube.com/watch?v=NCxD-qsQcN0"
+      },
+      {
+        "naslov": "‘We may release models we can’t control’: Amodei, Altman … and Gemini Carbon",
+        "kanal": "AI Explained",
+        "opis": "A weekly roundup: statements from Altman and Anthropic about models they may not be able to control, a survey of Anthropic employees, and what Gemini 4 Carbon brings.",
+        "url": "https://www.youtube.com/watch?v=0Kw6_DTZPrY"
+      },
+      {
+        "naslov": "ChatGPT Voice is now in Finances",
+        "kanal": "OpenAI",
+        "opis": "A short demo: you connect your accounts to ChatGPT Finances and talk by voice about subscriptions and what you can cancel.",
+        "url": "https://www.youtube.com/watch?v=63pcV4z0DwI"
+      }
+    ]
+  },
+  "nedeljni": null
+}
