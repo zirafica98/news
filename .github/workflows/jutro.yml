@@ -6,14 +6,15 @@
 # Glavni okidač je Vercel Cron (api/pokreni-izdanje.mjs, vercel.json), jer GitHub zakazane poslove
 # za ovaj repo kasni satima ili ih ne pokrene (17.09. nijedan od 32 termina). Dva GitHub termina ispod
 # su samo rezerva: posao radi ako je u Beogradu 05:00 ili kasnije i ako današnje izdanje još ne postoji.
+# Termini su u 04:17 i 05:17 UTC, da bi i zimi (UTC+1) oba bila posle 05:00 po Beogradu.
 # Izdanje je gotovo pre 7h, a notifikacija se šalje tačno u 07:00 (posao sačeka).
 
 name: Jutarnje izdanje
 
 on:
   schedule:
-    - cron: '17 3 * * *'
-    - cron: '47 4 * * *'
+    - cron: '17 4 * * *'
+    - cron: '17 5 * * *'
   workflow_dispatch:
     inputs:
       rezim:
@@ -130,7 +131,13 @@ jobs:
             telegram-id) node scripts/izvestaj-telegram.mjs --nadji-chat ;;
             ponovo) bash scripts/jutro.sh --ponovo ;;
             provera) bash scripts/jutro.sh --provera ;;
-            notifikacija) npm ci --prefix scripts --no-audit --no-fund --loglevel=error && node scripts/posalji-push.mjs ;;
+            notifikacija)
+              npm ci --prefix scripts --no-audit --no-fund --loglevel=error
+              node scripts/posalji-push.mjs
+              # Istekle pretplate koje je skripta obrisala čuvaju se u repou.
+              git add scripts/state/pretplate.json
+              git diff --cached --quiet || { git commit -q -m "Uklonjene istekle pretplate" && git pull -q --rebase && git push -q; }
+              ;;
             drustvene)
               # Svaka mreža posebno: ako jedna ne uspe, ostale se svejedno objavljuju, a posao se na kraju označi kao neuspešan.
               npm ci --prefix scripts --no-audit --no-fund --loglevel=error

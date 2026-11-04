@@ -32,6 +32,17 @@ if (greske.length) {
 console.log(`Izdanje za ${datum} je ispravno.`);
 if (samoProvera) process.exit(0);
 
+// Prompt traži 5–10 glavnih vesti, a provera toleriše do 12 da izdanje ne bi palo zbog jedne viška.
+// Višak se ovde odseca (vesti su poređane po važnosti); domaća vest (izSrbije) ostaje i kad je ispod granice.
+const MAX_VESTI = 10;
+if (izdanje.vesti.length > MAX_VESTI) {
+  const prve = izdanje.vesti.slice(0, MAX_VESTI);
+  const domaca = izdanje.vesti.slice(MAX_VESTI).find((v) => v.izSrbije);
+  if (domaca && !prve.some((v) => v.izSrbije)) prve[MAX_VESTI - 1] = domaca;
+  console.log(`Izdanje ima ${izdanje.vesti.length} vesti, objavljuje se prvih ${MAX_VESTI}.`);
+  izdanje.vesti = prve;
+}
+
 await writeJson(paths.izdanje(datum), izdanje);
 
 const brojIzdanja = await azurirajIndex(paths.index, izdanje);

@@ -56,7 +56,16 @@ export class NotifikacijeService {
 
   async iskljuci(): Promise<void> {
     const registracija = await navigator.serviceWorker.getRegistration();
-    await (await registracija?.pushManager.getSubscription())?.unsubscribe();
+    const pretplata = await registracija?.pushManager.getSubscription();
+    if (pretplata) {
+      // Server briše uređaj iz liste; ako to ne uspe, jutarnji posao ga ukloni kad push servis prijavi istek.
+      await fetch('/api/pretplata', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ endpoint: pretplata.endpoint }),
+      }).catch(() => undefined);
+      await pretplata.unsubscribe();
+    }
     this.stanje.set('iskljucene');
   }
 

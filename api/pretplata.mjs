@@ -1,5 +1,5 @@
 // Prima pretplatu na push notifikacije sa telefona i čuva je u repou (scripts/state/pretplate.json),
-// odakle je jutarnji posao na GitHub-u koristi da pošalje notifikaciju.
+// odakle je jutarnji posao na GitHub-u koristi da pošalje notifikaciju. DELETE briše uređaj kad čitalac isključi notifikacije.
 //
 // Potrebna promenljiva: GITHUB_DISPATCH_TOKEN sa dozvolom Contents: Read and write za zirafica98/news.
 
@@ -43,6 +43,38 @@ export async function POST(request) {
     return odgovor(502, 'Čuvanje nije uspelo');
   }
   return odgovor(200, 'Pretplata sačuvana');
+}
+
+/** Isključene notifikacije: uređaj se briše iz liste, da mu jutarnji posao više ne šalje. */
+export async function DELETE(request) {
+  const token = process.env.GITHUB_DISPATCH_TOKEN;
+  if (!token) return odgovor(500, 'Nedostaje GITHUB_DISPATCH_TOKEN');
+
+  let endpoint;
+  try {
+    ({ endpoint } = await request.json());
+  } catch {
+    return odgovor(400, 'Neispravan JSON');
+  }
+  if (typeof endpoint !== 'string' || !endpoint) return odgovor(400, 'Nedostaje endpoint');
+
+  const postojeci = await procitaj(token);
+  const ostale = postojeci.sadrzaj.filter((p) => p.endpoint !== endpoint);
+  if (ostale.length === postojeci.sadrzaj.length) return odgovor(200, 'Uređaj nije bio pretplaćen');
+
+  const res = await githubFetch(`https://api.github.com/repos/${REPO}/contents/${PUTANJA}`, token, {
+    method: 'PUT',
+    body: JSON.stringify({
+      message: 'Odjava sa notifikacija',
+      content: Buffer.from(`${JSON.stringify(ostale, null, 2)}\n`).toString('base64'),
+      sha: postojeci.sha,
+    }),
+  });
+  if (!res.ok) {
+    console.error(`GitHub nije obrisao pretplatu: HTTP ${res.status} ${await res.text()}`);
+    return odgovor(502, 'Brisanje nije uspelo');
+  }
+  return odgovor(200, 'Pretplata obrisana');
 }
 
 // ---------------------------------------------------------------------------

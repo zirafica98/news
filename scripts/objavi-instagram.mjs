@@ -1,6 +1,6 @@
 // Objavljuje izdanje na Instagram (@ai.morning.brief), preko Instagram API-ja sa Instagram prijavom:
 //   1. karusel (post),
-//   2. dva Reel-a sa glasom (Shortovi iz shorts.mjs): vest #1 i „Try this AI tool“, subotom vest #1 i nedeljni pregled,
+//   2. najviše dva Reel-a sa glasom, redom koji postoji: AI Wars, nedeljni pregled (subota), Tool of the Day, Byte Explains, vest #1,
 //   3. iste slajdove kao story, samo za današnje izdanje (story traje 24h).
 // Slike i video pravi insta-slike.mjs i moraju već biti na sajtu, jer ih Instagram preuzima sa javnog URL-a:
 // skripta zato prvo sačeka da Vercel objavi novi build.

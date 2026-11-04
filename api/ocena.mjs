@@ -1,5 +1,5 @@
 // Prima ocenu (palac gore/dole) sa sajta i dopisuje je u repo (scripts/state/ocene.json).
-// Jutarnji posao je čita, pa Claude zna šta čitaocu jeste ili nije korisno.
+// Jutarnji posao je čita, pa Claude zna šta čitaocu jeste ili nije korisno. Ocena 0 znači da je čitalac poništio ocenu.
 //
 // Potrebna promenljiva: GITHUB_DISPATCH_TOKEN sa dozvolom Contents: Read and write za zirafica98/news.
 
@@ -21,7 +21,7 @@ export async function POST(request) {
   if (
     !/^\d{4}-\d{2}-\d{2}$/.test(ocena?.datum ?? '') ||
     !TIPOVI.includes(ocena?.tip) ||
-    ![1, -1].includes(ocena?.ocena) ||
+    ![1, -1, 0].includes(ocena?.ocena) ||
     typeof ocena?.naslov !== 'string' ||
     ocena.naslov.length > 300
   ) {
@@ -34,16 +34,17 @@ export async function POST(request) {
   for (let pokusaj = 0; pokusaj < 3; pokusaj++) {
     const { sadrzaj, sha } = await procitaj(token);
     const bez = sadrzaj.filter((o) => !(o.datum === nova.datum && o.tip === nova.tip && o.naslov === nova.naslov));
-    const sve = [...bez, nova].slice(-MAX_OCENA);
+    if (nova.ocena === 0 && bez.length === sadrzaj.length) return odgovor(200, 'Ocene nije ni bilo');
+    const sve = (nova.ocena === 0 ? bez : [...bez, nova]).slice(-MAX_OCENA);
     const res = await githubFetch(`https://api.github.com/repos/${REPO}/contents/${PUTANJA}`, token, {
       method: 'PUT',
       body: JSON.stringify({
-        message: `Ocena: ${nova.ocena > 0 ? '👍' : '👎'} ${nova.naslov.slice(0, 60)}`,
+        message: `Ocena: ${nova.ocena > 0 ? '👍' : nova.ocena < 0 ? '👎' : 'poništena'} ${nova.naslov.slice(0, 60)}`,
         content: Buffer.from(`${JSON.stringify(sve, null, 2)}\n`).toString('base64'),
         ...(sha && { sha }),
       }),
     });
-    if (res.ok) return odgovor(200, 'Ocena sačuvana');
+    if (res.ok) return odgovor(200, nova.ocena === 0 ? 'Ocena poništena' : 'Ocena sačuvana');
     if (res.status !== 409) {
       console.error(`GitHub nije sačuvao ocenu: HTTP ${res.status} ${await res.text()}`);
       return odgovor(502, 'Čuvanje nije uspelo');

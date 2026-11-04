@@ -25,14 +25,15 @@ export class OceneService {
       return kopija;
     });
     this.snimi();
-    if (nova !== undefined) void this.posalji({ ...stavka, ocena: nova });
+    // Poništena ocena se šalje kao 0, da je server ukloni.
+    void this.posalji({ ...stavka, ocena: nova ?? 0 });
   }
 
   ocena(kljuc: string): Ocena | undefined {
     return this.sve()[kljuc];
   }
 
-  private async posalji(telo: { datum: string; tip: SacuvanoTip; naslov: string; ocena: Ocena }): Promise<void> {
+  private async posalji(telo: { datum: string; tip: SacuvanoTip; naslov: string; ocena: Ocena | 0 }): Promise<void> {
     try {
       await fetch('/api/ocena', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(telo) });
     } catch {

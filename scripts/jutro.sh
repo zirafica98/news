@@ -46,6 +46,15 @@ trap 'on_error $LINENO' ERR
 
 cd "$REPO_DIR"
 
+# Commit zadatih fajlova i push; ako je u međuvremenu sajt upisao pretplatu ili ocenu, povuče izmene i pokuša ponovo.
+posalji_na_github() {
+  local poruka="$1"; shift
+  git add "$@"
+  git diff --cached --quiet && return 0
+  git commit --quiet -m "$poruka"
+  git push --quiet 2>/dev/null || { git pull --rebase --autostash --quiet && git push --quiet; }
+}
+
 if [[ -z "${AI_NEWS_OSVEZENO:-}" ]]; then
   # Ne daj Mac-u da zaspi dok skripta radi. -s drži Mac budnim i kad je poklopac zatvoren (samo na punjaču):
   # posle buđenja u 06:25 macOS ga inače vrati na spavanje za par minuta, usred Claude-ovog pisanja.
@@ -129,7 +138,13 @@ fi
 node scripts/fetch-news.mjs --datum="$DATUM" $($PONOVO && echo --ponovo)
 
 # 5b. Cene tokena. Ako OpenRouter ne radi, izdanje ide i bez njih.
-node scripts/fetch-prices.mjs --datum="$DATUM" || log "Cene tokena nisu osvežene, nastavljam bez njih."
+# Cene se odmah šalju na GitHub, da istorija cena ne izgubi dan ako kasniji korak (npr. Claude) padne.
+if node scripts/fetch-prices.mjs --datum="$DATUM"; then
+  posalji_na_github "Cene $DATUM" public/data/cene.json public/data/cene-istorija.json scripts/state/cene-istorija.json \
+    || log "Cene nisu poslate na GitHub, idu uz izdanje."
+else
+  log "Cene tokena nisu osvežene, nastavljam bez njih."
+fi
 
 # 6. Claude piše izdanje (jedan ponovni pokušaj ako padne).
 if ! node scripts/write-digest.mjs --datum="$DATUM"; then
@@ -153,12 +168,17 @@ node scripts/shorts.mjs --datum="$DATUM" || log "Shorts nisu napravljeni, izdanj
 # 7d2. Videi sa maskotom Byte (Claude piše scenario, Remotion u video/ renderuje):
 # Tool of the Day zamenjuje Shortove alata iz 7d (ako ne uspe, ostaju stari), Byte Explains zamenjuje Short sa vešću,
 # pa AI Wars epizoda.
+video_ok=true
 if [[ ! -d video/node_modules ]] || [[ video/package-lock.json -nt video/node_modules ]]; then
-  npm ci --prefix video --no-audit --no-fund --loglevel=error && touch video/node_modules
+  npm ci --prefix video --no-audit --no-fund --loglevel=error && touch video/node_modules || video_ok=false
 fi
-node scripts/alat-dana.mjs --datum="$DATUM" || log "Tool of the Day nije napravljen, ostaje stari Short alata."
-node scripts/byte-explains.mjs --datum="$DATUM" || log "Byte Explains nije napravljen, ostaje Short sa vešću."
-node scripts/ai-wars.mjs --datum="$DATUM" || log "AI Wars epizoda nije napravljena, izdanje ide bez nje."
+if $video_ok; then
+  node scripts/alat-dana.mjs --datum="$DATUM" || log "Tool of the Day nije napravljen, ostaje stari Short alata."
+  node scripts/byte-explains.mjs --datum="$DATUM" || log "Byte Explains nije napravljen, ostaje Short sa vešću."
+  node scripts/ai-wars.mjs --datum="$DATUM" || log "AI Wars epizoda nije napravljena, izdanje ide bez nje."
+else
+  log "Paketi za video (npm ci --prefix video) nisu instalirani: Byte videi se preskaču, ostaju Shortovi sa vestima."
+fi
 
 # 7e. Mediji za mreže stariji od 14 dana se brišu (mreže su ih već preuzele), da repo ne raste.
 node scripts/ocisti-medije.mjs || log "Stari mediji nisu obrisani."
@@ -183,7 +203,9 @@ notify "Izdanje je spremno ☕ $prvi_naslov"
 
 # 9. Push notifikacija na telefon (radi samo ako su podešene VAPID tajne i ako ima pretplata).
 # Pri ručnom ponovnom pravljenju šalje odmah; u redovnom jutarnjem radu čeka 07:00.
-node scripts/posalji-push.mjs --datum="$DATUM" $($PONOVO || echo "--sacekaj-do=07:00") || log "Push notifikacija nije poslata." 
+node scripts/posalji-push.mjs --datum="$DATUM" $($PONOVO || echo "--sacekaj-do=07:00") || log "Push notifikacija nije poslata."
+# Pretplate koje je push servis prijavio kao istekle su obrisane iz fajla; to se čuva, da se sutra ne pokušavaju ponovo.
+posalji_na_github "Uklonjene istekle pretplate" scripts/state/pretplate.json || log "Lista pretplata nije poslata na GitHub."
 
 # Stari logovi se brišu posle 30 dana.
 find "$LOG_DIR" -name '*.log' -mtime +30 -delete

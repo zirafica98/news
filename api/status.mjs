@@ -1,13 +1,16 @@
 // Provera podešavanja jutarnjeg okidača, bez pokretanja posla.
-// Vraća samo da/ne za svaku stavku, bez tajni.
+// Javno vraća samo da/ne da li su promenljive podešene. Provera tokena (GitHub nalog, istek, dozvole) traži
+// zaglavlje Authorization: Bearer <CRON_SECRET>, da niko spolja ne vidi nalog niti troši GitHub API pozive.
 //
 // Dozvolu za pokretanje posla proverava zahtevom za granu koja ne postoji:
 // token sa dozvolom Actions: Read and write dobija 422 (nema te grane), a bez nje 403.
 
 const REPO = 'zirafica98/news';
 
-export async function GET() {
+export async function GET(request) {
   const token = process.env.GITHUB_DISPATCH_TOKEN;
+  const secret = process.env.CRON_SECRET;
+  const vlasnik = Boolean(secret) && request.headers.get('authorization') === `Bearer ${secret}`;
   const rezultat = {
     cronSecret: Boolean(process.env.CRON_SECRET),
     vapidJavni: Boolean(process.env.VAPID_PUBLIC_KEY),
@@ -16,7 +19,7 @@ export async function GET() {
     tokenMozeDaUpisuje: null,
   };
 
-  if (token) {
+  if (token && vlasnik) {
     const zaglavlja = {
       Authorization: `Bearer ${token}`,
       Accept: 'application/vnd.github+json',

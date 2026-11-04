@@ -1,10 +1,11 @@
 // YouTube video serije sa glasom (Kokoro TTS) i animiranim titlovima, iz istog motora:
-//   vesti      3 Shorta dnevno, po jedna glavna vest
-//   alat       „Try this AI tool“: alat iz „Novo izašlo“ sa koracima (svaki dan osim subote)
-//   ideja      „App idea of the day“ (ponedeljak, sreda, petak)
+//   vesti      2 Shorta dnevno, po jedna glavna vest (byte-explains.mjs i ai-wars.mjs ih posle brišu, ostaje najviše jedan)
+//   alat       „Try this AI tool“: alat iz „Novo izašlo“ sa koracima (svaki dan osim subote; pon/sre/pet i drugi alat).
+//              To je rezerva: alat-dana.mjs ih zamenjuje Byte videima (Tool of the Day) pod istim imenom fajla.
+//   ideja      „App idea of the day“, samo ručno (--samo=ideja)
 //   cene       „Cheapest AI models this week“ (nedelja)
 //   nedelja    „This week in AI“ Short i dugi video 16:9 sa poglavljima (subota, iz nedeljnog pregleda)
-// Najviše 5 videa dnevno, jer YouTube API kvota (10.000 jedinica) staje oko 5 uploada sa plejlistom i komentarom.
+// YouTube API kvota staje oko 5 uploada dnevno sa plejlistom i komentarom; višak objavi-youtube.mjs kači sutradan.
 //
 // Svaki video: intro sting → najava → udica (kuca se reč po reč) → delovi sa karaoke titlovima → kraj.
 // Glas je Kokoro TTS (scripts/tts.py, besplatan, radi lokalno); svaka rečenica se izgovara posebno, a njeno

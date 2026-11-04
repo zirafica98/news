@@ -1,5 +1,7 @@
-// Objavljuje YouTube Shorts: tri Shorta sa glasom, po jedna vest (public/insta/YYYY-MM-DD-short-N.mp4, pravi ih shorts.mjs),
-// a subotom i rekapitulaciju nedelje (YYYY-MM-DD-reel.mp4). Opisi su bez linka ka sajtu i izvora.
+// Objavljuje YouTube Shorts dana iz public/insta/YYYY-MM-DD-shorts.json: AI Wars, Tool of the Day, Byte Explains,
+// Short sa vešću, nedeljom cene, subotom nedeljni pregled (prave ih shorts.mjs, alat-dana, byte-explains, ai-wars).
+// Šalje ih obrnutim redom, pa prva stavka (AI Wars) završi na vrhu kanala. Ako shorts.json ne postoji, ide stari Reel dana.
+// Opisi su bez linka ka sajtu i izvora; < i > se čiste jer ih YouTube ne prima.
 //
 // Tajne (GitHub → Settings → Secrets → Actions): YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET, YOUTUBE_REFRESH_TOKEN.
 // Refresh token se pravi jednom, lokalno: node scripts/youtube-prijava.mjs (uputstvo je u toj skripti).
