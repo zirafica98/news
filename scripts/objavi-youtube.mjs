@@ -160,8 +160,11 @@ async function graf(putanja, telo) {
 
 /** Otpremanje u dva koraka (resumable upload): prvo podaci o videu, pa sam fajl na adresu koju YouTube vrati. */
 async function otpremi(video, { naslov, opis, tagovi }) {
-  // YouTube ne dozvoljava < i > u naslovu; naslov je najviše 100 znakova.
+  // YouTube ne dozvoljava < i > ni u naslovu ni u opisu (inače 400 invalidDescription; npr. `llm -f <URL>` u koracima alata).
+  // Naslov je najviše 100 znakova; tag sa navodnicima ili duži od 30 znakova ide napolje (inače invalidTags).
   const naslovVidea = naslov.replace(/[<>]/g, '').slice(0, 100).trim();
+  const opisVidea = opis.replace(/</g, '‹').replace(/>/g, '›').slice(0, 4900);
+  const tagoviVidea = (tagovi ?? []).map((t) => String(t).replace(/[<>"]/g, '').trim()).filter((t) => t && t.length <= 30);
   const pocetak = await preuzmi('https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status', {
     metoda: 'POST',
     headers: {
@@ -171,7 +174,7 @@ async function otpremi(video, { naslov, opis, tagovi }) {
       'X-Upload-Content-Length': String(video.length),
     },
     telo: JSON.stringify({
-      snippet: { title: naslovVidea, description: opis.slice(0, 4900), categoryId: '28', defaultLanguage: 'en', tags: tagovi },
+      snippet: { title: naslovVidea, description: opisVidea, categoryId: '28', defaultLanguage: 'en', tags: tagoviVidea },
       status: { privacyStatus: 'public', selfDeclaredMadeForKids: false },
     }),
   });
