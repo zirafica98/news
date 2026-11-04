@@ -122,9 +122,20 @@ async function postaviThumbnail(id, fajl) {
  */
 async function posleObjave(id, { plejlista, pitanje }) {
   if (bezOvlascenja) return;
+  // Odmah posle otpremanja YouTube zna da vrati videoNotFound, pa se tada sačeka i pokuša ponovo.
+  const uporno = async (posao) => {
+    for (let pokusaj = 1; ; pokusaj++) {
+      try {
+        return await posao();
+      } catch (err) {
+        if (!/videoNotFound|Video not found/i.test(err.message) || pokusaj >= 4) throw err;
+        await new Promise((r) => setTimeout(r, 20_000));
+      }
+    }
+  };
   try {
-    if (plejlista) await graf('/playlistItems?part=snippet', { snippet: { playlistId: await idPlejliste(plejlista), resourceId: { kind: 'youtube#video', videoId: id } } });
-    if (pitanje) await graf('/commentThreads?part=snippet', { snippet: { videoId: id, topLevelComment: { snippet: { textOriginal: pitanje } } } });
+    if (plejlista) await uporno(async () => graf('/playlistItems?part=snippet', { snippet: { playlistId: await idPlejliste(plejlista), resourceId: { kind: 'youtube#video', videoId: id } } }));
+    if (pitanje) await uporno(() => graf('/commentThreads?part=snippet', { snippet: { videoId: id, topLevelComment: { snippet: { textOriginal: pitanje } } } }));
   } catch (err) {
     if (/insufficient|scope|permission/i.test(err.message)) {
       bezOvlascenja = true;
