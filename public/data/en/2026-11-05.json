@@ -1,0 +1,604 @@
+{
+  "datum": "2026-11-05",
+  "generisano": "2026-11-05T03:09:27.525Z",
+  "model": "claude-opus-5-5",
+  "prevod": "claude-sonnet-5-5",
+  "ukratko": "US election day was rough for data centers: at least 38 of 44 local measures to restrict their construction passed, and candidates calling for a moratorium won too. OpenAI released Images 2.6 with GIF animations in ChatGPT and said its automated system found and patched 948 holes in the Linux kernel. New open models also landed: Kimi K3.1 Pro (weights finally available), Ripple-65B and Tencent Hy4.",
+  "vesti": [
+    {
+      "naslov": "ChatGPT can now make animated GIFs, with the new Images 2.6 model",
+      "staSeDesilo": "OpenAI has released Images 2.6, a new image model in ChatGPT, Codex and the API. The most visible addition is GIF support: you get an animation from text or a photo, then adjust its speed and edit individual frames. OpenAI also cites faster generation, more precise edits and new API settings. Characters stay recognizable from frame to frame, so you can make flipbook-style animations.",
+      "zastoJeBitno": "If the API really returns GIFs, you can get short animations (stickers, greeting cards, animated icons) in a single call, with no separate video model. Check the link for pricing and exact parameter names.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "OpenAI",
+          "url": "https://openai.com/index/introducing-images-2-6"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1026474/openai-chatgpt-animated-gifs-images-2-6"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/chatgpt-can-now-turn-text-prompts-and-photos-into-animated-gifs-with-openais-images-2-6-model/"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI: automated system found and patched 948 holes in the Linux kernel",
+      "staSeDesilo": "OpenAI built an autonomous pipeline, meaning a chain of steps the AI carries out without a human. In the Linux kernel, the system found 948 vulnerabilities that let an ordinary user gain administrator (root) privileges, confirmed them and wrote the patches. Meanwhile, Hacker News has a big discussion going about an IEEE Spectrum piece arguing that AI is forcing the industry to \"pay back 40 years of technical debt\".",
+      "zastoJeBitno": "AI is now finding holes in old code faster than humans can patch them. Expect more frequent security patches, and keep your servers, Docker images and dependencies up to date. Check the link to see whether the patches have already made it into the official kernel.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "OpenAI",
+          "url": "https://openai.com/index/a-thousand-fewer-paths-to-root"
+        },
+        {
+          "naziv": "r/singularity",
+          "url": "https://www.reddit.com/r/singularity/comments/1xo3a2k/openai_claims_their_new_security_model_patched/"
+        },
+        {
+          "naziv": "IEEE Spectrum (Hacker News)",
+          "url": "https://news.ycombinator.com/item?id=50364336"
+        }
+      ]
+    },
+    {
+      "naslov": "US elections: data centers lose almost everywhere",
+      "staSeDesilo": "In the congressional midterms, voters in most places voted against data centers. Of 44 local measures in 10 states restricting their construction, at least 38 passed, and an NBC poll found 76% of voters don't want a data center in their area. In Texas, until now the biggest building ground, candidates for governor and Senate who back a moratorium won. The largest lobbying group for the AI industry (the Leading the Future super PAC, with $100 million) had little effect on the outcome.",
+      "zastoJeBitno": "These measures mostly hit projects planned for 2028, not ones already under construction. Still, if less new capacity gets built, compute stays expensive, so subscription limits and API prices probably won't fall anytime soon.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/policy/1026365/data-centers-midterms-results"
+        },
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/tech-policy/2026/11/big-tech-claims-voters-ai-backlash-is-anti-trump-not-anti-tech/"
+        },
+        {
+          "naziv": "MIT Technology Review",
+          "url": "https://www.technologyreview.com/2026/11/04/1148043/texas-was-the-new-epicenter-of-the-ai-data-center-buildout-that-might-be-kaput/"
+        },
+        {
+          "naziv": "Wired",
+          "url": "https://www.wired.com/story/the-biggest-pro-ai-super-pac-network-didnt-really-impact-the-midterms/"
+        }
+      ]
+    },
+    {
+      "naslov": "Open-model wave: Kimi K3.1 Pro weights released, Ripple-65B and Tencent Hy4 on the way",
+      "staSeDesilo": "Moonshot has finally released the weights for Kimi K3.1 Pro, and Artificial Analysis currently ranks it as the strongest open model. Ricursive put out Ripple-65B Preview: a dense model (all parameters active for every token) with 65 billion parameters, under the Apache 2.0 license. It scores itself 80.5 on Terminal-Bench 2.1. Tencent unveiled Hy4 at $0.834/$2.501 per million tokens and announced open weights. According to dirac.run, open models now account for over 75% of tokens on OpenRouter.",
+      "zastoJeBitno": "For agents and coding, open models are increasingly becoming a cheap replacement for closed ones. Revolut, for example, moved about 2,000 engineers to open models and reports a tenfold cost reduction. Take company-published benchmark results with a grain of salt.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "r/LocalLLaMA (Kimi K3.1 Pro)",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xnrhvb/kimik31pro_is_now_openweights/"
+        },
+        {
+          "naziv": "MarkTechPost (Ripple-65B)",
+          "url": "https://www.marktechpost.com/2026/11/04/ricursive-ripple-65b-preview-open-weight-model/"
+        },
+        {
+          "naziv": "r/LocalLLaMA (Hy4)",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xnhzbz/introducing_hy4_open_weights_soon/"
+        },
+        {
+          "naziv": "Latent Space AINews",
+          "url": "https://latent.space/p/ainews-behind-latent-space-kill-my-saas-jev-ai-in-2026-aiei-shanghai/"
+        }
+      ]
+    },
+    {
+      "naslov": "Claude Code in October: modes, monthly API credits and self-connecting plugins",
+      "staSeDesilo": "Anthropic's developer team rounded up the October updates to Claude Code. They include modes, better multi-session handling in the desktop app and a usage overview. Max, Ultra and Team plans get monthly API credits, and MCP servers can ask a question mid-task. MCP is the standard an agent uses to call external tools. Also new: plugins connect themselves, through MCP servers that trust Claude as an identity provider.",
+      "zastoJeBitno": "If you're on Max or Ultra, check that your monthly API credits aren't expiring unused. Automatic plugin connection also means less manual MCP setup for Supabase and similar services.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "@ClaudeDevs na X-u",
+          "url": "https://x.com/ClaudeDevs/status/2117670658113155075"
+        },
+        {
+          "naziv": "@ClaudeDevs na X-u (plugini)",
+          "url": "https://x.com/ClaudeDevs/status/2117680635561312732"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI buys Pierre, Meta buys Conductor: the fight for coding-agent infrastructure",
+      "staSeDesilo": "OpenAI is acquiring Pierre Computer Company, a startup whose libraries already power Codex. Together with the recently launched Git system Pando, the goal is to make Git keep up with the pace of AI coding agents. The same day, Meta bought Conductor, a tool that lets multiple agents work in parallel on different parts of a project.",
+      "zastoJeBitno": "Big companies are no longer building just models but also the tooling around code: versioning, code review and parallel agents. Independent tools in this space increasingly end up inside big-company platforms.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "OpenAI",
+          "url": "https://openai.com/index/openai-to-acquire-pierre"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/openai-acquires-pierre-computer-company-to-make-git-keep-up-with-ai-coding-agents/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/04/meta-acquires-ai-coding-startup-conductor/"
+        }
+      ]
+    },
+    {
+      "naslov": "EU Court advocate general: Gemini may infringe news publishers' rights",
+      "staSeDesilo": "In case C-250/25, Advocate General Maciej Szpunar of the EU Court of Justice found that Gemini, under certain circumstances, infringes publishers' neighboring rights. This applies when an AI pulls an article from the web and uses its content in an answer to a user. This is an opinion, not a ruling, but the court often follows it.",
+      "zastoJeBitno": "If the court confirms this opinion, AI search and news-summarizing apps in the EU will have to pay for licenses or change how they quote. That affects you too if you're building an app that summarizes other people's articles.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "ICTbusiness",
+          "url": "https://www.ictbusiness.info/vijesti/gemini-moze-povrijediti-prava-izdavaca-smatra-odvjetnik-suda-eu"
+        }
+      ]
+    },
+    {
+      "naslov": "Vals AI: lower reasoning effort saves a lot and loses little",
+      "staSeDesilo": "Vals AI measured how the reasoning effort setting (how much a model is allowed to think before answering) affects results and cost. At its lowest setting, GPT-6 Astra kept 88% of its score for 18% of the cost, and Grok 4.7 kept 86% for 16%. For Gemini 4 Argon, the savings were negligible.",
+      "zastoJeBitno": "Before defaulting your app to \"high\", test \"low\" on your own tasks. Your API bill could be up to five times smaller. How much you save depends on the task and the model.",
+      "kategorija": "istrazivanje",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "@ValsAI na X-u",
+          "url": "https://x.com/ValsAI/status/2117767927902642408"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-04"
+        }
+      ]
+    },
+    {
+      "naslov": "DeepSeek V5 reportedly to be trained on Huawei chips",
+      "staSeDesilo": "According to reports, DeepSeek plans to do the entire pretraining of its next model, V5, on Huawei Ascend chips. Until now, those chips have mostly been used to run finished models, not to train them. Reports also say Huawei is short on HBM memory.",
+      "zastoJeBitno": "If it works, Chinese labs become less dependent on Nvidia. In the long run that matters for the price and availability of cheap DeepSeek models, which you can use through the API.",
+      "kategorija": "kompanije",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Geopolitechs",
+          "url": "https://www.geopolitechs.org/p/deepseek-plans-to-train-its-next"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-04"
+        }
+      ]
+    },
+    {
+      "naslov": "Advanced Technology Days 21: regional conference with 50 talks, AI agents in focus",
+      "staSeDesilo": "The ATD21 conference, organized by Nephos, has kicked off with 50 talks and 40 speakers from the region and abroad. In the opening session, Damir Dobrić (Daenet) showed live how to build an AI agent, add skills to it, and have three agents work together on a single task.",
+      "zastoJeBitno": "Conferences like this are a good chance to see how companies in the region are actually adopting agents and to meet the people doing it. Check the link for venue and program.",
+      "kategorija": "ostalo",
+      "vaznost": 1,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "ICTbusiness",
+          "url": "https://www.ictbusiness.info/vijesti/advanced-technology-days-konferencija-o-tehnologijama-koje-mijenjaju-industriju"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "GIF animations in ChatGPT (Images 2.6)",
+      "tip": "funkcija",
+      "opis": "ChatGPT turns a description or photo into an animated GIF. You can adjust the speed, step through frame by frame and share the result.",
+      "kakoProbati": [
+        "Open ChatGPT (iPhone app or web).",
+        "Type something like \"make a gif of a dancing cat\", or add your own photo and ask it to animate it.",
+        "In the GIF view, change the speed or edit individual frames, then save or share.",
+        "If you want the same from code, look for the new Images 2.6 controls in the Images API docs."
+      ],
+      "link": "https://openai.com/index/introducing-images-2-6",
+      "cena": "check the link"
+    },
+    {
+      "naziv": "Gemini Notebook API and MCP server",
+      "tip": "alat",
+      "opis": "A REST API and MCP server for creating Gemini notebooks: web pages, YouTube videos, text and Markdown become persistent sources the AI draws on. For now it's a public preview and works only with a personal Google account, not a Workspace account.",
+      "kakoProbati": [
+        "Open the Quickstart at developers.google.com/notebook and hand the setup instructions to Claude Code.",
+        "Create an OAuth 2.0 token and set the project ID in the x-goog-user-project header.",
+        "Send a POST to https://notebook.googleapis.com/v1/notebooks with a display_name, then add a source (e.g. a URL or YouTube video).",
+        "Optionally connect the remote MCP server to your agent (instructions are in the MCP guide)."
+      ],
+      "link": "https://developers.google.com/notebook/docs",
+      "cena": "check the link (rate limits apply)"
+    },
+    {
+      "naziv": "Kimi K3.1 Pro (open weights)",
+      "tip": "model",
+      "opis": "Moonshot's strongest model now has its weights released. On OpenRouter it costs $2 for input and $10 for output, per million tokens.",
+      "kakoProbati": [
+        "Easiest via OpenRouter: create an API key and pick the model \"Kimi K3.1 Pro\".",
+        "You can add it as a model in your OpenAI-compatible client or coding tool.",
+        "Running it locally takes serious hardware; find links to the weights and user experiences in the r/LocalLLaMA thread."
+      ],
+      "link": "https://www.reddit.com/r/LocalLLaMA/comments/1xnrhvb/kimik31pro_is_now_openweights/",
+      "cena": "$2 / $10 per 1M tokens on OpenRouter; weights free"
+    },
+    {
+      "naziv": "Datasette Agent + Datasette Apps",
+      "tip": "projekat",
+      "opis": "Simon Willison added a panel where a chat with an agent sits next to a table or query. With datasette-apps, you build and edit a small web app on top of your database from the conversation, and the agent asks for your approval before every database write.",
+      "kakoProbati": [
+        "Open agent.datasette.io and sign in with your GitHub account.",
+        "Open a table and ask the panel to build an app (e.g. \"build a dashboard for this table\").",
+        "Type # in the chat to tag an existing app and ask for changes."
+      ],
+      "link": "https://simonwillison.net/2026/Nov/3/datasette-agent/",
+      "cena": "free (open source)"
+    },
+    {
+      "naziv": "Unsloth GGUF v3.1 for Qwen3.8-Flash-Next",
+      "tip": "model",
+      "opis": "New quantized versions (smaller, compressed model versions for local use) of Qwen3.8-Flash-Next. Unsloth claims they're 10–15% more accurate on coding and agent benchmarks.",
+      "kakoProbati": [
+        "Open the Unsloth docs for Qwen3.8-Next and pick a quantization that fits in your Mac's RAM.",
+        "Run it in LM Studio or llama.cpp.",
+        "Recommended settings from the announcement: temperature 1.0, top_p 0.95, top_k 20."
+      ],
+      "link": "https://unsloth.ai/docs/models/qwen3.8-next",
+      "cena": "free"
+    },
+    {
+      "naziv": "Ripple-65B Preview",
+      "tip": "model",
+      "opis": "An open dense model with 65 billion parameters, under the Apache 2.0 license, built for coding agents. It has a context of up to 1M tokens and a dedicated NVFP4 version for the NVIDIA DGX Spark.",
+      "kakoProbati": [
+        "Open the ricursiveAI/Ripple-65B-Preview page on Hugging Face.",
+        "The BF16 version needs data-center GPUs (the announcement cites 250 tok/s on 2× B200).",
+        "If you don't have that hardware, wait for it to show up at a provider or as a GGUF."
+      ],
+      "link": "https://www.reddit.com/r/LocalLLaMA/comments/1xnx3cs/ricursiveairipple65bpreview_hugging_face/",
+      "cena": "free (weights)"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "The US Department of Justice is reportedly examining Nvidia's planned $12.93 billion purchase of Hugging Face.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/poslovanje/americki-regulator-provjerava-nvidijino-preuzimanje-hugging-facea"
+    },
+    {
+      "naslov": "Uber revealed that other companies' AI agents booked only four rides in the entire quarter.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/transportation/1026306/uber-ai-agents-q3-earnings-disintermediation"
+    },
+    {
+      "naslov": "Apple is reportedly sharply cutting the budget its engineers spend on AI tools.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/04/apple-is-reportedly-cutting-budgets-for-its-internal-ai-usage/"
+    },
+    {
+      "naslov": "CrowdStrike introduced an \"AI Kill Switch\", a button that lets an admin cut an agent's connection to its model, and is buying Fiddler AI and Dreadnode for about $495 million.",
+      "izvor": "The Rundown AI",
+      "url": "https://therundownai.beehiiv.com/p/apple-cracks-the-door-open-to-siri-ai"
+    },
+    {
+      "naslov": "After criticism over a plan to leave schools without search if they opt out of AI, Google has been accused of abusing its monopoly, and DuckDuckGo is pitching itself to schools as a replacement.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/04/duckduckgo-pitches-itself-to-schools-amid-backlash-over-googles-ai-policy/"
+    },
+    {
+      "naslov": "OpenAI says ChatGPT has 1.2 billion weekly users, that its search volume reaches about 20% of Google's, and that 250 million people use voice mode weekly.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-11-04"
+    },
+    {
+      "naslov": "Google's search revenue grew only 12% in Q3 even though search volume is growing fastest in five years, and Alphabet's stock fell about 14%.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1024862/google-search-ai-overviews-alphabet-earnings-q3"
+    },
+    {
+      "naslov": "Nothing is releasing its first \"AI-native\" device in December, with no new screen, and is keeping the details under wraps.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1026586/nothing-screen-free-ai-device-carl-pei"
+    },
+    {
+      "naslov": "Tencent released WeVisOne-VL (2B and 4B), an open model that does object detection, OCR, segmentation and background removal all in one.",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/11/03/tencent-wevisone-vl-vision-language-model/"
+    },
+    {
+      "naslov": "webAI released TwIL-8B, a math and code model scoring 98.2 on MATH-500, whose 4-bit version is about 5 GB, but its license doesn't allow commercial use.",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/11/04/webai-twil-8b-reasoning-model/"
+    },
+    {
+      "naslov": "Qualcomm is pivoting to data centers as phone sales fell about 20%, and expects $5 billion in data-center revenue by the end of 2027.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1026867/qualcomm-earnings-data-centers"
+    },
+    {
+      "naslov": "Gemini for Home is now connected to AT&T's security system, so you can search camera footage with plain questions.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1026787/att-gemini-for-home-connected-life-security-system"
+    },
+    {
+      "naslov": "Netflix is rolling out an \"AI Discover\" tab to some US users, with topics and recommendations compiled by AI.",
+      "izvor": "The Rundown AI",
+      "url": "https://therundownai.beehiiv.com/p/apple-cracks-the-door-open-to-siri-ai"
+    },
+    {
+      "naslov": "The UK's AI minister admitted that the £400 billion estimate of AI's benefits came mostly from Google and that the realistic figure is less than a third of that.",
+      "izvor": "Wired",
+      "url": "https://www.wired.com/story/uk-officials-said-ai-would-add-400-billion-to-the-economy-that-figure-mainly-came-from-google/"
+    },
+    {
+      "naslov": "The UK's NCSC warns that critical infrastructure should prepare for AI-powered ransomware by 2028.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/britanija-upozorava-na-ai-napade-na-infrastrukturu-do-2028"
+    },
+    {
+      "naslov": "Gartner estimates that most AI work will be done by open models, which cost up to twenty times less than the strongest closed ones.",
+      "izvor": "Bug.hr",
+      "url": "https://mreza.bug.hr/umjetna-inteligencija/gartner-vecinu-ai-posla-obavljat-ce-otvoreni-modeli-za-puno-nizu-cijenu-64052"
+    },
+    {
+      "naslov": "UN Secretary-General Antonio Guterres warned that a US–China AI arms race could have devastating consequences.",
+      "izvor": "B92",
+      "url": "https://www.b92.net/tehnopolis/aktuelno/281396/trka-za-ai-oruzjem-mogla-bi-da-donese-razorne-posledice/vest"
+    },
+    {
+      "naslov": "Cat Wu, one of the first leaders of the Claude Code team, has left Anthropic.",
+      "izvor": "X (@_catwu)",
+      "url": "https://x.com/_catwu/status/2117731934340337676"
+    },
+    {
+      "naslov": "A free \"stealth\" model called Crouton Alpha with a million-token context has appeared on OpenRouter, and it's unknown who made it.",
+      "izvor": "X (@OpenRouter)",
+      "url": "https://x.com/OpenRouter/status/2117712705901728199"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "Think Less, Locally (LoCo): teaching a model when to stop thinking",
+      "objasnjenje": "Reasoning models often keep \"thinking\" even after they already have the answer. LoCo trains them by comparing shorter and longer segments of the same reasoning, so the model learns where enough is enough. Answers get much shorter, while accuracy on math and code stays the same or improves. The LoCo-7B model has also been released.",
+      "zastoJeZanimljivo": "Shorter reasoning means fewer output tokens, so cheaper and faster answers. It fits with today's Vals AI finding on reasoning effort settings.",
+      "url": "https://huggingface.co/papers/2611.04814",
+      "github": "https://github.com/MuyaoYuan/LoCo"
+    },
+    {
+      "naslov": "Route Anything: how to pick the right model for each task",
+      "objasnjenje": "The paper studies \"routing\": a system that decides, for each query, which model or strategy handles it. The goal is to combine specialized models so the whole is both better and cheaper than a single large one.",
+      "zastoJeZanimljivo": "Routers are now offered by Fireworks (Nexus) and GitHub Copilot. This paper, with code, shows what such a system looks like under the hood, in case you want to build your own into an app.",
+      "url": "https://huggingface.co/papers/2611.05275",
+      "github": "https://github.com/InfRec-Cardinal/route-anything"
+    },
+    {
+      "naslov": "MoviEdit: editing long multi-shot videos in one go",
+      "objasnjenje": "Adobe's system edits a long video made up of multiple scenes so that a change (e.g. different clothing for a character) stays consistent across all shots. The paper also comes with a benchmark for comparing other tools.",
+      "zastoJeZanimljivo": "Today's video models do individual clips well but lose the thread between scenes. This is a step toward AI-assisted editing of entire films.",
+      "url": "https://huggingface.co/papers/2611.02737",
+      "github": "https://github.com/adobe-research/MoviEdit-Bench"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Animated greetings for slava and birthdays",
+      "problem": "People still send the same static greeting cards over Viber. A personal animated card (with the celebrant's photo or the saint's icon for slava) is hard to make.",
+      "zaKoga": "Anyone in Serbia who sends greetings for slava, birthdays and holidays, mainly over Viber and WhatsApp.",
+      "ulogaAi": "Images 2.6 turns a photo and a short description into a short GIF, while a cheap text model writes a fitting greeting.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "In ChatGPT, manually try a GIF from a photo to see the quality and how long generation takes.",
+        "Build a SwiftUI app with an occasion picker (slava, birthday, Christmas) and a PhotosPicker.",
+        "A Supabase Edge Function calls the Images API (check the docs for whether GIF is available in the API) and stores the result in Supabase Storage.",
+        "Add a ShareLink so the GIF can be sent straight to Viber or WhatsApp."
+      ],
+      "inspiracija": "OpenAI Images 2.6 and GIF animations in ChatGPT"
+    },
+    {
+      "naziv": "Low or high? A reasoning effort meter",
+      "problem": "Developers pick \"high\" just in case and pay up to five times more, without knowing whether \"low\" would be enough for their tasks.",
+      "zaKoga": "Indie developers and small teams paying for APIs per token.",
+      "ulogaAi": "The same set of your prompts runs at every effort level, and a judge model scores the answers, giving you a table of quality versus cost.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "An Angular page where you paste 10–20 prompts and expected answers.",
+        "A Supabase Edge Function sends each prompt at low/medium/high through OpenRouter and logs tokens and cost.",
+        "A second model scores the answers from 1 to 5 against the expected ones.",
+        "Show a \"quality per dollar\" chart and a recommended setting."
+      ],
+      "inspiracija": "Vals AI: GPT-6 Astra keeps 88% of its score for 18% of the cost at the lowest effort"
+    },
+    {
+      "naziv": "Lecture notes from YouTube lectures",
+      "problem": "Students learn from dozens of hours of YouTube lectures and PDFs, and their notes are scattered all over the place.",
+      "zaKoga": "Students in Serbia and the region, especially before exam season.",
+      "ulogaAi": "The Gemini Notebook API builds a persistent notebook from lecture links and materials, and the AI uses it to compile study notes and review questions.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Go through the Gemini Notebook Quickstart with a personal Google account (Workspace doesn't work yet).",
+        "An Angular form: course name and a list of YouTube and web links, from which a notebook is created and sources added.",
+        "In Supabase, store the user ↔ notebook link and the question history.",
+        "Add a \"make 20 exam questions\" button that queries the notebook."
+      ],
+      "inspiracija": "Gemini Notebook API and MCP server in public preview"
+    },
+    {
+      "naziv": "Fiscal receipt → expenses, without sending data anywhere",
+      "problem": "Every fiscal receipt in Serbia has a QR code with all the line items, but nobody tracks spending by category (food, hygiene, alcohol) because manual entry is tedious.",
+      "zaKoga": "Households in Serbia that want to track where their money goes.",
+      "ulogaAi": "A small on-device model sorts receipt items into categories. The data never leaves the phone, as with the shrunken Gemma model that runs locally.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "A SwiftUI app with a VisionKit QR scanner that opens the receipt verification link and reads the items (check the page structure).",
+        "To start, categorize using Apple Foundation Models or a small GGUF model via a llama.cpp Swift package.",
+        "Store data locally in SwiftData, and leave Supabase sync as an option.",
+        "Add a monthly chart by category and store."
+      ],
+      "inspiracija": "Reddit: Gemma 4 26B shrunk to 15% of its size still handles a narrow on-device task well"
+    },
+    {
+      "naziv": "Detective game through the streets of Belgrade",
+      "problem": "Tourists and locals rarely discover the city's history in a fun way, and ordinary tours are static.",
+      "zaKoga": "Young people in Belgrade and Novi Sad, tourists, and companies looking for a team-building activity.",
+      "ulogaAi": "The AI plays suspects who lie according to the case's rules. The player questions them, and clues are tied to real public places (Kalemegdan, Skadarlija).",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Write one original case: a victim, 3 suspects, the truth and what each one is willing to admit, all in JSON.",
+        "For each suspect, write a system prompt with secrets and lying rules, and test it by hand in Claude.",
+        "A SwiftUI chat app with MapKit clues that unlock when you're near the location.",
+        "Before releasing, have the model solve the case itself to check that it's solvable."
+      ],
+      "inspiracija": "Show HN: Uncracked City, a detective game with LLM suspects who lie"
+    }
+  ],
+  "cene": "Today's price cuts on OpenRouter: GLM 5.3 dropped output from $3.6 to $1.4 (input from $0.08 to $0.0699), Gemma 4 26B A4B fell to $0.03/$0.09, and gpt-oss-120b to $0.014/$0.053. Price hikes hit GLM 5.3 Flash (from $0.0313/$0.0846 to $0.15/$0.5), Llama 4 Maverick (to $0.35/$1), Llama 3.3 70B (to $0.2/$0.52), Qwen3 235B (to $0.14/$0.8) and DeepSeek V4 Pro 0813 output (from $4 to $4.6). After this cut, GLM 5.3 is the cheapest in the mid-tier for both input and output ($0.0699/$1.4). Among budget models, DeepSeek V4.1 Flash has the lowest input price ($0.045) and Qwen3.8 Flash the lowest output price ($0.47).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "\"Weight-space programming\": replications and growing skepticism",
+        "oCemuSePrica": "After MIT's paper claiming GPT-6 Astra directly modifies the numbers (weights) in other models, several teams have replicated the experiment. Hugging Face replicated it with its own tool, Simon Willison with Qwen 3.8 27B on a laptop, and one user got Claude to hand-write a network that detects fake legal citations. The debate is over how overblown the headline is: a reconstruction shows Astra mostly fixed a model that was getting stuck in loops, rather than making it smarter.",
+        "glasovi": "Optimists (@yoonholeee) see this as meta-learning finally working. Critics (@paul_cal, @dbreunig) say fair comparison tests are missing and that this is a bug fix, not a model improving itself. Even Latent Space admits the claims were \"presented in too favorable a light\".",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@simonw",
+            "url": "https://x.com/simonw/status/2117655816581071203"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@paul_cal",
+            "url": "https://x.com/paul_cal/status/2117536456491024470"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xnplmi/claude_writes_a_neural_networks_weights_by_hand/"
+          },
+          {
+            "platforma": "bluesky",
+            "naziv": "Machine Learning",
+            "url": "https://bsky.app/profile/machinelearning.bsky.social/post/3mzilxruj4k2y"
+          }
+        ]
+      },
+      {
+        "naslov": "Voters against data centers: what the AI industry should do now",
+        "oCemuSePrica": "The anti-data-center measures passed convincingly, and the AI community is debating whether this is the end of rapid building in the US. On r/singularity, people ask whether AI companies urgently need to show ordinary people a concrete benefit, or face more moratoriums. Part of the tech world is consoling itself with the idea of data centers in space.",
+        "glasovi": "Big Tech claims this is a revolt against Trump, not against technology. Congresswoman Yassamin Ansari is calling for a pause on development of the most advanced AI and a ban on superintelligence. @ShakeelHashim notes that the pro-AI-industry super PAC lost a key race.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@jdcapelouto",
+            "url": "https://x.com/jdcapelouto/status/2117786709173645427"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xnnvgd/does_anybody_else_feel_like_given_the_democrats/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/OpenAI",
+            "url": "https://www.reddit.com/r/OpenAI/comments/1xo0c4d/democratic_arizona_congresswoman_top_of_the/"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@ShakeelHashim",
+            "url": "https://x.com/ShakeelHashim/status/2117790599273382006"
+          }
+        ]
+      },
+      {
+        "naslov": "Open models are taking over OpenRouter",
+        "oCemuSePrica": "According to dirac.run, DeepSeek alone accounted for 53% of 27 trillion tokens on OpenRouter in one day, and open models overall for over 75%. This isn't officially confirmed. On top of that came Kimi K3.1 Pro with open weights, Ripple-65B and Hy4, so r/LocalLLaMA has its hands full.",
+        "glasovi": "The community is excited about a new dense model of around 70 billion parameters, but immediately asks whether Ripple is \"benchmaxxed\", meaning tuned to do well on tests. Moderators were asked to create a shared thread for the many AI-assisted forks of tools for running models that people have built.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xnz8ct/deepseek_alone_accounted_for_53_of_all_27/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xo2arv/ricursive_intelligence_ripple65bpreview_new_dense/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xnrhvb/kimik31pro_is_now_openweights/"
+          }
+        ]
+      },
+      {
+        "naslov": "AI and 40 years of technical debt",
+        "oCemuSePrica": "An IEEE Spectrum piece on how AI is uncovering old holes in software, like PHP vulnerabilities, was the most-commented AI topic on Hacker News (over 1,000 points and 640 comments). The same day, OpenAI announced that its system had patched 948 holes in the Linux kernel.",
+        "glasovi": "Some see this as long-overdue cleanup of old code. Others wonder who will review and maintain thousands of patches written by a machine.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50364336"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xo3a2k/openai_claims_their_new_security_model_patched/"
+          }
+        ]
+      },
+      {
+        "naslov": "How to keep a Claude Code UI from looking \"vibecoded\"",
+        "oCemuSePrica": "On r/ClaudeAI, people are looking for examples of apps built with Claude Code that don't give away that an AI wrote them: no generic gradients and identical cards. The author suggests giving Claude a concrete existing design as a reference, instead of hunting for \"magic\" skills and MCPs.",
+        "glasovi": "Some say the key isn't a tool but a good visual reference and a clear design system. Others share skills and MCPs that supposedly help. Meanwhile, an \"Ask HN: what's your agent setup\" thread is making the rounds on Hacker News.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xnnqkg/show_me_claude_code_projects_that_dont_look/"
+          },
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50366117"
+          }
+        ]
+      }
+    ],
+    "snimci": []
+  },
+  "nedeljni": null
+}
