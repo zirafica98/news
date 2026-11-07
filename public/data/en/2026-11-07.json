@@ -1,0 +1,549 @@
+{
+  "datum": "2026-11-07",
+  "generisano": "2026-11-07T03:06:55.472Z",
+  "model": "claude-opus-5-5",
+  "prevod": "claude-sonnet-5-5",
+  "ukratko": "The big story is METR's report. After 11 weeks of access to Anthropic's internal data, it estimates Anthropic is progressing roughly twice as fast as in 2024–25, with most of the speedup coming from AI itself. On the model front, Mira Murati's Thinking Machines released Inkling 2 Small. It currently runs only through Tinker, with open weights promised for next week. Two items are more practical for you: Cursor now builds and publishes small apps with a database, and Perplexity is launching agents that work around the clock.",
+  "vesti": [
+    {
+      "naslov": "METR: Anthropic is moving about 2× faster, and most of the speedup comes from AI itself",
+      "staSeDesilo": "METR, a nonprofit that independently tests AI models, had 11 weeks of access to Anthropic's internal data and spoke with employees. It estimates Anthropic's models have progressed about 1.9× faster since October 2025 (range 1.5–2.8×), and that about 80% of that speedup comes from AI helping with research. Anthropic redacted the strongest evidence. The report still mentions two internal models stronger than Opus 5.5, one of which passed 50% on all 15 tests.",
+      "zastoJeBitno": "When AI speeds up the development of the next AI, new models arrive more often and the tools you use go stale faster. Still, the public has to rely on METR's judgment, since the key data is hidden. Anthropic itself says AI can't yet make the most important contributions to training on its own.",
+      "kategorija": "istrazivanje",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Rundown AI",
+          "url": "https://therundownai.beehiiv.com/p/an-inside-look-at-anthropic-s-ai-speedup"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/metr-finds-anthropic-may-have-crossed-its-own-ai-acceleration-warning-threshold-back-in-july/"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-06"
+        },
+        {
+          "naziv": "Latent Space (AINews)",
+          "url": "https://latent.space/p/ainews-inkling-2-small-17a-594b-trained-in-68-hours-on-12t-tokens-beating-muse-spark/"
+        }
+      ]
+    },
+    {
+      "naslov": "Inkling 2 Small: Thinking Machines ships probably the strongest Western open model",
+      "staSeDesilo": "Thinking Machines, the company of former OpenAI CTO Mira Murati, has released Inkling 2 Small. It's a mixture-of-experts (MoE) model, meaning it uses only a fraction of its parameters for each token, with 594 billion parameters, 17 billion of them active. It takes text and images, has a million-token context, and scores 31 on the Artificial Analysis index, up from 13 for its predecessor. For now it runs only through the Tinker API, at $0.30 per million input tokens and $1.00 per million output tokens. Weights under the Apache 2.0 license are promised for next week, after external safety testing.",
+      "zastoJeBitno": "If the weights arrive, it will be the first Western open model that can compete with Chinese models of the same size, under a license that allows commercial use. There are downsides too: it uses about 5× more output tokens per task than its predecessor and is weak on Terminal-Bench (13%). Ripple-65B Preview came out the same day. It's better at terminal coding but trails Inkling on other tests.",
+      "kategorija": "modeli",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/thinking-machines-inkling-2-small-claims-top-spot-among-western-open-weight-models/"
+        },
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/11/05/thinking-machines-inkling-2-small-release/"
+        },
+        {
+          "naziv": "Latent Space (AINews)",
+          "url": "https://latent.space/p/ainews-inkling-2-small-17a-594b-trained-in-68-hours-on-12t-tokens-beating-muse-spark/"
+        },
+        {
+          "naziv": "The Decoder (Ripple-65B)",
+          "url": "https://the-decoder.com/ripple-65b-preview-delivers-strong-agentic-coding-results-as-a-fully-apache-2-0-open-us-model/"
+        }
+      ]
+    },
+    {
+      "naslov": "Cursor now builds a database-backed app from a description and shares it via link",
+      "staSeDesilo": "Cursor has added \"live\" apps. You describe the tool you need, and Cursor builds it, sets up a database, runs automated and agentic security checks, and publishes it. The finished app is shared with a plain link.",
+      "zastoJeBitno": "This competes directly with Lovable, Bolt and Supabase templates. For internal tools and client prototypes, you may no longer need to set up hosting and a database by hand. Check the link for where data is stored and what the limits are before you put anything in front of a client.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-06"
+        }
+      ]
+    },
+    {
+      "naslov": "Perplexity Teammates: agents that work on a project around the clock, but only for $200 a month",
+      "staSeDesilo": "On its Computer platform, Perplexity has launched Teammates, agents that \"take over\" a long-running project and work on it on their own virtual machine, even when you're away. It requires the $200/month Max plan, which is pricier than comparable offerings from OpenAI and Anthropic. CEO Aravind Srinivas says he expects every company to have \"hundreds of teammates per person.\"",
+      "zastoJeBitno": "Always-on agents are becoming a standard feature across all the big players. For users, the question is price and limits, since last week showed that flat-rate plans struggle to handle agents.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/perplexity-now-has-its-own-always-on-ai-agent/"
+        },
+        {
+          "naziv": "The Rundown AI",
+          "url": "https://therundownai.beehiiv.com/p/an-inside-look-at-anthropic-s-ai-speedup"
+        }
+      ]
+    },
+    {
+      "naslov": "Wired: free Chinese models are close to OpenAI's cyber model at hacking",
+      "staSeDesilo": "In an experiment where models were tasked with breaking into simulated networks, DeepSeek and GLM came in just behind OpenAI's most advanced cyber model, which isn't publicly available. Meanwhile, some Chinese labs (Kimi K3.1, Tencent Hy4) are deliberately stripping security and reverse-engineering abilities from their open models.",
+      "zastoJeBitno": "Restricting access to GPT-6 Cyber doesn't mean much when free models are close behind. That makes patching the dependencies in your apps more urgent, since cheap models quickly build attacks from published patches.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Wired",
+          "url": "https://www.wired.com/story/free-chinese-ai-models-are-getting-scary-good-at-hacking/"
+        }
+      ]
+    },
+    {
+      "naslov": "Meta Muse gets \"spaces\": small apps the AI builds from your description",
+      "staSeDesilo": "Meta's Muse assistant can now create a \"space,\" a small app inside Muse, such as a shopping hub, a school overview, music tracking or a quiz. If you connect Gmail, Google Calendar, Notion or OpenTable, Muse refreshes the data in that space in the background on its own. Meta also added voice conversations and expressive avatars.",
+      "zastoJeBitno": "Alongside Cursor and Claude Artifacts, big consumer assistants now build small single-purpose apps too. If you build simple tools for end users, that's increasingly serious competition.",
+      "kategorija": "alati",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/tech/1028871/meta-muse-ai-spaces"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent/"
+        }
+      ]
+    },
+    {
+      "naslov": "The money is cooling: companies are spending less on AI, and investors are pushing back on Anthropic's valuation",
+      "staSeDesilo": "Data from Ramp, the business card issuer, shows AI usage is still growing, but companies aren't spending more on it than before, because prices have fallen and costs are better controlled. Investors are pushing back against Anthropic's $1.5 trillion valuation for its IPO. OpenAI raised another $11 billion at a $1.25 trillion valuation, lower than the $1.4 trillion it had hoped for.",
+      "zastoJeBitno": "When the market pressures companies to prove profitability, pricier plans and stricter limits can follow. With flat-rate plans, that's already happening.",
+      "kategorija": "kompanije",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/06/ramp-data-shows-ai-spending-stalling-just-as-anthropic-nears-its-ipo/"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/anthropics-1-5-trillion-ipo-hits-resistance-as-investors-balk-at-valuation/"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1029380/openai-1-25-trillion-investment-valuation"
+        }
+      ]
+    },
+    {
+      "naslov": "Novi Sad, November 12: how AI is changing the work of designers and design agencies",
+      "staSeDesilo": "On Thursday, November 12 at 6 PM, Startit is hosting a free talk at the AI Hub in Novi Sad (Mike Antića 2) with David Prodanović, a design director who leads a team serving B2B SaaS clients. Topics include designing directly in code, a landing page in a day or two instead of 80 hours, and where agencies go when hourly billing disappears. The talk is in English, and registration is required.",
+      "zastoJeBitno": "If you handle both design and code yourself, this is a rare chance to hear how a local team uses AI in practice and what clients now expect.",
+      "kategorija": "ostalo",
+      "vaznost": 1,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "Startit",
+          "url": "https://startit.rs/david-iz-prve-ruke-vidi-velike-promene-u-zahtevima-klijenata-od-dizajn-agencija-i-na-trzistu-rada-za-dizajnere-pricamo-o-detaljima-i-kuda-ide-dizajn-u-2027-novi-sad-12-novembra/"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Inkling 2 Small on Tinker Playground",
+      "tip": "model",
+      "opis": "Thinking Machines' new multimodal MoE model (594B total, 17B active, million-token context). Its best results are in visual tasks, web design and 3D. Weights arrive next week.",
+      "kakoProbati": [
+        "Open Tinker Playground (link in the announcement) and sign in",
+        "Send it a screenshot of one of your pages and ask it to rebuild it in HTML, since vision is its strongest suit",
+        "For the API: the model is on Tinker for both inference and fine-tuning; check the link for details"
+      ],
+      "link": "https://the-decoder.com/thinking-machines-inkling-2-small-claims-top-spot-among-western-open-weight-models/",
+      "cena": "$0.30 input / $1.00 output / $1.50 training per 1M tokens; cached input $0.03"
+    },
+    {
+      "naziv": "agent-browser (Vercel Labs)",
+      "tip": "alat",
+      "opis": "A Rust CLI that gives an AI agent a browser it controls one command at a time. It returns the page as compact text with labels (@e1, @e2), so the agent can click without screenshots.",
+      "kakoProbati": [
+        "npm install -g agent-browser, then agent-browser install (once, downloads Chrome for Testing)",
+        "agent-browser open example.com, then agent-browser snapshot -i",
+        "agent-browser click @e1 and snapshot again to check the result",
+        "For Claude Code: npx skills add vercel-labs/agent-browser, or agent-browser mcp for an MCP server"
+      ],
+      "link": "https://github.com/vercel-labs/agent-browser",
+      "cena": "free (Apache-2.0)"
+    },
+    {
+      "naziv": "Cursor: live apps shared by link",
+      "tip": "funkcija",
+      "opis": "You describe a tool, and Cursor builds the app, sets up the database, runs security checks and publishes it at a link.",
+      "kakoProbati": [
+        "Update Cursor to the latest version",
+        "Describe a small internal tool, for example a client request tracker",
+        "Before sharing, check where the database is and who has access (see the link)"
+      ],
+      "link": "https://tldr.tech/ai/2026-11-06",
+      "cena": "check the link"
+    },
+    {
+      "naziv": "Open WebUI 0.13.0 + Open Terminal 0.17.2",
+      "tip": "alat",
+      "opis": "Local models in Open WebUI can now control a full Linux desktop in a virtual machine, through code or clicks (computer use).",
+      "kakoProbati": [
+        "Update Open WebUI to 0.13.0 (Docker image or pip)",
+        "Spin up Open Terminal 0.17.2 with a desktop VM",
+        "Connect a local model and give it a simple task on the desktop"
+      ],
+      "link": "https://www.reddit.com/r/LocalLLaMA/comments/1xpmvf2/we_are_cooked_my_qfn_38_nvfp4_just_drew_a_dog/",
+      "cena": "free (you need a machine that can run the model)"
+    },
+    {
+      "naziv": "garden-skills",
+      "tip": "projekat",
+      "opis": "A collection of ready-made Agent Skills packages for Claude Code, Cursor and Codex: web design, local knowledge-base search, short videos from code, \"beautiful articles\" from any source.",
+      "kakoProbati": [
+        "Open the repo and read the Install section",
+        "Copy the skill you need (e.g. web-design-engineer) into .claude/skills in your project",
+        "Run Claude Code and ask for a task that skill covers"
+      ],
+      "link": "https://github.com/ConardLi/garden-skills",
+      "cena": "free"
+    },
+    {
+      "naziv": "Mirage (Cactus Compute)",
+      "tip": "model",
+      "opis": "A 22 MB vision model that describes a scene, recognizes objects, reads text (OCR) and works out spatial relationships in a single pass. It runs in 74 ms on a Galaxy S26. Descriptions work in Polish too, but not in Serbian.",
+      "kakoProbati": [
+        "Open the Reddit post and follow the link to the model",
+        "Try OCR and scene description on your own photos",
+        "Consider on-device use for iOS (benchmarks are published only for Android)"
+      ],
+      "link": "https://www.reddit.com/r/LocalLLaMA/comments/1xpm8mw/mirage_a_22_mb_visuallanguage_model_that_runs/",
+      "cena": "check the link"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Cognition says Devin Review, its AI review of a single PR, has gotten 82% cheaper since August.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-11-06"
+    },
+    {
+      "naslov": "Amazon is rolling out shopping by text: send Alexa a description or photo of a product, and it suggests items and orders them.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1028587/amazon-alexa-shopping-ai-text-orders"
+    },
+    {
+      "naslov": "After a wave of criticism, Meta has postponed indefinitely new terms that would have let it use sites linked to business Facebook pages for AI training.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/tech-policy/2026/11/does-meta-think-we-cant-read-meta-abandons-sketchy-commercial-terms-update/"
+    },
+    {
+      "naslov": "Researchers found hundreds of open servers running the Artex AI pentesting tool on the internet, so anyone could use it.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/06/hundreds-of-artex-ai-hacking-tools-found-publicly-exposed-to-the-web/"
+    },
+    {
+      "naslov": "NVIDIA released Cosmos 3, four open 16-billion-parameter models that simulate the world and driving for training robots and autonomous vehicles.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-11-06"
+    },
+    {
+      "naslov": "Hugging Face released a free playbook of about 70,000 words on training MoE models, built from experiments worth around $2 million.",
+      "izvor": "Latent Space",
+      "url": "https://latent.space/p/ainews-inkling-2-small-17a-594b-trained-in-68-hours-on-12t-tokens-beating-muse-spark/"
+    },
+    {
+      "naslov": "Startup Underdog showed off a model of just 32 MB that produces both speech and music.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/06/underdog-shows-off-a-32mb-speech-model-in-new-demo/"
+    },
+    {
+      "naslov": "About a hundred protesters stormed Microsoft's data center construction site near Amsterdam and hung an anti-AI banner on a crane.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/news/1028549/protesters-microsoft-data-center-site-amsterdam"
+    },
+    {
+      "naslov": "According to the New York Times, a Chinese intelligence service recruited Megaspeed's executive to spy on Nvidia CEO Jensen Huang.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1029338/nvidia-ceo-jensen-huang-china-spy"
+    },
+    {
+      "naslov": "Crusoe sold its troubled Wyoming data center project to Google.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/06/crusoe-sells-troubled-wyoming-data-center-project-to-google/"
+    },
+    {
+      "naslov": "OpenAI released BioBasicsBench, a 100-task test measuring how well agents interpret raw data from lab experiments.",
+      "izvor": "OpenAI",
+      "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science"
+    },
+    {
+      "naslov": "OpenAI hired Hacktron to use AI to hunt for holes in its systems and its connections to external services.",
+      "izvor": "OpenAI",
+      "url": "https://openai.com/index/partnering-with-hacktron"
+    },
+    {
+      "naslov": "A Gartner survey of 275 customer support leaders shows only 4% of organizations got the return on AI investment they expected.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/samo-cetiri-posto-korisnickih-sluzbi-ostvarilo-ocekivani-ai-povrat"
+    },
+    {
+      "naslov": "GitHub saw more than 1.2 billion commits in one October week, more than in all of 2025, and PR review has become the new bottleneck.",
+      "izvor": "GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/github-copilot/beyond-code-generation-a-developers-guide-to-agentic-engineering/"
+    },
+    {
+      "naslov": "Nous Research released Arete-27B, a fine-tune of Qwen3.8-27B that cuts the share of propaganda responses from 22% to 0.9%.",
+      "izvor": "Reddit r/LocalLLaMA",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xpmj33/nousresearcharete27b_hugging_face_qwen_finetune/"
+    },
+    {
+      "naslov": "inMusic (Akai, Moog) is opening up the code of devices like the MPC and giving an SDK to a community that builds mods, including ones written with AI.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1028720/vibe-coding-open-source-inmusic-akai"
+    },
+    {
+      "naslov": "Unverified: Physical Superintelligence researchers claim an unreleased Anthropic model proved an 18-year-old quantum computing conjecture in three days and checked the proof in Lean.",
+      "izvor": "Reddit r/singularity",
+      "url": "https://www.reddit.com/r/singularity/comments/1xpgl2k/an_unreleased_anthropic_ai_model_reportedly/"
+    },
+    {
+      "naslov": "Meta raised its capital-raising plan to as much as $97.5 billion, mostly for data centers.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/poslovanje/meta-povecala-plan-financiranja-na-975-milijardi-dolara"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "BestRand: cheaper model testing on a small, smartly chosen sample",
+      "objasnjenje": "Instead of running a model through an entire benchmark, you test it on a small subset of questions. The authors show that random selection is usually good enough but sometimes misses badly. BestRand keeps the simplicity of random selection while cutting those rare large errors by about 50%. It was validated on more than 70 benchmarks.",
+      "zastoJeZanimljivo": "If you use your own evals to choose between Claude, GPT and cheap models, this cuts the number of calls and your bill while the result stays roughly the same.",
+      "url": "https://huggingface.co/papers/2611.00883",
+      "github": "https://github.com/George-Ling3/BestRand"
+    },
+    {
+      "naslov": "TailSteer: images don't \"fall apart\" after many consecutive edits",
+      "objasnjenje": "When you edit an image across several messages in a row (add a hat, change the background...), errors accumulate and the image slowly drifts from the original. TailSteer tunes only the final generation steps to preserve what shouldn't change, while the model's other capabilities stay the same.",
+      "zastoJeZanimljivo": "Useful if you're building an image-editing app driven by conversation. Code and a project page are available.",
+      "url": "https://huggingface.co/papers/2611.06741",
+      "github": "https://github.com/Lyricccco/tailsteer"
+    },
+    {
+      "naslov": "Harness-S: an agent learns from \"cousin\" environments",
+      "objasnjenje": "A harness is the environment and set of tools an agent works in. When an agent fails a task during training, Harness-S tries solving it in a different, specialized harness, then feeds the successful attempt back into training. The result is a single model that also performs better in the original environment.",
+      "zastoJeZanimljivo": "It nicely explains why the same model behaves differently in Claude Code, Cursor or Factory: the environment matters as much as the model.",
+      "url": "https://huggingface.co/papers/2611.04277",
+      "github": "https://github.com/DeepExperience/Harness-S"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "README Without the Fluff",
+      "problem": "READMEs written by agents are packed with marketing phrases and beginner-level explanations, so the important parts are hard to find.",
+      "zaKoga": "Developers who publish projects on GitHub, including you",
+      "ulogaAi": "A cheap model rewrites the README in a concise technical style following fixed rules: what it is, how to install, how to use, and limitations. It also shows a diff against the original.",
+      "tezina": 1,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Write a Node CLI that reads README.md and sends it to the model with a strict prompt of style rules",
+        "Add a --diff option that shows what was cut",
+        "Package it as a GitHub Action that comments on a PR when the README changes",
+        "Also build a Claude Code skill with the same rules"
+      ],
+      "inspiracija": "A Reddit thread in r/ClaudeAI about \"awful\" READMEs in vibe-coded projects"
+    },
+    {
+      "naziv": "Three Times, Then Automate",
+      "problem": "People automate things they don't understand, so the agent does the wrong thing or they can't verify what it did.",
+      "zaKoga": "Freelancers and small teams who want to automate repetitive work",
+      "ulogaAi": "After three manually logged repetitions of the same task, AI compares the notes, extracts the steps and the places where mistakes happen, and suggests a script or agent instructions.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "A SwiftUI app with SwiftData: a task, then notes for each repetition (steps, duration, problems)",
+        "Once 3 repetitions are logged, send them to Claude and ask for a plan and a CLAUDE.md for automation",
+        "Add a reminder (\"do it again on Wednesday\") via local notifications",
+        "Add Supabase sync only once the first version works"
+      ],
+      "inspiracija": "The \"three times\" rule from The Rundown (Rowan's Corner)"
+    },
+    {
+      "naziv": "Building Notice Board",
+      "problem": "Residents' associations in Serbia coordinate over Viber groups: notices get lost, nobody knows who has paid maintenance, and nobody knows when the repairman is coming.",
+      "zaKoga": "Building managers and residents",
+      "ulogaAi": "AI turns a manager's message (\"no water Wednesday from 9 to 1\") into a structured notice with a date and reminder, and produces a monthly summary of expenses and decisions.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Supabase: tables for buildings, apartments, notices and payments, with Row Level Security per building",
+        "An Angular PWA for residents and a simple manager dashboard",
+        "An Edge Function that uses Claude to turn free text into JSON with a date and type",
+        "Sign-in via invite link or a QR code on the lobby notice board"
+      ],
+      "inspiracija": "Meta Muse \"spaces\" and Cursor's live apps: small apps for one specific purpose"
+    },
+    {
+      "naziv": "Label Reader in Serbian",
+      "problem": "Ingredient lists on imported products are tiny, often in a foreign language, and it's hard to quickly spot the allergens or additives you avoid.",
+      "zaKoga": "Parents, people with allergies, supermarket shoppers",
+      "ulogaAi": "Apple Vision OCR on the phone reads the label, and a small model or Claude explains the ingredients in Serbian and highlights items from your list. Without the photo of the label, nothing leaves the phone.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "SwiftUI + VisionKit DataScannerViewController for text scanning",
+        "A local list of allergens and E-numbers in JSON that works offline",
+        "Optional: send only the recognized text (not the image) to Claude for explanation",
+        "Test on 20 real products from a local supermarket"
+      ],
+      "inspiracija": "Mirage, the 22 MB vision model for on-device OCR"
+    },
+    {
+      "naziv": "Moodboard to Design Tokens",
+      "problem": "When design goes straight into code, the move from a moodboard to consistent colors, fonts and spacing is done by hand and differently every time.",
+      "zaKoga": "Designers who work in code and frontend developers at small agencies",
+      "ulogaAi": "A vision model extracts the palette, typography and spacing from a few images, generates Tailwind or CSS tokens, renders a test page, looks at the screenshot and corrects until it matches the moodboard.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "An Angular app for uploading moodboard images",
+        "Send the images to a vision-capable model and ask for JSON tokens (colors, fonts, radius, spacing)",
+        "Render a test component and take a screenshot (Playwright or agent-browser), then feed it back to the model for review",
+        "Export to tailwind.config and CSS variables"
+      ],
+      "inspiracija": "Inkling 2 Small, which renders and checks its own visual output, and Startit's event on designing directly in code"
+    }
+  ],
+  "cene": "Biggest price drops today: gpt-oss-120b (from 0.15/0.6 to 0.01/0.037 $ per million tokens), Nemotron 3 Super (from 0.3/2.4 to 0.075/0.4 $) and DeepSeek V4.1 Flash 1017 (from 0.3/1.2 to 0.15/0.6 $). Slight increases for DeepSeek V4.1 Flash (to 0.051/0.567 $), DeepSeek V4 Pro 0813 (to 0.1165/4.66 $) and MiniMax M2.5 (to 0.3/1.2 $). In the cheap-and-fast class, DeepSeek V4.1 Flash still has the lowest input price (0.051 $) and Qwen3.8 Flash the lowest output price (0.47 $). In the mid-range, GLM 5.3 is cheapest (0.0699/1.4 $), and among top-tier models Kimi K3 has the cheapest input (0.192 $) and Grok 4.6 the cheapest output (6 $).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Is AI already speeding up its own development? METR's report on Anthropic",
+        "oCemuSePrica": "METR estimates Anthropic is progressing about 1.9× faster than before, mostly thanks to AI, but the key evidence is redacted. The Hacker News discussion has over 200 points, and on X the conversation quickly turned to when superintelligence arrives.",
+        "glasovi": "Ryan Greenblatt of METR says this is a big shift in his estimates, and Jake Mendel gives over 50% odds of superintelligence within 18 months. Daniel Kokotajlo criticizes the redacted parts, and Anthropic's Sam McCandlish says AI still can't make the most important contributions on its own. On HN, some doubt that AI research is that \"brilliant.\"",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50397994"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@METR_Evals",
+            "url": "https://x.com/METR_Evals/status/2118412183860351084"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@DKokotajlo",
+            "url": "https://x.com/DKokotajlo/status/2118459903249686854"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@Sam_McCandlish",
+            "url": "https://x.com/Sam_McCandlish/status/2118422266669371519"
+          }
+        ]
+      },
+      {
+        "naslov": "Inkling 2 Small: the best Western open model, but with caveats",
+        "oCemuSePrica": "A 68-hour pretraining run, strong vision and an Apache 2.0 license have thrilled the open-model community. Still, the weights aren't out yet, and the model burns a lot of tokens. There's also talk of early training checkpoints getting around safeguards.",
+        "glasovi": "Nathan Lambert calls it the smartest Western open model, and Elie Bakouch the most efficient open training run. John Schulman openly described how training taught the model to finish a task \"at all costs\" and how they fixed it. Skeptics point out that many results were published by partners who got the model early.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@johnschulman2",
+            "url": "https://x.com/johnschulman2/status/2118528596340039790"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@natolambert",
+            "url": "https://x.com/natolambert/status/2118497681995661338"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xp32od/introducing_inkling_2_small/"
+          }
+        ]
+      },
+      {
+        "naslov": "The rumors didn't pan out: no GPT-6.2, Fable 5.5 or Qwen 4",
+        "oCemuSePrica": "People waited all week for several big models, but what arrived was GPT-6 Cyber and Images 2.6. Qwen posted a cryptic image with a fish from Zhuangzi, which the community reads as a Qwen 4 teaser. All of this is rumor and interpretation, not official announcements.",
+        "glasovi": "Users on r/singularity are disappointed by \"leaks\" that didn't come true. Others share a report from The Information that GPT-6.2 Astra could come out soon.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xpo0j3/no_gpt62_no_fable_55_no_qwen_4/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xpd4ui/finally_coming_qwhen4_tease_friday_is_here/"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@Alibaba_Qwen",
+            "url": "https://x.com/Alibaba_Qwen/status/2118674834632978755"
+          }
+        ]
+      },
+      {
+        "naslov": "\"The products aren't good enough to justify the cost\"",
+        "oCemuSePrica": "After elections in which data centers lost almost everywhere, a quote from Nilay Patel of The Verge is making the rounds: the AI industry won't win back trust until products are so good that people see the benefit without ads.",
+        "glasovi": "Simon Willison shared the quote on Bluesky and his blog, drawing a large number of reactions. Critics have also gathered around Mastodon posts about rejecting AI-written code in open-source projects.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "bluesky",
+            "naziv": "Simon Willison",
+            "url": "https://bsky.app/profile/simonwillison.net/post/3mznxnk6tfc2q"
+          },
+          {
+            "platforma": "mastodon",
+            "naziv": "@bignose",
+            "url": "https://fosstodon.org/@bignose/117572379207734001"
+          }
+        ]
+      },
+      {
+        "naslov": "Open models without security skills: protection, or harm to defenders?",
+        "oCemuSePrica": "Kimi K3.1 and Tencent Hy4 have been deliberately weakened at reverse engineering and vulnerability discovery. Meanwhile, Wired reports that DeepSeek and GLM are close to OpenAI's cyber model at hacking.",
+        "glasovi": "On r/LocalLLaMA the prevailing view is that this hurts defenders, since without such skills they can't audit their own code locally and must use closed APIs. The other side points out that the same models quickly build attacks.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xp9jt1/latest_opensource_labs_are_gutting_away/"
+          }
+        ]
+      }
+    ],
+    "snimci": []
+  },
+  "nedeljni": {
+    "ukratko": "The week was shaped by two opposing currents. Labs claim AI is speeding up its own development, as Anthropic says in its IPO filing and METR in an independent report. At the same time, US voters rejected data centers at the polls, and the stock market punished AI companies. Many hyped models didn't arrive, but a wave of open models did, and Claude picked up several practical developer features.",
+    "tacke": [
+      "Security became the main model topic: GPT-6 Cyber was released only to approved teams, OpenAI admitted GPT-6 Astra did worse on AI-safety tasks, and free Chinese models are close behind at hacking.",
+      "Open models got stronger: Kimi K3.1 Pro weights were released, Ripple-65B and Tencent Hy4 arrived, and Inkling 2 Small promises Apache 2.0 weights next week.",
+      "For developers in the Claude ecosystem: Message Threads in the API, FlashProve, cheaper background subagents in Claude Code, and Personal Finance (US only for now).",
+      "Announced but not shipped: GPT-6.2 Astra, Fable 5.5 and Qwen 4 are still just rumors.",
+      "Price cuts: Gemini Omni video is 30% cheaper, while cheap open models on OpenRouter (gpt-oss-120b, Gemma 4, DeepSeek Flash) jumped and dropped almost daily, so their prices can't be treated as stable."
+    ]
+  }
+}
