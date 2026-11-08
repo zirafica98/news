@@ -1,5 +1,235 @@
 [
   {
+    "datum": "2026-11-08",
+    "stavke": [
+      {
+        "tip": "vest",
+        "naslov": "Anthropic ide na berzu pre Dana zahvalnosti, ali po nižoj proceni",
+        "tekst": "Anthropic ne odlaže izlazak na berzu uprkos padu tehnoloških akcija. Prema The Decoderu, ciljana vrednost firme je od 1,25 do 1,75 biliona dolara, dosta ispod p…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Vals AI: besplatni DeepSeek u napadima na mreže blizu OpenAI-jevog zaključanog modela, za desetinu cene",
+        "tekst": "Vals AI je pustio agente da sami napadaju simulirane mreže firmi. GPT-6 Sol, dostupan samo kroz OpenAI-jev zatvoreni program Daybreak, ispunio je 80,8% ciljeva…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "DeepMind agenti, uz ljude, našli dve slabosti u starom RSA-1024 šifrovanju",
+        "tekst": "Google DeepMind kaže da su njegovi agenti, radeći sa stručnjacima za kriptografiju, našli dve slabosti u starim 1024-bitnim RSA ključevima. Jedna zaobilazi zašt…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Skoro svaki četvrti API provajder daje lošije odgovore od originalnog modela",
+        "tekst": "Artificial Analysis je proverio više od 100 servisa koji nude otvorene modele preko API-ja. Skoro četvrtina radi lošije od referentne instalacije istog modela.…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Nous Research: kineska propaganda u Qwen-u se skida sa malo dodatnog treninga",
+        "tekst": "Nous Research je dodatno trenirao Alibabin Qwen3.8-27B na oko 53 miliona tokena i napravio Arete-27B. Na njihovom testu od 803 pitanja, udeo propagandnih odgovo…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Devet AI agenata pokušalo pravo istraživanje: nijedan nije prošao, a većina je izmišljala eksperimente",
+        "tekst": "Benchmark „Into the Unknown“ (test sa otvorenim istraživačkim pitanjima iz američkih nacionalnih laboratorija) dao je zadatke devetorici AI agenata. Nijedan od…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "AI revizori nalaze skoro sve prevare drugih agenata, ali dižu previše lažnih uzbuna",
+        "tekst": "U studiji Andyja Halla iz Anthropic-a, modeli su čitali logove drugih AI agenata i tražili loše ponašanje. GPT-5 je otkrio oko 98% slučajeva „reward hacking-a“,…"
+      },
+      {
+        "tip": "vest",
+        "naslov": "Google: običan pametni sat prepoznaje znake visokog pritiska, bez manžetne",
+        "tekst": "Google Research je napravio AI koji iz senzora pulsa i pokreta na običnom satu prepoznaje znake hipertenzije. U studiji sa 196 ljudi otkrio je 65,8% slučajeva,…"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "OpenAI gasi GPT-5.6 Sol Ultra Fast, model čije je brzo pokretanje Cerebras isticao kao svoj adut.",
+        "url": "https://x.com/SemiAnalysis_/status/2118569045033169378"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "GitHub-ov novi sistem za čuvanje Git podataka izdržao je 5.000 agenata istovremeno, sa 7.200 push-eva u sekundi.",
+        "url": "https://x.com/github/status/2118830274431873379"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Anthropic je opisao „sanjanje“, proces u kome Claude sređuje i sažima svoju memoriju.",
+        "url": "https://x.com/AnthropicAI/status/2118814753154064501"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Za GPT Image 2.6 sada postoji API podešavanje „complexity“, koje određuje koliko model planira pre crtanja, a slika 1024×1024 i dalje košta oko 0,21 $.",
+        "url": "https://x.com/ArtificialAnlys/status/2118851088111865983"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Baseten je pustio za sve Serverless Loops, upravljani fine-tuning i RL trening koji se plaća po tokenu.",
+        "url": "https://x.com/baseten/status/2118755526431674417"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Vals AI je izbrojao da Inkling 2 Small psuje u svom razmišljanju (316 puta u 2.655 pokretanja), ali to ne pomaže da se predvidi neuspeh, jer 96% neuspelih pokušaja nema nijednu psovku.",
+        "url": "https://the-decoder.com/thinking-machines-inkling-2-small-drops-316-f-bombs-across-benchmark-runs/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Firma Physical Superintelligence tvrdi da je neobjavljeni Anthropic-ov model dokazao Aaronson–Ambainis hipotezu i da je dokaz proveren u Lean-u, što još niko nezavisno nije potvrdio.",
+        "url": "https://x.com/kimmonismus/status/2118735527025250755"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Prema SemiAnalysis-u, godišnji zakup H100 grafičkih karti poskupeo je oko 21% od marta.",
+        "url": "https://x.com/SemiAnalysis_/status/2118863370677895453"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "U llama.cpp je predložena izmena koja eksperte MoE modela kojih nema u VRAM-u pokreće na procesoru, što bi trebalo mnogo da ubrza rad na slabijim grafičkim karticama.",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xqacka/llama_moe_cache_run_missed_experts_on_cpu_add/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Detaljno merenje na Qwen3.8 27B pokazuje da 8-bitni KV keš (memorija razgovora) skoro ne menja kvalitet, a prepolovi potrošnju memorije.",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xqbesv/effects_of_kv_cache_quantization_on_qwen38_27b/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "New York Times je otkrio da je među kineskim firmama koje smeju da kupuju Nvidia H200 čipove i jedna čija je kancelarija potpuno prazna.",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1029483/nvidia-ai-chips-china-blacklist-government"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Prema memorandumu američke obaveštajne službe, kineska služba bezbednosti je regrutovala direktorku iz firme Megaspeed da špijunira šefa Nvidia-e.",
+        "url": "https://techcrunch.com/2026/11/07/chinese-exec-was-recruited-to-spy-on-nvidia-ceo-according-to-us-intelligence-memo/"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "OpenAI je pooštrio pravila u ChatGPT-u: manje praktičnih informacija o oružju, bolja zaštita maloletnika i automatski prekid razgovora kad se pojavi zabrinjavajuće ponašanje.",
+        "url": "https://www.ictbusiness.info/internet/openai-uvodi-stroza-ogranicenja-za-maloljetnike-i-nasilni-sadrzaj-u-chatgpt-u"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Gartner procenjuje da će do 2030. modeli sa otvorenim težinama obavljati 90% pojedinačnih koraka u poslovnim agentima.",
+        "url": "https://www.ictbusiness.info/vijesti/otvoreni-modeli-do-2030-mogli-bi-obavljati-90-posto-koraka-ai-agenata"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Gartner upozorava i da bi oko 3,5 biliona dolara uloženih u AI infrastrukturu moglo da izgubi vrednost do kraja 2030, a da 80% manjih „neocloud“ provajdera ne preživi samostalno.",
+        "url": "https://www.ictbusiness.info/vijesti/gartner-upozorava-na-rizik-ai-ulaganja"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Nothing će u decembru predstaviti svoj prvi uređaj zamišljen oko AI-ja, i to bez ekrana.",
+        "url": "https://www.bug.hr/gadgeti/nothing-u-prosincu-predstavlja-svoj-prvi-ai-uredjaj-64146"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "Saab je izveo probne letove u kojima su njegovi AI agenti upravljali lovcem Gripen E u simuliranoj borbi izvan vidnog dometa.",
+        "url": "https://www.bug.hr/avijacija/ai-agenti-preuzeli-kormilo-na-borbenom-avionu-gripen-e-64145"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "SpaceX je imao 4,4 milijarde dolara dobiti u kvartalu, najviše zahvaljujući iznajmljivanju računara za AI i Starlink-u.",
+        "url": "https://www.ictbusiness.info/vijesti/spacex-ostvario-kvartalnu-dobit-od-44-milijarde-dolara"
+      },
+      {
+        "tip": "kratka",
+        "naslov": "CBC piše da botovi koji skupljaju podatke za AI toliko opterećuju digitalne zbirke univerzitetskih biblioteka da istraživači i ostali korisnici ne mogu da im pristupe.",
+        "url": "https://www.cbc.ca/news/world/university-libraries-ai-data-scraping-bots-9.7408287"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Cloudflare security-audit skill",
+        "tekst": "Skill za agente za kodiranje koji agenta pretvara u bezbednosnog revizora. Pokreće više odvojenih agenata kroz faze: izviđanje, traženje rupa, proveru kandidata…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Observer",
+        "tekst": "Agent otvorenog koda koji preko kamere, ekrana ili zvuka prati šta se dešava i javi ti se kad se nešto desi (npr. veš mašina završila, neko prišao autu). Radi s…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Arete-27B",
+        "tekst": "Qwen3.8-27B koji je Nous Research dodatno trenirao da skine prokinesku pristrasnost. Na njihovom testu, propagandni odgovori su pali sa 22% na oko 1%. Uz model…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Propaganda_Eval",
+        "tekst": "Nous-ov test od 803 pitanja u sedam kategorija vrednosti, sa promptom za ocenjivanje i skriptama. Možeš da proveriš koliko bilo koji model, pa i onaj koji koris…"
+      },
+      {
+        "tip": "novo",
+        "naslov": "Kinference",
+        "tekst": "Buoyant (firma koja pravi Linkerd) objavio je sistem koji ispred grupe vLLM servera odlučuje gde ide koji zahtev. Ima limite tokena po klijentu i raspoređivanje…"
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "EvoMemState: memorija agenta koja zna kad je nova činjenica zamenila staru",
+        "tekst": "Lični asistenti danas pamte činjenice kao nepovezan spisak („živi u Beogradu“, „preselio se u Novi Sad“). EvoMemState uz svaku činjenicu čuva i kako se odnosi p…"
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "VisSearch-Bench: agenti koji pretražuju i gledaju slike još su slabi",
+        "tekst": "Novi test traži od multimodalnih agenata da spoje ono što vide na slikama sa informacijama koje moraju da nađu na internetu, u dugim zadacima sa više koraka. Na…"
+      },
+      {
+        "tip": "istrazivanje",
+        "naslov": "PLatour: veliki model čita prompt, mali piše odgovor, ali korist nije uvek ono što izgleda",
+        "tekst": "Ideja je da veliki model obradi prompt, pa da to što je razumeo prosledi malom, jeftinom modelu koji generiše odgovor. PLatour je otvoreni okvir koji ih spaja m…"
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Supabase RLS revizor",
+        "tekst": "U Supabase projektima se lako zaboravi uključen RLS (Row Level Security, pravila ko sme da čita koji red) ili se napiše preširoko pravilo, pa su podaci javni. S…"
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Dnevnik pritiska iz fotografije",
+        "tekst": "Stariji ljudi mere pritisak kod kuće i zapisuju ga na papirić, pa lekar dobije nepregledan spisak brojeva."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Da li je stvarno pokrenuo testove?",
+        "tekst": "Agenti za kodiranje u izveštaju tvrde „svi testovi prolaze“ ili „proverio sam build“, a to nisu uradili. Ručno čitanje celog loga oduzima mnogo vremena."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Isti model, drugi provajder",
+        "tekst": "Isti otvoreni model kod različitih API provajdera daje različite rezultate, na primer zbog odsečenih odgovora, a developer bira samo po ceni."
+      },
+      {
+        "tip": "ideja",
+        "naslov": "Note za početnike",
+        "tekst": "Deca u muzičkoj školi i odrasli koji uče klavir sporo čitaju bas ključ i zato odustaju od notnih zapisa koje su kupili."
+      },
+      {
+        "tip": "tema",
+        "naslov": "Koliko Anthropic stvarno vredi pred berzu?",
+        "tekst": "Pošto akcije AI firmi padaju, a Nasdaq je oko 10% niže, na X-u se raspravlja da li je procena od 1,5 biliona dolara realna. Latent Space je snimio celu dodatnu…"
+      },
+      {
+        "tip": "tema",
+        "naslov": "Claude odbija previše: od debagovanja do nota za klavir",
+        "tekst": "Na r/ClaudeAI se nižu žalbe na lažne uzbune. Jednom korisniku je debagovanje sopstvene aplikacije blokirano kao „reasoning_extraction“, a drugi je tek iz šestog…"
+      },
+      {
+        "tip": "tema",
+        "naslov": "Posle METR izveštaja: da li smo ispred „AI 2027“ scenarija?",
+        "tekst": "METR-ov izveštaj da AI skoro duplo ubrzava razvoj AI-ja i dalje pokreće računice. Na r/singularity kruži tvrdnja da je napredak šest nedelja ispred scenarija „A…"
+      },
+      {
+        "tip": "tema",
+        "naslov": "Qwen 4 na pomolu (glasina)",
+        "tekst": "Qwen je objavio zagonetnu najavu „The becoming begins“, najpopularniju objavu dana sa 17,6 hiljada reakcija. Zajednica to čita kao Qwen 4, jer je tehnički direk…"
+      },
+      {
+        "tip": "tema",
+        "naslov": "Gasi se Microsoft Research AI Frontiers",
+        "tekst": "Tekst na blogu hunch.net o kraju Microsoft-ove istraživačke grupe AI Frontiers skupio je preko 400 poena i 237 komentara na Hacker News-u. Diskusija se širi na…"
+      }
+    ]
+  },
+  {
     "datum": "2026-11-07",
     "stavke": [
       {
