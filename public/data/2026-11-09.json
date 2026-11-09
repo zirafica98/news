@@ -1,0 +1,461 @@
+{
+  "datum": "2026-11-09",
+  "generisano": "2026-11-09T03:06:20.957Z",
+  "model": "claude-opus-5-5",
+  "ukratko": "Ponedeljak je mirniji za modele, a burniji za kompanije. Nvidia istražuje vezu Jensena Huanga sa ženom za koju mediji pišu da radi za kinesku obaveštajnu službu, a OpenAI je skupio 11 milijardi dolara, manje nego što se očekivalo. Za developere su korisniji Google-ov otvoreni plugin koji agenta tera da prvo napiše specifikaciju i novi benchmark: i najbolji agent za kod do kraja reši tek svaki četvrti stvarni zadatak.",
+  "vesti": [
+    {
+      "naslov": "Nvidia pokreće istragu o vezi Jensena Huanga sa navodnom kineskom špijunkom",
+      "staSeDesilo": "Upravni odbor Nvidie pokrenuo je nezavisnu istragu posle tekstova da je CEO Jensen Huang bio meta strane obaveštajne službe. Reč je o njegovoj vezi sa Alice Huang, direktorkom firme Megaspeed, koju je kinesko Ministarstvo državne bezbednosti navodno vrbovalo. Huang je zaposlenima poslao pismo u kojem priznaje aferu i izvinjava se porodici.",
+      "zastoJeBitno": "Nvidia pravi čipove na kojima radi gotovo ceo AI, pa nestabilnost na njenom vrhu, uz američko-kinesku tenziju oko izvoza čipova, može da utiče na isporuke i cene računarske snage. Za sada je sve u fazi istrage.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1029562/nvidia-investigating-jensen-huang-relationship-chinese-spy"
+        },
+        {
+          "naziv": "The Verge (tekst pisma)",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1029595/full-text-jensen-huang-affair-memo-nvidia"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy/"
+        }
+      ]
+    },
+    {
+      "naslov": "Google otvorio Elephant-Goldfish: agent prvo piše specifikaciju, pa je „sveži“ subagenti napadaju",
+      "staSeDesilo": "Google je objavio otvoreni plugin Elephant-Goldfish Model (EGM). Pre nego što počne da piše kod, agent pravi specifikaciju u Markdown fajlu, a zatim je proveravaju novi subagenti (pomoćni agenti koji ne vide prethodni razgovor), u ulozi devet različitih recenzenata. Paket ima 7 skilova i 5 faza pregleda i radi u Claude Code-u 2.1.271+, Codex-u, Antigravity-ju i ChatGPT-u. Google kaže da ga koriste hiljade njegovih inženjera.",
+      "zastoJeBitno": "Pogrešna pretpostavka se ovako uhvati u specifikaciji, a ne posle hiljadu linija koda u PR-u. Mana je veliki trošak tokena: test u Claude Cowork-u stao je na limitu potrošnje, a prijavljeno je i da AGENTS.md „curi“ u recenzente u Codex-u, što kvari njihovu nezavisnost.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/11/08/google-elephant-goldfish-model-plugin-spec-review-coding-agents/"
+        }
+      ]
+    },
+    {
+      "naslov": "Co-Design Bench: i GPT-6 Astra do kraja reši samo 26,4% stvarnih zadataka",
+      "staSeDesilo": "Alibaba i nekoliko azijskih univerziteta napravili su benchmark od stvarnih zahteva za izmene web aplikacija, i to baš onih koje su korisnici morali da preformulišu ili vrate. GPT-6 Astra je prvi: u proseku ispuni oko 70% zahteva, ali je potpuno tačan na 26,4% zadataka, a na zadacima u repozitorijumu na manje od 18%. Na starijim benchmarkovima isti modeli prelaze 99%.",
+      "zastoJeBitno": "Tvoje iskustvo da agent „skoro“ uradi posao sada ima brojke. Bitan nalaz je i da harness, to jest okruženje u kojem agent radi, utiče na rezultat skoro koliko i sam model, pa se isplati podešavati ga.",
+      "kategorija": "istrazivanje",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/ai-coding-agents-still-need-human-cleanup-on-nearly-three-out-of-four-tasks-in-a-real-world-test/"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI skupio 11 milijardi dolara uz procenu od 1,25 biliona, manje od očekivanog",
+      "staSeDesilo": "Prema Bug.hr, OpenAI je u novoj rundi, koja još nije zatvorena, skupio 11 milijardi dolara uz procenu vrednosti od 1,25 biliona dolara. Iznos je znatno manji od prvobitnih očekivanja.",
+      "zastoJeBitno": "Uklapa se u priču o hlađenju investicija iz prošle nedelje. Kad je novca manje, raste pritisak na cene pretplata i limite, pa ne čudi i glasina o novom ChatGPT paketu od 50 $.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Bug.hr",
+          "url": "https://www.bug.hr/biznis/openai-prikupio-11-milijardi-dolara-uz-procjenu-od-125-bilijuna-64155"
+        }
+      ]
+    },
+    {
+      "naslov": "Apple ubrzava Siri: prvo kontrola Apple-ovih aplikacija, cilj je pravi agent",
+      "staSeDesilo": "Mark Gurman iz Bloomberga piše da CEO John Ternus pritiska Craiga Federighija da ubrza plan za Siri, kako bi Apple imao agenta koji može da parira OpenAI-jevom Dots-u i Meta Muse-u. U narednim mesecima Siri bi trebalo da dobije detaljnu kontrolu nad Apple-ovim aplikacijama, na primer da rotira i kropuje slike u Photos-u ili sređuje tabove u Safari-ju.",
+      "zastoJeBitno": "Kao iOS developer, računaj da će Siri sve više raditi stvari umesto korisnika. Aplikacije sa dobro opisanim App Intents akcijama biće spremne kad se to proširi na druge developere. Za sada su ovo informacije iz izvora, nema zvanične najave.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic"
+        }
+      ]
+    },
+    {
+      "naslov": "Karpathy za vikend sa Claude-om napravio HackerTube od 20 godina Hacker News komentara",
+      "staSeDesilo": "Andrej Karpathy je uz Claude Opus 5.5 prošao kroz 43 miliona Hacker News komentara i izdvojio 6.454 videa koje ljudi tamo najčešće preporučuju. Sajt hackertube.org je bez logovanja, a stanje čuva lokalno u browseru. Claude Code je uradio skoro sve, od analize podataka do podešavanja servera. Karpathy je sam samo nabavio Google Cloud API ključ, server i domen.",
+      "zastoJeBitno": "Dobar primer obrasca koji možeš da ponoviš: ogromna količina javnih podataka, LLM kao filter i jednostavan statički sajt. Odmah posle toga Karpathy je sličan sajt (TristanTube) napravio za oko 3 minuta.",
+      "kategorija": "ostalo",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/andrej-karpathy-built-a-curated-video-platform-in-a-weekend-using-claude-and-20-years-of-hacker-news/"
+        }
+      ]
+    },
+    {
+      "naslov": "Meta otvorila Astryx, svoj najveći interni design sistem, pripremljen i za agente",
+      "staSeDesilo": "Meta je pod MIT licencom objavila Astryx, design sistem koji je osam godina razvijala interno i koji pokreće više od 13.000 njenih aplikacija. Zasnovan je na React-u 19+ i StyleX-u, a ima CLI sa dokumentacijom komponenti, šablonima i temama, kao i AGENTS.md i CLAUDE.md fajlove za AI asistente. Još je u beta fazi.",
+      "zastoJeBitno": "Kad agent piše UI, design sistem sa CLI-jem koji agent može da „pita“ za komponente daje doslednije rezultate od nasumičnog Tailwind koda. Za Angular projekte nije direktno upotrebljiv, ali je dobar uzor.",
+      "kategorija": "alati",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "GitHub",
+          "url": "https://github.com/meta/astryx"
+        }
+      ]
+    },
+    {
+      "naslov": "Naslednici Elvisa i Eminemov izdavač tuže Suno",
+      "staSeDesilo": "Suno ima još dve tužbe. Vlasnici prava na muziku Elvisa Preslija i izdavač Eminemovih najvećih pesama tvrde da Suno pravi muziku i tekstove koji oponašaju te izvođače. Elvisova strana se poziva na zakon ELVIS Act iz Tenesija, koji zabranjuje AI kloniranje glasa pevača.",
+      "zastoJeBitno": "Ovo je jedan od prvih testova zakona koji štiti glas i lik izvođača od AI kloniranja. Ako pobede tužioci, aplikacije koje generišu muziku ili glas „u stilu“ poznatih ljudi ulaze u pravni rizik.",
+      "kategorija": "regulativa",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1029533/elvis-eminem-suno-ai-music-clone-lawsuit"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Elephant-Goldfish Model (EGM) plugin",
+      "tip": "alat",
+      "opis": "Google-ov otvoreni plugin koji agenta tera da napiše specifikaciju, a zatim je proverava više „svežih“ subagenata pre pisanja koda. Radi u Claude Code-u.",
+      "kakoProbati": [
+        "Proveri da imaš Claude Code 2.1.271 ili noviji (claude --version).",
+        "Sa linka otvori GitHub repo plugina i instaliraj ga prema README-u (tačne komande proveri na linku).",
+        "Probaj ga na manjoj funkciji u Angular/Supabase projektu i prati potrošnju limita, jer troši mnogo tokena."
+      ],
+      "link": "https://www.marktechpost.com/2026/11/08/google-elephant-goldfish-model-plugin-spec-review-coding-agents/",
+      "cena": "besplatno (troši tvoje postojeće limite modela)"
+    },
+    {
+      "naziv": "Astryx (Meta)",
+      "tip": "projekat",
+      "opis": "Otvoreni React design sistem sa CLI-jem iz kojeg agenti čitaju dokumentaciju komponenti.",
+      "kakoProbati": [
+        "U React 19 projektu pokreni: npm install @astryxdesign/core @astryxdesign/theme-neutral @stylexjs/stylex",
+        "Dodaj CLI: npm install -D @astryxdesign/cli (ili globalno: npm i -g @astryxdesign/cli)",
+        "Pokreni npx astryx component --list i reci Claude Code-u da pravi ekrane koristeći Astryx komponente."
+      ],
+      "link": "https://github.com/meta/astryx",
+      "cena": "besplatno (MIT)"
+    },
+    {
+      "naziv": "llm-beliefs",
+      "tip": "projekat",
+      "opis": "Mali alat koji isto da/ne pitanje postavi modelu za svaku državu i od odgovora napravi SVG mapu sveta.",
+      "kakoProbati": [
+        "Kloniraj github.com/p-e-w/llm-beliefs i instaliraj uv.",
+        "Podesi OPENAI_BASE_URL na OpenRouter i OPENAI_API_KEY na svoj ključ.",
+        "Pokreni: uv run llm-beliefs 'qwen/qwen3.8-27b' 'Does censorship exist in [country]?'",
+        "Mapu nađeš u folderu maps."
+      ],
+      "link": "https://github.com/p-e-w/llm-beliefs",
+      "cena": "besplatno, plaćaš samo tokene na OpenRouter-u"
+    },
+    {
+      "naziv": "HackerTube",
+      "tip": "projekat",
+      "opis": "Karpathy-jev izbor od 6.454 videa koje su ljudi na Hacker News-u najčešće preporučivali, bez logovanja.",
+      "kakoProbati": [
+        "Otvori hackertube.org na iPhone-u ili računaru.",
+        "Gledaj bez naloga, sajt pamti stanje u browseru."
+      ],
+      "link": "https://hackertube.org",
+      "cena": "besplatno"
+    },
+    {
+      "naziv": "Sketchpad demo",
+      "tip": "projekat",
+      "opis": "Mali model (Qwen3.5-0.8B) koji u browseru radi dokazano tačnu aritmetiku, korak po korak na „listu papira“.",
+      "kakoProbati": [
+        "Otvori stranicu projekta u desktop browseru sa WebGPU podrškom.",
+        "Unesi dugo množenje ili deljenje i gledaj kako model piše cifre i prenose."
+      ],
+      "link": "https://neovand.github.io/sketchpad/",
+      "cena": "besplatno"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Richard Sutton ponovio da sirova računarska snaga nije dovoljna za inteligenciju i da su potrebne nove metode učenja, a bivši OpenAI istraživač Tworek se slaže sa njim.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/the-inventor-of-the-bitter-lesson-has-a-bitter-lesson-for-llm-scaling-enthusiasts/"
+    },
+    {
+      "naslov": "Anil Seth, Ned Block i Giulio Tononi u komentaru za Nature tvrde da današnji AI nije svestan, da na silicijumu to neće ni postati i da mu ne treba davati prava.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/the-brain-as-computer-metaphor-shaped-modern-ai-but-may-be-misleading-the-consciousness-debate/"
+    },
+    {
+      "naslov": "Airbnb pravi AI agenta za planiranje i rezervaciju putovanja koji će interfejs prilagođavati svakom upitu, umesto da radi kao klasičan chatbot.",
+      "izvor": "Bug.hr",
+      "url": "https://www.bug.hr/umjetna-inteligencija/airbnb-razvija-ai-agenta-za-planiranje-i-rezervacije-putovanja-64175"
+    },
+    {
+      "naslov": "Google-ov prototip Project Suncatcher pokrenuo je Gemma 4 na TPU čipu u orbiti i poslao odgovor na Zemlju, preko stanice na Svalbardu.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/telekomunikacije/googleov-ai-procesor-odgovorio-iz-orbite"
+    },
+    {
+      "naslov": "Orange Cyberdefense i Mistral prave bezbednosne alate na verziji Mistral Large 4 prilagođenoj sajber zaštiti, a važne odluke ostaju ljudima.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/orange-cyberdefense-i-mistral-razvijaju-sigurnosni-ai"
+    },
+    {
+      "naslov": "Firme su u trećem kvartalu potrošile oko 168 milijardi dolara na cloud, 55% više nego godinu ranije, najviše zbog AI-ja.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/poslovna-rjesenja/potrosnja-na-usluge-oblaka-porasla-55-posto"
+    },
+    {
+      "naslov": "Južnokorejski izvoz je u oktobru porastao 93,7%, na rekordnih 115,3 milijarde dolara, a od toga su 56,4 milijarde poluprovodnici za AI infrastrukturu.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/poluvodici-podigli-korejski-izvoz-937-posto"
+    },
+    {
+      "naslov": "U Gartner-ovoj anketi pogrešno procenjena AI strategija prvi put je treći najveći novi poslovni rizik.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/poslovanje/gartner-pogresne-ai-strategije-i-gubitak-konkurentnosti-medu-pet-najvecih-novih-poslovnih-rizika"
+    },
+    {
+      "naslov": "NYT Cooking je u beta verziji dobio AI koji menja recepte i zamenjuje sastojke, a Wired ocenjuje da uglavnom radi dobro.",
+      "izvor": "Wired",
+      "url": "https://www.wired.com/story/nyt-cooking-new-ai-powered-recipe-modifier-is-pretty-good/"
+    },
+    {
+      "naslov": "Microsoft je prijavio patent za AI koji u video pozivu uživo menja ono što osoba izgovori i usklađuje joj pokrete usana.",
+      "izvor": "TechPowerUp (preko Mastodona)",
+      "url": "https://pouet.chapril.org/@dallo/117583279973047600"
+    },
+    {
+      "naslov": "Revolut je prešao sa Claude Code-a na samostalno hostovan GLM 5.1 i kaže da ga to košta oko desetinu ranije cene.",
+      "izvor": "The Register (preko Mastodona)",
+      "url": "https://mastodon.social/@rival/117583039465241781"
+    },
+    {
+      "naslov": "Tencent je na Hugging Face-u objavio Qwen3.8-27B-DSpine, koji koristi novu tehniku spekulativnog dekodiranja; zajednica pominje do 3× brže generisanje, ali to još nije provereno.",
+      "izvor": "r/LocalLLaMA",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xr2aaa/tencentqwen3827bdspineb16_hugging_face/"
+    },
+    {
+      "naslov": "Simon Willison je uz Claude-a uporedio SQLite ekstenziju u C-u i Rust-u: C fajl ima 14 KB naspram oko 300 KB, a posle prepravke je i brži.",
+      "izvor": "Simon Willison",
+      "url": "https://simonwillison.net/2026/Nov/8/sqlite-parse-number-c-vs-rust/"
+    },
+    {
+      "naslov": "Stanfordov kurs CS146S o razvoju uz AI agente sada kao domaći traži doprinos pravom open-source projektu, jer agenti prošlogodišnje zadatke reše jednim promptom.",
+      "izvor": "Latent Space",
+      "url": "https://latent.space/p/cs146s/"
+    },
+    {
+      "naslov": "Vals AI je primetio da Inkling 2 Small psuje u svom razmišljanju tokom dugih zadataka, ali to ne nagoveštava da će zadatak propasti.",
+      "izvor": "Bluesky / Vals AI",
+      "url": "https://bsky.app/profile/machinelearning.bsky.social/post/3mzsheykas22g"
+    },
+    {
+      "naslov": "Na r/OpenAI kruži neproverena glasina o novom ChatGPT Pro paketu od 50 $ mesečno.",
+      "izvor": "r/OpenAI",
+      "url": "https://www.reddit.com/r/OpenAI/comments/1xqst31/pro_tier_at_50_coming_soon/"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "Sketchpad: dokazano tačna aritmetika sa malim modelom",
+      "objasnjenje": "Umesto da model računa „u glavi“, Qwen3.5-0.8B sa malim adapterom radi na nacrtanom listu: u svakom koraku vidi samo tri ćelije i upiše jednu cifru, prenos ili sledeću operaciju. Fiksni program samo pomera pogled. Autori su u Lean-u dokazali da je model tačan za brojeve bilo koje dužine ako je tačan na konačnom skupu takvih pogleda, a svih 2.446 pogleda prolazi u browseru na laptopu.",
+      "zastoJeZanimljivo": "Ovo je retka garancija tačnosti za neuronsku mrežu, ne procena na uzorku. Ideja „mali model, ograničen pogled, proverljivi koraci“ može da posluži za pouzdane offline alate.",
+      "url": "https://huggingface.co/papers/2611.04434",
+      "github": "https://github.com/NeoVand/sketchpad"
+    },
+    {
+      "naslov": "Beneath the Surface: šta propuštamo kad pričamo o „samousavršavanju“ agenata",
+      "objasnjenje": "Rad testira metode u kojima agent sam menja svoj harness (promptove, alate, pravila) bez treniranja modela. Svih 16 tako „razvijenih“ agenata naučilo je nove zadatke, ali je zaboravilo neke koje su ranije rešavali. Veća pouzdanost je uglavnom donosila veći trošak, a agent sa najboljim rezultatom nije uvek bio najbolji izbor.",
+      "zastoJeZanimljivo": "Ako sam doteruješ CLAUDE.md i skilove, ovo je upozorenje: izmena koja popravi jedan zadatak može tiho da pokvari drugi. Zato posle svake izmene ponovo pusti stare testove.",
+      "url": "https://huggingface.co/papers/2611.07624",
+      "github": null
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Preporučeno na forumima",
+      "problem": "Na Reddit-u (r/serbia, r/programming), Hacker News-u i forumima godinama se preporučuju knjige, videi i alati, ali to niko ne skuplja na jedno mesto.",
+      "zaKoga": "Ljudi koji vole kurirane liste, posebno domaća publika",
+      "ulogaAi": "Jeftin model (npr. GLM 5.3 Flash) čita komentare, izvlači šta se preporučuje i koliko je preporuka pozitivna, pa od toga pravi rang listu.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Preuzmi javni dump komentara (HN API ili Reddit arhiva) za jednu temu, npr. knjige.",
+        "Napiši skriptu koja kroz OpenRouter šalje komentare u grupama i vraća JSON {naziv, link, sentiment}.",
+        "Spoji duplikate, sortiraj po broju preporuka i sačuvaj u Supabase.",
+        "Napravi statičan Angular sajt bez logovanja, sa stanjem u localStorage-u, kao HackerTube."
+      ],
+      "inspiracija": "Karpathy-jev HackerTube napravljen od 43 miliona HN komentara"
+    },
+    {
+      "naziv": "Koraci od 30 minuta",
+      "problem": "Veliki lični projekti (učenje jezika, renoviranje, aplikacija) stanu jer ne znaš gde si stao.",
+      "zaKoga": "Korisnici iPhone-a koji imaju projekte koje stalno odlažu",
+      "ulogaAi": "Razbije projekat na korake od najviše 30 minuta, svaki sa jasnim uslovom „gotovo“, a zaglavljeni korak podeli na 23a, 23b itd.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Napravi SwiftUI aplikaciju sa SwiftData modelom Projekat → Koraci.",
+        "Dodaj poziv Claude API-ja koji vraća strukturisanu listu koraka (JSON).",
+        "Dugme „zaglavio sam se“ šalje jedan korak nazad na podelu.",
+        "Dodaj widget za početni ekran sa sledećim korakom."
+      ],
+      "inspiracija": "Popularan prompt sa r/ClaudeAI o razbijanju projekta na male korake sa čekboksovima"
+    },
+    {
+      "naziv": "Specifikacija pre ponude",
+      "problem": "Frilenseri u regionu daju ponudu na osnovu nejasnog opisa klijenta, pa se kasnije svađaju oko toga šta je ugovoreno.",
+      "zaKoga": "Frilenseri i male agencije u Srbiji i regionu",
+      "ulogaAi": "Od klijentovog opisa napravi specifikaciju, a nekoliko nezavisnih AI recenzenata (bezbednost, UX, troškovi, pravni deo) traži rupe i pitanja pre slanja ponude.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Proučavaj kako EGM definiše recenzente i faze pregleda.",
+        "Napravi Angular formu za opis projekta i Supabase tabelu za specifikacije.",
+        "Za svakog recenzenta pozovi model posebno, bez istorije razgovora, i skupi pitanja.",
+        "Izvoz u PDF na srpskom, sa listom otvorenih pitanja za klijenta."
+      ],
+      "inspiracija": "Google-ov Elephant-Goldfish Model plugin"
+    },
+    {
+      "naziv": "Šta AI misli o Balkanu",
+      "problem": "Ne zna se kako različiti modeli odgovaraju na pitanja o regionu i da li odgovor zavisi od jezika na kojem pitaš.",
+      "zaKoga": "Novinari, istraživači i radoznali korisnici iz regiona",
+      "ulogaAi": "Isto pitanje se postavlja više modela za svaku opštinu ili državu regiona, na srpskom i engleskom, a odgovori se prikazuju na mapi.",
+      "tezina": 1,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Forkuj p-e-w/llm-beliefs i zameni listu država opštinama ili državama Balkana.",
+        "Dodaj GeoJSON mapu regiona.",
+        "Pusti isto pitanje kroz 3–4 modela preko OpenRouter-a, na dva jezika.",
+        "Objavi rezultate kao statičan sajt na Vercel-u, sa slikom za deljenje."
+      ],
+      "inspiracija": "llm-beliefs sa r/LocalLLaMA (mapa odgovora modela po državama)"
+    },
+    {
+      "naziv": "Kafana OS",
+      "problem": "Mali ugostitelji vode nabavku, smene i zalihe u svesci i Viber grupama ili plaćaju pet različitih aplikacija.",
+      "zaKoga": "Mali restorani, pekare i kafići u Srbiji",
+      "ulogaAi": "Iz fotografije otpremnice ili računa dobavljača popuni zalihe i upozori kad nešto ponestaje. Iz glasovne poruke napravi raspored smena.",
+      "tezina": 4,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Razgovaraj sa 2–3 lokalna vlasnika o tome šta ih najviše muči.",
+        "Napravi Supabase šemu za artikle, zalihe, dobavljače i smene, sa RLS-om po lokalu.",
+        "SwiftUI aplikacija za osoblje (slikaj otpremnicu) i Angular panel za vlasnika.",
+        "Vision model izvlači stavke sa otpremnice, a vlasnik ih potvrdi pre upisa."
+      ],
+      "inspiracija": "Vlasnik burger restorana koji je sa Claude Code-om napravio ceo sistem za poslovanje (r/ClaudeAI)"
+    }
+  ],
+  "cene": "Najviše je pojeftinio GLM 5.3 Flash: sa 0,15/0,5 $ na 0,0335/0,083 $ za milion tokena (ulaz/izlaz). DeepSeek V4.1 Flash 1017 je spušten sa 0,15/0,6 $ na 0,006/0,5 $, a Llama 3.1 8B sa 0,05/0,08 $ na 0,02/0,04 $. Najviše je poskupeo gpt-oss-120b, sa 0,01/0,037 $ na 0,15/0,6 $. Najjeftiniji je danas GLM 5.3 Flash u klasi jeftinih i brzih modela, GLM 5.3 (0,0699/1,4 $) u srednjoj klasi, a među vrhunskim modelima Kimi K3 ima najjeftiniji ulaz (0,192 $), a Grok 4.6 najjeftiniji izlaz (6 $). GPT-6 Astra je i dalje dvostruko skuplji na ulazu od GPT-5.5 (10/50 $ naspram 5/30 $).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Vikend projekti sa Opus 5.5: od HackerTube-a do sistema za restoran",
+        "oCemuSePrica": "r/ClaudeAI je pun projekata napravljenih uz Claude: sistem za poslovanje restorana koji je napisao vlasnik bez programerskog iskustva, beskonačni Backrooms svet koji Opus sam dograđuje, tycoon igra Mall Bats, IDM klon u Rust-u i MCP server koji pušta Claude-a da igra GTA u pozadini. Karpathy-jev HackerTube je pokrenuo i širu priču o tome šta jedan čovek može da napravi za vikend.",
+        "glasovi": "Autori ističu da je Claude napisao skoro sav kod, a oni su se bavili dizajnom i testiranjem. U komentarima se pitaju ko će to održavati i šta je sa licencama, na primer kod IDM klona napravljenog „clean-room“ pristupom, to jest bez gledanja originalnog koda.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xqquzu/i_built_my_restaurants_whole_ops_platform_with/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xqp0p0/i_built_an_infinite_selfevolving_backrooms_with/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xr3gbs/i_built_an_mcp_with_claude_code_that_lets_claude/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xr4cd7/i_built_a_free_browser_tycoon_game_with_claude/"
+          }
+        ]
+      },
+      {
+        "naslov": "Claude-ove zaštite: previše osetljive?",
+        "oCemuSePrica": "Više korisnika se žali da Opus 5.5 blokira bezazlena pitanja iz biologije, na primer o vezivanju molekula za androgene receptore, i da ih pri rešavanju tehničkih problema upućuje da se prijave kao bezbednosni istraživači.",
+        "glasovi": "Pretplatnici kažu da ne mogu da koriste ono što plaćaju. Drugi odgovaraju da su filteri za biologiju namerno strogi zbog rizika od zloupotrebe i da preformulisano pitanje često prođe.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xr2pir/are_we_not_allowed_to_ask_any_sht_about_biology/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xr45rt/holy_guardrails/"
+          }
+        ]
+      },
+      {
+        "naslov": "Jensen Huang i istraga u Nvidii",
+        "oCemuSePrica": "Vest da Nvidia istražuje vezu svog CEO-a sa ženom koju mediji povezuju sa kineskom obaveštajnom službom brzo se proširila na r/singularity. Raspravlja se šta to znači za Nvidiju i izvoz čipova u Kinu.",
+        "glasovi": "Jedni smatraju da je ovo ozbiljno bezbednosno pitanje za ceo AI lanac snabdevanja, a drugi upozoravaju da je istraga tek počela i da su optužbe zasad samo medijski izveštaji.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xr7wb5/nvidia_opens_investigation_into_jensen_huangs/"
+          }
+        ]
+      },
+      {
+        "naslov": "„AI brain fry“: umor od rada sa agentima",
+        "oCemuSePrica": "Tekst o tome kako se boriti protiv mentalne iscrpljenosti od stalnog nadgledanja AI agenata skupio je 165 poena i 133 komentara na Hacker News-u.",
+        "glasovi": "Programeri pišu da ih više umara proveravanje tuđeg, odnosno AI koda nego pisanje svog. Neki savetuju fiksne pauze i manje paralelnih agenata, a drugi kažu da je to samo nova veština koja se uči.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50416363"
+          }
+        ]
+      },
+      {
+        "naslov": "Lokalni AI: RTX 5060 Ti 16GB i mape cenzure",
+        "oCemuSePrica": "Na r/LocalLLaMA se priča da ljudi masovno kupuju RTX 5060 Ti 16GB za lokalne modele. Pažnju je privukla i mapa koja pokazuje kako modeli odgovaraju na pitanje o cenzuri u svakoj državi, kao i Tencent-ova brža verzija Qwen-a.",
+        "glasovi": "Autor alata -p-e-w- kaže da su ga rezultati iznenadili. Zajednica je skeptična prema najavama da će „Opus nivo“ uskoro raditi na 32 GB VRAM-a, jer to zasad nije pokazano.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xr09nq/does_censorship_exist_in_country_according_to/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xr01bj/users_have_started_buying_rtx_5060_ti_16gb/"
+          }
+        ]
+      }
+    ],
+    "snimci": []
+  },
+  "nedeljni": null
+}

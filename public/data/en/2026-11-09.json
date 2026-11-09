@@ -1,0 +1,462 @@
+{
+  "datum": "2026-11-09",
+  "generisano": "2026-11-09T03:06:20.957Z",
+  "model": "claude-opus-5-5",
+  "prevod": "claude-sonnet-5-5",
+  "ukratko": "Monday is quieter for models and busier for companies. Nvidia is investigating Jensen Huang's relationship with a woman the press says worked for Chinese intelligence, and OpenAI raised $11 billion, less than expected. Two items matter more for developers: Google's open-source plugin that makes an agent write a spec first, and a new benchmark showing that even the best coding agent fully solves only about one in four real tasks.",
+  "vesti": [
+    {
+      "naslov": "Nvidia opens investigation into Jensen Huang's relationship with an alleged Chinese spy",
+      "staSeDesilo": "Nvidia's board has launched an independent investigation after reports that CEO Jensen Huang was targeted by a foreign intelligence service. It concerns his relationship with Alice Huang, a director at Megaspeed, who was allegedly recruited by China's Ministry of State Security. Huang sent employees a letter admitting the affair and apologizing to his family.",
+      "zastoJeBitno": "Nvidia makes the chips almost all AI runs on, so instability at the top, combined with US-China tension over chip exports, could affect supply and compute prices. For now, it's all at the investigation stage.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1029562/nvidia-investigating-jensen-huang-relationship-chinese-spy"
+        },
+        {
+          "naziv": "The Verge (letter text)",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1029595/full-text-jensen-huang-affair-memo-nvidia"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy/"
+        }
+      ]
+    },
+    {
+      "naslov": "Google open-sources Elephant-Goldfish: the agent writes a spec first, then \"fresh\" subagents attack it",
+      "staSeDesilo": "Google released the open-source Elephant-Goldfish Model (EGM) plugin. Before writing any code, the agent drafts a spec in a Markdown file, which is then reviewed by fresh subagents (helper agents that can't see the earlier conversation) playing nine different reviewer roles. The package has 7 skills and 5 review phases and works in Claude Code 2.1.271+, Codex, Antigravity and ChatGPT. Google says thousands of its engineers use it.",
+      "zastoJeBitno": "This way a wrong assumption gets caught in the spec, not after a thousand lines of code in a PR. The downside is heavy token usage: a test in Claude Cowork hit the usage limit, and there are reports that AGENTS.md leaks into the reviewers in Codex, which undermines their independence.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/11/08/google-elephant-goldfish-model-plugin-spec-review-coding-agents/"
+        }
+      ]
+    },
+    {
+      "naslov": "Co-Design Bench: even GPT-6 Astra fully solves only 26.4% of real-world tasks",
+      "staSeDesilo": "Alibaba and several Asian universities built a benchmark from real change requests for web apps, specifically ones users had to rephrase or send back. GPT-6 Astra comes first: it fulfills about 70% of requests on average, but is fully correct on only 26.4% of tasks, and under 18% on tasks inside a repository. On older benchmarks the same models score above 99%.",
+      "zastoJeBitno": "Your experience of an agent \"almost\" finishing the job now has numbers behind it. Another key finding: the harness, meaning the environment the agent runs in, affects results almost as much as the model itself, so it's worth tuning.",
+      "kategorija": "istrazivanje",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/ai-coding-agents-still-need-human-cleanup-on-nearly-three-out-of-four-tasks-in-a-real-world-test/"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI raises $11 billion at a $1.25 trillion valuation, less than expected",
+      "staSeDesilo": "According to Bug.hr, OpenAI has raised $11 billion in a new round, not yet closed, at a valuation of $1.25 trillion. The amount is well below initial expectations.",
+      "zastoJeBitno": "This fits last week's story about investment cooling. With less money coming in, pressure grows on subscription prices and limits, so the rumor of a new $50 ChatGPT tier isn't surprising.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Bug.hr",
+          "url": "https://www.bug.hr/biznis/openai-prikupio-11-milijardi-dolara-uz-procjenu-od-125-bilijuna-64155"
+        }
+      ]
+    },
+    {
+      "naslov": "Apple speeds up Siri: control of Apple apps first, a real agent is the goal",
+      "staSeDesilo": "Bloomberg's Mark Gurman reports that CEO John Ternus is pressing Craig Federighi to accelerate the Siri plan so Apple has an agent that can compete with OpenAI's Dots and Meta Muse. In the coming months Siri is expected to get fine-grained control over Apple's apps, such as rotating and cropping photos in Photos or tidying tabs in Safari.",
+      "zastoJeBitno": "As an iOS developer, expect Siri to do more and more on users' behalf. Apps with well-described App Intents actions will be ready when this expands to third-party developers. For now this is sourced reporting, with no official announcement.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic"
+        }
+      ]
+    },
+    {
+      "naslov": "Karpathy built HackerTube over a weekend with Claude from 20 years of Hacker News comments",
+      "staSeDesilo": "Using Claude Opus 5.5, Andrej Karpathy went through 43 million Hacker News comments and pulled out the 6,454 videos people there recommend most often. The site, hackertube.org, has no login and keeps state locally in the browser. Claude Code did almost everything, from data analysis to server setup. Karpathy himself only got a Google Cloud API key, a server and a domain.",
+      "zastoJeBitno": "A good pattern to copy: a huge pile of public data, an LLM as a filter, and a simple static site. Right afterward, Karpathy built a similar site (TristanTube) in about 3 minutes.",
+      "kategorija": "ostalo",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/andrej-karpathy-built-a-curated-video-platform-in-a-weekend-using-claude-and-20-years-of-hacker-news/"
+        }
+      ]
+    },
+    {
+      "naslov": "Meta open-sources Astryx, its largest internal design system, built for agents too",
+      "staSeDesilo": "Meta released Astryx under the MIT license, a design system it developed internally for eight years that powers more than 13,000 of its apps. It's built on React 19+ and StyleX, and includes a CLI with component docs, templates and themes, plus AGENTS.md and CLAUDE.md files for AI assistants. It's still in beta.",
+      "zastoJeBitno": "When an agent writes UI, a design system with a CLI the agent can query for components gives more consistent results than random Tailwind code. It isn't directly usable for Angular projects, but it's a good model to learn from.",
+      "kategorija": "alati",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "GitHub",
+          "url": "https://github.com/meta/astryx"
+        }
+      ]
+    },
+    {
+      "naslov": "Elvis's estate and Eminem's publisher sue Suno",
+      "staSeDesilo": "Suno faces two more lawsuits. The rights holders to Elvis Presley's music and the publisher of Eminem's biggest songs claim Suno generates music and lyrics that imitate those artists. Elvis's side cites Tennessee's ELVIS Act, which bans AI cloning of a singer's voice.",
+      "zastoJeBitno": "This is one of the first tests of a law protecting a performer's voice and likeness from AI cloning. If the plaintiffs win, apps that generate music or voices \"in the style of\" famous people take on legal risk.",
+      "kategorija": "regulativa",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1029533/elvis-eminem-suno-ai-music-clone-lawsuit"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Elephant-Goldfish Model (EGM) plugin",
+      "tip": "alat",
+      "opis": "Google's open-source plugin that makes an agent write a spec, then has several \"fresh\" subagents review it before any code is written. Works in Claude Code.",
+      "kakoProbati": [
+        "Make sure you have Claude Code 2.1.271 or newer (claude --version).",
+        "Open the plugin's GitHub repo from the link and install it following the README (check the exact commands there).",
+        "Try it on a small feature in an Angular/Supabase project and watch your usage limits, since it burns a lot of tokens."
+      ],
+      "link": "https://www.marktechpost.com/2026/11/08/google-elephant-goldfish-model-plugin-spec-review-coding-agents/",
+      "cena": "free (uses your existing model limits)"
+    },
+    {
+      "naziv": "Astryx (Meta)",
+      "tip": "projekat",
+      "opis": "An open-source React design system with a CLI that agents read component docs from.",
+      "kakoProbati": [
+        "In a React 19 project, run: npm install @astryxdesign/core @astryxdesign/theme-neutral @stylexjs/stylex",
+        "Add the CLI: npm install -D @astryxdesign/cli (or globally: npm i -g @astryxdesign/cli)",
+        "Run npx astryx component --list and tell Claude Code to build screens using Astryx components."
+      ],
+      "link": "https://github.com/meta/astryx",
+      "cena": "free (MIT)"
+    },
+    {
+      "naziv": "llm-beliefs",
+      "tip": "projekat",
+      "opis": "A small tool that asks a model the same yes/no question for every country and turns the answers into an SVG world map.",
+      "kakoProbati": [
+        "Clone github.com/p-e-w/llm-beliefs and install uv.",
+        "Set OPENAI_BASE_URL to OpenRouter and OPENAI_API_KEY to your key.",
+        "Run: uv run llm-beliefs 'qwen/qwen3.8-27b' 'Does censorship exist in [country]?'",
+        "Find the maps in the maps folder."
+      ],
+      "link": "https://github.com/p-e-w/llm-beliefs",
+      "cena": "free, you only pay for tokens on OpenRouter"
+    },
+    {
+      "naziv": "HackerTube",
+      "tip": "projekat",
+      "opis": "Karpathy's selection of the 6,454 videos Hacker News users recommend most often, no login required.",
+      "kakoProbati": [
+        "Open hackertube.org on your iPhone or computer.",
+        "Watch without an account; the site remembers state in your browser."
+      ],
+      "link": "https://hackertube.org",
+      "cena": "free"
+    },
+    {
+      "naziv": "Sketchpad demo",
+      "tip": "projekat",
+      "opis": "A small model (Qwen3.5-0.8B) that does provably correct arithmetic in the browser, step by step on a \"sheet of paper\".",
+      "kakoProbati": [
+        "Open the project page in a desktop browser with WebGPU support.",
+        "Enter a long multiplication or division and watch the model write out digits and carries."
+      ],
+      "link": "https://neovand.github.io/sketchpad/",
+      "cena": "free"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Richard Sutton repeated that raw compute isn't enough for intelligence and new learning methods are needed, and former OpenAI researcher Tworek agrees.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/the-inventor-of-the-bitter-lesson-has-a-bitter-lesson-for-llm-scaling-enthusiasts/"
+    },
+    {
+      "naslov": "In a Nature commentary, Anil Seth, Ned Block and Giulio Tononi argue that today's AI isn't conscious, won't become so on silicon, and shouldn't be given rights.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/the-brain-as-computer-metaphor-shaped-modern-ai-but-may-be-misleading-the-consciousness-debate/"
+    },
+    {
+      "naslov": "Airbnb is building an AI agent for planning and booking trips that will adapt its interface to each query instead of working like a classic chatbot.",
+      "izvor": "Bug.hr",
+      "url": "https://www.bug.hr/umjetna-inteligencija/airbnb-razvija-ai-agenta-za-planiranje-i-rezervacije-putovanja-64175"
+    },
+    {
+      "naslov": "Google's Project Suncatcher prototype ran Gemma 4 on a TPU chip in orbit and sent the answer back to Earth via a station in Svalbard.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/telekomunikacije/googleov-ai-procesor-odgovorio-iz-orbite"
+    },
+    {
+      "naslov": "Orange Cyberdefense and Mistral are building security tools on a version of Mistral Large 4 tailored for cyber defense, with important decisions left to humans.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/orange-cyberdefense-i-mistral-razvijaju-sigurnosni-ai"
+    },
+    {
+      "naslov": "Companies spent about $168 billion on cloud in Q3, up 55% from a year earlier, mostly because of AI.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/poslovna-rjesenja/potrosnja-na-usluge-oblaka-porasla-55-posto"
+    },
+    {
+      "naslov": "South Korean exports rose 93.7% in October to a record $115.3 billion, of which $56.4 billion were semiconductors for AI infrastructure.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/poluvodici-podigli-korejski-izvoz-937-posto"
+    },
+    {
+      "naslov": "In Gartner's survey, a misjudged AI strategy is the third-largest new business risk for the first time.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/poslovanje/gartner-pogresne-ai-strategije-i-gubitak-konkurentnosti-medu-pet-najvecih-novih-poslovnih-rizika"
+    },
+    {
+      "naslov": "NYT Cooking has added a beta AI that modifies recipes and swaps ingredients, and Wired finds it mostly works well.",
+      "izvor": "Wired",
+      "url": "https://www.wired.com/story/nyt-cooking-new-ai-powered-recipe-modifier-is-pretty-good/"
+    },
+    {
+      "naslov": "Microsoft has filed a patent for AI that alters what a person says in a live video call and syncs their lip movements to match.",
+      "izvor": "TechPowerUp (via Mastodon)",
+      "url": "https://pouet.chapril.org/@dallo/117583279973047600"
+    },
+    {
+      "naslov": "Revolut switched from Claude Code to self-hosted GLM 5.1 and says it costs about a tenth of the previous price.",
+      "izvor": "The Register (via Mastodon)",
+      "url": "https://mastodon.social/@rival/117583039465241781"
+    },
+    {
+      "naslov": "Tencent released Qwen3.8-27B-DSpine on Hugging Face, using a new speculative decoding technique; the community mentions up to 3× faster generation, but that's not yet verified.",
+      "izvor": "r/LocalLLaMA",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xr2aaa/tencentqwen3827bdspineb16_hugging_face/"
+    },
+    {
+      "naslov": "Simon Willison used Claude to compare a SQLite extension in C and Rust: the C file is 14 KB versus about 300 KB, and after a rewrite it's faster too.",
+      "izvor": "Simon Willison",
+      "url": "https://simonwillison.net/2026/Nov/8/sqlite-parse-number-c-vs-rust/"
+    },
+    {
+      "naslov": "Stanford's CS146S course on development with AI agents now requires a contribution to a real open-source project as homework, since agents solve last year's assignments with a single prompt.",
+      "izvor": "Latent Space",
+      "url": "https://latent.space/p/cs146s/"
+    },
+    {
+      "naslov": "Vals AI noticed that Inkling 2 Small swears in its reasoning during long tasks, but it doesn't signal that the task will fail.",
+      "izvor": "Bluesky / Vals AI",
+      "url": "https://bsky.app/profile/machinelearning.bsky.social/post/3mzsheykas22g"
+    },
+    {
+      "naslov": "An unverified rumor of a new $50-a-month ChatGPT Pro tier is circulating on r/OpenAI.",
+      "izvor": "r/OpenAI",
+      "url": "https://www.reddit.com/r/OpenAI/comments/1xqst31/pro_tier_at_50_coming_soon/"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "Sketchpad: provably correct arithmetic with a small model",
+      "objasnjenje": "Instead of computing \"in its head\", Qwen3.5-0.8B with a small adapter works on a drawn sheet: at each step it sees only three cells and writes one digit, carry or next operation. A fixed program just moves the view. The authors proved in Lean that the model is correct for numbers of any length if it's correct on a finite set of such views, and all 2,446 views pass in a browser on a laptop.",
+      "zastoJeZanimljivo": "This is a rare correctness guarantee for a neural network, not a sample-based estimate. The idea of a small model, a restricted view and verifiable steps could power reliable offline tools.",
+      "url": "https://huggingface.co/papers/2611.04434",
+      "github": "https://github.com/NeoVand/sketchpad"
+    },
+    {
+      "naslov": "Beneath the Surface: what we miss when we talk about agent \"self-improvement\"",
+      "objasnjenje": "The paper tests methods where an agent modifies its own harness (prompts, tools, rules) without training the model. All 16 agents \"evolved\" this way learned new tasks but forgot some they could previously solve. Higher reliability mostly came with higher cost, and the top-scoring agent wasn't always the best choice.",
+      "zastoJeZanimljivo": "If you tune your own CLAUDE.md and skills, this is a warning: a change that fixes one task can quietly break another. So rerun your old tests after every change.",
+      "url": "https://huggingface.co/papers/2611.07624",
+      "github": null
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Recommended on the forums",
+      "problem": "On Reddit (r/serbia, r/programming), Hacker News and forums, books, videos and tools have been recommended for years, but nobody collects them in one place.",
+      "zaKoga": "People who love curated lists, especially a local audience",
+      "ulogaAi": "A cheap model (e.g. GLM 5.3 Flash) reads the comments, extracts what's recommended and how positive the recommendations are, then builds a ranked list.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Download a public comment dump (HN API or a Reddit archive) for one topic, e.g. books.",
+        "Write a script that sends comments in batches through OpenRouter and returns JSON {name, link, sentiment}.",
+        "Merge duplicates, sort by number of recommendations and save to Supabase.",
+        "Build a static Angular site with no login and state in localStorage, like HackerTube."
+      ],
+      "inspiracija": "Karpathy's HackerTube, built from 43 million HN comments"
+    },
+    {
+      "naziv": "30-minute steps",
+      "problem": "Big personal projects (learning a language, renovating, building an app) stall because you lose track of where you left off.",
+      "zaKoga": "iPhone users with projects they keep putting off",
+      "ulogaAi": "Breaks a project into steps of at most 30 minutes, each with a clear \"done\" condition, and splits a stuck step into 23a, 23b and so on.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Build a SwiftUI app with a SwiftData Project → Steps model.",
+        "Add a Claude API call that returns a structured list of steps (JSON).",
+        "A \"I'm stuck\" button sends one step back to be split.",
+        "Add a home screen widget showing the next step."
+      ],
+      "inspiracija": "A popular r/ClaudeAI prompt about breaking a project into small steps with checkboxes"
+    },
+    {
+      "naziv": "Spec before quote",
+      "problem": "Freelancers in the region quote based on a vague client description, then argue later about what was agreed.",
+      "zaKoga": "Freelancers and small agencies in Serbia and the region",
+      "ulogaAi": "Turns the client's description into a spec, and several independent AI reviewers (security, UX, costs, legal) look for gaps and questions before the quote goes out.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Study how EGM defines its reviewers and review phases.",
+        "Build an Angular form for the project description and a Supabase table for specs.",
+        "Call the model separately for each reviewer, with no conversation history, and collect the questions.",
+        "Export to PDF in Serbian, with a list of open questions for the client."
+      ],
+      "inspiracija": "Google's Elephant-Goldfish Model plugin"
+    },
+    {
+      "naziv": "What AI thinks about the Balkans",
+      "problem": "It's unknown how different models answer questions about the region and whether the answer depends on the language you ask in.",
+      "zaKoga": "Journalists, researchers and curious users from the region",
+      "ulogaAi": "The same question is posed to several models for each municipality or country in the region, in Serbian and English, and the answers are shown on a map.",
+      "tezina": 1,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Fork p-e-w/llm-beliefs and replace the list of countries with Balkan municipalities or countries.",
+        "Add a GeoJSON map of the region.",
+        "Run the same question through 3–4 models via OpenRouter, in two languages.",
+        "Publish the results as a static site on Vercel, with a share image."
+      ],
+      "inspiracija": "llm-beliefs from r/LocalLLaMA (a map of model answers by country)"
+    },
+    {
+      "naziv": "Kafana OS",
+      "problem": "Small hospitality owners track purchasing, shifts and stock in a notebook and Viber groups, or pay for five different apps.",
+      "zaKoga": "Small restaurants, bakeries and cafés in Serbia",
+      "ulogaAi": "Fills in stock from a photo of a supplier's delivery note or invoice and warns when something is running low. Builds a shift schedule from a voice message.",
+      "tezina": 4,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Talk to 2–3 local owners about what frustrates them most.",
+        "Build a Supabase schema for items, stock, suppliers and shifts, with per-venue RLS.",
+        "A SwiftUI app for staff (photograph the delivery note) and an Angular dashboard for the owner.",
+        "A vision model extracts line items from the delivery note, and the owner confirms them before they're saved."
+      ],
+      "inspiracija": "A burger restaurant owner who built an entire operations system with Claude Code (r/ClaudeAI)"
+    }
+  ],
+  "cene": "GLM 5.3 Flash saw the biggest price drop: from $0.15/$0.5 to $0.0335/$0.083 per million tokens (input/output). DeepSeek V4.1 Flash 1017 fell from $0.15/$0.6 to $0.006/$0.5, and Llama 3.1 8B from $0.05/$0.08 to $0.02/$0.04. The biggest increase was gpt-oss-120b, from $0.01/$0.037 to $0.15/$0.6. Today the cheapest in the cheap-and-fast class is GLM 5.3 Flash, in the mid-range GLM 5.3 ($0.0699/$1.4), and among top-tier models Kimi K3 has the cheapest input ($0.192) and Grok 4.6 the cheapest output ($6). GPT-6 Astra is still twice as expensive on input as GPT-5.5 ($10/$50 vs $5/$30).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Weekend projects with Opus 5.5: from HackerTube to a restaurant system",
+        "oCemuSePrica": "r/ClaudeAI is full of projects built with Claude: a restaurant operations system written by an owner with no programming background, an infinite Backrooms world that Opus keeps extending on its own, a tycoon game called Mall Bats, an IDM clone in Rust, and an MCP server that lets Claude play GTA in the background. Karpathy's HackerTube also kicked off a broader conversation about what one person can build in a weekend.",
+        "glasovi": "Authors stress that Claude wrote almost all the code while they handled design and testing. Commenters ask who will maintain it all and what about licenses, for example for the IDM clone built with a \"clean-room\" approach, meaning without looking at the original code.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xqquzu/i_built_my_restaurants_whole_ops_platform_with/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xqp0p0/i_built_an_infinite_selfevolving_backrooms_with/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xr3gbs/i_built_an_mcp_with_claude_code_that_lets_claude/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xr4cd7/i_built_a_free_browser_tycoon_game_with_claude/"
+          }
+        ]
+      },
+      {
+        "naslov": "Claude's safeguards: too sensitive?",
+        "oCemuSePrica": "Multiple users complain that Opus 5.5 blocks harmless biology questions, for example about molecules binding to androgen receptors, and tells them to sign up as security researchers when they're solving technical problems.",
+        "glasovi": "Subscribers say they can't use what they're paying for. Others reply that the biology filters are deliberately strict because of misuse risk, and that a rephrased question often gets through.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xr2pir/are_we_not_allowed_to_ask_any_sht_about_biology/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xr45rt/holy_guardrails/"
+          }
+        ]
+      },
+      {
+        "naslov": "Jensen Huang and the Nvidia investigation",
+        "oCemuSePrica": "The news that Nvidia is investigating its CEO's relationship with a woman the press links to Chinese intelligence spread quickly on r/singularity. People are debating what it means for Nvidia and chip exports to China.",
+        "glasovi": "Some see it as a serious security issue for the whole AI supply chain, while others caution that the investigation has only just begun and the allegations are so far just media reports.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xr7wb5/nvidia_opens_investigation_into_jensen_huangs/"
+          }
+        ]
+      },
+      {
+        "naslov": "\"AI brain fry\": burnout from working with agents",
+        "oCemuSePrica": "A piece on how to fight the mental exhaustion of constantly supervising AI agents collected 165 points and 133 comments on Hacker News.",
+        "glasovi": "Developers write that reviewing someone else's code, meaning AI code, tires them more than writing their own. Some advise fixed breaks and fewer parallel agents, while others say it's just a new skill to learn.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50416363"
+          }
+        ]
+      },
+      {
+        "naslov": "Local AI: RTX 5060 Ti 16GB and censorship maps",
+        "oCemuSePrica": "On r/LocalLLaMA, people are talking about buying the RTX 5060 Ti 16GB in bulk for local models. A map showing how models answer a question about censorship in each country also drew attention, as did Tencent's faster version of Qwen.",
+        "glasovi": "The tool's author, -p-e-w-, says the results surprised him. The community is skeptical of claims that \"Opus-level\" will soon run on 32 GB of VRAM, since that hasn't been demonstrated yet.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xr09nq/does_censorship_exist_in_country_according_to/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xr01bj/users_have_started_buying_rtx_5060_ti_16gb/"
+          }
+        ]
+      }
+    ],
+    "snimci": []
+  },
+  "nedeljni": null
+}
