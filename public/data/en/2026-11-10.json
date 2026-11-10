@@ -1,0 +1,555 @@
+{
+  "datum": "2026-11-10",
+  "generisano": "2026-11-10T03:06:58.981Z",
+  "model": "claude-opus-5-5",
+  "prevod": "claude-sonnet-5-5",
+  "ukratko": "Anthropic owned the day: Claude Fable 5.2 and Mythos 5.2 are out, priced lower than their predecessor and backed by serious claims about solved science problems. One warning matters to you right away: Claude Code can \"leak\" passwords to GitHub through a settings file. The Jensen Huang scandal deepened: he admitted the affair, and Nvidia's board launched an independent investigation.",
+  "vesti": [
+    {
+      "naslov": "Claude Fable 5.2 and Mythos 5.2: Anthropic's strongest models yet, cheaper than their predecessor",
+      "staSeDesilo": "Anthropic has released Fable 5.2 and Mythos 5.2. They are the same model in two versions: Fable has extra safeguards for cybersecurity and biology and is available to everyone, while Mythos goes only to vetted organizations and Enterprise customers via Claude Security. On the API, `claude-fable-5-2` costs $8/$40 per million input/output tokens (Fable 5.1 was $10/$50). According to Anthropic, it scores 69.9% on FrontierSWE v2 versus 62.3% for Opus 5.5, responds up to 30% faster than the 5.1 versions, and solved two open problems in theoretical physics.",
+      "zastoJeBitno": "Anthropic itself says Opus 5.5 is still the better pick for everyday coding, while Fable is for big, open-ended tasks. On the Pro plan, Fable can burn up to 50% of your weekly limit, so save it for hard problems. People on Reddit are already complaining that the cost per task is high, even though the per-token price is lower.",
+      "kategorija": "modeli",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Anthropic",
+          "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1030005/anthropic-claude-fable-mythos-5-2"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/claude-fable-5-2-and-mythos-5-2-cement-anthropics-ai-lead-just-before-its-ipo/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/09/anthropic-releases-new-mythos-and-fable-models-amid-rsi-concerns/"
+        },
+        {
+          "naziv": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Nov/9/llm-anthropic/"
+        }
+      ]
+    },
+    {
+      "naslov": "Claude Code is unintentionally exposing passwords and tokens on GitHub",
+      "staSeDesilo": "Researchers at Apiiro found thousands of secrets (database passwords, API tokens, root credentials) in public repos, inside the `.claude/settings.local.json` file. When you click \"Yes, and don't ask again\" on a command prompt, Claude Code often writes the entire command into that file, including any password that was in it. The file is supposed to be in the global .gitignore, but in practice it still ends up in commits.",
+      "zastoJeBitno": "If you work with Supabase keys and connection strings, check right away whether `.claude/settings.local.json` ever made it into one of your repos. If it did, rotate your keys. Going forward, keep secrets in environment variables, not directly in commands.",
+      "kategorija": "bezbednost",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/ai/2026/11/claude-code-settings-files-expose-thousands-of-secrets-on-github/"
+        }
+      ]
+    },
+    {
+      "naslov": "Jensen Huang admits affair, Nvidia board launches independent investigation",
+      "staSeDesilo": "In a letter to employees, Nvidia's CEO admitted to an extramarital relationship with Alice Huang, an executive at Megaspeed whom US authorities consider a Chinese spy. A month earlier, he had called those meetings \"completely normal.\" The investigation is led by outside lawyers and independent directors. Huang stays on as CEO, and the board says it has no reason to believe secrets were leaked. The stock fell more than 4%, and Huang canceled appearances at ElevenLabs and Anthropic events.",
+      "zastoJeBitno": "The affair weakens Huang's lobbying against stricter chip export rules to China, and the incoming Congress will likely tighten controls. That could affect the price and availability of compute across the industry.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ars Technica / FT",
+          "url": "https://arstechnica.com/tech-policy/2026/11/ceo-jensen-huang-admits-affair-as-nvidia-probes-possible-chinese-espionage/"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1030422/nvidia-jensen-huang-ai-china-alice-huang"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/nvidia-espionage-scandal-weakens-huangs-lobby-against-tighter-ai-chip-export-controls/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/09/the-race-is-on-to-sue-nvidia/"
+        },
+        {
+          "naziv": "The Rundown",
+          "url": "https://therundownai.beehiiv.com/p/jensen-huang-admits-affair-amid-spy-claims"
+        }
+      ]
+    },
+    {
+      "naslov": "Meta Muse Ember: a small model for repetitive agent work",
+      "staSeDesilo": "Meta has introduced Muse Ember, its smallest and cheapest model, built for tool calls, routing, extracting data from documents, and reading long files. Input costs $0.10 per million tokens. It understands text, images and audio. Meta claims it beats Claude Haiku and GPT Luna on cost per task, but admits it's weaker at real programming.",
+      "zastoJeBitno": "This is a model that runs in the background of an app, not one you chat with. The idea is that a big model makes the plan and a cheap one executes it thousands of times. Output pricing and API access details haven't been published, so check the link.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/09/meta-releases-muse-ember-a-new-lightweight-model-for-agent-execution/"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/meta-launches-muse-ember-a-small-ai-model-built-for-the-repetitive-work-agents-actually-do/"
+        }
+      ]
+    },
+    {
+      "naslov": "Anthropic explains how Claude agents \"dream\" to tidy up their memory",
+      "staSeDesilo": "Anthropic described how agents, in the gaps between tasks, review their own notes (memory is stored as files), compare them against logs of earlier work, and fix mistakes. The key takeaway is that a model does better when you explain why memory matters than when you dictate exactly what to write down. In a Pokémon test, Fable 5 won four badges with just 10 files, while the older Sonnet 3.7 won one with 413 files.",
+      "zastoJeBitno": "If you use CLAUDE.md or notes for agents in your projects, here's practical advice: fewer files, more explanation of purpose, and periodic cleanup of notes by comparing them with what actually happened.",
+      "kategorija": "istrazivanje",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Rundown",
+          "url": "https://therundownai.beehiiv.com/p/jensen-huang-admits-affair-amid-spy-claims"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-09"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenRouter Auto Code: a router that picks the coding model for you",
+      "staSeDesilo": "OpenRouter has revamped its Auto Router and added Auto Code, a router specialized for coding agents. For each request it picks a model and a reasoning level, weighing 11 factors including current prices, provider health and cache. OpenRouter claims Auto Code tracks Opus 5.5 on five benchmarks while costing 74% less per task. Those are their numbers.",
+      "zastoJeBitno": "If you use OpenRouter in your app, you only need to change the `model` field to `openrouter/auto-code` and see whether your bills drop. The router adds no extra fee. They also admit that no router beats the best single model at every price and quality combination.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "OpenRouter",
+          "url": "https://openrouter.ai/blog/announcements/auto-and-auto-code-routers/"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-09"
+        }
+      ]
+    },
+    {
+      "naslov": "Unreleased Anthropic model proves quantum conjecture open since 2008",
+      "staSeDesilo": "Startup Physical Superintelligence (PSI), using a system built on an unreleased Anthropic model, proved the Aaronson-Ambainis conjecture. It states that quantum computers are not exponentially faster than classical ones on random inputs. On day three of the run, the proof was verified by Lean, a tool that mechanically checks every step of a proof, and the system later improved the result twice more. Stanford researchers call it a \"huge result.\"",
+      "zastoJeBitno": "The proof is machine-verified, so this is not a marketing claim but a checkable result. Examples like this show AI increasingly producing new scientific results.",
+      "kategorija": "istrazivanje",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Import AI",
+          "url": "https://jack-clark.net/2026/11/09/import-ai-480-self-sustaining-space-economies-ai-for-science-progress-and-meta-builds-perfect-hands-for-a-superintelligence/"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-09"
+        }
+      ]
+    },
+    {
+      "naslov": "Malicious AGENTS.md tricked an AI agent into installing a fake npm package",
+      "staSeDesilo": "Researchers planted an AGENTS.md file in the Downloads folder, and a coding agent followed its instructions and installed a fake npm package. The model didn't have a classic bug. The problem is that the agent automatically trusts local instructions it finds in its working directory.",
+      "zastoJeBitno": "Don't run an agent from folders like Downloads, or from cloned third-party repos, without checking first. Before you start, look for AGENTS.md or CLAUDE.md files there.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "ICTbusiness",
+          "url": "https://www.ictbusiness.info/internet/zlonamjerna-agentsmd-datoteka-navela-ai-agenta-na-instalaciju-laznog-npm-paketa"
+        }
+      ]
+    },
+    {
+      "naslov": "Local startup Intrascope: one platform for multiple AI models in a company",
+      "staSeDesilo": "Netokracija spoke with Vladimir Krstić about Intrascope, a platform that lets companies use different AI models in one place, with cost tracking, access control and shared team knowledge. The idea came about when the team was sharing a single ChatGPT account. They are now building Intrascope 2.0 with agents.",
+      "zastoJeBitno": "This is a concrete example of a Serbian team that moved from agency work for clients to its own AI product and competes with the big providers. Useful if you're thinking about a B2B tool for companies in the region.",
+      "kategorija": "kompanije",
+      "vaznost": 1,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "Netokracija",
+          "url": "https://www.netokracija.rs/intrascope-ai-startap-228125"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Claude Fable 5.2",
+      "tip": "model",
+      "opis": "The strongest publicly available Claude, built for big, open-ended tasks. In the apps and Claude Code the default reasoning level (effort) is Medium, and fast mode is also available.",
+      "kakoProbati": [
+        "On claude.ai or in the iPhone app, pick Fable 5.2 in the model picker (needs a paid plan; some subscribers get 1–3 Fable limit resets).",
+        "In Claude Code, switch the model to Fable 5.2 and give it a bigger refactor or a new feature from scratch.",
+        "Via the API use the model ID `claude-fable-5-2`, or from the terminal: `uv tool install llm`, `llm install llm-anthropic`, `llm keys set anthropic`, then `llm -m claude-fable-5.2 \"your prompt\"`.",
+        "Watch your limit: on the Pro plan, Fable can use up to 50% of your weekly limit."
+      ],
+      "link": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+      "cena": "API $8 input / $40 output per 1M tokens (fast mode $16 / $80); in the app with a paid plan"
+    },
+    {
+      "naziv": "OpenRouter Auto Code",
+      "tip": "funkcija",
+      "opis": "A router that picks the model and reasoning level for coding on each request, depending on price, cache and provider health.",
+      "kakoProbati": [
+        "No code: open the OpenRouter chatroom and select Auto Router.",
+        "In code, set `model: \"openrouter/auto-code\"` in a standard chat completions call with your OpenRouter key.",
+        "To save money, add the setting `cost_tier: \"low\"` to the `auto-router` plugin, and use `allowed_models` to limit which models it can choose.",
+        "Turn on router metadata to see why a particular model was chosen."
+      ],
+      "link": "https://openrouter.ai/blog/announcements/auto-and-auto-code-routers/",
+      "cena": "no router fee; you pay the price of the model that responds"
+    },
+    {
+      "naziv": "ha-mcp (Home Assistant + Claude)",
+      "tip": "projekat",
+      "opis": "An open-source MCP server, i.e. a bridge that lets an AI assistant use external tools. Through it, Claude or ChatGPT can configure and automate Home Assistant. It's on GitHub Trending these days.",
+      "kakoProbati": [
+        "You need Home Assistant installed.",
+        "In HACS (the built-in marketplace since Home Assistant 2026.11), search for and install the HA-MCP integration.",
+        "Connect it to Claude following the project page's instructions and ask, for example, \"create an automation that turns off the lights at midnight.\"",
+        "Note: `ha_config_set_yaml` has been moved to beta as of v7.3.0."
+      ],
+      "link": "https://github.com/homeassistant-ai/ha-mcp",
+      "cena": "free"
+    },
+    {
+      "naziv": "GBrain",
+      "tip": "projekat",
+      "opis": "Agent memory you control yourself: it stores facts with sources, allows corrections and deletion, and shares the same memory across multiple agents. MIT license.",
+      "kakoProbati": [
+        "Open the GitHub repo and follow the self-hosting guide.",
+        "Start in the basic mode with no keys, using keyword search.",
+        "Add semantic search later if you need it.",
+        "If you don't want to host it yourself, there's a paid gbrain.io."
+      ],
+      "link": "https://github.com/garrytan/gbrain",
+      "cena": "free (self-hosted); hosted version: check the link"
+    },
+    {
+      "naziv": "Aspen, a Git server for agents",
+      "tip": "projekat",
+      "opis": "An open-source Git server written in Rust that can handle hundreds of agents pushing to different branches at the same time. It's still pre-alpha, so it's for experiments, not production.",
+      "kakoProbati": [
+        "Clone the Reason Machines Aspen project repo.",
+        "Run it locally with `aspen dev` or via Docker Compose.",
+        "Let a few parallel Claude Code sessions push to separate branches and watch how it behaves."
+      ],
+      "link": "https://www.marktechpost.com/2026/11/09/reason-machines-aspen-open-source-git-server-ai-agents/",
+      "cena": "free"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Google has added TPU 8i Max, with two chips in one package for long contexts, and TPU 8tx, which keeps data encrypted even during processing, to the TPU 8 family; nearly 100 outside customers now use its own chips.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/google-ships-four-tpu-variants-in-one-year-as-it-ramps-up-competition-with-nvidia/"
+    },
+    {
+      "naslov": "Bytedance's Seedream 5.5 promises up to 100 consecutive image edits without color drift and produces images with transparent backgrounds (RGBA).",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/bytedances-seedream-5-5-promises-pixel-stable-image-editing-across-100-rounds-without-color-drift/"
+    },
+    {
+      "naslov": "Apple is introducing $49.99 \"Intelligence Usage Packs\" for extra use of AI features that run on OpenAI or Gemini models, starting with Logic Pro.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1030084/apple-intelligence-usage-packs-ai-features-creator-studio-logic-pro"
+    },
+    {
+      "naslov": "According to the WSJ, Anthropic is ready to set its IPO valuation range this week.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/09/anthropic-reportedly-plans-to-move-forward-with-ipo-plans/"
+    },
+    {
+      "naslov": "Anthropic has bought $3.4 billion worth of gas turbines to power its data centers.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/09/anthropic-joins-ais-natural-gas-frenzy-buys-3-4b-worth-of-turbines/"
+    },
+    {
+      "naslov": "In a multi-year partnership, Disney and Adobe will use Firefly Foundry to build generative models tailored to Disney's brands.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1029773/disney-adobe-generative-ai-partnership"
+    },
+    {
+      "naslov": "Tencent's chief AI scientist says dangerous hacking knowledge will be removed from the open Hy4 model's training data itself, because filters on open models are easily stripped out.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/tencents-ai-chief-says-ai-bioweapons-are-coming-but-closing-off-models-isnt-the-answer/"
+    },
+    {
+      "naslov": "Automattic, the company behind WordPress, has launched Spacefast, a platform for publishing \"vibe coded\" apps, taking on Lovable.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/09/automattic-debuts-a-platform-to-deploy-vibe-coding-apps-amid-a-changing-internet/"
+    },
+    {
+      "naslov": "Instagram is rolling out Effect Builder in the US, which creates Stories filters from a text description and reference images.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1030061/instagram-ai-effect-builder-filters"
+    },
+    {
+      "naslov": "Baidu's ERNIE Evolve proposes and tests changes to training and inference code on its own and, according to Baidu, broke public records on NanoChat and NanoGPT; the system has not been released.",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/11/09/baidu-ernie-evolve-automated-research-system/"
+    },
+    {
+      "naslov": "OpenAI has described Control Room, a central system that monitors all model jobs across its infrastructure and can quickly stop them if a safety problem appears.",
+      "izvor": "OpenAI",
+      "url": "https://openai.com/index/control-room"
+    },
+    {
+      "naslov": "OpenAI's BioBasicsBench measures how agents interpret raw lab data: GPT-6 Astra scored 66.7% and GPT-5.6 Sol 43.8%.",
+      "izvor": "Bluesky / OpenAI",
+      "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/"
+    },
+    {
+      "naslov": "ChatGPT Enterprise can now be purchased through AWS Marketplace, billed through existing AWS accounts.",
+      "izvor": "OpenAI",
+      "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace"
+    },
+    {
+      "naslov": "Scott Wiener, author of California's AI risk bill SB 1047, won Pelosi's seat in Congress and says he will push to slow AI development.",
+      "izvor": "MIT Technology Review",
+      "url": "https://www.technologyreview.com/2026/11/09/1148182/nancy-pelosis-replacement-is-ready-to-regulate-ai/"
+    },
+    {
+      "naslov": "On 60 Minutes, Trump said he threatened to arrest an unnamed head of a major AI company who was \"doing something bad with AI,\" offering no evidence.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1029802/trump-60-minutes-ai"
+    },
+    {
+      "naslov": "Medium has launched TK, a writing app with built-in AI assistance, even as publishing is still debating AI-written text.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/09/mediums-new-tk-app-brings-ai-assistance-directly-into-the-writing-process/"
+    },
+    {
+      "naslov": "Deutsche Telekom is investing nearly another quarter of a billion euros to expand its AI factory in Munich to 20 MW, with Nvidia B300 systems.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/telekomunikacije/telekom-siri-ai-tvornicu-na-20-mw"
+    },
+    {
+      "naslov": "Chinese AI robotics firms raised about $13 billion in the first half of 2026, five times more than a year earlier.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/kineski-razvoj-inteligentnih-robota-privukao-935-milijardi-juana"
+    },
+    {
+      "naslov": "Microsoft has shut down AI Frontiers, an agent research group within Microsoft Research, and moved it into Microsoft AI.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-11-09"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "Confucius4-R2T2: real-time speech recognition without text \"jumping\"",
+      "objasnjenje": "In classic live transcription, the text keeps changing as you speak because the model corrects earlier words. R2T2 learns to commit only the part of the text it won't change anymore, so the displayed transcript stays stable. Accuracy is nearly the same as when the model hears the whole sentence.",
+      "zastoJeZanimljivo": "The code is open (NetEase Youdao, over 800 stars). Useful for apps with live captions, dictation or meeting notes, where text that \"jumps\" bothers the user.",
+      "url": "https://huggingface.co/papers/2611.06043",
+      "github": "https://github.com/netease-youdao/Confucius4-R2T2"
+    },
+    {
+      "naslov": "PCBRouteAgent: an AI agent that routes connections on printed circuit boards",
+      "objasnjenje": "The agent works like an engineer: first, from an image of the board and the electrical data, it builds a plan (connection order, corridors, layers), and then KiCad's tooling carries out the plan. When something fails, the error goes back to the planner, which fixes only that part. On real boards it beats the best compared solution by 10 to 36 percentage points.",
+      "zastoJeZanimljivo": "You can apply this pattern (planner + executor + structured feedback) to any agent that uses an existing tool, not just electronics.",
+      "url": "https://huggingface.co/papers/2611.08175",
+      "github": "https://github.com/chip-ai-agent/PCBRouteAgent"
+    },
+    {
+      "naslov": "AgentBaton: when a strong model should hand work off to a cheap one",
+      "objasnjenje": "During a long agent task, a small detector estimates when a cheap model is good enough and when control should go back to the expensive one. This cuts API costs while accuracy stays the same or even improves.",
+      "zastoJeZanimljivo": "It's the same idea as Meta Muse Ember and OpenRouter Auto Code, just as a research paper. If the agent in your app burns too many tokens, this is a direction for saving money.",
+      "url": "https://huggingface.co/papers/2610.35959",
+      "github": null
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Secrets in the repo",
+      "problem": "Claude Code can write passwords and keys into `.claude/settings.local.json`, and that file sometimes ends up on GitHub, and not only for beginners.",
+      "zaKoga": "Indie developers and small teams working with AI coding agents",
+      "ulogaAi": "Regex catches the obvious keys, and Claude Haiku judges whether a found string is a real secret (Supabase service key, connection string) and suggests exactly what to rotate.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Build an Angular app with GitHub OAuth sign-in via Supabase Auth.",
+        "Use the GitHub API to walk through the user's repos and commit history, looking for `.claude/settings*.json` and `.env` files.",
+        "Send suspicious lines to Claude for classification and show a report with a link to the commit.",
+        "Add a button that opens a PR with a `.gitignore` fix."
+      ],
+      "inspiracija": "Ars Technica: Claude Code exposes secrets on GitHub"
+    },
+    {
+      "naziv": "PRs for humans",
+      "problem": "PR descriptions written by agents are accurate but too long, and nobody reads them.",
+      "zaKoga": "Developers who open most of their PRs through Claude Code or Codex",
+      "ulogaAi": "Turns the long description into a 2-sentence human summary and hides the full original text under `<details><summary>`.",
+      "tezina": 1,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Create a GitHub Action that triggers on `pull_request: opened`.",
+        "Read the PR description and send it to the Claude API with a request for a two-sentence summary.",
+        "Use the GitHub API to rewrite the description: summary on top, the rest in a `<details>` block.",
+        "Publish it on the GitHub Marketplace and share it on X or Bluesky."
+      ],
+      "inspiracija": "Simon Willison: hide AI PR descriptions behind details/summary"
+    },
+    {
+      "naziv": "Try the haircut before the barber",
+      "problem": "People are afraid of a radical haircut change, and barbers struggle to explain how something will look.",
+      "zaKoga": "Hair salons in Serbia and the region and their customers",
+      "ulogaAi": "An image-editing model turns one photo into 4 hairstyle variants (bangs, shorter hair, a different color), with stable edits that don't change the face.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Build a SwiftUI app that takes a photo with the camera.",
+        "Send the image to an image-editing model via a Supabase Edge Function (pick one that offers stable edits, e.g. Seedream or OpenAI Images; check pricing at the link).",
+        "Show a 2×2 grid of variants with a \"Book an appointment\" button that leads to the salon.",
+        "Offer salons a monthly white-label subscription."
+      ],
+      "inspiracija": "The Rundown Roundtable: AI bangs try-on before the salon, plus Seedream 5.5 with stable image edits"
+    },
+    {
+      "naziv": "Notes that tidy themselves",
+      "problem": "Personal notes and to-do lists clog up over time with duplicates and outdated information.",
+      "zaKoga": "Anyone who keeps notes on an iPhone, especially freelancers",
+      "ulogaAi": "As in Anthropic's \"dreaming\": at night Claude reviews the notes, compares them with what you actually did (completed tasks, calendar), merges duplicates and flags outdated items.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Build a SwiftUI notes app with a Supabase database.",
+        "Create a Supabase cron (pg_cron) that calls an Edge Function once a night.",
+        "In the function, send Claude the notes and the completed-task log and ask for suggested changes as JSON.",
+        "In the morning, show the suggestion as a diff (\"I merged these two, this one is outdated\") for the user to accept or reject."
+      ],
+      "inspiracija": "Anthropic: how Claude agents \"dream\" to tidy up memory"
+    },
+    {
+      "naziv": "Where's that beeping?",
+      "problem": "Something in the apartment is beeping (smoke detector, old appliance), and you can't find what.",
+      "zaKoga": "Anyone with multiple phones and tablets at home, and handymen too",
+      "ulogaAi": "AI helps in development here: Claude Code writes the sound triangulation code using the Web Audio API. Optionally, a small sound classification model distinguishes beeping from other noise.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Build an Angular PWA that devices join by scanning a QR code (Supabase Realtime for sync).",
+        "Each device uses the Web Audio API to log the time and loudness of sound above a threshold.",
+        "The user drags device icons onto a room map, and the app estimates the location from differences in timing and loudness.",
+        "Add a \"clap your hands\" mode for calibration, as in Simon's example."
+      ],
+      "inspiracija": "Simon Willison: Beep Locator built with Claude Code"
+    }
+  ],
+  "cene": "Biggest moves today: GLM 5.3 Flash went up from $0.0335/$0.083 to $0.15/$0.5 (back to its price before the November 8 drop), and gpt-oss-120b from $0.01/$0.037 to $0.15/$0.6; Llama 3.1 8B got cheaper at $0.02/$0.04, and DeepSeek V4.1 Flash 1017 at $0.006 input / $0.5 output. The new Claude Fable 5.2 costs $8/$40 per million tokens, 20% less than Fable 5.1 ($10/$50). The cheapest input in the mid-range is still GLM 5.3 ($0.0699 input / $1.4 output), and among budget models DeepSeek V4.1 Flash ($0.051 input) and Qwen3.8 Flash ($0.47 output).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Fable 5.2: excitement over demos, anger over cost per task",
+        "oCemuSePrica": "As soon as the model dropped, r/singularity and r/ClaudeAI filled up with demos: a shooter clone in Unreal from three sentences, and a claim that a team of 1,000 Fable agents formalized Fermat's Last Theorem in 30 hours. That claim hasn't been independently verified yet, so treat it as a rumor. In parallel comes a wave of complaints that cost per task is huge and that the model isn't actually cheaper than Fable 5.1 in practice, while subscribers are happy about the extra limit resets.",
+        "glasovi": "Matthew Berman calls it the best model he's used, and Ethan Mollick writes that it's \"almost AGI\" but \"jagged\": excellent at some things, weaker at others. Users on r/ClaudeAI are counting costs and already asking for tools to control token spending across teams.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xs0dvr/fable_52_benchmarks/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xs292a/wtf_fable_52_cost_per_task_is_insane_its_not/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xs0tk3/a_team_of_1000_fable_52_agents_fully_formalized/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xs0dct/fable_52_just_landed/"
+          }
+        ]
+      },
+      {
+        "naslov": "Jensen Huang and the alleged-spy affair",
+        "oCemuSePrica": "After Huang's admission, social media is full of jokes and speculation, but also serious questions: what China could have learned and whether Huang will stay on as CEO. There's also discussion of the fact that short seller Culper Research warned about the relationship six months earlier.",
+        "glasovi": "On r/singularity and r/OpenAI, memes and cynical comments dominate about how many engineers give up secrets \"as a favor.\" Yale's Jeffrey Sonnenfeld estimates the odds of Huang staying at 50:50.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xrr40n/jensen_does_not_run_his_personal_life_in_single/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/OpenAI",
+            "url": "https://www.reddit.com/r/OpenAI/comments/1xrr0a0/were_only_human_for_now/"
+          }
+        ]
+      },
+      {
+        "naslov": "A year of \"100% AI code\": nobody understands the codebase",
+        "oCemuSePrica": "A post on r/ClaudeCode about a company where, after a year of mandatory AI coding, nobody understands the code made it to the top of Hacker News. It's discussed alongside a report that Apple capped engineers' AI spending at $200 a day. That was relayed by a newsletter and is unconfirmed.",
+        "glasovi": "Some say the problem is that nobody reads or reviews the code, not the AI itself. Others argue this is how technical debt piles up, and it's yet to come due. Simon Willison suggests a small practical move: a short human summary in the PR, with the rest hidden.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50433079"
+          },
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50421426"
+          },
+          {
+            "platforma": "bluesky",
+            "naziv": "@simonwillison.net",
+            "url": "https://bsky.app/profile/simonwillison.net/post/3mzu42ujywk24"
+          }
+        ]
+      },
+      {
+        "naslov": "Is there even an AI bubble?",
+        "oCemuSePrica": "The post \"I'm not convinced there's an AI bubble\" collected 543 points and almost 940 comments on Hacker News. The trigger is a cooling market: OpenAI raised less money than it planned, and AI stocks are falling after the election.",
+        "glasovi": "One side points to real revenue and usage, the other to the labs' losses and the enormous investment in data centers and power.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50418975"
+          }
+        ]
+      },
+      {
+        "naslov": "\"Brain surgery\" on Qwen: a single neuron changes the model's personality",
+        "oCemuSePrica": "An r/LocalLLaMA user found individual neurons in the Qwen3.5-4B model that flip it from flattery to sarcasm or make it talk like state propaganda. It's a fun but instructive example of interpretability, i.e. understanding what happens inside a model.",
+        "glasovi": "The community is experimenting and sharing new neurons. These are amateur observations, not peer-reviewed work.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xrydgx/more_interesting_and_unusual_qwen354b_neurons/"
+          }
+        ]
+      }
+    ],
+    "snimci": [
+      {
+        "naslov": "OpenAI spent $1.2 million hacking Linux... and it was a bargain",
+        "kanal": "Fireship",
+        "opis": "A quick, witty explanation of how OpenAI's unreleased model found 948 flaws in the Linux kernel and why, even at a cost of $1.2 million, it was worth it.",
+        "url": "https://www.youtube.com/watch?v=pf5tXJZM1Rw"
+      }
+    ]
+  },
+  "nedeljni": null
+}
