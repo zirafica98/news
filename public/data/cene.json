@@ -1,6 +1,6 @@
 {
-  "datum": "2026-11-10",
-  "azurirano": "2026-11-10T03:03:31.374Z",
+  "datum": "2026-11-11",
+  "azurirano": "2026-11-11T03:03:42.040Z",
   "izvor": {
     "naziv": "OpenRouter",
     "url": "https://openrouter.ai/models"
@@ -122,12 +122,12 @@
           "kontekst": 1048576,
           "kesUlaz": 0.182,
           "promena7": {
-            "ulaz": 0,
-            "izlaz": 6.7
+            "ulaz": -4,
+            "izlaz": 0
           },
           "promena30": {
-            "ulaz": -76,
-            "izlaz": 33.3
+            "ulaz": -73.7,
+            "izlaz": 60
           },
           "prethodnik": {
             "naziv": "Kimi K2.6",
@@ -227,8 +227,8 @@
             "izlaz": 11
           },
           "promena30": {
-            "ulaz": -83.2,
-            "izlaz": 124.2
+            "ulaz": -91.6,
+            "izlaz": 12.1
           },
           "prethodnik": {
             "naziv": "DeepSeek V4 Pro 0423",
@@ -252,14 +252,14 @@
             "izlaz": -61.1
           },
           "promena30": {
-            "ulaz": 79.2,
+            "ulaz": -11.5,
             "izlaz": -70.8
           },
           "prethodnik": {
             "naziv": "GLM 5.2",
-            "ulaz": 0.006,
+            "ulaz": 0.007,
             "izlaz": 6.8,
-            "razlikaUlaz": 1065,
+            "razlikaUlaz": 898.6,
             "razlikaIzlaz": -79.4
           }
         },
@@ -418,18 +418,18 @@
           "id": "z-ai/glm-5.3-flash",
           "naziv": "GLM 5.3 Flash",
           "provajder": "z-ai",
-          "ulaz": 0.15,
-          "izlaz": 0.5,
+          "ulaz": 0.0399,
+          "izlaz": 0.0784,
           "objavljen": "2026-08-26",
           "kontekst": 1048576,
           "kesUlaz": 0.03,
           "promena7": {
-            "ulaz": 426.3,
-            "izlaz": 441.7
+            "ulaz": 27.5,
+            "izlaz": -7.3
           },
           "promena30": {
-            "ulaz": 0,
-            "izlaz": 0
+            "ulaz": -73.4,
+            "izlaz": -84.3
           },
           "prethodnik": null
         },
@@ -456,6 +456,46 @@
     }
   ],
   "promene": [
+    {
+      "id": "deepseek/deepseek-v4-flash",
+      "datum": "2026-11-11",
+      "ulazPre": 0.091,
+      "izlazPre": 0.182,
+      "ulaz": 0.09,
+      "izlaz": 0.18,
+      "naziv": "DeepSeek V4 Flash 0423",
+      "provajder": "deepseek"
+    },
+    {
+      "id": "z-ai/glm-5.1",
+      "datum": "2026-11-11",
+      "ulazPre": 1.4,
+      "izlazPre": 4.4,
+      "ulaz": 1.33,
+      "izlaz": 4.18,
+      "naziv": "GLM 5.1",
+      "provajder": "z-ai"
+    },
+    {
+      "id": "z-ai/glm-5.2",
+      "datum": "2026-11-11",
+      "ulazPre": 0.006,
+      "izlazPre": 6.8,
+      "ulaz": 0.007,
+      "izlaz": 6.8,
+      "naziv": "GLM 5.2",
+      "provajder": "z-ai"
+    },
+    {
+      "id": "z-ai/glm-5.3-flash",
+      "datum": "2026-11-11",
+      "ulazPre": 0.15,
+      "izlazPre": 0.5,
+      "ulaz": 0.0399,
+      "izlaz": 0.0784,
+      "naziv": "GLM 5.3 Flash",
+      "provajder": "z-ai"
+    },
     {
       "id": "google/gemma-3-27b-it",
       "datum": "2026-11-10",
@@ -615,49 +655,18 @@
       "izlaz": 0.33,
       "naziv": "Llama 3.2 3B Instruct",
       "provajder": "meta-llama"
-    },
-    {
-      "id": "moonshotai/kimi-k2.5",
-      "datum": "2026-11-08",
-      "ulazPre": 0.5,
-      "izlazPre": 2.5,
-      "ulaz": 0.532,
-      "izlaz": 3.325,
-      "naziv": "Kimi K2.5",
-      "provajder": "moonshotai"
-    },
-    {
-      "id": "openai/gpt-oss-120b",
-      "datum": "2026-11-08",
-      "ulazPre": 0.01,
-      "izlazPre": 0.037,
-      "ulaz": 0.15,
-      "izlaz": 0.6,
-      "naziv": "gpt-oss-120b",
-      "provajder": "openai"
-    },
-    {
-      "id": "qwen/qwen3.6-27b",
-      "datum": "2026-11-08",
-      "ulazPre": 0.45,
-      "izlazPre": 2.7,
-      "ulaz": 0.32,
-      "izlaz": 3.2,
-      "naziv": "Qwen3.6 27B",
-      "provajder": "qwen"
-    },
-    {
-      "id": "z-ai/glm-5.3-flash",
-      "datum": "2026-11-08",
-      "ulazPre": 0.15,
-      "izlazPre": 0.5,
-      "ulaz": 0.0335,
-      "izlaz": 0.083,
-      "naziv": "GLM 5.3 Flash",
-      "provajder": "z-ai"
     }
   ],
   "noviModeli": [
+    {
+      "id": "google/gemini-4-carbon",
+      "naziv": "Gemini 4 Carbon",
+      "provajder": "google",
+      "ulaz": 2,
+      "izlaz": 10,
+      "objavljen": "2026-11-10",
+      "kontekst": 1048576
+    },
     {
       "id": "anthropic/claude-fable-5.2",
       "naziv": "Claude Fable 5.2",
