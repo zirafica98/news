@@ -105,11 +105,19 @@ ${stavke}
   const strane = ['', '/istrazivanje', '/ideje', '/mreze', '/cene', '/arhiva'];
   const url = (putanja, datum) => `  <url><loc>${SAJT}${putanja}</loc><lastmod>${datum}</lastmod></url>`;
   const danas = index[0]?.datum ?? datum;
+  // Posebne strane vesti i alata (/izdanje/DATUM/vest/N, /novo/N) za poslednjih 30 dana.
+  const pojedinacne = [];
+  for (const e of index) {
+    const iz = await readJson(paths.izdanje(e.datum), null);
+    if (!iz) continue;
+    iz.vesti.forEach((_, i) => pojedinacne.push(url(`/izdanje/${e.datum}/vest/${i}`, e.datum)));
+    (iz.novo ?? []).forEach((_, i) => pojedinacne.push(url(`/izdanje/${e.datum}/novo/${i}`, e.datum)));
+  }
   await writeFile(
     join(PUBLIC_DIR, 'sitemap.xml'),
     `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${[...strane.map((s) => url(s, danas)), ...index.map((e) => url(`/izdanje/${e.datum}`, e.datum))].join('\n')}
+${[...strane.map((s) => url(s, danas)), ...index.map((e) => url(`/izdanje/${e.datum}`, e.datum)), ...pojedinacne].join('\n')}
 </urlset>
 `,
   );

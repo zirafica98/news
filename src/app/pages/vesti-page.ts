@@ -1,4 +1,6 @@
 import { Component, inject, input } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { SlikaKartice, slikaNovo, slikaVesti } from '../components/slika-kartice';
 import { DatumTraka } from '../components/datum-traka';
 import { OcenaDugmad } from '../components/ocena-dugmad';
 import { izdanjeZaRutu } from '../izdanje-ruta';
@@ -8,7 +10,7 @@ import { SacuvanoService } from '../sacuvano.service';
 
 @Component({
   selector: 'app-vesti-page',
-  imports: [DatumTraka, SacuvajDugme, OcenaDugmad],
+  imports: [DatumTraka, SacuvajDugme, OcenaDugmad, RouterLink, SlikaKartice],
   template: `
     <app-datum-traka [datum]="ruta.aktivniDatum()" sekcija="vesti" [stanje]="ruta.stanje()" [prevodNedostaje]="ruta.prevodNedostaje()" />
 
@@ -32,7 +34,11 @@ import { SacuvanoService } from '../sacuvano.service';
         <h2 id="naslov-vesti" class="text-xs font-semibold uppercase tracking-widest text-slate-500">{{ t('vesti.najbitnije') }}</h2>
         <ol class="mt-4 space-y-4 lg:grid lg:grid-cols-2 lg:items-start lg:gap-4 lg:space-y-0">
           @for (v of iz.vesti; track $index) {
-            <li class="rounded-2xl border border-slate-800/80 bg-slate-900/60 p-5">
+            <li class="overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/60">
+              <a [routerLink]="['/izdanje', iz.datum, 'vest', $index]" class="group block" tabindex="-1" aria-hidden="true">
+                <app-slika-kartice [src]="slikaV(iz.datum, $index)" [hitno]="$index === 0" />
+              </a>
+              <div class="p-5">
               <div class="flex items-start justify-between gap-3">
                 <div class="flex flex-wrap items-center gap-2 text-xs">
                   @if (v.vaznost === 3) {
@@ -50,7 +56,7 @@ import { SacuvanoService } from '../sacuvano.service';
                   />
                 </div>
               </div>
-              <h3 class="mt-1 text-lg font-semibold leading-snug text-white">{{ v.naslov }}</h3>
+              <h3 class="mt-1 text-lg font-semibold leading-snug text-white"><a [routerLink]="['/izdanje', iz.datum, 'vest', $index]" class="hover:text-amber-100">{{ v.naslov }}</a></h3>
               <p class="mt-2 leading-relaxed text-slate-300">{{ v.staSeDesilo }}</p>
               <p class="mt-3 rounded-xl bg-slate-800/50 px-4 py-3 text-sm leading-relaxed text-slate-300">
                 <span class="font-medium text-amber-300">{{ t('vesti.zastoJeBitno') }}</span> {{ v.zastoJeBitno }}
@@ -60,6 +66,7 @@ import { SacuvanoService } from '../sacuvano.service';
                   <a [href]="izvor.url" target="_blank" rel="noopener" class="text-slate-400 underline decoration-slate-700 underline-offset-4 hover:text-white hover:decoration-slate-400">{{ izvor.naziv }} ↗</a>
                 }
               </p>
+              </div>
             </li>
           }
         </ol>
@@ -70,11 +77,15 @@ import { SacuvanoService } from '../sacuvano.service';
           <h2 id="naslov-novo" class="text-xs font-semibold uppercase tracking-widest text-slate-500">{{ t('vesti.novoNaslov') }}</h2>
           <ul class="mt-4 space-y-4 lg:grid lg:grid-cols-2 lg:items-start lg:gap-4 lg:space-y-0">
             @for (n of iz.novo; track $index) {
-              <li class="rounded-2xl border border-emerald-900/50 bg-emerald-950/20 p-5">
+              <li class="overflow-hidden rounded-2xl border border-emerald-900/50 bg-emerald-950/20">
+                <a [routerLink]="['/izdanje', iz.datum, 'novo', $index]" class="group block" tabindex="-1" aria-hidden="true">
+                  <app-slika-kartice [src]="slikaN(iz.datum, $index)" />
+                </a>
+                <div class="p-5">
                 <div class="flex items-start justify-between gap-3">
                   <div>
                     <p class="text-xs uppercase tracking-wide text-emerald-400">{{ tIli('tip.' + n.tip, n.tip) }}</p>
-                    <h3 class="mt-1 text-lg font-semibold text-white">{{ n.naziv }}</h3>
+                    <h3 class="mt-1 text-lg font-semibold text-white"><a [routerLink]="['/izdanje', iz.datum, 'novo', $index]" class="hover:text-emerald-100">{{ n.naziv }}</a></h3>
                   </div>
                   <app-sacuvaj-dugme
                     class="-mr-2 -mt-2"
@@ -92,6 +103,7 @@ import { SacuvanoService } from '../sacuvano.service';
                   }
                 </ol>
                 <a [href]="n.link" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-emerald-400 hover:text-emerald-300">{{ t('vesti.otvori', { domen: domen(n.link) }) }} ↗</a>
+                </div>
               </li>
             }
           </ul>
@@ -128,6 +140,8 @@ export class VestiPage {
   protected readonly t = inject(PodesavanjaService).t;
   protected readonly tIli = inject(PodesavanjaService).tIli;
   protected readonly kljuc = SacuvanoService.kljuc;
+  protected readonly slikaV = slikaVesti;
+  protected readonly slikaN = slikaNovo;
   protected readonly domen = (url: string) => {
     try {
       return new URL(url).hostname.replace(/^www\./, '');

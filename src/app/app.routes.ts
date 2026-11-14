@@ -1,21 +1,27 @@
 import { Routes } from '@angular/router';
 import { Kljuc } from './i18n';
+import { jeNovPosetilac } from './posetilac';
 
 const vesti = () => import('./pages/vesti-page').then((m) => m.VestiPage);
 const istrazivanje = () => import('./pages/istrazivanje-page').then((m) => m.IstrazivanjePage);
 const ideje = () => import('./pages/ideje-page').then((m) => m.IdejePage);
 const mreze = () => import('./pages/mreze-page').then((m) => m.MrezePage);
+const vest = () => import('./pages/vest-page').then((m) => m.VestPage);
 
 /** Naslov taba prevodi NaslovStrane. */
 const naslov = (kljuc: Kljuc) => ({ naslov: kljuc });
 
 export const routes: Routes = [
+  // Novi posetilac vidi početnu stranu (šta je AI Morning Brief + prijava); stalni čitalac i aplikacija idu pravo na izdanje.
+  { path: '', canMatch: [jeNovPosetilac], data: { vlastitiNaslov: true }, loadComponent: () => import('./pages/pocetna-page').then((m) => m.PocetnaPage) },
   { path: '', data: naslov('nav.vesti'), loadComponent: vesti },
   { path: 'istrazivanje', data: naslov('nav.istrazivanje'), loadComponent: istrazivanje },
   { path: 'ideje', data: naslov('nav.ideje'), loadComponent: ideje },
   { path: 'mreze', data: naslov('nav.mreze'), loadComponent: mreze },
   { path: 'cene', data: naslov('naslov.cene'), loadComponent: () => import('./pages/cene-page').then((m) => m.CenePage) },
   { path: 'izdanje/:datum', data: naslov('nav.vesti'), loadComponent: vesti },
+  { path: 'izdanje/:datum/vest/:broj', data: { vrsta: 'vest', vlastitiNaslov: true }, loadComponent: vest },
+  { path: 'izdanje/:datum/novo/:broj', data: { vrsta: 'novo', vlastitiNaslov: true }, loadComponent: vest },
   { path: 'izdanje/:datum/istrazivanje', data: naslov('nav.istrazivanje'), loadComponent: istrazivanje },
   { path: 'izdanje/:datum/ideje', data: naslov('nav.ideje'), loadComponent: ideje },
   { path: 'izdanje/:datum/mreze', data: naslov('nav.mreze'), loadComponent: mreze },

@@ -22,6 +22,11 @@ export class NaslovStrane extends TitleStrategy {
   override updateTitle(snapshot: RouterStateSnapshot): void {
     let ruta = snapshot.root;
     while (ruta.firstChild) ruta = ruta.firstChild;
+    // Strane vesti i početna same postavljaju naslov.
+    if (ruta.data['vlastitiNaslov']) {
+      if (!ruta.data['vrsta']) this.title.setTitle('AI Morning Brief · AI news & tools for developers');
+      return;
+    }
     this.kljuc.set(ruta.data['naslov']);
   }
 }

@@ -1,7 +1,7 @@
 <header class="sticky top-0 z-20 border-b border-slate-900 bg-slate-950/90 pt-[env(safe-area-inset-top)] backdrop-blur">
   <div class="mx-auto flex h-14 max-w-2xl items-center justify-between gap-4 px-4 lg:h-16 lg:max-w-5xl">
     <a routerLink="/" class="flex shrink-0 items-center gap-2 font-semibold text-white">
-      <span aria-hidden="true">☕</span> AI News
+      <img src="/icon-192.png" alt="" width="28" height="28" class="size-7 rounded-lg" /> AI Morning Brief
     </a>
 
     <!-- Na desktopu su delovi izdanja gore u zaglavlju; na telefonu su u traci na dnu. -->
@@ -36,10 +36,12 @@
   </div>
 </header>
 
-<main class="mx-auto max-w-2xl px-4 pb-[calc(6rem+env(safe-area-inset-bottom))] lg:max-w-5xl lg:pb-12">
+<main class="mx-auto overflow-x-clip px-4 pb-[calc(6rem+env(safe-area-inset-bottom))] lg:max-w-5xl lg:pb-12" [class.max-w-2xl]="!naPocetnoj()" [class.max-w-5xl]="naPocetnoj()">
   <router-outlet />
 
-  <app-newsletter-prijava />
+  @if (!naPocetnoj()) {
+    <app-newsletter-prijava />
+  }
 
   <footer class="mt-12 flex flex-wrap justify-center gap-x-4 gap-y-2 border-t border-slate-800 pt-6 text-xs text-slate-500">
     <a href="https://www.youtube.com/@ai-morning-brief" class="hover:text-amber-400">YouTube</a>
@@ -52,6 +54,7 @@
 <nav
   [attr.aria-label]="t('app.deloviIzdanja')"
   class="fixed inset-x-0 bottom-0 z-20 border-t border-slate-800 bg-slate-950/95 pb-[env(safe-area-inset-bottom)] backdrop-blur lg:hidden"
+  [class.hidden]="naPocetnoj()"
 >
   <ul class="mx-auto grid max-w-2xl grid-cols-5">
     @for (k of kartice(); track k.id) {

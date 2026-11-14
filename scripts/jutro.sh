@@ -161,6 +161,9 @@ node scripts/translate-digest.mjs --datum="$DATUM" || log "Engleski prevod nije 
 
 # 7c. Slike za Instagram karusel (public/insta), iz engleskog izdanja. Idu na sajt zajedno sa izdanjem.
 node scripts/insta-slike.mjs --datum="$DATUM" || log "Instagram slike nisu napravljene, izdanje ide bez njih."
+# 7d. Naslovne slike vesti za sajt (1200×630, posle karusela jer on briše današnje fajlove) i najnoviji YouTube videi za početnu.
+node scripts/slike-vesti.mjs --datum="$DATUM" || log "Slike vesti za sajt nisu napravljene, kartice idu bez slika."
+node scripts/videi.mjs || log "Spisak videa za sajt nije osvežen."
 
 # 7d. YouTube Shorts sa glasom (Kokoro TTS): dve glavne vesti i alat dana. Bez Python-a i modela se preskače.
 node scripts/shorts.mjs --datum="$DATUM" || log "Shorts nisu napravljeni, izdanje ide bez njih."
