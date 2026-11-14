@@ -9,6 +9,8 @@
 //   RESEND_SEGMENT_ID  — ID segmenta „AI Morning Brief“ u Resend-u (Contacts → Segments)
 //   CRON_SECRET        — već postoji; ovde služi i za potpis linka za potvrdu
 //   NEWSLETTER_FROM    — nije obavezno; podrazumevano „AI Morning Brief <brief@aimorningbrief.dev>“
+//   TELEGRAM_BOT_TOKEN, TELEGRAM_ADMIN_CHAT_ID — već postoje (api/kontakt.mjs); kad neko potvrdi prijavu,
+//                        vlasniku stiže poruka sa skraćenom adresom i ukupnim brojem pretplatnika
 
 import { createHmac, timingSafeEqual } from 'node:crypto';
 
@@ -66,11 +68,16 @@ export async function GET(request) {
   const email = proveri(token, tajna);
   if (!email) return strana(400, 'Invalid link', 'This confirmation link is not valid. Try signing up again.');
 
+  // Da li je već bio potvrđen (drugi klik na isti link): tada nema nove poruke vlasniku.
+  const pre = await resend(kljuc, 'GET', `/contacts/${encodeURIComponent(email)}`);
+  const vecPotvrdjen = pre.ok && (await pre.json().catch(() => ({}))).unsubscribed === false;
+
   const res = await resend(kljuc, 'PATCH', `/contacts/${encodeURIComponent(email)}`, { unsubscribed: false });
   if (!res.ok) {
     console.error(`Resend nije potvrdio kontakt: ${res.status} ${await res.text()}`);
     return strana(502, 'Something went wrong', 'We couldn’t confirm your subscription. Please try again in a few minutes.');
   }
+  if (!vecPotvrdjen) await javiVlasniku(email, kljuc, segment).catch((e) => console.error(`Poruka vlasniku nije poslata: ${e.message}`));
   return strana(200, 'You’re in ☕', 'Your subscription is confirmed. The next AI Morning Brief lands in your inbox tomorrow morning.');
 }
 
@@ -80,8 +87,38 @@ function resend(kljuc, metoda, putanja, telo) {
   return fetch(`${RESEND}${putanja}`, {
     method: metoda,
     headers: { Authorization: `Bearer ${kljuc}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify(telo),
+    body: telo === undefined ? undefined : JSON.stringify(telo),
   });
+}
+
+/** Broj potvrđenih pretplatnika u segmentu (kontakti koji nisu odjavljeni). */
+async function brojPretplatnika(kljuc, segment) {
+  let ukupno = 0;
+  let posle = '';
+  for (let strana = 0; strana < 50; strana++) {
+    const res = await resend(kljuc, 'GET', `/contacts?segment_id=${segment}&limit=100${posle ? `&after=${posle}` : ''}`);
+    if (!res.ok) return null;
+    const { data = [], has_more } = await res.json();
+    ukupno += data.filter((k) => k.unsubscribed === false).length;
+    if (!has_more || !data.length) break;
+    posle = data.at(-1).id;
+  }
+  return ukupno;
+}
+
+/** Poruka vlasniku na Telegram: skraćena adresa (a***@gmail.com) i ukupan broj pretplatnika. */
+async function javiVlasniku(email, kljuc, segment) {
+  const { TELEGRAM_BOT_TOKEN: bot, TELEGRAM_ADMIN_CHAT_ID: admin } = process.env;
+  if (!bot || !admin) return;
+  const [ime, domen] = email.split('@');
+  const ukupno = segment ? await brojPretplatnika(kljuc, segment) : null;
+  const tekst = `📬 Nova prijava na newsletter: ${ime[0]}***@${domen}${ukupno != null ? `\nUkupno pretplatnika: ${ukupno}` : ''}`;
+  const res = await fetch(`https://api.telegram.org/bot${bot}/sendMessage`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ chat_id: admin, text: tekst }),
+  });
+  if (!res.ok) throw new Error(`Telegram ${res.status}`);
 }
 
 /** Token za potvrdu: email (base64url) i HMAC potpis, da niko ne može da prijavi tuđu adresu bez mejla. */

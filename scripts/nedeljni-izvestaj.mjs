@@ -226,6 +226,24 @@ for (const f of new Set(objave.map((o) => o.format))) {
   }
 }
 
+// Newsletter: potvrđeni pretplatnici u Resend segmentu.
+async function brojPretplatnika() {
+  const { RESEND_API_KEY: kljuc, RESEND_SEGMENT_ID: segment } = env;
+  if (!kljuc || !segment) return null;
+  let ukupno = 0;
+  let posle = '';
+  for (let s = 0; s < 50; s++) {
+    const res = await fetch(`https://api.resend.com/contacts?segment_id=${segment}&limit=100${posle ? `&after=${posle}` : ''}`, { headers: { Authorization: `Bearer ${kljuc}` } }).catch(() => null);
+    if (!res?.ok) return null;
+    const { data = [], has_more } = await res.json();
+    ukupno += data.filter((k) => k.unsubscribed === false).length;
+    if (!has_more || !data.length) break;
+    posle = data.at(-1).id;
+  }
+  return ukupno;
+}
+const newsletter = await brojPretplatnika();
+
 const stanje = await readJson(STANJE, { nedelje: [] });
 const prosla = stanje.nedelje.filter((n) => n.datum !== beograd(danas)).at(-1);
 
@@ -244,6 +262,7 @@ const pratiociRed = Object.entries(NAZIVI)
   .filter(([k]) => pratioci[k] != null)
   .map(([k, naziv]) => `${naziv} ${broj(pratioci[k])}${promena(pratioci[k], prosla?.pratioci?.[k])}`);
 if (pratiociRed.length) redovi.push('👥 Pratioci', pratiociRed.join(' · '), '');
+if (newsletter != null) redovi.push(`📬 Newsletter: ${broj(newsletter)} pretplatnika${promena(newsletter, prosla?.newsletter)}`, '');
 if (threadsPregledi != null) redovi.push(`🧵 Threads: ${broj(threadsPregledi)} pregleda za nedelju${promena(threadsPregledi, prosla?.threadsPregledi)}`, '');
 
 // Formati od najgledanijeg (zbir prosečnih pregleda na obe mreže).
@@ -284,7 +303,7 @@ if (napomene.length) redovi.push('', ...napomene.map((n) => `⚠️ ${n}`));
 const poruka = redovi.join('\n').replace(/\n{3,}/g, '\n\n').trim();
 console.log(poruka);
 
-stanje.nedelje = [...stanje.nedelje.filter((n) => n.datum !== beograd(danas)), { datum: beograd(danas), pratioci, threadsPregledi, formati }].slice(-26);
+stanje.nedelje = [...stanje.nedelje.filter((n) => n.datum !== beograd(danas)), { datum: beograd(danas), pratioci, threadsPregledi, newsletter, formati }].slice(-26);
 await writeJson(STANJE, stanje);
 
 if (bezSlanja) process.exit(0);
