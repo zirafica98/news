@@ -56,7 +56,11 @@ export async function POST(request) {
 export async function GET(request) {
   const { RESEND_API_KEY: kljuc, RESEND_SEGMENT_ID: segment, CRON_SECRET: tajna } = process.env;
   const token = new URL(request.url).searchParams.get('potvrdi');
-  if (token === null) return json(200, { ukljuceno: Boolean(kljuc && segment && tajna) });
+  if (token === null) {
+    // Samo imena promenljivih koje fale (bez vrednosti), da se lakše podesi.
+    const nedostaje = Object.entries({ RESEND_API_KEY: kljuc, RESEND_SEGMENT_ID: segment, CRON_SECRET: tajna }).filter(([, v]) => !v).map(([k]) => k);
+    return json(200, { ukljuceno: !nedostaje.length, nedostaje });
+  }
   if (!kljuc || !tajna || !token) return strana(400, 'Invalid link', 'This confirmation link is incomplete.');
 
   const email = proveri(token, tajna);
