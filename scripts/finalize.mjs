@@ -13,7 +13,7 @@ import { join } from 'node:path';
 import { PUBLIC_DIR, STATE_FILE, datumIzArgumenata, normalizeUrl, paths, readJson, writeJson } from './lib.mjs';
 
 const KEEP_STATE_DAYS = 45;
-const SAJT = 'https://news-one-teal.vercel.app';
+const SAJT = 'https://www.aimorningbrief.dev';
 
 const datum = datumIzArgumenata();
 const samoProvera = process.argv.includes('--provera');

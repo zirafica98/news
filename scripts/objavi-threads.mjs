@@ -15,7 +15,7 @@ import { temeHashtagovi } from './hashtagovi.mjs';
 import { INSTA_DIR, lepDatum, skrati } from './insta-slike.mjs';
 import { DATA_DIR, datumIzArgumenata, preuzmi, readJson } from './lib.mjs';
 
-const SAJT = 'https://news-one-teal.vercel.app';
+const SAJT = 'https://www.aimorningbrief.dev';
 const API = 'https://graph.threads.net/v1.0';
 
 const token = process.env.THREADS_ACCESS_TOKEN;

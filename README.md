@@ -2,7 +2,7 @@
 
 Lični sajt koji svako jutro ima pregled AI vesti na srpskom: vesti, novo izašle stvari sa „kako probati“, istraživanje dana, top 5 ideja za app i cene tokena.
 
-Live: https://news-one-teal.vercel.app
+Live: https://www.aimorningbrief.dev
 
 Detaljan plan i spisak izvora: [PLAN.md](PLAN.md).
 

@@ -20,7 +20,7 @@ import { hashtagovi } from './hashtagovi.mjs';
 import { INSTA_DIR, izaberiVesti, lepDatum, opisReela, skrati } from './insta-slike.mjs';
 import { DATA_DIR, datumIzArgumenata, preuzmi, readJson } from './lib.mjs';
 
-const SAJT = 'https://news-one-teal.vercel.app';
+const SAJT = 'https://www.aimorningbrief.dev';
 const API = 'https://graph.instagram.com/v25.0';
 const HASHTAGOVI = '#AI #ArtificialIntelligence #AINews #MachineLearning #LLM #GenerativeAI #TechNews';
 

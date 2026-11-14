@@ -10,7 +10,7 @@ import { join } from 'node:path';
 import webpush from 'web-push';
 import { SCRIPTS_DIR, datumIzArgumenata, paths, readJson, writeJson } from './lib.mjs';
 
-const SAJT = 'https://news-one-teal.vercel.app';
+const SAJT = 'https://www.aimorningbrief.dev';
 const PRETPLATE_FILE = join(SCRIPTS_DIR, 'state', 'pretplate.json');
 
 const javni = process.env.VAPID_PUBLIC_KEY;

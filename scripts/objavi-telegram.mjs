@@ -18,7 +18,7 @@ import { join } from 'node:path';
 import { INSTA_DIR, izaberiVesti, jeNedeljniReel, lepDatum, opisReela, skrati } from './insta-slike.mjs';
 import { DATA_DIR, datumIzArgumenata, preuzmi, readJson } from './lib.mjs';
 
-const SAJT = 'https://news-one-teal.vercel.app';
+const SAJT = 'https://www.aimorningbrief.dev';
 const { TELEGRAM_BOT_TOKEN: token, TELEGRAM_CHAT_ID: kanal } = process.env;
 if (!token || !kanal) {
   console.log('Telegram nije podešen (TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID), preskačem.');

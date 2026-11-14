@@ -12,7 +12,7 @@ import { join } from 'node:path';
 import { KATEGORIJE, izaberiVesti } from './insta-slike.mjs';
 import { DATA_DIR, OUT_DIR, SCRIPTS_DIR, datumIzArgumenata, readJson, writeJson } from './lib.mjs';
 
-const SAJT = 'https://aimorningbrief.dev';
+const SAJT = 'https://www.aimorningbrief.dev';
 const POSILJALAC = process.env.NEWSLETTER_FROM || 'AI Morning Brief <brief@aimorningbrief.dev>';
 const STANJE = join(SCRIPTS_DIR, 'state', 'newsletter.json');
 const pregled = process.argv.includes('--pregled');
