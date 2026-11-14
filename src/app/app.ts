@@ -3,6 +3,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { filter, map } from 'rxjs';
 import { InstalirajBaner } from './components/instaliraj-baner';
+import { NewsletterPrijava } from './components/newsletter-prijava';
 import { PodesavanjaMeni } from './components/podesavanja-meni';
 import { Sekcija, putanjaSekcije } from './izdanje-ruta';
 import { PodesavanjaService } from './podesavanja.service';
@@ -10,7 +11,7 @@ import { PodesavanjaService } from './podesavanja.service';
 type Kartica = Sekcija | 'cene';
 
 @Component({
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, PodesavanjaMeni, InstalirajBaner],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, PodesavanjaMeni, InstalirajBaner, NewsletterPrijava],
   selector: 'app-root',
   templateUrl: './app.html',
 })

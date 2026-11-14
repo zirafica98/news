@@ -207,6 +207,12 @@ node scripts/posalji-push.mjs --datum="$DATUM" $($PONOVO || echo "--sacekaj-do=0
 # Pretplate koje je push servis prijavio kao istekle su obrisane iz fajla; to se čuva, da se sutra ne pokušavaju ponovo.
 posalji_na_github "Uklonjene istekle pretplate" scripts/state/pretplate.json || log "Lista pretplata nije poslata na GitHub."
 
+# 10. Email newsletter (radi samo ako su podešene Resend tajne). Ide posle push notifikacije, u isto vreme.
+if ! $PROVERA; then
+  node scripts/posalji-newsletter.mjs --datum="$DATUM" || log "Newsletter nije poslat."
+  posalji_na_github "Newsletter $DATUM" scripts/state/newsletter.json || log "Stanje newslettera nije poslato na GitHub."
+fi
+
 # Stari logovi se brišu posle 30 dana.
 find "$LOG_DIR" -name '*.log' -mtime +30 -delete
 log "Gotovo."
