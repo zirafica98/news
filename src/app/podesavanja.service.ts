@@ -14,7 +14,8 @@ export class PodesavanjaService {
   private readonly sistemSvetla = this.document.defaultView?.matchMedia?.('(prefers-color-scheme: light)');
 
   readonly tema = signal<Tema>(procitaj(TEMA_KEY, ['sistem', 'svetla', 'tamna'], 'sistem'));
-  readonly jezik = signal<Jezik>(procitaj(JEZIK_KEY, ['sr', 'en'], 'sr'));
+  // Podrazumevano engleski; ko je ranije izabrao srpski, zadržava ga.
+  readonly jezik = signal<Jezik>(procitaj(JEZIK_KEY, ['sr', 'en'], 'en'));
   readonly lokal = computed(() => LOKALI[this.jezik()]);
 
   private readonly sistemJeSvetao = signal(this.sistemSvetla?.matches ?? false);

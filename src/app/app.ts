@@ -2,6 +2,7 @@ import { Component, computed, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { filter, map } from 'rxjs';
+import { InstalirajBaner } from './components/instaliraj-baner';
 import { PodesavanjaMeni } from './components/podesavanja-meni';
 import { Sekcija, putanjaSekcije } from './izdanje-ruta';
 import { PodesavanjaService } from './podesavanja.service';
@@ -9,7 +10,7 @@ import { PodesavanjaService } from './podesavanja.service';
 type Kartica = Sekcija | 'cene';
 
 @Component({
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, PodesavanjaMeni],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, PodesavanjaMeni, InstalirajBaner],
   selector: 'app-root',
   templateUrl: './app.html',
 })

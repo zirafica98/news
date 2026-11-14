@@ -14,7 +14,7 @@ import { SacuvanoService } from '../sacuvano.service';
 
     @if (ruta.izdanje(); as iz) {
       <h1 class="sr-only">{{ t('nav.vesti') }}</h1>
-      <p class="mt-4 text-lg leading-relaxed text-slate-100">{{ iz.ukratko }}</p>
+      <p class="mt-4 max-w-3xl text-lg leading-relaxed text-slate-100">{{ iz.ukratko }}</p>
 
       @if (iz.nedeljni; as n) {
         <section aria-labelledby="naslov-nedelja" class="mt-6 rounded-2xl border border-amber-900/40 bg-amber-950/20 p-5">
@@ -30,7 +30,7 @@ import { SacuvanoService } from '../sacuvano.service';
 
       <section aria-labelledby="naslov-vesti" class="mt-8">
         <h2 id="naslov-vesti" class="text-xs font-semibold uppercase tracking-widest text-slate-500">{{ t('vesti.najbitnije') }}</h2>
-        <ol class="mt-4 space-y-4">
+        <ol class="mt-4 space-y-4 lg:grid lg:grid-cols-2 lg:items-start lg:gap-4 lg:space-y-0">
           @for (v of iz.vesti; track $index) {
             <li class="rounded-2xl border border-slate-800/80 bg-slate-900/60 p-5">
               <div class="flex items-start justify-between gap-3">
@@ -68,7 +68,7 @@ import { SacuvanoService } from '../sacuvano.service';
       @if (iz.novo.length) {
         <section aria-labelledby="naslov-novo" class="mt-12">
           <h2 id="naslov-novo" class="text-xs font-semibold uppercase tracking-widest text-slate-500">{{ t('vesti.novoNaslov') }}</h2>
-          <ul class="mt-4 space-y-4">
+          <ul class="mt-4 space-y-4 lg:grid lg:grid-cols-2 lg:items-start lg:gap-4 lg:space-y-0">
             @for (n of iz.novo; track $index) {
               <li class="rounded-2xl border border-emerald-900/50 bg-emerald-950/20 p-5">
                 <div class="flex items-start justify-between gap-3">

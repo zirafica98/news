@@ -34,7 +34,7 @@ const PLATFORME: Record<Platforma, { naziv: string; klasa: string }> = {
         @if (!iz.mreze.teme.length) {
           <p class="py-10 text-center text-slate-400">{{ t('mreze.prazno') }}</p>
         }
-        <ol class="mt-6 space-y-4">
+        <ol class="mt-6 space-y-4 lg:grid lg:grid-cols-2 lg:items-start lg:gap-4 lg:space-y-0">
           @for (tema of iz.mreze.teme; track $index) {
             <li class="rounded-2xl border border-slate-800/80 bg-slate-900/60 p-5">
               <div class="flex items-start justify-between gap-3">

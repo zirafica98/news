@@ -16,7 +16,7 @@ import { SacuvanoService } from '../sacuvano.service';
       <h1 class="mt-4 text-2xl font-semibold text-white">{{ t('ideje.naslov') }}</h1>
       <p class="mt-1 text-sm text-slate-500">{{ t('ideje.opis') }}</p>
 
-      <ol class="mt-6 space-y-4">
+      <ol class="mt-6 space-y-4 lg:grid lg:grid-cols-2 lg:items-start lg:gap-4 lg:space-y-0">
         @for (ideja of iz.ideje; track $index) {
           <li class="rounded-2xl border border-violet-900/50 bg-violet-950/20 p-5">
             <div class="flex items-start justify-between gap-3">

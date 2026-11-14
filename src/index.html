@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="sr-Latn">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>AI News</title>
@@ -17,7 +17,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="AI News">
   <meta property="og:title" content="AI News">
-  <meta property="og:description" content="Jutarnji pregled AI vesti na srpskom: šta se desilo, šta je novo izašlo i kako da probaš, ideje za aplikacije i cene tokena.">
+  <meta property="og:description" content="Your morning AI briefing: what happened, what just launched and how to try it, app ideas and token prices.">
   <meta property="og:image" content="/og.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -32,6 +32,13 @@
       } catch (e) {}
       document.documentElement.dataset.theme = tema;
     })();
+    // Chrome (Android) javlja da sajt može da se instalira često pre nego što se aplikacija pokrene,
+    // pa se događaj čuva ovde, a traku „Instaliraj“ prikazuje InstalirajBaner.
+    window.addEventListener('beforeinstallprompt', function (e) {
+      e.preventDefault();
+      window.__instalacija = e;
+      window.dispatchEvent(new Event('instalacija-spremna'));
+    });
   </script>
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased">

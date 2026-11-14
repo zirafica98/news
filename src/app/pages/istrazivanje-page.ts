@@ -18,7 +18,7 @@ import { SacuvanoService } from '../sacuvano.service';
       @if (!iz.istrazivanje.length) {
         <p class="py-16 text-center text-slate-400">{{ t('istrazivanje.prazno') }}</p>
       } @else {
-        <ul class="mt-6 space-y-4">
+        <ul class="mt-6 space-y-4 lg:grid lg:grid-cols-2 lg:items-start lg:gap-4 lg:space-y-0">
           @for (r of iz.istrazivanje; track $index) {
             <li class="rounded-2xl border border-sky-900/50 bg-sky-950/20 p-5">
               <div class="flex items-start justify-between gap-3">

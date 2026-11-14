@@ -1,8 +1,33 @@
 <header class="sticky top-0 z-20 border-b border-slate-900 bg-slate-950/90 pt-[env(safe-area-inset-top)] backdrop-blur">
-  <div class="mx-auto flex h-14 max-w-2xl items-center justify-between px-4">
-    <a routerLink="/" class="flex items-center gap-2 font-semibold text-white">
+  <div class="mx-auto flex h-14 max-w-2xl items-center justify-between gap-4 px-4 lg:h-16 lg:max-w-5xl">
+    <a routerLink="/" class="flex shrink-0 items-center gap-2 font-semibold text-white">
       <span aria-hidden="true">☕</span> AI News
     </a>
+
+    <!-- Na desktopu su delovi izdanja gore u zaglavlju; na telefonu su u traci na dnu. -->
+    <nav [attr.aria-label]="t('app.deloviIzdanja')" class="hidden lg:block">
+      <ul class="flex items-center gap-1 text-sm">
+        @for (k of kartice(); track k.id) {
+          <li>
+            <a
+              [routerLink]="k.link"
+              [attr.aria-current]="aktivna() === k.id ? 'page' : null"
+              class="flex items-center gap-2 rounded-full px-3 py-1.5 font-medium transition-colors"
+              [class.bg-slate-800]="aktivna() === k.id"
+              [class.text-amber-400]="aktivna() === k.id"
+              [class.text-slate-400]="aktivna() !== k.id"
+              [class.hover:text-white]="aktivna() !== k.id"
+            >
+              <svg viewBox="0 0 24 24" class="size-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path [attr.d]="k.ikona" />
+              </svg>
+              {{ t(k.naziv) }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+
     <div class="flex items-center gap-1 text-sm">
       <a routerLink="/arhiva" routerLinkActive="bg-slate-800 text-white" ariaCurrentWhenActive="page" class="rounded-full px-3 py-1.5 text-slate-400 hover:text-white">{{ t('nav.arhiva') }}</a>
       <a routerLink="/sacuvano" routerLinkActive="bg-slate-800 text-white" ariaCurrentWhenActive="page" class="rounded-full px-3 py-1.5 text-slate-400 hover:text-white">{{ t('nav.sacuvano') }}</a>
@@ -11,7 +36,7 @@
   </div>
 </header>
 
-<main class="mx-auto max-w-2xl px-4 pb-[calc(6rem+env(safe-area-inset-bottom))]">
+<main class="mx-auto max-w-2xl px-4 pb-[calc(6rem+env(safe-area-inset-bottom))] lg:max-w-5xl lg:pb-12">
   <router-outlet />
 
   <footer class="mt-12 flex flex-wrap justify-center gap-x-4 gap-y-2 border-t border-slate-800 pt-6 text-xs text-slate-500">
@@ -24,7 +49,7 @@
 
 <nav
   [attr.aria-label]="t('app.deloviIzdanja')"
-  class="fixed inset-x-0 bottom-0 z-20 border-t border-slate-800 bg-slate-950/95 pb-[env(safe-area-inset-bottom)] backdrop-blur"
+  class="fixed inset-x-0 bottom-0 z-20 border-t border-slate-800 bg-slate-950/95 pb-[env(safe-area-inset-bottom)] backdrop-blur lg:hidden"
 >
   <ul class="mx-auto grid max-w-2xl grid-cols-5">
     @for (k of kartice(); track k.id) {
@@ -45,3 +70,5 @@
     }
   </ul>
 </nav>
+
+<app-instaliraj-baner />
