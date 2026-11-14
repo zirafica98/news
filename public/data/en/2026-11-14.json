@@ -1,0 +1,569 @@
+{
+  "datum": "2026-11-14",
+  "generisano": "2026-11-14T03:07:38.625Z",
+  "model": "claude-opus-5-5",
+  "prevod": "claude-sonnet-5-5",
+  "ukratko": "After Jensen Huang's resignation, the big question is whose chips Chinese labs are using: a former OpenAI researcher claims he found \"fingerprints\" of Nvidia Blackwell GPUs in the weights of six Chinese models, even though exports of those chips to China are banned. OpenAI launched ChatGPT Wallet, a wallet that lets agents buy things on your behalf, and Anthropic is offering Claude Managed Agents that run on a company's own servers. Local-model fans get two pieces of good news: Thinking Machines released the weights for Inkling 2 Small, and llama.cpp has reached version 1.0.",
+  "vesti": [
+    {
+      "naslov": "\"Fingerprints\" in the weights: Chinese models allegedly trained on banned Blackwell chips",
+      "staSeDesilo": "Will DePue, a former OpenAI researcher, published a forensic analysis of released weights, meaning a model's learned parameters. He argues that a weight's initial values retain a trace of the GPU it was produced on. He claims six models from DeepSeek, Moonshot (Kimi K3), MiniMax and Ant Group were built on Blackwell systems, and he estimates the hardware behind five of the training runs at more than half a billion dollars. The analysis doesn't say where the chips were or how they were obtained, so it doesn't prove that export rules were broken.",
+      "zastoJeBitno": "If the method proves reliable, published weights could reveal what hardware a model was trained on. Combined with Huang's departure, this fuels the push for stricter chip export rules, which indirectly affects the prices and availability of the cheap Chinese models you use through APIs.",
+      "kategorija": "istrazivanje",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Unemployment Labs (original analysis)",
+          "url": "https://unemploymentlabs.com/checkpoint-forensics"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/former-openai-researcher-says-he-found-nvidia-blackwell-fingerprints-hidden-inside-six-chinese-ai-models/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/13/export-banned-nvidia-chips-are-behind-chinas-most-powerful-ai-models-uh-oh-jensen/"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-13"
+        }
+      ]
+    },
+    {
+      "naslov": "Inkling 2 Small: Thinking Machines releases weights under Apache 2.0",
+      "staSeDesilo": "Mira Murati's company has released open weights for Inkling 2 Small, as it announced last week. It's an MoE model, meaning only a fraction of its \"experts\" run for each token: 594 billion parameters in total, 17 billion active. It takes text and images, with context up to a million tokens. It ranks first among American open models on the Code Arena WebDev leaderboard, and vLLM and SGLang support it from day one.",
+      "zastoJeBitno": "For the first time in a while, there's a serious Western open model with a license that allows commercial use. Running it takes a GB200-class server, not a Mac, so in practice you'll use it through providers that host it.",
+      "kategorija": "modeli",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "@thinkymachines on X",
+          "url": "https://x.com/thinkymachines/status/2120982625582195011"
+        },
+        {
+          "naziv": "Latent Space / AINews",
+          "url": "https://latent.space/p/ainews-jensen-huang-resigns-after-33-years-leading-nvidia/"
+        }
+      ]
+    },
+    {
+      "naslov": "ChatGPT Wallet: agents shop for you, with Face ID for every purchase",
+      "staSeDesilo": "OpenAI is taking a second run at AI shopping after shutting down Instant Checkout. You enter a card once in ChatGPT Wallet, and agents in ChatGPT Work, Codex and Dots buy with it. You approve every purchase with biometrics (Face ID or fingerprint), and card details stay hidden behind a payment token. For now it works only for Pro users in the US with a US card.",
+      "zastoJeBitno": "Agentic shopping is becoming standard: Anthropic, Meta and xAI already have it, and Replit's agent has been buying goods for businesses since yesterday. If you run an online store, it's worth thinking about how an agent will \"see\" it, not just a human.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "OpenAI",
+          "url": "https://openai.com/index/introducing-chatgpt-wallet"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1033425/openai-chatgpt-wallet"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/openai-rebuilt-ai-shopping-from-scratch-with-chatgpt-wallet/"
+        }
+      ]
+    },
+    {
+      "naslov": "Claude Managed Agents can now run inside a company's own infrastructure",
+      "staSeDesilo": "Anthropic has opened a private beta in which companies run the whole Managed Agents system themselves: the sandbox (an isolated environment where the agent executes code), credential storage and session history. It can be their cloud or their own servers, and the company also chooses where requests to Claude are routed. Added features include agent identity, OpenTelemetry tracing, a \"kill switch\" and an evaluation tool.",
+      "zastoJeBitno": "Banks, hospitals and government bodies have so far turned agents down because data leaves the building. If you're building for clients like that, this is a selling point that didn't exist before.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "@ClaudeDevs on X",
+          "url": "https://x.com/ClaudeDevs/status/2120938988165091693"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-13"
+        }
+      ]
+    },
+    {
+      "naslov": "Anthropic IPO six times oversubscribed, on track to be the largest in history",
+      "staSeDesilo": "Orders for Anthropic shares are six times the size of the offering, putting it on track to become the largest public offering ever. According to media reports, the price should be set next Wednesday. Banks are turning away buyers from China and Hong Kong because of US export rules (ITAR), as with SpaceX's offering.",
+      "zastoJeBitno": "Last week the talk was of a \"cooling\" and unhappy investors, yet demand is huge. Fresh money means more capacity, so expect looser limits and faster Claude development, but also more market pressure to turn a profit.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/anthropics-ipo-is-six-times-oversubscribed-and-on-track-to-become-the-largest-public-offering-in-history/"
+        },
+        {
+          "naziv": "The Decoder (Chinese investors)",
+          "url": "https://the-decoder.com/banks-bar-chinese-and-hong-kong-investors-from-anthropic-ipo-over-us-export-controls/"
+        }
+      ]
+    },
+    {
+      "naslov": "llama.cpp reaches version 1.0",
+      "staSeDesilo": "The best-known tool for running models locally has its first \"serious\" release: the libllama and libggml libraries are at v1.0.0, with clear versioning rules. From now on, any change that breaks the C API bumps the major version. It supports more than 150 model architectures, and backends for different hardware can be loaded on demand. It's distributed via Homebrew, Docker, Winget and as an XCFramework for iOS and macOS.",
+      "zastoJeBitno": "A stable API means you can embed llama.cpp in your iOS or Mac app without worrying that the next update will break it. It's a solid foundation for apps that work offline.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Hugging Face blog",
+          "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1"
+        },
+        {
+          "naziv": "GitHub",
+          "url": "https://github.com/ggml-org/llama.cpp"
+        }
+      ]
+    },
+    {
+      "naslov": "Perplexity Decider v1.3: open decision models that can now \"locate\" a piece of text",
+      "staSeDesilo": "Perplexity has released Decider v1.3 (27B) and Decider Flash v1.3 (4B). These models don't write text; they return probabilities for yes/no questions, choices among several options, or a score. The new feature is Locate: the model returns the exact snippet of text, such as a name, a piece of personal data or the answer to a question. Weights are under Apache 2.0 on Hugging Face, and the models are free on OpenRouter for a week.",
+      "zastoJeBitno": "This is the third \"system one\" model in a week, after Google's Decisions API. For classification, routing and filtering in your app, you no longer need an expensive text-writing model.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/11/13/perplexity-decider-v1-3-open-weight-decision-models-locate/"
+        },
+        {
+          "naziv": "@AravSrinivas on X",
+          "url": "https://x.com/AravSrinivas/status/2121020114321703210"
+        }
+      ]
+    },
+    {
+      "naslov": "Google opens preorders for Gemini AI glasses that also work with iPhone",
+      "staSeDesilo": "Google and Samsung have opened preorders for AI glasses with Warby Parker and Gentle Monster frames, priced at $395. They have a 12 MP camera and speakers, but no display in the lenses. On \"Hey Gemini\" they answer questions about what you're looking at, give directions from Maps and translate speech live in more than 70 languages. Passersby's faces are blurred before Gemini sees them. They go on sale December 10, for now only in the US and South Korea.",
+      "zastoJeBitno": "Meta has 81% of this market, and Google is now playing the privacy card. For iPhone users, it matters that the glasses also work with iOS, but they're not officially available in Serbia yet.",
+      "kategorija": "kompanije",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Rundown AI",
+          "url": "https://therundownai.beehiiv.com/p/nvidia-enters-life-without-jensen-huang"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Perplexity Decider v1.3 / Decider Flash v1.3",
+      "tip": "model",
+      "opis": "Models that answer with probabilities instead of text: classification, routing, scoring, and the new Locate for pulling out exact pieces of text (names, personal data, answers).",
+      "kakoProbati": [
+        "On OpenRouter, search for \"pplx-decider\" and run Flash v1.3 in the Chat Playground.",
+        "Give it a text and a question with a set of labels, for example App Store reviews labeled bug/suggestion/praise.",
+        "To run it locally, the Flash version needs a CUDA GPU with about 8.5 GiB of memory (BF16). On a Mac, the API is easier."
+      ],
+      "link": "https://www.marktechpost.com/2026/11/13/perplexity-decider-v1-3-open-weight-decision-models-locate/",
+      "cena": "Free on OpenRouter for a week, then check the link. Weights are free (Apache 2.0)."
+    },
+    {
+      "naziv": "Qwen Code 1.0 Preview",
+      "tip": "alat",
+      "opis": "An open-source terminal coding agent, similar to Claude Code, with subagents, agent teams, automatic memory and MCP. It also works with the Anthropic, OpenAI and Gemini APIs, and with local models via Ollama.",
+      "kakoProbati": [
+        "Install: `brew install qwen-code` or `npm install -g @qwen-code/qwen-code@latest` (requires Node.js 22+).",
+        "Run `qwen` in your project folder.",
+        "Type `/auth` and choose a Qwen subscription account or your own API key (a local model works too)."
+      ],
+      "link": "https://github.com/QwenLM/qwen-code",
+      "cena": "The tool is free. You pay for the model you use or a Qwen Plus/Pro subscription."
+    },
+    {
+      "naziv": "llama.cpp 1.0",
+      "tip": "alat",
+      "opis": "The first stable release of the most popular tool for local models, with a stable C API and an XCFramework package for iOS and macOS.",
+      "kakoProbati": [
+        "On a Mac: `brew install llama.cpp`, or `curl -LsSf https://llama.app/install.sh | sh`.",
+        "Download a GGUF model from Hugging Face and run `llama-server` to get a local REST API.",
+        "For an iOS app, grab the XCFramework from the v1.0.0 release page on GitHub."
+      ],
+      "link": "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
+      "cena": "Free"
+    },
+    {
+      "naziv": "Inkling 2 Small (open weights)",
+      "tip": "model",
+      "opis": "Thinking Machines' open MoE model: 594B total and 17B active parameters, text and images, up to a million tokens of context, Apache 2.0 license.",
+      "kakoProbati": [
+        "Check the announcement and the weights link on the @thinkymachines account.",
+        "For a quick test without hardware, use Tinker Playground or a provider that hosts it.",
+        "For your own server, you need a single GB200/GB300 node with vLLM or SGLang."
+      ],
+      "link": "https://x.com/thinkymachines/status/2120982625582195011",
+      "cena": "Weights are free. For the hosted version, check the link."
+    },
+    {
+      "naziv": "Shared spreadsheets in Claude Sheets",
+      "tip": "funkcija",
+      "opis": "Claude builds a spreadsheet from a description, with real formulas in the cells, and you can now share the sheet with someone who can edit it.",
+      "kakoProbati": [
+        "Open claude.ai/artifacts and click the green Sheets tile.",
+        "Describe the columns, dropdowns and formula cells (e.g. a budget and task status).",
+        "Ask Claude to find cells where a number is typed in instead of a formula.",
+        "Click Share, invite a collaborator with \"Can edit\", and export an Excel copy before big changes."
+      ],
+      "link": "https://therundownai.beehiiv.com/p/nvidia-enters-life-without-jensen-huang",
+      "cena": "Check the link. Editing a shared sheet works on paid plans."
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "According to the WSJ, Huang likely left more over risky deals than over his personal life: Nvidia had given cloud providers guarantees worth billions, including a planned $250 billion deal with OpenAI.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/jensen-huangs-ouster-likely-traces-back-to-nvidias-risky-business-practices-more-than-his-personal-life/"
+    },
+    {
+      "naslov": "Investors and founders expect less Nvidia money for AI startups after Huang's departure, and therefore lower valuations.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/13/jensen-huangs-departure-blasts-big-hole-in-ai-startup-funding-vcs-and-founders-say/"
+    },
+    {
+      "naslov": "Anthropic released Claude for Manufacturing, a plugin with 17 skills that connects Claude to Autodesk Fusion, NetSuite and Infor to draw up quotes and order spare shipments, always after human approval.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/anthropics-claude-for-manufacturing-plugs-ai-directly-into-factory-software-to-automate-industrial-workflows/"
+    },
+    {
+      "naslov": "OpenAI enters cybersecurity with two products under the Daybreak name: Defense Factory and Red Team.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/openai-enters-the-cybersecurity-market-with-two-daybreak-products/"
+    },
+    {
+      "naslov": "Replit Agent can now buy goods for your business (via Visa and Stripe) and run Google Ads campaigns.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-11-13"
+    },
+    {
+      "naslov": "Meta Muse now calls businesses on behalf of paying users in the US and has over 10 million users, but many businesses hang up as soon as they recognize it's an AI.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/metas-muse-now-calls-businesses-for-you-but-many-companies-might-just-hang-up-on-the-ai/"
+    },
+    {
+      "naslov": "Amazon is building a \"World Product Graph\", a database of every product on the internet, including ones it doesn't sell, so AI agents start their shopping with it, according to Reuters.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1033697/amazon-world-product-graph-ai-search"
+    },
+    {
+      "naslov": "ElevenLabs released ElevenAI, an app for teams that takes meeting notes and turns dictation into text.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/13/elevenlabs-new-app-combines-meeting-note-taking-and-dictation-for-teams/"
+    },
+    {
+      "naslov": "Claude.ai, Claude Code and platform.claude.com had elevated error rates, and the incident report drew almost 400 comments on Hacker News.",
+      "izvor": "Claude Status",
+      "url": "https://status.claude.com/incidents/nn11wk485zfn"
+    },
+    {
+      "naslov": "Microsoft 365 was down for about 24 hours worldwide, and Microsoft says the cause was a bad update, not an attack or AI.",
+      "izvor": "Wired",
+      "url": "https://www.wired.com/story/microsoft-365-crawls-back-to-life-after-a-24-hour-outage/"
+    },
+    {
+      "naslov": "Synth app developers complain that Apple's app review, which they say is increasingly run by AI tools, rejects apps for no clear reason.",
+      "izvor": "Synth Anatomy",
+      "url": "https://synthanatomy.com/2026/11/ai-is-turning-apples-app-review-process-into-a-nightmare-for-developers.html"
+    },
+    {
+      "naslov": "A study finds that AI models use up to 180 times more energy on languages that don't use the Latin alphabet, while giving less accurate answers.",
+      "izvor": "Bug.hr",
+      "url": "https://mreza.bug.hr/umjetna-inteligencija/ai-trosi-i-do-180-puta-vise-energije-na-nekim-jezicima-nego-na-engleskom-64294"
+    },
+    {
+      "naslov": "AI helped decipher Kurt Gödel's notebooks, which reportedly contain hundreds of proven theorems.",
+      "izvor": "The Guardian",
+      "url": "https://www.theguardian.com/science/2026/nov/13/kurt-godel-notebooks-ai-helps-unlock-hidden-discoveries-man-who-transformed-maths"
+    },
+    {
+      "naslov": "Edge0 claims its open 145B-parameter model fits in about 29 GB of memory and beats Claude Opus 4.6 on Terminal-Bench. These are the vendor's own figures.",
+      "izvor": "Edge0",
+      "url": "https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer"
+    },
+    {
+      "naslov": "The US FAA is rolling out SMART, an AI system that suggests flight rerouting to controllers, across all US airspace, even though the controllers' union wasn't involved in developing it.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/features/2026/11/faa-expands-ai-advice-to-manage-air-traffic-congestion-across-entire-us-airspace/"
+    },
+    {
+      "naslov": "Paul Christiano, an OpenAI Foundation board member, said at a talk in Toronto that an AI accident is the most likely cause of death for most of the people present and that a \"takeover\" could be only months away.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/ai/2026/11/ai-is-the-most-likely-reason-youll-die-openai-board-member-warns/"
+    },
+    {
+      "naslov": "Google open-sourced TPU Sync, a C++ library for fast KV cache transfer (the model's memory of prior text) on its TPU chips, claiming latency drops by up to 90%.",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/11/13/google-tpu-sync-kv-cache-transfer-library/"
+    },
+    {
+      "naslov": "Google Threat Intelligence and Mandiant report that attackers are using open-source pentest tools with LLM agents, such as PentAGI and CAIRN, in real intrusions.",
+      "izvor": "Mastodon (infosec.exchange)",
+      "url": "https://infosec.exchange/@hasamba/117612156842812216"
+    },
+    {
+      "naslov": "Nearly 70% of US government agencies use generative AI, and unions are winning protections against AI surveillance and automated firings.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/nearly-70-percent-of-us-agencies-use-generative-ai-and-unions-are-finally-catching-up-with-guardrails/"
+    },
+    {
+      "naslov": "At a workshop at Croatian IT company Span, expert Kristina Podnar explained that AI agents need clear processes and accountability, not just technology.",
+      "izvor": "Bug.hr",
+      "url": "https://www.bug.hr/umjetna-inteligencija/ai-agenti-mogu-ubrzati-posao-ali-jesmo-li-im-pripremili-teren-64312"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "SparseRead: agents that read less and solve the same",
+      "objasnjenje": "Agents usually load an entire web page, document or tool response even though they need only a few paragraphs. SparseRead is a layer between the agent and the source: it tracks what the agent actually needs, chooses how to find the relevant part, and limits how much raw text enters the context. If the search misses, it can fall back to the whole document. The model itself isn't changed.",
+      "zastoJeZanimljivo": "Across six models, including Claude Opus 5, token usage drops by up to 92.9%, while quality stays the same or improves in 97% of cases. Given the talk about MCP burning lots of tokens, that's a direct saving for anyone paying for an API.",
+      "url": "https://huggingface.co/papers/2608.22237",
+      "github": "https://github.com/Liuzedooong/SparseReading"
+    },
+    {
+      "naslov": "SO-Arena: how reliable are models that only decide",
+      "objasnjenje": "A benchmark for \"system one\" models, the ones that don't write text but quickly give a decision or a probability, like Google's Decisions API and Perplexity Decider. It tests them by domain and task type. The main finding: a bigger model and better reasoning don't help equally everywhere, and high overall accuracy doesn't mean the decisions are reliable.",
+      "zastoJeZanimljivo": "If you use a model like this as a filter or router in your app, the paper shows you should test it on your own data rather than trust the average accuracy from the marketing.",
+      "url": "https://huggingface.co/papers/2611.15777",
+      "github": "https://github.com/holdrain/SO-Arena"
+    },
+    {
+      "naslov": "Open Vision Banana: an image generator turned into a model that \"understands\" images",
+      "objasnjenje": "The idea is to frame recognition tasks, like depth estimation or segmentation (separating objects in an image), as image editing. The generator \"draws\" the answer. The authors published a complete open recipe on 4B and 9B parameter models, trained only on public data. On one test they beat the closed original, and the models can still edit images.",
+      "zastoJeZanimljivo": "A single open model for multiple vision tasks, with code and weights, could replace several specialized models in an app that processes photos.",
+      "url": "https://huggingface.co/papers/2611.15844",
+      "github": "https://github.com/OpenVisionBanana/OpenVisionBanana"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Latin or Cyrillic: what does it cost?",
+      "problem": "Models split Cyrillic text into more tokens than Latin, so processing is pricier and slower, and answers are often worse. Developers in Serbia rarely measure this.",
+      "zaKoga": "Serbian developers and companies that send a lot of text to AI APIs (support, translation, document processing).",
+      "ulogaAi": "The app counts tokens for the same text in Cyrillic and Latin across several models, shows the cost difference, and offers conversion before sending, then converts the reply back to Cyrillic.",
+      "tezina": 1,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Build an Angular page with a text field and automatic Cyrillic ↔ Latin conversion (a simple letter table).",
+        "Count tokens via a provider's token-counting endpoint or open tokenizers (e.g. tiktoken in a Supabase Edge function).",
+        "Multiply the token counts by prices from the OpenRouter API and show the difference in dinars per 1,000 messages.",
+        "Publish the results as a per-model table and share it in local dev groups."
+      ],
+      "inspiracija": "Study showing AI uses up to 180 times more energy on languages that don't use the Latin alphabet (Bug.hr)"
+    },
+    {
+      "naziv": "Reviews in Drawers",
+      "problem": "App Store reviews pile up, and a developer has no time to manually sort them into bugs, suggestions and praise, or to pull out the phone model and iOS version.",
+      "zaKoga": "Indie iOS developers with one or more apps in the store.",
+      "ulogaAi": "Decider Flash sorts each review into a category with a probability, and Locate extracts the device, version and feature name from the text. No text generation, so it's cheap and fast.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Pull reviews via the App Store Connect API into a Supabase table (an Edge function run by cron).",
+        "For each review, call Perplexity Decider Flash v1.3 via OpenRouter with the labels bug/suggestion/praise/unclear.",
+        "With a second call (Locate), extract the device and iOS version and store them in separate columns.",
+        "Build a simple Angular dashboard with filters and a weekly email with the top 3 bugs."
+      ],
+      "inspiracija": "Perplexity Decider v1.3 and the new Locate feature"
+    },
+    {
+      "naziv": "How Much Am I Talking?",
+      "problem": "After a job interview, sales call or presentation, you don't know whether you talked too much, how many filler words you used, or whether you dodged a hard question.",
+      "zaKoga": "People preparing for interviews, salespeople and freelancers who run client calls, in Serbian and English.",
+      "ulogaAi": "A recording is transcribed on the phone. Then a model calculates your share of speaking time, counts filler words, and quotes verbatim the moments you dodged an answer, with a suggestion for a better one.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "In SwiftUI, build a recorder with AVAudioRecorder and transcription via Apple's Speech framework (sr-RS and en-US).",
+        "Add speaker separation with a simple \"who spoke first\" question, or send the transcript to a model to label speakers.",
+        "Send the transcript to Claude with a prompt asking for verbatim quotes, speaking share and a list of avoided topics.",
+        "Show the result as a card with one number (speaking share) and three tips."
+      ],
+      "inspiracija": "Rowan's Corner in The Rundown: AI as a coach after every call"
+    },
+    {
+      "naziv": "Before You Submit to Apple",
+      "problem": "An App Review rejection can cost you several days, and the reasons are often small: a missing permission explanation, a privacy policy link, or wrong screenshots.",
+      "zaKoga": "iOS developers in the region who publish their apps themselves.",
+      "ulogaAi": "A model reads Info.plist, the app description, screenshots and key parts of the App Review guidelines, then returns a list of risks citing the specific rule.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Build a CLI in Node or Swift that reads Info.plist, entitlements and metadata files from an Xcode project (e.g. from the fastlane folder).",
+        "Prepare condensed App Review guidelines as context and keep them in the cached part of the prompt to make calls cheaper.",
+        "Send everything to Claude and ask for a JSON list of risks (rule, file, suggested fix).",
+        "Later, add a GitHub Action that runs the check before every release tag."
+      ],
+      "inspiracija": "Developers' complaints that AI is turning Apple's app review into a nightmare (Hacker News)"
+    },
+    {
+      "naziv": "Offline Service Desk",
+      "problem": "Forms and letters from the municipality, bank or court are written in dense language, and many people don't want to send personal documents to the cloud.",
+      "zaKoga": "Citizens in Serbia dealing with bureaucracy, especially older people, and their children who help them.",
+      "ulogaAi": "A small local model on the iPhone, running via llama.cpp, explains a document in plain language and makes a list of what to bring, without sending any data to a server.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Add the llama.cpp v1.0 XCFramework to a SwiftUI project and run a small GGUF model that works well in Serbian.",
+        "Use Apple Vision OCR to read a photographed document.",
+        "Build a prompt with an answer template: what this is, the deadline, what to bring, where to go.",
+        "Test speed on an older iPhone and switch to a smaller quantized model if needed."
+      ],
+      "inspiracija": "llama.cpp 1.0 with a stable API and an XCFramework package for iOS"
+    }
+  ],
+  "cene": "Today's biggest price cut was DeepSeek V4.1 Flash, from $0.30/$1.20 to $0.0507/$0.2028 per million input/output tokens, with the 1017 variant at $0.038/$0.5. GPT-5.6 Sol is back down from $4.4/$22 to $4/$20, Kimi K3.1 Pro is again at $2/$10 after yesterday's drop (it was $0.2375/$8.41), and Qwen3.5-9B went up from $0.093/$0.136 to $0.14/$0.206. The cheapest in the cheap-and-fast class is still GLM 5.3 Flash at $0.0399/$0.0784, and in the mid-range it's GLM 5.3 at $0.084/$3.6.",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "After Huang's departure: what happens to open models and CUDA",
+        "oCemuSePrica": "The resignation is official, so the conversation has shifted to the consequences: what happens to CUDA, the GPU roadmap, the Nemotron models and Hugging Face support. On r/LocalLLaMA, some say they're making local copies of the models and datasets they depend on.",
+        "glasovi": "Clem Delangue (Hugging Face) and Nvidia's Nader Khalil reiterated their support for open source, and Sebastian Raschka asked what happens to Nemotron. A petition from employees for Huang's return is circulating on Reddit, but nobody has independently confirmed it, so treat it as a rumor.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xudeev/nvidias_jensen_huang_resigns_as_ceo_colette_kress/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xut4o7/hugging_face_ceo_vows_to_keep_fighting_for_open/"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@ClementDelangue",
+            "url": "https://x.com/ClementDelangue/status/2120883918119592037"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@rasbt",
+            "url": "https://x.com/rasbt/status/2120899453510942743"
+          }
+        ]
+      },
+      {
+        "naslov": "Blackwell \"fingerprints\" in Chinese models: proof or misreading?",
+        "oCemuSePrica": "DePue's analysis is the second most popular post of the day, with over 350 points on Hacker News. The dispute isn't over whether the method works but over what the result means: if it's 2–3 thousand chips, that's a small share of Chinese capacity.",
+        "glasovi": "@willdepue says the method hit 24 out of 24 models with known hardware and that people at OpenAI and Anthropic checked it, but none of them has publicly backed it. @teortaxesTex thinks this shows export controls work, and @eliebakouch says Blackwell in China has been known about for a long time.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@willdepue",
+            "url": "https://x.com/willdepue/status/2120992457630326841"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@teortaxesTex",
+            "url": "https://x.com/teortaxesTex/status/2121002975422193799"
+          },
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50474883"
+          }
+        ]
+      },
+      {
+        "naslov": "Gemini 4 Hydrogen under scrutiny: fast on paper, but it can get \"stuck\" thinking",
+        "oCemuSePrica": "First tests are mixed. The model rarely makes things up (8% hallucinations at Artificial Analysis), but at the highest reasoning level it can burn 131 thousand \"thinking\" tokens with no answer. There's also debate about how cheap it really is.",
+        "glasovi": "@skalskip92 showed a case costing about $1.08 with no answer, Theo disputes that the model is fast by his measurements, and Simon Willison notes that Hydrogen is only 25% cheaper per token than Carbon and Argon, which are reportedly going up in price on December 1.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@skalskip92",
+            "url": "https://x.com/skalskip92/status/2120994631072776235"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@theo",
+            "url": "https://x.com/theo/status/2121030235248570537"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@simonw",
+            "url": "https://x.com/simonw/status/2121039423441981444"
+          }
+        ]
+      },
+      {
+        "naslov": "\"If AI solved coding, why is software the same?\"",
+        "oCemuSePrica": "Several skeptical threads piled up on Hacker News the same day: Jonathan Blow's talk on software not getting better, the \"No AI Slop\" manifesto, and an Atlantic piece on AI book scams that erode readers' trust. Each drew between one and two hundred comments.",
+        "glasovi": "Jonathan Blow argues AI produces more code but not better programs. In the comments, some agree, while others point to examples like ArtCraft, which built an open alternative to Photoshop using agents.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50484658"
+          },
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50488769"
+          },
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50481870"
+          }
+        ]
+      },
+      {
+        "naslov": "Claude is down again, right before the IPO",
+        "oCemuSePrica": "The incident report on elevated errors at claude.ai, Claude Code and the API console got almost 500 points and nearly 400 comments. Users compare reliability with competitors and wonder how capacity will hold up after the new launches.",
+        "glasovi": "Mostly developers who depend on Claude Code day to day are posting. Some are looking for a fallback model or a router, others defend Anthropic because demand is growing faster than capacity.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50481187"
+          }
+        ]
+      }
+    ],
+    "snimci": [
+      {
+        "naslov": "AI News: Things Will Never Be The Same",
+        "kanal": "Matt Wolfe",
+        "opis": "A roundup of a wild week: Huang's resignation, Claude Fable 5.2, Gemini 4 Carbon, Adobe MAX and a quick rundown of everything else.",
+        "url": "https://www.youtube.com/watch?v=G_Jrexy_5Bg"
+      },
+      {
+        "naslov": "If AI Solved Coding, Why Is My Software Still the Same?",
+        "kanal": "Jonathan Blow",
+        "opis": "A skeptical talk on why, despite AI coding tools, the programs we use every day haven't gotten any better.",
+        "url": "https://www.youtube.com/watch?v=IRK8h67ol7Q"
+      }
+    ]
+  },
+  "nedeljni": {
+    "ukratko": "The week was defined by Jensen Huang's fall: within five days, an investigation into his ties to an alleged Chinese spy led to his resignation, and the story ended with questions about Chinese access to Blackwell chips and the future of Nvidia's open models. Meanwhile, Anthropic and Google flooded the market with products. Anthropic released Fable 5.2 and is turning Claude into an office suite ahead of the largest IPO in history, while Google shipped the entire Gemini 4 family in a week. Beneath the headlines, agents were getting money, phones and access to businesses, while security lags behind.",
+    "tacke": [
+      "Nvidia without its founder: from the investigation on November 9 to the resignation on November 12, with Colette Kress as interim CEO. Earnings on November 17 will be the first test.",
+      "Anthropic at its peak: Fable 5.2 is cheaper per token ($8/$40 versus $10/$50), Claude gained Sheets, Whiteboards and Meetings, and the IPO is six times oversubscribed.",
+      "Google rounded out Gemini 4: Carbon is available to everyone, Hydrogen replaces Flash, and the Decisions API shipped too. Together with Perplexity Decider, \"system one\" models that only decide became the trend of the week.",
+      "Agents get a wallet and a phone: ChatGPT Wallet, Meta Muse calling businesses, Replit buying goods. On the other side, United is banning agents from buying tickets.",
+      "Security remained the weak spot: Claude Code exposes secrets on GitHub, a malicious AGENTS.md got an agent to install a fake package, Grok Build leaks data through share links, and Fireworks was hacked. Prices of cheap Chinese models jumped around day to day."
+    ]
+  }
+}

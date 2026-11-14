@@ -1,0 +1,568 @@
+{
+  "datum": "2026-11-14",
+  "generisano": "2026-11-14T03:07:38.625Z",
+  "model": "claude-opus-5-5",
+  "ukratko": "Posle ostavke Jensena Huanga najviše se priča o tome čije čipove koriste kineske laboratorije: bivši OpenAI istraživač tvrdi da je u težinama šest kineskih modela pronašao „otiske“ Nvidia Blackwell GPU-ova, iako je njihov izvoz u Kinu zabranjen. OpenAI je pustio ChatGPT Wallet, novčanik iz kog agenti kupuju u tvoje ime, a Anthropic nudi Claude Managed Agents koji rade na serverima same firme. Za one koji pokreću modele lokalno ima dve dobre vesti: Thinking Machines je objavio težine modela Inkling 2 Small, a llama.cpp je stigao do verzije 1.0.",
+  "vesti": [
+    {
+      "naslov": "„Otisci“ u težinama: kineski modeli navodno trenirani na zabranjenim Blackwell čipovima",
+      "staSeDesilo": "Will DePue, bivši istraživač OpenAI-ja, objavio je forenzičku analizu objavljenih težina, to jest naučenih parametara modela. Po njemu, početne vrednosti težina čuvaju trag GPU-a na kom su nastale. Tvrdi da je šest modela kompanija DeepSeek, Moonshot (Kimi K3), MiniMax i Ant Group napravljeno na Blackwell sistemima, a hardver iza pet treninga procenjuje na više od pola milijarde dolara. Analiza ne kaže gde su čipovi bili ni kako se do njih došlo, pa ne dokazuje da su pravila o izvozu prekršena.",
+      "zastoJeBitno": "Ako se metoda pokaže pouzdanom, iz objavljenih težina moći će da se pročita na kom hardveru je model treniran. Uz Huangov odlazak to ubrzava priču o strožim pravilima za izvoz čipova, a to posredno utiče na cene i dostupnost jeftinih kineskih modela koje koristiš preko API-ja.",
+      "kategorija": "istrazivanje",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Unemployment Labs (originalna analiza)",
+          "url": "https://unemploymentlabs.com/checkpoint-forensics"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/former-openai-researcher-says-he-found-nvidia-blackwell-fingerprints-hidden-inside-six-chinese-ai-models/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/13/export-banned-nvidia-chips-are-behind-chinas-most-powerful-ai-models-uh-oh-jensen/"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-13"
+        }
+      ]
+    },
+    {
+      "naslov": "Inkling 2 Small: Thinking Machines objavio težine pod Apache 2.0",
+      "staSeDesilo": "Firma Mire Murati objavila je otvorene težine modela Inkling 2 Small, kako je i najavila prošle nedelje. To je MoE model, to jest model u kom za svaki token radi samo deo „stručnjaka“: ukupno ima 594 milijarde parametara, aktivnih 17 milijardi. Prima tekst i slike, a kontekst ide do milion tokena. U Code Arena WebDev rangiranju prvi je među američkim otvorenim modelima, a vLLM i SGLang ga podržavaju od prvog dana.",
+      "zastoJeBitno": "Prvi put posle dužeg vremena postoji ozbiljan zapadni otvoreni model sa licencom koja dozvoljava komercijalnu upotrebu. Za pokretanje treba server nivoa GB200, a ne Mac, pa ćeš ga u praksi koristiti preko provajdera koji ga hostuju.",
+      "kategorija": "modeli",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "@thinkymachines na X-u",
+          "url": "https://x.com/thinkymachines/status/2120982625582195011"
+        },
+        {
+          "naziv": "Latent Space / AINews",
+          "url": "https://latent.space/p/ainews-jensen-huang-resigns-after-33-years-leading-nvidia/"
+        }
+      ]
+    },
+    {
+      "naslov": "ChatGPT Wallet: agenti kupuju umesto tebe, uz Face ID za svaku kupovinu",
+      "staSeDesilo": "OpenAI je drugi put krenuo u AI kupovinu, posle gašenja Instant Checkout-a. U ChatGPT Wallet se kartica unese jednom, a agenti u ChatGPT Work-u, Codex-u i Dots-u kupuju sa nje. Svaku kupovinu potvrđuješ biometrijom (Face ID ili otisak prsta), a podaci o kartici ostaju skriveni iza tokena za plaćanje. Za sada radi samo za Pro korisnike u SAD sa američkom karticom.",
+      "zastoJeBitno": "Agentska kupovina postaje standard: Anthropic, Meta i xAI je već imaju, a Replit-ov agent od juče kupuje i robu za firme. Ako imaš web prodavnicu, vredi razmisliti kako će je „videti“ agent, a ne samo čovek.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "OpenAI",
+          "url": "https://openai.com/index/introducing-chatgpt-wallet"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1033425/openai-chatgpt-wallet"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/openai-rebuilt-ai-shopping-from-scratch-with-chatgpt-wallet/"
+        }
+      ]
+    },
+    {
+      "naslov": "Claude Managed Agents sada mogu da rade unutar infrastrukture firme",
+      "staSeDesilo": "Anthropic je otvorio privatnu betu u kojoj firme pokreću ceo sistem Managed Agents kod sebe: sandbox, to jest izolovano okruženje u kom agent izvršava kod, čuvanje pristupnih podataka i istoriju sesija. To može biti njihov oblak ili sopstveni serveri, a firma bira i kuda idu zahtevi ka Claude-u. Dodati su identitet agenta, OpenTelemetry praćenje, „prekidač za gašenje“ i alat za evaluaciju.",
+      "zastoJeBitno": "Banke, bolnice i državne firme do sada su odbijale agente jer podaci izlaze iz kuće. Ako praviš nešto za takve klijente, ovo je argument koji ranije nije postojao.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "@ClaudeDevs na X-u",
+          "url": "https://x.com/ClaudeDevs/status/2120938988165091693"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-13"
+        }
+      ]
+    },
+    {
+      "naslov": "Anthropic IPO šest puta presubskribovan, na putu da bude najveći u istoriji",
+      "staSeDesilo": "Porudžbine za Anthropic-ove akcije šest puta premašuju ponudu, pa je ovo na putu da postane najveća javna ponuda akcija ikada. Cena bi po pisanju medija trebalo da bude određena sledeće srede. Banke odbijaju kupce iz Kine i Hong Konga zbog američkih izvoznih pravila (ITAR), kao i kod SpaceX-ove berzanske ponude.",
+      "zastoJeBitno": "Prošle nedelje se pisalo o „hlađenju“ i nezadovoljnim investitorima, a potražnja je ipak ogromna. Svež novac znači više kapaciteta, pa se mogu očekivati blaži limiti i brži razvoj Claude-a, ali i veći pritisak tržišta na zaradu.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/anthropics-ipo-is-six-times-oversubscribed-and-on-track-to-become-the-largest-public-offering-in-history/"
+        },
+        {
+          "naziv": "The Decoder (kineski investitori)",
+          "url": "https://the-decoder.com/banks-bar-chinese-and-hong-kong-investors-from-anthropic-ipo-over-us-export-controls/"
+        }
+      ]
+    },
+    {
+      "naslov": "llama.cpp stigao do verzije 1.0",
+      "staSeDesilo": "Najpoznatiji alat za lokalno pokretanje modela dobio je prvo „ozbiljno“ izdanje: biblioteke libllama i libggml su na v1.0.0, uz jasna pravila verzionisanja. Svaka promena koja kvari C API od sada povećava glavni broj verzije. Podržava više od 150 arhitektura modela, a backend-i za različit hardver mogu da se učitavaju tek kad zatrebaju. Distribuira se preko Homebrew-a, Docker-a, Winget-a i kao XCFramework za iOS i macOS.",
+      "zastoJeBitno": "Stabilan API znači da možeš da ugradiš llama.cpp u svoju iOS ili Mac aplikaciju bez straha da će ti ga sledeće ažuriranje pokvariti. To je dobra osnova za aplikacije koje rade bez interneta.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Hugging Face blog",
+          "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1"
+        },
+        {
+          "naziv": "GitHub",
+          "url": "https://github.com/ggml-org/llama.cpp"
+        }
+      ]
+    },
+    {
+      "naslov": "Perplexity Decider v1.3: otvoreni modeli koji odlučuju i sada umeju da „pronađu“ deo teksta",
+      "staSeDesilo": "Perplexity je izbacio Decider v1.3 (27B) i Decider Flash v1.3 (4B). To su modeli koji ne pišu tekst, nego vraćaju verovatnoće za da/ne pitanja, izbor između više opcija ili ocenu. Novost je Locate: model vraća tačan isečak teksta, recimo ime, lični podatak ili odgovor na pitanje. Težine su pod Apache 2.0 na Hugging Face-u, a na OpenRouter-u su nedelju dana besplatni.",
+      "zastoJeBitno": "Ovo je treći „sistem jedan“ model za nedelju dana, posle Google-ovog Decisions API-ja. Za klasifikaciju, rutiranje i filtriranje u aplikaciji više ti ne treba skup model koji piše tekst.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/11/13/perplexity-decider-v1-3-open-weight-decision-models-locate/"
+        },
+        {
+          "naziv": "@AravSrinivas na X-u",
+          "url": "https://x.com/AravSrinivas/status/2121020114321703210"
+        }
+      ]
+    },
+    {
+      "naslov": "Google otvorio pretprodaju AI naočara sa Gemini-jem, rade i sa iPhone-om",
+      "staSeDesilo": "Google i Samsung su otvorili pretprodaju AI naočara sa okvirima Warby Parker i Gentle Monster, po ceni od 395 $. Imaju kameru od 12 MP i zvučnike, ali nemaju ekran u staklima. Na „Hey Gemini“ odgovaraju na pitanja o onome što gledaš, daju uputstva iz Mapa i prevode govor uživo na više od 70 jezika. Lica prolaznika se zamagljuju pre nego što ih Gemini vidi. U prodaji su od 10. decembra, za sada samo u SAD i Južnoj Koreji.",
+      "zastoJeBitno": "Meta ima 81% ovog tržišta, a Google sada igra na kartu privatnosti. Za iPhone korisnike je važno što naočare rade i sa iOS-om, ali u Srbiji ih zvanično još nema.",
+      "kategorija": "kompanije",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Rundown AI",
+          "url": "https://therundownai.beehiiv.com/p/nvidia-enters-life-without-jensen-huang"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Perplexity Decider v1.3 / Decider Flash v1.3",
+      "tip": "model",
+      "opis": "Modeli koji odgovaraju verovatnoćama umesto tekstom: klasifikacija, rutiranje, ocenjivanje i novi Locate za izvlačenje tačnih delova teksta (imena, lični podaci, odgovori).",
+      "kakoProbati": [
+        "Na OpenRouter-u potraži „pplx-decider“ i pokreni Flash v1.3 u Chat Playground-u.",
+        "Daj mu tekst i pitanje sa ponuđenim oznakama, na primer recenzije iz App Store-a sa oznakama bug/predlog/pohvala.",
+        "Za lokalno pokretanje Flash verzija traži CUDA GPU sa oko 8,5 GiB memorije (BF16). Na Mac-u je zato lakše preko API-ja."
+      ],
+      "link": "https://www.marktechpost.com/2026/11/13/perplexity-decider-v1-3-open-weight-decision-models-locate/",
+      "cena": "Besplatno na OpenRouter-u nedelju dana, posle toga proveri na linku. Težine su besplatne (Apache 2.0)."
+    },
+    {
+      "naziv": "Qwen Code 1.0 Preview",
+      "tip": "alat",
+      "opis": "Otvoreni agent za kodiranje u terminalu, slično Claude Code-u, sa podagentima, timovima agenata, automatskom memorijom i MCP-om. Radi i sa Anthropic, OpenAI i Gemini API-jima, kao i sa lokalnim modelima preko Ollame.",
+      "kakoProbati": [
+        "Instaliraj: `brew install qwen-code` ili `npm install -g @qwen-code/qwen-code@latest` (traži Node.js 22+).",
+        "U folderu projekta pokreni `qwen`.",
+        "Ukucaj `/auth` i izaberi Qwen nalog sa pretplatom ili svoj API ključ (može i lokalni model)."
+      ],
+      "link": "https://github.com/QwenLM/qwen-code",
+      "cena": "Alat je besplatan. Plaćaš model koji koristiš ili Qwen Plus/Pro pretplatu."
+    },
+    {
+      "naziv": "llama.cpp 1.0",
+      "tip": "alat",
+      "opis": "Prvo stabilno izdanje najpopularnijeg alata za lokalne modele, sa stabilnim C API-jem i XCFramework paketom za iOS i macOS.",
+      "kakoProbati": [
+        "Na Mac-u: `brew install llama.cpp`, ili `curl -LsSf https://llama.app/install.sh | sh`.",
+        "Preuzmi neki GGUF model sa Hugging Face-a i pokreni `llama-server` da dobiješ lokalni REST API.",
+        "Za iOS aplikaciju preuzmi XCFramework sa stranice izdanja v1.0.0 na GitHub-u."
+      ],
+      "link": "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
+      "cena": "besplatno"
+    },
+    {
+      "naziv": "Inkling 2 Small (otvorene težine)",
+      "tip": "model",
+      "opis": "Otvoreni MoE model firme Thinking Machines: 594B ukupno, 17B aktivnih parametara, tekst i slike, do milion tokena konteksta, licenca Apache 2.0.",
+      "kakoProbati": [
+        "Pogledaj objavu i link ka težinama na nalogu @thinkymachines.",
+        "Za brzu probu bez hardvera koristi Tinker Playground ili provajdera koji ga hostuje.",
+        "Za sopstveni server treba jedan GB200/GB300 čvor uz vLLM ili SGLang."
+      ],
+      "link": "https://x.com/thinkymachines/status/2120982625582195011",
+      "cena": "Težine su besplatne. Za hostovanu verziju proveri na linku."
+    },
+    {
+      "naziv": "Deljena tabela u Claude Sheets",
+      "tip": "funkcija",
+      "opis": "Claude od opisa pravi tabelu sa pravim formulama u ćelijama, a tabelu sada možeš da podeliš sa nekim ko će je uređivati.",
+      "kakoProbati": [
+        "Otvori claude.ai/artifacts i klikni zelenu pločicu Sheets.",
+        "Opiši kolone, padajuće liste i ćelije sa formulama (npr. budžet i status zadataka).",
+        "Zamoli Claude-a da pronađe ćelije u kojima je ukucan broj umesto formule.",
+        "Klikni Share, pozovi saradnika sa „Can edit“, a pre većih izmena izvezi Excel kopiju."
+      ],
+      "link": "https://therundownai.beehiiv.com/p/nvidia-enters-life-without-jensen-huang",
+      "cena": "Proveri na linku. Uređivanje deljene tabele radi na plaćenim planovima."
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Prema WSJ-u, Huang je verovatno otišao više zbog rizičnih poslova nego zbog privatnog života: Nvidia je cloud provajderima davala garancije vredne milijarde, uključujući planirani dogovor sa OpenAI-jem od 250 milijardi dolara.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/jensen-huangs-ouster-likely-traces-back-to-nvidias-risky-business-practices-more-than-his-personal-life/"
+    },
+    {
+      "naslov": "Investitori i osnivači očekuju manje Nvidia novca za AI startape posle Huangovog odlaska, a time i manje procene vrednosti.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/13/jensen-huangs-departure-blasts-big-hole-in-ai-startup-funding-vcs-and-founders-say/"
+    },
+    {
+      "naslov": "Anthropic je izbacio Claude for Manufacturing, dodatak sa 17 veština koji povezuje Claude sa Autodesk Fusion-om, NetSuite-om i Infor-om da pravi ponude i naručuje rezervne isporuke, uvek posle ljudskog odobrenja.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/anthropics-claude-for-manufacturing-plugs-ai-directly-into-factory-software-to-automate-industrial-workflows/"
+    },
+    {
+      "naslov": "OpenAI ulazi u sajber bezbednost sa dva proizvoda pod imenom Daybreak: Defense Factory i Red Team.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/openai-enters-the-cybersecurity-market-with-two-daybreak-products/"
+    },
+    {
+      "naslov": "Replit Agent sada može da kupuje robu za tvoju firmu (preko Visa i Stripe-a) i da vodi Google Ads kampanje.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-11-13"
+    },
+    {
+      "naslov": "Meta Muse sada zove firme u ime plaćenih korisnika u SAD i ima preko 10 miliona korisnika, ali mnoge firme spuštaju slušalicu čim prepoznaju AI.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/metas-muse-now-calls-businesses-for-you-but-many-companies-might-just-hang-up-on-the-ai/"
+    },
+    {
+      "naslov": "Amazon, prema Reuters-u, pravi „World Product Graph“, bazu svih proizvoda na internetu, pa i onih koje ne prodaje, da bi i AI agenti kupovinu počinjali kod njega.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1033697/amazon-world-product-graph-ai-search"
+    },
+    {
+      "naslov": "ElevenLabs je izbacio ElevenAI, aplikaciju za timove koja beleži sastanke i pretvara diktat u tekst.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/13/elevenlabs-new-app-combines-meeting-note-taking-and-dictation-for-teams/"
+    },
+    {
+      "naslov": "Claude.ai, Claude Code i platform.claude.com imali su povišen broj grešaka, a prijava incidenta je skupila skoro 400 komentara na Hacker News-u.",
+      "izvor": "Claude Status",
+      "url": "https://status.claude.com/incidents/nn11wk485zfn"
+    },
+    {
+      "naslov": "Microsoft 365 je bio u prekidu oko 24 sata širom sveta, a Microsoft tvrdi da je uzrok loše ažuriranje, ne napad ni AI.",
+      "izvor": "Wired",
+      "url": "https://www.wired.com/story/microsoft-365-crawls-back-to-life-after-a-24-hour-outage/"
+    },
+    {
+      "naslov": "Developeri sintisajzer aplikacija žale se da Apple-ov pregled aplikacija, za koji tvrde da ga sve više rade AI alati, odbija aplikacije bez jasnog razloga.",
+      "izvor": "Synth Anatomy",
+      "url": "https://synthanatomy.com/2026/11/ai-is-turning-apples-app-review-process-into-a-nightmare-for-developers.html"
+    },
+    {
+      "naslov": "Istraživanje pokazuje da AI modeli na jezicima koji ne koriste latinicu troše i do 180 puta više energije i pritom daju manje tačne odgovore.",
+      "izvor": "Bug.hr",
+      "url": "https://mreza.bug.hr/umjetna-inteligencija/ai-trosi-i-do-180-puta-vise-energije-na-nekim-jezicima-nego-na-engleskom-64294"
+    },
+    {
+      "naslov": "Uz pomoć AI-ja dešifrovane su beležnice Kurta Gedela, za koje se tvrdi da sadrže stotine dokazanih teorema.",
+      "izvor": "The Guardian",
+      "url": "https://www.theguardian.com/science/2026/nov/13/kurt-godel-notebooks-ai-helps-unlock-hidden-discoveries-man-who-transformed-maths"
+    },
+    {
+      "naslov": "Edge0 tvrdi da njegov otvoreni model od 145B parametara staje u oko 29 GB memorije i na Terminal-Bench-u nadmašuje Claude Opus 4.6. To su podaci samog proizvođača.",
+      "izvor": "Edge0",
+      "url": "https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer"
+    },
+    {
+      "naslov": "Američka FAA širi AI sistem SMART, koji kontrolorima predlaže preusmeravanje letova, na ceo vazdušni prostor SAD, iako sindikat kontrolora nije učestvovao u njegovom razvoju.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/features/2026/11/faa-expands-ai-advice-to-manage-air-traffic-congestion-across-entire-us-airspace/"
+    },
+    {
+      "naslov": "Paul Christiano, član odbora OpenAI fondacije, rekao je na predavanju u Torontu da je AI nesreća najverovatniji uzrok smrti većine prisutnih i da bi „preuzimanje“ moglo biti udaljeno samo mesecima.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/ai/2026/11/ai-is-the-most-likely-reason-youll-die-openai-board-member-warns/"
+    },
+    {
+      "naslov": "Google je otvorio kod TPU Sync-a, C++ biblioteke za brzo prebacivanje KV keša (memorije modela o prethodnom tekstu) na svojim TPU čipovima, uz tvrdnju da kašnjenje pada i do 90%.",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/11/13/google-tpu-sync-kv-cache-transfer-library/"
+    },
+    {
+      "naslov": "Google Threat Intelligence i Mandiant prijavljuju da napadači u stvarnim upadima koriste otvorene alate za pentest sa LLM agentima, kao što su PentAGI i CAIRN.",
+      "izvor": "Mastodon (infosec.exchange)",
+      "url": "https://infosec.exchange/@hasamba/117612156842812216"
+    },
+    {
+      "naslov": "Skoro 70% američkih državnih agencija koristi generativni AI, a sindikati izboravaju zaštitu od AI nadzora i automatskih otkaza.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/nearly-70-percent-of-us-agencies-use-generative-ai-and-unions-are-finally-catching-up-with-guardrails/"
+    },
+    {
+      "naslov": "Na radionici u hrvatskoj IT kompaniji Span stručnjakinja Kristina Podnar objasnila je da AI agentima trebaju jasni procesi i odgovornosti, a ne samo tehnologija.",
+      "izvor": "Bug.hr",
+      "url": "https://www.bug.hr/umjetna-inteligencija/ai-agenti-mogu-ubrzati-posao-ali-jesmo-li-im-pripremili-teren-64312"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "SparseRead: agenti koji čitaju manje, a rešavaju isto",
+      "objasnjenje": "Agenti obično učitaju celu web stranicu, dokument ili odgovor alata, iako im treba samo par pasusa. SparseRead je sloj između agenta i izvora: prati šta agentu zapravo treba, bira kako da pronađe deo koji je bitan i ograničava koliko sirovog teksta ulazi u kontekst. Ako pretraga promaši, može da vrati i ceo dokument. Sam model se ne menja.",
+      "zastoJeZanimljivo": "Na šest modela, uključujući Claude Opus 5, broj tokena pada do 92,9%, a kvalitet ostaje isti ili bolji u 97% slučajeva. Uz priču da MCP troši mnogo tokena, to je direktna ušteda za svakog ko plaća API.",
+      "url": "https://huggingface.co/papers/2608.22237",
+      "github": "https://github.com/Liuzedooong/SparseReading"
+    },
+    {
+      "naslov": "SO-Arena: koliko su pouzdani modeli koji samo odlučuju",
+      "objasnjenje": "Benchmark za „sistem jedan“ modele, one koji ne pišu tekst nego brzo daju odluku ili verovatnoću, kao Google Decisions API i Perplexity Decider. Testira ih po oblastima i vrstama zadataka. Glavni nalaz: veći model i bolje rezonovanje ne pomažu podjednako svuda, a visoka ukupna tačnost ne znači da su odluke pouzdane.",
+      "zastoJeZanimljivo": "Ako u aplikaciji koristiš ovakav model kao filter ili ruter, rad pokazuje da ga treba testirati na sopstvenim podacima, a ne verovati prosečnoj tačnosti iz reklame.",
+      "url": "https://huggingface.co/papers/2611.15777",
+      "github": "https://github.com/holdrain/SO-Arena"
+    },
+    {
+      "naslov": "Open Vision Banana: generator slika pretvoren u model koji „razume“ sliku",
+      "objasnjenje": "Ideja je da se zadaci prepoznavanja, kao procena dubine ili segmentacija (odvajanje objekata na slici), postave kao uređivanje slike. Generator „nacrta“ odgovor. Autori su objavili potpun i otvoren recept na modelima od 4B i 9B parametara, trenirano samo na javnim podacima. Na jednom testu nadmašuju zatvoreni original, a modeli i dalje umeju da uređuju slike.",
+      "zastoJeZanimljivo": "Jedan otvoren model za više vizuelnih zadataka, sa kodom i težinama, može da zameni nekoliko specijalizovanih modela u aplikaciji koja obrađuje fotografije.",
+      "url": "https://huggingface.co/papers/2611.15844",
+      "github": "https://github.com/OpenVisionBanana/OpenVisionBanana"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Latinica ili ćirilica: koliko košta?",
+      "problem": "Tekst na ćirilici modeli dele na više tokena nego latinicu, pa je obrada skuplja i sporija, a odgovori su često lošiji. Developeri u Srbiji to retko mere.",
+      "zaKoga": "Srpski developeri i firme koje šalju mnogo teksta u AI API-je (podrška, prevodi, obrada dokumenata).",
+      "ulogaAi": "Aplikacija broji tokene za isti tekst na ćirilici i latinici kod više modela, prikazuje razliku u ceni i nudi konverziju pre slanja, uz vraćanje odgovora u ćirilicu.",
+      "tezina": 1,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Napravi Angular stranicu sa poljem za tekst i automatskom konverzijom ćirilica ↔ latinica (prosta tabela slova).",
+        "Prebroj tokene preko endpoint-a za brojanje tokena kod provajdera ili preko otvorenih tokenizera (npr. tiktoken u Supabase Edge funkciji).",
+        "Pomnoži broj tokena sa cenama sa OpenRouter API-ja i prikaži razliku u dinarima na 1.000 poruka.",
+        "Objavi rezultat kao tabelu po modelima i podeli je na domaćim dev grupama."
+      ],
+      "inspiracija": "Istraživanje da AI troši i do 180 puta više energije na jezicima koji ne koriste latinicu (Bug.hr)"
+    },
+    {
+      "naziv": "Recenzije u fiokama",
+      "problem": "App Store recenzije se gomilaju, a developer nema vremena da ih ručno deli na bagove, predloge i pohvale niti da iz njih izvuče model telefona i verziju iOS-a.",
+      "zaKoga": "Indie iOS developeri sa jednom ili više aplikacija u prodavnici.",
+      "ulogaAi": "Decider Flash svaku recenziju svrstava u kategoriju sa verovatnoćom, a Locate iz teksta izvlači uređaj, verziju i ime funkcije. Nema generisanja teksta, pa je jeftino i brzo.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Povuci recenzije preko App Store Connect API-ja u Supabase tabelu (Edge funkcija pokrenuta cron-om).",
+        "Za svaku recenziju pozovi Perplexity Decider Flash v1.3 preko OpenRouter-a sa oznakama bug/predlog/pohvala/nejasno.",
+        "Drugim pozivom (Locate) izvuci uređaj i verziju iOS-a i sačuvaj ih u posebnim kolonama.",
+        "Napravi jednostavan Angular dashboard sa filterima i nedeljnim mejlom sa top 3 baga."
+      ],
+      "inspiracija": "Perplexity Decider v1.3 i nova funkcija Locate"
+    },
+    {
+      "naziv": "Koliko ja pričam?",
+      "problem": "Posle razgovora za posao, prodajnog poziva ili prezentacije ne znaš da li si pričao previše, koliko si koristio poštapalice i da li si izbegao teško pitanje.",
+      "zaKoga": "Ljudi koji se spremaju za intervjue, prodavci i frilenseri koji vode pozive sa klijentima, na srpskom i engleskom.",
+      "ulogaAi": "Snimak se na telefonu pretvara u tekst. Zatim model računa udeo tvog govora, broji poštapalice i navodi doslovne citate trenutaka u kojima si izbegao odgovor, uz predlog boljeg odgovora.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "U SwiftUI-ju napravi snimač sa AVAudioRecorder-om i transkripciju preko Apple Speech framework-a (sr-RS i en-US).",
+        "Dodaj razdvajanje govornika jednostavnim pitanjem „ko je prvi pričao“ ili pošalji transkript modelu da označi govornike.",
+        "Pošalji transkript Claude-u sa promptom koji traži doslovne citate, udeo govora i listu izbegnutih tema.",
+        "Prikaži rezultat kao karticu sa jednim brojem (udeo govora) i tri saveta."
+      ],
+      "inspiracija": "Rowan's Corner u The Rundown-u: AI kao trener posle svakog poziva"
+    },
+    {
+      "naziv": "Pre nego što pošalješ Apple-u",
+      "problem": "Odbijanje u App Review-u može da te košta nekoliko dana, a razlozi su često sitnice: nedostaje objašnjenje dozvole, link ka politici privatnosti ili su screenshot-ovi pogrešni.",
+      "zaKoga": "iOS developeri iz regiona koji sami objavljuju aplikacije.",
+      "ulogaAi": "Model čita Info.plist, opis aplikacije, screenshot-ove i ključne delove App Review smernica, pa vraća listu rizika sa pozivom na konkretno pravilo.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Napravi CLI u Node-u ili Swift-u koji iz Xcode projekta čita Info.plist, entitlements i metadata fajlove (npr. iz fastlane foldera).",
+        "Pripremi skraćene App Review smernice kao kontekst i drži ih u keširanom delu prompta, da bi pozivi bili jeftiniji.",
+        "Pošalji sve Claude-u i traži JSON listu rizika (pravilo, fajl, predlog ispravke).",
+        "Kasnije dodaj GitHub Action koji proveru pokreće pre svakog release taga."
+      ],
+      "inspiracija": "Žalbe developera da AI pretvara Apple-ov pregled aplikacija u noćnu moru (Hacker News)"
+    },
+    {
+      "naziv": "Šalter bez interneta",
+      "problem": "Obrasci i dopisi iz opštine, banke ili suda pisani su teškim jezikom, a mnogi ne žele da lične dokumente šalju u oblak.",
+      "zaKoga": "Građani u Srbiji koji se snalaze sa birokratijom, posebno stariji, i njihova deca koja im pomažu.",
+      "ulogaAi": "Mali lokalni model na iPhone-u, preko llama.cpp-a, objašnjava dokument jednostavnim jezikom i pravi listu šta treba doneti, bez slanja podataka na server.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Dodaj llama.cpp v1.0 XCFramework u SwiftUI projekat i pokreni mali GGUF model koji dobro radi na srpskom.",
+        "Za čitanje fotografisanog dokumenta koristi Apple Vision OCR.",
+        "Napravi prompt sa šablonom odgovora: šta je ovo, rok, šta treba doneti, gde se ide.",
+        "Testiraj brzinu na starijem iPhone-u i po potrebi uzmi manji kvantizovani model."
+      ],
+      "inspiracija": "llama.cpp 1.0 sa stabilnim API-jem i XCFramework paketom za iOS"
+    }
+  ],
+  "cene": "Danas je najviše pojeftinio DeepSeek V4.1 Flash, sa 0,30/1,20 $ na 0,0507/0,2028 $ za milion ulaznih/izlaznih tokena, a varijanta 1017 na 0,038/0,5 $. GPT-5.6 Sol se vratio sa 4,4/22 $ na 4/20 $, dok je Kimi K3.1 Pro posle jučerašnjeg pada opet na 2/10 $ (bio 0,2375/8,41 $), a Qwen3.5-9B je poskupeo sa 0,093/0,136 $ na 0,14/0,206 $. Najjeftiniji u klasi jeftinih i brzih i dalje je GLM 5.3 Flash sa 0,0399/0,0784 $, a u srednjoj klasi GLM 5.3 sa 0,084/3,6 $.",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Posle Huangovog odlaska: šta biva sa otvorenim modelima i CUDA-om",
+        "oCemuSePrica": "Ostavka je zvanična, pa se razgovor premestio na posledice: šta biva sa CUDA-om, planom za GPU-ove, Nemotron modelima i podrškom za Hugging Face. Na r/LocalLLaMA neki pišu da prave lokalne kopije modela i skupova podataka od kojih zavise.",
+        "glasovi": "Clem Delangue (Hugging Face) i Nader Khalil iz Nvidia-e ponovili su da podržavaju otvoreni kod, a Sebastian Raschka je pitao šta biva sa Nemotron-om. Na Reddit-u kruži peticija zaposlenih za Huangov povratak, ali niko je nije nezavisno potvrdio, pa to treba uzeti kao glasinu.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xudeev/nvidias_jensen_huang_resigns_as_ceo_colette_kress/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/LocalLLaMA",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xut4o7/hugging_face_ceo_vows_to_keep_fighting_for_open/"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@ClementDelangue",
+            "url": "https://x.com/ClementDelangue/status/2120883918119592037"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@rasbt",
+            "url": "https://x.com/rasbt/status/2120899453510942743"
+          }
+        ]
+      },
+      {
+        "naslov": "Blackwell „otisci“ u kineskim modelima: dokaz ili pogrešno tumačenje?",
+        "oCemuSePrica": "DePue-ova analiza je druga najpopularnija objava dana, a na Hacker News-u ima preko 350 poena. Spor nije oko toga da li metoda radi, nego šta rezultat znači: ako je u pitanju 2–3 hiljade čipova, to je mali deo kineskih kapaciteta.",
+        "glasovi": "@willdepue tvrdi da je metoda pogodila 24 od 24 modela sa poznatim hardverom i da su je proverili ljudi iz OpenAI-ja i Anthropic-a, ali niko od njih nije stao iza toga javno. @teortaxesTex smatra da ovo pre pokazuje da izvozna kontrola radi, a @eliebakouch kaže da se za Blackwell u Kini odavno znalo.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@willdepue",
+            "url": "https://x.com/willdepue/status/2120992457630326841"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@teortaxesTex",
+            "url": "https://x.com/teortaxesTex/status/2121002975422193799"
+          },
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50474883"
+          }
+        ]
+      },
+      {
+        "naslov": "Gemini 4 Hydrogen pod lupom: brz na papiru, ali ume da se „zaglavi“ u razmišljanju",
+        "oCemuSePrica": "Prvi testovi su mešoviti. Model retko izmišlja (8% halucinacija kod Artificial Analysis), ali na najvišem nivou razmišljanja ume da potroši 131 hiljadu tokena „razmišljanja“ bez odgovora. Vodi se i rasprava o tome koliko je zapravo jeftin.",
+        "glasovi": "@skalskip92 je pokazao slučaj od oko 1,08 $ bez odgovora, Theo osporava da je model brz po njegovim merenjima, a Simon Willison napominje da je Hydrogen samo 25% jeftiniji po tokenu od Carbon-a i Argon-a, za koje se navodi da poskupljuju 1. decembra.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@skalskip92",
+            "url": "https://x.com/skalskip92/status/2120994631072776235"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@theo",
+            "url": "https://x.com/theo/status/2121030235248570537"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@simonw",
+            "url": "https://x.com/simonw/status/2121039423441981444"
+          }
+        ]
+      },
+      {
+        "naslov": "„Ako je AI rešio kodiranje, zašto je softver isti?“",
+        "oCemuSePrica": "Na Hacker News-u se istog dana skupilo nekoliko skeptičnih tema: predavanje Jonathan Blow-a o tome da softver nije postao bolji, manifest „No AI Slop“ i tekst iz The Atlantic-a o AI prevarama sa knjigama koje ruše poverenje čitalaca. Svaka je dobila između stotinu i dvesta komentara.",
+        "glasovi": "Jonathan Blow tvrdi da AI pravi više koda, ali ne i bolje programe. U komentarima se jedni slažu, a drugi pominju primere poput ArtCraft-a, koji je uz agente napravio otvorenu alternativu Photoshop-u.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50484658"
+          },
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50488769"
+          },
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50481870"
+          }
+        ]
+      },
+      {
+        "naslov": "Claude ponovo pada, i to baš pred berzu",
+        "oCemuSePrica": "Prijava incidenta sa povišenim greškama na claude.ai, Claude Code-u i API konzoli dobila je skoro 500 poena i blizu 400 komentara. Korisnici upoređuju pouzdanost sa konkurencijom i pitaju se kako će kapaciteti izdržati posle novih lansiranja.",
+        "glasovi": "Pišu uglavnom developeri koji zavise od Claude Code-a u svakodnevnom radu. Jedni traže rezervni model ili ruter, drugi brane Anthropic jer potražnja raste brže od kapaciteta.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50481187"
+          }
+        ]
+      }
+    ],
+    "snimci": [
+      {
+        "naslov": "AI News: Things Will Never Be The Same",
+        "kanal": "Matt Wolfe",
+        "opis": "Pregled divlje nedelje: Huangova ostavka, Claude Fable 5.2, Gemini 4 Carbon, Adobe MAX i brzi pregled svega ostalog.",
+        "url": "https://www.youtube.com/watch?v=G_Jrexy_5Bg"
+      },
+      {
+        "naslov": "If AI Solved Coding, Why Is My Software Still the Same?",
+        "kanal": "Jonathan Blow",
+        "opis": "Skeptično predavanje o tome zašto, i pored AI alata za kod, programi koje svakodnevno koristimo nisu postali bolji.",
+        "url": "https://www.youtube.com/watch?v=IRK8h67ol7Q"
+      }
+    ]
+  },
+  "nedeljni": {
+    "ukratko": "Nedelju je obeležio pad Jensena Huanga: za pet dana od istrage o vezi sa navodnom kineskom špijunkom došlo se do ostavke, a priča se završila pitanjima o kineskom pristupu Blackwell čipovima i budućnosti Nvidia-inih otvorenih modela. Istovremeno su Anthropic i Google zasuli tržište proizvodima. Anthropic je izbacio Fable 5.2 i pretvara Claude u kancelarijski paket pred najveći IPO u istoriji, a Google je za nedelju dana izbacio celu Gemini 4 porodicu. Ispod naslova se videlo da agenti dobijaju novac, telefone i pristup firmama, dok bezbednost i dalje kaska.",
+    "tacke": [
+      "Nvidia bez osnivača: od istrage 9. novembra do ostavke 12. novembra, a Colette Kress je privremena direktorka. Rezultati 17. novembra biće prvi test.",
+      "Anthropic na vrhuncu: Fable 5.2 je jeftiniji po tokenu (8/40 $ naspram 10/50 $), Claude je dobio Sheets, Whiteboards i Meetings, a IPO je šest puta presubskribovan.",
+      "Google je zaokružio Gemini 4: Carbon je dostupan svima, Hydrogen menja Flash, a izašao je i Decisions API. Uz Perplexity Decider, „sistem jedan“ modeli koji samo odlučuju postali su trend nedelje.",
+      "Agenti dobijaju novčanik i telefon: ChatGPT Wallet, Meta Muse koji zove firme, Replit koji kupuje robu. Sa druge strane, United zabranjuje agentima kupovinu karata.",
+      "Bezbednost je ostala slaba tačka: Claude Code izlaže tajne na GitHub-u, zlonamerni AGENTS.md je naterao agenta da instalira lažni paket, Grok Build otkriva podatke preko linkova za deljenje, a Fireworks je hakovan. Cene jeftinih kineskih modela su skakale iz dana u dan."
+    ]
+  }
+}
