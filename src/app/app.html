@@ -54,7 +54,6 @@
 <nav
   [attr.aria-label]="t('app.deloviIzdanja')"
   class="fixed inset-x-0 bottom-0 z-20 border-t border-slate-800 bg-slate-950/95 pb-[env(safe-area-inset-bottom)] backdrop-blur lg:hidden"
-  [class.hidden]="naPocetnoj()"
 >
   <ul class="mx-auto grid max-w-2xl grid-cols-5">
     @for (k of kartice(); track k.id) {

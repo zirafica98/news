@@ -6,10 +6,10 @@ export type Sekcija = 'vesti' | 'istrazivanje' | 'ideje' | 'mreze';
 
 export type StanjeIzdanja = 'nema-izdanja' | 'ucitava' | 'ne-postoji' | 'spremno';
 
-/** Link do sekcije za dati dan. Bez datuma vodi na najnovije izdanje. */
+/** Link do sekcije za dati dan. Bez datuma vodi na najnovije izdanje (/danas, /istrazivanje…). */
 export function putanjaSekcije(sekcija: Sekcija, datum?: string): string[] {
-  const osnova = datum ? ['/izdanje', datum] : ['/'];
-  return sekcija === 'vesti' ? osnova : [...osnova, sekcija];
+  if (!datum) return [sekcija === 'vesti' ? '/danas' : `/${sekcija}`];
+  return sekcija === 'vesti' ? ['/izdanje', datum] : ['/izdanje', datum, sekcija];
 }
 
 /**

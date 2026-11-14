@@ -77,7 +77,7 @@ interface Video {
               <div class="p-5 lg:p-6">
                 <p class="text-xs font-semibold uppercase tracking-widest text-amber-400">{{ tIli('kategorija.' + glavna.v.kategorija, glavna.v.kategorija) }}</p>
                 <h3 class="mt-2 text-2xl font-bold leading-snug text-white group-hover:text-amber-100 lg:text-3xl">{{ glavna.v.naslov }}</h3>
-                <p class="mt-3 line-clamp-3 leading-relaxed text-slate-300">{{ glavna.v.staSeDesilo }}</p>
+                <p class="mt-3 line-clamp-2 leading-relaxed text-slate-400">{{ glavna.v.zastoJeBitno }}</p>
               </div>
             </a>
           }
@@ -103,7 +103,7 @@ interface Video {
             <div class="flex flex-col justify-center p-5 lg:p-8">
               <h2 id="pocetna-alat" class="text-xs font-bold uppercase tracking-widest text-emerald-400">🛠 {{ t('pocetna.alatDana') }}</h2>
               <p class="mt-2 text-2xl font-bold text-white group-hover:text-emerald-100">{{ a.n.naziv }}</p>
-              <p class="mt-2 line-clamp-3 leading-relaxed text-slate-300">{{ a.n.opis }}</p>
+              <p class="mt-2 line-clamp-2 leading-relaxed text-slate-300">{{ a.n.opis }}</p>
               <p class="mt-4 text-sm font-medium text-emerald-400">{{ t('pocetna.koraka', { n: a.n.kakoProbati.length }) }} →</p>
             </div>
           </a>

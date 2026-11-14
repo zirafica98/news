@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { Kljuc } from './i18n';
-import { jeNovPosetilac } from './posetilac';
 
 const vesti = () => import('./pages/vesti-page').then((m) => m.VestiPage);
 const istrazivanje = () => import('./pages/istrazivanje-page').then((m) => m.IstrazivanjePage);
@@ -12,9 +11,9 @@ const vest = () => import('./pages/vest-page').then((m) => m.VestPage);
 const naslov = (kljuc: Kljuc) => ({ naslov: kljuc });
 
 export const routes: Routes = [
-  // Novi posetilac vidi početnu stranu (šta je AI Morning Brief + prijava); stalni čitalac i aplikacija idu pravo na izdanje.
-  { path: '', canMatch: [jeNovPosetilac], data: { vlastitiNaslov: true }, loadComponent: () => import('./pages/pocetna-page').then((m) => m.PocetnaPage) },
-  { path: '', data: naslov('nav.vesti'), loadComponent: vesti },
+  // Početna (šta je AI Morning Brief, današnje vesti vizuelno, prijava) je za sve; najnovije izdanje je na /danas.
+  { path: '', data: { vlastitiNaslov: true }, loadComponent: () => import('./pages/pocetna-page').then((m) => m.PocetnaPage) },
+  { path: 'danas', data: naslov('nav.vesti'), loadComponent: vesti },
   { path: 'istrazivanje', data: naslov('nav.istrazivanje'), loadComponent: istrazivanje },
   { path: 'ideje', data: naslov('nav.ideje'), loadComponent: ideje },
   { path: 'mreze', data: naslov('nav.mreze'), loadComponent: mreze },

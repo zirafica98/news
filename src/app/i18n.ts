@@ -78,6 +78,9 @@ const SR = {
   'sacuvaj.ukloni': 'Ukloni iz sačuvanog',
 
   'vesti.najbitnije': 'Najbitnije danas',
+  'vesti.ukratko': 'Ukratko',
+  'vesti.vise': 'Prikaži ceo pregled',
+  'vesti.besplatno': 'Besplatno',
   'vesti.velikaVest': 'Velika vest',
   'vesti.srbija': 'Srbija i region',
   'vesti.zastoJeBitno': 'Zašto je bitno:',
@@ -286,6 +289,9 @@ const EN: Record<Kljuc, string> = {
   'sacuvaj.ukloni': 'Remove from saved',
 
   'vesti.najbitnije': 'Top stories today',
+  'vesti.ukratko': 'In short',
+  'vesti.vise': 'Show the full summary',
+  'vesti.besplatno': 'Free',
   'vesti.velikaVest': 'Big news',
   'vesti.srbija': 'Serbia & region',
   'vesti.zastoJeBitno': 'Why it matters:',

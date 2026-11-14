@@ -1,4 +1,4 @@
-import { Component, computed, inject, runInInjectionContext, Injector } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { filter, map } from 'rxjs';
@@ -7,7 +7,6 @@ import { NewsletterPrijava } from './components/newsletter-prijava';
 import { PodesavanjaMeni } from './components/podesavanja-meni';
 import { Sekcija, putanjaSekcije } from './izdanje-ruta';
 import { PodesavanjaService } from './podesavanja.service';
-import { jeNovPosetilac, zapamtiCitaoca } from './posetilac';
 
 type Kartica = Sekcija | 'cene';
 
@@ -28,27 +27,15 @@ export class App {
     { initialValue: this.router.url },
   );
 
-  private readonly injector = inject(Injector);
-
-  /**
-   * Početna strana za nove posetioce (bez donje trake i bez druge prijave na dnu).
-   * Čim posetilac otvori bilo koju drugu stranu, pamti se kao čitalac.
-   */
-  protected readonly naPocetnoj = computed(() => {
-    const putanja = this.url().split(/[?#]/)[0];
-    if (putanja !== '/') {
-      zapamtiCitaoca();
-      return false;
-    }
-    return runInInjectionContext(this.injector, jeNovPosetilac);
-  });
+  /** Početna strana: šira, a prijava na newsletter je već u njoj. */
+  protected readonly naPocetnoj = computed(() => this.url().split(/[?#]/)[0] === '/');
 
   /** Kad gledaš staro izdanje, kartice ostaju na tom danu. */
   private readonly datum = computed(() => this.url().match(/^\/izdanje\/(\d{4}-\d{2}-\d{2})/)?.[1]);
 
   protected readonly aktivna = computed<Kartica | null>(() => {
     const putanja = this.url().split(/[?#]/)[0];
-    if (putanja.startsWith('/arhiva') || putanja.startsWith('/sacuvano')) return null;
+    if (putanja === '/' || putanja.startsWith('/arhiva') || putanja.startsWith('/sacuvano')) return null;
     if (putanja.endsWith('/istrazivanje')) return 'istrazivanje';
     if (putanja.endsWith('/ideje')) return 'ideje';
     if (putanja.endsWith('/mreze')) return 'mreze';
