@@ -75,7 +75,7 @@ async function napraviFeedISitemap() {
 
   const stavke = index
     .map((e) => {
-      const link = `${SAJT}/izdanje/${e.datum}`;
+      const link = `${SAJT}/brief/${e.datum}`;
       const opis = [e.ukratko, ...e.naslovi.map((n) => `• ${n}`)].join('\n');
       return `    <item>
       <title>AI News · ${esc(e.datum)}</title>
@@ -103,24 +103,24 @@ ${stavke}
 `,
   );
 
-  // /danas, /istrazivanje, /ideje i /mreze imaju canonical na dnevne strane (scripts/seo-strane.mjs), pa su ovde samo dnevne.
-  const strane = ['', '/cene', '/arhiva'];
+  // /today, /research, /ideas i /social imaju canonical na dnevne strane (scripts/seo-strane.mjs), pa su ovde samo dnevne.
+  const strane = ['/', '/prices', '/archive'];
   const url = (putanja, datum) => `  <url><loc>${SAJT}${putanja}</loc><lastmod>${datum}</lastmod></url>`;
   const danas = index[0]?.datum ?? datum;
-  // Sekcije dana i posebne strane vesti i alata (/izdanje/DATUM/vest/N, /novo/N) za sva izdanja.
+  // Sekcije dana i posebne strane vesti i alata (/brief/DATUM/story/N, /tool/N) za sva izdanja.
   const pojedinacne = [];
   for (const e of sviDani) {
-    for (const s of ['istrazivanje', 'ideje', 'mreze']) pojedinacne.push(url(`/izdanje/${e.datum}/${s}`, e.datum));
+    for (const s of ['research', 'ideas', 'social']) pojedinacne.push(url(`/brief/${e.datum}/${s}`, e.datum));
     const iz = await readJson(paths.izdanje(e.datum), null);
     if (!iz) continue;
-    iz.vesti.forEach((_, i) => pojedinacne.push(url(`/izdanje/${e.datum}/vest/${i}`, e.datum)));
-    (iz.novo ?? []).forEach((_, i) => pojedinacne.push(url(`/izdanje/${e.datum}/novo/${i}`, e.datum)));
+    iz.vesti.forEach((_, i) => pojedinacne.push(url(`/brief/${e.datum}/story/${i}`, e.datum)));
+    (iz.novo ?? []).forEach((_, i) => pojedinacne.push(url(`/brief/${e.datum}/tool/${i}`, e.datum)));
   }
   await writeFile(
     join(PUBLIC_DIR, 'sitemap.xml'),
     `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${[...strane.map((s) => url(s, danas)), ...sviDani.map((e) => url(`/izdanje/${e.datum}`, e.datum)), ...pojedinacne].join('\n')}
+${[...strane.map((s) => url(s, danas)), ...sviDani.map((e) => url(`/brief/${e.datum}`, e.datum)), ...pojedinacne].join('\n')}
 </urlset>
 `,
   );

@@ -20,7 +20,7 @@ import { SacuvanoService } from '../sacuvano.service';
   template: `
     @if (ruta.izdanje(); as iz) {
       <nav class="pt-5">
-        <a [routerLink]="['/izdanje', iz.datum]" class="text-sm text-slate-400 hover:text-white">← {{ t('vest.nazad') }} · <span class="first-letter:uppercase">{{ datumNaslov(iz.datum) }}</span></a>
+        <a [routerLink]="['/brief', iz.datum]" class="text-sm text-slate-400 hover:text-white">← {{ t('vest.nazad') }} · <span class="first-letter:uppercase">{{ datumNaslov(iz.datum) }}</span></a>
       </nav>
 
       <article class="mx-auto mt-5 max-w-3xl">
@@ -117,11 +117,11 @@ export class VestPage {
     const vesti = iz.vesti
       .map((v, i) => ({ v, i }))
       .filter(({ v, i }) => !(this.vrsta() === 'vest' && i === this.broj()) && (this.podesavanja.jezik() === 'sr' || !v.izSrbije))
-      .map(({ v, i }) => ({ naslov: v.naslov, link: ['/izdanje', iz.datum, 'vest', String(i)], slika: slikaVesti(iz.datum, i) }));
+      .map(({ v, i }) => ({ naslov: v.naslov, link: ['/brief', iz.datum, 'story', String(i)], slika: slikaVesti(iz.datum, i) }));
     const novo = iz.novo
       .map((n, i) => ({ n, i }))
       .filter(({ i }) => !(this.vrsta() === 'novo' && i === this.broj()))
-      .map(({ n, i }) => ({ naslov: n.naziv, link: ['/izdanje', iz.datum, 'novo', String(i)], slika: slikaNovo(iz.datum, i) }));
+      .map(({ n, i }) => ({ naslov: n.naziv, link: ['/brief', iz.datum, 'tool', String(i)], slika: slikaNovo(iz.datum, i) }));
     return [...vesti, ...novo].slice(0, 6);
   });
 

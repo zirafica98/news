@@ -44,7 +44,7 @@ webpush.setVapidDetails('mailto:zirafica.98@gmail.com', javni, privatni);
 const poruka = JSON.stringify({
   naslov: `☕ AI News · ${izdanje.vesti[0]?.naslov ?? 'novo izdanje'}`,
   telo: izdanje.ukratko.slice(0, 180),
-  url: `${SAJT}/izdanje/${datum}`,
+  url: `${SAJT}/brief/${datum}`,
   oznaka: `izdanje-${datum}`,
 });
 

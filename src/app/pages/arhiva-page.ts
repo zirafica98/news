@@ -78,7 +78,7 @@ function zaPoredjenje(tekst: string): string {
         @for (e of izdanja.index.value(); track e.datum) {
           <li>
             <a
-              [routerLink]="['/izdanje', e.datum]"
+              [routerLink]="['/brief', e.datum]"
               class="block rounded-2xl border border-slate-800/80 bg-slate-900/60 p-5 transition-colors hover:border-slate-600"
             >
               <p class="text-sm font-medium text-amber-400 first-letter:uppercase">{{ datum(e.datum) }}</p>

@@ -24,6 +24,73 @@
       "schedule": "0 15 * * 5"
     }
   ],
+  "redirects": [
+    {
+      "source": "/danas",
+      "destination": "/today",
+      "permanent": true
+    },
+    {
+      "source": "/istrazivanje",
+      "destination": "/research",
+      "permanent": true
+    },
+    {
+      "source": "/ideje",
+      "destination": "/ideas",
+      "permanent": true
+    },
+    {
+      "source": "/mreze",
+      "destination": "/social",
+      "permanent": true
+    },
+    {
+      "source": "/cene",
+      "destination": "/prices",
+      "permanent": true
+    },
+    {
+      "source": "/arhiva",
+      "destination": "/archive",
+      "permanent": true
+    },
+    {
+      "source": "/sacuvano",
+      "destination": "/saved",
+      "permanent": true
+    },
+    {
+      "source": "/izdanje/:datum/vest/:broj",
+      "destination": "/brief/:datum/story/:broj",
+      "permanent": true
+    },
+    {
+      "source": "/izdanje/:datum/novo/:broj",
+      "destination": "/brief/:datum/tool/:broj",
+      "permanent": true
+    },
+    {
+      "source": "/izdanje/:datum/istrazivanje",
+      "destination": "/brief/:datum/research",
+      "permanent": true
+    },
+    {
+      "source": "/izdanje/:datum/ideje",
+      "destination": "/brief/:datum/ideas",
+      "permanent": true
+    },
+    {
+      "source": "/izdanje/:datum/mreze",
+      "destination": "/brief/:datum/social",
+      "permanent": true
+    },
+    {
+      "source": "/izdanje/:datum",
+      "destination": "/brief/:datum",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/engine",

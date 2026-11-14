@@ -21,7 +21,7 @@ import { PodesavanjaService } from '../podesavanja.service';
       @case ('ne-postoji') {
         <div class="py-24 text-center">
           <p class="text-slate-300">{{ t('stanje.nePostoji') }}</p>
-          <a routerLink="/arhiva" class="mt-3 inline-block text-sm text-amber-400 hover:underline">{{ t('stanje.pogledajArhivu') }}</a>
+          <a routerLink="/archive" class="mt-3 inline-block text-sm text-amber-400 hover:underline">{{ t('stanje.pogledajArhivu') }}</a>
         </div>
       }
       @default {

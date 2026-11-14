@@ -38,7 +38,7 @@ interface Video {
           <app-newsletter-prijava [hero]="true" />
         </div>
         @if (najnovije(); as d) {
-          <a [routerLink]="['/izdanje', d]" class="mt-5 inline-flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-white">
+          <a [routerLink]="['/brief', d]" class="mt-5 inline-flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-white">
             {{ t('pocetna.citaj') }} <span aria-hidden="true">→</span>
           </a>
         }
@@ -67,12 +67,12 @@ interface Video {
             <h2 id="pocetna-danas" class="text-2xl font-bold text-white">{{ t('pocetna.danas') }}</h2>
             <p class="mt-1 text-sm text-slate-400 first-letter:uppercase">{{ datumNaslov(iz.datum) }}</p>
           </div>
-          <a [routerLink]="['/izdanje', iz.datum]" class="shrink-0 text-sm font-medium text-amber-400 hover:text-amber-300">{{ t('pocetna.sveVesti') }} →</a>
+          <a [routerLink]="['/brief', iz.datum]" class="shrink-0 text-sm font-medium text-amber-400 hover:text-amber-300">{{ t('pocetna.sveVesti') }} →</a>
         </div>
 
         <div class="mt-6 grid gap-5 lg:grid-cols-2">
           @if (vesti()[0]; as glavna) {
-            <a [routerLink]="['/izdanje', iz.datum, 'vest', glavna.i]" class="group block overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/60 hover:border-slate-700 lg:row-span-2">
+            <a [routerLink]="['/brief', iz.datum, 'story', glavna.i]" class="group block overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/60 hover:border-slate-700 lg:row-span-2">
               <app-slika-kartice [src]="slika(iz.datum, glavna.i)" [alt]="glavna.v.naslov" [hitno]="true" />
               <div class="p-5 lg:p-6">
                 <p class="text-xs font-semibold uppercase tracking-widest text-amber-400">{{ tIli('kategorija.' + glavna.v.kategorija, glavna.v.kategorija) }}</p>
@@ -83,7 +83,7 @@ interface Video {
           }
           <div class="grid gap-5 sm:grid-cols-2">
             @for (s of vesti().slice(1, 5); track s.i) {
-              <a [routerLink]="['/izdanje', iz.datum, 'vest', s.i]" class="group block overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/60 hover:border-slate-700">
+              <a [routerLink]="['/brief', iz.datum, 'story', s.i]" class="group block overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/60 hover:border-slate-700">
                 <app-slika-kartice [src]="slika(iz.datum, s.i)" [alt]="s.v.naslov" />
                 <div class="p-4">
                   <p class="text-[11px] font-semibold uppercase tracking-widest text-slate-500">{{ tIli('kategorija.' + s.v.kategorija, s.v.kategorija) }}</p>
@@ -98,7 +98,7 @@ interface Video {
       <!-- Alat dana -->
       @if (alat(); as a) {
         <section aria-labelledby="pocetna-alat" class="mt-12">
-          <a [routerLink]="['/izdanje', iz.datum, 'novo', a.i]" class="group grid overflow-hidden rounded-2xl border border-emerald-900/60 bg-emerald-950/20 hover:border-emerald-700/70 md:grid-cols-2">
+          <a [routerLink]="['/brief', iz.datum, 'tool', a.i]" class="group grid overflow-hidden rounded-2xl border border-emerald-900/60 bg-emerald-950/20 hover:border-emerald-700/70 md:grid-cols-2">
             <app-slika-kartice [src]="slikaAlata(iz.datum, a.i)" [alt]="a.n.naziv" />
             <div class="flex flex-col justify-center p-5 lg:p-8">
               <h2 id="pocetna-alat" class="text-xs font-bold uppercase tracking-widest text-emerald-400">🛠 {{ t('pocetna.alatDana') }}</h2>

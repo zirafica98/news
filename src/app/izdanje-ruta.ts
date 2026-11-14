@@ -6,10 +6,13 @@ export type Sekcija = 'vesti' | 'istrazivanje' | 'ideje' | 'mreze';
 
 export type StanjeIzdanja = 'nema-izdanja' | 'ucitava' | 'ne-postoji' | 'spremno';
 
-/** Link do sekcije za dati dan. Bez datuma vodi na najnovije izdanje (/danas, /istrazivanje…). */
+/** Deo adrese za sekciju; adrese su na engleskom (stare srpske preusmerava vercel.json). */
+export const SEGMENT: Record<Sekcija, string> = { vesti: 'today', istrazivanje: 'research', ideje: 'ideas', mreze: 'social' };
+
+/** Link do sekcije za dati dan. Bez datuma vodi na najnovije izdanje (/today, /research…). */
 export function putanjaSekcije(sekcija: Sekcija, datum?: string): string[] {
-  if (!datum) return [sekcija === 'vesti' ? '/danas' : `/${sekcija}`];
-  return sekcija === 'vesti' ? ['/izdanje', datum] : ['/izdanje', datum, sekcija];
+  if (!datum) return [`/${SEGMENT[sekcija]}`];
+  return sekcija === 'vesti' ? ['/brief', datum] : ['/brief', datum, SEGMENT[sekcija]];
 }
 
 /**

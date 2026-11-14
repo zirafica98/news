@@ -100,7 +100,7 @@ function strana({ put, naslov: puniNaslov, opis, slikaUrl = `${SAJT}/og.jpg`, ti
     .replace('<app-root></app-root>', `<app-root>${telo ? `<div class="mx-auto max-w-3xl px-4 py-10 text-slate-300">${navigacija}${telo}</div>` : ''}</app-root>`);
 }
 
-const navigacija = `<nav><a href="/">${IME}</a> · <a href="/danas">Today</a> · <a href="/istrazivanje">Research</a> · <a href="/ideje">Ideas</a> · <a href="/mreze">Social</a> · <a href="/cene">Prices</a> · <a href="/arhiva">Archive</a></nav>`;
+const navigacija = `<nav><a href="/">${IME}</a> · <a href="/today">Today</a> · <a href="/research">Research</a> · <a href="/ideas">Ideas</a> · <a href="/social">Social</a> · <a href="/prices">Prices</a> · <a href="/archive">Archive</a></nav>`;
 
 const napisane = [];
 async function napisi(put, html) {
@@ -129,8 +129,8 @@ const najnovije = izdanja[0];
 
 // ---------- Delovi tela ----------
 
-const linkVesti = (d, i, v) => `<li><a href="/izdanje/${d}/vest/${i}">${esc(v.naslov)}</a> — ${esc(skrati(v.zastoJeBitno, 140))}</li>`;
-const linkNovo = (d, i, n) => `<li><a href="/izdanje/${d}/novo/${i}">${esc(n.naziv)}</a> — ${esc(skrati(n.opis, 140))}</li>`;
+const linkVesti = (d, i, v) => `<li><a href="/brief/${d}/story/${i}">${esc(v.naslov)}</a> — ${esc(skrati(v.zastoJeBitno, 140))}</li>`;
+const linkNovo = (d, i, n) => `<li><a href="/brief/${d}/tool/${i}">${esc(n.naziv)}</a> — ${esc(skrati(n.opis, 140))}</li>`;
 
 function teloIzdanja(iz) {
   const d = iz.datum;
@@ -139,7 +139,7 @@ function teloIzdanja(iz) {
 <h2>Top stories</h2><ul>${iz.vesti.map((v, i) => linkVesti(d, i, v)).join('')}</ul>
 ${iz.novo.length ? `<h2>New AI tools to try</h2><ul>${iz.novo.map((n, i) => linkNovo(d, i, n)).join('')}</ul>` : ''}
 ${iz.kratkeVesti?.length ? `<h2>In brief</h2><ul>${iz.kratkeVesti.map((k) => `<li><a href="${esc(k.url)}" rel="noopener">${esc(k.naslov)}</a> (${esc(k.izvor)})</li>`).join('')}</ul>` : ''}
-<p><a href="/izdanje/${d}/istrazivanje">Research</a> · <a href="/izdanje/${d}/ideje">App ideas</a> · <a href="/izdanje/${d}/mreze">What people are talking about</a></p>`;
+<p><a href="/brief/${d}/research">Research</a> · <a href="/brief/${d}/ideas">App ideas</a> · <a href="/brief/${d}/social">What people are talking about</a></p>`;
 }
 
 function jsonldIzdanja(iz, put) {
@@ -156,10 +156,10 @@ function jsonldIzdanja(iz, put) {
       isPartOf: { '@id': `${SAJT}/#website` },
       mainEntity: {
         '@type': 'ItemList',
-        itemListElement: iz.vesti.map((v, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SAJT}/izdanje/${d}/vest/${i}`, name: v.naslov })),
+        itemListElement: iz.vesti.map((v, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SAJT}/brief/${d}/story/${i}`, name: v.naslov })),
       },
     },
-    mrvice([[IME, '/'], [datumTekst(d), `/izdanje/${d}`]]),
+    mrvice([[IME, '/'], [datumTekst(d), `/brief/${d}`]]),
   ];
 }
 
@@ -180,7 +180,7 @@ function jsonldIzdanja(iz, put) {
       ],
       telo: `<h1>${esc(SLOGAN)}</h1>
 <p>${esc(OPIS)}</p>
-${najnovije ? `<h2>Today's brief: ${esc(datumTekst(najnovije.datum))}</h2><p>${esc(najnovije.ukratko)}</p><ul>${vesti.map(({ v, i }) => linkVesti(najnovije.datum, i, v)).join('')}</ul><p><a href="/izdanje/${najnovije.datum}">Read the full brief</a></p>` : ''}
+${najnovije ? `<h2>Today's brief: ${esc(datumTekst(najnovije.datum))}</h2><p>${esc(najnovije.ukratko)}</p><ul>${vesti.map(({ v, i }) => linkVesti(najnovije.datum, i, v)).join('')}</ul><p><a href="/brief/${najnovije.datum}">Read the full brief</a></p>` : ''}
 <h2>Follow us</h2><ul>${MREZE.map(([n, u]) => `<li><a href="${u}" rel="noopener">${n}</a></li>`).join('')}</ul>`,
     }),
   );
@@ -189,21 +189,21 @@ ${najnovije ? `<h2>Today's brief: ${esc(datumTekst(najnovije.datum))}</h2><p>${e
 // Najnovije izdanje i sekcije bez datuma (sadržaj je isti kao dnevne strane, pa canonical ide na njih)
 if (najnovije) {
   const d = najnovije.datum;
-  await napisi('/danas', strana({ put: '/danas', canonical: `/izdanje/${d}`, naslov: `Today's AI news · ${IME}`, opis: skrati(najnovije.ukratko), slikaUrl: slika(d, 'vest', 0), jsonld: jsonldIzdanja(najnovije, `/izdanje/${d}`), telo: teloIzdanja(najnovije) }));
+  await napisi('/today', strana({ put: '/today', canonical: `/brief/${d}`, naslov: `Today's AI news · ${IME}`, opis: skrati(najnovije.ukratko), slikaUrl: slika(d, 'vest', 0), jsonld: jsonldIzdanja(najnovije, `/brief/${d}`), telo: teloIzdanja(najnovije) }));
 }
 
 const SEKCIJE = {
-  istrazivanje: {
+  research: {
     naslov: 'AI research of the day',
     opis: (iz) => skrati(`The most interesting AI papers of ${datumTekst(iz.datum)}, explained simply: ${iz.istrazivanje.map((r) => r.naslov).join('; ')}`),
     telo: (iz) => `<h1>AI research of the day</h1><p>The most interesting AI papers, explained simply.</p>${iz.istrazivanje.map((r) => `<article><h2>${esc(r.naslov)}</h2><p>${esc(r.objasnjenje)}</p><p>${esc(r.zastoJeZanimljivo)}</p><p><a href="${esc(r.url)}" rel="noopener">Paper</a>${r.github ? ` · <a href="${esc(r.github)}" rel="noopener">Code on GitHub</a>` : ''}</p></article>`).join('')}`,
   },
-  ideje: {
+  ideas: {
     naslov: 'AI app ideas for developers',
     opis: (iz) => skrati(`Five app ideas you could build with AI, inspired by the news of ${datumTekst(iz.datum)}: ${iz.ideje.map((i) => i.naziv).join('; ')}`),
     telo: (iz) => `<h1>Top 5 AI app ideas</h1><p>Inspired by today's news.</p>${iz.ideje.map((i) => `<article><h2>${esc(i.naziv)}</h2><p>${esc(i.problem)}</p><p>Who it's for: ${esc(i.zaKoga)}</p><p>How AI helps: ${esc(i.ulogaAi)}</p><ol>${i.prviKoraci.map((k) => `<li>${esc(k)}</li>`).join('')}</ol></article>`).join('')}`,
   },
-  mreze: {
+  social: {
     naslov: 'What developers are saying about AI',
     opis: (iz) => skrati(`The AI topics people are talking about on X, Reddit, Hacker News and YouTube: ${(iz.mreze?.teme ?? []).map((t) => t.naslov).join('; ')}`),
     telo: (iz) => `<h1>What people are talking about</h1>${(iz.mreze?.teme ?? []).map((t) => `<article><h2>${esc(t.naslov)}</h2><p>${esc(t.oCemuSePrica)}</p><p>${esc(t.glasovi)}</p></article>`).join('')}`,
@@ -213,17 +213,17 @@ const SEKCIJE = {
 for (const [sekcija, s] of Object.entries(SEKCIJE)) {
   if (najnovije) {
     const d = najnovije.datum;
-    await napisi(`/${sekcija}`, strana({ put: `/${sekcija}`, canonical: `/izdanje/${d}/${sekcija}`, naslov: `${s.naslov} · ${IME}`, opis: s.opis(najnovije), telo: s.telo(najnovije) }));
+    await napisi(`/${sekcija}`, strana({ put: `/${sekcija}`, canonical: `/brief/${d}/${sekcija}`, naslov: `${s.naslov} · ${IME}`, opis: s.opis(najnovije), telo: s.telo(najnovije) }));
   }
   for (const iz of izdanja) {
-    const put = `/izdanje/${iz.datum}/${sekcija}`;
+    const put = `/brief/${iz.datum}/${sekcija}`;
     await napisi(
       put,
       strana({
         put,
         naslov: `${s.naslov}, ${datumTekst(iz.datum)} · ${IME}`,
         opis: s.opis(iz),
-        jsonld: [mrvice([[IME, '/'], [datumTekst(iz.datum), `/izdanje/${iz.datum}`], [s.naslov, put]])],
+        jsonld: [mrvice([[IME, '/'], [datumTekst(iz.datum), `/brief/${iz.datum}`], [s.naslov, put]])],
         telo: s.telo(iz),
       }),
     );
@@ -233,33 +233,33 @@ for (const [sekcija, s] of Object.entries(SEKCIJE)) {
 // Cene, arhiva, sačuvano
 const cene = await readJson(join(KOREN, 'public/data/cene.json'), null);
 await napisi(
-  '/cene',
+  '/prices',
   strana({
-    put: '/cene',
+    put: '/prices',
     naslov: `AI model token prices, tracked daily · ${IME}`,
     opis: 'Compare input and output token prices of GPT, Claude, Gemini, DeepSeek, Qwen and other AI models. Updated every day from OpenRouter.',
     telo: `<h1>AI model token prices</h1><p>Which models are cheapest this week, tracked daily since ${esc(cene?.pratimoOd ?? '2026')}.</p>${najnovije?.cene ? `<p>${esc(najnovije.cene)}</p>` : ''}`,
   }),
 );
 await napisi(
-  '/arhiva',
+  '/archive',
   strana({
-    put: '/arhiva',
+    put: '/archive',
     naslov: `Archive of AI news briefs · ${IME}`,
     opis: 'Every AI Morning Brief edition: daily AI news, new tools, research and app ideas for developers.',
-    telo: `<h1>Archive</h1><ul>${izdanja.map((iz) => `<li><a href="/izdanje/${iz.datum}">${esc(datumTekst(iz.datum))}</a> — ${esc(skrati(iz.ukratko, 140))}</li>`).join('')}</ul>`,
+    telo: `<h1>Archive</h1><ul>${izdanja.map((iz) => `<li><a href="/brief/${iz.datum}">${esc(datumTekst(iz.datum))}</a> — ${esc(skrati(iz.ukratko, 140))}</li>`).join('')}</ul>`,
   }),
 );
-await napisi('/sacuvano', strana({ put: '/sacuvano', naslov: `Saved · ${IME}`, opis: OPIS, indeks: false }));
+await napisi('/saved', strana({ put: '/saved', naslov: `Saved · ${IME}`, opis: OPIS, indeks: false }));
 
 // Dnevna izdanja, vesti i alati
 for (const iz of izdanja) {
   const d = iz.datum;
-  const putIzdanja = `/izdanje/${d}`;
+  const putIzdanja = `/brief/${d}`;
   await napisi(putIzdanja, strana({ put: putIzdanja, naslov: `AI news, ${datumTekst(d)} · ${IME}`, opis: skrati(iz.ukratko), slikaUrl: slika(d, 'vest', 0), jsonld: jsonldIzdanja(iz, putIzdanja), telo: teloIzdanja(iz) }));
 
   for (const [i, v] of iz.vesti.entries()) {
-    const put = `/izdanje/${d}/vest/${i}`;
+    const put = `/brief/${d}/story/${i}`;
     const slikaUrl = slika(d, 'vest', i);
     await napisi(
       put,
@@ -298,7 +298,7 @@ for (const iz of izdanja) {
   }
 
   for (const [i, n] of iz.novo.entries()) {
-    const put = `/izdanje/${d}/novo/${i}`;
+    const put = `/brief/${d}/tool/${i}`;
     const slikaUrl = slika(d, 'novo', i);
     await napisi(
       put,

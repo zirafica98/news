@@ -62,7 +62,7 @@ import { SacuvanoService } from '../sacuvano.service';
                   <span class="text-slate-500">{{ tIli('kategorija.' + s.v.kategorija, s.v.kategorija) }}</span>
                 </div>
                 <h3 class="mt-2 font-bold leading-snug text-white group-hover:text-amber-100" [class.text-lg]="!prva" [class.text-2xl]="prva">
-                  <a [routerLink]="['/izdanje', iz.datum, 'vest', s.i]" class="after:absolute after:inset-0">{{ s.v.naslov }}</a>
+                  <a [routerLink]="['/brief', iz.datum, 'story', s.i]" class="after:absolute after:inset-0">{{ s.v.naslov }}</a>
                 </h3>
                 <p class="mt-2 text-sm leading-relaxed text-slate-400" [class.line-clamp-2]="!prva" [class.line-clamp-4]="prva">{{ s.v.zastoJeBitno }}</p>
                 <!-- Dugmad su iznad linka preko cele kartice -->
@@ -87,7 +87,7 @@ import { SacuvanoService } from '../sacuvano.service';
                 <div class="p-4">
                   <p class="text-[11px] font-semibold uppercase tracking-widest text-emerald-400">{{ tIli('tip.' + n.tip, n.tip) }}</p>
                   <h3 class="mt-1 text-lg font-bold leading-snug text-white group-hover:text-emerald-100">
-                    <a [routerLink]="['/izdanje', iz.datum, 'novo', $index]" class="after:absolute after:inset-0">{{ n.naziv }}</a>
+                    <a [routerLink]="['/brief', iz.datum, 'tool', $index]" class="after:absolute after:inset-0">{{ n.naziv }}</a>
                   </h3>
                   <div class="mt-3 flex flex-wrap gap-2 text-xs">
                     <span class="rounded-full bg-emerald-900/50 px-2.5 py-1 text-emerald-300">{{ cenaKratko(n.cena) }}</span>
