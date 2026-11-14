@@ -69,7 +69,8 @@ console.log(`Objavljeno: ${paths.izdanje(datum)} (u arhivi ukupno ${brojIzdanja}
 
 /** RSS feed i sitemap, da izdanja mogu da se prate čitačem i da sajt bude spreman ako postane javan. */
 async function napraviFeedISitemap() {
-  const index = (await readJson(paths.index, [])).slice(0, 30);
+  const sviDani = await readJson(paths.index, []);
+  const index = sviDani.slice(0, 30);
   const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
   const stavke = index
@@ -102,12 +103,14 @@ ${stavke}
 `,
   );
 
-  const strane = ['', '/istrazivanje', '/ideje', '/mreze', '/cene', '/arhiva'];
+  // /danas, /istrazivanje, /ideje i /mreze imaju canonical na dnevne strane (scripts/seo-strane.mjs), pa su ovde samo dnevne.
+  const strane = ['', '/cene', '/arhiva'];
   const url = (putanja, datum) => `  <url><loc>${SAJT}${putanja}</loc><lastmod>${datum}</lastmod></url>`;
   const danas = index[0]?.datum ?? datum;
-  // Posebne strane vesti i alata (/izdanje/DATUM/vest/N, /novo/N) za poslednjih 30 dana.
+  // Sekcije dana i posebne strane vesti i alata (/izdanje/DATUM/vest/N, /novo/N) za sva izdanja.
   const pojedinacne = [];
-  for (const e of index) {
+  for (const e of sviDani) {
+    for (const s of ['istrazivanje', 'ideje', 'mreze']) pojedinacne.push(url(`/izdanje/${e.datum}/${s}`, e.datum));
     const iz = await readJson(paths.izdanje(e.datum), null);
     if (!iz) continue;
     iz.vesti.forEach((_, i) => pojedinacne.push(url(`/izdanje/${e.datum}/vest/${i}`, e.datum)));
@@ -117,7 +120,7 @@ ${stavke}
     join(PUBLIC_DIR, 'sitemap.xml'),
     `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${[...strane.map((s) => url(s, danas)), ...index.map((e) => url(`/izdanje/${e.datum}`, e.datum)), ...pojedinacne].join('\n')}
+${[...strane.map((s) => url(s, danas)), ...sviDani.map((e) => url(`/izdanje/${e.datum}`, e.datum)), ...pojedinacne].join('\n')}
 </urlset>
 `,
   );

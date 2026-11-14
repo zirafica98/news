@@ -25,7 +25,7 @@ interface Video {
   imports: [RouterLink, NewsletterPrijava, SlikaKartice],
   template: `
     <!-- Hero -->
-    <section class="relative grid items-center gap-8 pb-10 pt-10 lg:grid-cols-[1fr_auto] lg:gap-12 lg:pb-16 lg:pt-16">
+    <section class="relative grid items-center gap-8 pb-10 pt-10 md:grid-cols-[1fr_auto] lg:gap-12 lg:pb-16 lg:pt-16">
       <div class="pointer-events-none absolute -right-24 -top-10 -z-10 size-[28rem] rounded-full bg-amber-500/10 blur-3xl" aria-hidden="true"></div>
       <div>
         <p class="text-xs font-bold uppercase tracking-[0.3em] text-amber-400">AI Morning Brief</p>
@@ -43,7 +43,7 @@ interface Video {
           </a>
         }
       </div>
-      <img src="/byte/wave.svg" alt="Byte, the AI Morning Brief robot" width="400" height="470" class="mx-auto hidden w-56 drop-shadow-[0_20px_60px_rgba(251,191,36,0.15)] sm:block lg:w-72" />
+      <img src="/byte/wave.svg" alt="Byte, the AI Morning Brief robot" width="400" height="470" class="mx-auto hidden w-44 drop-shadow-[0_20px_60px_rgba(251,191,36,0.15)] md:block lg:w-72" />
     </section>
 
     <!-- Šta dobijaš -->

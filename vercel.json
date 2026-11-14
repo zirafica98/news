@@ -1,5 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
   "outputDirectory": "dist/ai-jutro/browser",
   "crons": [
     {
@@ -30,7 +31,7 @@
     },
     {
       "source": "/((?!data/|api/|engine|.*\\..*).*)",
-      "destination": "/index.html"
+      "destination": "/app.html"
     }
   ],
   "headers": [
