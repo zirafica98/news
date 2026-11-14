@@ -45,7 +45,7 @@ if (!admin) {
 const rezim = process.env.REZIM || 'normalno';
 const ishod = process.env.ISHOD || 'unknown';
 // Nedeljni izveštaj sam šalje poruku; ovde se javlja samo ako posao nije uspeo.
-if (['nedeljni', 'alati-nedelje'].includes(rezim) && ishod === 'success') process.exit(0);
+if (['nedeljni', 'alati-nedelje', 'newsletter'].includes(rezim) && ishod === 'success') process.exit(0);
 const log = (await readFile(process.argv[2] ?? '', 'utf8').catch(() => ''))
   // Bez ANSI boja i GitHub vremenskih oznaka.
   .replace(/\x1b\[[0-9;]*m/g, '')
