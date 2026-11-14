@@ -26,6 +26,7 @@ import { promisify } from 'node:util';
 import ffmpeg from 'ffmpeg-static';
 import satori from 'satori';
 import sharp from 'sharp';
+import { hashtagovi } from './hashtagovi.mjs';
 import { BOJE, INSTA_DIR, KATEGORIJE, el, fontovi, izaberiVesti, opsegNedelje, skrati } from './insta-slike.mjs';
 import { DATA_DIR, SCRIPTS_DIR, datumIzArgumenata, readJson, writeJson } from './lib.mjs';
 
@@ -469,7 +470,7 @@ function scenarioVest(datum, vest, broj) {
     kraj,
     meta: {
       naslov: skrati(cist(vest.naslov), 95),
-      opis: [skrati(cist(vest.staSeDesilo), 300), `Why it matters: ${zasto}`, `Daily AI news in 30 seconds. Subscribe for tomorrow’s brief.\n${DRUSTVENE}`, HASHTAGOVI, oznaka].join('\n\n'),
+      opis: [skrati(cist(vest.staSeDesilo), 300), `Why it matters: ${zasto}`, `Daily AI news in 30 seconds. Subscribe for tomorrow’s brief.\n${DRUSTVENE}`, hashtagovi(HASHTAGOVI, `${vest.naslov} ${vest.staSeDesilo}`), oznaka].join('\n\n'),
       oznaka,
       plejlista: 'AI News in 30 Seconds',
       pitanje: PITANJA[vest.kategorija] ?? PITANJA.ostalo,
@@ -509,7 +510,7 @@ function scenarioAlat(datum, izdanje, redni = 0) {
         alat.cena ? `Price: ${cist(alat.cena)}` : '',
         alat.link ? `Official link: ${alat.link}` : '',
         `A new AI tool every day. ${DRUSTVENE}`,
-        '#AI #AITools #Developer #Shorts',
+        hashtagovi('#AI #AITools #Developer #Shorts', `${alat.naziv} ${opis}`),
         oznaka,
       ]
         .filter(Boolean)
@@ -629,7 +630,7 @@ function scenarioNedeljaShort(datum, izdanje) {
     kraj: { glas: 'Follow for the full recap every Saturday.', red1: 'The AI week,', red2: 'every Saturday.' },
     meta: {
       naslov: `This week in AI: ${skrati(naslovTacke(cist(tacke[0])), 60)} (${opseg.replace(/, \d{4}$/, '')})`,
-      opis: [cist(ukratko), tacke.map((t, i) => `${i + 1}. ${naslovTacke(cist(t))}`).join('\n'), `Full weekly recap on our channel every Saturday. ${DRUSTVENE}`, HASHTAGOVI, oznaka].join('\n\n'),
+      opis: [cist(ukratko), tacke.map((t, i) => `${i + 1}. ${naslovTacke(cist(t))}`).join('\n'), `Full weekly recap on our channel every Saturday. ${DRUSTVENE}`, hashtagovi(HASHTAGOVI, `${ukratko} ${tacke.join(' ')}`), oznaka].join('\n\n'),
       oznaka,
       plejlista: 'This Week in AI',
       pitanje: 'What was the biggest AI story of the week for you? 👇',
@@ -672,7 +673,7 @@ async function scenarioNedeljaDugi(datum, izdanje) {
     kraj: { glas: "That's the week in AI. Subscribe for daily AI news, and see you next Saturday.", red1: 'See you next Saturday.', red2: 'Daily AI news on Shorts.' },
     meta: {
       naslov: skrati(`This Week in AI: ${naslovTacke(cist(tacke[0]))} | ${opseg}`, 100),
-      opis: [cist(ukratko), '{POGLAVLJA}', `New AI news every day on our Shorts. ${DRUSTVENE}`, '#AI #AINews #ArtificialIntelligence #WeeklyRecap', oznaka].join('\n\n'),
+      opis: [cist(ukratko), '{POGLAVLJA}', `New AI news every day on our Shorts. ${DRUSTVENE}`, hashtagovi('#AI #AINews #ArtificialIntelligence #WeeklyRecap', `${ukratko} ${tacke.join(' ')}`), oznaka].join('\n\n'),
       oznaka,
       plejlista: 'This Week in AI',
       pitanje: 'What was the biggest AI story of the week for you? 👇',

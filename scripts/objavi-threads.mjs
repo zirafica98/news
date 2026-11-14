@@ -11,6 +11,7 @@
 
 import { readdir } from 'node:fs/promises';
 import { join } from 'node:path';
+import { temeHashtagovi } from './hashtagovi.mjs';
 import { INSTA_DIR, lepDatum, skrati } from './insta-slike.mjs';
 import { DATA_DIR, datumIzArgumenata, preuzmi, readJson } from './lib.mjs';
 
@@ -84,7 +85,8 @@ for (let pokusaj = 1; ; pokusaj++) {
 }
 
 const pocetak = `☕ ${oznaka}\n\n`;
-const kraj = '\n\n#AI';
+// Threads prikazuje samo jednu temu po objavi: glavna kompanija ili tema izdanja, inače #AI.
+const kraj = `\n\n${temeHashtagovi(`${izdanje.ukratko} ${(izdanje.vesti ?? []).map((v) => v.naslov).join(' ')}`, 1)[0] ?? '#AI'}`;
 const tekst = `${pocetak}${skrati(izdanje.ukratko, 500 - pocetak.length - kraj.length)}${kraj}`;
 
 const deca = [];

@@ -12,6 +12,7 @@ import { mkdir, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { VIDEO_DIR, naslovnaMs, ozvuci, renderuj, trajanje } from './byte-video.mjs';
 import { pitajClaude } from './claude.mjs';
+import { hashtagovi } from './hashtagovi.mjs';
 import { INSTA_DIR } from './insta-slike.mjs';
 import { DATA_DIR, SCRIPTS_DIR, datumIzArgumenata, readJson, writeJson } from './lib.mjs';
 
@@ -146,7 +147,7 @@ const stavka = {
     sc.opis,
     `Byte Explains: one AI term in 30 seconds, every day. ${DRUSTVENE}`,
     'Subscribe and understand AI in 30 seconds a day.',
-    '#AI #AIExplained #LearnAI #Shorts',
+    hashtagovi('#AI #AIExplained #LearnAI #Shorts', sc.opis),
     oznaka,
   ].join('\n\n'),
   oznaka,

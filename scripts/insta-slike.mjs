@@ -16,6 +16,7 @@ import { promisify } from 'node:util';
 import ffmpeg from 'ffmpeg-static';
 import satori from 'satori';
 import sharp from 'sharp';
+import { hashtagovi } from './hashtagovi.mjs';
 import { DATA_DIR, PUBLIC_DIR, SCRIPTS_DIR, datumIzArgumenata, readJson } from './lib.mjs';
 
 export const INSTA_DIR = join(PUBLIC_DIR, 'insta');
@@ -253,19 +254,19 @@ function slajdoviNedelje(izdanje) {
  * Naslov i opis Reela (i YouTube Short-a). oznaka je prvi red bez emodžija, po njoj se prepoznaje da je video već objavljen.
  * Opis nema link ka sajtu ni izvore.
  */
-export function opisReela(izdanje, hashtagovi) {
+export function opisReela(izdanje, osnova) {
   if (jeNedeljniReel(izdanje)) {
     const oznaka = `Weekly AI recap · ${opsegNedelje(izdanje.datum)}`;
     const tacke = izdanje.nedeljni.tacke.map((t, i) => {
       const dvotacka = t.indexOf(': ');
       return `${i + 1}. ${dvotacka > 0 && dvotacka < 120 ? t.slice(0, dvotacka) : skrati(t, 120)}`;
     });
-    const opis = [`🎬 ${oznaka}`, skrati(izdanje.nedeljni.ukratko, 900), `This week:\n${tacke.join('\n')}`, 'Follow for a new AI brief every morning ☕', hashtagovi];
+    const opis = [`🎬 ${oznaka}`, skrati(izdanje.nedeljni.ukratko, 900), `This week:\n${tacke.join('\n')}`, 'Follow for a new AI brief every morning ☕', hashtagovi(osnova, `${izdanje.nedeljni.ukratko} ${tacke.join(' ')}`)];
     return { oznaka, naslov: `This week in AI · ${opsegNedelje(izdanje.datum)}`, opis: opis.join('\n\n') };
   }
   const oznaka = `Today in AI · ${lepDatum(izdanje.datum)}`;
   const naslovi = izaberiVesti(izdanje).map((v, i) => `${i + 1}. ${v.naslov}`);
-  const opis = [`🎬 ${oznaka}`, skrati(izdanje.ukratko, 900), `Top ${naslovi.length}:\n${naslovi.join('\n')}`, `Follow for tomorrow's brief ☕`, hashtagovi];
+  const opis = [`🎬 ${oznaka}`, skrati(izdanje.ukratko, 900), `Top ${naslovi.length}:\n${naslovi.join('\n')}`, `Follow for tomorrow's brief ☕`, hashtagovi(osnova, `${izdanje.ukratko} ${naslovi.join(' ')}`)];
   return { oznaka, naslov: `AI news today: ${skrati(izaberiVesti(izdanje)[0].naslov, 70)}`, opis: opis.join('\n\n') };
 }
 

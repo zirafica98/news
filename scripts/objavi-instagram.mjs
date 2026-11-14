@@ -16,6 +16,7 @@
 
 import { readdir } from 'node:fs/promises';
 import { join } from 'node:path';
+import { hashtagovi } from './hashtagovi.mjs';
 import { INSTA_DIR, izaberiVesti, lepDatum, opisReela, skrati } from './insta-slike.mjs';
 import { DATA_DIR, datumIzArgumenata, preuzmi, readJson } from './lib.mjs';
 
@@ -147,7 +148,7 @@ await korak('post', async () => {
     skrati(izdanje.ukratko, 900),
     `Today's top ${naslovi.length}:\n${naslovi.join('\n')}`,
     `Follow for tomorrow's brief ☕`,
-    HASHTAGOVI,
+    hashtagovi(HASHTAGOVI, `${izdanje.ukratko} ${naslovi.join(' ')}`),
   ].join('\n\n');
 
   const deca = [];
@@ -207,7 +208,7 @@ function opisZaInstagram(v) {
   const odlomci = v.opis
     .split('\n\n')
     .filter((p) => !/Subscribe|#Shorts|Instagram & Threads|every day\.|every week\.|every Saturday|on our channel|^AI Morning Brief ·|^#/.test(p));
-  return [`🎬 ${v.naslov}`, ...odlomci, 'Follow @ai.morning.brief for daily AI news ☕', HASHTAGOVI, v.oznaka].join('\n\n');
+  return [`🎬 ${v.naslov}`, ...odlomci, 'Follow @ai.morning.brief for daily AI news ☕', hashtagovi(HASHTAGOVI, `${v.naslov} ${odlomci.join(' ')}`), v.oznaka].join('\n\n');
 }
 
 // 3. Story: isti slajdovi u 9:16, samo za današnje izdanje.

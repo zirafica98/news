@@ -12,6 +12,7 @@ import { mkdir, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { VIDEO_DIR, naslovnaMs, ozvuci, renderuj, snimiEkran, trajanje } from './byte-video.mjs';
 import { pitajClaude } from './claude.mjs';
+import { hashtagovi, tagAlata } from './hashtagovi.mjs';
 import { INSTA_DIR } from './insta-slike.mjs';
 import { DATA_DIR, SCRIPTS_DIR, datumIzArgumenata, readJson, writeJson } from './lib.mjs';
 
@@ -170,7 +171,7 @@ Also return:
       alat.cena ? `Price: ${cist(alat.cena)}` : '',
       alat.link ? `Official link: ${alat.link}` : '',
       `Tool of the Day: a new AI tool every day, explained by Byte. ${DRUSTVENE}`,
-      '#AI #AITools #Developer #Shorts',
+      hashtagovi(`${tagAlata(naziv)} #AI #AITools #Developer #Shorts`, `${alat.naziv} ${alat.opis}`),
       oznaka,
     ]
       .filter(Boolean)

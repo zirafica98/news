@@ -14,6 +14,7 @@ import { mkdir, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { VIDEO_DIR, naslovnaMs, ozvuci, renderuj, trajanje } from './byte-video.mjs';
 import { pitajClaude } from './claude.mjs';
+import { hashtagovi } from './hashtagovi.mjs';
 import { INSTA_DIR, izaberiVesti } from './insta-slike.mjs';
 import { DATA_DIR, SCRIPTS_DIR, datumIzArgumenata, readJson, writeJson } from './lib.mjs';
 
@@ -22,7 +23,8 @@ const IZRAZI = ['happy', 'shock', 'worried', 'skeptic', 'laugh', 'sly'];
 const RASPOLOZENJA = ['calm', 'sad', 'sly', 'shock'];
 const KARTICE = ['likovi', 'trake', 'grafik', 'broj', 'tekst', 'reflektor', 'mera', 'sucelje'];
 const LIKOVI = 'openai, google, anthropic, meta, microsoft, xai, nvidia, apple, amazon, mistral, deepseek, alibaba, perplexity, huggingface, github, cursor, samsung, tesla';
-const HASHTAGOVI = '#AI #AINews #AIWars #OpenAI #Google #Anthropic #Shorts';
+// Kompanije iz epizode (#OpenAI, #Nvidia…) dodaje hashtagovi() iz teksta, ovde su samo stalni.
+const HASHTAGOVI = '#AI #AINews #AIWars #Shorts';
 
 const datum = datumIzArgumenata();
 const izdanje = await readJson(join(DATA_DIR, 'en', `${datum}.json`), null);
@@ -164,7 +166,7 @@ const stavka = {
     sc.opis,
     'AI Wars: the race between OpenAI, Google, Anthropic and the rest, told as a story. One episode a day.',
     `Subscribe so you don’t miss episode ${broj + 1}.`,
-    HASHTAGOVI,
+    hashtagovi(HASHTAGOVI, `${sc.naslov} ${sc.opis}`),
     oznaka,
   ].join('\n\n'),
   oznaka,
