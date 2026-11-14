@@ -41,7 +41,7 @@ const poruka = stavke.length
           .filter(Boolean)
           .join('\n'),
       ).flatMap((t) => [t, '']),
-      'Izaberi jedan, probaj ga na stvarnom problemu i do nedelje se javi u chatu sa Claude-om sa svojim mišljenjem (i snimkom ekrana ako ga imaš), pa zajedno pravimo video.',
+      'Izaberi jedan, probaj ga na stvarnom problemu i do nedelje se javi u chatu sa Claude-om sa svojim mišljenjem (i snimkom ekrana ako ga imaš), pa zajedno pravimo video i tvoju objavu za X ("probao sam ovaj alat").',
     ].join('\n')
   : `🧑‍💻 Ove nedelje (${formatDatum(od)} – ${formatDatum(datum)}) nije bilo Tool of the Day videa.`;
 
