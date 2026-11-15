@@ -41,6 +41,10 @@ const vesti = izaberiVesti(izdanje).slice(0, 5);
 const alat = (izdanje.novo ?? [])
   .filter((n) => n.kakoProbati?.length)
   .sort((a, b) => Number(!['alat', 'projekat'].includes(a.tip)) - Number(!['alat', 'projekat'].includes(b.tip)))[0];
+// Dev's pick (nedeljni video sa Michaelom): nedelju dana posle izlaska, kad je YouTube link poznat.
+const { epizode: devsPick = [] } = await readJson(join(DATA_DIR, 'devs-pick.json'), {});
+const danaOd = (d) => (Date.parse(`${datum}T12:00:00Z`) - Date.parse(`${d}T12:00:00Z`)) / 86_400_000;
+const pick = devsPick.filter((p) => p.youtube && danaOd(p.objava) >= 0 && danaOd(p.objava) <= 6).at(-1);
 const lepDatum = new Intl.DateTimeFormat('en-GB', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' }).format(new Date(`${datum}T12:00:00Z`));
 const naslov = `☕ ${vesti[0]?.naslov ?? 'Your AI brief'}`.slice(0, 140);
 const html = napravi();
@@ -90,6 +94,19 @@ function napravi() {
     </td></tr>`
     : '';
 
+  const pickHtml = pick
+    ? `
+    <tr><td style="padding:6px 0 24px">
+      <div style="border:1px solid #fde68a;background:#fffbeb;border-radius:14px;padding:16px 18px">
+        <p style="margin:0 0 10px;font-size:12px;color:#b45309;text-transform:uppercase;letter-spacing:.08em;font-weight:700">🧑‍💻 Dev's Pick #${pick.broj} · a real developer tests it</p>
+        <a href="${e(pick.youtube)}"><img src="${SAJT}${e(pick.thumbnail)}" width="100%" alt="${e(pick.naslov)}" style="display:block;width:100%;border-radius:10px;margin:0 0 12px"></a>
+        <h2 style="margin:0 0 6px;font-size:18px;color:#0f172a">${e(pick.alat)} · ${pick.ocena}/10</h2>
+        <p style="margin:0 0 10px;font-size:15px;line-height:1.6;color:#334155">${e(pick.sazetak)}</p>
+        <p style="margin:0;font-size:14px"><a href="${e(pick.youtube)}" style="color:#b45309;font-weight:600">▶ Watch the test on YouTube ↗</a></p>
+      </div>
+    </td></tr>`
+    : '';
+
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${e(naslov)}</title></head>
 <body style="margin:0;background:#f1f5f9;font-family:-apple-system,'Helvetica Neue',Helvetica,Arial,sans-serif">
 <span style="display:none;max-height:0;overflow:hidden">${e(izdanje.ukratko).slice(0, 140)}</span>
@@ -104,7 +121,7 @@ function napravi() {
   </td></tr>
   <tr><td style="padding:18px 26px 0">
     <p style="margin:0 0 14px;font-size:12px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.12em">Top stories</p>
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0">${vesti.map(vest).join('')}${alatHtml}</table>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0">${vesti.map(vest).join('')}${alatHtml}${pickHtml}</table>
   </td></tr>
   <tr><td style="padding:0 26px 26px" align="center">
     <a href="${SAJT}" style="display:inline-block;background:#0f172a;color:#ffffff;padding:12px 22px;border-radius:12px;font-weight:600;font-size:14px;text-decoration:none">Read the full brief</a>

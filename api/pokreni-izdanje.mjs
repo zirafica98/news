@@ -2,7 +2,9 @@
 //   ujutru bez parametra (rezim normalno) — pravi izdanje,
 //   popodne sa ?rezim=drustvene — objava na Instagram, Threads, YouTube i Telegram, kad je jutro u SAD,
 //   ponedeljkom sa ?rezim=nedeljni — nedeljni izveštaj o formatima i pratiocima na Telegram,
-//   petkom sa ?rezim=alati-nedelje — lista alata te nedelje na Telegram, za Dev's pick video.
+//   petkom sa ?rezim=alati-nedelje — lista alata te nedelje na Telegram, za Dev's pick video,
+//   svako jutro sa ?rezim=podsetnik — šta Mihajlo danas treba ručno da uradi (posao „Podsetnik i Dev's pick“),
+//   utorkom sa ?rezim=devs-pick — kad Dev's pick video izađe, Instagram objava i X tekst na Telegram (isti posao).
 // GitHub-ovi zakazani poslovi za ovaj repo kasne satima ili se ne pokrenu, pa je okidač ovde.
 //
 // Potrebne promenljive u Vercel projektu (Settings → Environment Variables):
@@ -11,7 +13,9 @@
 
 const REPO = 'zirafica98/news';
 const WORKFLOW = 'jutro.yml';
-const DOZVOLJENI_REZIMI = ['normalno', 'drustvene', 'nedeljni', 'alati-nedelje'];
+const DOZVOLJENI_REZIMI = ['normalno', 'drustvene', 'nedeljni', 'alati-nedelje', 'podsetnik', 'devs-pick'];
+// Ovi režimi idu u poseban, mali posao, da ne čekaju u redu iza jutarnjeg izdanja.
+const POSEBAN_POSAO = { podsetnik: 'podsetnik.yml', 'devs-pick': 'podsetnik.yml' };
 
 export async function GET(request) {
   const secret = process.env.CRON_SECRET;
@@ -30,7 +34,7 @@ export async function GET(request) {
     return new Response(`Nepoznat režim: ${rezim}`, { status: 400 });
   }
 
-  const res = await fetch(`https://api.github.com/repos/${REPO}/actions/workflows/${WORKFLOW}/dispatches`, {
+  const res = await fetch(`https://api.github.com/repos/${REPO}/actions/workflows/${POSEBAN_POSAO[rezim] ?? WORKFLOW}/dispatches`, {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${token}`,
@@ -47,6 +51,6 @@ export async function GET(request) {
     return new Response(`GitHub je odbio pokretanje (HTTP ${res.status})`, { status: 502 });
   }
 
-  console.log(`Posao „Jutarnje izdanje“ pokrenut na GitHub-u (režim ${rezim}).`);
+  console.log(`Posao ${POSEBAN_POSAO[rezim] ?? WORKFLOW} pokrenut na GitHub-u (režim ${rezim}).`);
   return new Response('Pokrenuto', { status: 200 });
 }

@@ -117,6 +117,12 @@ if (rezim === 'notifikacija') {
 // Greške iz jutarnje skripte i nepredviđeni padovi.
 for (const g of log.filter((l) => /GREŠKA \(kod/.test(l)).slice(0, 2)) redovi.push(`❌ ${skrati(g)}`);
 
+// Podsetnik i Dev's pick: poslednja greška iz loga.
+if (['podsetnik', 'devs-pick'].includes(rezim)) {
+  const g = [...log].reverse().find((l) => /Error|Greška|nije /.test(l));
+  if (g) redovi.push(`❌ ${skrati(g)}`);
+}
+
 const naslovi = {
   normalno: '☕ Jutarnje izdanje',
   ponovo: '☕ Izdanje (ponovo)',
@@ -129,6 +135,8 @@ const naslovi = {
   'instagram-token': '🔑 Instagram token',
   nedeljni: '📊 Nedeljni izveštaj',
   'alati-nedelje': '🧑‍💻 Alati nedelje',
+  podsetnik: '☀️ Jutarnji podsetnik',
+  'devs-pick': "🎬 Dev's pick objava",
 };
 const datum = new Intl.DateTimeFormat('sr-Latn-RS', { timeZone: 'Europe/Belgrade', day: 'numeric', month: 'numeric', hour: '2-digit', minute: '2-digit' }).format(new Date());
 const status = ishod === 'success' ? '✅' : ishod === 'cancelled' ? '⏹' : '❌';

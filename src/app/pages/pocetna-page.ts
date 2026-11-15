@@ -8,6 +8,16 @@ import { formatDatum } from '../izdanje.model';
 import { izdanjeZaRutu } from '../izdanje-ruta';
 import { PodesavanjaService } from '../podesavanja.service';
 
+interface DevsPick {
+  broj: number;
+  alat: string;
+  ocena: number;
+  naslov: string;
+  sazetak: string;
+  thumbnail: string;
+  youtube: string | null;
+}
+
 interface Video {
   id: string;
   naslov: string;
@@ -111,6 +121,23 @@ interface Video {
       }
     }
 
+    <!-- Dev's pick: poslednji nedeljni video u kome developer testira alat (public/data/devs-pick.json) -->
+    @if (devsPick(); as p) {
+      <section aria-labelledby="pocetna-devs-pick" class="mt-14">
+        <a [href]="p.youtube" target="_blank" rel="noopener" class="group grid overflow-hidden rounded-2xl border border-amber-900/60 bg-amber-950/10 hover:border-amber-600/70 md:grid-cols-2">
+          <img [src]="p.thumbnail" [alt]="p.naslov" loading="lazy" class="aspect-video w-full object-cover" />
+          <div class="flex flex-col justify-center p-5 lg:p-8">
+            <h2 id="pocetna-devs-pick" class="text-xs font-bold uppercase tracking-widest text-amber-400">
+              🧑‍💻 Dev's Pick #{{ p.broj }} · {{ podesavanja.jezik() === 'sr' ? 'pravi developer testira alat' : 'a real developer tests it' }}
+            </h2>
+            <p class="mt-2 text-2xl font-bold text-white group-hover:text-amber-100">{{ p.alat }} · {{ p.ocena }}/10</p>
+            <p class="mt-2 line-clamp-3 leading-relaxed text-slate-300">{{ p.sazetak }}</p>
+            <p class="mt-4 text-sm font-medium text-amber-400">▶ {{ podesavanja.jezik() === 'sr' ? 'Pogledaj test na YouTube-u' : 'Watch the test on YouTube' }} ↗</p>
+          </div>
+        </a>
+      </section>
+    }
+
     <!-- Videi -->
     @if (videi().length) {
       <section aria-labelledby="pocetna-videi" class="mt-14">
@@ -151,7 +178,7 @@ interface Video {
 })
 export class PocetnaPage {
   private readonly izdanja = inject(IzdanjaService);
-  private readonly podesavanja = inject(PodesavanjaService);
+  protected readonly podesavanja = inject(PodesavanjaService);
   protected readonly t = this.podesavanja.t;
   protected readonly tIli = this.podesavanja.tIli;
 
@@ -177,6 +204,10 @@ export class PocetnaPage {
 
   private readonly videiResurs = httpResource<Video[]>(() => 'data/videi.json', { defaultValue: [] });
   protected readonly videi = computed(() => (this.videiResurs.hasValue() ? this.videiResurs.value().slice(0, 6) : []));
+
+  private readonly devsPickResurs = httpResource<{ epizode: DevsPick[] }>(() => 'data/devs-pick.json', { defaultValue: { epizode: [] } });
+  /** Najnovija Dev's pick epizoda koja je izašla (ima YouTube link). */
+  protected readonly devsPick = computed(() => (this.devsPickResurs.hasValue() ? this.devsPickResurs.value().epizode.filter((e) => e.youtube).at(-1) : undefined));
 
   protected readonly funkcije = [
     { ikona: '📰', naslov: 'pocetna.f1' as const, opis: 'pocetna.f1opis' as const },
