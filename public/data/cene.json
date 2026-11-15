@@ -1,6 +1,6 @@
 {
-  "datum": "2026-11-14",
-  "azurirano": "2026-11-14T03:03:45.399Z",
+  "datum": "2026-11-15",
+  "azurirano": "2026-11-15T03:03:55.399Z",
   "izvor": {
     "naziv": "OpenRouter",
     "url": "https://openrouter.ai/models"
@@ -126,8 +126,8 @@
             "izlaz": 0
           },
           "promena30": {
-            "ulaz": -57.3,
-            "izlaz": 6.7
+            "ulaz": -52.6,
+            "izlaz": 3.6
           },
           "prethodnik": {
             "naziv": "Kimi K2.6",
@@ -173,18 +173,18 @@
           "id": "openai/gpt-5.6-sol",
           "naziv": "GPT-5.6 Sol",
           "provajder": "openai",
-          "ulaz": 4,
-          "izlaz": 20,
+          "ulaz": 4.4,
+          "izlaz": 22,
           "objavljen": "2026-07-09",
           "kontekst": 1050000,
-          "kesUlaz": 0.4,
+          "kesUlaz": 0.44,
           "promena7": {
-            "ulaz": 0,
-            "izlaz": 0
+            "ulaz": 10,
+            "izlaz": 10
           },
           "promena30": {
-            "ulaz": 0,
-            "izlaz": 0
+            "ulaz": 10,
+            "izlaz": 10
           },
           "prethodnik": null
         },
@@ -202,8 +202,8 @@
             "izlaz": 0
           },
           "promena30": {
-            "ulaz": 10,
-            "izlaz": 10
+            "ulaz": 0,
+            "izlaz": 0
           },
           "prethodnik": {
             "naziv": "Gemini 3.7 Flash",
@@ -223,8 +223,8 @@
           "kontekst": 1048576,
           "kesUlaz": 0.097,
           "promena7": {
-            "ulaz": -4.7,
-            "izlaz": -4.7
+            "ulaz": 0,
+            "izlaz": 0
           },
           "promena30": {
             "ulaz": -91.6,
@@ -378,15 +378,15 @@
             "izlaz": -64.2
           },
           "promena30": {
-            "ulaz": 220.9,
-            "izlaz": -77.2
+            "ulaz": 252.1,
+            "izlaz": -70.4
           },
           "prethodnik": {
             "naziv": "DeepSeek V4 Flash 0731",
-            "ulaz": 0.0434,
-            "izlaz": 0.3,
-            "razlikaUlaz": 16.8,
-            "razlikaIzlaz": -32.4
+            "ulaz": 0.06,
+            "izlaz": 0.18,
+            "razlikaUlaz": -15.5,
+            "razlikaIzlaz": 12.7
           }
         },
         {
@@ -424,12 +424,12 @@
           "kontekst": 1048576,
           "kesUlaz": 0.03,
           "promena7": {
-            "ulaz": -73.4,
-            "izlaz": -84.3
+            "ulaz": 19.1,
+            "izlaz": -5.5
           },
           "promena30": {
-            "ulaz": 10.8,
-            "izlaz": -91.3
+            "ulaz": -73.4,
+            "izlaz": -84.3
           },
           "prethodnik": null
         },
@@ -456,6 +456,56 @@
     }
   ],
   "promene": [
+    {
+      "id": "deepseek/deepseek-r1-0528",
+      "datum": "2026-11-15",
+      "ulazPre": 0.5,
+      "izlazPre": 2.15,
+      "ulaz": 0.571,
+      "izlaz": 2.286,
+      "naziv": "R1 0528",
+      "provajder": "deepseek"
+    },
+    {
+      "id": "deepseek/deepseek-v4-flash-0731",
+      "datum": "2026-11-15",
+      "ulazPre": 0.0434,
+      "izlazPre": 0.3,
+      "ulaz": 0.06,
+      "izlaz": 0.18,
+      "naziv": "DeepSeek V4 Flash 0731",
+      "provajder": "deepseek"
+    },
+    {
+      "id": "openai/gpt-5.6-sol",
+      "datum": "2026-11-15",
+      "ulazPre": 4,
+      "izlazPre": 20,
+      "ulaz": 4.4,
+      "izlaz": 22,
+      "naziv": "GPT-5.6 Sol",
+      "provajder": "openai"
+    },
+    {
+      "id": "qwen/qwen3.5-9b",
+      "datum": "2026-11-15",
+      "ulazPre": 0.14,
+      "izlazPre": 0.206,
+      "ulaz": 0.076,
+      "izlaz": 0.112,
+      "naziv": "Qwen3.5-9B",
+      "provajder": "qwen"
+    },
+    {
+      "id": "z-ai/glm-4.7",
+      "datum": "2026-11-15",
+      "ulazPre": 0.6,
+      "izlazPre": 2.2,
+      "ulaz": 0.4,
+      "izlaz": 1.75,
+      "naziv": "GLM 4.7",
+      "provajder": "z-ai"
+    },
     {
       "id": "deepseek/deepseek-chat",
       "datum": "2026-11-14",
@@ -605,56 +655,6 @@
       "izlaz": 8.4114,
       "naziv": "Kimi K3.1 Pro",
       "provajder": "moonshotai"
-    },
-    {
-      "id": "openai/gpt-oss-20b",
-      "datum": "2026-11-13",
-      "ulazPre": 0.018,
-      "izlazPre": 0.09,
-      "ulaz": 0.03,
-      "izlaz": 0.13,
-      "naziv": "gpt-oss-20b",
-      "provajder": "openai"
-    },
-    {
-      "id": "qwen/qwen3-14b",
-      "datum": "2026-11-13",
-      "ulazPre": 0.1,
-      "izlazPre": 0.22,
-      "ulaz": 0.12,
-      "izlaz": 0.24,
-      "naziv": "Qwen3 14B",
-      "provajder": "qwen"
-    },
-    {
-      "id": "qwen/qwen3.5-9b",
-      "datum": "2026-11-13",
-      "ulazPre": 0.118,
-      "izlazPre": 0.174,
-      "ulaz": 0.093,
-      "izlaz": 0.136,
-      "naziv": "Qwen3.5-9B",
-      "provajder": "qwen"
-    },
-    {
-      "id": "z-ai/glm-5.3",
-      "datum": "2026-11-13",
-      "ulazPre": 0.0699,
-      "izlazPre": 1.4,
-      "ulaz": 0.084,
-      "izlaz": 3.6,
-      "naziv": "GLM 5.3",
-      "provajder": "z-ai"
-    },
-    {
-      "id": "deepseek/deepseek-v4.1-flash",
-      "datum": "2026-11-12",
-      "ulazPre": 0.051,
-      "izlazPre": 0.567,
-      "ulaz": 0.022,
-      "izlaz": 0.4,
-      "naziv": "DeepSeek V4.1 Flash",
-      "provajder": "deepseek"
     }
   ],
   "noviModeli": [
