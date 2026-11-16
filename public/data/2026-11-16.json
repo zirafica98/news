@@ -1,0 +1,484 @@
+{
+  "datum": "2026-11-16",
+  "generisano": "2026-11-16T03:08:08.372Z",
+  "model": "claude-opus-5-5",
+  "ukratko": "Nedelja je mirno počela, a najkonkretnija vest stiže iz Kine: Meituan je pod MIT licencom objavio težine modela LongCat-2.5 od 1,6 biliona parametara za agente, treniranog bez ijednog Nvidia čipa. Afera oko Jensena Huanga se širi: firma povezana sa njim navodno je posredovala u porudžbinama čipova za Kinu vrednim skoro 12 milijardi dolara, a Kongres traži strože izvozne propise. Zajednica je ceo vikend pokazivala šta je napravila sa Claude Fable 5.2, od jezičkog modela koji staje na disketu do slika koje model doslovno slika potezima četkice.",
+  "vesti": [
+    {
+      "naslov": "Meituan LongCat-2.5: otvoreni model za agente od 1,6 biliona parametara, bez Nvidia čipova",
+      "staSeDesilo": "Meituan je objavio težine modela LongCat-2.5 pod MIT licencom, a dostupna je i 4-bitna verzija. Model je napravljen za agente, to jest AI koji sam izvršava korake, i treniran je isključivo na kineskom hardveru: primer pokretanja koristi 194 Huawei Ascend čipa. Na Terminal Bench v2.1 dobija 88,4 poena, odmah iza Claude Opus 5 (89,1), ali to su brojke samog Meituana.",
+      "zastoJeBitno": "API prima pozive u OpenAI i Anthropic formatu, pa ga možeš uključiti u Claude Code ili Codex, a promotivna cena je oko 0,27 € za milion ulaznih i 1,07 € za milion izlaznih tokena. Ujedno je to dokaz da Kina pravi modele blizu vrha i bez američkih čipova.",
+      "kategorija": "modeli",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/meituan-releases-a-1-6-trillion-parameter-agent-model-that-never-touched-an-nvidia-gpu/"
+        }
+      ]
+    },
+    {
+      "naslov": "Afera Huang: 12 milijardi dolara u porudžbinama za Kinu, priče o povratku i pritisak Kongresa",
+      "staSeDesilo": "Prema WSJ-u, Megaspeed, firma bivše partnerke smenjenog šefa Nvidia-e Jensena Huanga, posredovala je 2024. i 2025. u porudžbinama Nvidia čipova za kineske kompanije vrednim skoro 12 milijardi dolara. Short seller Culper Research tvrdi da je stvarni udeo Kine u prihodima Nvidia-e veći od 20%, a ne zvaničnih 7%. Istovremeno kruže glasine da Huang razgovara sa saveznicima o povratku, javno pismo „vratite Jensena“ podržali su Elon Musk i Tim Sweeney, a demokrate i republikanci u Kongresu traže da Huang svedoči i najavljuju strože izvozne propise za AI čipove.",
+      "zastoJeBitno": "Strožija izvozna pravila utiču na to ko može da trenira velike modele i koliko koštaju GPU-ovi. Priča o povratku je za sada glasina.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/firm-linked-to-jensen-huangs-ex-lover-reportedly-brokered-nearly-12-billion-in-nvidia-chip-orders-for-china/"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/tech/1033999/jensen-huang-return-nvidia-megaspeed"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1033984/congress-export-rules-ai-chips-china"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/15/is-bad-news-for-jensen-huang-also-bad-news-for-the-ai-industry/"
+        }
+      ]
+    },
+    {
+      "naslov": "Bland Tofu-1: glasovni model koji sluša dok govori, napravljen za telefonske pozive",
+      "staSeDesilo": "Bland je u istraživačkom pregledu pustio Tofu-1, „full-duplex“ speech-to-speech model, to jest model koji istovremeno sluša i govori i radi direktno sa zvukom, bez pretvaranja u tekst između. Cilj su pozivi iz kola, bolnica i sa lošim signalom, a model razlikuje govornike i odvaja šum. Arhitektura nije objavljena.",
+      "zastoJeBitno": "Većina glasovnih agenata danas radi u tri koraka (govor u tekst, LLM, tekst u govor), pa kasni i ne čuje ton glasa. Ako ovakvi modeli postanu dostupni preko API-ja, glasovne aplikacije postaju jednostavnije za pravljenje. Za pristup i cenu proveri na linku.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/11/15/bland-tofu-1-full-duplex-speech-to-speech-model/"
+        }
+      ]
+    },
+    {
+      "naslov": "Claude Fable 5.2 ne generiše slike, nego ih slika potezima četkice",
+      "staSeDesilo": "Zaposleni u Anthropic-u pokazali su da Fable 5.2 pravi slike tako što piše Python programe od 1.000 do 2.000 linija koji upravljaju simulacijom četkice, boje i platna. Za jednu fotorealističnu scenu garaže trebalo je oko 700.000 poteza. Potez se ne može poništiti, pa model između prolaza gleda platno i ispravlja greške preko njih.",
+      "zastoJeBitno": "Ovo je demonstracija, ne nova funkcija u aplikaciji. Ipak pokazuje koliko dugo i samostalno model može da radi na jednom vizuelnom zadatku kroz kod, i to važi i za generisanje SVG-a, grafikona i UI-ja.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/anthropics-claude-fable-5-2-doesnt-generate-images-it-paints-them/"
+        }
+      ]
+    },
+    {
+      "naslov": "Apple pokrenuo veliku studiju o tome kako ljudi koriste AI za zdravlje",
+      "staSeDesilo": "Apple je sa OpenEvidence-om pokrenuo Apple Health AI Usage Study: učesnici kroz novu iOS aplikaciju postavljaju medicinska pitanja, dobijaju odgovore zasnovane na izvorima kao što su NEJM i JAMA i ocenjuju ih. Studija traje više od 12 meseci, a cilj je do 200.000 učesnika. Za sada je samo za SAD, za osobe od 21 godine i iPhone 15 ili noviji sa iOS 26 i uključenim Apple Intelligence-om.",
+      "zastoJeBitno": "Ovo je jasan znak da Apple sprema zdravstvene AI funkcije zasnovane na HealthKit podacima. Ako praviš iOS aplikacije za zdravlje i fitnes, očekuj da će Apple uskoro postaviti merila za to kako izgleda „pouzdan“ zdravstveni odgovor.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/15/apple-launches-new-app-to-study-how-people-use-ai-for-health/"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/tech/1033355/apples-new-study-looks-to-improve-the-effectiveness-of-ai-health-tools"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI otvorio blog za nauku, uz dokaz iz fizike rađen sa GPT-6 Astra",
+      "staSeDesilo": "OpenAI je pokrenuo poseban blog o naučnim otkrićima u kojima je pomogao AI. Prvi tekst opisuje kandidat za neperturbativnu definiciju Standardnog modela fizike na rešetki i to kako je GPT-6 Astra pomogao da se ideja razradi u detaljan dokaz.",
+      "zastoJeBitno": "Posle sličnih priča iz Anthropic-a i DeepMind-a, laboratorije se sada otvoreno takmiče i u tome čiji model pravi naučne rezultate. Za programere je ovo više signal pravca nego alat.",
+      "kategorija": "istrazivanje",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "OpenAI",
+          "url": "https://openai.com/index/step-toward-defining-the-standard-model"
+        },
+        {
+          "naziv": "OpenAI",
+          "url": "https://openai.com/index/our-new-blog-for-science"
+        }
+      ]
+    },
+    {
+      "naslov": "Centralna banka Australije: AI prvo pogađa mlade programere i korisničku podršku",
+      "staSeDesilo": "Australijska centralna banka vidi rane znake da AI pogađa mlade radnike na početnim pozicijama u izloženim poslovima. Od izlaska ChatGPT-a broj oglasa i zaposlenih od 15 do 24 godine u razvoju softvera i korisničkoj podršci pao je više nego kod starijih. Autor analize upozorava da deo pada mogu objasniti i privredni ciklus i rad na daljinu.",
+      "zastoJeBitno": "Ovo je jedna od ozbiljnijih analiza na ovu temu, a zaključak je oprezan. Za juniore u IT-u ovo je još jedan podatak da se početne pozicije menjaju.",
+      "kategorija": "ostalo",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/australias-central-bank-finds-ai-hitting-young-workers-first-especially-in-software-and-customer-service/"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "LongCat-2.5",
+      "tip": "model",
+      "opis": "Otvoreni Meituan-ov model za agente sa kontekstom do milion ulaznih tokena i do 128.000 izlaznih. API je kompatibilan sa OpenAI i Anthropic formatom, pa radi sa Claude Code-om i Codex-om.",
+      "kakoProbati": [
+        "Za brzu probu otvori chat na longcat.ai.",
+        "Za API napravi nalog na LongCat platformi i podesi base URL u Anthropic formatu (tačan URL proveri na linku).",
+        "Težine su na huggingface.co/meituan-longcat/LongCat-2.5, ali za 1,6 biliona parametara treba ozbiljan klaster, ne laptop."
+      ],
+      "link": "https://huggingface.co/meituan-longcat/LongCat-2.5",
+      "cena": "Težine besplatne (MIT), API promotivno oko 0,27 € / 1,07 € za 1M tokena (ulaz/izlaz)"
+    },
+    {
+      "naziv": "AG-UI protokol",
+      "tip": "projekat",
+      "opis": "Otvoreni protokol zasnovan na događajima koji standardizuje kako agent šalje stanje i akcije u frontend aplikaciju. Ove nedelje je među popularnima na GitHub Trending-u.",
+      "kakoProbati": [
+        "Pokreni `npx create-ag-ui-app my-agent-app`.",
+        "U AG-UI Dojo-u pogledaj primere integracija.",
+        "Probaj da povežeš sopstveni Angular frontend sa agentom preko event stream-a."
+      ],
+      "link": "https://github.com/ag-ui-protocol/ag-ui",
+      "cena": "besplatno"
+    },
+    {
+      "naziv": "Univer Office SDK",
+      "tip": "alat",
+      "opis": "Open-source tabele i dokumenti koje ugrađuješ u svoju aplikaciju, sa API-jem preko kog i AI agent može da menja sadržaj.",
+      "kakoProbati": [
+        "Otvori Showcase na univer.ai i probaj tabelu u pregledaču.",
+        "Prati Quick start u README-u da je ubaciš u web projekat.",
+        "Kroz Facade API pusti agenta da upisuje vrednosti i formule."
+      ],
+      "link": "https://github.com/dream-num/univer",
+      "cena": "Otvoreno jezgro besplatno, za plaćene delove proveri na linku"
+    },
+    {
+      "naziv": "Tencent LoopForge",
+      "tip": "alat",
+      "opis": "Radni prostor koji instaliraš na svoj server i koji vodi Claude Code, Codex i CodeBuddy kroz skripte i korake gde čovek mora da odobri. Svaki zadatak radi u Docker sandbox-u.",
+      "kakoProbati": [
+        "Pogledaj snimak od 80 sekundi u README-u.",
+        "Prati Quick start (potreban je Docker).",
+        "Zadaj zadatak Main Bot-u u chatu i odobri izmene pre merge-a."
+      ],
+      "link": "https://github.com/Tencent/LoopForge",
+      "cena": "besplatno (open source), plus trošak modela koje koristiš"
+    },
+    {
+      "naziv": "datasette-maplibre",
+      "tip": "projekat",
+      "opis": "Simon Willison je sa Claude Fable 5.2 skoro iz jednog prompta napravio Datasette plugin koji tačke i GeoJSON oblike prikazuje na mapama sa MapLibre-om i besplatnim OpenFreeMap serverom.",
+      "kakoProbati": [
+        "Otvori Simon-ov post i klikni na demo link koji radi u Datasette Lite, direktno u pregledaču.",
+        "Lokalno: `pip install datasette-maplibre==0.1a0`, pa `datasette tvoja.db`.",
+        "Pogledaj prompt iz posta kao primer kako da tražiš „kreativne“ dodatke od modela."
+      ],
+      "link": "https://simonwillison.net/2026/Nov/15/datasette-maplibre/",
+      "cena": "besplatno"
+    },
+    {
+      "naziv": "TINY 2.1: jezički model na disketi",
+      "tip": "projekat",
+      "opis": "Transformer od 367.000 parametara koji je napisao Fable 5.2, a podatke za trening pripremio Opus 5.5. Radi pod DOS-om na Pentium-u i zna samo oko 3.500 činjenica.",
+      "kakoProbati": [
+        "Preuzmi TINY.EXE i TINY.BIN iz repoa u isti folder.",
+        "Pokreni ih pod DOS-om. Autor pominje pravi hardver, a za emulator (npr. DOSBox) nema uputstva.",
+        "Za učenje pročitaj TINY.C, ceo transformer u jednom C fajlu. Licenca nije navedena."
+      ],
+      "link": "https://github.com/WollyMonjac/Tiny-2.1",
+      "cena": "besplatno"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Marvell kupuje Lumentum u transakciji vrednoj 115 milijardi dolara sa dugom, da bi bio jači u mrežnim vezama za AI data centre.",
+      "izvor": "ICT Business",
+      "url": "https://www.ictbusiness.info/vijesti/marvell-preuzima-lumentum-za-115-milijardi-dolara"
+    },
+    {
+      "naslov": "Prema IDC-u, potrošnja na AI servere i skladišta u drugom kvartalu 2026. dostigla je 121,4 milijarde dolara, 53% više nego godinu ranije.",
+      "izvor": "ICT Business",
+      "url": "https://www.ictbusiness.info/vijesti/potrosnja-na-ai-infrastrukturu-dosegla-1214-milijarde-dolara"
+    },
+    {
+      "naslov": "Nokia procenjuje da će AI do 2035. stvarati 44% ukupnog mrežnog saobraćaja.",
+      "izvor": "ICT Business",
+      "url": "https://www.ictbusiness.info/vijesti/ai-bi-mogao-stvarati-44-posto-mreznog-prometa"
+    },
+    {
+      "naslov": "TSMC navodno razmatra proizvodnju 3D DRAM memorije na zahtev Nvidia-e, ali nijedna kompanija to nije potvrdila.",
+      "izvor": "ICT Business",
+      "url": "https://www.ictbusiness.info/vijesti/tsmc-razmatra-ulazak-u-proizvodnju-3d-dram-a"
+    },
+    {
+      "naslov": "Airbnb u prvoj polovini 2027. uvodi sopstvenog AI agenta za planiranje putovanja, a već sada AI rešava 40% korisničke podrške.",
+      "izvor": "ICT Business",
+      "url": "https://www.ictbusiness.info/internet/airbnb-uvodi-ai-agenta-za-planiranje-putovanja"
+    },
+    {
+      "naslov": "Cisco će od 2027. sve nove proizvode vezivati za AI platformu Cloud Control, koja u EU stiže u februaru.",
+      "izvor": "ICT Business",
+      "url": "https://www.ictbusiness.info/vijesti/cisco-od-2027-sve-nove-proizvode-povezuje-s-cloud-controlom-jedinstvena-ai-platforma-u-veljaci-stize-u-europu"
+    },
+    {
+      "naslov": "Alphabet je posle preuzimanja AI kompanije Modular postao vlasnik Qualcomm akcija vrednih oko 548 miliona dolara.",
+      "izvor": "ICT Business",
+      "url": "https://www.ictbusiness.info/vijesti/alphabet-stekao-dionice-qualcomma-vrijedne-548-milijuna-dolara-nakon-preuzimanja-ai-kompanije-modular"
+    },
+    {
+      "naslov": "AMD, FuriosaAI i MangoBoost do proleća 2027. prave u Seulu AI klaster koji povezuje četiri vrste procesora.",
+      "izvor": "ICT Business",
+      "url": "https://www.ictbusiness.info/vijesti/amd-furiosaai-i-mangoboost-grade-ai-klaster-u-seulu-koji-ce-povezati-cetiri-vrste-procesora"
+    },
+    {
+      "naslov": "Demokrate u Kongresu za januar spremaju zakone o AI-ju i data centrima, među kojima su zaštita od skupljeg struje i nezavisno testiranje najjačih modela.",
+      "izvor": "ICT Business",
+      "url": "https://www.ictbusiness.info/vijesti/demokrati-pripremaju-stroza-pravila-za-ai-infrastrukturu"
+    },
+    {
+      "naslov": "Prema izveštaju koji kruži na r/LocalLLaMA, američko Ministarstvo trgovine završava pravilo koje kineskim AI firmama zabranjuje i iznajmljivanje Nvidia GPU-ova u inostranstvu.",
+      "izvor": "Reddit r/LocalLLaMA",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xwmnkw/rasa_will_cause_total_chaos_to_open_llms_and/"
+    },
+    {
+      "naslov": "Na Reddit-u se priča da EU-ov otvoreni model EUROPA cilja na skoro bilion parametara; zvanični izvor još nije potvrdio detalje.",
+      "izvor": "Reddit r/LocalLLaMA",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xwr917/europa_the_eus_open_ai_model_is_aiming_for_nearly/"
+    },
+    {
+      "naslov": "ByteDance razvija sopstvenog AI agenta koji bi trebalo da konkuriše Meta-inom sistemu Muse.",
+      "izvor": "B92 Tehnopolis",
+      "url": "https://www.b92.net/tehnopolis/aktuelno/284377/bytedance-razvija-svog-ai-agenta-kao-rivala-metinom-sistemu-muse/vest"
+    },
+    {
+      "naslov": "Novi šef WhatsApp-a Kunal Shah najavio je jednostavnije glasovne poruke i grupe, dublju AI integraciju i plaćanje računa.",
+      "izvor": "B92 Tehnopolis",
+      "url": "https://www.b92.net/tehnopolis/apps/283969/whatsapp-postaje-jednostavniji-stizu-nove-ai-funkcije-i-opcija-za-placanje-racuna/vest"
+    },
+    {
+      "naslov": "Lokalni inference server Basalt 0.4.0 na RTX 5090 izvlači do 776 tokena u sekundi sa Qwen 3.8 27B, ali radi samo na Blackwell karticama.",
+      "izvor": "Reddit r/LocalLLaMA",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xx1cu9/basalt_040_more_models_still_as_fast_qwen_27b_up/"
+    },
+    {
+      "naslov": "Privatna ulaganja u AI u SAD su 23 puta veća nego u Kini.",
+      "izvor": "Bug.hr",
+      "url": "https://mreza.bug.hr/biznis/privatna-ulaganja-u-ai-u-sad-u-23-su-puta-veca-nego-u-kini-64206"
+    },
+    {
+      "naslov": "Student Carnegie Mellon-a napravio je OATs, male E Ink uređaje sa AI-jem koji biljkama i tegovima daju „ličnost“ kao Tamagotchi, da te podstaknu na bolje navike.",
+      "izvor": "Wired",
+      "url": "https://www.wired.com/story/this-ai-tamagotchi-oats-turns-everyday-objects-into-needy-virtual-pets/"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "Loopback Transformer",
+      "objasnjenje": "„Petljasti“ transformer koristi iste slojeve više puta zaredom umesto da slaže nove. Autori posebno podešavaju koliko ulaz utiče na svaki krug, koliko ukupno sve izmene teže i kako se ta težina deli po krugovima. Dobijaju bolje rezultate od običnih i ranijih petljastih modela, uz manje parametara.",
+      "zastoJeZanimljivo": "Manje parametara za isti kvalitet znači manje modele koji mogu da rade na telefonu ili laptopu. Kod je javan.",
+      "url": "https://huggingface.co/papers/2611.07226",
+      "github": "https://github.com/yancyou/Loopback"
+    },
+    {
+      "naslov": "AutoAssumption: algoritmi se traže kroz pretpostavke, ne kroz kod",
+      "objasnjenje": "Autori su 89 algoritama za ML sisteme zapisali kao formalne dokaze u Lean-u, pa sistem olabavi po jednu pretpostavku i ponovo dokazuje šta važi. Tako pronalazi nove varijante algoritama. Kod izbacivanja iz KV keša, to jest „radne memorije“ modela, i kod rezanja modela pobedio je sve objavljene metode koje su autori testirali.",
+      "zastoJeZanimljivo": "Ovo je zanimljiv spoj formalnih dokaza i automatskog otkrivanja, a KV keš direktno određuje koliko jeftino model radi sa dugim kontekstom.",
+      "url": "https://arxiv.org/abs/2611.14844",
+      "github": null
+    },
+    {
+      "naslov": "HALO: prirodnije snimanje demonstracija za mobilne robote",
+      "objasnjenje": "Da bi robot naučio da hoda i istovremeno radi sa obe ruke, potrebne su mu ljudske demonstracije. HALO omogućava operateru da direktno vodi ruke robota i da se kreće prirodno, a softver posle iz snimka uklanja ljudske ruke i usklađuje kretanje sa pravom robotskom bazom. Autori kažu da je bolji od Mobile ALOHA i VR upravljanja.",
+      "zastoJeZanimljivo": "Prikupljanje podataka je danas najveće usko grlo u robotici, a kod i stranica projekta su javni.",
+      "url": "https://huggingface.co/papers/2611.16439",
+      "github": "https://github.com/robbyant-research/Lingbot-ALOHA"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Slikaj potez po potez",
+      "problem": "Ljudi koji uče da crtaju ili slikaju vide samo gotovu sliku, a ne redosled poteza koji do nje vodi.",
+      "zaKoga": "Početnici u crtanju i deca, uz iPad sa Apple Pencil-om",
+      "ulogaAi": "Claude za zadatu temu („zalazak sunca nad Dunavom“) generiše niz SVG poteza sa redosledom i kratkim objašnjenjem, a aplikacija ih animira jedan po jedan da korisnik prati i precrtava.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "U SwiftUI napravi Canvas koji iscrtava listu poteza (putanja, boja, debljina) sa animacijom.",
+        "Napiši prompt koji traži JSON sa najviše 60 poteza i zahtevaj structured output od Claude API-ja.",
+        "Dodaj dugme „sledeći potez“ i sloj preko slike za precrtavanje u PencilKit-u.",
+        "Gotove lekcije čuvaj u Supabase-u da se ne generišu ponovo."
+      ],
+      "inspiracija": "Claude Fable 5.2 koji slika stotinama hiljada simuliranih poteza četkice"
+    },
+    {
+      "naziv": "Klijenti na mapi",
+      "problem": "Male firme u Srbiji drže adrese kupaca u Excel-u, napisane na sto načina, i ne vide gde su im kupci ni kako da planiraju obilaske.",
+      "zaKoga": "Distributeri, servisi i kurirske službe u Srbiji",
+      "ulogaAi": "Jeftin model ujednačava adrese („Bul. Kralja Aleks. 73/II“ u jedan pravilan oblik) pre geokodiranja i grupiše kupce po zonama.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Napravi Angular stranicu za upload CSV/XLSX fajla (SheetJS).",
+        "Adrese u serijama šalji jeftinom modelu, npr. GLM 5.3 Flash preko OpenRouter-a, da ih ujednači, pa ih geokodiraj preko Nominatim-a.",
+        "Prikaži tačke na MapLibre GL mapi sa OpenFreeMap stilom, uz klasterovanje.",
+        "Rezultate i keš geokodiranja čuvaj u Supabase-u sa PostGIS-om."
+      ],
+      "inspiracija": "datasette-maplibre Simona Willisona: MapLibre i besplatni OpenFreeMap"
+    },
+    {
+      "naziv": "Nalaz na srpskom",
+      "problem": "Ljudi dobiju laboratorijski nalaz sa desetinama skraćenica i referentnih vrednosti i ne znaju šta je bitno pre nego što odu kod lekara.",
+      "zaKoga": "Pacijenti u Srbiji koji vade krv u privatnim laboratorijama ili domovima zdravlja",
+      "ulogaAi": "Iz fotografije ili PDF-a nalaza izvlači vrednosti, objašnjava ih jednostavnim jezikom sa linkom ka izvoru i predlaže pitanja za lekara, bez postavljanja dijagnoze.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "U SwiftUI napravi skeniranje dokumenta (VisionKit) i OCR, pa strukturisano izvlačenje preko Claude API-ja.",
+        "Napravi malu bazu objašnjenja za 50 najčešćih analiza, sa izvorima, da model ne izmišlja.",
+        "Vrednosti po želji upisuj u HealthKit kao laboratorijske rezultate i prikaži trend kroz vreme.",
+        "Jasno označi da aplikacija ne zamenjuje lekara i ne čuvaj nalaze na serveru bez pristanka."
+      ],
+      "inspiracija": "Apple-ova studija o zdravstvenom AI-ju sa OpenEvidence-om i odgovorima zasnovanim na izvorima"
+    },
+    {
+      "naziv": "Predračun za majstore",
+      "problem": "Majstori (keramičari, električari, moleri) gube vreme na pravljenje ponuda, pa ih šalju kasno ili kao poruku bez stavki.",
+      "zaKoga": "Zanatlije i male građevinske firme u regionu",
+      "ulogaAi": "Majstor izdiktira šta je video na terenu, a agent popunjava tabelu sa stavkama, količinama i cenama iz majstorovog cenovnika, koju on zatim ručno ispravi i pošalje kao PDF.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Ubaci Univer tabelu u Angular aplikaciju kao šablon predračuna.",
+        "Preko AG-UI protokola poveži agenta koji upisuje redove u tabelu dok korisnik gleda.",
+        "Cenovnik majstora čuvaj u Supabase-u i daj ga agentu kao alat, da ne izmišlja cene.",
+        "Dodaj izvoz u PDF i deljenje linka preko Vibera ili WhatsApp-a."
+      ],
+      "inspiracija": "Univer Office SDK i AG-UI protokol sa GitHub Trending-a"
+    },
+    {
+      "naziv": "Mali model, samo za tvoju aplikaciju",
+      "problem": "Za jednostavan FAQ ili pomoć u aplikaciji nije potreban veliki model u oblaku, a pozivi ka API-ju koštaju i ne rade bez interneta.",
+      "zaKoga": "iOS developeri kojima treba pomoć u aplikaciji i kada nema interneta (npr. aplikacije za planinare ili turiste)",
+      "ulogaAi": "Veliki model pravi hiljade varijanti pitanja i odgovora o tvojoj aplikaciji, a na tome se trenira sićušni model koji radi lokalno na iPhone-u.",
+      "tezina": 4,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Proučavaj TINY.C iz Tiny-2.1 da vidiš koliko mali transformer može da bude.",
+        "Neka Claude izgeneriše oko 3.000 parova pitanje–odgovor o tvojoj aplikaciji, svako pitanje u više formulacija.",
+        "Istreniraj mali model u PyTorch-u i konvertuj ga u Core ML sa coremltools.",
+        "U SwiftUI dodaj ekran za pomoć, a kad model nije siguran, prebaci korisnika na pretragu kroz FAQ."
+      ],
+      "inspiracija": "TINY 2.1: jezički model koji su napisali Fable 5.2 i Opus 5.5 i koji staje na disketu"
+    }
+  ],
+  "cene": "Najveći pad je kod GLM 5.3, koji je pojeftinio sa 0,084/3,6 $ na 0,0699/1,4 $ za milion tokena (ulaz/izlaz). Qwen3.5 397B je pao sa 0,6/3,6 $ na 0,45/3 $, a GPT-5.6 Sol se vratio na 4/20 $ posle jučerašnjih 4,4/22 $. Poskupeli su DeepSeek V4.1 Flash (sa 0,0507/0,2028 $ na 0,14/0,42 $) i gpt-oss-20b (sa 0,03/0,13 $ na 0,075/0,3 $). Danas se na OpenRouter-u pojavio Qwen4 Max po ceni od 1,5/4,5 $, a najjeftiniji u klasi jeftinih i brzih modela ostaje GLM 5.3 Flash sa 0,0399 $ za ulaz i 0,0784 $ za izlaz.",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Vikend pokazivanja: šta su ljudi napravili sa Claude Fable 5.2",
+        "oCemuSePrica": "r/ClaudeAI i r/singularity su puni projekata: jezički model za DOS koji staje na disketu, scena u Blender-u sa riggovanim robotskim paukom, mod koji uklanja seckanje u Dead Space remake-u i LEGO mod za Minecraft sa editorom nivoa. Raspravlja se koliko toga je zaista uradio model, a koliko čovek koji ga usmerava.",
+        "glasovi": "Autori uglavnom objavljuju detaljan tok rada, prompte i potrošnju tokena da odgovore skepticima koji nisu verovali da je rezultat pravi. Simon Willison na svom blogu piše da je Fable 5.2 ozbiljno ubrzao rad na Datasette 1.0.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xwpenj/claude_wrote_and_trained_a_language_model_for_dos/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xx8w9q/claude_fable_52_wrote_a_working_transformer_ai/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xwlfsn/for_those_who_asked/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xwla0c/i_used_claude_to_fix_dead_space_2023_and_got/"
+          }
+        ]
+      },
+      {
+        "naslov": "„Sav AI kod treba da bude open source“",
+        "oCemuSePrica": "Blog post Jakuba Jankiewicza tvrdi da kod koji je napisao model, naučen na javnom kodu, treba da bude otvoren. Na Hacker News-u je skupio preko 1.100 poena i skoro 600 komentara.",
+        "glasovi": "Jedni smatraju da je fer vratiti zajednici ono što je model od nje uzeo. Drugi odgovaraju da je to pravno i praktično neizvodljivo i da onda ni kod napisan uz pomoć Stack Overflow-a ne bi bio „tvoj“.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50507303"
+          }
+        ]
+      },
+      {
+        "naslov": "Jensen Huang: kampanja za povratak i šale na njegov račun",
+        "oCemuSePrica": "Posle ostavke kruže priče da Huang razgovara sa saveznicima o povratku na čelo Nvidia-e, a javno pismo „vratite Jensena“ podržali su Elon Musk i Tim Sweeney. Afera je stigla i do SNL-a, a na Mastodon-u se ljudi podsmevaju predlogom da Nvidia direktora zameni AI-jem.",
+        "glasovi": "Jedni smatraju da je Nvidia bez Huanga rizik za celu AI industriju. Drugi, posebno posle priče o 12 milijardi dolara u porudžbinama za Kinu, smatraju da povratak ne bi trebalo ni razmatrati. Povratak je za sada glasina.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xx83bk/jensen_huang_discusses_comeback_as_nvidia_ceo/"
+          },
+          {
+            "platforma": "mastodon",
+            "naziv": "@janus_k",
+            "url": "https://ieji.de/@janus_k/117623127238431345"
+          }
+        ]
+      },
+      {
+        "naslov": "Zaštitne mere u Claude-u: kad smetaju, a kad pomažu",
+        "oCemuSePrica": "Slepi korisnik sa planom od 100 $ žali se da ga zaštite sprečavaju da prilagodi čitanje odgovora naglas svojim potrebama. U drugoj objavi korisnik pokazuje kako je Fable 5.2 primetio tekst ubačen u izlaz alata, koji je tražio da bude restriktivniji i da to ne pominje, pa je to otvoreno prijavio i nastavio rad.",
+        "glasovi": "Jedni u drugom slučaju vide dobar primer otpornosti na prompt injection, to jest ubacivanje skrivenih uputstava, a drugi pitaju da li je model trebalo da ignoriše upozorenje o autorskim pravima. Prva objava pokreće staru raspravu o tome koliko zaštite smetaju ljudima sa posebnim potrebama.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xws6tg/have_mercy_on_a_blind_person/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xx70to/claude_refused_to_cancel_his_work_even_tho_he/"
+          }
+        ]
+      },
+      {
+        "naslov": "Rat benchmark-a i LeCun protiv LLM-ova",
+        "oCemuSePrica": "Na r/singularity je viralna objava da je Gemini 4 Hydrogen „uništio“ Fable 5.2 na novom testu, uz tipično preterivanje u naslovu. Istovremeno se deli snimak Yann LeCun-a sa konferencije CoRL, gde poručuje istraživačima da ne rade na LLM-ovima.",
+        "glasovi": "Komentatori upozoravaju da je jedan test, bez konteksta, slab dokaz. LeCun-ove pristalice vide budućnost u modelima sveta i robotici, a kritičari ističu da LLM-ovi i dalje donose najveći praktični napredak.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xwvg9b/gemini_4_hydrogen_just_destroyed_claude_fable_52/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xwv6va/dont_work_on_llms_ylecun_at_corl/"
+          }
+        ]
+      }
+    ],
+    "snimci": []
+  },
+  "nedeljni": null
+}

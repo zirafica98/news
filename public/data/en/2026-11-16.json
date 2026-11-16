@@ -1,0 +1,485 @@
+{
+  "datum": "2026-11-16",
+  "generisano": "2026-11-16T03:08:08.372Z",
+  "model": "claude-opus-5-5",
+  "prevod": "claude-sonnet-5-5",
+  "ukratko": "The week started quietly, and the most concrete news comes from China. Meituan released the weights of LongCat-2.5, a 1.6-trillion-parameter agent model under the MIT license, trained without a single Nvidia chip. The Jensen Huang affair is widening: a firm linked to him reportedly brokered chip orders for China worth nearly $12 billion, and Congress is calling for stricter export rules. All weekend, the community showed off what it built with Claude Fable 5.2, from a language model that fits on a floppy disk to images the model paints stroke by stroke.",
+  "vesti": [
+    {
+      "naslov": "Meituan LongCat-2.5: a 1.6-trillion-parameter open agent model, no Nvidia chips",
+      "staSeDesilo": "Meituan released the LongCat-2.5 weights under the MIT license, and a 4-bit version is also available. The model is built for agents, meaning AI that carries out steps on its own, and was trained entirely on Chinese hardware: the example deployment uses 194 Huawei Ascend chips. On Terminal Bench v2.1 it scores 88.4, just behind Claude Opus 5 (89.1), though these are Meituan's own numbers.",
+      "zastoJeBitno": "The API accepts calls in both OpenAI and Anthropic formats, so you can plug it into Claude Code or Codex. The promotional price is about €0.27 per million input tokens and €1.07 per million output tokens. It's also proof that China can build near-frontier models without American chips.",
+      "kategorija": "modeli",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/meituan-releases-a-1-6-trillion-parameter-agent-model-that-never-touched-an-nvidia-gpu/"
+        }
+      ]
+    },
+    {
+      "naslov": "The Huang affair: $12 billion in orders for China, comeback talk and pressure from Congress",
+      "staSeDesilo": "According to the WSJ, Megaspeed, a firm run by the ex-partner of ousted Nvidia chief Jensen Huang, brokered Nvidia chip orders for Chinese companies worth nearly $12 billion in 2024 and 2025. Short seller Culper Research claims China's real share of Nvidia's revenue is above 20%, not the official 7%. Meanwhile, rumors say Huang is talking to allies about a comeback, and Elon Musk and Tim Sweeney backed a public \"bring back Jensen\" letter. Democrats and Republicans in Congress want Huang to testify and are promising stricter export rules for AI chips.",
+      "zastoJeBitno": "Stricter export rules affect who can train large models and how much GPUs cost. The comeback story is, for now, just a rumor.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/firm-linked-to-jensen-huangs-ex-lover-reportedly-brokered-nearly-12-billion-in-nvidia-chip-orders-for-china/"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/tech/1033999/jensen-huang-return-nvidia-megaspeed"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1033984/congress-export-rules-ai-chips-china"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/15/is-bad-news-for-jensen-huang-also-bad-news-for-the-ai-industry/"
+        }
+      ]
+    },
+    {
+      "naslov": "Bland Tofu-1: a voice model that listens while it talks, built for phone calls",
+      "staSeDesilo": "Bland released Tofu-1 as a research preview, a \"full-duplex\" speech-to-speech model: it listens and speaks at the same time and works directly with audio, with no text conversion in between. It targets calls from cars, hospitals and bad connections, and it can tell speakers apart and filter out noise. The architecture hasn't been published.",
+      "zastoJeBitno": "Most voice agents today run in three steps (speech-to-text, LLM, text-to-speech), so they lag and can't hear tone of voice. If models like this become available through an API, voice apps get much simpler to build. Check the link for access and pricing.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/11/15/bland-tofu-1-full-duplex-speech-to-speech-model/"
+        }
+      ]
+    },
+    {
+      "naslov": "Claude Fable 5.2 doesn't generate images, it paints them with brushstrokes",
+      "staSeDesilo": "Anthropic employees showed that Fable 5.2 makes images by writing 1,000 to 2,000-line Python programs that drive a simulation of brush, paint and canvas. One photorealistic garage scene took about 700,000 strokes. A stroke can't be undone, so between passes the model looks at the canvas and paints over its mistakes.",
+      "zastoJeBitno": "This is a demo, not a new app feature. Still, it shows how long and how independently a model can work on a single visual task through code, which applies to generating SVGs, charts and UIs too.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/anthropics-claude-fable-5-2-doesnt-generate-images-it-paints-them/"
+        }
+      ]
+    },
+    {
+      "naslov": "Apple launches a large study on how people use AI for health",
+      "staSeDesilo": "Together with OpenEvidence, Apple launched the Apple Health AI Usage Study: participants ask medical questions in a new iOS app, get answers based on sources such as NEJM and JAMA, and rate them. The study runs for more than 12 months, with a goal of up to 200,000 participants. For now it's US-only, for people aged 21+ with an iPhone 15 or newer running iOS 26 with Apple Intelligence turned on.",
+      "zastoJeBitno": "This is a clear sign that Apple is preparing health AI features built on HealthKit data. If you build iOS health and fitness apps, expect Apple to soon set the benchmarks for what a \"trustworthy\" health answer looks like.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/15/apple-launches-new-app-to-study-how-people-use-ai-for-health/"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/tech/1033355/apples-new-study-looks-to-improve-the-effectiveness-of-ai-health-tools"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI launches a science blog, with a physics proof built with GPT-6 Astra",
+      "staSeDesilo": "OpenAI launched a dedicated blog about scientific discoveries where AI helped. The first post describes a candidate for a non-perturbative lattice definition of the Standard Model of physics, and how GPT-6 Astra helped turn the idea into a detailed proof.",
+      "zastoJeBitno": "After similar stories from Anthropic and DeepMind, the labs are now openly competing on whose model produces scientific results. For developers, this is more a signal of direction than a tool.",
+      "kategorija": "istrazivanje",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "OpenAI",
+          "url": "https://openai.com/index/step-toward-defining-the-standard-model"
+        },
+        {
+          "naziv": "OpenAI",
+          "url": "https://openai.com/index/our-new-blog-for-science"
+        }
+      ]
+    },
+    {
+      "naslov": "Reserve Bank of Australia: AI hits young programmers and customer support first",
+      "staSeDesilo": "Australia's central bank sees early signs of AI affecting young entry-level workers in exposed jobs. Since ChatGPT launched, job postings and employment for 15-to-24-year-olds in software development and customer support have fallen more than for older workers. The author of the analysis cautions that the business cycle and remote work may explain part of the drop.",
+      "zastoJeBitno": "This is one of the more serious analyses on the topic, and its conclusion is cautious. For junior IT people, it's one more data point that entry-level roles are changing.",
+      "kategorija": "ostalo",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/australias-central-bank-finds-ai-hitting-young-workers-first-especially-in-software-and-customer-service/"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "LongCat-2.5",
+      "tip": "model",
+      "opis": "Meituan's open agent model with a context of up to a million input tokens and up to 128,000 output tokens. The API is compatible with the OpenAI and Anthropic formats, so it works with Claude Code and Codex.",
+      "kakoProbati": [
+        "For a quick test, open the chat at longcat.ai.",
+        "For the API, create an account on the LongCat platform and set the base URL in Anthropic format (check the link for the exact URL).",
+        "The weights are at huggingface.co/meituan-longcat/LongCat-2.5, but 1.6 trillion parameters needs a serious cluster, not a laptop."
+      ],
+      "link": "https://huggingface.co/meituan-longcat/LongCat-2.5",
+      "cena": "Weights free (MIT), API promotional price about €0.27 / €1.07 per 1M tokens (input/output)"
+    },
+    {
+      "naziv": "AG-UI protocol",
+      "tip": "projekat",
+      "opis": "An open, event-based protocol that standardizes how an agent sends state and actions to a frontend app. It's among this week's popular projects on GitHub Trending.",
+      "kakoProbati": [
+        "Run `npx create-ag-ui-app my-agent-app`.",
+        "Check out the integration examples in the AG-UI Dojo.",
+        "Try connecting your own Angular frontend to an agent through the event stream."
+      ],
+      "link": "https://github.com/ag-ui-protocol/ag-ui",
+      "cena": "free"
+    },
+    {
+      "naziv": "Univer Office SDK",
+      "tip": "alat",
+      "opis": "Open-source spreadsheets and documents you embed in your own app, with an API that lets an AI agent edit the content too.",
+      "kakoProbati": [
+        "Open the Showcase on univer.ai and try a spreadsheet in the browser.",
+        "Follow the Quick start in the README to add it to a web project.",
+        "Use the Facade API to let an agent write values and formulas."
+      ],
+      "link": "https://github.com/dream-num/univer",
+      "cena": "Open-source core is free; check the link for paid parts"
+    },
+    {
+      "naziv": "Tencent LoopForge",
+      "tip": "alat",
+      "opis": "A workspace you install on your own server that drives Claude Code, Codex and CodeBuddy through scripts and steps where a human has to approve. Every task runs in a Docker sandbox.",
+      "kakoProbati": [
+        "Watch the 80-second video in the README.",
+        "Follow the Quick start (Docker required).",
+        "Give a task to the Main Bot in chat and approve the changes before merging."
+      ],
+      "link": "https://github.com/Tencent/LoopForge",
+      "cena": "free (open source), plus the cost of the models you use"
+    },
+    {
+      "naziv": "datasette-maplibre",
+      "tip": "projekat",
+      "opis": "Using Claude Fable 5.2, Simon Willison built almost from a single prompt a Datasette plugin that shows points and GeoJSON shapes on maps using MapLibre and the free OpenFreeMap server.",
+      "kakoProbati": [
+        "Open Simon's post and click the demo link, which runs in Datasette Lite right in the browser.",
+        "Locally: `pip install datasette-maplibre==0.1a0`, then `datasette your.db`.",
+        "Check the prompt in the post as an example of how to ask a model for \"creative\" extras."
+      ],
+      "link": "https://simonwillison.net/2026/Nov/15/datasette-maplibre/",
+      "cena": "free"
+    },
+    {
+      "naziv": "TINY 2.1: a language model on a floppy disk",
+      "tip": "projekat",
+      "opis": "A 367,000-parameter transformer written by Fable 5.2, with training data prepared by Opus 5.5. It runs under DOS on a Pentium and knows only about 3,500 facts.",
+      "kakoProbati": [
+        "Download TINY.EXE and TINY.BIN from the repo into the same folder.",
+        "Run them under DOS. The author mentions real hardware, and there are no instructions for an emulator (e.g. DOSBox).",
+        "To learn from it, read TINY.C, the entire transformer in a single C file. No license is specified."
+      ],
+      "link": "https://github.com/WollyMonjac/Tiny-2.1",
+      "cena": "free"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Marvell is buying Lumentum in a $115 billion debt-financed deal to strengthen its networking for AI data centers.",
+      "izvor": "ICT Business",
+      "url": "https://www.ictbusiness.info/vijesti/marvell-preuzima-lumentum-za-115-milijardi-dolara"
+    },
+    {
+      "naslov": "According to IDC, Q2 2026 spending on AI servers and storage reached $121.4 billion, up 53% from a year earlier.",
+      "izvor": "ICT Business",
+      "url": "https://www.ictbusiness.info/vijesti/potrosnja-na-ai-infrastrukturu-dosegla-1214-milijarde-dolara"
+    },
+    {
+      "naslov": "Nokia estimates that AI will generate 44% of all network traffic by 2035.",
+      "izvor": "ICT Business",
+      "url": "https://www.ictbusiness.info/vijesti/ai-bi-mogao-stvarati-44-posto-mreznog-prometa"
+    },
+    {
+      "naslov": "TSMC is reportedly considering making 3D DRAM at Nvidia's request, but neither company has confirmed it.",
+      "izvor": "ICT Business",
+      "url": "https://www.ictbusiness.info/vijesti/tsmc-razmatra-ulazak-u-proizvodnju-3d-dram-a"
+    },
+    {
+      "naslov": "Airbnb will launch its own AI trip-planning agent in the first half of 2027, and AI already handles 40% of its customer support.",
+      "izvor": "ICT Business",
+      "url": "https://www.ictbusiness.info/internet/airbnb-uvodi-ai-agenta-za-planiranje-putovanja"
+    },
+    {
+      "naslov": "From 2027, Cisco will tie all new products to its Cloud Control AI platform, which arrives in the EU in February.",
+      "izvor": "ICT Business",
+      "url": "https://www.ictbusiness.info/vijesti/cisco-od-2027-sve-nove-proizvode-povezuje-s-cloud-controlom-jedinstvena-ai-platforma-u-veljaci-stize-u-europu"
+    },
+    {
+      "naslov": "After acquiring AI company Modular, Alphabet became the owner of Qualcomm shares worth about $548 million.",
+      "izvor": "ICT Business",
+      "url": "https://www.ictbusiness.info/vijesti/alphabet-stekao-dionice-qualcomma-vrijedne-548-milijuna-dolara-nakon-preuzimanja-ai-kompanije-modular"
+    },
+    {
+      "naslov": "AMD, FuriosaAI and MangoBoost are building an AI cluster in Seoul by spring 2027 that links four types of processors.",
+      "izvor": "ICT Business",
+      "url": "https://www.ictbusiness.info/vijesti/amd-furiosaai-i-mangoboost-grade-ai-klaster-u-seulu-koji-ce-povezati-cetiri-vrste-procesora"
+    },
+    {
+      "naslov": "Congressional Democrats are preparing AI and data center bills for January, including protection from higher electricity prices and independent testing of the most powerful models.",
+      "izvor": "ICT Business",
+      "url": "https://www.ictbusiness.info/vijesti/demokrati-pripremaju-stroza-pravila-za-ai-infrastrukturu"
+    },
+    {
+      "naslov": "According to a report circulating on r/LocalLLaMA, the US Department of Commerce is finalizing a rule that would also ban Chinese AI firms from renting Nvidia GPUs abroad.",
+      "izvor": "Reddit r/LocalLLaMA",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xwmnkw/rasa_will_cause_total_chaos_to_open_llms_and/"
+    },
+    {
+      "naslov": "Reddit chatter says the EU's open model EUROPA is aiming for nearly a trillion parameters; no official source has confirmed the details yet.",
+      "izvor": "Reddit r/LocalLLaMA",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xwr917/europa_the_eus_open_ai_model_is_aiming_for_nearly/"
+    },
+    {
+      "naslov": "ByteDance is developing its own AI agent meant to compete with Meta's Muse system.",
+      "izvor": "B92 Tehnopolis",
+      "url": "https://www.b92.net/tehnopolis/aktuelno/284377/bytedance-razvija-svog-ai-agenta-kao-rivala-metinom-sistemu-muse/vest"
+    },
+    {
+      "naslov": "New WhatsApp head Kunal Shah announced simpler voice messages and groups, deeper AI integration and bill payments.",
+      "izvor": "B92 Tehnopolis",
+      "url": "https://www.b92.net/tehnopolis/apps/283969/whatsapp-postaje-jednostavniji-stizu-nove-ai-funkcije-i-opcija-za-placanje-racuna/vest"
+    },
+    {
+      "naslov": "The local inference server Basalt 0.4.0 gets up to 776 tokens per second from Qwen 3.8 27B on an RTX 5090, but only works on Blackwell cards.",
+      "izvor": "Reddit r/LocalLLaMA",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xx1cu9/basalt_040_more_models_still_as_fast_qwen_27b_up/"
+    },
+    {
+      "naslov": "Private AI investment in the US is 23 times higher than in China.",
+      "izvor": "Bug.hr",
+      "url": "https://mreza.bug.hr/biznis/privatna-ulaganja-u-ai-u-sad-u-23-su-puta-veca-nego-u-kini-64206"
+    },
+    {
+      "naslov": "A Carnegie Mellon student built OATs, small AI-powered E Ink devices that give plants and weights a Tamagotchi-like \"personality\" to nudge you toward better habits.",
+      "izvor": "Wired",
+      "url": "https://www.wired.com/story/this-ai-tamagotchi-oats-turns-everyday-objects-into-needy-virtual-pets/"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "Loopback Transformer",
+      "objasnjenje": "A \"looped\" transformer reuses the same layers several times in a row instead of stacking new ones. The authors separately tune how much the input influences each loop, how much all the changes weigh in total, and how that weight is distributed across loops. They get better results than standard and earlier looped models, with fewer parameters.",
+      "zastoJeZanimljivo": "Fewer parameters for the same quality means smaller models that can run on a phone or laptop. The code is public.",
+      "url": "https://huggingface.co/papers/2611.07226",
+      "github": "https://github.com/yancyou/Loopback"
+    },
+    {
+      "naslov": "AutoAssumption: searching for algorithms through assumptions, not code",
+      "objasnjenje": "The authors wrote down 89 algorithms for ML systems as formal proofs in Lean, then the system relaxes one assumption at a time and re-proves what still holds. That's how it finds new algorithm variants. For KV cache eviction (the model's \"working memory\") and for model pruning, it beat every published method the authors tested.",
+      "zastoJeZanimljivo": "This is an interesting mix of formal proofs and automated discovery, and the KV cache directly determines how cheaply a model handles long context.",
+      "url": "https://arxiv.org/abs/2611.14844",
+      "github": null
+    },
+    {
+      "naslov": "HALO: more natural demonstration recording for mobile robots",
+      "objasnjenje": "For a robot to learn to walk while using both arms, it needs human demonstrations. HALO lets the operator guide the robot's arms directly and move naturally, and the software then removes the human hands from the recording and aligns the motion with the real robot base. The authors say it beats Mobile ALOHA and VR teleoperation.",
+      "zastoJeZanimljivo": "Data collection is currently the biggest bottleneck in robotics, and the code and project page are public.",
+      "url": "https://huggingface.co/papers/2611.16439",
+      "github": "https://github.com/robbyant-research/Lingbot-ALOHA"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Paint it stroke by stroke",
+      "problem": "People learning to draw or paint only see the finished picture, not the sequence of strokes that leads to it.",
+      "zaKoga": "Beginner artists and kids, using an iPad with Apple Pencil",
+      "ulogaAi": "For a given theme (\"sunset over the Danube\"), Claude generates a sequence of SVG strokes with an order and a short explanation, and the app animates them one by one so the user can follow along and trace over them.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "In SwiftUI, build a Canvas that draws a list of strokes (path, color, width) with animation.",
+        "Write a prompt that asks for JSON with at most 60 strokes and require structured output from the Claude API.",
+        "Add a \"next stroke\" button and a PencilKit layer on top of the image for tracing.",
+        "Store finished lessons in Supabase so they don't have to be regenerated."
+      ],
+      "inspiracija": "Claude Fable 5.2 painting with hundreds of thousands of simulated brushstrokes"
+    },
+    {
+      "naziv": "Customers on a map",
+      "problem": "Small businesses in Serbia keep customer addresses in Excel, written a hundred different ways, and can't see where their customers are or how to plan visits.",
+      "zaKoga": "Distributors, repair shops and courier services in Serbia",
+      "ulogaAi": "A cheap model normalizes addresses (\"Bul. Kralja Aleks. 73/II\" into one proper format) before geocoding and groups customers into zones.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Build an Angular page for uploading a CSV/XLSX file (SheetJS).",
+        "Send addresses in batches to a cheap model, e.g. GLM 5.3 Flash via OpenRouter, to normalize them, then geocode them with Nominatim.",
+        "Show the points on a MapLibre GL map with the OpenFreeMap style, with clustering.",
+        "Store results and the geocoding cache in Supabase with PostGIS."
+      ],
+      "inspiracija": "Simon Willison's datasette-maplibre: MapLibre and the free OpenFreeMap"
+    },
+    {
+      "naziv": "Lab results in Serbian",
+      "problem": "People get a lab report full of abbreviations and reference values and don't know what matters before they see a doctor.",
+      "zaKoga": "Patients in Serbia who get blood work at private labs or community health centers",
+      "ulogaAi": "It extracts values from a photo or PDF of the report, explains them in plain language with a link to the source, and suggests questions for the doctor, without making a diagnosis.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "In SwiftUI, build document scanning (VisionKit) and OCR, then structured extraction through the Claude API.",
+        "Build a small database of explanations for the 50 most common tests, with sources, so the model doesn't make things up.",
+        "Optionally write values into HealthKit as lab results and show the trend over time.",
+        "Clearly state that the app doesn't replace a doctor, and don't store reports on a server without consent."
+      ],
+      "inspiracija": "Apple's health AI study with OpenEvidence and source-based answers"
+    },
+    {
+      "naziv": "Quotes for tradespeople",
+      "problem": "Tradespeople (tilers, electricians, painters) waste time putting together quotes, so they send them late or as a message with no line items.",
+      "zaKoga": "Craftspeople and small construction firms in the region",
+      "ulogaAi": "The tradesperson dictates what they saw on site, and an agent fills in a table with line items, quantities and prices from their own price list, which they then correct by hand and send as a PDF.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Embed a Univer spreadsheet in an Angular app as the quote template.",
+        "Use the AG-UI protocol to connect an agent that writes rows into the table while the user watches.",
+        "Store the tradesperson's price list in Supabase and give it to the agent as a tool, so it doesn't invent prices.",
+        "Add PDF export and link sharing via Viber or WhatsApp."
+      ],
+      "inspiracija": "Univer Office SDK and the AG-UI protocol from GitHub Trending"
+    },
+    {
+      "naziv": "A small model just for your app",
+      "problem": "A simple FAQ or in-app help doesn't need a big cloud model, and API calls cost money and don't work offline.",
+      "zaKoga": "iOS developers who need in-app help even without internet (e.g. apps for hikers or tourists)",
+      "ulogaAi": "A large model generates thousands of question-and-answer variations about your app, and a tiny model that runs locally on the iPhone is trained on them.",
+      "tezina": 4,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Study TINY.C from Tiny-2.1 to see how small a transformer can get.",
+        "Have Claude generate about 3,000 question–answer pairs about your app, with each question phrased several ways.",
+        "Train a small model in PyTorch and convert it to Core ML with coremltools.",
+        "In SwiftUI, add a help screen, and when the model isn't confident, send the user to FAQ search."
+      ],
+      "inspiracija": "TINY 2.1: a language model written by Fable 5.2 and Opus 5.5 that fits on a floppy disk"
+    }
+  ],
+  "cene": "The biggest drop is GLM 5.3, which got cheaper from $0.084/$3.6 to $0.0699/$1.4 per million tokens (input/output). Qwen3.5 397B fell from $0.6/$3.6 to $0.45/$3, and GPT-5.6 Sol went back to $4/$20 after yesterday's $4.4/$22. DeepSeek V4.1 Flash (from $0.0507/$0.2028 to $0.14/$0.42) and gpt-oss-20b (from $0.03/$0.13 to $0.075/$0.3) got more expensive. Qwen4 Max appeared on OpenRouter today at $1.5/$4.5, and the cheapest of the cheap-and-fast models remains GLM 5.3 Flash at $0.0399 for input and $0.0784 for output.",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Weekend show-and-tell: what people built with Claude Fable 5.2",
+        "oCemuSePrica": "r/ClaudeAI and r/singularity are full of projects: a DOS language model that fits on a floppy disk, a Blender scene with a rigged robot spider, a mod that removes stutter in the Dead Space remake, and a LEGO mod for Minecraft with a level editor. The debate is over how much of it the model actually did versus the human steering it.",
+        "glasovi": "Authors mostly post detailed workflows, prompts and token usage to answer skeptics who didn't believe the result was real. On his blog, Simon Willison writes that Fable 5.2 seriously sped up his work on Datasette 1.0.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xwpenj/claude_wrote_and_trained_a_language_model_for_dos/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xx8w9q/claude_fable_52_wrote_a_working_transformer_ai/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xwlfsn/for_those_who_asked/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xwla0c/i_used_claude_to_fix_dead_space_2023_and_got/"
+          }
+        ]
+      },
+      {
+        "naslov": "\"All AI code should be open source\"",
+        "oCemuSePrica": "A blog post by Jakub Jankiewicz argues that code written by a model trained on public code should be open. It has collected over 1,100 points and nearly 600 comments on Hacker News.",
+        "glasovi": "Some think it's fair to give back to the community what the model took from it. Others reply that it's legally and practically unworkable, and that code written with Stack Overflow's help wouldn't be \"yours\" either.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50507303"
+          }
+        ]
+      },
+      {
+        "naslov": "Jensen Huang: a comeback campaign and the jokes at his expense",
+        "oCemuSePrica": "After the resignation, talk is going around that Huang is discussing a return as head of Nvidia with allies, and Elon Musk and Tim Sweeney backed a public \"bring back Jensen\" letter. The affair has even reached SNL, and on Mastodon people are mocking it by suggesting Nvidia replace its CEO with AI.",
+        "glasovi": "Some think Nvidia without Huang is a risk for the entire AI industry. Others, especially after the story about $12 billion in orders for China, think a return shouldn't even be considered. The comeback is, for now, just a rumor.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xx83bk/jensen_huang_discusses_comeback_as_nvidia_ceo/"
+          },
+          {
+            "platforma": "mastodon",
+            "naziv": "@janus_k",
+            "url": "https://ieji.de/@janus_k/117623127238431345"
+          }
+        ]
+      },
+      {
+        "naslov": "Claude's guardrails: when they get in the way and when they help",
+        "oCemuSePrica": "A blind user on the $100 plan complains that the safeguards stop them from adjusting how responses are read aloud to suit their needs. In another post, a user shows how Fable 5.2 noticed text injected into a tool's output, which asked it to be more restrictive and not mention it, so it reported this openly and carried on working.",
+        "glasovi": "Some see the second case as a good example of resistance to prompt injection, meaning hidden instructions slipped into content, while others ask whether the model should have ignored a copyright warning. The first post revives the old debate about how much safeguards get in the way of people with special needs.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xws6tg/have_mercy_on_a_blind_person/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/ClaudeAI",
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1xx70to/claude_refused_to_cancel_his_work_even_tho_he/"
+          }
+        ]
+      },
+      {
+        "naslov": "Benchmark wars and LeCun against LLMs",
+        "oCemuSePrica": "A viral post on r/singularity claims Gemini 4 Hydrogen \"destroyed\" Fable 5.2 on a new test, with the usual headline exaggeration. Meanwhile, a clip is circulating of Yann LeCun at the CoRL conference telling researchers not to work on LLMs.",
+        "glasovi": "Commenters warn that a single test without context is weak evidence. LeCun's supporters see the future in world models and robotics, while critics point out that LLMs still deliver the biggest practical progress.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xwvg9b/gemini_4_hydrogen_just_destroyed_claude_fable_52/"
+          },
+          {
+            "platforma": "reddit",
+            "naziv": "r/singularity",
+            "url": "https://www.reddit.com/r/singularity/comments/1xwv6va/dont_work_on_llms_ylecun_at_corl/"
+          }
+        ]
+      }
+    ],
+    "snimci": []
+  },
+  "nedeljni": null
+}
