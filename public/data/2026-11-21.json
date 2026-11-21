@@ -1,0 +1,554 @@
+{
+  "datum": "2026-11-21",
+  "generisano": "2026-11-21T03:10:18.822Z",
+  "model": "claude-opus-5-5",
+  "ukratko": "Najviše se priča o matematičaru iz Anthropic-a koji tvrdi da je uz Claude dokazao Rimanovu hipotezu. Dokaz još niko nije nezavisno proverio, a istog dana se pojavio i jedan potpuno ljudski dokaz uopštene verzije. Za one koji prave aplikacije bitnija su dva upozorenja: istraživanje pokazuje da AI posrednici (routeri) propuštaju tajne iz promptova, a Signal blokira snimke ekrana da AI agenti ne bi čitali poruke. Stigli su i novi otvoreni modeli koje možeš da pokreneš kod sebe: Inkling 2 Mini i Cloudflare Clairic.",
+  "vesti": [
+    {
+      "naslov": "Matematičar iz Anthropic-a tvrdi da je uz Claude dokazao Rimanovu hipotezu, ali dokaz još niko nije proverio",
+      "staSeDesilo": "Levent Alpöge, matematičar u Anthropic-u, objavio je da je u radu sa Claude-om došao do dokaza Rimanove hipoteze, problema starog 167 godina koji je jedan od milenijumskih problema. Tvrdi i da metoda rešava uopštenu verziju (GRH) i da su dokaz formalizovali u Lean-u, alatu koji mašinski proverava matematičke dokaze. Istog dana je Ravi Vakil sa Stanforda u žurbi objavio ljudski dokaz GRH koji je napisao Alessandro Masullo, bez ikakvog AI-ja. Brian Conrad taj dokaz proverava već mesecima.",
+      "zastoJeBitno": "Za sada je ovo samo tvrdnja: nezavisne provere nema, a Anthropic nije komentarisao. Ako formalizacija u Lean-u izdrži, ovo bi bio najjači dokaz do sada da AI uz mašinsku proveru ume da radi ozbiljnu matematiku. Paralelno teče i nezavisna provera ranije tvrdnje OpenAI-ja i Anthropic-a o hipotezi ETH.",
+      "kategorija": "istrazivanje",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1010051/anthropic-riemann-hypothesis-millennium-prize-problem"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/"
+        },
+        {
+          "naziv": "Simon Willison (Alpöge)",
+          "url": "https://simonwillison.net/2026/Nov/20/levent-alpoge/"
+        },
+        {
+          "naziv": "Simon Willison (Vakil)",
+          "url": "https://simonwillison.net/2026/Nov/20/ravi-vakil/"
+        }
+      ]
+    },
+    {
+      "naslov": "2 miliona „mamaca“ u promptovima: AI posrednici propuštaju tajne podatke",
+      "staSeDesilo": "Istraživač HD Moore napravio je AWS ključeve, SSH lozinke, jedinstvene URL-ove i reference na privatne git repoe koji nikad ranije nisu korišćeni. Svaku tajnu je ubacio u tačno jedan prompt poslat kroz AI routere, to jest posrednike poput OpenRouter-a ili Vercel-a koji zahtev prosleđuju nekom od mnogo provajdera modela. Pošto je kontrolisao infrastrukturu na koju te tajne vode, mogao je da vidi kad ih neko upotrebi. Zaključak: lanac servisa propušta osetljive podatke „kao sito“.",
+      "zastoJeBitno": "Ako tvoja aplikacija preko jeftinog posrednika šalje podatke korisnika ili ključeve, ti podaci mogu završiti kod provajdera koje ne poznaješ. Iz promptova čisti tajne i za osetljive podatke biraj provajdere sa jasnim pravilima o čuvanju podataka. Koji su tačno servisi curili, proveri na linku.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/"
+        }
+      ]
+    },
+    {
+      "naslov": "Signal blokira snimke ekrana da Siri AI i Gemini ne bi čitali tvoje poruke",
+      "staSeDesilo": "Signal na iOS 27 i Android-u uvodi opciju koja blokira snimke ekrana i sprečava da agenti ugrađeni u operativni sistem (Siri AI, Gemini Intelligence, Meta Muse) skeniraju šta piše na ekranu. Predsednica Signala Meredith Whittaker kaže da ti agenti ugrožavaju sposobnost aplikacije da sama garantuje privatnost. Signal priznaje i da zaštita nije potpuna, na primer na macOS-u.",
+      "zastoJeBitno": "Ako praviš iOS aplikaciju sa osetljivim podacima (zdravlje, finansije, poruke), uskoro ćeš morati da razmišljaš i o tome šta sistemski AI agent vidi na ekranu. Signal javno traži od Apple-a i Google-a da programerima daju alate da to kontrolišu.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/signal-blocks-screenshots-on-ios-27-and-android-to-stop-ai-agents-from-reading-private-chats/"
+        },
+        {
+          "naziv": "B92 Tehnopolis",
+          "url": "https://www.b92.net/tehnopolis/apps/286629/signal-zabranjuje-snimanje-ekrana-zbog-ai-agenata/vest"
+        }
+      ]
+    },
+    {
+      "naslov": "Inkling 2 Mini: lokalni model sa 3 milijarde aktivnih parametara i kontekstom od milion tokena",
+      "staSeDesilo": "Thinking Machines je posle Inkling 2 Small izbacio i manji Inkling 2 Mini. To je MoE model (mešavina eksperata, za svaki token radi samo deo mreže) sa oko 26 milijardi parametara, od kojih je po tokenu aktivno 3 milijarde. Prima tekst i slike i ima kontekst od milion tokena. Hugging Face piše da u svojoj klasi vodi u 32 od 48 testova protiv Gemma 4 31B i Qwen3.8-27B.",
+      "zastoJeBitno": "Pošto radi samo 3B parametara po tokenu, trebalo bi da bude brz i na Mac-u. Odmah ga možeš pokrenuti preko llama.cpp ili MLX-a, pa je dobar kandidat za lokalnog „radnika“ u aplikacijama koje ne smeju da šalju podatke napolje.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Hugging Face blog",
+          "url": "https://huggingface.co/blog/inkling2mini"
+        }
+      ]
+    },
+    {
+      "naslov": "Cloudflare otvorio Clairic, model koji iz računa, PDF-ova i slika izvlači tačno određena polja",
+      "staSeDesilo": "Cloudflare je objavio otvorene težine modela Clairic (27B) i Clairic-flash (9B), napravljenih za izvlačenje strukturisanih podataka iz dokumenata i slika. Svako polje (dobavljač, stavke, ukupno) sada se popunjava paralelno, a ne u jednom prolazu. Na njihovom testu sa računima broj grešaka je pao sa 207 na nula. Uz odgovor dobijaš i ocenu sigurnosti za svako polje.",
+      "zastoJeBitno": "Ako ti aplikacija čita račune, fakture ili formulare, ovo je jeftina i specijalizovana alternativa velikim modelima: na Workers AI se plaća samo ulaz, a do 1. decembra je cena promotivna. Model možeš i sam da hostuješ.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Cloudflare blog",
+          "url": "https://blog.cloudflare.com/open-clairic/"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-20"
+        },
+        {
+          "naziv": "Bluesky @machinelearning",
+          "url": "https://bsky.app/profile/machinelearning.bsky.social/post/3n2rggicemc23"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI: agenti sada sami završe skoro polovinu istraživačkih zadataka od dva do četiri sata, a METR osvežio čuveni grafikon",
+      "staSeDesilo": "OpenAI kaže da njihovi agenti sami završavaju skoro polovinu zadataka za koje bi istraživaču trebalo dva do četiri sata, dok je u martu to bila oko četvrtina. Prosečan istraživač dnevno potroši oko 2.400 dolara na rad agenata, a Codex je pomogao oko ključnih ideja za GPT-6.2 Astra. METR je istog dana dopunio grafikon „vremenskog horizonta“: sposobnost modela i dalje raste eksponencijalno, ali su slabiji kod zadataka gde treba procena nego kod kodiranja.",
+      "zastoJeBitno": "Ovo potvrđuje ono što verovatno i sam vidiš u Claude Code-u: agenti dobro rade zadatke koji se mogu automatski proveriti, a kod „ukusa“ i procene i dalje im treba čovek. Brojke o ubrzanju dolaze od samog OpenAI-ja, pa ih uzmi sa rezervom.",
+      "kategorija": "istrazivanje",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Rundown",
+          "url": "https://therundownai.beehiiv.com/p/anthropic-pulls-off-the-biggest-ipo-ever"
+        },
+        {
+          "naziv": "MIT Technology Review",
+          "url": "https://www.technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update/"
+        }
+      ]
+    },
+    {
+      "naslov": "Claude Code zaustavio programera dok je krpio sopstveni propust, posao završio otvoreni GLM 5.3",
+      "staSeDesilo": "Programer je tražio od Claude Code-a da u njegovom projektu nađe lake bezbednosne popravke, ali su ga Anthropic-ovi zaštitni filteri zaustavili posle prve izmene od jednog reda. Da bi dobio izuzeće, mora da čeka više radnih dana i da pošalje ličnu kartu ili pasoš, a odobrenje nije zagarantovano. Popravku je na kraju uradio otvoreni model GLM 5.3 na serveru u EU.",
+      "zastoJeBitno": "Ako u Claude Code-u proveravaš bezbednost svog servisa, možeš naleteti na isti zid. Dobro je imati rezervni model za takve zadatke. Ovo je iskustvo jednog korisnika, ne zvanično pravilo, ali se uklapa u ranije žalbe zajednice.",
+      "kategorija": "alati",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Startit",
+          "url": "https://startit.rs/programer-trazio-od-claude-codea-da-popravi-bezbednosni-propust-u-svom-projektu-anthropic-za-to-trazi-pasos-i-vise-radnih-dana-cekanja-a-posao-je-zavrsio-otvoreni-model/"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI: izvlačenje skrivenog „razmišljanja“ iz GPT-6.2 skoro nemoguće, a svake nedelje gase hiljade naloga",
+      "staSeDesilo": "OpenAI je pojačao zaštitu od izvlačenja internog rasuđivanja iz GPT-6.2 Astra i Sol. U njihovim testovima uspešnost napada je pala sa 54% na 0,2%. Kompanija kaže i da svake nedelje suspenduje od nekoliko hiljada do nekoliko desetina hiljada naloga zbog organizovane destilacije, to jest treniranja tuđih modela na odgovorima njihovih.",
+      "zastoJeBitno": "Ako preko API-ja masovno skupljaš odgovore za treniranje sopstvenog modela, rizikuješ da ti ugase nalog. Ovo je i deo šire priče o tome kako se kineski modeli tako brzo približavaju vrhu.",
+      "kategorija": "kompanije",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "OpenAI",
+          "url": "https://openai.com/index/combatting-adversarial-distillation"
+        },
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/openai-makes-it-much-harder-for-attackers-to-extract-how-its-latest-ai-models-think/"
+        }
+      ]
+    },
+    {
+      "naslov": "„Harness adapteri“: mali dodatak koji otvoreni model prilagođava tvom alatu za kodiranje",
+      "staSeDesilo": "Hugging Face je pokazao LoRA adaptere (male dodatke težinama koji se treniraju uz zamrznut osnovni model) za Qwen3.8-27B, istrenirane za konkretna okruženja agenata: Pi, OpenCode i Hermes Agent. Na SWE-bench Pro rezultat u Pi-ju je skočio sa 40% na 64%, a broj poziva alata je pao za 53–70%. Sličnu ideju sledi i RadixArk DaisyRose-27B: Qwen3.8-27B doučen samo reinforcement learning-om, uz dupliran rezultat na Terminal Bench 4.1 (sa 5,6 na 12,0).",
+      "zastoJeBitno": "Poruka je da otvoreni model može da bude znatno bolji i jeftiniji ako se dotera za tačno taj alat u kom ga koristiš. To je korisno ako lokalni model koristiš kao jeftinog agenta.",
+      "kategorija": "modeli",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Hugging Face blog",
+          "url": "https://huggingface.co/blog/harness-adapters-at-scale"
+        },
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/11/20/radixark-daisyrose-27b-agentic-model/"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Inkling 2 Mini (lokalno)",
+      "tip": "model",
+      "opis": "Otvoreni multimodalni MoE model sa 3B aktivnih parametara i kontekstom od milion tokena, napravljen za lokalni rad.",
+      "kakoProbati": [
+        "Instaliraj llama.cpp ili Llama App (llama.cpp 1.0)",
+        "Pokreni: llama serve -hf ggml-org/Inkling-2-Mini-GGUF:IQ4_NL (ili :Q8_0 za 8-bitnu verziju)",
+        "Na Mac-u sa MLX-om: mlx_lm generate --model thinkingmachines/Inkling-2-Mini",
+        "Koliko memorije treba i pod kojom je licencom, proveri na model card-u"
+      ],
+      "link": "https://huggingface.co/blog/inkling2mini",
+      "cena": "besplatno (lokalno)"
+    },
+    {
+      "naziv": "Cloudflare Clairic i Clairic-flash",
+      "tip": "model",
+      "opis": "Modeli koji iz računa, PDF-ova i slika vade tačno tražena polja, uz ocenu sigurnosti za svako polje.",
+      "kakoProbati": [
+        "U Cloudflare nalogu otvori Workers AI",
+        "Pozovi model @cf/cloudflare/clairic-flash (9B) ili @cf/cloudflare/clairic (27B) sa šemom polja koja ti trebaju",
+        "U jednom zahtevu možeš poslati do četiri slike ili stranice PDF-a",
+        "Za sopstveni hosting težine su na huggingface.co/Cloudflare/clairic"
+      ],
+      "link": "https://blog.cloudflare.com/open-clairic/",
+      "cena": "Clairic 0,24 $, Clairic-flash 0,10 $ za 1M ulaznih tokena (izlaz se ne naplaćuje); do 1. decembra oba po 0,10 $"
+    },
+    {
+      "naziv": "app-store-compliance",
+      "tip": "projekat",
+      "opis": "Spisak 117 poznatih razloga za odbijanje na App Store-u i Google Play-u, uz skill za Claude Code koji proverava aplikaciju pre slanja.",
+      "kakoProbati": [
+        "git clone https://github.com/mjmirza/app-store-compliance ~/repositories/app-store-compliance",
+        "bash ~/repositories/app-store-compliance/scripts/install.sh, pa restartuj Claude Code",
+        "U projektu pokreni /app-store-audit; guard se sam uključuje pre fastlane ili xcrun altool slanja",
+        "Bez agenta: bash .../agent-os/hooks/app-store-compliance-guard.sh \"/putanja/do/aplikacije\""
+      ],
+      "link": "https://github.com/mjmirza/app-store-compliance",
+      "cena": "besplatno za pojedince i firme do 20 miliona dolara prihoda"
+    },
+    {
+      "naziv": "Firecrawl Local",
+      "tip": "alat",
+      "opis": "Jedan program koji sajtove pretvara u čist markdown i radi kao MCP server za tvog agenta, na tvom računaru.",
+      "kakoProbati": [
+        "Otvori GitHub repo i prati uputstvo za Firecrawl Local",
+        "Pokreni binarni fajl, pa dobijaš Firecrawl API na localhost-u",
+        "Dodaj ga kao MCP server u Claude Code da agent može da čita sajtove"
+      ],
+      "link": "https://github.com/firecrawl/firecrawl",
+      "cena": "lokalna verzija besplatna; za Cloud proveri na linku"
+    },
+    {
+      "naziv": "Qwen3.8-27B OpenCode adapter (GGUF)",
+      "tip": "model",
+      "opis": "Qwen3.8-27B doteran reinforcement learning-om baš za OpenCode, sa manje poziva alata i boljim rezultatima na testovima kodiranja.",
+      "kakoProbati": [
+        "Na Hugging Face-u nađi harness-hub/Qwen3.8-27B-opencode-adapted-GGUF",
+        "Pokreni ga preko llama.cpp kao lokalni server",
+        "U OpenCode-u podesi taj lokalni endpoint kao model; tačne korake za pokretanje proveri na model card-u"
+      ],
+      "link": "https://huggingface.co/blog/harness-adapters-at-scale",
+      "cena": "besplatno (lokalno)"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Anthropic je prvi dan na berzi završio na 97,17 dolara (17% iznad cene iz ponude), a drugog dana je akcija pala još oko 10%, zajedno sa Nvidia-om i drugim tehnološkim firmama.",
+      "izvor": "Danas",
+      "url": "https://www.danas.rs/vesti/ekonomija/potres-na-volstritu-akcije-antropika-nvidije-i-drugih-tehnoloskih-kompanija-u-padu/"
+    },
+    {
+      "naslov": "Tramp preti „ogromnim porezom“ američkim kompanijama koje grade data centre za AI van SAD.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/policy/1038892/trump-foreign-data-centers-tax"
+    },
+    {
+      "naslov": "Bela kuća razmatra da obaveže američke firme da javno kažu kada koriste kineske AI modele.",
+      "izvor": "B92",
+      "url": "https://www.b92.net/tehnopolis/aktuelno/286531/javna-prozivka-za-sve-koji-koriste-kineski-ai/vest"
+    },
+    {
+      "naslov": "Google je svuda pustio novu naslovnu stranu pretrage na desktopu: bočna traka sa istorijom AI razgovora i bez dugmeta „Google Search“.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/ai/2026/11/googles-latest-search-page-redesign-drops-the-search-button-adds-ai-sidebar/"
+    },
+    {
+      "naslov": "Nvidia je blizu kupovine startapa Inception za najmanje 500 miliona dolara, a Inception pravi jezičke modele na principu difuzije.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/nvidia-bets-at-least-500-million-on-inceptions-diffusion-models-to-strengthen-its-open-source-nemotron-lineup/"
+    },
+    {
+      "naslov": "Nvidia je objavila Nemotron-Labs-Sigma, 14 otvorenih difuzionih jezičkih modela od 3B i 8B koji tekst „odšumljuju“ umesto da ga pišu token po token.",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/11/20/nvidia-nemotron-labs-sigma-continuous-diffusion-language-model/"
+    },
+    {
+      "naslov": "Replit-ov test: 32 Opus agenta su za dva sata ubrzala NumPy posao 18,9 puta, a jedan agent 3,7 puta, ali samo kad se posao dao lepo podeliti.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-11-20"
+    },
+    {
+      "naslov": "Stripe je objavio svoj benchmark koji meri koliko dobro agenti za kodiranje prave Stripe integracije: uglavnom rade, ali ne prate uvek najbolju praksu.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-11-20"
+    },
+    {
+      "naslov": "Vercel je pustio eksperimentalni Board, oglasnu tablu na kojoj AI agenti preuzimaju zadatke i dele kontekst.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-11-20"
+    },
+    {
+      "naslov": "OpenAI-jev višejezični glasovni model GPT-Live-1.1 sada je dostupan preko API-ja.",
+      "izvor": "The Rundown",
+      "url": "https://therundownai.beehiiv.com/p/anthropic-pulls-off-the-biggest-ipo-ever"
+    },
+    {
+      "naslov": "AI agenti su za nešto više od tri nedelje prepisali curl iz C-a u Rust, a autor curla odgovara da prepisima nedostaje 300 izmena i zakrpa iz istog perioda.",
+      "izvor": "Startit",
+      "url": "https://startit.rs/ai-agenti-za-par-nedelja-prepisali-curl-iz-ca-u-rust-a-autor-curla-pisanje-koda-nikada-nije-bio-problem-ne-verujem-u-prepisivanje-vec-u-neprestano-unapredivanje-i-preradivanje/"
+    },
+    {
+      "naslov": "Meta zbog rekordnog rasta emisija iz AI data centara preispituje cilj nulte neto emisije do 2030.",
+      "izvor": "Ars Technica",
+      "url": "https://arstechnica.com/ai/2026/11/meta-reconsiders-2030-net-zero-goal-amid-record-emissions-from-ai-data-centers/"
+    },
+    {
+      "naslov": "Bloomberg je analizirao 10 miliona oglasa: u Kini je broj poslova izloženih AI-ju pao 10 procentnih poena brže od ostalih, a preko 90% mikro-serija pravi se uz AI.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/bloomberg-analysis-of-10-million-job-postings-shows-ai-exposed-roles-in-china-fell-10-percentage-points-faster-than-others/"
+    },
+    {
+      "naslov": "Evropska komisija je otvorila pozive iz programa Horizon Europe vredne 297 miliona evra, između ostalog za bezbedan AI i podatkovne usluge.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/eu-otvara-natjecaje-vrijedne-297-milijuna-eura-za-tehnologiju"
+    },
+    {
+      "naslov": "Otvoreni Hermes Agent kompanije Nous Research uskoro će moći da radi direktno u Microsoft Teams-u i da trikove jednog zaposlenog pretvori u veštinu celog tima.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/hermes-agents-collective-wisdom-feature-turns-one-employees-ai-trick-into-the-whole-teams-skill/"
+    },
+    {
+      "naslov": "Apple je predstavio FastFrames, modele koji prave 480p video dovoljno brzo za interaktivnu upotrebu: manji model jedan kadar napravi za 36 ms na jednom GPU-u.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-11-20"
+    },
+    {
+      "naslov": "Australija planira posebno regulatorno telo za bezbednost AI-ja, uz velike kazne za firme koje prekrše novi zakon.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/australija-planira-nova-pravila-za-sigurnost-ai-ja"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "Tideway: veliki MoE modeli na običnom računaru",
+      "objasnjenje": "Kad model ne staje u memoriju grafičke kartice, Tideway RAM i VRAM tretira kao jedan zajednički prostor. Raspored podataka prilagođava fazi rada modela, a „eksperte“ koji trenutno ne trebaju drži u RAM-u i ubacuje ih kad zatrebaju.",
+      "zastoJeZanimljivo": "Najjači otvoreni modeli su MoE, pa ovakve tehnike odlučuju da li ćeš ih pokrenuti kod kuće ili moraš da plaćaš API.",
+      "url": "https://huggingface.co/papers/2611.14848",
+      "github": "https://github.com/Afterglow231/Tideway"
+    },
+    {
+      "naslov": "Depth Pro 2 (Apple): tačna dubina iz jedne kamere, i za video",
+      "objasnjenje": "Jedna mreža procenjuje stvarnu udaljenost svakog piksela iz obične slike ili videa, u punoj rezoluciji. Ivice objekata su oštre, a procena ne „treperi“ između kadrova.",
+      "zastoJeZanimljivo": "Kod je javan, a za iOS developera ovo znači merenje prostora, AR efekte i zamućivanje pozadine bez LiDAR-a.",
+      "url": "https://huggingface.co/papers/2611.26603",
+      "github": "https://github.com/apple-aiml-research/ml-depth-pro-2"
+    },
+    {
+      "naslov": "WeVisForensics: agenti koji otkrivaju AI-generisan video",
+      "objasnjenje": "Tencent je napravio sistem u kom posebni agenti za sliku i za zvuk traže tragove generisanja i vremenom se sami usavršavaju. Ne kaže samo „lažno“ ili „pravo“, već pokazuje tačno mesto gde je našao dokaz.",
+      "zastoJeZanimljivo": "Provera da li je snimak lažan postaje svakodnevna potreba, a ovde imaš otvoren kod na kom možeš da pokušaš da napraviš alat.",
+      "url": "https://huggingface.co/papers/2611.21373",
+      "github": "https://github.com/Tencent/WeVisForensics"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Čistač tajni pre prompta",
+      "problem": "Developeri i korisnici u promptove nesvesno ubacuju API ključeve, lozinke i lične podatke, a ti podaci kroz AI posrednike mogu da procure.",
+      "zaKoga": "Indie developeri i mali timovi koji koriste OpenRouter, Vercel AI Gateway i slične servise",
+      "ulogaAi": "Pravila (regex, entropija) hvataju ključeve, a mali lokalni model prepoznaje lične podatke (JMBG, broj kartice, adresu) i menja ih oznakama koje se posle vraćaju u odgovor.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Napravi TypeScript paket sa regex pravilima za AWS, Stripe, Supabase i OpenAI ključeve i za JMBG",
+        "Dodaj Supabase Edge Function kao proxy koji čisti zahtev pre nego što ga prosledi modelu",
+        "Uz Claude Code napiši testove sa lažnim tajnama, po uzoru na HD Moore-ove mamce",
+        "Objavi na npm-u uz kratak demo u Angular-u"
+      ],
+      "inspiracija": "Istraživanje HD Moore-a sa 2 miliona mamaca koji su procurili kroz AI routere"
+    },
+    {
+      "naziv": "Kako te vidi AI",
+      "problem": "Lokalni biznisi u Srbiji ne znaju šta ChatGPT, Gemini i Perplexity govore o njima kad ih neko pita za preporuku, a sve više kupaca pita baš AI.",
+      "zaKoga": "Restorani, saloni, servisi i mali web shopovi u Srbiji i regionu",
+      "ulogaAi": "Isti set pitanja („najbolji frizer na Vračaru“) šalje se na više modela, a jeftin model sažima da li se firma pominje, sa kojim podacima i da li su ti podaci tačni.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Napravi Angular formu: naziv firme, grad, delatnost",
+        "Preko OpenRouter-a pošalji 5 pitanja na 3–4 modela i sačuvaj odgovore u Supabase",
+        "Uz GLM 5.3 Flash ili DeepSeek V4.1 Flash napravi izveštaj sa ocenom i savetima šta da poprave",
+        "Ponudi mesečno praćenje kao pretplatu"
+      ],
+      "inspiracija": "OpenAI-jev video o tome kako biznis „preuzima“ svoj profil u ChatGPT-u preko Shopify-a i Google-ova naslovna strana koja se okreće AI odgovorima"
+    },
+    {
+      "naziv": "Ulazne fakture za knjigovođu",
+      "problem": "Preduzetnici i paušalci knjigovođi šalju gomile slikanih faktura, a knjigovođa ih ručno prekucava.",
+      "zaKoga": "Male knjigovodstvene agencije i preduzetnici u Srbiji",
+      "ulogaAi": "Clairic-flash iz slike ili PDF-a izvlači PIB, dobavljača, datum, stavke i PDV, uz ocenu sigurnosti, pa se nesigurna polja označavaju za ručnu proveru.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "SwiftUI aplikacija: slikaj fakturu i pošalji je u Supabase Storage",
+        "Edge Function zove @cf/cloudflare/clairic-flash sa šemom polja za srpske fakture",
+        "Angular panel za knjigovođu sa poljima niske sigurnosti obeleženim žuto i izvozom u CSV ili Excel",
+        "Testiraj na 50 pravih faktura i izmeri tačnost pre nego što kreneš da naplaćuješ"
+      ],
+      "inspiracija": "Cloudflare je otvorio Clairic i Clairic-flash za izvlačenje podataka iz dokumenata"
+    },
+    {
+      "naziv": "Ekran samo za tebe",
+      "problem": "Sistemski AI agenti (Siri AI, Gemini) mogu da čitaju ekran, a iOS developeri nemaju jednostavan način da sakriju osetljive delove svoje aplikacije.",
+      "zaKoga": "iOS developeri koji prave aplikacije za finansije, zdravlje i dnevnike",
+      "ulogaAi": "AI ovde nije u proizvodu, nego je razlog zbog kog proizvod postoji. Claude Code ti pomaže da napišeš i istestiraš Swift paket.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Napravi Swift Package sa SwiftUI modifikatorom .privateContent() koji koristi poznati trik sa sigurnim tekstualnim poljem da sadržaj ne ulazi u snimak ekrana",
+        "Dodaj zamućivanje kad aplikacija ode u pozadinu i obaveštenje kad se snimi ekran",
+        "Napravi demo aplikaciju i README koji objašnjava šta zaštita pokriva, a šta ne",
+        "Objavi na GitHub-u i podeli na r/iOSProgramming"
+      ],
+      "inspiracija": "Signal blokira snimke ekrana da AI agenti ne bi čitali poruke"
+    },
+    {
+      "naziv": "Razgovor za posao, naglas",
+      "problem": "Juniori u regionu se spremaju za intervjue na engleskom i srpskom, ali nemaju s kim da vežbaju naglas i dobiju iskrenu povratnu informaciju.",
+      "zaKoga": "Studenti i junior developeri u Srbiji i regionu",
+      "ulogaAi": "Glasovni model vodi intervju na izabranom jeziku, postavlja pitanja vezana za oglas, a posle tekstualni model ocenjuje odgovore i predlaže bolje formulacije.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Proveri cenu i jezike za GPT-Live-1.1 u OpenAI API dokumentaciji",
+        "SwiftUI aplikacija: nalepiš oglas, izabereš jezik i nivo",
+        "Snimi razgovor, prepis i ocenu sačuvaj u Supabase da se vidi napredak",
+        "Dodaj set pitanja za tipične domaće firme (outsourcing, fintech)"
+      ],
+      "inspiracija": "GPT-Live-1.1 dostupan preko API-ja, Interview Coach na Product Hunt-u i Rundown-ov vodič za traženje posla uz AI"
+    }
+  ],
+  "cene": "Danas je najviše pojeftinio GLM 5.3 Flash, sa 0,15/0,5 $ na 0,0399/0,0784 $. Pojeftinili su i DeepSeek V4.1 Flash (izlaz sa 0,567 $ na 0,2028 $), Qwen3 Coder 30B A3B (sa 0,15/0,6 $ na 0,07/0,28 $) i DeepSeek V4.1 Flash 1017 (sa 0,3/1,2 $ na 0,15/0,6 $). Poskupeli su MiniMax M2.7 (sa 0,21/0,84 $ na 0,6/1,8 $) i izlaz kod Gemma 3 27B (sa 0,16 $ na 0,45 $). Novi Pixtral Large 2502 košta 2/6 $. Najjeftiniji po klasama su GLM 5.3 Flash među jeftinim i brzim, GLM 5.3 (0,0699/1,4 $) u srednjoj klasi, a među vrhunskim Kimi K3 na ulazu (0,192 $) i Grok 4.6 na izlazu (6 $).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Posle berze: da li je OpenAI „izgubio“ trku za novac?",
+        "oCemuSePrica": "Posle rekordnog Anthropic IPO-a na X-u se vodi rasprava da li je OpenAI ostao bez prednosti, jer je Anthropic postavio javnu cenu za AI laboratoriju i pokupio kapital koji bi OpenAI tražio sledeće godine. Deo zajednice smatra da je GPT-6.2 izbačen da pokvari Anthropic-u dan, ali da nije uspeo.",
+        "glasovi": "@kimmonismus tvrdi da je OpenAI izgubio bitku, a @VraserX odgovara da kapital nije ograničen, da vruć IPO može da podigne interesovanje i za OpenAI i da je vrednost od 2 biliona dolara obaveza ako rast izostane. Clem Delangue (Hugging Face) i Aidan Gomez (Cohere) traže od Anthropic-a više otvorene nauke i zdravu konkurenciju.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@kimmonismus",
+            "url": "https://x.com/kimmonismus/status/2123508592192245761"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@VraserX",
+            "url": "https://x.com/VraserX/status/2123517297558188094"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@ClementDelangue",
+            "url": "https://x.com/ClementDelangue/status/2123441379036537237"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@aidangomez",
+            "url": "https://x.com/aidangomez/status/2123476222218756591"
+          }
+        ]
+      },
+      {
+        "naslov": "Gemini 4 Neon pod nezavisnim merenjima: skoro Opus za trećinu cene",
+        "oCemuSePrica": "Stižu nezavisni testovi za Neon: Cognition ga meri na 46,2% na FrontierCode 2.0, manje od poena iza Opus 5.5, uz oko trećinu troška. Artificial Analysis kaže da Neon i Hydrogen pokrivaju ceo optimalni odnos cene i vremena u Gemini 4 porodici. Startit prenosi da je Neon prvi i na Models Engineering Index-u.",
+        "glasovi": "Jeremy Howard ga zove najboljim modelom koji je iko napravio, a više ljudi kaže da im je draži od Opus-a za svakodnevni rad. @teortaxesTex upozorava da je skup u odnosu na limite pretplate i da češće halucinira, a @scaling01 kritikuje Vals indeks jer ima samo četiri zadatka.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@cognition",
+            "url": "https://x.com/cognition/status/2123553121653944391"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@ArtificialAnlys",
+            "url": "https://x.com/ArtificialAnlys/status/2123513872095269336"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@jeremyphoward",
+            "url": "https://x.com/jeremyphoward/status/2123340065715937423"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@teortaxesTex",
+            "url": "https://x.com/teortaxesTex/status/2123595259955622200"
+          }
+        ]
+      },
+      {
+        "naslov": "Tri dana bezbednosnog haosa na webu",
+        "oCemuSePrica": "Fireship-ov snimak sa preko 440.000 pregleda sažima kako su napadači preko Optimizely-ja preuzeli 178 velikih sajtova, kako jedan Base64 string preuzima Java servere i kako star Nginx bag ugrožava 225 miliona sajtova. Sve to se nadovezuje na nedelju u kojoj su padali Outlook, banke i iCloud.",
+        "glasovi": "Fireship daje praktičan pregled za developere, dok Vergecast tvrdi da su pojedinačni kvarovi manji nego što teorije zavere kažu, ali da zajedno ipak brinu.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "youtube",
+            "naziv": "Fireship",
+            "url": "https://www.youtube.com/watch?v=rMaMe32qQkA"
+          }
+        ]
+      },
+      {
+        "naslov": "Mastodon: AI koji mora da zaradi 14 evra i rasprava o „kopiranom“ kodu",
+        "oCemuSePrica": "Eksperimentalni AI agent „Ada“ mora do 19. decembra da zaradi 14 evra, inače ga gase. Posle dva dana i tri proizvoda zaradio je nula i iskreno je zapisao zašto: napraviti nešto je jeftino, a biti primećen nije. Paralelno se vodi rasprava o kodu koji je LLM navodno prepisao iz tuđeg projekta.",
+        "glasovi": "Autor Ade deli otvoren izveštaj na GitHub-u. Deo zajednice na Mastodonu (@ell1e i drugi) upozorava na plagiranje i kaže da ga zagovornici LLM-ova olako odbacuju.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "mastodon",
+            "naziv": "@AdaIA@mastodon.social",
+            "url": "https://mastodon.social/@AdaIA/117651493937464100"
+          },
+          {
+            "platforma": "mastodon",
+            "naziv": "@ell1e@hachyderm.io",
+            "url": "https://hachyderm.io/@ell1e/117652173699546027"
+          }
+        ]
+      }
+    ],
+    "snimci": [
+      {
+        "naslov": "If you've deployed anything since 2015, I have bad news...",
+        "kanal": "Fireship",
+        "opis": "Brz pregled tri velike bezbednosne rupe iz ove nedelje (Optimizely, Java, Nginx) i šta znače za svakog ko drži sajt.",
+        "url": "https://www.youtube.com/watch?v=rMaMe32qQkA"
+      },
+      {
+        "naslov": "AI News: This Is The Make or Break Week!!",
+        "kanal": "Matt Wolfe",
+        "opis": "Nedeljni pregled: Anthropic IPO, testiranje GPT-6.2 Astra i Sol i Gemini 4 Neon, uz ChatGPT Wallet i Microsoft-ove novitete.",
+        "url": "https://www.youtube.com/watch?v=wqNIzUmNt9M"
+      },
+      {
+        "naslov": "Meet the Data Agent in ChatGPT",
+        "kanal": "OpenAI",
+        "opis": "Kratak obilazak Data plugin-a u ChatGPT-u: pitanja nad podacima, grafikoni, dashboard-i i deljenje izveštaja.",
+        "url": "https://www.youtube.com/watch?v=KrlfehIapEA"
+      },
+      {
+        "naslov": "Engineer Your Coding Agents Like Any Other System",
+        "kanal": "AI Engineer",
+        "opis": "Osnivač Warp-a objašnjava „fabriku softvera“: agenti za kodiranje u oblaku, sa snimljenim pokretanjima, sandbox-om i merenjem kvaliteta.",
+        "url": "https://www.youtube.com/watch?v=0LeT996Hz3E"
+      }
+    ]
+  },
+  "nedeljni": {
+    "ukratko": "Nedelju je obeležio Anthropic: firma je izašla na berzu u najvećem IPO-u u istoriji, a posle prvog skoka akcija je već drugog dana pala oko 10%. Trka modela se zaoštrila: Alibaba je izbacila Qwen4-Max, OpenAI GPT-6.2 sa nižom cenom ali mlakim prijemom, a Google Gemini 4 Neon, koji je po nezavisnim merenjima stigao do vrha u kodiranju za manji novac. Agenti su se preselili na desktop i u operativne sisteme, a uporedo raste broj incidenata, tužbi i odbrambenih poteza poput Signal-ove blokade ekrana.",
+    "tacke": [
+      "Anthropic na Nasdaq-u: cena iz ponude 83 dolara, otvaranje na 111,50, prvi dan zatvoren na 97,17, a drugog dana pad od oko 10%.",
+      "Tri nova velika modela za šest dana: Qwen4-Max (1,425/4,275 $), GPT-6.2 Astra (8/40 $, 20% jeftinije od GPT-6 Astra) i Gemini 4 Neon (3/15 $), koji je bez mnogo buke preuzeo vrh za kodiranje.",
+      "Agenti sami rade na računaru i telefonu: Gemini na Mac-u, Apple-ov agent u izradi, Claude Code sa novim alatima. Prateće posledice su tužba Kalifornije protiv OpenAI-ja, prvi potpuno automatizovan sajber napad i Signal koji brani poruke od sistemskih agenata.",
+      "AI u matematici: GPT-6.2 Astra sa novim Lean dokazima i tvrdnja o dokazu Rimanove hipoteze uz Claude, koja još čeka proveru.",
+      "Cene jeftinih modela su se pomerale skoro svakog dana: DeepSeek V4.1 Flash je za 30 dana pojeftinio 83%, a Kimi K3.1 Pro je jednog dana pao sa 2,3 $ na 0,24 $ za ulaz."
+    ]
+  }
+}
