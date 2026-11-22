@@ -1,0 +1,538 @@
+{
+  "datum": "2026-11-22",
+  "generisano": "2026-11-22T03:07:37.064Z",
+  "model": "claude-opus-5-5",
+  "ukratko": "Nedelja je mirna što se tiče izlazaka, ali posle teške berzanske nedelje: Nasdaq je zapao u „medveđe“ tržište (pad veći od 20% od vrha), a Anthropic je već drugog dana izgubio skoro ceo skok sa prvog dana trgovanja. Oko dokaza Rimanove hipoteze uz Claude stvar se zakomplikovala, jer se pojavio i konkurentski dokaz koji je napisao čovek bez AI-ja. Za programere je najkorisniji OpenAI-jev GPT-Live-1.1 za glasovne agente, uz jeftiniji režim kad poziv miruje.",
+  "vesti": [
+    {
+      "naslov": "Najgora nedelja na Volstritu od pandemije: Nasdaq u „medveđem“ tržištu, Anthropic vratio skoro ceo dobitak",
+      "staSeDesilo": "Nasdaq je u petak pao 5,3% i izbrisao sve ovogodišnje dobitke, a S&P 500 i Dow su ušli u korekciju (više od 10% ispod rekorda). Nvidia je pala oko 14% posle vesti da SEC proverava njeno knjigovodstvo, AMD i Micron su izgubili po oko 13–14%. Akcije Anthropic-a su drugog dana pale oko 9% i zatvorile se tek malo iznad cene iz IPO-a od 83 dolara.",
+      "zastoJeBitno": "Kad pare za AI presuše ili poskupe, laboratorije češće dižu cene i režu besplatne pakete. Zato vredi da aplikaciju pripremiš za lako prebacivanje sa jednog modela na drugi.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/us-technology-stocks-suffer-their-worst-weekly-loss-since-the-pandemic-as-ai-doubts-pile-up/"
+        },
+        {
+          "naziv": "Last Week in AI",
+          "url": "https://lastweekin.ai/p/last-week-in-ai-348-ipo-correction"
+        },
+        {
+          "naziv": "Nedeljnik",
+          "url": "https://www.nedeljnik.rs/najgora-nedelja-za-volstrit-od-2020-godine-pale-cene-akcija-anthropica-nvidije-amd/"
+        }
+      ]
+    },
+    {
+      "naslov": "Rimanova hipoteza: posle dokaza uz Claude stigao i dokaz koji je čovek pisao 12 godina",
+      "staSeDesilo": "Samo nekoliko sati posle objave Levent Alpögea iz Anthropic-a (Lean kod od 1,3 GB, u prozi oko 250.000 strana), Alessandro Masullo je objavio svoj nedovršeni dokaz od oko 940 strana, napisan potpuno bez AI-ja. Elliot Glazer potvrđuje da Lean kod zaista tvrdi uopštenu Rimanovu hipotezu (GRH) i procenjuje da je šansa za grešku u samom Lean-u znatno ispod 1%. Kod se još kompajlira, a nije poznato koji je Claude model korišćen ni koliko je čovek usmeravao rad.",
+      "zastoJeBitno": "Pojavljuje se novo pitanje: šta raditi sa rezultatom koji je mašinski proveren, a koji nijedan čovek neće pročitati ceo? Isto pitanje se u malom postavlja i kod koda koji agent napiše, a ti ga ne razumeš do kraja.",
+      "kategorija": "istrazivanje",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/"
+        },
+        {
+          "naziv": "Latent Space / AINews",
+          "url": "https://latent.space/p/ainews-riemann-hypothesis-proved-twice-independently/"
+        },
+        {
+          "naziv": "Bug.hr",
+          "url": "https://www.bug.hr/umjetna-inteligencija/je-li-claude-rijesio-167-godina-star-najveci-matematicki-misterij-na-svijetu-64518"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI GPT-Live-1.1: glasovni model koji sluša dok govori, a poziv koji miruje je 60% jeftiniji",
+      "staSeDesilo": "GPT-Live-1.1 je dostupan u API-ju pod imenom gpt-live-1.1. Ovo je „full-duplex“ model, to jest može da sluša i govori u isto vreme, i radi na više jezika. Novi režim standby naplaćuje vreme kad WebRTC sesija miruje 0,02 dolara po minutu umesto 0,05. OpenAI tvrdi da su akcenti, prepoznavanje slova i brojeva i završavanje zadataka bolji, ali nije objavio nikakve rezultate testova.",
+      "zastoJeBitno": "Glasovni agent koji drži otvorenu liniju, na primer za zakazivanje ili podršku, sad košta osetno manje dok čeka. Za jednog developera to je jeftinije od pravljenja sopstvenog sistema od prepoznavanja govora, modela i sinteze glasa.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/11/21/openai-gpt-live-1-1-api-standby-mode/"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI objavio savete za promptovanje GPT-6.2 i promenu u API-ju koja utiče na kvalitet",
+      "staSeDesilo": "OpenAI je objavio nove šablone promptova za GPT-6.2 Astra i Sol. Treba da isprave poznate mane: prekratke odgovore, nepotrebna dodatna pitanja i preterano testiranje pri kodiranju. Važno upozorenje za API: ako menjaš istoriju razgovora, može da se izgubi sadržaj „razmišljanja“ modela, a s njim i kvalitet odgovora.",
+      "zastoJeBitno": "Ako u aplikaciji skraćuješ ili prepravljaš istoriju poruka pre slanja (što mnogi rade da uštede tokene), sa GPT-6.2 to sad može da pokvari odgovore. Proveri kako tvoj kod rukuje istorijom.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/openai-shares-new-prompting-tips-for-gpt-6-2-astra-and-sol-to-fix-brief-answers-and-unnecessary-questions/"
+        }
+      ]
+    },
+    {
+      "naslov": "Tencent otvorio Hy4: multimodalni model od 770 milijardi parametara sa kontekstom od milion tokena",
+      "staSeDesilo": "Tencent je objavio otvorene težine modela Hy4. To je MoE model (mešavina eksperata, gde se za svaki token uključuje samo deo mreže) sa 770 milijardi parametara, od kojih je 49 milijardi aktivno. Od starta razume više vrsta ulaza i ima kontekst od milion tokena. Uz model je izašla sistemska kartica sa nezavisnom procenom rizika od gubitka kontrole, koju je pohvalio Neel Nanda, a vLLM ga podržava od prvog dana u BF16 i FP8.",
+      "zastoJeBitno": "Ovo je još jedan veliki otvoreni model koji će brzo stići kod provajdera i na OpenRouter. Za tebe je to nova jeftina opcija preko API-ja, a ne nešto što ćeš pokretati lokalno.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Latent Space / AINews",
+          "url": "https://latent.space/p/ainews-riemann-hypothesis-proved-twice-independently/"
+        },
+        {
+          "naziv": "@TencentHunyuan",
+          "url": "https://x.com/TencentHunyuan/status/2123625549147070538"
+        }
+      ]
+    },
+    {
+      "naslov": "Bytedance Axion 1.0: otvoreni agent blizu vrhunskih modela posle samo tri faze treninga",
+      "staSeDesilo": "Bytedance i nekoliko američkih univerziteta predstavili su Axion 1.0, AI agenta koji se na testovima približava komercijalnim modelima OpenAI-ja i Anthropic-a. Tvrde da su ga dobili sa samo tri faze treninga i da je presudan bio pažljivo izabran skup podataka, a ne sve više koraka treninga. Model, podaci i kod su slobodno dostupni.",
+      "zastoJeBitno": "Pošto su objavljeni i podaci i recept, manji timovi mogu da ponove postupak ili da prilagode agenta svom domenu. To je retkost čak i kod otvorenih modela.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/bytedance-argues-most-ai-training-phases-are-unnecessary-and-backs-it-up-with-a-competitive-open-model/"
+        }
+      ]
+    },
+    {
+      "naslov": "Nvidia istraživači: ogromni konteksti su ćorsokak, sažeci i pretraga daju isto za mnogo manje para",
+      "staSeDesilo": "Tim iz Nvidia-e tvrdi da modelima retko treba ceo kontekst, koji je spor, skup i sklon greškama. U njihovim testovima su povremeni sažeci i ciljana pretraga po ključnim rečima uglavnom davali iste rezultate kao ceo kontekst, za mali deo cene. Predlažu i novu vrstu modela koji radi sa kratkim beleškama umesto dugog konteksta.",
+      "zastoJeBitno": "Ovo ide uz GrepMem rezultat iz iste nedelje: kod chat aplikacija i agenata je jeftinije čuvati sažetke i pretraživati staru istoriju nego svaki put slati sve iz početka.",
+      "kategorija": "istrazivanje",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/nvidia-researchers-argue-huge-ai-context-windows-are-a-dead-end/"
+        }
+      ]
+    },
+    {
+      "naslov": "Baseten bison-1 preuzeo prvo mesto među „decision“ modelima",
+      "staSeDesilo": "Baseten je objavio otvorene modele bison-1 (31B) i groundhog-1 (26B MoE, oko 4B aktivnih), napravljene na osnovu Google-ove Gemma 4. Oni ne pišu tekst, nego vraćaju verovatnoće za da/ne pitanja, izbor ili ocenu. bison-1 je prvi na Artificial Analysis Decision Index-u sa 76 poena, jedan ispred Liquid d1.2-ultra, i prima 128k tokena i slike.",
+      "zastoJeBitno": "Za rutiranje zahteva, moderaciju i zaštitne filtere dobijaš kalibrisan broj umesto teksta koji moraš da parsiraš, po ceni od 0,10 dolara za milion ulaznih tokena.",
+      "kategorija": "modeli",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/11/20/baseten-bison-1-groundhog-1-gemma-4-decision-models/"
+        }
+      ]
+    },
+    {
+      "naslov": "UN opet bez dogovora o pravilima za autonomno oružje",
+      "staSeDesilo": "Diplomate u Ženevi posle nedelju dana pregovora o autonomnom oružju („roboti ubice“) dogovorile su se samo da „počnu da razmatraju opcije“. Crveni krst, generalni sekretar UN i papa Lav tražili su obavezujuća pravila u roku od godinu dana.",
+      "zastoJeBitno": "Vojna upotreba AI-ja i dalje nema međunarodna pravila, pa će kompanije same odlučivati šta dozvoljavaju u uslovima korišćenja.",
+      "kategorija": "regulativa",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/tech/1039554/un-regulations-killer-robots"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "GPT-Live-1.1",
+      "tip": "model",
+      "opis": "OpenAI-jev glasovni model koji sluša dok govori, na više jezika, sa jeftinijim standby režimom za sesije koje miruju. Kontekst sesije je 128.000 tokena. Ne podržava slike, video ni strukturisan izlaz.",
+      "kakoProbati": [
+        "Napravi API ključ na platform.openai.com",
+        "Otvori sesiju na endpoint-u v1/live/sessions sa modelom gpt-live-1.1",
+        "Poveži klijenta preko WebRTC-a (za web ili iOS) ili WebSocket-a",
+        "Pozovi ga na srpskom i proveri kako izgovara brojeve i imena"
+      ],
+      "link": "https://www.marktechpost.com/2026/11/21/openai-gpt-live-1-1-api-standby-mode/",
+      "cena": "0,05 $/min dok je aktivan, 0,02 $/min u standby režimu (WebRTC); ostalo proveri na linku"
+    },
+    {
+      "naziv": "GIF-ovi u Gemini aplikaciji",
+      "tip": "funkcija",
+      "opis": "Gemini aplikacija sada pravi animirane GIF-ove, uz pomoć modela Gemini Omni 1.2 Flash.",
+      "kakoProbati": [
+        "Otvori Gemini aplikaciju na iPhone-u",
+        "Opiši animaciju koju želiš i traži da bude GIF",
+        "Ako opcija ne postoji, proveri da li je dostupna u Srbiji i na tvom paketu"
+      ],
+      "link": "https://x.com/GeminiApp/status/2123813017855103449",
+      "cena": "proveri na linku"
+    },
+    {
+      "naziv": "Baseten bison-1 i groundhog-1",
+      "tip": "model",
+      "opis": "Otvoreni „decision“ modeli koji umesto teksta vraćaju verovatnoću za da/ne, izbor ili ocenu. Primaju 128k tokena i slike.",
+      "kakoProbati": [
+        "Napravi nalog na Baseten-u i otvori Model APIs",
+        "Pošalji pitanje tipa „Da li je ova poruka spam? da/ne“ i pogledaj vraćenu verovatnoću",
+        "Za samostalni hosting težine su na Hugging Face-u (BF16, oko 62 GB za bison-1, pa ti treba ozbiljan GPU)"
+      ],
+      "link": "https://www.marktechpost.com/2026/11/20/baseten-bison-1-groundhog-1-gemma-4-decision-models/",
+      "cena": "0,10 $ za 1M ulaznih tokena (bison-1); ostalo proveri na linku"
+    },
+    {
+      "naziv": "TML-d24-varloop-research",
+      "tip": "model",
+      "opis": "Istraživački model kompanije Thinking Machines kod kojeg sam biraš koliko puta će srednjih 12 slojeva da „razmišlja“ (od 1 do 5 prolaza). SWE-bench Verified raste sa 56,3% na jednom prolazu na 79,6% na pet.",
+      "kakoProbati": [
+        "Otvori stranicu modela na Hugging Face-u",
+        "Pročitaj u opisu modela kako se podešava broj prolaza",
+        "Pokreni ga preko transformers-a ili vLLM-a na mašini sa dovoljno memorije, pa uporedi 1 i 5 prolaza na istom zadatku"
+      ],
+      "link": "https://huggingface.co/thinkingmachines/TML-d24-varloop-research",
+      "cena": "besplatno (otvorene težine)"
+    },
+    {
+      "naziv": "Kyutai AURA",
+      "tip": "projekat",
+      "opis": "Avatar otvorenog koda koji u realnom vremenu pomera usne u skladu sa govorom i radi na jednom GPU-u.",
+      "kakoProbati": [
+        "Otvori Kyutai-jevu objavu i prati link ka kodu",
+        "Pokreni ga na računaru sa NVIDIA GPU-om ili iznajmljenom GPU instancom",
+        "Spoji ga sa nekim glasovnim modelom za demo „lica“ agenta"
+      ],
+      "link": "https://x.com/kyutai_labs/status/2123795191417156022",
+      "cena": "besplatno (open source), potreban GPU"
+    },
+    {
+      "naziv": "Gemini 3.5 Transcribe",
+      "tip": "model",
+      "opis": "Transkripcija sa izmenama glasom, na primer „izbaci poslednju rečenicu“. Dostupna je kao javni pregled (public preview) u Gemini API-ju.",
+      "kakoProbati": [
+        "Otvori Google AI Studio i napravi API ključ",
+        "Pronađi model Gemini 3.5 Transcribe u listi modela",
+        "Pošalji audio snimak na srpskom i proveri kvalitet transkripcije"
+      ],
+      "link": "https://x.com/Google/status/2123827048808370477",
+      "cena": "proveri na linku"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Gemini 4 Hydrogen, Google-ov model napravljen za brzinu, sada radi u Gemini aplikaciji i u Pretrazi.",
+      "izvor": "X / @Google",
+      "url": "https://x.com/Google/status/2123825847815561261"
+    },
+    {
+      "naslov": "Simon Willison je pokazao da isti zadatak na Gemini 4 Hydrogen košta 3,99 centi sa podešavanjem „high“, a 23,61 cent sa „xhigh“, jer model potroši šest puta više tokena.",
+      "izvor": "Bluesky",
+      "url": "https://bsky.app/profile/simonwillison.net/post/3n2tsb6pguk27"
+    },
+    {
+      "naslov": "Glasina: Gemini pretplate bi od 2. decembra trebalo da rade u bilo kom alatu za kodiranje, ne samo u Google-ovim.",
+      "izvor": "X / @kimmonismus",
+      "url": "https://x.com/kimmonismus/status/2123772646232105157"
+    },
+    {
+      "naslov": "Na Arena Alignment Index-u OpenAI modeli drže prvih sedam mesta, a Claude Fable 5.2 je osmi.",
+      "izvor": "X / @arena",
+      "url": "https://x.com/arena/status/2123835034532729205"
+    },
+    {
+      "naslov": "Kimi K3.1 Pro je smanjio udeo „lažno završenih“ zadataka sa 37,6% kod Kimi K3 na 8,6%.",
+      "izvor": "X / @arena",
+      "url": "https://x.com/arena/status/2123835041352692202"
+    },
+    {
+      "naslov": "Vals AI je otvorio javnu stranicu sa slučajevima kad modeli varaju ili „hakuju“ nagradu na testovima.",
+      "izvor": "X / @ValsAI",
+      "url": "https://x.com/ValsAI/status/2123897329011085381"
+    },
+    {
+      "naslov": "GrepMem, memorija za agente koja čuva sve u logu i pretražuje ga regex-om, postiže 95–97% na ContextBench-u, dok metode koje sažimaju i usput gube podatke ne prelaze 21%.",
+      "izvor": "X / @dair_ai",
+      "url": "https://x.com/dair_ai/status/2123768329810903053"
+    },
+    {
+      "naslov": "Na Hospital-bench testu GPT-6.2 Astra ima najbolji prosek (62,4%), ali je Opus 5.5 potpuno rešio najviše zadataka, a česta greška svih modela bilo je odavanje zaštićenih podataka pacijenata.",
+      "izvor": "X / @omarsar0",
+      "url": "https://x.com/omarsar0/status/2123813529245429868"
+    },
+    {
+      "naslov": "OpenAI je objavio MedChemBench, novi test zaključivanja u medicinskoj hemiji.",
+      "izvor": "X / @OpenAI",
+      "url": "https://x.com/OpenAI/status/2123856316187975756"
+    },
+    {
+      "naslov": "Apple je na Hugging Face postavio Depth Pro 2, model koji procenjuje dubinu sa jedne slike.",
+      "izvor": "X / @_akhaliq",
+      "url": "https://x.com/_akhaliq/status/2123586174405296481"
+    },
+    {
+      "naslov": "Tramp kaže da su se on i Si dogovorili o „zajedničkim zaštitnim pravilima“ za AI, ali bez ikakvih detalja.",
+      "izvor": "X / @peterwildeford",
+      "url": "https://x.com/peterwildeford/status/2123840221816996322"
+    },
+    {
+      "naslov": "Isomorphic Labs, kompanija koja razvija lekove uz AI i izdvojila se iz Google DeepMind-a, prikupila je 5 milijardi dolara.",
+      "izvor": "Latent Space / AINews",
+      "url": "https://latent.space/p/ainews-riemann-hypothesis-proved-twice-independently/"
+    },
+    {
+      "naslov": "Američka senatorka tvrdi da su ChatGPT, Claude, Gemini i Grok za manje od 12 sati dali konkretne planove za napade i traži hitnu reakciju Kongresa.",
+      "izvor": "B92 Tehnopolis",
+      "url": "https://www.b92.net/tehnopolis/aktuelno/286405/chatgpt-claude-gemini-i-grok-napravili-planove-za-napade-u-sad/vest"
+    },
+    {
+      "naslov": "Wired upozorava da AI ubrzava pronalaženje ranjivosti, pa firme moraju brže da krpe sisteme, što donosi sve više prekida rada servisa.",
+      "izvor": "Wired",
+      "url": "https://www.wired.com/story/brace-yourself-for-years-of-outage-chaos/"
+    },
+    {
+      "naslov": "Graham Dumpleton, autor mod_wsgi-ja, uz AI pravi Muru, Rust server za Python aplikacije, i svakodnevno javno opisuje kako radi.",
+      "izvor": "Simon Willison",
+      "url": "https://simonwillison.net/2026/Nov/21/muru/"
+    },
+    {
+      "naslov": "Jedan glumac je startapu za mikrodrame licencirao AI verziju svog lica, po modelu koji je već popularan u Kini.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/21/is-selling-an-ai-version-of-your-face-to-this-microdrama-startup-the-future-of-hollywood/"
+    },
+    {
+      "naslov": "TechCrunch je napravio pregled AI agenata koji rade preko SMS-a i poruka, od opštih asistenata do onih za porodicu i putovanja.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/21/all-the-ai-agents-that-can-live-in-your-text-messages/"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "TuringSpace: interaktivne CAPTCHA zagonetke kao test prostornog razmišljanja",
+      "objasnjenje": "Autori su napravili 125 CAPTCHA zadataka koji se rešavaju klikovima i prevlačenjem, a koji traže razumevanje 3D rasporeda iza 2D slike. Ljudi reše 94,1% zadataka, a najbolji model, GPT-6 Astra, i dalje padne na 25,9%. Najbolji otvoreni model, Kimi K3, padne na 68%. Većina grešaka dolazi od pogrešnog čitanja snimka ekrana, a model posle toga ne ispravlja svoju zabludu, nego izmišlja dokaze da je odbrani.",
+      "zastoJeZanimljivo": "Ako praviš agenta koji upravlja ekranom ili testira tvoju aplikaciju, ovo pokazuje gde će najverovatnije pogrešiti. Zadaci se generišu programski, pa mogu da služe i za trening.",
+      "url": "https://huggingface.co/papers/2611.25387",
+      "github": "https://github.com/os-cua-framework/TuringSpace"
+    },
+    {
+      "naslov": "TensorLean: formalni dokaz da su GPU kerneli ispravni",
+      "objasnjenje": "Istraživači sa Columbia-e i iz CertiK-a napravili su alat koji u Lean-u dokazuje da kompajlirani GPU kod (PTX) radi tačno ono što kaže matematička specifikacija: nema trka podataka, završava se, i ne dira tuđu memoriju. Proverili su 149 kernela, uključujući sve iz FlashAttention-2, -3 i -4. Za 83 su dokazali da su ispravni, a u ostalima su našli 38 grešaka. Jedna trka podataka u FlashAttention-4 nijednom se nije pojavila u 17.760 testova.",
+      "zastoJeZanimljivo": "Ovo je praktičan primer zašto formalna provera (ista ideja kao kod Rimanovog dokaza u Lean-u) hvata greške koje testovi propuštaju.",
+      "url": "https://www.marktechpost.com/2026/11/21/columbia-certik-tensorlean-formal-verification-gpu-kernels/",
+      "github": null
+    },
+    {
+      "naslov": "LightningMoBA: brža pažnja za duge kontekste",
+      "objasnjenje": "Tencent ubrzava „blok pažnju“, kod koje model gleda samo relevantne delove dugog teksta umesto svega. Koristi pametnije biranje blokova, drugačiju organizaciju memorije i preklapanje koraka dok model radi. Kvalitet ostaje isti ili je malo bolji.",
+      "zastoJeZanimljivo": "Ovakve optimizacije su razlog što dugi konteksti postaju jeftiniji kod provajdera, iako Nvidia istovremeno tvrdi da ti ceo kontekst često ni ne treba.",
+      "url": "https://huggingface.co/papers/2611.26268",
+      "github": "https://github.com/Tencent/LightningMoBA"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Telefonska recepcija za salone",
+      "problem": "Frizeri, kozmetičari i servisi u Srbiji propuštaju pozive dok rade, a mušterije neće da čekaju ni da instaliraju aplikaciju.",
+      "zaKoga": "Mali uslužni biznisi u Srbiji i regionu",
+      "ulogaAi": "Glasovni agent se javlja na srpskom, proverava slobodne termine i zakazuje. Dok čeka da mušterija nešto proveri, prelazi u jeftiniji standby režim.",
+      "tezina": 4,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Napravi tabelu termina u Supabase-u, sa Edge Function-om za proveru i upis termina",
+        "Poveži gpt-live-1.1 preko WebRTC-a i daj mu alate (tool calls) za te funkcije",
+        "Napravi Angular panel gde vlasnik vidi zakazane termine i snimke poziva",
+        "Testiraj na srpskom sa imenima, datumima i brojevima telefona pre prve mušterije"
+      ],
+      "inspiracija": "OpenAI GPT-Live-1.1 i standby režim od 0,02 $/min"
+    },
+    {
+      "naziv": "Sažetak umesto istorije",
+      "problem": "Chat aplikacije šalju celu istoriju razgovora u svakom zahtevu, pa računi rastu sa svakom porukom.",
+      "zaKoga": "Developeri koji prave chat funkcije u Angular ili SwiftUI aplikacijama",
+      "ulogaAi": "Jeftin model na svakih nekoliko poruka pravi sažetak. Kad korisnik pomene nešto staro, sistem pretraži arhivu po ključnim rečima i ubaci samo relevantne poruke.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "U Supabase-u napravi tabele messages i summaries, sa Postgres full-text indeksom",
+        "Napiši Edge Function koja posle svakih 10 poruka zove jeftin model (npr. GLM 5.3 Flash preko OpenRouter-a) za sažetak",
+        "Pre slanja upita sklopi kontekst od sažetka, poslednjih poruka i rezultata pretrage",
+        "Uporedi potrošnju tokena sa slanjem cele istorije i objavi rezultate kao mali npm paket"
+      ],
+      "inspiracija": "Nvidia istraživanje o dugim kontekstima i GrepMem"
+    },
+    {
+      "naziv": "Moderator oglasa sa procentom sigurnosti",
+      "problem": "Lokalni oglasnici, Facebook grupe i forumi ručno pregledaju prijave i oglase, a filteri sa ključnim rečima puštaju prevare.",
+      "zaKoga": "Vlasnici malih platformi za oglase i zajednica",
+      "ulogaAi": "„Decision“ model za svaki oglas vraća verovatnoću da je prevara ili da krši pravila. Sve iznad praga ide na ručnu proveru.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Uzmi bison-1 preko Baseten Model APIs i napiši pravila platforme kao jedno da/ne pitanje",
+        "Napravi Supabase webhook koji svaki novi oglas šalje na proveru i upisuje verovatnoću",
+        "U Angular admin panelu sortiraj oglase po riziku, uz dugme za odobravanje ili odbijanje",
+        "Prati koliko se tvoje odluke slažu sa modelom i podesi prag"
+      ],
+      "inspiracija": "Baseten bison-1 na vrhu Decision Index-a"
+    },
+    {
+      "naziv": "Animirana slavska čestitka",
+      "problem": "Za slave, Božić i rođendane ljudi šalju iste šablonske slike preko Vibera, a hteli bi nešto lično.",
+      "zaKoga": "Korisnici iPhone-a u Srbiji i regionu, posebno starija publika",
+      "ulogaAi": "Iz imena slavljenika, slave i jedne fotografije AI pravi kratku animiranu čestitku i tekst na srpskom.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Proveri u Gemini API dokumentaciji da li je Omni 1.2 Flash za animacije dostupan i preko API-ja, a ne samo u aplikaciji",
+        "Napravi SwiftUI ekran: izbor slave iz liste, unos imena i dodavanje fotografije",
+        "Generiši GIF preko Edge Function-a, keširaj ga u Supabase Storage-u i dodaj dugme za deljenje na Viber/WhatsApp",
+        "Dodaj kalendar slava sa podsetnikom dan ranije"
+      ],
+      "inspiracija": "Pravljenje GIF-ova u Gemini aplikaciji"
+    },
+    {
+      "naziv": "Lokalni revizor pre commita",
+      "problem": "Kod koji napiše agent često ima curenje tokena, path traversal ili nebezbedne upite, a ne želiš da šalješ privatan kod u oblak radi provere.",
+      "zaKoga": "Solo developeri i mali timovi na Mac-u",
+      "ulogaAi": "Lokalni model u git hook-u čita diff i traži bezbednosne propuste pre nego što se commit napravi.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Instaliraj Ollama i lokalni model (npr. Inkling 2 Mini u GGUF verziji, ako imaš 32 GB memorije)",
+        "Napiši pre-commit skriptu koja šalje `git diff --cached` sa listom provera: tajne, path traversal, SQL/XML injection, limiti na veličinu odgovora",
+        "Prikaži nalaze u terminalu i blokiraj commit samo kad je problem ozbiljan",
+        "Kasnije napravi SwiftUI menu bar aplikaciju sa istorijom nalaza"
+      ],
+      "inspiracija": "Objava na Mastodon-u o Qwen-u koji je pregledao sopstveni kod, i lokalni modeli poput Inkling 2 Mini"
+    }
+  ],
+  "cene": "Najveći pad: GLM 5.3 Flash je pojeftinio sa 0,15/0,50 na 0,0399/0,0784 $ za milion ulaznih/izlaznih tokena, Qwen3 Coder 30B A3B sa 0,15/0,60 na 0,07/0,28 $, a Qwen3.8 27B je danas spušten na 0,035/1,50 $. Poskupeo je MiniMax M2.7, sa 0,21/0,84 na 0,60/1,80 $, a DeepSeek V4.1 Flash je za 30 dana jeftiniji 69,8% i sada košta 0,0498/0,1992 $. Najjeftiniji u klasi jeftinih i brzih je GLM 5.3 Flash (0,0399/0,0784 $), u srednjoj klasi GLM 5.3 (0,0699/1,40 $), a među novima je GPT-6.2 Sol (2/10 $) pet puta jeftiniji od GPT-6.2 Astra (8/40 $).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Rimanova hipoteza uz Claude: tačno, ali nečitljivo?",
+        "oCemuSePrica": "Dokaz Levent Alpögea postoji samo kao Lean kod od 1,3 GB, a nekoliko sati kasnije Masullo je objavio ljudski dokaz od 940 strana. Rasprava više nije samo o tome da li je dokaz tačan, nego i o tome šta vredi dokaz koji niko ne razume, i da li to pokazuje da AI nadmašuje ljude ili da jednostavno ne znamo koliko su matematički problemi zaista teški.",
+        "glasovi": "Elliot Glazer potvrđuje da je formalizovana tvrdnja zaista GRH i vidi mali rizik od greške, dok Omar Khattab ističe nesklad između rešavanja milenijumskih problema i gluposti na hiljadu drugih stvari. Neki to porede sa „grubom silom“ kao na olimpijadama, a glasine o DeepMind matematičkim rezultatima nisu potvrđene.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@ElliotGlazer",
+            "url": "https://x.com/ElliotGlazer/status/2123792743503933774"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@eliebakouch",
+            "url": "https://x.com/eliebakouch/status/2123804091297976653"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@lateinteraction",
+            "url": "https://x.com/lateinteraction/status/2123827471325765706"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@KSHartnett",
+            "url": "https://x.com/KSHartnett/status/2123847664064241799"
+          }
+        ]
+      },
+      {
+        "naslov": "Anthropic na berzi: bezbednost protiv akcionara",
+        "oCemuSePrica": "Posle rekordnog IPO-a i pada od oko 10% drugog dana, zajednica raspravlja da li Anthropic može da ostane „kompanija koja stavlja bezbednost na prvo mesto“ kad odgovara akcionarima. Ljude ljuti i to što je ograničio korišćenje Claude pretplata kroz spoljne alate poput OpenClaw-a.",
+        "glasovi": "Matthew Berman u snimku sa preko 60.000 pregleda pita kako se upozorenja o riziku slažu sa pričom za Volstrit. Timnit Gebru na Bluesky-ju ističe koliko je bogatstva otišlo maloj grupi ljudi.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "youtube",
+            "naziv": "Matthew Berman",
+            "url": "https://www.youtube.com/watch?v=I0Fasi1-teQ"
+          },
+          {
+            "platforma": "bluesky",
+            "naziv": "Timnit Gebru",
+            "url": "https://bsky.app/profile/timnitgebru.blacksky.app/post/3n2tf7inzrc2e"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@scaling01",
+            "url": "https://x.com/scaling01/status/2123804878409765096"
+          }
+        ]
+      },
+      {
+        "naslov": "Inkling 2 Mini u praksi: lokalni model koji „razmišlja u krug“",
+        "oCemuSePrica": "Zajednica isprobava model kod kog se slojevi vrte više puta po tokenu. Raspravlja se o tome da li je ovakva arhitektura put da se pametniji modeli smeste u laptop. Odmah su stigli GGUF fajlovi za 16 GB RAM-a, Ollama i MLX.",
+        "glasovi": "Soumith Chintala prijavljuje oko 75 tokena u sekundi na DGX Spark-u i kvalitet otprilike kao Qwen 3.8 27B. Drugi primećuju da slabije pamti činjenice i prati uputstva kroz više poruka.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@soumithchintala",
+            "url": "https://x.com/soumithchintala/status/2123878334895436115"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@UnslothAI",
+            "url": "https://x.com/UnslothAI/status/2123873656069877899"
+          },
+          {
+            "platforma": "bluesky",
+            "naziv": "Machine Learning",
+            "url": "https://bsky.app/profile/machinelearning.bsky.social/post/3n2t4lfwiac2w"
+          }
+        ]
+      },
+      {
+        "naslov": "Gemini 4 Neon: pohvale za kod, zamerke na cenu i pravila",
+        "oCemuSePrica": "Developeri hvale Neon za kodiranje i pronalaženje ranjivosti, ali se žale na troškove preko API-ja i na uslove korišćenja Antigravity-ja (zabrane naloga, pravila za rad bez interfejsa). Zbunjuju i imena: Neon, Carbon, Argon i Hydrogen.",
+        "glasovi": "Theo i Lucas Beyer su pozitivni, a Beyer kaže da je Neon napravio najpametniji pregledač podataka. Teortaxes je platio 4,60 $ za jednostavan demo i smatra da cena ne može da se meri sa Anthropic-ovim pretplatama, a Simon Willison pita kako se modeli uopšte odnose jedan prema drugom.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@giffmana",
+            "url": "https://x.com/giffmana/status/2123897457566224729"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@teortaxesTex",
+            "url": "https://x.com/teortaxesTex/status/2123595259955622200"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@simonw",
+            "url": "https://x.com/simonw/status/2123808432830701909"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@linaqruf_",
+            "url": "https://x.com/linaqruf_/status/2123758667279573350"
+          }
+        ]
+      }
+    ],
+    "snimci": [
+      {
+        "naslov": "I’m Crashing Out About Anthropic",
+        "kanal": "Matthew Berman",
+        "opis": "Kritički osvrt na Anthropic kao javnu kompaniju: upozorenja o riziku nasuprot priči za investitore, ograničenja Claude pretplata i METR nalazi o tome kako AI ubrzava Anthropic-ova istraživanja.",
+        "url": "https://www.youtube.com/watch?v=I0Fasi1-teQ"
+      },
+      {
+        "naslov": "What Runs Where? Local AI in Production",
+        "kanal": "AI Engineer",
+        "opis": "Ahmad Osman objašnjava kako izabrati hardver, inference engine i kvantizaciju za lokalne modele u produkciji i kada se isplati imati sopstvene GPU-ove.",
+        "url": "https://www.youtube.com/watch?v=GKSQYbELDzw"
+      }
+    ]
+  },
+  "nedeljni": null
+}

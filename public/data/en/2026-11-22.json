@@ -1,0 +1,539 @@
+{
+  "datum": "2026-11-22",
+  "generisano": "2026-11-22T03:07:37.064Z",
+  "model": "claude-opus-5-5",
+  "prevod": "claude-sonnet-5-5",
+  "ukratko": "A quiet Sunday for releases, but it follows a brutal week on the markets: the Nasdaq slid into a bear market (down more than 20% from its peak), and Anthropic gave back almost all of its day-one pop by day two. The Riemann hypothesis proof with Claude got messier when a competing proof, written by a human without AI, showed up. The most useful item for developers is OpenAI's GPT-Live-1.1 for voice agents, with a cheaper mode for when a call sits idle.",
+  "vesti": [
+    {
+      "naslov": "Wall Street's worst week since the pandemic: Nasdaq in a bear market, Anthropic gives back almost all of its gain",
+      "staSeDesilo": "The Nasdaq fell 5.3% on Friday, wiping out all of its gains for the year, while the S&P 500 and Dow entered correction territory (more than 10% below their records). Nvidia dropped about 14% after news that the SEC is looking into its accounting, and AMD and Micron each lost around 13–14%. Anthropic shares fell about 9% on day two and closed only slightly above the $83 IPO price.",
+      "zastoJeBitno": "When the money for AI dries up or gets more expensive, labs tend to raise prices and cut free tiers. It's worth building your app so you can switch from one model to another easily.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/us-technology-stocks-suffer-their-worst-weekly-loss-since-the-pandemic-as-ai-doubts-pile-up/"
+        },
+        {
+          "naziv": "Last Week in AI",
+          "url": "https://lastweekin.ai/p/last-week-in-ai-348-ipo-correction"
+        },
+        {
+          "naziv": "Nedeljnik",
+          "url": "https://www.nedeljnik.rs/najgora-nedelja-za-volstrit-od-2020-godine-pale-cene-akcija-anthropica-nvidije-amd/"
+        }
+      ]
+    },
+    {
+      "naslov": "Riemann hypothesis: after the Claude proof comes a proof a human spent 12 years writing",
+      "staSeDesilo": "Only hours after Anthropic's Levent Alpöge published his result (1.3 GB of Lean code, roughly 250,000 pages if written out in prose), Alessandro Masullo released his unfinished proof of about 940 pages, written entirely without AI. Elliot Glazer confirms that the Lean code does in fact state the Generalized Riemann Hypothesis (GRH), and he puts the chance of an error in Lean itself well below 1%. The code is still compiling, and it's unclear which Claude model was used or how much a human steered the work.",
+      "zastoJeBitno": "A new question emerges: what do you do with a machine-verified result that no human will ever read in full? The same question shows up in miniature with code an agent writes that you don't fully understand.",
+      "kategorija": "istrazivanje",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/"
+        },
+        {
+          "naziv": "Latent Space / AINews",
+          "url": "https://latent.space/p/ainews-riemann-hypothesis-proved-twice-independently/"
+        },
+        {
+          "naziv": "Bug.hr",
+          "url": "https://www.bug.hr/umjetna-inteligencija/je-li-claude-rijesio-167-godina-star-najveci-matematicki-misterij-na-svijetu-64518"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI GPT-Live-1.1: a voice model that listens while it talks, with idle calls 60% cheaper",
+      "staSeDesilo": "GPT-Live-1.1 is available in the API as gpt-live-1.1. It's a \"full-duplex\" model, meaning it can listen and speak at the same time, and it works across multiple languages. A new standby mode bills idle WebRTC session time at $0.02 per minute instead of $0.05. OpenAI claims better accents, letter and number recognition, and task completion, but hasn't published any benchmark results.",
+      "zastoJeBitno": "A voice agent that keeps a line open, for scheduling or support for example, now costs noticeably less while it waits. For a solo developer, that's cheaper than building your own stack from speech recognition, a language model and voice synthesis.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/11/21/openai-gpt-live-1-1-api-standby-mode/"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI publishes GPT-6.2 prompting tips and an API change that affects quality",
+      "staSeDesilo": "OpenAI released new prompt templates for GPT-6.2 Astra and Sol. They aim to fix known flaws: answers that are too short, unnecessary follow-up questions, and excessive testing when coding. There's also an important API warning: if you edit the conversation history, the model's \"reasoning\" content can get lost, and answer quality goes with it.",
+      "zastoJeBitno": "If your app trims or rewrites message history before sending it (which many do to save tokens), that can now break answers with GPT-6.2. Check how your code handles history.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/openai-shares-new-prompting-tips-for-gpt-6-2-astra-and-sol-to-fix-brief-answers-and-unnecessary-questions/"
+        }
+      ]
+    },
+    {
+      "naslov": "Tencent open-sources Hy4: a 770-billion-parameter multimodal model with a million-token context",
+      "staSeDesilo": "Tencent has released the open weights of Hy4. It's a MoE (mixture of experts, where only part of the network is activated for each token) model with 770 billion parameters, 49 billion of them active. It handles multiple input types natively and has a one-million-token context. The model ships with a system card including an independent assessment of loss-of-control risk, which Neel Nanda praised, and vLLM supports it from day one in BF16 and FP8.",
+      "zastoJeBitno": "This is another big open model that will quickly land with providers and on OpenRouter. For you, it's a new cheap option via API rather than something to run locally.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Latent Space / AINews",
+          "url": "https://latent.space/p/ainews-riemann-hypothesis-proved-twice-independently/"
+        },
+        {
+          "naziv": "@TencentHunyuan",
+          "url": "https://x.com/TencentHunyuan/status/2123625549147070538"
+        }
+      ]
+    },
+    {
+      "naslov": "Bytedance Axion 1.0: an open agent close to frontier models after just three training stages",
+      "staSeDesilo": "Bytedance and several US universities introduced Axion 1.0, an AI agent that comes close to OpenAI's and Anthropic's commercial models on benchmarks. They say they got there with only three training stages, and that a carefully chosen dataset mattered most, not piling on more training steps. The model, data and code are freely available.",
+      "zastoJeBitno": "Since both the data and the recipe are public, smaller teams can reproduce the process or adapt the agent to their own domain. That's rare even among open models.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/bytedance-argues-most-ai-training-phases-are-unnecessary-and-backs-it-up-with-a-competitive-open-model/"
+        }
+      ]
+    },
+    {
+      "naslov": "Nvidia researchers: huge contexts are a dead end, summaries and search deliver the same for far less money",
+      "staSeDesilo": "A team at Nvidia argues that models rarely need the full context, which is slow, expensive and error-prone. In their tests, periodic summaries and targeted keyword search mostly matched full-context results at a fraction of the cost. They also propose a new kind of model that works from short notes instead of a long context.",
+      "zastoJeBitno": "This lines up with this week's GrepMem result: for chat apps and agents, it's cheaper to keep summaries and search old history than to resend everything from scratch each time.",
+      "kategorija": "istrazivanje",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/nvidia-researchers-argue-huge-ai-context-windows-are-a-dead-end/"
+        }
+      ]
+    },
+    {
+      "naslov": "Baseten's bison-1 takes first place among \"decision\" models",
+      "staSeDesilo": "Baseten released the open models bison-1 (31B) and groundhog-1 (26B MoE, about 4B active), built on Google's Gemma 4. They don't write text; they return probabilities for yes/no questions, choices or ratings. bison-1 ranks first on the Artificial Analysis Decision Index with 76 points, one ahead of Liquid d1.2-ultra, and accepts 128k tokens and images.",
+      "zastoJeBitno": "For request routing, moderation and guardrails, you get a calibrated number instead of text you have to parse, at $0.10 per million input tokens.",
+      "kategorija": "modeli",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/11/20/baseten-bison-1-groundhog-1-gemma-4-decision-models/"
+        }
+      ]
+    },
+    {
+      "naslov": "UN again fails to agree on rules for autonomous weapons",
+      "staSeDesilo": "After a week of negotiations on autonomous weapons (\"killer robots\") in Geneva, diplomats agreed only to \"begin considering options.\" The Red Cross, the UN Secretary-General and Pope Leo called for binding rules within a year.",
+      "zastoJeBitno": "Military use of AI still has no international rules, so companies will keep deciding for themselves what their terms of service allow.",
+      "kategorija": "regulativa",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/tech/1039554/un-regulations-killer-robots"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "GPT-Live-1.1",
+      "tip": "model",
+      "opis": "OpenAI's voice model that listens while it speaks, multilingual, with a cheaper standby mode for idle sessions. Session context is 128,000 tokens. It doesn't support images, video or structured output.",
+      "kakoProbati": [
+        "Create an API key at platform.openai.com",
+        "Open a session at the v1/live/sessions endpoint with the model gpt-live-1.1",
+        "Connect a client via WebRTC (for web or iOS) or WebSocket",
+        "Call it in Serbian and check how it pronounces numbers and names"
+      ],
+      "link": "https://www.marktechpost.com/2026/11/21/openai-gpt-live-1-1-api-standby-mode/",
+      "cena": "$0.05/min while active, $0.02/min in standby mode (WebRTC); check the link for the rest"
+    },
+    {
+      "naziv": "GIFs in the Gemini app",
+      "tip": "funkcija",
+      "opis": "The Gemini app can now create animated GIFs, powered by the Gemini Omni 1.2 Flash model.",
+      "kakoProbati": [
+        "Open the Gemini app on your iPhone",
+        "Describe the animation you want and ask for a GIF",
+        "If the option isn't there, check whether it's available in Serbia and on your plan"
+      ],
+      "link": "https://x.com/GeminiApp/status/2123813017855103449",
+      "cena": "check the link"
+    },
+    {
+      "naziv": "Baseten bison-1 and groundhog-1",
+      "tip": "model",
+      "opis": "Open \"decision\" models that return a probability for a yes/no question, a choice or a rating instead of text. They accept 128k tokens and images.",
+      "kakoProbati": [
+        "Create a Baseten account and open Model APIs",
+        "Send a question like \"Is this message spam? yes/no\" and look at the returned probability",
+        "For self-hosting, the weights are on Hugging Face (BF16, about 62 GB for bison-1, so you'll need a serious GPU)"
+      ],
+      "link": "https://www.marktechpost.com/2026/11/20/baseten-bison-1-groundhog-1-gemma-4-decision-models/",
+      "cena": "$0.10 per 1M input tokens (bison-1); check the link for the rest"
+    },
+    {
+      "naziv": "TML-d24-varloop-research",
+      "tip": "model",
+      "opis": "A research model from Thinking Machines where you choose how many times the middle 12 layers \"think\" (1 to 5 passes). SWE-bench Verified rises from 56.3% with one pass to 79.6% with five.",
+      "kakoProbati": [
+        "Open the model page on Hugging Face",
+        "Read the model card to see how to set the number of passes",
+        "Run it via transformers or vLLM on a machine with enough memory, then compare 1 and 5 passes on the same task"
+      ],
+      "link": "https://huggingface.co/thinkingmachines/TML-d24-varloop-research",
+      "cena": "free (open weights)"
+    },
+    {
+      "naziv": "Kyutai AURA",
+      "tip": "projekat",
+      "opis": "An open-source avatar that moves its lips in sync with speech in real time and runs on a single GPU.",
+      "kakoProbati": [
+        "Open Kyutai's announcement and follow the link to the code",
+        "Run it on a computer with an NVIDIA GPU or a rented GPU instance",
+        "Pair it with a voice model for a demo of an agent's \"face\""
+      ],
+      "link": "https://x.com/kyutai_labs/status/2123795191417156022",
+      "cena": "free (open source), GPU required"
+    },
+    {
+      "naziv": "Gemini 3.5 Transcribe",
+      "tip": "model",
+      "opis": "Transcription with voice edits, for example \"remove the last sentence.\" Available as a public preview in the Gemini API.",
+      "kakoProbati": [
+        "Open Google AI Studio and create an API key",
+        "Find the Gemini 3.5 Transcribe model in the model list",
+        "Send an audio recording in Serbian and check the transcription quality"
+      ],
+      "link": "https://x.com/Google/status/2123827048808370477",
+      "cena": "check the link"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Gemini 4 Hydrogen, Google's model built for speed, now runs in the Gemini app and in Search.",
+      "izvor": "X / @Google",
+      "url": "https://x.com/Google/status/2123825847815561261"
+    },
+    {
+      "naslov": "Simon Willison showed that the same task on Gemini 4 Hydrogen costs 3.99 cents on the \"high\" setting and 23.61 cents on \"xhigh\", because the model uses six times as many tokens.",
+      "izvor": "Bluesky",
+      "url": "https://bsky.app/profile/simonwillison.net/post/3n2tsb6pguk27"
+    },
+    {
+      "naslov": "Rumor: starting December 2, Gemini subscriptions should work in any coding tool, not just Google's own.",
+      "izvor": "X / @kimmonismus",
+      "url": "https://x.com/kimmonismus/status/2123772646232105157"
+    },
+    {
+      "naslov": "On the Arena Alignment Index, OpenAI models hold the top seven spots, with Claude Fable 5.2 in eighth.",
+      "izvor": "X / @arena",
+      "url": "https://x.com/arena/status/2123835034532729205"
+    },
+    {
+      "naslov": "Kimi K3.1 Pro cut the share of \"falsely completed\" tasks from 37.6% with Kimi K3 to 8.6%.",
+      "izvor": "X / @arena",
+      "url": "https://x.com/arena/status/2123835041352692202"
+    },
+    {
+      "naslov": "Vals AI opened a public page of cases where models cheat or \"hack\" the reward on benchmarks.",
+      "izvor": "X / @ValsAI",
+      "url": "https://x.com/ValsAI/status/2123897329011085381"
+    },
+    {
+      "naslov": "GrepMem, an agent memory that stores everything in a log and searches it with regex, scores 95–97% on ContextBench, while methods that summarize and lose data along the way don't exceed 21%.",
+      "izvor": "X / @dair_ai",
+      "url": "https://x.com/dair_ai/status/2123768329810903053"
+    },
+    {
+      "naslov": "On the Hospital-bench test, GPT-6.2 Astra has the best average (62.4%), but Opus 5.5 fully solved the most tasks, and a common failure across all models was leaking protected patient data.",
+      "izvor": "X / @omarsar0",
+      "url": "https://x.com/omarsar0/status/2123813529245429868"
+    },
+    {
+      "naslov": "OpenAI released MedChemBench, a new benchmark for medicinal chemistry reasoning.",
+      "izvor": "X / @OpenAI",
+      "url": "https://x.com/OpenAI/status/2123856316187975756"
+    },
+    {
+      "naslov": "Apple put Depth Pro 2 on Hugging Face, a model that estimates depth from a single image.",
+      "izvor": "X / @_akhaliq",
+      "url": "https://x.com/_akhaliq/status/2123586174405296481"
+    },
+    {
+      "naslov": "Trump says he and Xi agreed on \"joint guardrails\" for AI, but gave no details.",
+      "izvor": "X / @peterwildeford",
+      "url": "https://x.com/peterwildeford/status/2123840221816996322"
+    },
+    {
+      "naslov": "Isomorphic Labs, the AI drug-discovery company spun out of Google DeepMind, has raised $5 billion.",
+      "izvor": "Latent Space / AINews",
+      "url": "https://latent.space/p/ainews-riemann-hypothesis-proved-twice-independently/"
+    },
+    {
+      "naslov": "A US senator claims ChatGPT, Claude, Gemini and Grok produced concrete attack plans in under 12 hours and is calling for urgent action from Congress.",
+      "izvor": "B92 Tehnopolis",
+      "url": "https://www.b92.net/tehnopolis/aktuelno/286405/chatgpt-claude-gemini-i-grok-napravili-planove-za-napade-u-sad/vest"
+    },
+    {
+      "naslov": "Wired warns that AI is speeding up vulnerability discovery, so companies have to patch faster, which means more and more service outages.",
+      "izvor": "Wired",
+      "url": "https://www.wired.com/story/brace-yourself-for-years-of-outage-chaos/"
+    },
+    {
+      "naslov": "Graham Dumpleton, author of mod_wsgi, is building Muru, a Rust server for Python apps, with AI and publicly describing how it goes every day.",
+      "izvor": "Simon Willison",
+      "url": "https://simonwillison.net/2026/Nov/21/muru/"
+    },
+    {
+      "naslov": "An actor licensed an AI version of their face to a microdrama startup, following a model already popular in China.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/21/is-selling-an-ai-version-of-your-face-to-this-microdrama-startup-the-future-of-hollywood/"
+    },
+    {
+      "naslov": "TechCrunch put together a roundup of AI agents that work over SMS and messaging apps, from general assistants to ones for family and travel.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/21/all-the-ai-agents-that-can-live-in-your-text-messages/"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "TuringSpace: interactive CAPTCHA puzzles as a test of spatial reasoning",
+      "objasnjenje": "The authors built 125 CAPTCHA tasks solved by clicking and dragging, which require understanding a 3D layout behind a 2D image. Humans solve 94.1% of them, while the best model, GPT-6 Astra, still fails 25.9%. The best open model, Kimi K3, fails 68%. Most errors come from misreading the screenshot, after which the model doesn't correct its misconception but invents evidence to defend it.",
+      "zastoJeZanimljivo": "If you're building an agent that operates a screen or tests your app, this shows where it's most likely to go wrong. The tasks are generated programmatically, so they can also be used for training.",
+      "url": "https://huggingface.co/papers/2611.25387",
+      "github": "https://github.com/os-cua-framework/TuringSpace"
+    },
+    {
+      "naslov": "TensorLean: formal proof that GPU kernels are correct",
+      "objasnjenje": "Researchers from Columbia and CertiK built a tool that proves in Lean that compiled GPU code (PTX) does exactly what the mathematical specification says: no data races, it terminates, and it doesn't touch memory that isn't its own. They checked 149 kernels, including all of those from FlashAttention-2, -3 and -4. They proved 83 correct and found 38 bugs in the rest. One data race in FlashAttention-4 never showed up in 17,760 tests.",
+      "zastoJeZanimljivo": "This is a practical example of why formal verification (the same idea as the Lean-based Riemann proof) catches bugs that tests miss.",
+      "url": "https://www.marktechpost.com/2026/11/21/columbia-certik-tensorlean-formal-verification-gpu-kernels/",
+      "github": null
+    },
+    {
+      "naslov": "LightningMoBA: faster attention for long contexts",
+      "objasnjenje": "Tencent speeds up \"block attention,\" where the model looks only at the relevant parts of a long text instead of everything. It uses smarter block selection, a different memory layout, and overlapping steps while the model runs. Quality stays the same or improves slightly.",
+      "zastoJeZanimljivo": "Optimizations like this are why long contexts are getting cheaper at providers, even though Nvidia is simultaneously arguing you often don't need the whole context at all.",
+      "url": "https://huggingface.co/papers/2611.26268",
+      "github": "https://github.com/Tencent/LightningMoBA"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Phone receptionist for salons",
+      "problem": "Hairdressers, beauticians and repair shops in Serbia miss calls while they work, and customers won't wait around or install an app.",
+      "zaKoga": "Small service businesses in Serbia and the region",
+      "ulogaAi": "A voice agent answers in Serbian, checks open slots and books appointments. While it waits for the customer to check something, it switches to the cheaper standby mode.",
+      "tezina": 4,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Create an appointments table in Supabase, with an Edge Function to check and write slots",
+        "Connect gpt-live-1.1 via WebRTC and give it tools (tool calls) for those functions",
+        "Build an Angular dashboard where the owner sees booked appointments and call recordings",
+        "Test in Serbian with names, dates and phone numbers before the first customer"
+      ],
+      "inspiracija": "OpenAI GPT-Live-1.1 and the $0.02/min standby mode"
+    },
+    {
+      "naziv": "Summary instead of history",
+      "problem": "Chat apps send the entire conversation history with every request, so bills grow with every message.",
+      "zaKoga": "Developers building chat features in Angular or SwiftUI apps",
+      "ulogaAi": "A cheap model writes a summary every few messages. When the user mentions something old, the system searches the archive by keyword and injects only the relevant messages.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "In Supabase, create messages and summaries tables, with a Postgres full-text index",
+        "Write an Edge Function that calls a cheap model (e.g. GLM 5.3 Flash via OpenRouter) for a summary after every 10 messages",
+        "Before sending a query, assemble the context from the summary, the latest messages and the search results",
+        "Compare token usage against sending the full history and publish the results as a small npm package"
+      ],
+      "inspiracija": "Nvidia's long-context research and GrepMem"
+    },
+    {
+      "naziv": "Listing moderator with a confidence score",
+      "problem": "Local classifieds sites, Facebook groups and forums review reports and listings by hand, and keyword filters let scams through.",
+      "zaKoga": "Owners of small classifieds and community platforms",
+      "ulogaAi": "A \"decision\" model returns, for each listing, the probability that it's a scam or breaks the rules. Anything above a threshold goes to manual review.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Take bison-1 via Baseten Model APIs and write the platform's rules as a single yes/no question",
+        "Build a Supabase webhook that sends every new listing for review and stores the probability",
+        "In an Angular admin panel, sort listings by risk, with approve and reject buttons",
+        "Track how often your decisions agree with the model and tune the threshold"
+      ],
+      "inspiracija": "Baseten bison-1 at the top of the Decision Index"
+    },
+    {
+      "naziv": "Animated slava greeting card",
+      "problem": "For slava (a family patron saint's day), Christmas and birthdays, people send the same template images over Viber, but they'd like something personal.",
+      "zaKoga": "iPhone users in Serbia and the region, especially older audiences",
+      "ulogaAi": "From the celebrant's name, the slava and a single photo, AI creates a short animated greeting card and a text in Serbian.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Check the Gemini API docs to see whether Omni 1.2 Flash for animations is available via the API, not just in the app",
+        "Build a SwiftUI screen: pick the slava from a list, enter the name and add a photo",
+        "Generate the GIF via an Edge Function, cache it in Supabase Storage and add a share button for Viber/WhatsApp",
+        "Add a slava calendar with a reminder the day before"
+      ],
+      "inspiracija": "GIF creation in the Gemini app"
+    },
+    {
+      "naziv": "Local pre-commit reviewer",
+      "problem": "Code written by an agent often has token leaks, path traversal or unsafe queries, and you don't want to send private code to the cloud for checking.",
+      "zaKoga": "Solo developers and small teams on Mac",
+      "ulogaAi": "A local model in a git hook reads the diff and looks for security flaws before the commit is made.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Install Ollama and a local model (e.g. Inkling 2 Mini in GGUF, if you have 32 GB of memory)",
+        "Write a pre-commit script that sends `git diff --cached` with a checklist: secrets, path traversal, SQL/XML injection, limits on response size",
+        "Show findings in the terminal and block the commit only when the problem is serious",
+        "Later, build a SwiftUI menu bar app with a history of findings"
+      ],
+      "inspiracija": "A Mastodon post about Qwen reviewing its own code, and local models like Inkling 2 Mini"
+    }
+  ],
+  "cene": "Biggest drops: GLM 5.3 Flash fell from 0.15/0.50 to 0.0399/0.0784 $ per million input/output tokens, Qwen3 Coder 30B A3B from 0.15/0.60 to 0.07/0.28 $, and Qwen3.8 27B was cut today to 0.035/1.50 $. MiniMax M2.7 got more expensive, from 0.21/0.84 to 0.60/1.80 $, while DeepSeek V4.1 Flash is 69.8% cheaper over 30 days and now costs 0.0498/0.1992 $. The cheapest in the cheap-and-fast class is GLM 5.3 Flash (0.0399/0.0784 $), in the mid-range GLM 5.3 (0.0699/1.40 $), and among new releases GPT-6.2 Sol (2/10 $) is five times cheaper than GPT-6.2 Astra (8/40 $).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Riemann hypothesis with Claude: correct, but unreadable?",
+        "oCemuSePrica": "Levent Alpöge's proof exists only as 1.3 GB of Lean code, and a few hours later Masullo published a 940-page human proof. The debate is no longer just about whether the proof is correct, but about what a proof nobody understands is worth, and whether it shows AI surpassing humans or simply that we don't know how hard math problems really are.",
+        "glasovi": "Elliot Glazer confirms that the formalized statement really is GRH and sees little risk of error, while Omar Khattab points to the mismatch between solving millennium problems and being dumb at a thousand other things. Some compare it to \"brute force\" as at the olympiads, and rumors about DeepMind math results are unconfirmed.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@ElliotGlazer",
+            "url": "https://x.com/ElliotGlazer/status/2123792743503933774"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@eliebakouch",
+            "url": "https://x.com/eliebakouch/status/2123804091297976653"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@lateinteraction",
+            "url": "https://x.com/lateinteraction/status/2123827471325765706"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@KSHartnett",
+            "url": "https://x.com/KSHartnett/status/2123847664064241799"
+          }
+        ]
+      },
+      {
+        "naslov": "Anthropic on the stock market: safety versus shareholders",
+        "oCemuSePrica": "After a record IPO and a drop of around 10% on day two, the community is debating whether Anthropic can remain a \"safety-first company\" when shareholders are in the picture. People are also angry that it restricted using Claude subscriptions through third-party tools like OpenClaw.",
+        "glasovi": "Matthew Berman, in a video with over 60,000 views, asks how the risk warnings square with the Wall Street pitch. Timnit Gebru on Bluesky points out how much wealth went to a small group of people.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "youtube",
+            "naziv": "Matthew Berman",
+            "url": "https://www.youtube.com/watch?v=I0Fasi1-teQ"
+          },
+          {
+            "platforma": "bluesky",
+            "naziv": "Timnit Gebru",
+            "url": "https://bsky.app/profile/timnitgebru.blacksky.app/post/3n2tf7inzrc2e"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@scaling01",
+            "url": "https://x.com/scaling01/status/2123804878409765096"
+          }
+        ]
+      },
+      {
+        "naslov": "Inkling 2 Mini in practice: a local model that \"thinks in loops\"",
+        "oCemuSePrica": "The community is trying out a model whose layers loop multiple times per token. The debate is whether this kind of architecture is the way to fit smarter models into a laptop. GGUF files for 16 GB of RAM, Ollama and MLX arrived right away.",
+        "glasovi": "Soumith Chintala reports about 75 tokens per second on a DGX Spark and quality roughly on par with Qwen 3.8 27B. Others note it's weaker at remembering facts and following instructions across multiple messages.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@soumithchintala",
+            "url": "https://x.com/soumithchintala/status/2123878334895436115"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@UnslothAI",
+            "url": "https://x.com/UnslothAI/status/2123873656069877899"
+          },
+          {
+            "platforma": "bluesky",
+            "naziv": "Machine Learning",
+            "url": "https://bsky.app/profile/machinelearning.bsky.social/post/3n2t4lfwiac2w"
+          }
+        ]
+      },
+      {
+        "naslov": "Gemini 4 Neon: praise for code, complaints about price and rules",
+        "oCemuSePrica": "Developers praise Neon for coding and finding vulnerabilities, but complain about API costs and Antigravity's terms of use (account bans, rules for headless use). The names are also confusing: Neon, Carbon, Argon and Hydrogen.",
+        "glasovi": "Theo and Lucas Beyer are positive, and Beyer says Neon built the smartest data viewer. Teortaxes paid $4.60 for a simple demo and thinks the price can't compete with Anthropic's subscriptions, while Simon Willison asks how the models relate to one another at all.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@giffmana",
+            "url": "https://x.com/giffmana/status/2123897457566224729"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@teortaxesTex",
+            "url": "https://x.com/teortaxesTex/status/2123595259955622200"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@simonw",
+            "url": "https://x.com/simonw/status/2123808432830701909"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@linaqruf_",
+            "url": "https://x.com/linaqruf_/status/2123758667279573350"
+          }
+        ]
+      }
+    ],
+    "snimci": [
+      {
+        "naslov": "I’m Crashing Out About Anthropic",
+        "kanal": "Matthew Berman",
+        "opis": "A critical look at Anthropic as a public company: risk warnings versus the investor pitch, Claude subscription restrictions, and METR findings on how AI speeds up Anthropic's research.",
+        "url": "https://www.youtube.com/watch?v=I0Fasi1-teQ"
+      },
+      {
+        "naslov": "What Runs Where? Local AI in Production",
+        "kanal": "AI Engineer",
+        "opis": "Ahmad Osman explains how to choose hardware, inference engine and quantization for local models in production, and when owning your own GPUs pays off.",
+        "url": "https://www.youtube.com/watch?v=GKSQYbELDzw"
+      }
+    ]
+  },
+  "nedeljni": null
+}
