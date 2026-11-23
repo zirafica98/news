@@ -1,6 +1,7 @@
 # Podsetnik i Dev's pick: mali poslovi odvojeni od „Jutarnjeg izdanja“, da ne čekaju u njegovom redu.
 # Pokreće ih Vercel Cron preko api/pokreni-izdanje.mjs:
-#   podsetnik  svako jutro: šta Mihajlo danas treba ručno da uradi (scripts/podsetnik.mjs)
+#   podsetnik  svako jutro: šta Mihajlo danas treba ručno da uradi (scripts/podsetnik.mjs),
+#              pa predlozi komentara kod većih AI kanala (scripts/komentari.mjs)
 #   devs-pick  utorkom posle 16h: kad Dev's pick video izađe na YouTube-u, Instagram reel + story
 #              i X objava na Telegram (scripts/devs-pick.mjs)
 
@@ -10,7 +11,7 @@ on:
   workflow_dispatch:
     inputs:
       rezim:
-        description: 'podsetnik = jutarnja lista zadataka na Telegram · devs-pick = objava Dev''s pick videa na Instagram kad izađe na YouTube-u (utorkom)'
+        description: 'podsetnik = jutarnja lista zadataka i predlozi komentara na Telegram · devs-pick = objava Dev''s pick videa na Instagram kad izađe na YouTube-u (utorkom)'
         type: choice
         options: [podsetnik, devs-pick]
         default: podsetnik
@@ -39,11 +40,17 @@ jobs:
         with:
           node-version: 22
 
+      # Claude Code piše predloge komentara (preko pretplate, kao jutarnje izdanje).
+      - name: Claude Code
+        if: inputs.rezim == 'podsetnik'
+        run: npm install -g @anthropic-ai/claude-code
+
       - name: Posao
         id: posao
         env:
           REZIM: ${{ inputs.rezim }}
           DATUM: ${{ inputs.datum }}
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
@@ -55,7 +62,10 @@ jobs:
           set -o pipefail
           (
           case "$REZIM" in
-            podsetnik) node scripts/podsetnik.mjs ;;
+            podsetnik)
+              node scripts/podsetnik.mjs
+              node scripts/komentari.mjs
+              ;;
             devs-pick)
               git config user.name "Mihajlo"
               git config user.email "zirafica.98@gmail.com"
