@@ -18,7 +18,7 @@ on:
   workflow_dispatch:
     inputs:
       rezim:
-        description: 'normalno = samo ako danas nema izdanja · ponovo = napravi današnje iznova · provera = test bez objavljivanja · notifikacija = samo pošalji push · drustvene = objavi na sve mreže (Instagram, Threads, YouTube, Telegram; Vercel to pokreće popodne) · instagram = samo Instagram · threads = samo Threads · youtube = samo YouTube · instagram-token = produži Instagram i Threads token · telegram-id = nađi tvoj chat ID za izveštaje · ai-wars = test: napravi Byte videe (Tool of the Day, Byte Explains, AI Wars) za datum, bez objave i bez commita · nedeljni = nedeljni izveštaj o formatima i pratiocima na Telegram (Vercel to pokreće ponedeljkom) · newsletter = pošalji današnji email newsletter (ako već nije poslat) · alati-nedelje = lista alata te nedelje na Telegram, za nedeljni video sa tvojim mišljenjem (Vercel to pokreće petkom)'
+        description: 'normalno = samo ako danas nema izdanja · ponovo = napravi današnje iznova · provera = test bez objavljivanja · notifikacija = samo pošalji push · drustvene = objavi na sve mreže (Instagram, Threads, YouTube; Vercel to pokreće popodne; Telegram kanal je isključen od 23. 11. 2026, niko ga ne prati) · instagram = samo Instagram · threads = samo Threads · youtube = samo YouTube · instagram-token = produži Instagram i Threads token · telegram-id = nađi tvoj chat ID za izveštaje · ai-wars = test: napravi Byte videe (Tool of the Day, Byte Explains, AI Wars) za datum, bez objave i bez commita · nedeljni = nedeljni izveštaj o formatima i pratiocima na Telegram (Vercel to pokreće ponedeljkom) · newsletter = pošalji današnji email newsletter (ako već nije poslat) · alati-nedelje = lista alata te nedelje na Telegram, za nedeljni video sa tvojim mišljenjem (Vercel to pokreće petkom)'
         type: choice
         options: [normalno, ponovo, provera, notifikacija, drustvene, instagram, threads, youtube, instagram-token, telegram-id, ai-wars, nedeljni, alati-nedelje, newsletter]
         default: normalno
@@ -147,7 +147,7 @@ jobs:
               [ -z "$datumi" ] && datumi="$(TZ=Europe/Belgrade date +%F)"
               greska=0
               for d in $datumi; do
-                for mreza in instagram threads youtube telegram; do
+                for mreza in instagram threads youtube; do
                   echo "::group::$mreza $d"
                   # YouTube prvo dopuni jučerašnje Shortove koji nisu stali u dnevnu kvotu (već objavljeni se preskaču).
                   if [ "$mreza" = youtube ] && [ -z "$DATUMI" ]; then

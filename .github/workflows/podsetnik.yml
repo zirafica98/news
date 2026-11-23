@@ -14,6 +14,10 @@ on:
         type: choice
         options: [podsetnik, devs-pick]
         default: podsetnik
+      datum:
+        description: 'Samo za devs-pick: datum objave epizode (YYYY-MM-DD), ako treba ponoviti propuštenu objavu. Prazno = danas.'
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -39,6 +43,7 @@ jobs:
         id: posao
         env:
           REZIM: ${{ inputs.rezim }}
+          DATUM: ${{ inputs.datum }}
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
@@ -55,7 +60,7 @@ jobs:
               git config user.name "Mihajlo"
               git config user.email "zirafica.98@gmail.com"
               status=0
-              node scripts/devs-pick.mjs --objavi || status=$?
+              node scripts/devs-pick.mjs --objavi ${DATUM:+--datum=$DATUM} || status=$?
               # YouTube link i stanje objave se čuvaju i kad Instagram ne uspe, da se ništa ne objavi dvaput.
               git add public/data/devs-pick.json scripts/state/devs-pick.json 2>/dev/null || true
               git diff --cached --quiet || { git commit -q -m "Dev's pick objavljen $(TZ=Europe/Belgrade date +%F)" && git pull -q --rebase && git push -q; }

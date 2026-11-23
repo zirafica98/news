@@ -1,7 +1,8 @@
 // Objavljuje izdanje na Instagram (@ai.morning.brief), preko Instagram API-ja sa Instagram prijavom:
-//   1. karusel (post),
+//   1. karusel (post), samo subotom (svakodnevni karusel je imao ~3 pregleda),
 //   2. najviše dva Reel-a sa glasom, redom koji postoji: AI Wars, nedeljni pregled (subota), Tool of the Day, Byte Explains, vest #1,
-//   3. iste slajdove kao story, samo za današnje izdanje (story traje 24h).
+//   3. story: isključen od 23. 11. 2026 (tekstualni slajdovi su bili slabi). Jedini story nedeljno je slikoviti
+//      Dev's pick story utorkom (scripts/devs-pick.mjs). Vraća se sa --story.
 // Slike i video pravi insta-slike.mjs i moraju već biti na sajtu, jer ih Instagram preuzima sa javnog URL-a:
 // skripta zato prvo sačeka da Vercel objavi novi build.
 //
@@ -132,8 +133,10 @@ async function korak(naziv, posao) {
   }
 }
 
-// 1. Karusel. Opis ne sme da sadrži link ka sajtu ni izvore, pa se objava za dan prepoznaje po naslovu sa datumom.
-await korak('post', async () => {
+// 1. Karusel, samo subotom (ili kad se zada --karusel). Opis ne sme da sadrži link ka sajtu ni izvore, pa se objava za dan prepoznaje po naslovu sa datumom.
+const subota = new Date(`${datum}T12:00:00Z`).getUTCDay() === 6;
+if (!subota && !process.argv.includes('--karusel')) console.log('Karusel ide samo subotom, danas se preskače.');
+else await korak('post', async () => {
   const oznaka = `AI Morning Brief · ${lepDatum(datum)}`;
   const vecObjavljeno = await nadjiObjavu(korisnik, oznaka);
   if (vecObjavljeno) return console.log(`Post za ${datum} je već na Instagramu: ${vecObjavljeno.permalink}`);
@@ -212,7 +215,7 @@ function opisZaInstagram(v) {
 }
 
 // 3. Story: isti slajdovi u 9:16, samo za današnje izdanje.
-if (datum === datumIzArgumenata([])) {
+if (process.argv.includes('--story') && datum === datumIzArgumenata([])) {
   await korak('story', async () => {
     const danasnji = async () =>
       ((await graf(`/${korisnik}/stories`, { polja: { fields: 'timestamp' } })).data ?? []).filter((s) => beogradDatum(s.timestamp) === datum).length;

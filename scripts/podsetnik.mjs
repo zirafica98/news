@@ -63,7 +63,7 @@ if (dan === 2) {
     const yt = await naYoutube(ep);
     if (yt.ok === false) dodaj(`⚠️ Dev's Pick #${ep.broj}: ${yt.tekst}. Zakaži ga za danas u 16:00 (Visibility → Schedule), inače Instagram objava neće krenuti.`);
     else dodaj(`🎬 Danas u 16:00 izlazi Dev's Pick #${ep.broj}${yt.tekst ? ` (${yt.tekst})` : ''}.`);
-    dodaj('📸 Instagram reel i story idu sami čim video izađe.');
+    dodaj('📸 Instagram reel i story i YouTube Short idu sami čim video izađe.');
     dodaj('🐦 Posle 16h stiže ti poruka sa X objavom i linkom: objavi je sa svog profila, a link stavi u prvi komentar.');
   } else {
     dodaj('🎬 Ove nedelje nema Dev\'s pick videa, pa danas nema ničeg za YouTube i X.');

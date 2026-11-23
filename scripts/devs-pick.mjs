@@ -6,6 +6,7 @@
 //   1. nađe epizodu sa današnjim datumom objave (ako je nema, ništa ne radi),
 //   2. sačeka da video „Dev's Pick #N“ postane javan na YouTube-u (najviše 90 min) i upiše link u devs-pick.json,
 //   3. objavi na Instagram reel (public/devs-pick/N-reel.mp4) i story (N-story.jpg) koji zovu na YouTube,
+//      a isti reel i kao YouTube Short sa linkom ka dugom videu (Shortovi dobijaju predloge, dugi video novog kanala ne),
 //   4. pošalje Mihajlu na Telegram link videa i X objavu spremnu za kopiranje.
 // Ništa se ne objavljuje dvaput (scripts/state/devs-pick.json).
 //
@@ -13,9 +14,10 @@
 // TELEGRAM_ADMIN_CHAT_ID.
 // Pokretanje: node scripts/devs-pick.mjs --objavi [--datum=YYYY-MM-DD]
 
+import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { DATA_DIR, SCRIPTS_DIR, datumIzArgumenata, preuzmi, readJson, writeJson } from './lib.mjs';
+import { DATA_DIR, PUBLIC_DIR, SCRIPTS_DIR, datumIzArgumenata, preuzmi, readJson, writeJson } from './lib.mjs';
 
 export const SAJT = 'https://www.aimorningbrief.dev';
 export const EPIZODE = join(DATA_DIR, 'devs-pick.json');
@@ -55,12 +57,49 @@ export async function youtube() {
   });
   const { access_token: pristup } = JSON.parse(prijava.tekst || '{}');
   if (!pristup) throw new Error('YouTube prijava nije uspela (ponovo pokreni scripts/youtube-prijava.mjs).');
-  return async (putanja, parametri) => {
+  const yt = async (putanja, parametri) => {
     const odgovor = await preuzmi(`https://www.googleapis.com/youtube/v3${putanja}?${new URLSearchParams(parametri)}`, { headers: { Authorization: `Bearer ${pristup}` } });
     const podaci = JSON.parse(odgovor.tekst || '{}');
     if (!odgovor.ok) throw new Error(`YouTube ${putanja}: ${podaci.error?.message ?? odgovor.status}`);
     return podaci;
   };
+  yt.pristup = pristup;
+  return yt;
+}
+
+/**
+ * Isti reel kao YouTube Short, sa linkom ka dugom videu u opisu i u komentaru.
+ * Naslov namerno NEMA „Dev's Pick #N“, da ga nadjiVideo ne bi zamenio sa dugim videom.
+ */
+async function objaviShort(ep, stanje, yt) {
+  const s = (stanje[ep.broj] ??= {});
+  if (s.short || !ep.reel) return;
+  const video = await readFile(join(PUBLIC_DIR, ep.reel));
+  const naslov = (ep.shortNaslov ?? `${ep.alat}: a real developer tested it, ${ep.ocena}/10 #Shorts`).replace(/[<>]/g, '').slice(0, 100);
+  const opis = [ep.sazetak, `▶️ Full test: ${ep.youtube}`, "A real developer tests a new AI tool every Tuesday. Subscribe so you don't miss it.", '#AI #AITools #Developer #Shorts'].join('\n\n');
+  const pocetak = await preuzmi('https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status', {
+    metoda: 'POST',
+    headers: { Authorization: `Bearer ${yt.pristup}`, 'Content-Type': 'application/json; charset=UTF-8', 'X-Upload-Content-Type': 'video/mp4', 'X-Upload-Content-Length': String(video.length) },
+    telo: JSON.stringify({
+      snippet: { title: naslov, description: opis.replace(/</g, '‹').replace(/>/g, '›'), categoryId: '28', defaultLanguage: 'en', tags: ['AI tools', 'developer', 'AI', ep.alat.slice(0, 30)] },
+      status: { privacyStatus: 'public', selfDeclaredMadeForKids: false },
+    }),
+  });
+  const adresa = pocetak.zaglavlja?.get('location');
+  if (!pocetak.ok || !adresa) throw new Error(`YouTube nije prihvatio Short: ${pocetak.status} ${pocetak.tekst.slice(0, 300)}`);
+  const otpremljeno = await preuzmi(adresa, { metoda: 'PUT', headers: { 'Content-Type': 'video/mp4' }, telo: video, timeoutMs: 5 * 60_000 });
+  const { id } = JSON.parse(otpremljeno.tekst || '{}');
+  if (!otpremljeno.ok || !id) throw new Error(`Short nije otpremljen: ${otpremljeno.status}`);
+  s.short = `https://youtube.com/shorts/${id}`;
+  console.log(`YouTube Short: ${s.short}`);
+  // Komentar sa linkom (traži youtube.force-ssl; ako ne uspe, link je svejedno u opisu).
+  await new Promise((r) => setTimeout(r, 20_000));
+  const kom = await preuzmi('https://www.googleapis.com/youtube/v3/commentThreads?part=snippet', {
+    metoda: 'POST',
+    headers: { Authorization: `Bearer ${yt.pristup}`, 'Content-Type': 'application/json' },
+    telo: JSON.stringify({ snippet: { videoId: id, topLevelComment: { snippet: { textOriginal: `Full test on YouTube 👉 ${ep.youtube}` } } } }),
+  });
+  if (!kom.ok) console.log(`Komentar na Shortu nije dodat: ${kom.status}`);
 }
 
 /**
@@ -155,8 +194,8 @@ async function objavi() {
   if (!ep) return console.log(`Nema Dev's pick epizode za ${datum}, ništa se ne objavljuje.`);
 
   const stanje = await readJson(STANJE, {});
+  const yt = await youtube();
   if (!ep.youtube) {
-    const yt = await youtube();
     if (!yt) throw new Error('YouTube nije podešen, ne mogu da proverim da li je video izašao.');
     // Video je zakazan za 16h; cron može da krene i malo ranije, pa se čeka da postane javan.
     let video = null;
@@ -180,12 +219,16 @@ async function objavi() {
   let igGreska = null;
   await objaviInstagram(ep, stanje).catch((e) => (igGreska = e));
   await writeJson(STANJE, stanje);
+  let shortGreska = null;
+  if (yt) await objaviShort(ep, stanje, yt).catch((e) => (shortGreska = e));
+  await writeJson(STANJE, stanje);
 
   const ig = stanje[ep.broj] ?? {};
   await telegram(
     [
       `🎬 Dev's Pick #${ep.broj} je izašao: ${ep.youtube}`,
       igGreska ? `❌ Instagram nije uspeo: ${igGreska.message}` : `📸 Instagram: ${ig.reel ? `reel ${ig.reel}` : 'reel preskočen'}${ig.story ? ' + story' : ''}`,
+      shortGreska ? `❌ YouTube Short nije uspeo: ${shortGreska.message}` : ig.short ? `▶️ YouTube Short: ${ig.short}` : '',
       '',
       '👉 Sad objavi na X sa svog profila:',
       '',
@@ -197,6 +240,7 @@ async function objavi() {
     ].join('\n'),
   );
   if (igGreska) throw igGreska;
+  if (shortGreska) throw shortGreska;
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1]).href && process.argv.includes('--objavi')) await objavi();
