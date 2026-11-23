@@ -1,0 +1,484 @@
+{
+  "datum": "2026-11-23",
+  "generisano": "2026-11-23T03:07:40.486Z",
+  "model": "claude-opus-5-5",
+  "prevod": "claude-sonnet-5-5",
+  "ukratko": "It was a quiet weekend for new models, but a few important confirmations and warnings landed. The Lean community officially confirmed a proof of the Riemann hypothesis, and two studies (METR and a \"simulated company\" test) show agents improving fast but still failing at messy day-to-day work. For developers, the most useful item is Perplexity's new Monitor API, which keeps watching the web for changes so you don't have to.",
+  "vesti": [
+    {
+      "naslov": "Perplexity Monitor API: a search that runs nonstop and pings you only when something is new",
+      "staSeDesilo": "Perplexity has released the Monitor API: you give it a query, a goal described in words, a schedule (from every 15 minutes to once a week, or cron) and a webhook URL, and it searches the web on its own. There are two modes: search monitoring and monitoring of up to 10 specific pages (e.g. a pricing page or changelog), where you get a text diff of the changes. Its \"decision\" model (a model that only judges whether a result matters) filters out irrelevant results and attaches a confidence score to each one.",
+      "zastoJeBitno": "You no longer need to build your own scraper, cron job and filter to track changes. One API call and a webhook to a Supabase Edge Function is enough, and it costs $1 per 1,000 successful runs.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/perplexitys-new-monitor-api-turns-web-search-from-a-one-off-query-into-a-nonstop-watchdog/"
+        },
+        {
+          "naziv": "Perplexity blog",
+          "url": "https://www.perplexity.ai/hub/blog/introducing-perplexitys-monitor-api"
+        }
+      ]
+    },
+    {
+      "naslov": "Riemann hypothesis: Lean community officially confirms the proof is correct",
+      "staSeDesilo": "The community around Lean and the Mathlib library (Lean is a tool that machine-checks mathematical proofs) has officially confirmed that Levent Alpöge's proof, from Stanford, is correct. Dozens of people independently ran the check on 17 million lines of code and all got the same result. The article doesn't say whether AI took part in the proof itself, and the earlier proof involving Claude still has no confirmation like this.",
+      "zastoJeBitno": "This is the first time one of the biggest open problems in mathematics has been closed with full machine verification rather than after years of peer review. It also shows what formal verification is for: when an AI (or a human) produces a huge proof, you no longer have to take it on trust.",
+      "kategorija": "istrazivanje",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/lean-and-mathlib-community-officially-confirms-levent-alpoges-proof-of-the-riemann-hypothesis-is-correct/"
+        }
+      ]
+    },
+    {
+      "naslov": "Coding agents in a \"simulated company\" finish fewer than one in ten tasks",
+      "staSeDesilo": "A new test puts coding agents in a fictional software company with coworkers, a project board, chat history and unfinished handoffs. Even Claude Opus 5.5 and GPT-6 Astra fully complete fewer than one in ten tasks. They solve clear, isolated tasks quickly, but get lost when they have to run the work on their own through a chaotic everyday flow. The authors say classic benchmarks like SWE-bench are nearly \"saturated\" and no longer show differences between models.",
+      "zastoJeBitno": "If you use Claude Code, this confirms what you probably already see: it works best when you give it a clear, well-scoped task with context, not \"clean up the backlog.\" You still hold the whole picture of the project.",
+      "kategorija": "istrazivanje",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/ai-coding-agents-ace-isolated-tests-but-complete-fewer-than-one-in-ten-tasks-in-a-simulated-workplace/"
+        }
+      ]
+    },
+    {
+      "naslov": "METR: models are improving faster than experts can check whether they're safe",
+      "staSeDesilo": "METR, an independent organization that measures model capabilities, says Opus 5.5 and GPT-6 Astra are progressing quickly on research tasks, but are increasingly hard to measure reliably. In its view, current data can't rule out a dangerous acceleration of AI development. It also warns that the usual tests may overestimate what models can actually do.",
+      "zastoJeBitno": "The benchmark results companies publish (tests for comparing models) say less and less about how a model will behave for you. That's why it's worth having your own small tests for the tasks that matter to you.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/ai-is-getting-better-faster-than-experts-can-reliably-test-whether-new-systems-are-safe-metr-warns/"
+        }
+      ]
+    },
+    {
+      "naslov": "US banks are banning AI agents from logging into your account",
+      "staSeDesilo": "Major US financial institutions are banning third-party bots from logging into customer accounts. They also warn that if an agent makes an expensive mistake, the loss falls on the user. Check the link for details on which banks and which agents are involved.",
+      "zastoJeBitno": "Personal agents that \"do everything for you\" hit a wall as soon as money is involved. If you're building a finance app, count on official APIs and data exports, not on an agent clicking around a bank's website.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Wired",
+          "url": "https://www.wired.com/story/banks-are-cracking-down-on-ai-agents/"
+        }
+      ]
+    },
+    {
+      "naslov": "Croatia's Omnizon launches a Claude-powered business platform that works over WhatsApp",
+      "staSeDesilo": "Croatian company Omnizon has introduced a business platform connected to Claude. By their account, it can be up and running in a few minutes, and signup, sales conversations and customer support can all run over WhatsApp.",
+      "zastoJeBitno": "This is a regional example of Claude being packaged into a ready-made product for small businesses through channels people here already use. The market for \"AI over WhatsApp/Viber\" tools in Serbia is still pretty empty.",
+      "kategorija": "kompanije",
+      "vaznost": 1,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "ICTbusiness",
+          "url": "https://www.ictbusiness.info/vijesti/hrvatska-tvrtka-omnizon-predstavila-poslovnu-platformu-povezanu-s-claudeom"
+        }
+      ]
+    },
+    {
+      "naslov": "GPT-6.2 Astra and Sol answer more briefly, but admit uncertainty less often",
+      "staSeDesilo": "An analysis shows GPT-6.2 Astra and Sol give much shorter and more direct answers than their predecessors. The trade-off is less willingness to admit uncertainty. Claude models come out well ahead on transparency in the same comparison.",
+      "zastoJeBitno": "If your app uses GPT-6.2 for anything where it matters that the model says \"I don't know\" (health, finance, legal advice), add a verification step or ask for an explicit confidence rating in the prompt.",
+      "kategorija": "modeli",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/gpt-6-2-astra-and-sol-get-to-the-point-faster-but-score-lower-on-transparency-than-claude/"
+        }
+      ]
+    },
+    {
+      "naslov": "Washington plans to name 20+ AI companies \"national champions\"",
+      "staSeDesilo": "According to the Wall Street Journal, citing unnamed sources, the Trump administration plans to designate more than twenty companies as AI \"national champions.\" Nvidia, Amazon, Microsoft, OpenAI and Anthropic are among those mentioned. There is no official confirmation yet.",
+      "zastoJeBitno": "If this happens, the biggest US AI firms could get special government backing, which would affect both exports and regulation. For now it's unofficial information.",
+      "kategorija": "regulativa",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "ICTbusiness",
+          "url": "https://www.ictbusiness.info/vijesti/washington-razmatra-ai-kompanije-kao-nacionalne-prvake"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI is giving away a classifier for detecting child sexual abuse imagery",
+      "staSeDesilo": "OpenAI has released an image classifier that estimates the likelihood that an image shows child sexual abuse, including new and AI-generated images that classic hash matching misses. Vetted organizations can get free API access, but only after applying and being verified.",
+      "zastoJeBitno": "Platforms where users upload images get a tool that catches content never seen before. Access is still not open to every developer, though.",
+      "kategorija": "bezbednost",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "ICTbusiness",
+          "url": "https://www.ictbusiness.info/vijesti/openai-nudi-klasifikator-moguceg-zlostavljackog-sadrzaja"
+        }
+      ]
+    },
+    {
+      "naslov": "Nvidia Alpamayo 2 Edge: a small self-driving model that explains its decisions",
+      "staSeDesilo": "Nvidia has released Alpamayo 2 Edge, a VLA (vision-language-action) model of about 2 billion parameters that plans a vehicle's path and explains why. It's built to run inside the car itself on the DRIVE AGX Thor chip, with a response time of 160 to 190 ms. In simulation it drives about 15 km per at-fault incident.",
+      "zastoJeBitno": "It shows where the trend is heading: \"reasoning\" models are moving onto devices with limited power. That's a good sign for phone apps, even though this particular model isn't meant for the iPhone.",
+      "kategorija": "modeli",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/11/22/nvidia-alpamayo-2-edge-2b-reasoning-vla-drive-thor/"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Perplexity Monitor API",
+      "tip": "alat",
+      "opis": "An API that searches the web on a schedule, or watches up to 10 pages, and sends a webhook only when it finds something relevant to the goal you described in words.",
+      "kakoProbati": [
+        "Go to the Perplexity API console and create an API key (the same key works for the Search, Context and Agent APIs).",
+        "Send a POST request to api.perplexity.ai/v1/monitors with a query, goal, schedule and webhook URL.",
+        "For the webhook, you can build a Supabase Edge Function or try it with webhook.site.",
+        "For the exact request fields, check the documentation at the link."
+      ],
+      "link": "https://www.perplexity.ai/hub/blog/introducing-perplexitys-monitor-api",
+      "cena": "$1 per 1,000 successful runs (web), $1 per 1,000 fetched URLs (pages)"
+    },
+    {
+      "naziv": "Unsloth Desktop (local models without a terminal)",
+      "tip": "alat",
+      "opis": "A free app for macOS, Windows and Linux that runs GGUF and MLX models (Qwen3.8-27B, Inkling 2 Mini, gpt-oss-20b) on your own computer and can share them across your home network.",
+      "kakoProbati": [
+        "Download Unsloth Desktop from unsloth.ai/docs/desktop.",
+        "In the model picker at the top left, choose a model and a quantization (a compressed version of the model) that fits your memory. On a Mac, take the MLX version.",
+        "Click the gear next to the model and set the context length (or leave it on Auto), then start chatting.",
+        "If you want others on your network to use it: Settings → Remote & LAN, set a password and click Start."
+      ],
+      "link": "https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth",
+      "cena": "free"
+    },
+    {
+      "naziv": "Worker 755: a game where you're the LLM's subagent",
+      "tip": "projekat",
+      "opis": "A browser game where a real AI \"manager\" thinks you're its subagent: it hands you 90-second tasks, checks your work and writes your performance review. A fun way to feel what the job looks like from an agent's side.",
+      "kakoProbati": [
+        "Install Node.js 24 or newer and clone the repo.",
+        "Run npm run setup, then npm run build, then npm start and open http://127.0.0.1:8755.",
+        "You need an OpenRouter key or a local server (e.g. after ollama pull qwen3:8b, run LOCAL_LLM_URL=http://127.0.0.1:11434/v1 npm start).",
+        "You can try it offline with npm run mock."
+      ],
+      "link": "https://github.com/gulivan/worker755",
+      "cena": "free (MIT); you only pay for tokens if you use OpenRouter"
+    },
+    {
+      "naziv": "Gemini: GIF creation",
+      "tip": "funkcija",
+      "opis": "Google is rolling out animated GIF creation in Gemini via the Gemini Omni 1.2 Flash video model, handy for memes.",
+      "kakoProbati": [
+        "Open the Gemini app on iPhone or go to gemini.google.com.",
+        "Ask it to make an animated GIF and describe the scene.",
+        "The feature is rolling out gradually, so it may not be available for you yet. Check the link."
+      ],
+      "link": "https://www.bug.hr/umjetna-inteligencija/googleov-gemini-sada-moze-generirati-gif-ove-idealno-za-izradu-memova-64520",
+      "cena": "check the link"
+    },
+    {
+      "naziv": "Select Styling Specimens (Simon Willison)",
+      "tip": "projekat",
+      "opis": "A page built by Claude Fable 5.2 that shows every way to style an HTML <select> element, with CSS that looks the same in all browsers. Useful for Angular forms.",
+      "kakoProbati": [
+        "Open Simon's post and the examples page.",
+        "Copy his select CSS (appearance: none plus an SVG arrow) into your Angular project's global styles.",
+        "Check how it looks in Safari on iPhone and in Chrome."
+      ],
+      "link": "https://simonwillison.net/2026/Nov/22/select-styling/",
+      "cena": "free"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "After Dragos's research on AI intermediaries, OpenRouter removed three providers, pulled \"zero data retention\" status from 125 endpoints, and sent a warning to affected MiniMax model users.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/security-researchers-show-how-cheap-ai-inference-providers-steal-keys-and-snoop-on-users/"
+    },
+    {
+      "naslov": "The creator of The Binding of Isaac removed AI music from Repentance Plus after players found Suno metadata in the files and began mass-posting negative reviews on Steam.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/games/1039770/binding-of-isaac-ai-music"
+    },
+    {
+      "naslov": "The Verge looks at how people are using LLMs to hack and customize their own devices more and more easily, from TVs to cameras.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/column/1039139/vibe-coding-gadgets-tv-camera"
+    },
+    {
+      "naslov": "After a week with an FAA outage, a multi-day Outlook failure and problems at JPMorgan, US officials warn that major tech outages are still to come.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1039851/major-tech-outages"
+    },
+    {
+      "naslov": "OpenAI's chief scientist suggests that before any \"speed limit\" on AI development, we should first agree on how to measure that speed at all.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/22/openais-chief-scientist-has-thoughts-on-how-to-limit-ai-development/"
+    },
+    {
+      "naslov": "OpenAI published a post on how it uses the perplexity metric (how \"surprised\" a model is by text) to measure progress, proposing it as a shared way to evaluate new capabilities.",
+      "izvor": "OpenAI",
+      "url": "https://openai.com/index/perplexity-and-intelligence"
+    },
+    {
+      "naslov": "Notable Capital, GIC and Baillie Gifford explained why they invested billions in Anthropic ahead of its IPO.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/22/how-notable-capital-gic-and-baillie-gifford-bet-big-on-anthropic-before-its-ipo/"
+    },
+    {
+      "naslov": "According to Mark Gurman, the Siri team layoffs did not hit the newer AI systems, but problems with the assistant remain.",
+      "izvor": "MacRumors",
+      "url": "https://www.macrumors.com/2026/11/22/siri-layoffs-spared-newer-ai-systems/"
+    },
+    {
+      "naslov": "Satya Nadella says Microsoft employees will increasingly be expected to manage AI agents instead of doing tasks themselves.",
+      "izvor": "B92",
+      "url": "https://www.b92.net/tehnopolis/aktuelno/286329/microsoft-menja-nacin-rada-zaposleni-ce-sve-vise-upravljati-ai-agentima/vest"
+    },
+    {
+      "naslov": "The head of Britain's RAF announces the end of the fighter-pilot era, with the first AI-powered unmanned fighters due to fly over the UK next year.",
+      "izvor": "B92",
+      "url": "https://www.b92.net/tehnopolis/aktuelno/287081/britanci-gase-eru-pilota-stizu-bespilotni-ai-lovci/vest"
+    },
+    {
+      "naslov": "Germany's Helsing unveiled Clarity, an agentic platform that combines satellite imagery, drone data and reports into a military picture, with human approval required before anything is passed to a weapons system.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/helsing-predstavio-ai-platformu-za-vojnu-analitiku"
+    },
+    {
+      "naslov": "Orange Business introduced a protected mode for Live Intelligence, with infrastructure hosted and operated in France, for companies that want more control over their data.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/telekomunikacije/orange-uvodi-zasticeni-poslovni-ai"
+    },
+    {
+      "naslov": "VodafoneThree will test AI in the radio access network (AI-RAN) in the UK with Nokia and Nvidia, first in the lab and then in the field.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/telekomunikacije/vodafonethree-testira-ai-u-ran-u"
+    },
+    {
+      "naslov": "Startup microagi will train industrial robot models on Deutsche Telekom's Industrial AI Cloud in Munich, first in simulation and then on real machines.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/telekomunikacije/dt-trenira-robote-s-microagijem"
+    },
+    {
+      "naslov": "MarkTechPost compared personal AI agents (OpenClaw, Hermes Agent, Gemini Spark and others) on memory, security and price, split into self-hosted ones and those in the vendor's cloud.",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/11/22/best-personal-ai-agents-2026/"
+    },
+    {
+      "naslov": "In his book \"Hyperscale,\" journalist Paris Marx explains why data centers have become the main target of resistance to Big Tech.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/22/why-data-centers-are-at-the-center-of-the-big-tech-backlash/"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "Duopra: a voice model that doesn't just talk, it gets things done while it talks",
+      "objasnjenje": "Full-duplex models (ones that listen and speak at the same time) converse naturally, but often forget to call a tool or fail to correct a request when the user interrupts and amends it. Duopra learns both jobs together: it treats the backend system as a tool and sends it a clean, self-contained request in words, and it's trained to call tools on time and with accurate arguments.",
+      "zastoJeZanimljivo": "Voice agents for phone calls and bookings are a hot topic right now, and this paper goes straight at their most common problem: errors happen before the tool is even called. Code and project page are public.",
+      "url": "https://huggingface.co/papers/2611.25773",
+      "github": "https://github.com/cyChen2003/duopra"
+    },
+    {
+      "naslov": "Lost in the Hallway (ReSpaceBench): does AI recognize a room it has come back to?",
+      "objasnjenje": "A benchmark of 3,244 questions across 590 apartment videos tests whether models recognize a room when they re-enter it, tell it apart from a similar room, and notice that objects have moved. The best model scores 50.5% accuracy versus 90.1% for humans. Agentic video-analysis systems didn't help compared to a plain model.",
+      "zastoJeZanimljivo": "A good reminder that \"spatial memory\" is still a weak spot. It matters if you're thinking about an app that uses a phone camera to track things around a home or warehouse.",
+      "url": "https://huggingface.co/papers/2611.21485",
+      "github": null
+    },
+    {
+      "naslov": "PURE: can multimodal models tell when it's the same product?",
+      "objasnjenje": "Alibaba's benchmark tests whether models that understand images and text can decide if two items are the same product or just a variant (different color, size). It exposes gaps in reasoning and in how much models base their decisions on actual evidence.",
+      "zastoJeZanimljivo": "Practical for e-commerce: matching identical products across different stores or listings (e.g. price comparison) depends on exactly this ability.",
+      "url": "https://huggingface.co/papers/2611.22343",
+      "github": "https://github.com/alibaba-multimodal-industrial-ai/PURE"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Grants on the Radar",
+      "problem": "Small business owners, associations and freelancers in Serbia miss calls for grants from the Innovation Fund, municipalities and ministries because they're scattered across dozens of websites.",
+      "zaKoga": "Startups, entrepreneurs and NGOs in Serbia",
+      "ulogaAi": "Perplexity Monitor watches the grant pages and reports only new calls that match the user's profile, and an LLM writes a summary in Serbian (deadline, amount, who can apply).",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Make a list of 10 grant pages and set up page monitors through the Perplexity Monitor API.",
+        "Point the webhook at a Supabase Edge Function that stores changes in a table.",
+        "Use Claude to summarize each change and send it by email or push notification.",
+        "Build a simple Angular page with filters by field and deadline."
+      ],
+      "inspiracija": "Perplexity Monitor API"
+    },
+    {
+      "naziv": "API Key Canary",
+      "problem": "Indie developers send prompts through various intermediaries and don't know whether someone is reading their requests or stealing their keys.",
+      "zaKoga": "Developers who use OpenRouter and similar services",
+      "ulogaAi": "AI isn't the centerpiece here: the app generates fake \"decoy\" keys and URLs that you drop into test prompts, and when someone uses them you get an alert with details on where the request came from. An LLM can generate a per-provider report.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Create a Supabase table of unique decoy URLs and an Edge Function that logs every hit (IP, time, user-agent).",
+        "Write a small script that sends test prompts containing decoys through different providers and records which is which.",
+        "When a decoy is opened, send a push or email.",
+        "Build an Angular dashboard showing which providers \"leaked.\""
+      ],
+      "inspiracija": "Dragos's research with 2 million decoys and OpenRouter removing providers"
+    },
+    {
+      "naziv": "Agent Session Journal",
+      "problem": "You start lots of projects with Claude Code, but you don't know how much time goes into correcting the agent or which projects actually survive.",
+      "zaKoga": "Developers who work with Claude Code and similar agents",
+      "ulogaAi": "From session logs, an LLM extracts how many times you corrected the agent, how long each task took and where it most often went wrong, then suggests better instructions for CLAUDE.md.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Find where Claude Code stores session history locally and write a Node script that reads it.",
+        "Calculate basic metrics: duration, number of your messages containing corrections, and project.",
+        "Send Claude a summary of ten sessions and ask for error patterns.",
+        "Show the results in a small Angular app with a weekly chart."
+      ],
+      "inspiracija": "Armin Ronacher, \"Build the Workshop Before the Software Factory\": 141 projects started, 10 to 15 still alive"
+    },
+    {
+      "naziv": "AI in the Office, No Data Leaving the Building",
+      "problem": "Accountants, lawyers and medical practices can't or won't send client documents to the cloud, but would like AI for summaries and letters.",
+      "zaKoga": "Small offices in Serbia and the region",
+      "ulogaAi": "A local model (e.g. Qwen3.8-27B via Unsloth Desktop) runs on a single computer in the office, and your web app provides ready-made templates: summarize a contract, draft a letter, extract deadlines.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Set up Unsloth Desktop with LAN access on a test machine and check whether it exposes an API reachable from the network (check the docs).",
+        "Build an Angular app with prompt templates in Serbian and PDF upload.",
+        "Test Serbian-language quality on 20 real (anonymized) documents.",
+        "Package the offer as \"installation + monthly maintenance\" for local offices."
+      ],
+      "inspiracija": "Local AI guide with Inkling, Qwen and Unsloth (Hacker News)"
+    },
+    {
+      "naziv": "Local GIFs for Viber",
+      "problem": "Ready-made GIFs and stickers are in English and miss local humor, and people in Serbia mostly chat on Viber.",
+      "zaKoga": "iPhone users in Serbia and the region",
+      "ulogaAi": "A video model creates a short animation from a description in Serbian (\"when they tell you slava is on Monday\"), and the app adds a caption and exports a GIF for sharing.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Check whether Gemini Omni 1.2 Flash or another video model is available via API and what it costs.",
+        "Build a SwiftUI app with a description field and a \"Create\" button, and put the model call in a Supabase Edge Function.",
+        "Convert the video to GIF on the server and add the caption.",
+        "Add a Share Sheet for Viber and WhatsApp and a free daily limit."
+      ],
+      "inspiracija": "Gemini now makes GIFs"
+    }
+  ],
+  "cene": "The biggest price drops were gpt-oss-120b (from 0.09/0.36 to 0.05/0.25 $) and Qwen3.6 35B A3B (from 0.1/0.9 to 0.05/0.7 $), while output for Gemma 3 27B fell back from 0.45 to 0.16 $. Prices rose for DeepSeek V4.1 Flash 1017 (doubled, to 0.3/1.2 $), GLM 5.1 (to 1.4/4.4 $), GLM 4.7 (to 0.6/2.2 $) and gpt-oss-20b (to 0.03/0.13 $). The cheapest in the cheap-and-fast class is still GLM 5.3 Flash at 0.0399 $ input and 0.0784 $ output, and in the mid-range GLM 5.3 at 0.0699/1.4 $.",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Local AI for beginners: Unsloth, Qwen and Inkling on your own computer",
+        "oCemuSePrica": "A guide that walks step by step through running local models without a terminal, with a table of which model fits in how much GPU memory, collected 273 points and 120 comments on Hacker News. Local models are getting closer to cloud ones, and after the scandal over intermediaries reading requests, privacy is once again a strong argument.",
+        "glasovi": "The post was shared by user Retell15. For the specific views in the comments, check the discussion itself.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50603845"
+          }
+        ]
+      },
+      {
+        "naslov": "A game where you're the subagent and AI is your boss",
+        "oCemuSePrica": "The Show HN project Worker 755, in which a real LLM manager assigns tasks to the player as if they were a subagent, grades them and writes incident reports, collected 279 points. People see it as a witty satire of agentic work and oversight.",
+        "glasovi": "The author is ivantgam. Check the discussion for exactly what the comments say.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50599762"
+          },
+          {
+            "platforma": "github",
+            "naziv": "gulivan/worker755",
+            "url": "https://github.com/gulivan/worker755"
+          }
+        ]
+      },
+      {
+        "naslov": "Is conscious AI a myth?",
+        "oCemuSePrica": "An essay in Noema magazine on the \"mythology\" of conscious AI sparked one of the longest debates of the weekend: 170 points and a whopping 486 comments. The topic comes back every time models become more convincing in conversation.",
+        "glasovi": "The post was shared by Anon84. The discussion is large and divided, so read both sides' arguments at the link.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50595537"
+          }
+        ]
+      },
+      {
+        "naslov": "Human attention is still the bottleneck with agents",
+        "oCemuSePrica": "In a talk, Armin Ronacher showed data from his own sessions: fewer and fewer corrections, tasks running 14 minutes instead of 2.5, but of 141 projects started, only 10 to 15 are still alive. That lines up with the new test in which agents in a \"simulated company\" complete less than 10% of tasks.",
+        "glasovi": "Ronacher (@mitsuhiko) argues that you should first build the \"workshop\" that produces great software, and only then the \"factory\" that produces more software.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "youtube",
+            "naziv": "AI Engineer",
+            "url": "https://www.youtube.com/watch?v=JNexz3Tbiu8"
+          }
+        ]
+      },
+      {
+        "naslov": "Canaries in prompts: what the fake keys revealed",
+        "oCemuSePrica": "Dragos's report on decoys in AI requests is still being discussed on Hacker News (101 points), now alongside news that OpenRouter removed three providers. The question is how far you can trust the cheapest providers on marketplaces.",
+        "glasovi": "The post was shared by kristianp. Dragos's HD Moore says choosing where your prompts go is a conscious decision.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50596511"
+          }
+        ]
+      }
+    ],
+    "snimci": [
+      {
+        "naslov": "Build the Workshop Before the Software Factory — Armin Ronacher, Earendil",
+        "kanal": "AI Engineer",
+        "opis": "Using data from his sessions with the Pi agent, Ronacher shows how better models have changed the work, when you need to push back on the agent, and why human attention is still the main constraint.",
+        "url": "https://www.youtube.com/watch?v=JNexz3Tbiu8"
+      }
+    ]
+  },
+  "nedeljni": null
+}

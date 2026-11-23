@@ -1,0 +1,483 @@
+{
+  "datum": "2026-11-23",
+  "generisano": "2026-11-23T03:07:40.486Z",
+  "model": "claude-opus-5-5",
+  "ukratko": "Vikend je bio miran kad su u pitanju novi modeli, ali je stiglo nekoliko bitnih potvrda i upozorenja. Lean zajednica je zvanično potvrdila dokaz Rimanove hipoteze, a dva istraživanja (METR i test sa „simuliranom firmom“) pokazuju da agenti brzo napreduju, ali i dalje padaju na neurednom svakodnevnom poslu. Za developere je najkorisniji Perplexity-jev novi Monitor API, koji umesto tebe stalno prati promene na webu.",
+  "vesti": [
+    {
+      "naslov": "Perplexity Monitor API: pretraga koja radi stalno i javlja se samo kad ima nešto novo",
+      "staSeDesilo": "Perplexity je pustio Monitor API: zadaš upit, cilj opisan rečima, raspored (od svakih 15 minuta do jednom nedeljno, ili cron) i webhook adresu, a on sam pretražuje web. Postoje dva režima: praćenje pretrage i praćenje do 10 konkretnih stranica (npr. cenovnik ili changelog), gde dobijaš tekstualni diff promena. Njihov „decision“ model (model koji samo procenjuje da li je rezultat bitan) izbacuje nebitne rezultate i šalje ocenu sigurnosti uz svaki rezultat.",
+      "zastoJeBitno": "Ne moraš više da praviš svoj scraper, cron i filter da bi pratio promene. Jedan API poziv i webhook ka Supabase Edge Function su dovoljni, a cena je 1 dolar na 1.000 uspešnih pokretanja.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/perplexitys-new-monitor-api-turns-web-search-from-a-one-off-query-into-a-nonstop-watchdog/"
+        },
+        {
+          "naziv": "Perplexity blog",
+          "url": "https://www.perplexity.ai/hub/blog/introducing-perplexitys-monitor-api"
+        }
+      ]
+    },
+    {
+      "naslov": "Rimanova hipoteza: Lean zajednica zvanično potvrdila da je dokaz tačan",
+      "staSeDesilo": "Zajednica oko Lean-a i biblioteke Mathlib (Lean je alat koji mašinski proverava matematičke dokaze) zvanično je potvrdila da je dokaz Levent Alpöge-a sa Stanforda ispravan. Desetine ljudi su nezavisno pokrenule proveru 17 miliona linija koda i svi su dobili isti rezultat. Tekst ne kaže da li je AI učestvovao u samom dokazu, a za ranije pomenuti dokaz uz Claude i dalje nema ovakve potvrde.",
+      "zastoJeBitno": "Ovo je prvi put da je jedan od najvećih otvorenih problema u matematici zatvoren uz potpunu mašinsku proveru, a ne posle godina recenzije. Pokazuje i čemu služi formalna verifikacija: kad AI (ili čovek) proizvede ogroman dokaz, više nije potrebno da mu se veruje na reč.",
+      "kategorija": "istrazivanje",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/lean-and-mathlib-community-officially-confirms-levent-alpoges-proof-of-the-riemann-hypothesis-is-correct/"
+        }
+      ]
+    },
+    {
+      "naslov": "Agenti za kodiranje u „simuliranoj firmi“ završe manje od jednog od deset zadataka",
+      "staSeDesilo": "Novi test stavlja agente za kodiranje u izmišljenu softversku firmu sa kolegama, project board-om, istorijom četa i nedovršenim primopredajama posla. Čak i Claude Opus 5.5 i GPT-6 Astra potpuno završe manje od jednog od deset zadataka. Jasne, izolovane zadatke rešavaju brzo, ali se gube kad treba da samostalno vode posao kroz haotičan svakodnevni tok. Autori kažu da su klasični testovi poput SWE-bench-a skoro „zasićeni“, pa više ne pokazuju razliku.",
+      "zastoJeBitno": "Ako koristiš Claude Code, ovo potvrđuje ono što verovatno već vidiš: najbolje radi kad mu daš jasan, zaokružen zadatak sa kontekstom, a ne „sredi backlog“. Ti i dalje držiš celu sliku projekta.",
+      "kategorija": "istrazivanje",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/ai-coding-agents-ace-isolated-tests-but-complete-fewer-than-one-in-ten-tasks-in-a-simulated-workplace/"
+        }
+      ]
+    },
+    {
+      "naslov": "METR: modeli napreduju brže nego što stručnjaci mogu da provere da li su bezbedni",
+      "staSeDesilo": "METR, nezavisna organizacija koja meri sposobnosti modela, kaže da Opus 5.5 i GPT-6 Astra brzo napreduju na istraživačkim zadacima, ali ih je sve teže pouzdano izmeriti. Po njima, sadašnji podaci ne mogu da isključe opasno ubrzanje razvoja AI-ja. Istovremeno upozoravaju da uobičajeni testovi možda i precenjuju šta modeli stvarno mogu.",
+      "zastoJeBitno": "Rezultati na benchmark-ovima (testovima za poređenje modela) koje kompanije objavljuju sve manje govore o tome kako će se model ponašati kod tebe. Zato vredi da imaš sopstvene male testove za zadatke koji su tebi bitni.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/ai-is-getting-better-faster-than-experts-can-reliably-test-whether-new-systems-are-safe-metr-warns/"
+        }
+      ]
+    },
+    {
+      "naslov": "Američke banke zabranjuju AI agentima da se prijavljuju u tvoj nalog",
+      "staSeDesilo": "Velike američke finansijske institucije zabranjuju botovima trećih strana da se prijavljuju u korisničke naloge. Uz to upozoravaju da, ako agent napravi skupu grešku, šteta pada na korisnika. Detalje o tome koje banke i koji agenti su u pitanju proveri na linku.",
+      "zastoJeBitno": "Lični agenti koji „rade sve umesto tebe“ udaraju u zid čim dođu do novca. Ako praviš finansijsku aplikaciju, računaj na zvanične API-je i izvoz podataka, a ne na agenta koji klikće po bankarskom sajtu.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Wired",
+          "url": "https://www.wired.com/story/banks-are-cracking-down-on-ai-agents/"
+        }
+      ]
+    },
+    {
+      "naslov": "Hrvatski Omnizon pustio poslovnu platformu povezanu sa Claude-om, uz rad preko WhatsApp-a",
+      "staSeDesilo": "Hrvatska firma Omnizon predstavila je poslovnu platformu povezanu sa Claude-om. Po njihovim rečima, može da se koristi za nekoliko minuta, a registracija, prodajni razgovori i korisnička podrška mogu da idu i preko WhatsApp-a.",
+      "zastoJeBitno": "Ovo je primer iz regiona kako se Claude pakuje u gotov proizvod za male firme preko kanala koje ljudi ovde već koriste. Tržište za takve „AI preko WhatsApp/Viber-a“ alate u Srbiji je i dalje prilično prazno.",
+      "kategorija": "kompanije",
+      "vaznost": 1,
+      "izSrbije": true,
+      "izvori": [
+        {
+          "naziv": "ICTbusiness",
+          "url": "https://www.ictbusiness.info/vijesti/hrvatska-tvrtka-omnizon-predstavila-poslovnu-platformu-povezanu-s-claudeom"
+        }
+      ]
+    },
+    {
+      "naslov": "GPT-6.2 Astra i Sol odgovaraju kraće, ali ređe priznaju da nisu sigurni",
+      "staSeDesilo": "Analiza pokazuje da GPT-6.2 Astra i Sol daju mnogo kraće i direktnije odgovore od prethodnika. Cena za to je manja spremnost da priznaju nesigurnost. Claude modeli su u istom poređenju znatno ispred po transparentnosti.",
+      "zastoJeBitno": "Ako u aplikaciji koristiš GPT-6.2 za nešto gde je bitno da model kaže „ne znam“ (zdravlje, finansije, pravni saveti), dodaj proveru ili traži eksplicitnu ocenu sigurnosti u promptu.",
+      "kategorija": "modeli",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/gpt-6-2-astra-and-sol-get-to-the-point-faster-but-score-lower-on-transparency-than-claude/"
+        }
+      ]
+    },
+    {
+      "naslov": "Vašington planira da proglasi 20+ AI kompanija „nacionalnim prvacima“",
+      "staSeDesilo": "Prema Wall Street Journal-u, koji se poziva na neimenovane izvore, Trampova administracija planira da više od dvadeset kompanija proglasi „nacionalnim prvacima“ u AI-ju. Među njima se pominju Nvidia, Amazon, Microsoft, OpenAI i Anthropic. Zvanične potvrde još nema.",
+      "zastoJeBitno": "Ako se ovo ostvari, najveće američke AI firme mogle bi da dobiju posebnu podršku države, a to bi uticalo i na izvoz i na pravila. Za sada je reč o nezvaničnoj informaciji.",
+      "kategorija": "regulativa",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "ICTbusiness",
+          "url": "https://www.ictbusiness.info/vijesti/washington-razmatra-ai-kompanije-kao-nacionalne-prvake"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI besplatno daje klasifikator za prepoznavanje zlostavljanja dece na slikama",
+      "staSeDesilo": "OpenAI je objavio klasifikator slika koji procenjuje verovatnoću da slika prikazuje seksualno zlostavljanje dece, uključujući nove i AI-generisane slike koje klasično poređenje hash-eva ne hvata. Proverene organizacije mogu da dobiju besplatan pristup preko API-ja, ali tek posle prijave i provere.",
+      "zastoJeBitno": "Platforme na koje korisnici postavljaju slike dobijaju alat koji hvata i sadržaj koji nikad ranije nije viđen. Pristup ipak nije otvoren za svakog developera.",
+      "kategorija": "bezbednost",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "ICTbusiness",
+          "url": "https://www.ictbusiness.info/vijesti/openai-nudi-klasifikator-moguceg-zlostavljackog-sadrzaja"
+        }
+      ]
+    },
+    {
+      "naslov": "Nvidia Alpamayo 2 Edge: mali model za autonomnu vožnju koji objašnjava svoje odluke",
+      "staSeDesilo": "Nvidia je izbacila Alpamayo 2 Edge, VLA model (vizija + jezik + akcija) od oko 2 milijarde parametara koji planira putanju vozila i objašnjava zašto. Napravljen je da radi u samom automobilu na DRIVE AGX Thor čipu, sa odzivom od 160 do 190 ms. U simulaciji pravi oko 15 km vožnje po incidentu za koji je kriv.",
+      "zastoJeBitno": "Pokazuje kuda ide trend: modeli koji „razmišljaju“ sele se na uređaje sa ograničenom snagom. Za aplikacije na telefonu to je dobar znak, iako ovaj model konkretno nije za iPhone.",
+      "kategorija": "modeli",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/11/22/nvidia-alpamayo-2-edge-2b-reasoning-vla-drive-thor/"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Perplexity Monitor API",
+      "tip": "alat",
+      "opis": "API koji po rasporedu pretražuje web ili prati do 10 stranica i šalje webhook samo kad pronađe nešto bitno za cilj koji si opisao rečima.",
+      "kakoProbati": [
+        "Uđi u Perplexity API konzolu i napravi API ključ (isti ključ važi za Search, Context i Agent API).",
+        "Pošalji POST zahtev na api.perplexity.ai/v1/monitors sa upitom, ciljem, rasporedom i webhook URL-om.",
+        "Za webhook možeš da napraviš Supabase Edge Function ili da probaš sa webhook.site.",
+        "Za tačna polja zahteva proveri dokumentaciju na linku."
+      ],
+      "link": "https://www.perplexity.ai/hub/blog/introducing-perplexitys-monitor-api",
+      "cena": "1 $ na 1.000 uspešnih pokretanja (web), 1 $ na 1.000 preuzetih URL-ova (stranice)"
+    },
+    {
+      "naziv": "Unsloth Desktop (lokalni modeli bez terminala)",
+      "tip": "alat",
+      "opis": "Besplatna aplikacija za macOS, Windows i Linux koja pokreće GGUF i MLX modele (Qwen3.8-27B, Inkling 2 Mini, gpt-oss-20b) na tvom računaru i može da ih deli u kućnoj mreži.",
+      "kakoProbati": [
+        "Preuzmi Unsloth Desktop sa unsloth.ai/docs/desktop.",
+        "U izboru modela gore levo izaberi model i kvantizaciju (sažetu verziju modela) koja staje u tvoju memoriju. Na Mac-u uzmi MLX verziju.",
+        "Klikni zupčanik pored modela i podesi kontekst (ili ostavi Auto), pa kreni da četuješ.",
+        "Ako hoćeš da ga drugi koriste u mreži: Settings → Remote & LAN, postavi lozinku i klikni Start."
+      ],
+      "link": "https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth",
+      "cena": "besplatno"
+    },
+    {
+      "naziv": "Worker 755: igra u kojoj si ti podagent LLM-a",
+      "tip": "projekat",
+      "opis": "Igra u browseru u kojoj pravi AI „menadžer“ misli da si ti njegov podagent: daje ti zadatke na 90 sekundi, proverava tvoj rad i piše ti ocenu rada. Zabavan način da osetiš kako agentima izgleda posao.",
+      "kakoProbati": [
+        "Instaliraj Node.js 24 ili noviji i kloniraj repo.",
+        "Pokreni npm run setup, pa npm run build, pa npm start i otvori http://127.0.0.1:8755.",
+        "Treba ti OpenRouter ključ ili lokalni server (npr. posle ollama pull qwen3:8b pokreni LOCAL_LLM_URL=http://127.0.0.1:11434/v1 npm start).",
+        "Bez mreže možeš probati preko npm run mock."
+      ],
+      "link": "https://github.com/gulivan/worker755",
+      "cena": "besplatno (MIT), plaćaš samo tokene ako koristiš OpenRouter"
+    },
+    {
+      "naziv": "Gemini: pravljenje GIF-ova",
+      "tip": "funkcija",
+      "opis": "Google uvodi pravljenje animiranih GIF-ova u Gemini-ju preko video modela Gemini Omni 1.2 Flash, zgodno za memove.",
+      "kakoProbati": [
+        "Otvori Gemini aplikaciju na iPhone-u ili gemini.google.com.",
+        "Napiši da ti napravi animirani GIF i opiši scenu.",
+        "Funkcija se uvodi postepeno, pa možda još nije dostupna kod tebe. Proveri na linku."
+      ],
+      "link": "https://www.bug.hr/umjetna-inteligencija/googleov-gemini-sada-moze-generirati-gif-ove-idealno-za-izradu-memova-64520",
+      "cena": "proveri na linku"
+    },
+    {
+      "naziv": "Select Styling Specimens (Simon Willison)",
+      "tip": "projekat",
+      "opis": "Stranica koju je Claude Fable 5.2 napravio i koja pokazuje sve načine stilizovanja HTML <select> polja, uz CSS koji izgleda isto u svim browserima. Korisno za Angular forme.",
+      "kakoProbati": [
+        "Otvori Simon-ov post i stranicu sa primerima.",
+        "Kopiraj njegov CSS za select (appearance: none plus SVG strelica) u globalne stilove Angular projekta.",
+        "Proveri izgled u Safari-ju na iPhone-u i u Chrome-u."
+      ],
+      "link": "https://simonwillison.net/2026/Nov/22/select-styling/",
+      "cena": "besplatno"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Posle Dragos istraživanja o AI posrednicima, OpenRouter je izbacio tri provajdera i povukao „zero data retention“ status za 125 endpointa, a pogođenim korisnicima MiniMax modela poslao upozorenje.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/security-researchers-show-how-cheap-ai-inference-providers-steal-keys-and-snoop-on-users/"
+    },
+    {
+      "naslov": "Tvorac igre The Binding of Isaac izbacio je AI muziku iz Repentance Plus nakon što su igrači otkrili Suno metapodatke u fajlovima i krenuli da masovno daju loše ocene na Steam-u.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/games/1039770/binding-of-isaac-ai-music"
+    },
+    {
+      "naslov": "The Verge piše kako ljudi uz pomoć LLM-ova sve lakše hakuju i prilagođavaju sopstvene uređaje, od televizora do kamera.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/column/1039139/vibe-coding-gadgets-tv-camera"
+    },
+    {
+      "naslov": "Posle nedelje sa zastojem FAA, višednevnim padom Outlook-a i problemima u JPMorgan-u, američki zvaničnici upozoravaju da veliki tehnološki ispadi tek dolaze.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1039851/major-tech-outages"
+    },
+    {
+      "naslov": "Glavni naučnik OpenAI-ja predlaže da se, pre bilo kakvog „ograničenja brzine“ razvoja AI-ja, prvo dogovori kako se ta brzina uopšte meri.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/22/openais-chief-scientist-has-thoughts-on-how-to-limit-ai-development/"
+    },
+    {
+      "naslov": "OpenAI je objavio tekst o tome kako koristi metriku perplexity (koliko je model „iznenađen“ tekstom) za merenje napretka i predlaže je kao zajednički način ocenjivanja novih sposobnosti.",
+      "izvor": "OpenAI",
+      "url": "https://openai.com/index/perplexity-and-intelligence"
+    },
+    {
+      "naslov": "Notable Capital, GIC i Baillie Gifford objasnili su zašto su uložili milijarde u Anthropic pre izlaska na berzu.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/22/how-notable-capital-gic-and-baillie-gifford-bet-big-on-anthropic-before-its-ipo/"
+    },
+    {
+      "naslov": "Prema Mark Gurman-u, otpuštanja u Siri timu nisu pogodila novije AI sisteme, ali problemi sa asistentom i dalje postoje.",
+      "izvor": "MacRumors",
+      "url": "https://www.macrumors.com/2026/11/22/siri-layoffs-spared-newer-ai-systems/"
+    },
+    {
+      "naslov": "Satya Nadella kaže da će se od zaposlenih u Microsoft-u sve više očekivati da upravljaju AI agentima umesto da sami rade zadatke.",
+      "izvor": "B92",
+      "url": "https://www.b92.net/tehnopolis/aktuelno/286329/microsoft-menja-nacin-rada-zaposleni-ce-sve-vise-upravljati-ai-agentima/vest"
+    },
+    {
+      "naslov": "Šef britanskog RAF-a najavljuje kraj ere borbenih pilota, a prvi bespilotni lovci sa AI-jem trebalo bi da polete iznad Velike Britanije sledeće godine.",
+      "izvor": "B92",
+      "url": "https://www.b92.net/tehnopolis/aktuelno/287081/britanci-gase-eru-pilota-stizu-bespilotni-ai-lovci/vest"
+    },
+    {
+      "naslov": "Nemački Helsing predstavio je Clarity, agentsku platformu koja spaja satelitske snimke, podatke sa dronova i izveštaje u vojnu sliku, uz ljudsko odobrenje pre svakog prosleđivanja oružanom sistemu.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/helsing-predstavio-ai-platformu-za-vojnu-analitiku"
+    },
+    {
+      "naslov": "Orange Business je za Live Intelligence uveo zaštićeni režim čija infrastruktura radi i vodi se u Francuskoj, za firme koje žele veću kontrolu nad podacima.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/telekomunikacije/orange-uvodi-zasticeni-poslovni-ai"
+    },
+    {
+      "naslov": "VodafoneThree će sa Nokia-om i Nvidia-om testirati AI u radio mreži (AI-RAN) u Velikoj Britaniji, prvo u laboratoriji pa na terenu.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/telekomunikacije/vodafonethree-testira-ai-u-ran-u"
+    },
+    {
+      "naslov": "Startap microagi će na Deutsche Telekom-ovom Industrial AI Cloud-u u Minhenu trenirati modele za industrijske robote, prvo u simulaciji, pa na pravim mašinama.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/telekomunikacije/dt-trenira-robote-s-microagijem"
+    },
+    {
+      "naslov": "MarkTechPost je uporedio lične AI agente (OpenClaw, Hermes Agent, Gemini Spark i druge) po memoriji, bezbednosti i ceni, sa podelom na one koje sam hostuješ i one u oblaku proizvođača.",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/11/22/best-personal-ai-agents-2026/"
+    },
+    {
+      "naslov": "Novinar Paris Marx u knjizi „Hyperscale“ objašnjava zašto su data centri postali glavna meta otpora prema velikim tehnološkim firmama.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/22/why-data-centers-are-at-the-center-of-the-big-tech-backlash/"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "Duopra: glasovni model koji ne samo da priča, već i obavlja zadatke dok razgovara",
+      "objasnjenje": "Full-duplex modeli (oni koji slušaju i govore u isto vreme) prirodno razgovaraju, ali često zaborave da pozovu alat ili ne isprave zahtev kad ih korisnik prekine i ispravi. Duopra uči oba posla zajedno: pozadinski sistem tretira kao alat kome šalje zaokružen zahtev rečima, a trenira se tako da alate poziva na vreme i sa tačnim podacima.",
+      "zastoJeZanimljivo": "Glasovni agenti za telefonske pozive i rezervacije su sada vruća tema, a ovaj rad direktno napada njihov najčešći problem: greške nastaju pre nego što se alat uopšte pozove. Kod i stranica projekta su javni.",
+      "url": "https://huggingface.co/papers/2611.25773",
+      "github": "https://github.com/cyChen2003/duopra"
+    },
+    {
+      "naslov": "Lost in the Hallway (ReSpaceBench): da li AI prepoznaje sobu u koju se vratio?",
+      "objasnjenje": "Benchmark sa 3.244 pitanja na 590 snimaka stanova proverava da li modeli prepoznaju prostoriju kad u nju ponovo uđu, razlikuju je od slične sobe i primete da su se predmeti pomerili. Najbolji model ima 50,5% tačnosti, a ljudi 90,1%. Agentski sistemi za analizu videa nisu pomogli u odnosu na običan model.",
+      "zastoJeZanimljivo": "Dobar podsetnik da je „prostorna memorija“ i dalje slaba tačka. To je bitno ako razmišljaš o aplikaciji koja preko kamere telefona prati stvari po stanu ili magacinu.",
+      "url": "https://huggingface.co/papers/2611.21485",
+      "github": null
+    },
+    {
+      "naslov": "PURE: da li multimodalni modeli prepoznaju da je reč o istom proizvodu?",
+      "objasnjenje": "Alibaba-in benchmark proverava da li modeli koji razumeju sliku i tekst umeju da odluče da li dve stavke predstavljaju isti proizvod ili samo varijantu (druga boja, veličina). Pokazuje praznine u rasuđivanju i u tome koliko modeli zasnivaju odluku na stvarnim dokazima.",
+      "zastoJeZanimljivo": "Praktično za e-commerce: spajanje istih proizvoda iz različitih prodavnica ili oglasa (npr. poređenje cena) zavisi baš od ove sposobnosti.",
+      "url": "https://huggingface.co/papers/2611.22343",
+      "github": "https://github.com/alibaba-multimodal-industrial-ai/PURE"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Konkursi na radaru",
+      "problem": "Mali preduzetnici, udruženja i frilenseri u Srbiji propuštaju konkurse Fonda za inovacionu delatnost, opština i ministarstava jer su razbacani po desetinama sajtova.",
+      "zaKoga": "Startapi, preduzetnici i NVO u Srbiji",
+      "ulogaAi": "Perplexity Monitor prati stranice sa konkursima i javlja samo nove pozive koji odgovaraju profilu korisnika, a LLM pravi sažetak na srpskom (rok, iznos, ko sme da se prijavi).",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Napravi listu od 10 stranica sa konkursima i podesi Page monitore preko Perplexity Monitor API-ja.",
+        "Webhook usmeri na Supabase Edge Function koja čuva promene u tabeli.",
+        "Claude-om napravi sažetak svake promene i pošalji ga e-mailom ili push notifikacijom.",
+        "Napravi jednostavnu Angular stranicu sa filterom po oblasti i roku."
+      ],
+      "inspiracija": "Perplexity Monitor API"
+    },
+    {
+      "naziv": "Kanarinac za API ključeve",
+      "problem": "Indie developeri šalju promptove preko raznih posrednika i ne znaju da li neko čita njihove zahteve ili krade ključeve.",
+      "zaKoga": "Developeri koji koriste OpenRouter i slične servise",
+      "ulogaAi": "AI ovde nije u centru: aplikacija pravi lažne „mamac“ ključeve i URL-ove koje ubacuješ u test promptove, a kad ih neko upotrebi, dobijaš upozorenje i podatke o tome odakle je zahtev došao. LLM može da napravi izveštaj po provajderu.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Napravi Supabase tabelu sa jedinstvenim mamac URL-ovima i Edge Function koja beleži svaki poziv (IP, vreme, user-agent).",
+        "Napiši mali skript koji šalje test promptove sa mamcima kroz različite provajdere i beleži koji je koji.",
+        "Kad se mamac otvori, šalji push ili e-mail.",
+        "Napravi Angular dashboard koji pokazuje koji provajderi su „procurili“."
+      ],
+      "inspiracija": "Dragos istraživanje sa 2 miliona mamaca i OpenRouter-ovo izbacivanje provajdera"
+    },
+    {
+      "naziv": "Dnevnik agentskih sesija",
+      "problem": "Uz Claude Code započneš mnogo projekata, ali ne znaš koliko vremena odlazi na ispravljanje agenta niti koji projekti stvarno prežive.",
+      "zaKoga": "Developeri koji rade sa Claude Code-om i sličnim agentima",
+      "ulogaAi": "Iz logova sesija LLM izvlači koliko puta si ispravljao agenta, koliko je zadatak trajao i na čemu je najčešće grešio, a zatim predlaže bolje instrukcije za CLAUDE.md.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Pronađi gde Claude Code čuva istoriju sesija lokalno i napiši Node skript koji je čita.",
+        "Izračunaj osnovne metrike: trajanje, broj tvojih poruka sa ispravkama i projekat.",
+        "Pošalji Claude-u sažetak deset sesija i traži obrasce grešaka.",
+        "Prikaži rezultate u maloj Angular aplikaciji sa grafikonom po nedeljama."
+      ],
+      "inspiracija": "Armin Ronacher, „Build the Workshop Before the Software Factory“: 141 započet projekat, a 10 do 15 živih"
+    },
+    {
+      "naziv": "AI u kancelariji, bez slanja podataka napolje",
+      "problem": "Knjigovođe, advokati i lekarske ordinacije ne smeju ili ne žele da šalju dokumenta klijenata u oblak, a hteli bi AI za sažetke i dopise.",
+      "zaKoga": "Male kancelarije u Srbiji i regionu",
+      "ulogaAi": "Lokalni model (npr. Qwen3.8-27B preko Unsloth Desktop-a) radi na jednom računaru u kancelariji, a tvoja web aplikacija daje gotove šablone: sažmi ugovor, napiši dopis, izvuci rokove.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Podigni Unsloth Desktop sa LAN pristupom na test računaru i proveri da li izlaže API kome može da se pristupi iz mreže (proveri u dokumentaciji).",
+        "Napravi Angular aplikaciju sa šablonima promptova na srpskom i uploadom PDF-a.",
+        "Testiraj kvalitet srpskog na 20 pravih (anonimizovanih) dokumenata.",
+        "Upakuj ponudu kao „instalacija + mesečno održavanje“ za lokalne kancelarije."
+      ],
+      "inspiracija": "Vodič za lokalni AI sa Inkling, Qwen i Unsloth (Hacker News)"
+    },
+    {
+      "naziv": "Domaći GIF-ovi za Viber",
+      "problem": "Gotovi GIF-ovi i stikeri su na engleskom i ne pogađaju domaći humor, a ljudi u Srbiji se uglavnom dopisuju preko Vibera.",
+      "zaKoga": "Korisnici iPhone-a u Srbiji i regionu",
+      "ulogaAi": "Video model pravi kratku animaciju od opisa na srpskom („kad ti kažu da je slava u ponedeljak“), a aplikacija dodaje natpis i izvozi GIF za deljenje.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Proveri da li je Gemini Omni 1.2 Flash ili neki drugi video model dostupan preko API-ja i koliko košta.",
+        "Napravi SwiftUI aplikaciju sa poljem za opis i dugmetom „Napravi“, a poziv modela stavi u Supabase Edge Function.",
+        "Konvertuj video u GIF na serveru i dodaj natpis.",
+        "Dodaj Share Sheet za Viber i WhatsApp i besplatan dnevni limit."
+      ],
+      "inspiracija": "Gemini sada pravi GIF-ove"
+    }
+  ],
+  "cene": "Najviše su pojeftinili gpt-oss-120b (sa 0,09/0,36 na 0,05/0,25 $) i Qwen3.6 35B A3B (sa 0,1/0,9 na 0,05/0,7 $), a izlaz za Gemma 3 27B se vratio sa 0,45 na 0,16 $. Poskupeli su DeepSeek V4.1 Flash 1017 (duplo, na 0,3/1,2 $), GLM 5.1 (na 1,4/4,4 $), GLM 4.7 (na 0,6/2,2 $) i gpt-oss-20b (na 0,03/0,13 $). Najjeftiniji u klasi jeftinih i brzih modela i dalje je GLM 5.3 Flash sa 0,0399 $ za ulaz i 0,0784 $ za izlaz, a u srednjoj klasi GLM 5.3 sa 0,0699/1,4 $.",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Lokalni AI za početnike: Unsloth, Qwen i Inkling na sopstvenom računaru",
+        "oCemuSePrica": "Vodič koji korak po korak objašnjava kako pokrenuti lokalne modele bez terminala, uz tabelu koji model staje u koliko grafičke memorije, skupio je 273 poena i 120 komentara na Hacker News-u. Lokalni modeli su sve bliži onima u oblaku, a posle afere sa posrednicima koji čitaju zahteve privatnost je opet važan argument.",
+        "glasovi": "Objavu je podelio korisnik Retell15. Konkretne stavove iz komentara proveri u samoj diskusiji.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50603845"
+          }
+        ]
+      },
+      {
+        "naslov": "Igra u kojoj si ti podagent, a AI tvoj šef",
+        "oCemuSePrica": "Show HN projekat Worker 755, u kome pravi LLM menadžer zadaje zadatke igraču kao da je podagent, ocenjuje ga i piše prijave incidenata, skupio je 279 poena. Ljudi ga vide kao duhovitu satiru agentskog rada i nadzora.",
+        "glasovi": "Autor je ivantgam. Šta tačno kažu komentari proveri u diskusiji.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50599762"
+          },
+          {
+            "platforma": "github",
+            "naziv": "gulivan/worker755",
+            "url": "https://github.com/gulivan/worker755"
+          }
+        ]
+      },
+      {
+        "naslov": "Da li je svesni AI mit?",
+        "oCemuSePrica": "Esej iz Noema magazina o „mitologiji“ svesnog AI-ja pokrenuo je jednu od najdužih rasprava vikenda: 170 poena i čak 486 komentara. Tema se vraća svaki put kad modeli postanu ubedljiviji u razgovoru.",
+        "glasovi": "Objavu je podelio Anon84. Diskusija je velika i podeljena, pa argumente obe strane pročitaj na linku.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50595537"
+          }
+        ]
+      },
+      {
+        "naslov": "Ljudska pažnja je i dalje usko grlo kod agenata",
+        "oCemuSePrica": "Armin Ronacher je u predavanju pokazao podatke iz svojih sesija: sve manje ispravki, zadaci od 14 umesto 2,5 minuta, ali od 141 započetog projekta živi samo 10 do 15. To se poklapa sa novim testom u kome agenti u „simuliranoj firmi“ završavaju manje od 10% zadataka.",
+        "glasovi": "Ronacher (@mitsuhiko) zastupa stav da treba prvo napraviti „radionicu“ koja daje odličan softver, pa tek onda „fabriku“ koja daje više softvera.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "youtube",
+            "naziv": "AI Engineer",
+            "url": "https://www.youtube.com/watch?v=JNexz3Tbiu8"
+          }
+        ]
+      },
+      {
+        "naslov": "Kanarinci u promptovima: šta su otkrili lažni ključevi",
+        "oCemuSePrica": "Dragos-ov izveštaj o mamcima u AI zahtevima i dalje se komentariše na Hacker News-u (101 poen), sada uz vest da je OpenRouter izbacio tri provajdera. Pitanje je koliko se može verovati najjeftinijim provajderima na marketplace-ovima.",
+        "glasovi": "Objavu je podelio kristianp. Dragos-ov HD Moore poručuje da je izbor mesta na koje idu tvoji promptovi svesna odluka.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50596511"
+          }
+        ]
+      }
+    ],
+    "snimci": [
+      {
+        "naslov": "Build the Workshop Before the Software Factory — Armin Ronacher, Earendil",
+        "kanal": "AI Engineer",
+        "opis": "Ronacher na podacima iz svojih sesija sa Pi agentom pokazuje kako su bolji modeli promenili rad, kada se agentu treba suprotstaviti i zašto je ljudska pažnja i dalje glavno ograničenje.",
+        "url": "https://www.youtube.com/watch?v=JNexz3Tbiu8"
+      }
+    ]
+  },
+  "nedeljni": null
+}
