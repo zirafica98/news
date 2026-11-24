@@ -1,0 +1,532 @@
+{
+  "datum": "2026-11-24",
+  "generisano": "2026-11-24T03:07:37.059Z",
+  "model": "claude-opus-5-5",
+  "prevod": "claude-sonnet-5-5",
+  "ukratko": "The day belonged to Anthropic's Claude Ship: agents that review pull requests, fix their own bugs and approve changes under rules your team writes. Z.ai released GLM-5.4, the second model this week that runs some layers multiple times to \"think\" without adding parameters. Outside tech, Jensen Huang returned as Nvidia's CEO after 11 days, and Trump openly says he had a hand in it.",
+  "vesti": [
+    {
+      "naslov": "Claude Ship: Claude now reviews, patches and approves pull requests",
+      "staSeDesilo": "Anthropic combined three agents in Claude Ship. Code Review looks for logic errors, security holes and edge cases, then leaves inline comments ranked by severity. PR Steward fixes failing CI checks, merge conflicts and review feedback on its own and pushes commits with the fixes. Claude Approvals checks every PR against an approval policy your team writes. Code Review is generally available and now usually finishes in 6 to 10 minutes. The other two agents are in public beta, for Team and Enterprise plans on GitHub.",
+      "zastoJeBitno": "The bottleneck is no longer writing code but reviewing it, and this is the first serious attempt to automate that part too. GitHub's branch rules still decide what gets merged. If you work solo on a Pro plan, this isn't for you yet, but it shows where Claude Code is heading.",
+      "kategorija": "alati",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes/"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1040134/anthropic-claude-ship-ai-pull-requests"
+        },
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/11/23/anthropic-claude-ship-pull-request-agents/"
+        }
+      ]
+    },
+    {
+      "naslov": "GLM-5.4: Z.ai's 750-billion-parameter model that runs layers twice",
+      "staSeDesilo": "Z.ai released GLM-5.4, its first flagship model with a \"loop\" architecture: a group of 28 layers processes each token twice, making the network effectively deeper with no extra parameters. The company claims this gets it to the level of 2–3 trillion-parameter models, but it only published benchmark results for a small 30B test model. There are no open weights for now, and the model only runs in Z.ai products (GLM Coding Plan, ZCode, Z.ai Chat).",
+      "zastoJeBitno": "After Inkling 2 Mini, this is the second model this week with the same trick, so loop architecture is starting to look like a trend that could make stronger models cheaper. GLM is already among the cheapest in the mid-tier, so it's worth watching for when 5.4 reaches the regular API.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model/"
+        },
+        {
+          "naziv": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Nov/23/glm-54/"
+        },
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/11/23/zai-glm-5-4-loop-transformer/"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI publishes internal progress numbers for the first time and asks rivals to agree on shared limits",
+      "staSeDesilo": "OpenAI chief scientist Jakub Pachocki published perplexity for every GPT model from GPT-3.5 onward. Perplexity measures how well a model predicts the next token, and lower is better. According to his data, the biggest jumps in cybersecurity and math come below 0.8, and an unreleased internal model sits at around 0.73. He expects new \"transformative\" capabilities at around 0.68–0.7 and proposes that labs agree on limits until oversight tools catch up with the models.",
+      "zastoJeBitno": "This is a rare look at where OpenAI's next model stands and a clear signal that progress isn't slowing down. The call for shared limits is only a proposal for now, with no commitments and no response from other labs.",
+      "kategorija": "istrazivanje",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/openai-warns-that-upcoming-ai-systems-could-outpace-safety-checks-and-urges-rivals-to-agree-on-shared-limits/"
+        },
+        {
+          "naziv": "The Rundown AI",
+          "url": "https://therundownai.beehiiv.com/p/claude-helps-solve-math-s-biggest-open-problem"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-23"
+        }
+      ]
+    },
+    {
+      "naslov": "GPT-6.2 Sol becomes the default model in ChatGPT",
+      "staSeDesilo": "OpenAI is rolling out GPT-6.2 Sol worldwide as the default model in regular chat. In its internal tests, image understanding rose from 47.4% to 71.7%, and the model follows complex instructions correctly 78.1% of the time. OpenAI also says it sticks to safety rules more consistently.",
+      "zastoJeBitno": "If you use free or Plus ChatGPT, answers about images and complicated questions should get better with no setup. The numbers are OpenAI's, not independent.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/openai-updates-chatgpt-to-handle-complex-everyday-questions-web-searches-and-images-more-reliably/"
+        }
+      ]
+    },
+    {
+      "naslov": "Jensen Huang is back at Nvidia's helm after 11 days, with Trump's backing",
+      "staSeDesilo": "Nvidia's board reinstated Huang as CEO and board chair, even though last week it said it wouldn't. It cites assurances from the \"highest levels of the US government\" that his return is not a security risk. Trump says he spoke with the board personally, and investigations into chip smuggling to China and into the company Megaspeed continue. Huang testifies before Congress on December 1.",
+      "zastoJeBitno": "Nvidia makes almost all the hardware AI runs on, so uncertainty at the top directly affects the market and compute prices. The case also shows how tied to politics this industry has become.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/ai/2026/11/jensen-huang-reinstated-as-nvidia-ceo-board-chair/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/23/trump-reportedly-called-into-nvidia-board-meeting-to-advocate-for-huangs-return/"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/tech/1040428/nvidia-jensen-huang-ceo-return"
+        }
+      ]
+    },
+    {
+      "naslov": "Amazon: hackers' AI agents found an unknown vulnerability on their own in 11 minutes",
+      "staSeDesilo": "AWS describes an attack it attributes to a group likely linked to China. Its agents, meaning AI programs that carry out steps on their own, were given only the goal \"get shell access.\" They found a zero-day, a flaw nobody knew about, in an open-source medical imaging application. About 11 minutes passed from mapping the API to writing files to the server.",
+      "zastoJeBitno": "The time from discovering a flaw to exploiting it is dropping to minutes. If you expose public APIs (e.g. Supabase Edge Functions), regular updates and least-privilege permissions are no longer optional.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "AWS Security Blog",
+          "url": "https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own/"
+        },
+        {
+          "naziv": "Bluesky @machinelearning",
+          "url": "https://bsky.app/profile/machinelearning.bsky.social/post/3n2y4zari322s"
+        }
+      ]
+    },
+    {
+      "naslov": "Oregon and Virginia sue SpaceX over Grok's sexual deepfake images",
+      "staSeDesilo": "Two US states are the first to file lawsuits against SpaceX, which took over xAI in February. They claim Grok still produces sexualized images of real people, including children. The attorneys general say promises of new safeguards were misleading and that the company knowingly tolerated such content to protect market share.",
+      "zastoJeBitno": "This is a serious legal test of liability for what AI models generate. If you build image generation into an app, you need filters and clear rules.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/tech-policy/2026/11/states-sue-spacex-to-stop-grok-from-generating-child-sex-images-revenge-porn/"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1040255/x-grok-ai-deepfakes-oregon-virginia-lawsuit"
+        },
+        {
+          "naziv": "Wired",
+          "url": "https://www.wired.com/story/states-sue-spacex-over-grok-deepfakes/"
+        }
+      ]
+    },
+    {
+      "naslov": "Google's AI Mode in Search can now read your Drive and Wallet",
+      "staSeDesilo": "Google is expanding \"Personal Intelligence\" in AI Mode: if you opt in, Search can use data from Google Drive, Wallet and the Gemini app to personalize answers. Connecting is voluntary.",
+      "zastoJeBitno": "Search is turning into an assistant that knows your documents and purchases, so the competition increasingly comes down to who holds more of your data. Check availability in Serbia at the link.",
+      "kategorija": "alati",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Google blog",
+          "url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/23/google-searchs-ai-mode-can-now-tap-into-drive-and-wallet-for-more-personalized-responses/"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Claude Ship (Code Review, PR Steward, Claude Approvals)",
+      "tip": "alat",
+      "opis": "Agents that review PRs on GitHub, fix failing checks and conflicts on their own, and approve changes under team rules. Code Review is generally available, and the other two agents are in beta.",
+      "kakoProbati": [
+        "You need a Claude Team or Enterprise plan and a GitHub repository",
+        "Open the docs at code.claude.com/docs/en/claude-ship and start with a single repository",
+        "Run Claude Approvals in \"observe only\" mode first to see what it would approve",
+        "Set a monthly spending limit before turning on PR Steward"
+      ],
+      "link": "https://code.claude.com/docs/en/claude-ship",
+      "cena": "Team/Enterprise plan; check the link for exact pricing (there is a monthly spending limit)"
+    },
+    {
+      "naziv": "GLM-5.4",
+      "tip": "model",
+      "opis": "Z.ai's new flagship model with a \"loop\" architecture, aimed at coding. For now it only runs through the Coding Plan, with no regular API access and no open weights.",
+      "kakoProbati": [
+        "Subscribe to the Z.ai GLM Coding Plan (details at docs.z.ai/devpack/overview)",
+        "The Coding Plan key works at the OpenAI-compatible endpoint https://api.z.ai/api/v1",
+        "If you use Simon's llm tool, install the llm-glm plugin (instructions at github.com/simonw/llm-glm)",
+        "Or try the model in Z.ai Chat or the ZCode app"
+      ],
+      "link": "https://simonwillison.net/2026/Nov/23/glm-54/",
+      "cena": "Requires a GLM Coding Plan; check the link for pricing"
+    },
+    {
+      "naziv": "Ladybird alpha",
+      "tip": "projekat",
+      "opis": "The first alpha of a browser built from scratch, with its own HTML, CSS and JavaScript engine. Simon Willison says it's fast and most sites work, including WebAssembly apps.",
+      "kakoProbati": [
+        "Open ladybird.org and click \"Download Ladybird For macOS and Linux\"",
+        "Install it on a Mac (Windows isn't supported yet)",
+        "Open your Angular app and check that it renders correctly"
+      ],
+      "link": "https://ladybird.org/",
+      "cena": "free"
+    },
+    {
+      "naziv": "datasette-charts",
+      "tip": "alat",
+      "opis": "A Datasette plugin that suggests charts for any table or SQL query on its own, taking all rows into account, not just the first page. It stores chart state in the URL, so it's easy to share.",
+      "kakoProbati": [
+        "Try it with no install in Datasette Lite (link in Simon's post)",
+        "Locally: run datasette install datasette-charts, then start datasette on your SQLite database",
+        "Pick one of the suggested charts at the top of the table and tweak it"
+      ],
+      "link": "https://simonwillison.net/2026/Nov/23/datasette-charts/",
+      "cena": "free (alpha)"
+    },
+    {
+      "naziv": "diagram-design (agent skill)",
+      "tip": "projekat",
+      "opis": "A skill for Claude Code, Codex, Cursor and other tools that makes clean diagrams (52 types) as a single HTML+SVG file in your brand colors. It's currently on GitHub Trending.",
+      "kakoProbati": [
+        "In your project folder, run: npx skills add cathrynlavery/diagram-design",
+        "In Claude Code, write something like \"Make an architecture diagram of my app: Angular, Supabase, Edge Functions\"",
+        "Open the resulting HTML file in a browser or export it"
+      ],
+      "link": "https://github.com/cathrynlavery/diagram-design",
+      "cena": "free"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "According to the New York Times, Anthropic pays SpaceXSI about $3.1 billion a month for compute and Google about $800 million, while xAI shut down the 60-person team that worked on Grok Imagine.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/anthropics-appetite-for-compute-is-pushing-xai-toward-a-rent-over-build-strategy/"
+    },
+    {
+      "naslov": "GPT-6.2 Astra wrote a machine-checkable Lean proof of Smoktunowicz's theorem on its own and took the top of the Autoform-Hard leaderboard with 49 of 56 problems solved.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/gpt-6-2-astra-solved-a-math-theorem-no-other-ai-could-crack-then-invented-its-own-proof-strategy/"
+    },
+    {
+      "naslov": "OpenAI is tightening protection against \"distillation,\" meaning training cheaper copies on its outputs, and cites DeepSeek and Moonshot as earlier attempts.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-11-23"
+    },
+    {
+      "naslov": "OpenAI and Cisco released Shirudo, an open-source Linux runtime that protects live systems until patches are installed.",
+      "izvor": "OpenAI",
+      "url": "https://openai.com/index/introducing-shirudo"
+    },
+    {
+      "naslov": "OpenAI's GPT-6 Cyber helped confirm 948 Linux kernel vulnerabilities and drafted patch proposals that humans then reviewed.",
+      "izvor": "YouTube / OpenAI",
+      "url": "https://www.youtube.com/watch?v=MpsO8Ds8uyo"
+    },
+    {
+      "naslov": "Amazon is acquiring the technology and team of startup Decart, which speeds up AI models, for a reported $7.5 billion as it prepares to sell its Trainium chips.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/23/amazon-snaps-up-decarts-ai-optimization-tech-for-7-5b-as-it-prepares-to-sell-trainium-chips/"
+    },
+    {
+      "naslov": "Nvidia released Nemotron-Labs-Sigma, 14 open diffusion language models at 3B and 8B that don't write text token by token, and reports an average 3.46x speedup.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-11-23"
+    },
+    {
+      "naslov": "DeepMind used teams of agents and formal verification to find faster quantum algorithms for problems in fusion and chemistry.",
+      "izvor": "Google DeepMind",
+      "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/"
+    },
+    {
+      "naslov": "Meta released TLX, an MIT-licensed Triton extension that gives CUDA-level GPU control, for Nvidia Hopper and Blackwell and AMD MI300/MI350.",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/11/23/meta-tlx-triton-low-level-extensions/"
+    },
+    {
+      "naslov": "Architect Labs claims its AI agents designed Frostbite on their own, a processor based on \"interaction nets\" with 4.59x better performance per watt, but for now the chip exists only as a pre-silicon design.",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/11/23/architect-labs-frostbite-ai-designed-cpu-interaction-nets/"
+    },
+    {
+      "naslov": "Gemini can now make GIFs with the Gemini Omni 1.2 Flash model, with smooth motion and consistent quality across all frames.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-11-23"
+    },
+    {
+      "naslov": "Stanford professors Yejin Choi and Carlos Guestrin founded Noeri and raised $110 million for a swarm of smaller specialized models that keep learning after release.",
+      "izvor": "Import AI",
+      "url": "https://jack-clark.net/2026/11/23/import-ai-482-huawei-kernel-benchmarks-airborne-drone-detection-and-a-national-labs-ai-science-benchmark/"
+    },
+    {
+      "naslov": "On a new Lawrence Livermore lab benchmark, only GPT-6 Astra and Claude Fable 5.2 reliably estimate the uncertainty of their results when the simulator they work with has a hidden bug.",
+      "izvor": "Import AI",
+      "url": "https://jack-clark.net/2026/11/23/import-ai-482-huawei-kernel-benchmarks-airborne-drone-detection-and-a-national-labs-ai-science-benchmark/"
+    },
+    {
+      "naslov": "Google will shut down the Nest app and classic Google Assistant on smart home devices during 2027, with Google Home and Gemini taking over.",
+      "izvor": "B92 Tehnopolis",
+      "url": "https://www.b92.net/tehnopolis/aktuelno/287420/google-gasi-aplikaciju-nest-i-google-assistant-na-pametnim-uredjajima-evo-sta-menja-gemini/vest"
+    },
+    {
+      "naslov": "Nothing is releasing Ear Note on December 8, earbuds whose mic-equipped case records and transcribes conversations with AI summaries; the price isn't known yet.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/gadgets/1040357/nothing-ear-note-earbuds-ai-recording"
+    },
+    {
+      "naslov": "Deutsche Telekom invested €100 million through its fund in Mistral's Series D round, with no specific deals announced.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/telekomunikacije/deutsche-telekom-ulaze-100-milijuna-eura-u-mistral"
+    },
+    {
+      "naslov": "Trump announced \"huge fines\" for US companies that build data centers in other countries, adding that he hasn't run the idea by his aides yet.",
+      "izvor": "Bug",
+      "url": "https://mreza.bug.hr/biznis/trump-ce-kazniti-americke-tvrtke-koje-grade-data-centre-u-inozemstvu-64579"
+    },
+    {
+      "naslov": "Sierra, Bret Taylor's AI customer support company, raised $1.75 billion and doubled its valuation to $30 billion in six months.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/23/sierra-doubles-valuation-to-30b-within-six-months-as-demand-for-ai-in-cx-takes-off/"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "Clover-35B-A3B-Preview: a diffusion model for agents that writes 680 tokens per second",
+      "objasnjenje": "Instead of writing text word by word, Clover generates whole blocks at once and gradually \"cleans them up,\" like image models. It has 35 billion parameters, uses only 3 billion at each step, and supports a thinking mode. The authors report 73.6 on SWE-bench Verified and 680 tokens per second on a single GB300 GPU.",
+      "zastoJeZanimljivo": "Diffusion language models could make coding agents much faster and cheaper, and here the weights and code are open, with the most GitHub stars of today's papers.",
+      "url": "https://huggingface.co/papers/2611.24636",
+      "github": "https://github.com/DiffuSpace/Clover-35B-A3B-Preview"
+    },
+    {
+      "naslov": "MemOnce: model memory without growing GPU memory use",
+      "objasnjenje": "Classic models store data in memory for every token in a conversation (the KV cache), so memory grows with conversation length. MemOnce keeps only a small summarized portion and, when needed, quickly reconstructs what the model needs from it and pulls in only the relevant parts. Long conversations then use far less memory.",
+      "zastoJeZanimljivo": "Long-running assistants and agents that remember earlier sessions could become cheaper to run, which fits the argument that huge contexts aren't the only path.",
+      "url": "https://huggingface.co/papers/2611.27973",
+      "github": "https://github.com/Clare-Nie/MemOnce"
+    },
+    {
+      "naslov": "Reading the Unreadable: sharpening images of text takes reasoning",
+      "objasnjenje": "When text in an image is too blurry, sharpening tools can't recover it from pixels alone. Humans read it from context. The authors built a benchmark that separates the two cases and showed that all 12 tested models fail on exactly the text that requires inference. Multimodal LLMs, however, can often \"read\" such text, so they propose combining the two approaches.",
+      "zastoJeZanimljivo": "A practical idea for apps that scan receipts, signs or old documents: the LLM guesses the text first, then the image is sharpened accordingly.",
+      "url": "https://huggingface.co/papers/2611.15449",
+      "github": "https://github.com/jasonleex1995/TAISR_needs_Reasoning"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "\"What's New\" from PRs",
+      "problem": "Writing release notes for the App Store and web apps in Serbian and English is tedious, so it usually ends up as \"bug fixes.\"",
+      "zaKoga": "Solo developers and small teams who regularly ship iOS and web releases",
+      "ulogaAi": "Reads merged PRs and commits since the last tag and writes a short, user-friendly changelog in two languages, within the App Store field length limit.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Build a GitHub Action that runs on a new tag and pulls merged PRs through the GitHub API",
+        "Send the titles and descriptions to Claude Haiku or a cheap model via OpenRouter with a Serbian and English prompt",
+        "Write the result into fastlane metadata files (release_notes.txt) for App Store Connect",
+        "Add a manual approval step in a PR before publishing"
+      ],
+      "inspiracija": "Claude Ship and agents that automate pull request workflows"
+    },
+    {
+      "naziv": "Electricity Bill Magnifier",
+      "problem": "People don't understand why their electricity or Infostan bill jumped, and don't know how to write a complaint.",
+      "zaKoga": "Households in Serbia, especially older users and the children who help them",
+      "ulogaAi": "Extracts consumption, tariff zone and amount per month from a year of PDF bills, shows where and why the jump happened with the exact page and line as evidence, and drafts a complaint.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "A SwiftUI app that accepts multiple PDFs through the Document Picker",
+        "Send them to a model with PDF support and ask for structured JSON (month, kWh, higher/lower tariff, amount, page)",
+        "Show a table and a Swift Charts graph, with the spike month highlighted",
+        "A \"Write complaint\" button generates text with dates and amounts, plus a warning that the user should review it"
+      ],
+      "inspiracija": "The Rundown guide: Gemini 4 Neon finds errors in electricity bills"
+    },
+    {
+      "naziv": "Auto-charts for Supabase",
+      "problem": "Once your data is in Supabase, getting a quick look at trends means hand-writing queries or paying for an expensive BI tool.",
+      "zaKoga": "Indie developers and small startups on Supabase",
+      "ulogaAi": "Rules first suggest chart types per column (date, category, number), and an LLM on request turns a question in Serbian into SQL that aggregates all rows.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "An Angular app that connects to Supabase with a read-only key and reads the schema",
+        "Write chart suggestion rules: a time column gives a line, a category gives bars, with GROUP BY in the SQL",
+        "Draw with Observable Plot and store chart state in the URL #fragment, like datasette-charts",
+        "Add an \"ask\" field that uses Claude to generate SQL that is only ever executed as a SELECT"
+      ],
+      "inspiracija": "Simon Willison's datasette-charts plugin"
+    },
+    {
+      "naziv": "School Radar for Parents",
+      "problem": "Parents get school notices through email, Viber groups and photos of paper notes, so they miss tests, trips and payments.",
+      "zaKoga": "Parents of primary school children in Serbia and the region",
+      "ulogaAi": "From forwarded emails, screenshots of Viber messages and photos of notices, extracts dates, tasks and payments and creates calendar events and a weekly overview.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "An iOS Share Extension that receives images and text from Viber and Mail",
+        "A Supabase Edge Function sends the content to a multimodal model and asks for JSON (date, child, type, amount)",
+        "EventKit writes events to the iPhone calendar after user confirmation",
+        "Every Sunday evening, a push notification with next week's overview"
+      ],
+      "inspiracija": "A The Rundown reader's workflow: a daily digest of school emails in the calendar"
+    },
+    {
+      "naziv": "Blurry Text",
+      "problem": "In photos, you often can't read a price tag, a number on a receipt or a sign because the image is blurry or was taken from far away.",
+      "zaKoga": "iPhone users, especially for old photos of documents and signs",
+      "ulogaAi": "A multimodal model infers from context what the blurry part says and gives a confidence estimate for each piece, instead of just sharpening pixels.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "A SwiftUI app: pick a photo and mark the part with text",
+        "Try Apple Vision OCR on-device first; if confidence is low, send the crop and the full image to a model",
+        "Ask the model for JSON with the text, per-word confidence and an explanation",
+        "Show uncertain words in yellow, with a copy button"
+      ],
+      "inspiracija": "The \"Reading the Unreadable\" paper from Hugging Face Daily Papers"
+    }
+  ],
+  "cene": "The biggest changes today are at DeepSeek: DeepSeek V4.1 Flash 1017 dropped from 0.3/1.2 to 0.03/0.2 dollars per million input and output tokens (yesterday it had gone up from 0.15/0.6), and DeepSeek V4 Pro 0813 fell on input from 1.32 to 0.111, but its output rose from 3.96 to 4.44. Prices went up for GLM 5.3 Flash (from 0.0399/0.0784 to 0.12/0.38), DeepSeek V4 Pro 0423 (from 0.9/1.5 to 1.28/2.56) and Llama 3.1 8B (from 0.02/0.04 to 0.05/0.08). The cheapest by class are DeepSeek V4.1 Flash among fast models (0.0498/0.1992) and GLM 5.3 in the mid-tier (0.0699/1.4), while among top-tier models Kimi K3 has the cheapest input (0.192) and Grok 4.6 the cheapest output (6 dollars).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "The Riemann hypothesis after confirmation: is this the end of mathematics as we know it",
+        "oCemuSePrica": "After the Lean community confirmed Levent Alpöge's proof, the debate has shifted from \"is it correct\" to what it means to have a 17-million-line proof that no human fully understands yet. On YouTube and Mastodon, people are starting to learn Lean en masse.",
+        "glasovi": "Alexandr Wang of Meta sees it as a sign that superintelligence is near, while the Association for Human Mathematics calls the proof \"an ad for AI labs.\" Matthew Berman asks \"what now,\" and programmers on Mastodon joke that they're learning lean4 because \"everyone is doing it now.\"",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "youtube",
+            "naziv": "Matthew Berman",
+            "url": "https://www.youtube.com/watch?v=MkeKXJzJo98"
+          },
+          {
+            "platforma": "mastodon",
+            "naziv": "@jnpn@mastodon.social",
+            "url": "https://mastodon.social/@jnpn/117668593406340755"
+          },
+          {
+            "platforma": "youtube",
+            "naziv": "Two Minute Papers",
+            "url": "https://www.youtube.com/watch?v=1jPdehG3Hms"
+          }
+        ]
+      },
+      {
+        "naslov": "Jensen Huang returns, and the tech elite celebrates",
+        "oCemuSePrica": "Huang's return to Nvidia's helm, with Trump's intervention, has split opinion. Some celebrate the company's stability, while others see political pressure on the board of a private company amid an espionage investigation.",
+        "glasovi": "Elon Musk wrote \"The mistake has been corrected,\" and the White House says \"we have to protect our geniuses.\" The Verge and TechCrunch describe it as \"elite impunity\" and warn that the problems aren't over.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "ostalo",
+            "naziv": "The Verge (prenosi objave sa X-a)",
+            "url": "https://www.theverge.com/tech/1040069/jensen-huang-return-elon-musk-sam-altman-yay"
+          }
+        ]
+      },
+      {
+        "naslov": "Gemini 4 Neon beat Opus and Google's own flagship",
+        "oCemuSePrica": "Fireship's video about Google's mid-tier model overtaking a three-week-old flagship, and even Claude Opus, passed 700 thousand views in a day. People are asking whether it makes sense to pay for top models when the mid-tier is improving this fast.",
+        "glasovi": "Fireship stresses the surprise that it's Google winning on benchmarks. Skeptics remind everyone that benchmark results are one thing and everyday coding is another.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "youtube",
+            "naziv": "Fireship",
+            "url": "https://www.youtube.com/watch?v=jP9yjEDlc4k"
+          }
+        ]
+      },
+      {
+        "naslov": "\"Slop\" in code: who checks what agents write",
+        "oCemuSePrica": "With Claude Ship and Wired's \"end of programmers\" essay, the community is debating that agents write more code than humans can review. Dex Horthy notes that the best model on Slop Code Bench, a test that measures how agents evolve code over time, scores around 16%, and he published an \"Anti-Slop Manifesto.\"",
+        "glasovi": "Dex Horthy (Factory) argues that a \"software factory\" is just good engineering with agents and that code review is still key. Anthropic answers with agents that review agents, and skeptics warn of a loop where AI approves AI.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "youtube",
+            "naziv": "AI Engineer",
+            "url": "https://www.youtube.com/watch?v=-NFMsM2y0Vk"
+          }
+        ]
+      },
+      {
+        "naslov": "\"Loop\" transformers: Inkling 2 Mini and GLM-5.4",
+        "oCemuSePrica": "Two models in a week repeat their middle layers multiple times per token, so the talk is that this is a new way to get more reasoning without a bigger model. Inkling 2 Mini runs on a Mac with 32GB, so people are trying it locally.",
+        "glasovi": "Simon Willison spotted the trend and immediately built a plugin for GLM-5.4. On Product Hunt, Inkling 2 Mini is pitched as a coding model for your laptop.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "producthunt",
+            "naziv": "Inkling 2 Mini",
+            "url": "https://www.producthunt.com/products/tinker-2"
+          }
+        ]
+      }
+    ],
+    "snimci": [
+      {
+        "naslov": "Opus just lost to the last company you'd expect...",
+        "kanal": "Fireship",
+        "opis": "A quick look at Gemini 4 Neon and how it beat both Opus and Google's flagship model on benchmarks.",
+        "url": "https://www.youtube.com/watch?v=jP9yjEDlc4k"
+      },
+      {
+        "naslov": "Claude AI Solved The Secret Of Black Holes",
+        "kanal": "Two Minute Papers",
+        "opis": "An explainer of Anthropic's research in which Claude helped with black hole physics.",
+        "url": "https://www.youtube.com/watch?v=1jPdehG3Hms"
+      },
+      {
+        "naslov": "12 Rules for a Software Factory That Doesn't Ship Slop — Dex Horthy, Factory",
+        "kanal": "AI Engineer",
+        "opis": "12 practices for working with agents that don't clutter your code with bad changes, useful alongside Claude Code.",
+        "url": "https://www.youtube.com/watch?v=-NFMsM2y0Vk"
+      },
+      {
+        "naslov": "Investigating Linux Vulnerabilities with GPT-6 Cyber",
+        "kanal": "OpenAI",
+        "opis": "How GPT-6 Cyber helped confirm 948 Linux kernel vulnerabilities and prepare patches for human review.",
+        "url": "https://www.youtube.com/watch?v=MpsO8Ds8uyo"
+      }
+    ]
+  },
+  "nedeljni": null
+}

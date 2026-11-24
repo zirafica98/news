@@ -1,0 +1,531 @@
+{
+  "datum": "2026-11-24",
+  "generisano": "2026-11-24T03:07:37.059Z",
+  "model": "claude-opus-5-5",
+  "ukratko": "Dan je obeležio Anthropic-ov Claude Ship: agenti koji pregledaju pull request-ove, sami ispravljaju greške i odobravaju izmene po pravilima koja tim napiše. Z.ai je izbacio GLM-5.4, drugi model za nedelju dana koji deo slojeva propušta više puta da bi „razmislio“ bez dodatnih parametara. Van tehnologije, Jensen Huang se posle 11 dana vratio na čelo Nvidia-e, a Trump otvoreno kaže da je u tome učestvovao.",
+  "vesti": [
+    {
+      "naslov": "Claude Ship: Claude sada pregleda, krpi i odobrava pull request-ove",
+      "staSeDesilo": "Anthropic je u Claude Ship spojio tri agenta. Code Review traži logičke greške, sigurnosne propuste i slučajeve na ivici, pa ostavlja komentare u kodu poređane po ozbiljnosti. PR Steward sam rešava pale CI provere, merge konflikte i primedbe iz review-a i pušta commit-ove sa ispravkama. Claude Approvals proverava svaki PR prema politici odobravanja koju tim napiše. Code Review je opšte dostupan i sada uglavnom završi za 6 do 10 minuta, a druga dva agenta su u javnoj beti, za Team i Enterprise planove na GitHub-u.",
+      "zastoJeBitno": "Usko grlo više nije pisanje koda nego njegov pregled, a ovo je prvi ozbiljan pokušaj da se automatizuje i taj deo. GitHub-ova pravila za grane i dalje odlučuju šta ulazi u kod. Ako radiš sam na Pro planu, ovo za sada nije za tebe, ali pokazuje kuda ide Claude Code.",
+      "kategorija": "alati",
+      "vaznost": 3,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes/"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1040134/anthropic-claude-ship-ai-pull-requests"
+        },
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/11/23/anthropic-claude-ship-pull-request-agents/"
+        }
+      ]
+    },
+    {
+      "naslov": "GLM-5.4: Z.ai-jev model od 750 milijardi parametara koji slojeve propušta dvaput",
+      "staSeDesilo": "Z.ai je pustio GLM-5.4, svoj prvi glavni model sa „loop“ arhitekturom: grupa od 28 slojeva obradi svaki token dva puta, pa je mreža praktično dublja bez dodatnih parametara. Firma tvrdi da tako stiže modele od 2 do 3 biliona parametara, ali rezultate na testovima objavila je samo za mali probni model od 30B. Za sada nema otvorenih težina, a model radi samo u Z.ai proizvodima (GLM Coding Plan, ZCode, Z.ai Chat).",
+      "zastoJeBitno": "Posle Inkling 2 Mini ovo je drugi model za nedelju dana sa istim trikom, pa „loop“ arhitektura počinje da liči na trend koji bi mogao da pojeftini jače modele. GLM je već sada među najjeftinijima u srednjoj klasi, pa vredi pratiti kad 5.4 stigne u običan API.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model/"
+        },
+        {
+          "naziv": "Simon Willison",
+          "url": "https://simonwillison.net/2026/Nov/23/glm-54/"
+        },
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/11/23/zai-glm-5-4-loop-transformer/"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI prvi put objavio interne brojke napretka i traži od konkurenata zajedničke granice",
+      "staSeDesilo": "Glavni naučnik OpenAI-ja Jakub Pachocki objavio je perplexity za sve GPT modele od GPT-3.5 naovamo. Perplexity je mera koliko dobro model pogađa sledeći token, i što je niža, to bolje. Prema njegovim podacima, najveći skokovi u sajber-bezbednosti i matematici dolaze ispod 0,8, a interni neobjavljeni model je na oko 0,73. Nove „transformativne“ sposobnosti očekuje oko 0,68–0,7 i predlaže da se laboratorije dogovore o granicama dok alati za nadzor ne sustignu modele.",
+      "zastoJeBitno": "Ovo je redak uvid u to gde je OpenAI-jev sledeći model i jasan signal da napredak ne usporava. Poziv na zajedničke granice je zasad samo predlog, bez obaveza i bez odgovora drugih laboratorija.",
+      "kategorija": "istrazivanje",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/openai-warns-that-upcoming-ai-systems-could-outpace-safety-checks-and-urges-rivals-to-agree-on-shared-limits/"
+        },
+        {
+          "naziv": "The Rundown AI",
+          "url": "https://therundownai.beehiiv.com/p/claude-helps-solve-math-s-biggest-open-problem"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-23"
+        }
+      ]
+    },
+    {
+      "naslov": "GPT-6.2 Sol postaje podrazumevani model u ChatGPT-u",
+      "staSeDesilo": "OpenAI širom sveta uvodi GPT-6.2 Sol kao podrazumevani model u običnom chat-u. Na njihovim internim testovima razumevanje slika poraslo je sa 47,4% na 71,7%, a složena uputstva model tačno ispunjava u 78,1% slučajeva. Kažu i da se doslednije drži bezbednosnih pravila.",
+      "zastoJeBitno": "Ako koristiš besplatni ili Plus ChatGPT, odgovori na slike i komplikovana pitanja trebalo bi da budu bolji bez ikakvog podešavanja. Brojke su OpenAI-jeve, ne nezavisne.",
+      "kategorija": "modeli",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/openai-updates-chatgpt-to-handle-complex-everyday-questions-web-searches-and-images-more-reliably/"
+        }
+      ]
+    },
+    {
+      "naslov": "Jensen Huang se vratio na čelo Nvidia-e posle 11 dana, uz Trumpovu podršku",
+      "staSeDesilo": "Odbor Nvidia-e vratio je Huanga na mesto direktora i predsednika odbora, iako je prošle nedelje rekao da to neće uraditi. Kao razlog navodi uveravanje „najviših nivoa američke vlade“ da njegov povratak nije bezbednosni rizik. Trump kaže da je lično razgovarao sa odborom, a istrage o šverceru čipova u Kinu i o firmi Megaspeed se nastavljaju. Huang 1. decembra svedoči pred Kongresom.",
+      "zastoJeBitno": "Nvidia drži gotovo ceo hardver na kome AI radi, pa ovakva neizvesnost na vrhu direktno pogađa tržište i cene računarske snage. Slučaj pokazuje i koliko je ova industrija sada vezana za politiku.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/ai/2026/11/jensen-huang-reinstated-as-nvidia-ceo-board-chair/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/23/trump-reportedly-called-into-nvidia-board-meeting-to-advocate-for-huangs-return/"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/tech/1040428/nvidia-jensen-huang-ceo-return"
+        }
+      ]
+    },
+    {
+      "naslov": "Amazon: AI agenti hakera sami našli nepoznatu rupu za 11 minuta",
+      "staSeDesilo": "AWS opisuje napad koji pripisuje grupi verovatno povezanoj sa Kinom. Njeni agenti, to jest AI programi koji sami izvršavaju korake, dobili su samo cilj „dođi do shell pristupa“. Sami su pronašli zero-day propust, odnosno grešku za koju niko nije znao, u open-source aplikaciji za medicinske snimke. Od mapiranja API-ja do upisivanja fajlova na server prošlo je oko 11 minuta.",
+      "zastoJeBitno": "Vreme od otkrića propusta do napada pada na minute. Ako imaš javne API-je (npr. Supabase Edge Functions), redovno ažuriranje i ograničavanje prava više nisu opcioni.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "AWS Security Blog",
+          "url": "https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own/"
+        },
+        {
+          "naziv": "Bluesky @machinelearning",
+          "url": "https://bsky.app/profile/machinelearning.bsky.social/post/3n2y4zari322s"
+        }
+      ]
+    },
+    {
+      "naslov": "Oregon i Virdžinija tuže SpaceX zbog Grok-ovih seksualnih deepfake slika",
+      "staSeDesilo": "Dve američke savezne države prve su podnele tužbe protiv SpaceX-a, koji je u februaru preuzeo xAI. Tvrde da Grok i dalje pravi seksualizovane slike stvarnih ljudi, uključujući decu. Tužioci kažu da su obećanja o novim zaštitama bila obmanjujuća i da je firma takav sadržaj namerno tolerisala zbog udela na tržištu.",
+      "zastoJeBitno": "Ovo je ozbiljan pravni test odgovornosti za ono što generišu AI modeli. Ko u aplikaciju ugrađuje generisanje slika, mora da ima filtere i jasna pravila.",
+      "kategorija": "regulativa",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/tech-policy/2026/11/states-sue-spacex-to-stop-grok-from-generating-child-sex-images-revenge-porn/"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1040255/x-grok-ai-deepfakes-oregon-virginia-lawsuit"
+        },
+        {
+          "naziv": "Wired",
+          "url": "https://www.wired.com/story/states-sue-spacex-over-grok-deepfakes/"
+        }
+      ]
+    },
+    {
+      "naslov": "Google AI Mode u pretrazi sada može da čita tvoj Drive i Wallet",
+      "staSeDesilo": "Google proširuje „Personal Intelligence“ u AI Mode-u: ako uključiš opciju, pretraga može da koristi podatke iz Google Drive-a, Wallet-a i Gemini aplikacije da bi odgovori bili lični. Povezivanje je dobrovoljno.",
+      "zastoJeBitno": "Pretraga postaje asistent koji poznaje tvoje dokumente i kupovine, pa se konkurencija sve više vodi oko toga ko ima više tvojih podataka. Dostupnost u Srbiji proveri na linku.",
+      "kategorija": "alati",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Google blog",
+          "url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/23/google-searchs-ai-mode-can-now-tap-into-drive-and-wallet-for-more-personalized-responses/"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Claude Ship (Code Review, PR Steward, Claude Approvals)",
+      "tip": "alat",
+      "opis": "Agenti koji na GitHub-u pregledaju PR, sami popravljaju pale provere i konflikte i odobravaju izmene po pravilima tima. Code Review je opšte dostupan, a druga dva agenta su u beti.",
+      "kakoProbati": [
+        "Treba ti Claude Team ili Enterprise plan i repozitorijum na GitHub-u",
+        "Otvori dokumentaciju na code.claude.com/docs/en/claude-ship i kreni sa jednim repozitorijumom",
+        "Claude Approvals prvo pusti u režimu „samo posmatraj“ da vidiš šta bi odobrio",
+        "Postavi mesečni limit potrošnje pre nego što uključiš PR Steward"
+      ],
+      "link": "https://code.claude.com/docs/en/claude-ship",
+      "cena": "Team/Enterprise plan; tačnu cenu proveri na linku (postoji mesečni limit potrošnje)"
+    },
+    {
+      "naziv": "GLM-5.4",
+      "tip": "model",
+      "opis": "Z.ai-jev novi glavni model sa „loop“ arhitekturom, namenjen kodiranju. Zasad radi samo kroz Coding Plan, nema ga u običnom API-ju niti kao otvorene težine.",
+      "kakoProbati": [
+        "Pretplati se na Z.ai GLM Coding Plan (detalji na docs.z.ai/devpack/overview)",
+        "Ključ iz Coding Plan-a radi na OpenAI-kompatibilnoj adresi https://api.z.ai/api/v1",
+        "Ako koristiš Simon-ov alat llm, instaliraj plugin llm-glm (uputstvo na github.com/simonw/llm-glm)",
+        "Ili probaj model u Z.ai Chat-u ili ZCode aplikaciji"
+      ],
+      "link": "https://simonwillison.net/2026/Nov/23/glm-54/",
+      "cena": "Potreban GLM Coding Plan; cenu proveri na linku"
+    },
+    {
+      "naziv": "Ladybird alpha",
+      "tip": "projekat",
+      "opis": "Prva alfa verzija pregledača napravljenog od nule, sa sopstvenim HTML, CSS i JavaScript motorom. Simon Willison kaže da je brz i da većina sajtova radi, uključujući WebAssembly aplikacije.",
+      "kakoProbati": [
+        "Otvori ladybird.org i klikni „Download Ladybird For macOS and Linux“",
+        "Instaliraj na Mac-u (Windows još nije podržan)",
+        "Otvori svoju Angular aplikaciju i proveri da li se ispravno prikazuje"
+      ],
+      "link": "https://ladybird.org/",
+      "cena": "besplatno"
+    },
+    {
+      "naziv": "datasette-charts",
+      "tip": "alat",
+      "opis": "Plugin za Datasette koji sam predlaže grafikone za bilo koju tabelu ili SQL upit, uzimajući u obzir sve redove, ne samo prvu stranu. Stanje grafikona čuva u URL-u, pa ga lako deliš.",
+      "kakoProbati": [
+        "Probaj bez instalacije u Datasette Lite (link u Simon-ovom tekstu)",
+        "Lokalno: datasette install datasette-charts, pa pokreni datasette nad svojom SQLite bazom",
+        "Izaberi jedan od predloženih grafikona na vrhu tabele i podesi ga"
+      ],
+      "link": "https://simonwillison.net/2026/Nov/23/datasette-charts/",
+      "cena": "besplatno (alfa)"
+    },
+    {
+      "naziv": "diagram-design (skill za agente)",
+      "tip": "projekat",
+      "opis": "Skill za Claude Code, Codex, Cursor i druge alate koji pravi uredne dijagrame (52 tipa) kao jedan HTML+SVG fajl u bojama tvog brenda. Trenutno je na GitHub Trending listi.",
+      "kakoProbati": [
+        "U folderu projekta pokreni: npx skills add cathrynlavery/diagram-design",
+        "U Claude Code-u napiši npr. „Napravi dijagram arhitekture moje aplikacije: Angular, Supabase, Edge Functions“",
+        "Otvori dobijeni HTML fajl u pregledaču ili ga izvezi"
+      ],
+      "link": "https://github.com/cathrynlavery/diagram-design",
+      "cena": "besplatno"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Prema New York Times-u, Anthropic plaća SpaceXSI-ju oko 3,1 milijardu dolara mesečno za računarsku snagu, a Google oko 800 miliona, dok je xAI ugasio tim od 60 ljudi koji je radio Grok Imagine.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/anthropics-appetite-for-compute-is-pushing-xai-toward-a-rent-over-build-strategy/"
+    },
+    {
+      "naslov": "GPT-6.2 Astra je sam napisao mašinski proverljiv Lean dokaz Smoktunowicz-eve teoreme i preuzeo vrh liste Autoform-Hard sa 49 od 56 rešenih zadataka.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/gpt-6-2-astra-solved-a-math-theorem-no-other-ai-could-crack-then-invented-its-own-proof-strategy/"
+    },
+    {
+      "naslov": "OpenAI pojačava zaštitu od „destilacije“, to jest treniranja jeftinijih kopija na njegovim odgovorima, i kao ranije pokušaje navodi DeepSeek i Moonshot.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-11-23"
+    },
+    {
+      "naslov": "OpenAI i Cisco objavili su Shirudo, open-source runtime za Linux koji štiti sisteme u radu dok se zakrpe ne instaliraju.",
+      "izvor": "OpenAI",
+      "url": "https://openai.com/index/introducing-shirudo"
+    },
+    {
+      "naslov": "OpenAI-jev GPT-6 Cyber pomogao je da se potvrdi 948 ranjivosti u Linux kernelu i napravio predloge zakrpa koje su ljudi zatim pregledali.",
+      "izvor": "YouTube / OpenAI",
+      "url": "https://www.youtube.com/watch?v=MpsO8Ds8uyo"
+    },
+    {
+      "naslov": "Amazon za prijavljenih 7,5 milijardi dolara preuzima tehnologiju i tim startapa Decart, koji ubrzava rad AI modela, dok se sprema da prodaje svoje Trainium čipove.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/23/amazon-snaps-up-decarts-ai-optimization-tech-for-7-5b-as-it-prepares-to-sell-trainium-chips/"
+    },
+    {
+      "naslov": "Nvidia je objavila Nemotron-Labs-Sigma, 14 otvorenih difuzionih jezičkih modela od 3B i 8B koji tekst ne pišu token po token, i prijavljuje u proseku 3,46 puta veću brzinu.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-11-23"
+    },
+    {
+      "naslov": "DeepMind je timovima agenata i formalnom verifikacijom pronašao brže kvantne algoritme za probleme iz fuzije i hemije.",
+      "izvor": "Google DeepMind",
+      "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/"
+    },
+    {
+      "naslov": "Meta je objavila TLX, MIT-licenciranu ekstenziju za Triton koja daje kontrolu nad GPU-om na nivou CUDA-e, za Nvidia Hopper i Blackwell i AMD MI300/MI350.",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/11/23/meta-tlx-triton-low-level-extensions/"
+    },
+    {
+      "naslov": "Architect Labs tvrdi da su njegovi AI agenti sami dizajnirali Frostbite, procesor zasnovan na „interaction nets“ sa 4,59 puta boljim učinkom po vatu, ali čip zasad postoji samo pre izrade u silicijumu.",
+      "izvor": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/11/23/architect-labs-frostbite-ai-designed-cpu-interaction-nets/"
+    },
+    {
+      "naslov": "Gemini sada pravi GIF-ove uz model Gemini Omni 1.2 Flash, sa glatkim pokretom i ujednačenim kvalitetom kroz sve kadrove.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-11-23"
+    },
+    {
+      "naslov": "Profesori sa Stanforda Yejin Choi i Carlos Guestrin osnovali su Noeri i skupili 110 miliona dolara za mnoštvo manjih specijalizovanih modela koji uče i posle puštanja.",
+      "izvor": "Import AI",
+      "url": "https://jack-clark.net/2026/11/23/import-ai-482-huawei-kernel-benchmarks-airborne-drone-detection-and-a-national-labs-ai-science-benchmark/"
+    },
+    {
+      "naslov": "Na novom testu Lawrence Livermore laboratorije samo GPT-6 Astra i Claude Fable 5.2 pouzdano procenjuju nesigurnost svojih rezultata kada simulator kojim rade ima skrivenu grešku.",
+      "izvor": "Import AI",
+      "url": "https://jack-clark.net/2026/11/23/import-ai-482-huawei-kernel-benchmarks-airborne-drone-detection-and-a-national-labs-ai-science-benchmark/"
+    },
+    {
+      "naslov": "Google će tokom 2027. ugasiti aplikaciju Nest i klasični Google Assistant na pametnim kućnim uređajima, a njihovu ulogu preuzimaju Google Home i Gemini.",
+      "izvor": "B92 Tehnopolis",
+      "url": "https://www.b92.net/tehnopolis/aktuelno/287420/google-gasi-aplikaciju-nest-i-google-assistant-na-pametnim-uredjajima-evo-sta-menja-gemini/vest"
+    },
+    {
+      "naslov": "Nothing 8. decembra izbacuje Ear Note, slušalice čija futrola sa mikrofonom snima i prepisuje razgovore uz AI sažetke, a cena još nije poznata.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/gadgets/1040357/nothing-ear-note-earbuds-ai-recording"
+    },
+    {
+      "naslov": "Deutsche Telekom je preko svog fonda uložio 100 miliona evra u Mistral-ovu rundu serije D, bez objavljenih konkretnih ugovora.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/telekomunikacije/deutsche-telekom-ulaze-100-milijuna-eura-u-mistral"
+    },
+    {
+      "naslov": "Trump je najavio „ogromne kazne“ za američke firme koje grade data centre u drugim zemljama, uz napomenu da ideju još nije prošao sa saradnicima.",
+      "izvor": "Bug",
+      "url": "https://mreza.bug.hr/biznis/trump-ce-kazniti-americke-tvrtke-koje-grade-data-centre-u-inozemstvu-64579"
+    },
+    {
+      "naslov": "Sierra, firma Breta Taylora za AI korisničku podršku, skupila je 1,75 milijardi dolara i za šest meseci duplirala vrednost na 30 milijardi.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/23/sierra-doubles-valuation-to-30b-within-six-months-as-demand-for-ai-in-cx-takes-off/"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "Clover-35B-A3B-Preview: difuzioni model za agente koji piše 680 tokena u sekundi",
+      "objasnjenje": "Umesto da tekst piše reč po reč, Clover generiše čitave blokove odjednom i postepeno ih „čisti“, kao modeli za slike. Ima 35 milijardi parametara, a pri svakom koraku koristi samo 3 milijarde, i podržava režim razmišljanja. Autori prijavljuju 73,6 na SWE-bench Verified i 680 tokena u sekundi na jednom GB300 GPU-u.",
+      "zastoJeZanimljivo": "Difuzioni jezički modeli mogu da učine agente za kodiranje mnogo bržim i jeftinijim, a ovde su težine i kod otvoreni, sa najviše GitHub zvezdica od današnjih radova.",
+      "url": "https://huggingface.co/papers/2611.24636",
+      "github": "https://github.com/DiffuSpace/Clover-35B-A3B-Preview"
+    },
+    {
+      "naslov": "MemOnce: memorija za modele bez rasta potrošnje GPU memorije",
+      "objasnjenje": "Klasični modeli za svaki token u razgovoru čuvaju podatke u memoriji (KV keš), pa memorija raste sa dužinom razgovora. MemOnce čuva samo mali sažeti deo, a kad zatreba, iz njega na brzinu rekonstruiše ono što je modelu potrebno i uzima samo relevantne delove. Tako dugi razgovori troše mnogo manje memorije.",
+      "zastoJeZanimljivo": "Dugotrajni asistenti i agenti koji pamte prethodne sesije mogli bi da postanu jeftiniji za pokretanje, što se uklapa u priču o tome da ogromni konteksti nisu jedini put.",
+      "url": "https://huggingface.co/papers/2611.27973",
+      "github": "https://github.com/Clare-Nie/MemOnce"
+    },
+    {
+      "naslov": "Čitanje nečitljivog: izoštravanje slika teksta traži razmišljanje",
+      "objasnjenje": "Kad je tekst na slici previše mutan, alati za izoštravanje ne mogu da ga vrate samo na osnovu piksela. Ljudi ga pročitaju iz konteksta. Autori su napravili test koji odvaja ta dva slučaja i pokazali da svih 12 testiranih modela pada baš na tekstu koji zahteva zaključivanje. Multimodalni LLM-ovi, međutim, često mogu da „pročitaju“ takav tekst, pa predlažu kombinaciju ta dva pristupa.",
+      "zastoJeZanimljivo": "Praktična ideja za aplikacije koje skeniraju račune, znakove ili stare dokumente: LLM prvo pogodi tekst, pa se slika izoštri prema tome.",
+      "url": "https://huggingface.co/papers/2611.15449",
+      "github": "https://github.com/jasonleex1995/TAISR_needs_Reasoning"
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "„Šta je novo“ iz PR-ova",
+      "problem": "Pisanje opisa izmena za App Store i web aplikacije na srpskom i engleskom je dosadno, pa se obično svede na „ispravke grešaka“.",
+      "zaKoga": "Solo developeri i mali timovi koji redovno objavljuju iOS i web verzije",
+      "ulogaAi": "Čita spojene PR-ove i commit-ove od poslednjeg taga i piše kratak, korisnicima razumljiv opis izmena na dva jezika, uz ograničenje dužine App Store polja.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Napravi GitHub Action koji se pokreće na novi tag i preko GitHub API-ja povlači spojene PR-ove",
+        "Pošalji naslove i opise Claude Haiku-u ili jeftinom modelu preko OpenRouter-a sa promptom za srpski i engleski",
+        "Rezultat upiši u fastlane metadata fajlove (release_notes.txt) za App Store Connect",
+        "Dodaj ručno odobravanje u PR-u pre objave"
+      ],
+      "inspiracija": "Claude Ship i agenti koji automatizuju korake oko pull request-ova"
+    },
+    {
+      "naziv": "Lupa za račun za struju",
+      "problem": "Ljudi ne razumeju zašto im je račun za struju ili Infostan skočio i ne znaju kako da napišu prigovor.",
+      "zaKoga": "Domaćinstva u Srbiji, posebno stariji korisnici i njihova deca koja im pomažu",
+      "ulogaAi": "Iz PDF računa za godinu dana izvlači potrošnju, zonu i iznos po mesecima, pokazuje gde je skok i zašto, uz tačnu stranu i red kao dokaz, i piše nacrt prigovora.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "SwiftUI aplikacija koja preko Document Picker-a prima više PDF-ova",
+        "Šalji ih modelu sa podrškom za PDF i traži strukturisan JSON (mesec, kWh, viša/niža tarifa, iznos, strana)",
+        "Prikaži tabelu i grafikon u Swift Charts, sa označenim mesecom skoka",
+        "Dugme „Napiši prigovor“ pravi tekst sa datumima i iznosima, uz upozorenje da ga korisnik proveri"
+      ],
+      "inspiracija": "The Rundown vodič: Gemini 4 Neon traži greške u računima za struju"
+    },
+    {
+      "naziv": "Auto-grafikoni za Supabase",
+      "problem": "Kad imaš podatke u Supabase-u, brz pregled trendova traži ručno pisanje upita ili skup BI alat.",
+      "zaKoga": "Indie developeri i mali startapi na Supabase-u",
+      "ulogaAi": "Pravila prvo predlože tipove grafikona po kolonama (datum, kategorija, broj), a LLM na zahtev pretvori pitanje na srpskom u SQL koji agregira sve redove.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Angular aplikacija koja se povezuje na Supabase sa read-only ključem i čita šemu",
+        "Napiši pravila za predlog grafikona: vremenska kolona daje liniju, kategorija daje stubiće, sa GROUP BY u SQL-u",
+        "Crtaj sa Observable Plot i čuvaj stanje grafikona u #fragmentu URL-a, kao datasette-charts",
+        "Dodaj polje „pitaj“ koje preko Claude-a pravi SQL koji se izvršava samo kao SELECT"
+      ],
+      "inspiracija": "Simon Willison-ov datasette-charts plugin"
+    },
+    {
+      "naziv": "Školski radar za roditelje",
+      "problem": "Roditelji dobijaju obaveštenja iz škole preko mejla, Viber grupa i slika na papiru, pa propuste kontrolne, izlete i uplate.",
+      "zaKoga": "Roditelji osnovaca u Srbiji i regionu",
+      "ulogaAi": "Iz prosleđenih mejlova, snimaka ekrana Viber poruka i fotografija obaveštenja izvlači datume, zadatke i uplate i pravi događaje u kalendaru i nedeljni pregled.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "iOS Share Extension koji prima slike i tekst iz Vibera i Mail-a",
+        "Edge Function u Supabase-u šalje sadržaj multimodalnom modelu i traži JSON (datum, dete, tip, iznos)",
+        "EventKit upisuje događaje u iPhone kalendar posle potvrde korisnika",
+        "Svake nedelje uveče push notifikacija sa pregledom sledeće nedelje"
+      ],
+      "inspiracija": "Workflow čitaoca The Rundown-a: dnevni sažetak školskih mejlova u kalendaru"
+    },
+    {
+      "naziv": "Mutni tekst",
+      "problem": "Na fotografijama često ne može da se pročita tablica s cenama, broj na računu ili natpis jer je slika mutna ili snimljena iz daleka.",
+      "zaKoga": "Korisnici iPhone-a, posebno za stare fotografije dokumenata i natpisa",
+      "ulogaAi": "Multimodalni model iz konteksta zaključuje šta piše u mutnom delu i uz svaki deo daje procenu sigurnosti, umesto da samo izoštrava piksele.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "SwiftUI aplikacija: izaberi fotografiju i označi deo sa tekstom",
+        "Prvo probaj Apple Vision OCR na uređaju; ako je pouzdanost niska, pošalji isečak i celu sliku modelu",
+        "Traži od modela JSON sa tekstom, sigurnošću po reči i objašnjenjem",
+        "Nesigurne reči prikaži žutom bojom, uz dugme za kopiranje"
+      ],
+      "inspiracija": "Rad „Reading the Unreadable“ sa Hugging Face Daily Papers"
+    }
+  ],
+  "cene": "Najveće promene danas su kod DeepSeek-a: DeepSeek V4.1 Flash 1017 je pao sa 0,3/1,2 na 0,03/0,2 dolara za milion ulaznih i izlaznih tokena (juče je bio poskupeo sa 0,15/0,6), a DeepSeek V4 Pro 0813 je na ulazu pao sa 1,32 na 0,111, ali mu je izlaz poskupeo sa 3,96 na 4,44. Poskupeli su GLM 5.3 Flash (sa 0,0399/0,0784 na 0,12/0,38), DeepSeek V4 Pro 0423 (sa 0,9/1,5 na 1,28/2,56) i Llama 3.1 8B (sa 0,02/0,04 na 0,05/0,08). Najjeftiniji po klasama su DeepSeek V4.1 Flash među brzim modelima (0,0498/0,1992) i GLM 5.3 u srednjoj klasi (0,0699/1,4), a među vrhunskim Kimi K3 ima najjeftiniji ulaz (0,192), dok je Grok 4.6 najjeftiniji na izlazu (6 dolara).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "Rimanova hipoteza posle potvrde: da li je ovo kraj matematike kakvu znamo",
+        "oCemuSePrica": "Pošto je Lean zajednica potvrdila dokaz Levent-a Alpöge-a, rasprava je prešla sa pitanja „da li je tačan“ na pitanje šta znači dokaz od 17 miliona linija koji nijedan čovek još ne razume u potpunosti. Na YouTube-u i Mastodon-u ljudi masovno počinju da uče Lean.",
+        "glasovi": "Alexandr Wang iz Meta-e vidi u tome znak da je superinteligencija blizu, a Association for Human Mathematics dokaz naziva „reklamom za AI laboratorije“. Matthew Berman pita „šta sad“, a programeri na Mastodon-u se šale da uče lean4 jer to sad „rade svi“.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "youtube",
+            "naziv": "Matthew Berman",
+            "url": "https://www.youtube.com/watch?v=MkeKXJzJo98"
+          },
+          {
+            "platforma": "mastodon",
+            "naziv": "@jnpn@mastodon.social",
+            "url": "https://mastodon.social/@jnpn/117668593406340755"
+          },
+          {
+            "platforma": "youtube",
+            "naziv": "Two Minute Papers",
+            "url": "https://www.youtube.com/watch?v=1jPdehG3Hms"
+          }
+        ]
+      },
+      {
+        "naslov": "Jensen Huang se vraća, a tehnološka elita slavi",
+        "oCemuSePrica": "Povratak Huanga na čelo Nvidia-e uz Trumpovu intervenciju podelio je javnost. Jedni slave stabilnost firme, a drugi vide politički pritisak na upravu privatne kompanije usred istrage o špijunaži.",
+        "glasovi": "Elon Musk je napisao „The mistake has been corrected“, a Bela kuća poručuje „moramo da štitimo naše genije“. The Verge i TechCrunch to opisuju kao „nekažnjivost elite“ i upozoravaju da problemi nisu gotovi.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "ostalo",
+            "naziv": "The Verge (prenosi objave sa X-a)",
+            "url": "https://www.theverge.com/tech/1040069/jensen-huang-return-elon-musk-sam-altman-yay"
+          }
+        ]
+      },
+      {
+        "naslov": "Gemini 4 Neon nadmašio Opus i Google-ov sopstveni vodeći model",
+        "oCemuSePrica": "Fireship-ov snimak o tome kako Google-ov model srednje klase prestiže tri nedelje star vodeći model, pa i Claude Opus, za dan je prešao 700 hiljada pregleda. Ljudi se pitaju ima li smisla plaćati vrhunske modele kad srednja klasa tako brzo napreduje.",
+        "glasovi": "Fireship ističe iznenađenje da baš Google pobeđuje na testovima. Skeptici podsećaju da su rezultati na testovima jedno, a svakodnevno kodiranje nešto drugo.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "youtube",
+            "naziv": "Fireship",
+            "url": "https://www.youtube.com/watch?v=jP9yjEDlc4k"
+          }
+        ]
+      },
+      {
+        "naslov": "„Slop“ u kodu: ko proverava šta agenti pišu",
+        "oCemuSePrica": "Uz Claude Ship i Wired-ov esej „kraj programera“, zajednica raspravlja o tome da agenti pišu više koda nego što ljudi stignu da pregledaju. Dex Horthy navodi da najbolji model na Slop Code Bench-u, testu koji meri kako agenti razvijaju kod tokom vremena, dobija oko 16%, i objavio je „Anti-Slop Manifesto“.",
+        "glasovi": "Dex Horthy (Factory) tvrdi da je „softverska fabrika“ samo dobro inženjerstvo sa agentima i da je pregled koda i dalje ključan. Anthropic odgovara agentima koji pregledaju agente, a skeptici upozoravaju na krug u kome AI odobrava AI.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "youtube",
+            "naziv": "AI Engineer",
+            "url": "https://www.youtube.com/watch?v=-NFMsM2y0Vk"
+          }
+        ]
+      },
+      {
+        "naslov": "„Loop“ transformeri: Inkling 2 Mini i GLM-5.4",
+        "oCemuSePrica": "Dva modela u nedelju dana ponavljaju srednje slojeve više puta po tokenu, pa se priča da je ovo novi način da se dobije više razmišljanja bez većeg modela. Inkling 2 Mini radi na Mac-u sa 32GB, pa ga ljudi isprobavaju lokalno.",
+        "glasovi": "Simon Willison je primetio trend i odmah napravio plugin za GLM-5.4. Na Product Hunt-u se Inkling 2 Mini predstavlja kao model za kodiranje na laptopu.",
+        "jacina": 1,
+        "izvori": [
+          {
+            "platforma": "producthunt",
+            "naziv": "Inkling 2 Mini",
+            "url": "https://www.producthunt.com/products/tinker-2"
+          }
+        ]
+      }
+    ],
+    "snimci": [
+      {
+        "naslov": "Opus just lost to the last company you'd expect...",
+        "kanal": "Fireship",
+        "opis": "Brz pregled Gemini 4 Neon modela i kako je na testovima prestigao i Opus i Google-ov vodeći model.",
+        "url": "https://www.youtube.com/watch?v=jP9yjEDlc4k"
+      },
+      {
+        "naslov": "Claude AI Solved The Secret Of Black Holes",
+        "kanal": "Two Minute Papers",
+        "opis": "Objašnjenje Anthropic-ovog istraživanja u kome je Claude pomogao u fizici crnih rupa.",
+        "url": "https://www.youtube.com/watch?v=1jPdehG3Hms"
+      },
+      {
+        "naslov": "12 Rules for a Software Factory That Doesn't Ship Slop — Dex Horthy, Factory",
+        "kanal": "AI Engineer",
+        "opis": "12 praksi za rad sa agentima koji ne zatrpavaju kod lošim izmenama, korisno uz Claude Code.",
+        "url": "https://www.youtube.com/watch?v=-NFMsM2y0Vk"
+      },
+      {
+        "naslov": "Investigating Linux Vulnerabilities with GPT-6 Cyber",
+        "kanal": "OpenAI",
+        "opis": "Kako je GPT-6 Cyber pomogao da se potvrdi 948 ranjivosti u Linux kernelu i pripreme zakrpe za ljudski pregled.",
+        "url": "https://www.youtube.com/watch?v=MpsO8Ds8uyo"
+      }
+    ]
+  },
+  "nedeljni": null
+}
