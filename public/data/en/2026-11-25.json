@@ -1,0 +1,543 @@
+{
+  "datum": "2026-11-25",
+  "generisano": "2026-11-25T03:09:48.157Z",
+  "model": "claude-opus-5-5",
+  "prevod": "claude-sonnet-5-5",
+  "ukratko": "The big one for you: Claude Artifacts can now be installed as real desktop apps on Mac and Windows, and a free account is enough. MCP also gained background tasks and mid-run questions to the user. The rest of the day is about security: Axios reports that OpenAI and Anthropic employees doubt they can control their own unreleased models, and OpenAI and Cisco open-sourced Shirudo, a tool that blocks attacks on Linux servers until a patch arrives.",
+  "vesti": [
+    {
+      "naslov": "Claude Artifacts become standalone desktop apps for Mac and Windows",
+      "staSeDesilo": "Anthropic now lets you install an Artifact, the small app Claude builds in chat, as a real app on Mac or Windows and keep it in your dock. These apps can use system features: a menu bar icon, notifications, transparent windows, connectors, and Claude itself. The feature is in beta and works with a free account, but you need the latest Claude desktop app.",
+      "zastoJeBitno": "For small personal tools (a multi-city clock, a counter, a reminder), you no longer need to open Xcode. A description in chat is enough. For a standalone app separate from Claude, you'll still need an Apple Developer account.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/anthropic-turns-claude-artifacts-into-standalone-desktop-apps-for-macos-and-windows/"
+        },
+        {
+          "naziv": "The Rundown AI",
+          "url": "https://therundownai.beehiiv.com/p/jensen-huang-returns-to-nvidia"
+        }
+      ]
+    },
+    {
+      "naslov": "MCP gets background tasks, user questions and Skills, and its SDK is downloaded 700 million times a month",
+      "staSeDesilo": "Two years after launch, MCP (the standard for connecting AI to external tools and data) has more than 700 million SDK downloads a month. Tasks and Elicitation are now generally available. Tasks lets a server work for a long time in the background and report back when done, while Elicitation lets a server ask the user for missing information mid-job. Skills over MCP is in public beta and lets a server ship instructions alongside its tools, loaded on demand. Sending files (PDFs, spreadsheets, images) to MCP servers has been announced but hasn't arrived yet.",
+      "zastoJeBitno": "If you build an MCP server, say on top of a Supabase database, you can now run long reports without blocking the conversation and ask the user for confirmation instead of letting the model guess. According to Anthropic, Tool Search cuts context usage by more than 85% when multiple servers are connected.",
+      "kategorija": "alati",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/anthropic-tops-700-million-monthly-mcp-sdk-downloads-and-expands-the-protocol-for-more-autonomous-ai-agents/"
+        }
+      ]
+    },
+    {
+      "naslov": "Axios: OpenAI and Anthropic employees think unreleased models are outgrowing their safety measures",
+      "staSeDesilo": "According to Axios, many employees at both companies believe their internal, still-unreleased models can no longer be reliably controlled. Both firms are reportedly debating internally whether to halt release or even training, and trust in leadership is declining. It all rests on anonymous sources, and there is no official confirmation so far.",
+      "zastoJeBitno": "If confirmed, new models could arrive more slowly or with more restrictions, so factor that in if you're planning an app around \"the next big model.\" For now, it's a report from anonymous sources, not a decision.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Decoder",
+          "url": "https://the-decoder.com/dozens-of-insiders-say-openai-and-anthropics-unreleased-models-have-outgrown-their-safety-measures/"
+        }
+      ]
+    },
+    {
+      "naslov": "OpenAI and Cisco open-source Shirudo: agents write temporary \"shields\" for Linux servers",
+      "staSeDesilo": "Shirudo is an open-source runtime built on eBPF, a technology that injects small programs into the Linux kernel while the system is running. An AI agent writes a temporary shield that blocks a known attack, while regular traffic passes through without restarting the service. In one test, a shield written by Codex stopped Java4Shell (CVSS 9.2) on a live Elasticsearch instance. OpenAI also says GPT-6 Cyber helped confirm 948 Linux kernel bugs that give an attacker root access, and patches have been sent to maintainers.",
+      "zastoJeBitno": "The tool is still pre-release and requires a special bpf-next kernel and TPM 2.0, so it isn't practical for your projects yet. It does show the direction, though: after news that attacking agents can find a hole in minutes, defense is moving to agents too.",
+      "kategorija": "bezbednost",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/11/24/openai-cisco-shirudo-ebpf-linux-runtime/"
+        },
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-24"
+        },
+        {
+          "naziv": "Latent Space (AINews)",
+          "url": "https://latent.space/p/ainews-jensen-is-back-and-openai-shows-its-pretraining-curve-joined-by-microsoft/"
+        }
+      ]
+    },
+    {
+      "naslov": "Anthropic shares fall below IPO price",
+      "staSeDesilo": "A few days after going public at an opening price of $111.50, Anthropic's stock fell below $83, the price at which shares were offered in the IPO. TechCrunch sees this as a bad sign for the valuations of other AI startups preparing to go public or raise new funding.",
+      "zastoJeBitno": "Your Claude tools won't change overnight because of this. Still, market pressure usually means more focus on earnings, so watch for possible changes to subscription prices and limits.",
+      "kategorija": "kompanije",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/24/anthropic-shares-fall-below-ipo-price-a-worrying-sign-for-ai-startups/"
+        },
+        {
+          "naziv": "ICTbusiness",
+          "url": "https://www.ictbusiness.info/vijesti/anthropic-prikupio-916-milijardi-dolara-u-ipo-u"
+        }
+      ]
+    },
+    {
+      "naslov": "Tidal to delete about 27 million fully AI-made songs starting December 9",
+      "staSeDesilo": "Since July, Tidal had only labeled AI songs and withheld royalties from them, but that didn't stop the flood: in the last 90 days, 43% of new tracks were fully generated, and on November 6 as many as 60%. From December 9, such songs will be deleted and rejected, and Tidal estimates it will reject 80,000 to 85,000 tracks a day. Music made with the help of AI tools remains allowed as long as it involves human work. Tidal says 96% of AI songs had zero plays in 90 days.",
+      "zastoJeBitno": "This is the first major platform to ban fully generated content rather than just label it. If you're building something around generated music or images, expect distribution to get harder.",
+      "kategorija": "ostalo",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "Ars Technica",
+          "url": "https://arstechnica.com/ai/2026/11/tidal-will-ban-fully-ai-generated-music-on-december-9/"
+        },
+        {
+          "naziv": "The Verge",
+          "url": "https://www.theverge.com/entertainment/1041362/tidal-ai-music-ban"
+        },
+        {
+          "naziv": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/24/tidal-to-ban-and-remove-millions-of-ai-generated-tracks-as-ai-slop-inundates-music-streaming/"
+        },
+        {
+          "naziv": "Bug.hr",
+          "url": "https://magnet.bug.hr/glazba/tidal-staje-na-kraj-poplavi-ai-glazbe-koju-ionako-nitko-ne-slusa-izbrisat-ce-27-64618"
+        }
+      ]
+    },
+    {
+      "naslov": "DeepMind: teams of Gemini 4 agents find cheaper quantum algorithms, all proven in Lean",
+      "staSeDesilo": "Google DeepMind set teams of Gemini 4 agents, which exchanged ideas every four hours, to look for more efficient versions of known quantum algorithms. Every result was formally proven in Lean, a program that mechanically checks whether a mathematical proof is correct. The estimated compute cost dropped 10.9x for fusion simulation, 8.1x for photochemistry, and 2.5x for one molecule important in drug metabolism. The solutions and the Lean library were released openly.",
+      "zastoJeBitno": "This is the \"AI proposes, machine verifies\" model: the result is valuable because a tool checks it automatically, not because we take its word for it. The same principle applies to agent-written code, where tests play that role.",
+      "kategorija": "istrazivanje",
+      "vaznost": 2,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "TLDR AI",
+          "url": "https://tldr.tech/ai/2026-11-24"
+        },
+        {
+          "naziv": "Latent Space (AINews)",
+          "url": "https://latent.space/p/ainews-jensen-is-back-and-openai-shows-its-pretraining-curve-joined-by-microsoft/"
+        }
+      ]
+    },
+    {
+      "naslov": "Meta's AI chief Alexandr Wang: \"superintelligence is coming,\" and the industry must change course",
+      "staSeDesilo": "Alexandr Wang posted an essay on X arguing that AI could soon run AI research itself and become \"superhumanly good at improving itself.\" He cites Claude's help with the Riemann hypothesis proof as an example. He calls on the industry to take \"substantially different steps\" and says society must not accept \"surrender\" to AI. It's a sharp turn from Zuckerberg, who has so far rejected calls to slow down.",
+      "zastoJeBitno": "For now, it's just words. What matters is whether Meta actually changes how it releases models, so watch its next moves, not the essay.",
+      "kategorija": "kompanije",
+      "vaznost": 1,
+      "izSrbije": false,
+      "izvori": [
+        {
+          "naziv": "The Rundown AI",
+          "url": "https://therundownai.beehiiv.com/p/jensen-huang-returns-to-nvidia"
+        }
+      ]
+    }
+  ],
+  "novo": [
+    {
+      "naziv": "Claude Artifacts as desktop apps",
+      "tip": "funkcija",
+      "opis": "Build a small app in Claude chat and install it on Mac or Windows. It can have a menu bar icon, notifications, and transparent windows. Beta.",
+      "kakoProbati": [
+        "Download or update the Claude desktop app from claude.com/download",
+        "In chat, ask for a tool, e.g. \"build a menu bar app that shows the time in Belgrade, New York and Tokyo\"",
+        "Once the Artifact works, use the option to install it as an app (check the link for the exact click path)",
+        "For a standalone app separate from Claude, you need an Apple Developer account"
+      ],
+      "link": "https://the-decoder.com/anthropic-turns-claude-artifacts-into-standalone-desktop-apps-for-macos-and-windows/",
+      "cena": "free (a free account is enough)"
+    },
+    {
+      "naziv": "Skills over MCP + Tasks and Elicitation",
+      "tip": "funkcija",
+      "opis": "With your MCP server you can now ship instructions (skills) that load on demand, run long background tasks, and ask the user for information mid-job.",
+      "kakoProbati": [
+        "Open the docs at modelcontextprotocol.io/extensions/skills/overview",
+        "Add a skill with instructions for your existing MCP server (e.g. \"how to write queries against my Supabase schema\")",
+        "For long jobs, switch the tool to Tasks and report the result when it's done",
+        "Test in Claude Code or the Claude desktop app"
+      ],
+      "link": "https://the-decoder.com/anthropic-tops-700-million-monthly-mcp-sdk-downloads-and-expands-the-protocol-for-more-autonomous-ai-agents/",
+      "cena": "free (open standard)"
+    },
+    {
+      "naziv": "Codex SVG & 3D Design plugin",
+      "tip": "alat",
+      "opis": "A Codex plugin that turns a reference image into an editable SVG or a 3D model in Blender, with changes requested in plain language.",
+      "kakoProbati": [
+        "Open the plugin page in ChatGPT (link from the video) and enable \"SVG & 3D Design\" in Codex",
+        "Drop in a sketch of an icon or mascot for your app",
+        "Ask for changes in words, e.g. \"make the eyes follow the cursor\"",
+        "For 3D, you need Blender installed"
+      ],
+      "link": "https://www.youtube.com/watch?v=1u0hTd86_HU",
+      "cena": "check the link (requires a ChatGPT account with Codex)"
+    },
+    {
+      "naziv": "OCRia-nano-1 (LlamaIndex)",
+      "tip": "model",
+      "opis": "A tiny 8.1-million-parameter OCR model that runs on a single CPU core, about 426 ms per page, and understands tables, layout, and multiple scripts. Open model.",
+      "kakoProbati": [
+        "Open Jerry Liu's post and follow the link to the model",
+        "Download the weights and try it on a scanned receipt or PDF",
+        "Check how it handles Cyrillic before you build it into an app"
+      ],
+      "link": "https://x.com/jerryjliu0/status/2124909031999553926",
+      "cena": "free (open weights)"
+    },
+    {
+      "naziv": "datasette-charts 0.2a0 + Datasette Agent",
+      "tip": "projekat",
+      "opis": "Simon Willison's charting plugin: you ask in chat for a chart from a table, and the agent draws it and opens it in a builder next to the table.",
+      "kakoProbati": [
+        "Go to agent.datasette.io and sign in with GitHub",
+        "Type e.g. \"Use #stats to show sqlite-utils downloads over time as a chart\"",
+        "Click \"Open in the chart builder\" and tweak the chart by hand",
+        "For your own data, install the plugin in a local Datasette"
+      ],
+      "link": "https://simonwillison.net/2026/Nov/24/datasette-charts/",
+      "cena": "free"
+    }
+  ],
+  "kratkeVesti": [
+    {
+      "naslov": "Microsoft joined OpenAI's shared-thresholds proposal, with its MAI-2 Base scoring 0.819 on OpenAI's test, while Anthropic dropped its pretraining figures from the METR report.",
+      "izvor": "Latent Space (AINews)",
+      "url": "https://latent.space/p/ainews-jensen-is-back-and-openai-shows-its-pretraining-curve-joined-by-microsoft/"
+    },
+    {
+      "naslov": "Two malicious versions of the Python package agent-framework (1.26.1 and 1.26.2) on PyPI stole Azure and GitHub Actions credentials; they've been removed, but copies in caches and CI environments may remain.",
+      "izvor": "ICTbusiness",
+      "url": "https://www.ictbusiness.info/vijesti/zlonamjerne-verzije-python-paketa-krale-razvojne-vjerodajnice"
+    },
+    {
+      "naslov": "Levent Alpöge admits the \"250,000 pages\" story was a joke and that the published Lean code is \"full of garbage,\" but still maintains the math in the Riemann hypothesis proof is correct.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/anthropic-researcher-stands-by-his-ai-assisted-riemann-proof-but-owns-up-to-stupid-things-in-the-rollout/"
+    },
+    {
+      "naslov": "Anthropic released a public beta of Enterprise Frontier Safeguards: companies with zero data retention get encrypted copies of traffic in their own cloud, where automated checks look for abuse.",
+      "izvor": "The Rundown AI",
+      "url": "https://therundownai.beehiiv.com/p/jensen-huang-returns-to-nvidia"
+    },
+    {
+      "naslov": "The Gemini API now bills only for the pages, cells, or file snippets the model actually looks at, and tools can return documents, audio, and video.",
+      "izvor": "Latent Space (AINews)",
+      "url": "https://latent.space/p/ainews-jensen-is-back-and-openai-shows-its-pretraining-curve-joined-by-microsoft/"
+    },
+    {
+      "naslov": "Amazon paid $7.5 billion for Decart's optimization technology and its entire team, to make its Trainium chips more competitive with Nvidia.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/24/amazons-decart-acquisition-is-a-bet-on-using-software-to-narrow-the-gap-with-nvidia-in-the-ai-chip-race/"
+    },
+    {
+      "naslov": "At his first all-hands after returning, Jensen Huang apologized, said he's going to therapy, and denied that Trump got him his job back.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/tech/1041571/jensen-huang-all-hands-nvidia-apology"
+    },
+    {
+      "naslov": "The New York Times is asking its photographers not to update Photoshop, because new AI features may write into the metadata that a photo was made with AI.",
+      "izvor": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features"
+    },
+    {
+      "naslov": "Anthropic built a \"honeypot\" test that assumes an agent may slip out of control and checks whether it resists the temptation to misbehave.",
+      "izvor": "Wired",
+      "url": "https://www.wired.com/story/ai-agents-can-get-honeypotted-too-aw/"
+    },
+    {
+      "naslov": "A new benchmark shows that even the best agents don't handle everyday tasks reliably and safely, and often create new problems along the way.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/24/even-the-best-ai-agents-struggle-with-everyday-life/"
+    },
+    {
+      "naslov": "OpenAI says GPT-6 models can design proteins through reasoning and code, and lab tests showed binding to five targets.",
+      "izvor": "OpenAI",
+      "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities"
+    },
+    {
+      "naslov": "A history professor used GPT-6.2 Astra to identify the author of an anonymous 1808 sketchbook in 22 minutes, and the agent also found an important new historical source along the way.",
+      "izvor": "Simon Willison",
+      "url": "https://simonwillison.net/2026/Nov/24/astra-historical-mystery/"
+    },
+    {
+      "naslov": "OpenAI launched OpenWorks, a pilot in 20 US cities that pays locals up to $8,000 a month to help small businesses adopt AI.",
+      "izvor": "The Rundown AI",
+      "url": "https://therundownai.beehiiv.com/p/jensen-huang-returns-to-nvidia"
+    },
+    {
+      "naslov": "Meta Muse has arrived directly in Instagram DMs, and Walmart is using it to offer Black Friday deals.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/24/meta-brings-its-muse-ai-assistant-directly-into-instagram-dms/"
+    },
+    {
+      "naslov": "Grok Bot for Mac is getting local computer control, so it will be able to use desktop apps, not just virtual machines in the cloud.",
+      "izvor": "TLDR AI",
+      "url": "https://tldr.tech/ai/2026-11-24"
+    },
+    {
+      "naslov": "Pinterest is introducing a control that lets parents reduce the amount of AI-generated content their teens see.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/24/pinterest-will-now-let-parents-limit-the-ai-generated-content-their-teens-see/"
+    },
+    {
+      "naslov": "Novartis's CEO, who also sits on Anthropic's board, says AI will cut about four years from drug development but won't cure all diseases in ten years.",
+      "izvor": "The Decoder",
+      "url": "https://the-decoder.com/novartis-ceo-says-ai-will-shave-four-years-off-drug-development-not-cure-all-disease/"
+    },
+    {
+      "naslov": "The UK's cybersecurity agency warns that AI hacking tools mostly exploit simple, long-neglected vulnerabilities.",
+      "izvor": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/24/uk-warns-ai-driven-cyberattacks-are-exposing-years-of-weak-security/"
+    }
+  ],
+  "istrazivanje": [
+    {
+      "naslov": "Composable Soft-Prompt Distillation (CSPD)",
+      "objasnjenje": "Instead of merging several specialized models (for math, code, agents) into one through new training, each is \"compressed\" into a short learned prompt that's prepended to the input. The base model stays unchanged, and the prompts are simply chained together. A single such prompt retains at least 90% of the specialized model's gain in 22 of 23 tests, with speed staying almost the same.",
+      "zastoJeZanimljivo": "New skills could be added to the same model as small \"add-ons,\" with no retraining and no loss of existing abilities. That's interesting for local on-device models.",
+      "url": "https://huggingface.co/papers/2611.27376",
+      "github": "https://github.com/UCSB-AI/CSPD"
+    },
+    {
+      "naslov": "3AGameFactory-Motion: an agent that adds skeletons and animations to 3D models",
+      "objasnjenje": "The agent writes short programs that describe a 3D model's skeleton and motion, and these are then executed the same way every time. That makes the result predictable, unlike models that \"draw\" the animation directly. The paper comes with a benchmark covering six shape types, from humans to animals and objects.",
+      "zastoJeZanimljivo": "The repo has over 1,300 stars and is handy for anyone building games or AR on iPhone: you get an animated character from a static model without manual rigging.",
+      "url": "https://huggingface.co/papers/2611.30013",
+      "github": "https://github.com/OpenDCAI/GameFactory-3A"
+    },
+    {
+      "naslov": "SNOOP: an agent's browsing reveals what you asked it",
+      "objasnjenje": "Researchers show that an observer who only sees which links the agent opens, and in what order, can reconstruct your question (F1 0.89) and your profile (F1 0.80), even though the agent never sends your data anywhere. Four existing defenses barely help, and a proposed defense with a fixed number of visits brings the attack's success down to 0.39.",
+      "zastoJeZanimljivo": "If you build an agent that browses the web on a user's behalf, privacy depends not only on what you send, but also on what the agent visits.",
+      "url": "https://arxiv.org/abs/2611.27046",
+      "github": null
+    }
+  ],
+  "ideje": [
+    {
+      "naziv": "Exchange rates in the menu bar",
+      "problem": "Anyone who works in euros and dollars keeps opening the bank's or NBS's website to check the rate.",
+      "zaKoga": "Freelancers and small business owners in Serbia who bill in foreign currency",
+      "ulogaAi": "Claude builds the app from a description and briefly explains any big rate move (\"euro up 0.3% after the NBS decision\").",
+      "tezina": 1,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "In the Claude desktop app, ask for an Artifact with a menu bar icon that shows the mid-market EUR/USD/CHF rate",
+        "Connect a public exchange-rate source and add a notification when a rate crosses a threshold you set",
+        "Install the Artifact as a desktop app and use it for a week",
+        "If it proves useful, port it to SwiftUI MenuBarExtra and publish it"
+      ],
+      "inspiracija": "Claude Artifacts as desktop apps and Ben Tossell's multi-city clock (Ben's Bites)"
+    },
+    {
+      "naziv": "Package check before install",
+      "problem": "Coding agents add npm and PyPI packages on their own, and malicious versions like agent-framework 1.26.1 can easily slip through unnoticed.",
+      "zaKoga": "Developers working with Claude Code or Cursor",
+      "ulogaAi": "A small model reads the diff between the old and new package version and flags suspicious things: install-time scripts, network calls, reading env variables.",
+      "tezina": 2,
+      "vikendProjekat": true,
+      "prviKoraci": [
+        "Write a Node CLI that compares package-lock.json before and after and downloads the tarballs of the new versions",
+        "Send the diff to a cheap model (e.g. GLM 5.3 Flash via OpenRouter) with a clear list of red flags",
+        "Add it as a pre-commit hook or a Claude Code hook that blocks the install until you confirm",
+        "Publish it as a GitHub Action for Angular projects"
+      ],
+      "inspiracija": "Malicious versions of the Python package agent-framework (ICTbusiness)"
+    },
+    {
+      "naziv": "Allergens from the label",
+      "problem": "Labels on local products are tiny, multilingual, and often in Cyrillic, which makes it hard to quickly find allergens.",
+      "zaKoga": "Parents of children with allergies and people on special diets in Serbia and the region",
+      "ulogaAi": "On-phone OCR reads the label, and a model recognizes ingredients, including hidden names for gluten or lactose, and compares them against the user's profile.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Build a SwiftUI prototype with Apple Vision OCR (supports Cyrillic) and check OCRia-nano-1 as an alternative",
+        "Compile a list of allergens and their synonyms in Serbian, Croatian, and English",
+        "For unclear ingredients, call Claude Haiku through a Supabase Edge Function",
+        "Store scanned products in Supabase, so every later user gets an answer instantly"
+      ],
+      "inspiracija": "OCRia-nano-1, a small OCR model that runs on a CPU (LlamaIndex)"
+    },
+    {
+      "naziv": "MCP for Serbian open data",
+      "problem": "data.gov.rs has many useful datasets, but they're hard to find and combine.",
+      "zaKoga": "Journalists, students, and developers who want to ask Claude about local data",
+      "ulogaAi": "An MCP server with a skill that explains the datasets' structure; long processing runs in the background via Tasks, and via Elicitation the server asks \"which municipality and year?\" instead of guessing.",
+      "tezina": 3,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Pick 3–5 datasets (e.g. the company registry, municipal budgets) and load them into Supabase",
+        "Build an MCP server with the official TypeScript SDK, with search and aggregation tools",
+        "Add a skill describing the columns and example queries (modelcontextprotocol.io/extensions/skills)",
+        "Test in the Claude desktop app, then publish on GitHub"
+      ],
+      "inspiracija": "MCP expansion: Tasks, Elicitation, and Skills over MCP"
+    },
+    {
+      "naziv": "Creation log for your work",
+      "problem": "After Tidal's ban, musicians and illustrators have to prove that humans made their work, and they have no simple way to do it.",
+      "zaKoga": "Local independent musicians, illustrators, and designers",
+      "ulogaAi": "From a series of photos, sketches, and file versions, AI automatically builds a clear timeline of how the work came to be, and the artist sends a link to it to the platform or client.",
+      "tezina": 2,
+      "vikendProjekat": false,
+      "prviKoraci": [
+        "Build an iOS app in SwiftUI that stores photos and audio clips with a timestamp and the file's hash",
+        "Save to Supabase Storage, and record the hash and time in an immutable (insert-only) table",
+        "Have Claude Haiku write a short description of the process from the notes for a public page",
+        "Build an Angular page for sharing the \"log\" via a single link"
+      ],
+      "inspiracija": "Tidal deletes 27 million fully AI-generated songs"
+    }
+  ],
+  "cene": "DeepSeek V4.1 Flash (from $0.0498/$0.1992 to $0.14/$0.42), DeepSeek V4.1 Flash 1017 (from $0.03/$0.2 to $0.3/$1.2), MiniMax M2.5 (from $0.27/$0.95 to $0.3/$1.2) and Qwen3.6 35B A3B (from $0.05/$0.7 to $0.1/$0.89) all got more expensive today, while DeepSeek V4 Flash 0731 got cheaper, from $0.055/$0.375 to $0.047/$0.3. DeepSeek's Flash prices have been changing almost daily lately, so don't do long-term math on them. GLM 5.3 ($0.0699/$1.4) is still the cheapest mid-tier model and GLM 5.3 Flash ($0.12/$0.38) is among the cheap and fast ones. Among top-tier models, Kimi K3 has the cheapest input ($0.192) and Grok 4.6 the cheapest output ($6).",
+  "mreze": {
+    "teme": [
+      {
+        "naslov": "OpenAI's \"perplexity\" curve and the shared-thresholds proposal: who else will join",
+        "oCemuSePrica": "After Jakub Pachocki published five years of internal measurements and proposed that labs jointly set a first development threshold, the debate shifted to methodology and to who will join. Microsoft published its result (0.819), and attention is on the fact that Anthropic dropped the same figures from the METR report.",
+        "glasovi": "Mustafa Suleyman backed the proposal and suggested bits-per-byte as a measure for comparing labs. David Manheim warns that the tokenizer could favor OpenAI, and some researchers argue that post-training uses more than 75% of compute, making pretraining the wrong yardstick. OpenAI people respond that the test is frozen and contains no generated code.",
+        "jacina": 3,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@merettm",
+            "url": "https://x.com/merettm/status/2124549218995949967"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@mustafasuleyman",
+            "url": "https://x.com/mustafasuleyman/status/2124663594449318173"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@davidmanheim",
+            "url": "https://x.com/davidmanheim/status/2124581659500535840"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@eliebakouch",
+            "url": "https://x.com/eliebakouch/status/2124566777740882027"
+          }
+        ]
+      },
+      {
+        "naslov": "\"Agents work for their companies, not for you\"",
+        "oCemuSePrica": "Michael Harley's essay arguing that LLM agents ultimately serve the interests of the companies that build them was the most popular AI topic on Hacker News (927 points, 391 comments). The theme fits with the news about Meta Muse selling Black Friday deals and ChatGPT booking things for you.",
+        "glasovi": "Some commenters call for local and open models as the only way to have an agent that works for the user. Others reply that it's the same problem as with search engines and social networks, not something new.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50627340"
+          }
+        ]
+      },
+      {
+        "naslov": "Tidal bans AI music",
+        "oCemuSePrica": "The decision to delete about 27 million songs set off a big discussion on HN (320 points, over 300 comments). The questions are where the line falls between music \"made with AI assistance\" and \"fully generated,\" and how Tidal even tells the difference.",
+        "glasovi": "Musicians and listeners mostly welcome the move, especially since nobody listened to 96% of such songs. Skeptics ask how accurate the detection is and whether people who use AI tools will get caught in it too.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "hackernews",
+            "naziv": "Hacker News",
+            "url": "https://news.ycombinator.com/item?id=50630309"
+          }
+        ]
+      },
+      {
+        "naslov": "The Riemann hypothesis: is something proven if nobody understands it",
+        "oCemuSePrica": "Independent Lean tools have reportedly confirmed the proof, but mathematicians are still debating whether a proof that nobody has read from start to finish is really worth anything. Alpöge also admitted that some parts of the announcement were clumsy.",
+        "glasovi": "Ngo Bao Chau says something isn't proven until people understand it. Obhishek Saha rejects claims that the proof is \"elementary,\" since it spans so many areas of number theory that perhaps nobody understands all of it.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@stablequan",
+            "url": "https://x.com/stablequan/status/2124536218352242951"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@ObhishekSaha",
+            "url": "https://x.com/ObhishekSaha/status/2124501191321153811"
+          }
+        ]
+      },
+      {
+        "naslov": "Gemini 4 Neon is winning over users, but with strict access rules",
+        "oCemuSePrica": "Neon is first on LiveBench 2.0, spending on Google models on OpenRouter has exceeded spending on OpenAI for the first time since June, and Perplexity reports daily usage growth. At the same time, Google confirmed that a Gemini subscription works only through Antigravity, so unofficial wrappers like Pi don't get through. An unconfirmed rumor is also circulating that Anthropic is A/B testing Opus 5.6.",
+        "glasovi": "Aravind Srinivas says users are switching on their own from Opus 5.5 and Sol 6.2. Theo complains about the access rules, DHH praises the speedup, and Jeremy Howard notes that Neon builds complicated workarounds instead of asking for permission.",
+        "jacina": 2,
+        "izvori": [
+          {
+            "platforma": "x",
+            "naziv": "@AravSrinivas",
+            "url": "https://x.com/AravSrinivas/status/2124765417378099414"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@theo",
+            "url": "https://x.com/theo/status/2124665075638411641"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@jeremyphoward",
+            "url": "https://x.com/jeremyphoward/status/2124561815065776280"
+          },
+          {
+            "platforma": "x",
+            "naziv": "@synthwavedd",
+            "url": "https://x.com/synthwavedd/status/2125018875217547382"
+          }
+        ]
+      }
+    ],
+    "snimci": [
+      {
+        "naslov": "How to Ship Millions of Lines of Agent-Written Code — Jarred Sumner, Anthropic",
+        "kanal": "AI Engineer",
+        "opis": "The creator of Bun explains how he wrote a multi-million-line AOT compiler with 140 agents, and why pre-existing tests are what give you confidence in agent-written code.",
+        "url": "https://www.youtube.com/watch?v=TvsF67C2F54"
+      },
+      {
+        "naslov": "Software Factories: Escape from Trash Mountain — Steve Yegge",
+        "kanal": "AI Engineer",
+        "opis": "Steve Yegge on how to keep an agent \"factory\" from leaving behind a pile of messy code, and how to manage context, costs, and delegation.",
+        "url": "https://www.youtube.com/watch?v=SRhXgeNluIk"
+      },
+      {
+        "naslov": "Experiment with SVG & 3D Design with the Codex Plugin",
+        "kanal": "OpenAI",
+        "opis": "A demo of turning a reference image into an editable SVG and a 3D model in Blender, with changes requested in plain language.",
+        "url": "https://www.youtube.com/watch?v=1u0hTd86_HU"
+      },
+      {
+        "naslov": "The brain helped us build AI. Now AI is explaining the brain.",
+        "kanal": "Google DeepMind",
+        "opis": "Hannah Fry talks with neuroscientists about how AI is now being used to better understand the human brain.",
+        "url": "https://www.youtube.com/watch?v=K8rdrWQRd20"
+      }
+    ]
+  },
+  "nedeljni": null
+}
