@@ -4,7 +4,7 @@
 //   ponedeljkom sa ?rezim=nedeljni — nedeljni izveštaj o formatima i pratiocima na Telegram,
 //   petkom sa ?rezim=alati-nedelje — lista alata te nedelje na Telegram, za Dev's pick video,
 //   svako jutro sa ?rezim=podsetnik — šta Mihajlo danas treba ručno da uradi (posao „Podsetnik i Dev's pick“),
-//   utorkom sa ?rezim=devs-pick — kad Dev's pick video izađe, Instagram objava i X tekst na Telegram (isti posao).
+//   svaki dan sa ?rezim=devs-pick (radi samo kad tog dana izlazi epizoda) — kad Dev's pick video izađe, Instagram objava i X tekst na Telegram (isti posao).
 // GitHub-ovi zakazani poslovi za ovaj repo kasne satima ili se ne pokrenu, pa je okidač ovde.
 //
 // Potrebne promenljive u Vercel projektu (Settings → Environment Variables):

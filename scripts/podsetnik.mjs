@@ -46,31 +46,33 @@ async function naYoutube(e) {
 const zadaci = [];
 const dodaj = (t) => zadaci.push(t);
 
-if (dan === 1) {
-  if (ep) {
-    const yt = await naYoutube(ep);
-    if (yt.ok) dodaj(`🎬 Dev's Pick #${ep.broj} je spreman i ${yt.tekst}. Ništa ne treba.`);
-    else dodaj(`🎬 Dev's Pick #${ep.broj} je spreman${yt.tekst ? `, ali ${yt.tekst}` : ''}. Otpremi ga na YouTube i zakaži za sutra (utorak) u 16:00: Visibility → Schedule. Thumbnail i opis su u folderu te nedelje.`);
-  } else {
-    dodaj('🎬 Danas pravimo Dev\'s pick video: otvori chat sa Claude-om i pošalji snimak ekrana i par rečenica o alatu (šta ti se svidelo, šta ne, ocena 1–10). Ja pravim video, thumbnail, Instagram reel i tvoju X objavu.');
-    dodaj('📅 Kad video bude gotov, zakaži ga na YouTube-u za sutra u 16:00.');
-  }
-  dodaj('📊 Oko 8h stiže nedeljni izveštaj (pratioci, formati, newsletter). Samo ga pogledaj.');
+// Epizoda može izaći i van utorka (npr. kad kasnimo), pa se gleda datum objave, a ne samo dan u nedelji.
+const sutra = pomeri(danas, 1);
+const epSutra = sve.find((e) => e.objava === sutra);
+const epDanas = sve.find((e) => e.objava === danas);
+const danLepo = (d) => new Intl.DateTimeFormat('sr-Latn-RS', { weekday: 'long', timeZone: 'UTC' }).format(new Date(`${d}T12:00:00Z`));
+
+if (epSutra) {
+  const yt = await naYoutube(epSutra);
+  if (yt.ok) dodaj(`🎬 Dev's Pick #${epSutra.broj} je spreman i ${yt.tekst}. Ništa ne treba.`);
+  else dodaj(`🎬 Dev's Pick #${epSutra.broj} je spreman${yt.tekst ? `, ali ${yt.tekst}` : ''}. Otpremi ga na YouTube i zakaži za sutra (${danLepo(sutra)}) u 16:00: Visibility → Schedule. Video, thumbnail i opis su u folderu te nedelje.`);
+} else if (dan === 1 && !epDanas) {
+  dodaj('🎬 Danas pravimo Dev\'s pick video: otvori chat sa Claude-om i pošalji snimak ekrana i par rečenica o alatu (šta ti se svidelo, šta ne, ocena 1–10). Ja pravim video, thumbnail, Instagram reel i tvoju X objavu.');
+  dodaj('📅 Kad video bude gotov, zakaži ga na YouTube-u za sutra u 16:00.');
+}
+if (dan === 1) dodaj('📊 Oko 8h stiže nedeljni izveštaj (pratioci, formati, newsletter). Samo ga pogledaj.');
+
+if (epDanas) {
+  const yt = await naYoutube(epDanas);
+  if (yt.ok === false) dodaj(`⚠️ Dev's Pick #${epDanas.broj}: ${yt.tekst}. Zakaži ga za danas u 16:00 (Visibility → Schedule), inače Instagram objava neće krenuti.`);
+  else dodaj(`🎬 Danas u 16:00 izlazi Dev's Pick #${epDanas.broj}${yt.tekst ? ` (${yt.tekst})` : ''}.`);
+  dodaj('📸 Instagram reel i story i YouTube Short idu sami čim video izađe.');
+  dodaj('🐦 Posle 16h stiže ti poruka sa X objavom i linkom: objavi je sa svog profila, a link stavi u prvi komentar.');
+} else if (dan === 2 && !ep) {
+  dodaj('🎬 Ove nedelje nema Dev\'s pick videa, pa danas nema ničeg za YouTube i X.');
 }
 
-if (dan === 2) {
-  if (ep) {
-    const yt = await naYoutube(ep);
-    if (yt.ok === false) dodaj(`⚠️ Dev's Pick #${ep.broj}: ${yt.tekst}. Zakaži ga za danas u 16:00 (Visibility → Schedule), inače Instagram objava neće krenuti.`);
-    else dodaj(`🎬 Danas u 16:00 izlazi Dev's Pick #${ep.broj}${yt.tekst ? ` (${yt.tekst})` : ''}.`);
-    dodaj('📸 Instagram reel i story i YouTube Short idu sami čim video izađe.');
-    dodaj('🐦 Posle 16h stiže ti poruka sa X objavom i linkom: objavi je sa svog profila, a link stavi u prvi komentar.');
-  } else {
-    dodaj('🎬 Ove nedelje nema Dev\'s pick videa, pa danas nema ničeg za YouTube i X.');
-  }
-}
-
-if (dan === 3 && proslaNedelja?.youtube) {
+if (proslaNedelja?.youtube) {
   dodaj(`💬 Odgovori na komentare ispod Dev's Pick #${proslaNedelja.broj} (${proslaNedelja.youtube}) i na X. Prva dva dana najviše utiču na to koliko će ga YouTube preporučivati.`);
 }
 
@@ -78,7 +80,7 @@ if (dan === 5) {
   dodaj('🧑‍💻 U 16h stiže lista alata ove nedelje. Izaberi jedan i probaj ga preko vikenda na stvarnom problemu.');
 }
 
-if ((dan === 6 || dan === 0) && !ep) {
+if ((dan === 6 || dan === 0) && !ep && !epDanas && !epSutra) {
   dodaj('🧪 Testiraj alat koji si izabrao i snimi ekran dok radiš (Cmd+Shift+5). Zapiši utiske i ocenu 1–10, u ponedeljak od toga pravimo video.');
 }
 
